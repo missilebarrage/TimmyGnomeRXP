@@ -549,8 +549,51 @@ step
     .goto 1426/0,-501.400,-5643.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senir Whitebeard|r in Kharanos
     .turnin 287 >> Turn in Frostmane Hold
-    .accept 291 >> Accept The Reports (deliver it when you go to Ironforge)
+    .accept 291 >> Accept The Reports (for Senator Barin Redstone in Ironforge)
     .target Senir Whitebeard::1252
+step << Paladin
+    >>Gather wand materials while Tim goes to Ironforge
+    +Craft a Copper Rod and give it to Tim
+    .collect 2770,10 >> 10 Copper Ore
+    .collect 2835,20 >> 20 Rough Stone
+    +|cFFFF0000MAKE SURE TIM HAS A BRACER!|r
+step << Mage
+    >>Gather wand materials before you go to Ironforge
+    .collect 6217,1 >> Copper Rod (your paladin crafts it)
+    +3 silver
+    +|cFFFF0000ANY BRACER|r
+step << Mage
+    .goto 1455,59.77,45.45,15 >> Travel to the enchanting trainer in Ironforge: take the road north out of Kharanos, cross the bridge and follow the road east up the mountain
+step << Mage
+    .goto 1455,59.77,45.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gimble Thistlefuzz|r
+    .skill enchanting,1 >> Learn Enchanting
+    .target Gimble Thistlefuzz
+step << Mage
+    .goto 1455,61.03,44.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tilli Thistlefuzz|r, the enchanting supplies vendor
+    .collect 247786,9 >> Buy 9 Motes of Magic
+    .collect 4470,2 >> Buy 2 Simple Wood
+    .target Tilli Thistlefuzz
+step << Mage
+    .collect 6218,1 >> Craft a Runed Copper Rod
+step << Mage
+    .collect 247789,1 >> Craft a Novice's Practice Wand
+step << Mage
+    .skill enchanting,10 >> Enchant Bracer - Inferior Stamina on your bracer until Enchanting reaches 10 (about 7 times)
+step << Mage
+    .goto 1455,59.77,45.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gimble Thistlefuzz|r
+    .trainer >> Train Lesser Magic Wand
+    .collect 4470,1 >> Keep 1 Simple Wood to craft the Lesser Magic Wand later
+    .target Gimble Thistlefuzz
+step << Mage
+    .goto 1455/0,-1026.28,-4872.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWhile you're in Ironforge, talk to |cRXP_FRIENDLY_Senator Barin Redstone|r in the throne room
+    .turnin 291 >> Turn in The Reports
+    .target Senator Barin Redstone
+step << Mage
+    .hs >> Hearth back to Kharanos
 step << Mage
     .goto 1426/0,-537.200,-5587.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r upstairs

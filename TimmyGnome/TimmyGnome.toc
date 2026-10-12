@@ -2,7 +2,7 @@
 ## Title: TimmyGnome
 ## Notes: RestedXP guide: a Gnome Mage route through Coldridge Valley and Dun Morogh, levels 1-9. Needs RestedXP Guides.
 ## Author: Tim
-## Version: 1.2.1
+## Version: 1.3.0
 ## Dependencies: RXPGuides
 ## Category: Quests
 ## X-License: CC BY-NC-SA 4.0

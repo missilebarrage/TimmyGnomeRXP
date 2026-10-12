@@ -974,7 +974,9 @@ step
 -- Young Lovers deliveries added. Level 12 is a target, not a requirement: Riverpaw Gnoll Bounty, Hogger and any
 -- grinding are left out because Loch Modan pays better by then. The Hearthstone stays bound in Thelsamar (guide 2),
 -- so Redridge ends with a flight to Stormwind, and the guide ends with Report to Gryan Stoutmantle, the Sentinel
--- Hill flight path and a hearth to Thelsamar. Gathering quests are left out except four whose items drop from mobs
+-- Hill flight path and a hearth to Thelsamar. Mages: Speak with Jennea (Zaldimar in Goldshire) goes in on the
+-- Stormwind stop after Redridge, Mirror Lake's water comes from the waterfall next to the Applejack Still, and a
+-- flight from Sentinel Hill to Stormwind hands it in before the hearth. Gathering quests are left out except four whose items drop from mobs
 -- or sit in camps on the route: Collecting Kelp, Bottles and Baubles, Bounty on Murlocs and Red Linen Goods. Their
 -- accept steps say OPTIONAL and the steps that follow skip themselves when you didn't take them. Downstream is a
 -- required step: its three items lie on the way to Croaky and respawn instantly. A Bundle of Trouble is skipped on
@@ -991,7 +993,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 14
+#version 15
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1148,6 +1150,12 @@ step << Mage
     .goto 1429/0,34.28,-9471.61
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r upstairs
     .trainer >> Train your level 10 spells (Frost Nova and new ranks)
+    .target Zaldimar Wefhellt
+step << Mage
+    .goto 1429/0,34.28,-9471.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r again: at level 10 he has a mage quest
+    >>|cRXP_WARN_It goes in at Jennea Cannon when you fly back to Stormwind from Redridge|r
+    .accept 1860 >> Accept Speak with Jennea
     .target Zaldimar Wefhellt
 step
     .goto 1429/0,181.44,-9842.17,15,0
@@ -1553,6 +1561,26 @@ step
     .turnin 1097 >> Turn in Elmore's Task
     .accept 353 >> Accept Stormpike's Delivery
     .target Grimand Elmore
+step << Mage
+    #completewith next
+    .isOnQuest 1860
+    .goto 1453/0,942.34,-9001.49,15,0
+    .goto 1453/0,949.86,-9009.38,10,0
+    .goto 1453/0,962.63,-8990.73,15,0
+    .goto 1453/0,928.62,-9010.10,15,0
+    .goto 1453/0,863.96,-9001.40,8,0
+    .goto 1453/0,877.00,-9008.03,6,0
+    .goto 1453/0,868.8,-9004.27,8,0
+    .goto 1453/0,871.36,-9013.14,10,0
+    .goto 1453/0,887.22,-9017.80,10 >> Go into the Wizard's Sanctum in the Mage Quarter and follow its ramp to |cRXP_FRIENDLY_Jennea|r
+step << Mage
+    .isOnQuest 1860
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum
+    >>|cRXP_WARN_Mirror Lake hands you Jennea's Flask: you fill it at the Mirror Lake waterfall on the way to the Applejack Still|r
+    .turnin 1860 >> Turn in Speak with Jennea
+    .accept 1861 >> Accept Mirror Lake
+    .target Jennea Cannon
 step
     #completewith next
     .goto 1429/0,74.02,-9465.52
@@ -1607,6 +1635,12 @@ step
     >>|cRXP_BUY_Buy 4 Shiny Red Apples (about 1 silver) for the Applejack Still on the way to Westbrook|r
     .collect 4536,4 --Shiny Red Apple (4)
     .target Homer Stonefield
+step << Mage
+    .isOnQuest 1861
+    .goto 1429/0,529.57,-9363.05
+    >>|cRXP_WARN_On the way to the still, use|r |T132788:0|t[Jennea's Flask] |cRXP_WARN_at the base of the Mirror Lake waterfall (5 second cast)|r
+    .use 7207
+    .complete 1861,1 --Mirror Lake Water Sample (1)
 step
     .goto 1429,24.0,58.0
     >>Head north-west to the |cRXP_PICK_Applejack Still|r by the Mirror Lake falls. Kill the |cRXP_ENEMY_Defias Bandits|r guarding it
@@ -1656,6 +1690,32 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r, the gryphon master
     .fp Sentinel Hill >> Get the Sentinel Hill flight path
     .target Thor
+step << Mage
+    .isQuestComplete 1861
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBefore you hearth, talk to |cRXP_FRIENDLY_Thor|r and fly to Stormwind to hand in Mirror Lake. It's a short flight, and your Hearthstone works from there
+    >>|cRXP_WARN_Your partner can hearth now and start on the Thelsamar turn-ins|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Thor
+step << Mage
+    #completewith next
+    .isQuestComplete 1861
+    .goto 1453/0,942.34,-9001.49,15,0
+    .goto 1453/0,949.86,-9009.38,10,0
+    .goto 1453/0,962.63,-8990.73,15,0
+    .goto 1453/0,928.62,-9010.10,15,0
+    .goto 1453/0,863.96,-9001.40,8,0
+    .goto 1453/0,877.00,-9008.03,6,0
+    .goto 1453/0,868.8,-9004.27,8,0
+    .goto 1453/0,871.36,-9013.14,10,0
+    .goto 1453/0,887.22,-9017.80,10 >> Go into the Wizard's Sanctum in the Mage Quarter and follow its ramp to |cRXP_FRIENDLY_Jennea|r
+step << Mage
+    .isQuestComplete 1861
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum
+    >>|cRXP_WARN_Pick the Ley Staff (Intellect and Spirit) or the Ley Orb (Spirit, off-hand)|r
+    .turnin 1861 >> Turn in Mirror Lake
+    .target Jennea Cannon
 step
     #label HearthLoch
     >>|cRXP_WARN_Elwynn is done: next stop, Loch Modan|r

@@ -68,7 +68,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   Bleach, then craft and equip the three. Optional nice-to-have: a Reinforced Linen Cape (Spell Power) if your skill
   allows. Spare bolts go into a Linen Bag and extra pants for skill points (if the Lesser Magic Wand didn't happen
   in Ironforge, disenchanting a pair gives the essence for it).
-- **Goldshire:** train and pick up the Marshal Dughan quests.
+- **Goldshire:** train and pick up the Marshal Dughan quests. The mage also takes Speak with Jennea from Zaldimar
+  Wefhellt after training.
 - **South:** explore Fargodeep Mine, then the Young Lovers deliveries and Princess Must Die! at the Stonefield
   farm. Back in Goldshire, The Jasperlode Mine (and Elmore's Task, if Grimand wanted it first).
 - **East:** explore Jasperlode on the way to Guard Thomas, then the lost guards, Protect the Frontier, Downstream,
@@ -80,11 +81,14 @@ To update, download the zip again and replace the TimmyGnome folder.
   farming: if the kills don't give 3, the mage drops it. The paladin's sticky says to let the mage have the
   effigies.
 - **Redridge:** Encroaching Gnolls (needs level 11) and the Lakeshire flight path, then fly to Stormwind and walk
-  back to Goldshire. Your Hearthstone stays bound in Thelsamar.
+  back to Goldshire. Your Hearthstone stays bound in Thelsamar. In Stormwind the mage hands Speak with Jennea to
+  Jennea Cannon in the Wizard's Sanctum and takes Mirror Lake.
 - **Finish:** turn-ins in Goldshire and at the farms, Applejack Still and An Apple Treat (apples from Homer
   Stonefield, the still by the Mirror Lake falls, Sergeant De Vries), Westbrook Garrison, then Westfall: Westfall Stew on the way
   down the road, Report to Gryan Stoutmantle and the Sentinel Hill flight path, and hearth to Thelsamar. The
-  Loch Modan guide (still to come) starts there.
+  Loch Modan guide starts there. The mage fills Jennea's Flask at the Mirror Lake waterfall on the way to the still,
+  then flies from Sentinel Hill to Stormwind to hand in Mirror Lake (Ley Staff or Ley Orb) before hearthing; the
+  paladin can hearth straight away.
 - **Level 12 is a target, not a requirement.** Hogger, Riverpaw Gnoll Bounty and grinding are cut because Loch
   Modan pays better by then. With the optional quests you should finish around 85-90% into 11; Return to Brock
   and Stormpike's Delivery (1,050 XP each) wait in Loch Modan.

@@ -211,7 +211,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 8
+#version 9
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -654,6 +654,13 @@ step
     .turnin 320 >> Turn in Return to Bellowfiz
     .target Pilot Bellowfiz::1378
 step
+    .xp <9,1
+    .goto 1426/0,-682.300,-5489.000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Beldin Steelgrill|r at the depot
+    >>|cRXP_WARN_It needs level 9, so this step only shows if you're 9 already. It goes in at Earthseer Farsen for 675 XP|r
+    .accept 96408 >> Accept A Visitor to Dun Morogh
+    .target Beldin Steelgrill::1376
+step
     .goto 1426/0,-1041.000,-5350.600
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Father Gavin|r at Misty Pine Refuge
     .turnin 99158 >> Turn in Dawn in the Mountains
@@ -733,6 +740,12 @@ step
     .turnin 433 >> Turn in The Public Servant
     .target Senator Mehr Stonehallow
 -- Earthseer Farsen's chain leads to Old Ironforge Incursion, the Hall of Thanes dungeon quest.
+step
+    .isOnQuest 96408
+    .goto 1426/0,-1394.24,-5797.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r at his camp overlooking Gol'Bolar Quarry
+    .turnin 96408 >> Turn in A Visitor to Dun Morogh
+    .target Earthseer Farsen
 step
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r at his camp overlooking Gol'Bolar Quarry

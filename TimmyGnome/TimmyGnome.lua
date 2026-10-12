@@ -595,6 +595,9 @@ step << Mage
 step << Mage
     .hs >> Hearth back to Kharanos
 step << Mage
+    #completewith HerdAccept
+    >>|cRXP_WARN_Level your wand skill: shoot the mobs you fight with your wand|r
+step << Mage
     .goto 1426/0,-537.200,-5587.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r upstairs
     .trainer >> Train your level 8 spells (Polymorph, Frostbolt, Arcane Missiles)
@@ -637,6 +640,7 @@ step
     .turnin 99158 >> Turn in Dawn in the Mountains
     .target Father Gavin::1253
 step
+    #label HerdAccept
     .goto 1426/0,-1304.71,-5513.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rudra Amberstill|r at Amberstill Ranch
     .accept 314 >> Accept Protecting the Herd

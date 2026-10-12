@@ -82,7 +82,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   effigies.
 - **Redridge:** Encroaching Gnolls (needs level 11) and the Lakeshire flight path, then fly to Stormwind and walk
   back to Goldshire. Your Hearthstone stays bound in Thelsamar. In Stormwind the mage hands Speak with Jennea to
-  Jennea Cannon in the Wizard's Sanctum and takes Mirror Lake.
+  Jennea Cannon in the Wizard's Sanctum, takes Mirror Lake and, at level 12, trains with her (the Mirror Lake
+  turn-in is a second chance, and Ironforge's level 12 training then skips itself).
 - **Finish:** turn-ins in Goldshire and at the farms, Applejack Still and An Apple Treat (apples from Homer
   Stonefield, the still by the Mirror Lake falls, Sergeant De Vries), Westbrook Garrison, then Westfall: Westfall Stew on the way
   down the road, Report to Gryan Stoutmantle and the Sentinel Hill flight path, and hearth to Thelsamar. The

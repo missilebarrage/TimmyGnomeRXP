@@ -994,7 +994,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 17
+#version 18
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1488,6 +1488,12 @@ step << Mage
     .turnin 1860 >> Turn in Speak with Jennea
     .accept 1861 >> Accept Mirror Lake
     .target Jennea Cannon
+step << Mage
+    .xp <12,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r again: she's a mage trainer
+    .train 145 >> Train your level 12 spells (Fireball rank 3, Dampen Magic)
+    .target Jennea Cannon
 step
     #completewith next
     .goto 1429/0,74.02,-9465.52
@@ -1603,6 +1609,13 @@ step << Mage
     >>|cRXP_WARN_Pick the Ley Staff (Intellect and Spirit) or the Ley Orb (Spirit, off-hand)|r
     .turnin 1861 >> Turn in Mirror Lake
     .target Jennea Cannon
+step << Mage
+    .xp <12,1
+    .isQuestTurnedIn 1861
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHit 12 since your last visit? Train with |cRXP_FRIENDLY_Jennea Cannon|r while you're here
+    .train 145 >> Train your level 12 spells (Fireball rank 3, Dampen Magic)
+    .target Jennea Cannon
 step
     #label HearthLoch
     >>|cRXP_WARN_Elwynn is done: next stop, Loch Modan|r
@@ -1628,7 +1641,7 @@ step
 -- Morogh and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 2
+#version 3
 << Alliance
 #group TimmyGnome
 #name 12-14 Loch Modan
@@ -1693,8 +1706,8 @@ step
 step << Mage
     .xp <12,1
     .goto 1455/0,-928.48,-4614.62
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r in the Mystic Ward
-    .trainer >> Train your level 12 spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r in the Mystic Ward. Already trained with Jennea in Stormwind? This step skips itself
+    .train 145 >> Train your level 12 spells
     .target Dink
 step << Paladin
     .xp <12,1

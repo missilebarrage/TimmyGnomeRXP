@@ -51,8 +51,9 @@ To update, download the zip again and replace the TimmyGnome folder.
 
 ### 10-12 Elwynn Forest
 
-- **Stormwind:** off the tram, Stormpike's Delivery from Grimand Elmore (if he offers it), the mage's Tailoring
-  stop, then three new Forever quests: Fishin' Time (a Shiny Bauble and 3 Nightcrawlers from Catherine Leland,
+- **Stormwind:** off the tram, Stormpike's Delivery from Grimand Elmore (if he offers it), First Aid from Shaina
+  Fuller in the Cathedral of Light, the mage's Tailoring stop, Fishing from Arnold Leland, then three new Forever
+  quests: Fishin' Time (a Shiny Bauble and 3 Nightcrawlers from Catherine Leland,
   handed to Gilbert Gray at Stormwind Harbor), Philmor's Favor (Manifest Clerk Philmor at the harbor, delivered to
   Trias' Cheese) and Gatehouse Goods (Elaine Trias, if she offers it). Then the flight path from Dungar Longdrink
   next door, and the walk to Goldshire.

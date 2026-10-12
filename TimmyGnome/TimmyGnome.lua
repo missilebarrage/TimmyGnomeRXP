@@ -977,7 +977,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 8
+#version 9
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -989,6 +989,15 @@ step
     >>|cRXP_WARN_If he doesn't offer Stormpike's Delivery yet, skip this step: Elmore's Task in Goldshire unlocks it|r
     .accept 353 >> Accept Stormpike's Delivery
     .target Grimand Elmore
+step
+    .goto 1453,52.90,50.65,15,0
+    .goto 1453,51.82,48.68,15,0
+    .goto 1453,51.93,46.14,15,0
+    .goto 1453,53.00,44.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaina Fuller|r in the Cathedral of Light, on your way from the Dwarven District to the Trade District
+    >>|cRXP_WARN_Bandages use Linen Cloth: hold off until the mage's Tailoring linen and the paladin's 10 for his class quest are put aside|r
+    .skill firstaid,1 >> Learn First Aid
+    .target Shaina Fuller
 step << Mage
     #label TailoringStop
     .goto 1453/0,660.28,-8814.55
@@ -1003,6 +1012,12 @@ step
     .collect 6529,1 --Shiny Bauble (1)
     .collect 6530,3 --Nightcrawlers (3)
     .target Catherine Leland
+step
+    .goto 1453,54.99,69.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arnold Leland|r, the fishing trainer next to Catherine
+    >>|cRXP_WARN_Catherine sells the Fishing Pole too, if you want to start fishing|r
+    .skill fishing,1 >> Learn Fishing
+    .target Arnold Leland
 step << Mage
     >>|cRXP_WARN_Turn all your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_into|r |T132890:0|t[Bolts of Linen Cloth]|cRXP_WARN_: each bolt is a skill point up to about 25, where the gear recipes unlock|r
     .skill tailoring,25 >> Reach 25 Tailoring

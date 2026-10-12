@@ -5,8 +5,9 @@
 -- straight to Brewnall for Bitter Rivals and Frosthowl, killing every boar for meat and ribs on the way,
 -- then death-skips to Kharanos. Changes from that run:
 --   * Kharanos, then Steelgrill's Depot, then the south loop, instead of Gretchen -> Depot -> south.
---   * Boar meat and ribs come from the boars killed since the tunnel, and bear fur from the south loop,
---     so the Depot needs one visit instead of two.
+--   * Boar meat and ribs are collected all through the west. Stocking Jetsteam goes in before Brewnall
+--     (it unlocks Evershine), Beer Basted Boar Ribs on the last Kharanos visit, after the Brewnall lap.
+--   * Level 6 before the Grizzled Den; mages death-skip to Kharanos to train first.
 --   * The Perfect Stout (Shimmerweed) is skipped.
 -- RestedXP's Import box only accepts the encoded strings from its website. Custom guides load the
 -- way RestedXP's own do: RXPGuides.RegisterGuide, called from an addon that depends on RXPGuides.
@@ -342,6 +343,19 @@ step
     .turnin 5541 >> Turn in Ammo for Rumbleshot
     .target Hegnar Rumbleshot
 step
+    .goto 1426,43.704,65.296,0
+    .xp 6 >> Reach level 6 before the Grizzled Den
+    .mob Crag Boar
+    .mob Young Black Bear
+step << Mage
+    >>Let nearby mobs kill you, release, and talk to the |cRXP_FRIENDLY_Spirit Healer|r to revive in Kharanos
+    .deathskip >> Death skip to Kharanos
+step << Mage
+    .goto 1426/0,-537.200,-5587.000
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r upstairs in the Thunderbrew Distillery
+    .trainer >> Train your level 6 spells (Fireball, Fire Blast, Conjure Food)
+    .target Magis Sparkmantle
+step
     #completewith Cornelius
     >>Kill |cRXP_ENEMY_Wendigos|r and |cRXP_ENEMY_Young Wendigos|r. Loot them for their |cRXP_LOOT_Wendigo Manes|r
     .complete 313,1 --Wendigo Mane (8)
@@ -367,7 +381,8 @@ step
     .mob +Wendigo
     .mob +Young Wendigo
 step
-    >>Finish the |cRXP_LOOT_Thick Bear Fur|r, |cRXP_LOOT_Chunks of Boar Meat|r and |cRXP_LOOT_Crag Boar Ribs|r around Kharanos
+    >>Stocking Jetsteam goes in at the Depot next, because it unlocks Evershine for the Brewnall lap. Finish its 4 |cRXP_LOOT_Chunks of Boar Meat|r and 2 |cRXP_LOOT_Thick Bear Fur|r around Kharanos if you're short
+    >>|cRXP_WARN_The ribs can wait: keep collecting them in the west. Beer Basted Boar Ribs goes in after Brewnall|r
     .complete 317,2 --Thick Bear Fur (2)
     .goto 1426,43.704,65.296,0
     .goto 1426,47.657,64.039,0
@@ -384,7 +399,6 @@ step
     .goto 1426,46.285,59.797,60,0
     .mob +Young Black Bear
     .complete 317,1 --Chunk of Boar Meat (4)
-    .complete 384,1 --Crag Boar Rib (6)
     .goto 1426,43.452,58.760,0
     .goto 1426,44.898,50.142,0
     .goto 1426,50.555,51.778,0
@@ -431,21 +445,6 @@ step
     .train 2550 >> Train |T133971:0|t[Cooking]
     .turnin 96629 >> Turn in Camping 101: Cooking
     .target Gremlock Pilsnor::1699
-step << Mage
-    .goto 1426/0,-537.200,-5587.000
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r upstairs
-    .trainer >> Train your level 6 spells (Fireball, Fire Blast, Conjure Food)
-    .target Magis Sparkmantle
-step
-    .goto 1426/0,-531.23,-5601.59
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBuy the |T132800:0|t[Rhapsody Malt] from |cRXP_FRIENDLY_Innkeeper Belm|r if you haven't yet
-    .complete 384,2 --Rhapsody Malt
-    .target Innkeeper Belm
-step
-    .goto 1426/0,-504.05,-5596.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r outside
-    .turnin 384 >> Turn in Beer Basted Boar Ribs
-    .target Ragnar Thunderbrew
 step
     .goto 1426/0,99.17,-5572.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tundra MacGrann|r on the way west
@@ -552,6 +551,33 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r upstairs
     .trainer >> Train your level 8 spells (Polymorph, Frostbolt, Arcane Missiles)
     .target Magis Sparkmantle
+step
+    >>Last stop for Beer Basted Boar Ribs: if you're still short on |cRXP_LOOT_Crag Boar Ribs|r, kill boars around Kharanos
+    .complete 384,1 --Crag Boar Rib (6)
+    .goto 1426,43.452,58.760,0
+    .goto 1426,44.898,50.142,0
+    .goto 1426,50.555,51.778,0
+    .goto 1426,43.452,58.760,60,0
+    .goto 1426,44.969,55.078,60,0
+    .goto 1426,43.748,51.885,60,0
+    .goto 1426,44.243,50.923,60,0
+    .goto 1426,44.898,50.142,60,0
+    .goto 1426,45.395,49.347,60,0
+    .goto 1426,48.092,49.904,60,0
+    .goto 1426,49.177,51.013,60,0
+    .goto 1426,50.555,51.778,60,0
+    .mob +Crag Boar
+    .mob +Large Crag Boar
+step
+    .goto 1426/0,-531.23,-5601.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBuy the |T132800:0|t[Rhapsody Malt] from |cRXP_FRIENDLY_Innkeeper Belm|r if you haven't yet
+    .complete 384,2 --Rhapsody Malt
+    .target Innkeeper Belm
+step
+    .goto 1426/0,-504.05,-5596.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ragnar Thunderbrew|r outside
+    .turnin 384 >> Turn in Beer Basted Boar Ribs
+    .target Ragnar Thunderbrew
 step
     .goto 1426/0,-632.15,-5466.540
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Bellowfiz|r at Steelgrill's Depot

@@ -22,13 +22,15 @@ To update, download the zip again and replace the TimmyGnome folder.
   buy 5 water from Adlin Pridedrift, visit your trainer in Anvilmar, then the Coldridge Valley quests.
 - **Level 5:** from the tunnel, discover Chill Breeze Valley, then go to Brewnall for Bitter Rivals and
   Frosthowl, killing every boar on the way for meat and ribs. Then die to the wolves on Iceflow Lake and revive in Kharanos.
-- **Kharanos and Steelgrill's Depot:** pick up and turn in everything, then Ammo for Rumbleshot, then the
-  Grizzled Den for the 8 manes and Mountaineer Cornelius only.
+- **Kharanos and Steelgrill's Depot:** pick up and turn in everything, then Ammo for Rumbleshot. Reach level 6
+  (mages death-skip to Kharanos to train), then the Grizzled Den for the 8 manes and Mountaineer Cornelius only.
+- **Boar ribs:** keep collecting them through the west. Beer Basted Boar Ribs goes in on the last Kharanos
+  visit, after the Brewnall lap. Stocking Jetsteam goes in before Brewnall, because it unlocks Evershine.
 - **Then:** Brewnall and Frostmane Hold, Old Icebeard, Misty Pine Refuge, Vagash and Gol'Bolar Quarry.
   The guide ends just after level 9.
 - **Skipped:** The Perfect Stout, Flintfire's Shipment and the Frosthowl kill (the quest stays open for later).
 - **Training:** every class gets a trainer stop in Anvilmar at levels 2 and 4 (with a vendor stop before the
-  second). Mages also stop at Magis Sparkmantle in Kharanos at levels 6 and 8.
+  second). Mages also train with Magis Sparkmantle in Kharanos at levels 6 and 8.
 
 ## Credits and license
 

@@ -1,4 +1,4 @@
--- TimmyGnome: a Gnome Mage route through Coldridge Valley and Dun Morogh, levels 1-9, rebuilt from the
+-- TimmyGnome: a Gnome Mage route through Coldridge Valley and Dun Morogh, levels 1-10, rebuilt from the
 -- turn-in log of Charli Brat's run (2026-10-11). Like that run it opens with a grind to level 2
 -- and skips Dwarven Outfitters, which also skips both Coldridge Valley mail deliveries and the Glyphic
 -- Memorandum (both need Outfitters done: Questie's Forever data). At level 5 it goes from the tunnel
@@ -206,12 +206,15 @@ step
     .goto 1426/0,46.32,-6037.19,15 >> Go through Coldridge Pass. Kill the |cRXP_ENEMY_Rockjaw Raiders|r in your way
 ]])
 
+-- Shown as "05-10 Dun Morogh". The #name stays "5-9 Dun Morogh" because RestedXP keys saved progress (and
+-- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 3
+#version 4
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
+#displayname 05-10 Dun Morogh
 
 step
     #sticky
@@ -795,4 +798,125 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash to |cRXP_FRIENDLY_Frast Dokner|r at Gol'Bolar Quarry
     .vendor >> Sell your trash
     .target Frast Dokner
+-- Loch Modan flight path (with Honor Students for Dwarves and Gnomes), fly to Ironforge, pick up the
+-- Hall of Thanes quests, then the Deeprun Tram to Stormwind for Elwynn Forest. The quests need level 10:
+-- their steps skip themselves below that.
+step
+    #completewith LochModan
+    .goto 1426/0,-2165.600,-5609.000,70,0
+    .goto 1426/0,-2262.200,-5622.700,20,0
+    .goto 1426/0,-2350.700,-5558.700,20 >> Head east along the road to the South Gate Pass
+step
+    #label LochModan
+    .goto 1432,16.494,58.424,20,0
+    .goto 1432,19.594,62.735,20,0
+    .goto 1432,20.749,64.326,20,0
+    .goto 1432,21.106,65.007,20,0
+    .goto 1432,21.388,66.357,20,0
+    .goto 1432,21.498,67.840
+    .subzone 924 >> Go through the South Gate Pass into Loch Modan
+step
+    .goto 1432,34.405,48.276
+    .subzone 144 >> Travel to Thelsamar
+step << Dwarf/Gnome
+    .xp <10,1
+    .goto 1432/0,-3019.02,-5369.40,8,0
+    .goto 1432/0,-3014.86,-5366.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brock Stoneseeker|r
+    .accept 6387 >> Accept Honor Students
+    .target Brock Stoneseeker
+step
+    .goto 1432/0,-2929.87,-5424.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r, the gryphon master
+    .fp Thelsamar >> Get the Thelsamar flight path
+    .target Thorgrum Borrelson
+step << Dwarf/Gnome
+    .isOnQuest 6387
+    .goto 1432/0,-2929.87,-5424.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
+    .turnin 6387 >> Turn in Honor Students
+    .accept 6391 >> Accept Ride to Ironforge
+    .target Thorgrum Borrelson
+step
+    .goto 1432/0,-2929.87,-5424.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
+    .fly Ironforge >> Fly to Ironforge
+    .target Thorgrum Borrelson
+    .zoneskip Ironforge
+step << Dwarf/Gnome
+    .isOnQuest 6391
+    .goto 1455,56.714,41.945,20,0
+    .goto 1455,55.748,38.127,20,0
+    .goto 1455,51.569,29.956,15,0
+    .goto 1455,49.645,28.195,12,0
+    .goto 1455/0,-1120.93,-4708.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Golnir Bouldertoe|r inside the building
+    .turnin 6391 >> Turn in Ride to Ironforge
+    .accept 6388 >> Accept Gryth Thurden
+    .target Golnir Bouldertoe
+step << Dwarf/Gnome
+    .isOnQuest 6388
+    .goto 1455/0,-1152.40,-4821.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r, the gryphon master
+    >>|cRXP_WARN_Don't fly anywhere: keep Return to Brock for your next trip to Loch Modan|r
+    .turnin 6388 >> Turn in Gryth Thurden
+    .accept 6392 >> Accept Return to Brock
+    .target Gryth Thurden
+step
+    .goto 1455,44.029,50.074,20,0
+    .goto 1455/0,-1026.28,-4872.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Barin Redstone|r in the throne room
+    .turnin 291 >> Turn in The Reports
+    .target Senator Barin Redstone
+step
+    #completewith next
+    .xp <10,1
+    .goto 1455/0,-1082.800,-4886.000,10,0
+    .goto 1455/0,-1087.700,-4821.900,10,0
+    .goto 1455/0,-1010.300,-4850.900,10 >> Go down into Old Ironforge through King Magni's room
+step
+    .xp <10,1
+    .goto 1455/0,-971.800,-4820.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Afadra Dunwall|r for a Hall of Thanes dungeon quest
+    .accept 96394 >> Accept The Restless Dead
+    .target Afadra Dunwall
+step
+    #completewith next
+    .xp <10,1
+    .goto 1455/0,-996.100,-4821.200,10,0
+    .goto 1455/0,-972.000,-4803.000,10,0
+    .goto 1455/0,-988.900,-4854.400,10 >> |cRXP_WARN_Drop down onto the ramp below|r
+step
+    .xp <10,1
+    .goto 1455/0,-968.200,-4803.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thom Filch|r for another Hall of Thanes dungeon quest
+    .accept 96403 >> Accept Important Heirlooms
+    .target Thom Filch
+step
+    #completewith next
+    .goto 1455/0,-1330.28,-4840.430
+    .subzone 2257 >> Enter the Deeprun Tram: you'll ride it to Stormwind
+step
+    .xp <10,1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r on the middle platform of the Deeprun Tram
+    .accept 6661 >> Accept Deeprun Rat Roundup
+    .target Monty
+step
+    .isOnQuest 6661
+    >>|cRXP_WARN_Use the|r |T133942:0|t[Rat Catcher's Flute] |cRXP_WARN_on|r |cRXP_ENEMY_Deeprun Rats|r |cRXP_WARN_around the tram station|r
+    .complete 6661,1 --Rats Captured (5)
+    .use 17117
+    .mob Deeprun Rat
+step
+    .isOnQuest 6661
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Monty|r on the middle platform
+    .turnin 6661 >> Turn in Deeprun Rat Roundup
+    .accept 6662 >> Accept Me Brother, Nipsy
+    .target Monty
+step
+    .isOnQuest 6662
+    >>|cRXP_WARN_Take the Deeprun Tram to Stormwind|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nipsy|r on the middle platform on the Stormwind side
+    .turnin 6662 >> Turn in Me Brother, Nipsy
+    .target Nipsy
 ]])

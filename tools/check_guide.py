@@ -99,6 +99,12 @@ run_file(rxp_dir + '/functions.lua', '@functions.lua')
 L.execute('addon.error = function(text) recordLog("error", text) end')  # record instead of raising
 run_file(rxp_dir + '/GuideLoader.lua', '@GuideLoader.lua')
 run_file(rxp_dir + '/DB/forever/flightData.lua', '@flightData.lua')  # .fp looks flight paths up by name
+# Map names for .zone and .zoneskip. db.lua defines addon.mapId near the top and then needs tables this
+# sandbox doesn't build, so run it protected and only require that the map table loaded.
+db_loader = L.eval('function(src, a) local f = assert(loadstring(src, "@db.lua")) pcall(f, "RXPGuides", a) return a.mapId ~= nil end')
+if not db_loader(open(rxp_dir + '/DB/forever/db.lua', encoding='utf-8').read(), g.addon):
+    sys.exit('check_guide: DB/forever/db.lua did not define addon.mapId')
+L.execute('addon.GetMapId = function(zone) return addon.mapId[zone] end')  # as in RXPGuides/map.lua
 
 # Capture the guide file's RegisterGuide calls, then parse each guide.
 L.execute('CAPTURED = {} RXPGuides.RegisterGuide = function(text) CAPTURED[#CAPTURED + 1] = text end')
@@ -113,8 +119,9 @@ report, failed = L.eval(r'''function(verbose)
       failed = true
       out[#out + 1] = "guide " .. gi .. " failed: " .. tostring(ok and err or guide)
     else
-      out[#out + 1] = string.format("guide %d: %s / %s, %d steps, next: %s",
-        gi, tostring(guide.group), tostring(guide.name), #guide.steps, tostring(guide.next))
+      local shown = (guide.displayname and guide.displayname ~= guide.name) and (" (shown as " .. guide.displayname .. ")") or ""
+      out[#out + 1] = string.format("guide %d: %s / %s%s, %d steps, next: %s",
+        gi, tostring(guide.group), tostring(guide.name), shown, #guide.steps, tostring(guide.next))
       for si, step in ipairs(guide.steps) do
         for _, el in ipairs(step.elements) do
           if el.tag == "fp" and not el.fpId then

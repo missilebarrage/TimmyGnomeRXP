@@ -1,7 +1,7 @@
 # TimmyGnome
 
 A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
-Mage route through Coldridge Valley and Dun Morogh, levels 1 to 9, made for playing as a duo.
+Mage route through Coldridge Valley and Dun Morogh, levels 1 to 10, made for playing as a duo.
 
 ## Install
 
@@ -12,7 +12,7 @@ You need RestedXP Guides installed.
    `AddOns\TimmyGnome\TimmyGnome.toc`.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
 4. In RestedXP's guide menu, pick **TimmyGnome → 01-05 Coldridge Valley**. It moves on to
-   **05-09 Dun Morogh** by itself.
+   **05-10 Dun Morogh** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
@@ -31,6 +31,9 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Earthseer Farsen (level 9+):** Farsen's Watch, Nip 'Em in the Bud and Underground Map, ending with
   Old Ironforge Incursion: the Hall of Thanes dungeon quest. If a Rockjaw Ambusher drops an Empty Powder Keg,
   Stolen Blasting Powder goes to Quarrymaster Thesten; its 16-powder follow-up is optional.
+- **Level 10, to Stormwind:** get the Thelsamar flight path in Loch Modan (with Honor Students for Dwarves and
+  Gnomes), fly to Ironforge, turn in The Reports, pick up the Hall of Thanes quests from Afadra Dunwall and
+  Thom Filch, then take the Deeprun Tram to Stormwind with Monty's rat quest and Me Brother, Nipsy.
 - **Wands (level 8):** back in Kharanos, the paladin gathers a Copper Rod, Copper Ore and Rough Stone while
   the mage goes to Ironforge: learn Enchanting, buy Motes of Magic and Simple Wood, craft a Runed Copper Rod
   and a Novice's Practice Wand, enchant a bracer to 10 Enchanting, train Lesser Magic Wand, then hearth back.

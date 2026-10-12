@@ -43,7 +43,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   and a Novice's Practice Wand, enchant a bracer to 10 Enchanting, train and craft the Lesser Magic Wand (Tilli
   sells a few Lesser Magic Essences), learn Tailoring across the Great Forge (with Coarse Thread and Bleach from
   Poranna Snowbraid next to him), then hearth back. From here a sticky tracks the Tailoring stash: 30 Bolts of
-  Linen Cloth, the thread and the bleach.
+  Linen Cloth, the thread and the bleach. The paladin's sticky at the same time: keep 10 Linen Cloth for his
+  level 12 class quest and trade the rest to the mage.
 - **Skipped:** The Perfect Stout, Flintfire's Shipment and the Frosthowl kill (the quest stays open for later).
 - **Training:** every class gets a trainer stop in Anvilmar at levels 2 and 4 (with a vendor stop before the
   second). Mages also train with Magis Sparkmantle in Kharanos at levels 6 and 8.
@@ -54,8 +55,9 @@ To update, download the zip again and replace the TimmyGnome folder.
   stop, the flight path from Dungar Longdrink, then walk to Goldshire.
 - **Tailoring stop (mage):** top up to about 60 Linen Cloth at the Auction House, bolt it all (Tailoring to about
   25), train White Linen Robe, Brown Linen Pants and Heavy Linen Gloves at the tailoring shop, buy Coarse Thread and
-  Bleach, then craft and equip the three. Spare bolts go into a Linen Bag and extra pants for skill points (if the
-  Lesser Magic Wand didn't happen in Ironforge, disenchanting a pair gives the essence for it).
+  Bleach, then craft and equip the three. Optional nice-to-have: a Reinforced Linen Cape (Spell Power) if your skill
+  allows. Spare bolts go into a Linen Bag and extra pants for skill points (if the Lesser Magic Wand didn't happen
+  in Ironforge, disenchanting a pair gives the essence for it).
 - **Goldshire:** train and pick up the Marshal Dughan quests.
 - **South:** explore Fargodeep Mine, then the Young Lovers deliveries and Princess Must Die! at the Stonefield
   farm. Back in Goldshire, The Jasperlode Mine (and Elmore's Task, if Grimand wanted it first).

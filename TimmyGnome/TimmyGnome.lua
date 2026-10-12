@@ -211,7 +211,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 12
+#version 13
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -562,6 +562,9 @@ step << Paladin
     .collect 2770,10 >> 10 Copper Ore
     .collect 2835,20 >> 20 Rough Stone
     +|cFFFF0000MAKE SURE TIM HAS A BRACER!|r
+step << Paladin
+    #completewith DeeprunTram
+    >>|cRXP_WARN_Linen Cloth: save 10 for your level 12 class quest (The Tome of Divinity) and trade the rest to Tim. He turns it into Tailoring gear at level 10|r
 step << Mage
     >>Gather wand materials before you go to Ironforge
     .collect 6217,1 >> Copper Rod (your paladin crafts it)
@@ -604,15 +607,15 @@ step << Mage
 step << Mage
     .goto 1455,42.94,28.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Poranna Snowbraid|r next to Uthrar
-    >>|cRXP_BUY_Buy 10|r |T132891:0|t[Coarse Thread] |cRXP_BUY_and 1 Bleach (about 1s 25c) for your level 10 Tailoring gear. Short on money? Skip this step: the Stormwind stop sells them too|r
-    .collect 2320,10 --Coarse Thread (10)
+    >>|cRXP_BUY_Buy 13|r |T132891:0|t[Coarse Thread] |cRXP_BUY_and 1 Bleach (about 1s 55c) for your level 10 Tailoring gear. Short on money? Skip this step: the Stormwind stop sells them too|r
+    .collect 2320,13 --Coarse Thread (13)
     .collect 2324,1 --Bleach (1)
     .target Poranna Snowbraid
 step << Mage
     #completewith DeeprunTram
     >>|cRXP_WARN_Tailoring stash for your crafting stop in Stormwind at level 10. Keep every|r |T132889:0|t[Linen Cloth] |cRXP_WARN_and turn it into|r |T132890:0|t[Bolts of Linen Cloth] |cRXP_WARN_as you go: each bolt is a Tailoring skill point. Ask your partner for spare linen too|r
     .collect 2996,30 --Bolt of Linen Cloth (30)
-    .collect 2320,10 --Coarse Thread (10)
+    .collect 2320,13 --Coarse Thread (13)
     .collect 2324,1 --Bleach (1)
 step << Mage
     .goto 1455/0,-1026.28,-4872.56
@@ -968,7 +971,7 @@ step
 -- Stormwind City, 1433 Redridge Mountains and 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 4
+#version 5
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1000,8 +1003,8 @@ step << Mage
 step << Mage
     .goto 1453,53.14,81.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandra Bolero|r in the same shop
-    >>|cRXP_BUY_Buy|r |T132891:0|t[Coarse Thread] |cRXP_BUY_(one per item, three per Linen Bag) and 1 Bleach for the robe|r
-    .collect 2320,10 --Coarse Thread (10)
+    >>|cRXP_BUY_Buy|r |T132891:0|t[Coarse Thread] |cRXP_BUY_(one per item, three per Linen Bag, three for the cape) and 1 Bleach for the robe|r
+    .collect 2320,13 --Coarse Thread (13)
     .collect 2324,1 --Bleach (1)
     .target Alexandra Bolero
 step << Mage
@@ -1010,6 +1013,13 @@ step << Mage
     .collect 6241,1 --White Linen Robe (1)
     .collect 4343,1 --Brown Linen Pants (1)
     .collect 4307,1 --Heavy Linen Gloves (1)
+step << Mage
+    .goto 1453,53.48,81.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tOPTIONAL nice-to-have: |cRXP_FRIENDLY_Lawrence Schneider|r also teaches the Reinforced Linen Cape, a Spell Power cloak (level 7) from 2 bolts and 3 Coarse Thread
+    >>|cRXP_WARN_It needs more Tailoring than the robe, pants and gloves. If he won't teach it yet, make a few more Brown Linen Pants first, or skip this step|r
+    .train 2397 >> Train Reinforced Linen Cape
+    .collect 2580,1 >> Craft a Reinforced Linen Cape, then equip it
+    .target Lawrence Schneider
 step << Mage
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
     >>|cRXP_WARN_Still no Lesser Magic Wand from Ironforge? Disenchant a spare pair of pants for a|r |T132867:0|t[Lesser Magic Essence]|cRXP_WARN_, then craft the|r |T135139:0|t[Lesser Magic Wand] |cRXP_WARN_(it also takes a Simple Wood) and equip it|r

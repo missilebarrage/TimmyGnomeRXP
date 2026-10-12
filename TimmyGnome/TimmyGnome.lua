@@ -211,7 +211,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 5
+#version 6
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -800,9 +800,10 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash to |cRXP_FRIENDLY_Frast Dokner|r at Gol'Bolar Quarry
     .vendor >> Sell your trash
     .target Frast Dokner
--- Loch Modan flight path (with Honor Students for Dwarves and Gnomes), fly to Ironforge, then the Deeprun
--- Tram to Stormwind for Elwynn Forest. The quests need level 10: their steps skip themselves below that.
--- The Hall of Thanes quests in Ironforge wait until it's time to run the dungeon.
+-- Loch Modan flight path (with Honor Students for Dwarves and Gnomes) and the hearth in Thelsamar, fly to
+-- Ironforge, then the Deeprun Tram to Stormwind for Elwynn Forest. The Elwynn guide ends by hearthing back here.
+-- The quests need level 10: their steps skip themselves below that. The Hall of Thanes quests in Ironforge wait
+-- until it's time to run the dungeon.
 step
     #completewith LochModan
     .goto 1426/0,-2165.600,-5609.000,70,0
@@ -827,6 +828,17 @@ step << Dwarf/Gnome
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brock Stoneseeker|r
     .accept 6387 >> Accept Honor Students
     .target Brock Stoneseeker
+step
+    #completewith ThelsamarHearth
+    .goto 1432,35.273,47.750,10,0
+    .goto 1432,35.433,48.243,12 >> Enter the Stoutlager Inn
+step
+    #label ThelsamarHearth
+    .goto 1432/0,-2973.90,-5377.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Hearthstove|r inside the Stoutlager Inn
+    >>|cRXP_WARN_You'll hearth back here from Westfall at the end of Elwynn Forest|r
+    .home 2101 >> Set your Hearthstone to Thelsamar
+    .target Innkeeper Hearthstove
 step
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r, the gryphon master
@@ -899,14 +911,18 @@ step
     .target Nipsy
 ]])
 
--- Elwynn Forest, from the Stormwind end of the tram to level 12. The core is RestedXP's Forever "11-12 Elwynn
--- (Dwarf/Gnome)" route with the Fargodeep and Jasperlode mines and the Young Lovers deliveries added. Gathering
--- quests are left out, except three whose items drop from mobs the route kills anyway (Collecting Kelp, Bounty on
--- Murlocs, Riverpaw Gnoll Bounty). Their accept steps say OPTIONAL, and the steps that follow skip themselves when
--- you didn't take them. Downstream is a required step: its three items lie on the way to Croaky and respawn
--- instantly. A Bundle of Trouble is skipped on purpose: its wood bundles are slow, and contested on a busy server.
--- Without the optional quests you end around 70% into level 11 and the last steps grind the rest. 1429 is Elwynn
--- Forest, 1453 Stormwind City and 1433 Redridge Mountains.
+-- Elwynn Forest, from the Stormwind end of the tram until Elwynn stops being worth it, then back to Loch Modan.
+-- The core is RestedXP's Forever "11-12 Elwynn (Dwarf/Gnome)" route with the Fargodeep and Jasperlode mines and the
+-- Young Lovers deliveries added. Level 12 is a target, not a requirement: Riverpaw Gnoll Bounty, Hogger and any
+-- grinding are left out because Loch Modan pays better by then. The Hearthstone stays bound in Thelsamar (guide 2),
+-- so Redridge ends with a flight to Stormwind, and the guide ends with Report to Gryan Stoutmantle, the Sentinel
+-- Hill flight path and a hearth to Thelsamar. Gathering quests are left out except Collecting Kelp and Bounty on
+-- Murlocs, whose items drop from mobs on the route: their accept steps say OPTIONAL and the steps that follow skip
+-- themselves when you didn't take them. Downstream is a required step: its three items lie on the way to Croaky and
+-- respawn instantly. A Bundle of Trouble is skipped on purpose: its wood bundles are slow and contested on a busy
+-- server. Stormpike's Delivery (for Loch Modan) is tried at Grimand Elmore off the tram; if he wants Elmore's Task
+-- first, Smith Argus gives it and the post-Redridge stop in Stormwind swaps it. 1429 is Elwynn Forest, 1453
+-- Stormwind City, 1433 Redridge Mountains and 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
 #version 2
@@ -915,8 +931,14 @@ RXPGuides.RegisterGuide([[
 #name 10-12 Elwynn Forest
 
 step
+    .goto 1453/0,685.22,-8387.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLeave the tram station and talk to |cRXP_FRIENDLY_Grimand Elmore|r in the Dwarven District
+    >>|cRXP_WARN_If he doesn't offer Stormpike's Delivery yet, skip this step: Elmore's Task in Goldshire unlocks it|r
+    .accept 353 >> Accept Stormpike's Delivery
+    .target Grimand Elmore
+step
     .goto 1453/0,490.03,-8835.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLeave the tram station and talk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master in the Trade District
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master in the Trade District
     .fp Stormwind >> Get the Stormwind flight path
     .target Dungar Longdrink
 step
@@ -944,15 +966,9 @@ step << !Mage !Paladin
     >>Visit your class trainer in Goldshire
     .trainer >> Train your level 10 spells
 step << Paladin
-    #completewith PaladinTrain12
-    >>|cRXP_WARN_Keep 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_from the kobolds and gnolls: your level 12 class quest, The Tome of Divinity, asks for it|r
+    #sticky
+    >>|cRXP_WARN_Keep the|r |T132889:0|t[Linen Cloth] |cRXP_WARN_you loot: your level 12 class quest, The Tome of Divinity, asks for 10|r
     .collect 2589,10 --Linen Cloth (10)
-step
-    .goto 1429/0,16.20,-9462.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r in the Lion's Pride Inn
-    >>|cRXP_WARN_You'll hearth back here from Redridge|r
-    .home 87 >> Set your Hearthstone to Goldshire
-    .target Innkeeper Farley
 step << Mage
     #completewith next
     .goto 1429/0,12.52,-9479.85,9 >> Go upstairs in the inn
@@ -1001,6 +1017,13 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash and repair at |cRXP_FRIENDLY_Andrew Krighton|r in the smithy
     .vendor >> Sell your trash and repair
     .target Andrew Krighton
+step
+    .isNotOnQuest 353
+    .goto 1429/0,87.87,-9456.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Smith Argus|r in the smithy
+    >>|cRXP_WARN_Grimand Elmore wouldn't give you Stormpike's Delivery: this unlocks it when you pass through Stormwind after Redridge|r
+    .accept 1097 >> Accept Elmore's Task
+    .target Smith Argus
 step
     .goto 1429/0,31.92,-9460.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r at the Lion's Pride Inn
@@ -1153,9 +1176,11 @@ step
     #label ThomasReturn
     .goto 1429/0,-1032.06,-9610.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
+    >>|cRXP_WARN_Report to Gryan Stoutmantle goes in at Sentinel Hill, where the guide ends|r
     .turnin 52 >> Turn in Protect the Frontier
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
+    .accept 109 >> Accept Report to Gryan Stoutmantle
     .target Guard Thomas
 step
     .isQuestComplete 46
@@ -1196,23 +1221,27 @@ step
 step
     .goto 1433/0,-2234.90,-9435.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r, the gryphon master
+    >>|cRXP_WARN_Keep your Hearthstone: it takes you back to Loch Modan at the end|r
     .fp Lakeshire >> Get the Lakeshire flight path
+    .fly Stormwind >> Fly to Stormwind
     .target Ariena Stormfeather
 step
-    >>|cRXP_WARN_If your Hearthstone is on cooldown, fly to Stormwind and walk to Goldshire instead|r
-    .hs >> Hearth to Goldshire
+    .isOnQuest 1097
+    .goto 1453/0,685.22,-8387.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimand Elmore|r in the Dwarven District
+    .turnin 1097 >> Turn in Elmore's Task
+    .accept 353 >> Accept Stormpike's Delivery
+    .target Grimand Elmore
+step
+    #completewith next
+    .goto 1429/0,74.02,-9465.52
+    .subzone 87 >> Leave Stormwind by the main gate and walk to Goldshire
 step
     .goto 1429/0,74.02,-9465.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
     .turnin 39 >> Turn in Deliver Thomas' Report
     .turnin 76 >> Turn in The Jasperlode Mine
     .accept 239 >> Accept Westbrook Garrison Needs Help!
-    .target Marshal Dughan
-step
-    .goto 1429/0,74.02,-9465.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
-    >>|cRXP_WARN_OPTIONAL: only worth it if Westfall is next. It's 630 XP for reporting at Sentinel Hill|r
-    .accept 109 >> Accept Report to Gryan Stoutmantle
     .target Marshal Dughan
 step
     .goto 1429/0,87.87,-9462.26
@@ -1251,112 +1280,45 @@ step
 step
     .goto 1429/0,694.29,-9662.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r at Westbrook Garrison
+    >>|cRXP_WARN_Skip Riverpaw Gnoll Bounty and the Hogger poster: Loch Modan is better XP from here|r
     .turnin 239 >> Turn in Westbrook Garrison Needs Help!
     .target Deputy Rainer
 step
-    .goto 1429/0,694.29,-9662.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
-    >>|cRXP_WARN_OPTIONAL (loot): 8 Painted Gnoll Armbands from the gnolls around Hogger's camp, just south of here. Skip this step to leave it|r
-    .accept 11 >> Accept Riverpaw Gnoll Bounty
-    .target Deputy Rainer
-step
-    .goto 1429/0,683.40,-9667.93
-    >>Click the |cRXP_PICK_Wanted Poster|r next to the garrison
-    >>|cRXP_WARN_OPTIONAL: Hogger is a level 11 elite with gnolls around him. Skip this step if you'd rather not fight him|r
-    .accept 176 >> Accept Wanted: "Hogger"
-step
-    #completewith HoggerKill
-    .isOnQuest 11
-    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for |cRXP_LOOT_Painted Gnoll Armbands|r
-    .complete 11,1 --Painted Gnoll Armband (8)
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-step
-    #label HoggerKill
-    .isOnQuest 176
-    #loop
-    .goto 1429,26.83,86.69,0
-    .goto 1429,25.02,92.90,0
-    .goto 1429,26.43,93.65,0
-    .goto 1429,27.36,92.71,0
-    .goto 1429/0,598.29,-9946.33,70,0
-    .goto 1429/0,629.53,-10020.39,70,0
-    .goto 1429/0,660.77,-10085.20,70,0
-    .goto 1429/0,598.29,-10112.98,70,0
-    >>Kill |cRXP_ENEMY_Hogger|r. Loot him for his |cRXP_LOOT_Huge Gnoll Claw|r
-    >>|cRXP_WARN_He can spawn in several spots around the camp. Clear the gnolls near him first and let the paladin hold him|r
-    .complete 176,1 --Huge Gnoll Claw (1)
-    .unitscan Hogger
-step
-    .isOnQuest 11
-    #loop
-    .goto 1429/0,598.29,-9946.33,70,0
-    .goto 1429/0,629.53,-10020.39,70,0
-    .goto 1429/0,660.77,-10085.20,70,0
-    .goto 1429/0,598.29,-10112.98,70,0
-    >>Finish the |cRXP_LOOT_Painted Gnoll Armbands|r on the |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r
-    .complete 11,1 --Painted Gnoll Armband (8)
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-step
-    .isQuestComplete 11
-    .goto 1429/0,694.29,-9662.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at Westbrook Garrison, talk to |cRXP_FRIENDLY_Deputy Rainer|r
-    .turnin 11 >> Turn in Riverpaw Gnoll Bounty
-    .target Deputy Rainer
-step
-    .isQuestComplete 176
-    #loop
-    .goto 1429/0,598.29,-9946.33,70,0
-    .goto 1429/0,629.53,-10020.39,70,0
-    .goto 1429/0,660.77,-10085.20,70,0
-    .goto 1429/0,598.29,-10112.98,70,0
-    >>Grind the |cRXP_ENEMY_Riverpaw gnolls|r around Hogger's camp. Hogger's turn-in in Goldshire covers the last 880 XP
-    >>|cRXP_WARN_Still far off? Westfall's quests will get you there faster than this grind|r
-    .xp 12-880
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-step
-    .isQuestNotComplete 176
-    #loop
-    .goto 1429/0,598.29,-9946.33,70,0
-    .goto 1429/0,629.53,-10020.39,70,0
-    .goto 1429/0,660.77,-10085.20,70,0
-    .goto 1429/0,598.29,-10112.98,70,0
-    >>Grind the |cRXP_ENEMY_Riverpaw gnolls|r around Hogger's camp
-    >>|cRXP_WARN_Still far off? Westfall's quests will get you there faster than this grind|r
-    .xp 12
-    .mob Riverpaw Runt
-    .mob Riverpaw Outrunner
-step
     #completewith next
-    .goto 1429/0,74.02,-9465.52
-    .subzone 87 >> Head back to Goldshire
+    .goto 1436/0,918.42,-9851.50
+    .zone Westfall >> Follow the road west into Westfall
 step
-    .isQuestComplete 176
-    .goto 1429/0,74.02,-9465.52
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
-    .turnin 176 >> Turn in Wanted: "Hogger"
-    .target Marshal Dughan
-step << Paladin
-    #label PaladinTrain12
-    .xp <12,1
-    .goto 1429/0,109.04,-9468.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
-    .trainer >> Train your level 12 spells
-    .target Brother Wilhelm
-step << !Mage !Paladin
-    .xp <12,1
-    >>Visit your class trainer in Goldshire
-    .trainer >> Train your level 12 spells
-step << Mage
-    #completewith next
-    .xp <12,1
-    .goto 1429/0,12.52,-9479.85,9 >> Go upstairs in the inn
-step << Mage
-    .xp <12,1
-    .goto 1429/0,34.28,-9471.61
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r upstairs
-    .trainer >> Train your level 12 spells
-    .target Zaldimar Wefhellt
+    .goto 1436/0,919.47,-9853.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verna Furlbrow|r at the farm by the road
+    .accept 36 >> Accept Westfall Stew
+    .target Verna Furlbrow
+step
+    .goto 1436/0,1042.67,-10111.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFollow the road south and talk to |cRXP_FRIENDLY_Salma Saldean|r at the Saldean farm
+    >>|cRXP_WARN_Don't take her follow-ups: they're Westfall collection quests|r
+    .turnin 36 >> Turn in Westfall Stew
+    .target Salma Saldean
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tKeep following the road south to Sentinel Hill and talk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    >>|cRXP_WARN_Skip The People's Militia: you're heading back to Loch Modan|r
+    .turnin 109 >> Turn in Report to Gryan Stoutmantle
+    .target Gryan Stoutmantle
+step
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r, the gryphon master
+    .fp Sentinel Hill >> Get the Sentinel Hill flight path
+    .target Thor
+step
+    #label HearthLoch
+    >>|cRXP_WARN_Elwynn is done: next stop, Loch Modan|r
+    .hs >> Hearth to Thelsamar
+    .cooldown item,6948,>2,1
+    .zoneskip Loch Modan
+step
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHearthstone on cooldown? Talk to |cRXP_FRIENDLY_Thor|r and fly to Thelsamar instead
+    .fly Thelsamar >> Fly to Thelsamar
+    .target Thor
+    .zoneskip Loch Modan
 ]])

@@ -790,4 +790,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r
     .turnin 95214 >> Turn in Stolen Blasting Powder
     .target Quarrymaster Thesten
+step
+    .goto 1426/0,-1589.76,-5714.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash to |cRXP_FRIENDLY_Frast Dokner|r at Gol'Bolar Quarry
+    .vendor >> Sell your trash
+    .target Frast Dokner
 ]])

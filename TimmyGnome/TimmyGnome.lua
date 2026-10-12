@@ -971,7 +971,7 @@ step
 -- Stormwind City, 1433 Redridge Mountains and 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 6
+#version 7
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -992,8 +992,8 @@ step << Mage
     .target Auctioneer Jaxon
 step
     .goto 1453,55.09,69.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catherine Leland|r, the fishing supplier by the canal
-    >>|cRXP_BUY_Buy 1|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_and 3 Nightcrawlers (about 3s 50c) for Fishin' Time: Gilbert Gray at the harbor takes them for 900 XP|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catherine Leland|r, the fishing supplier on the canal just west of the Trade District
+    >>|cRXP_BUY_Buy 1|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_and 3 Nightcrawlers (about 3s 50c) now: Gilbert Gray at the harbor gives you Fishin' Time and takes them straight back for 900 XP|r
     .collect 6529,1 --Shiny Bauble (1)
     .collect 6530,3 --Nightcrawlers (3)
     .target Catherine Leland
@@ -1033,8 +1033,7 @@ step << Mage
     .collect 11287,1 --Lesser Magic Wand (1)
 step
     .goto 1453,26.0,47.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead west to Stormwind Harbor and talk to |cRXP_FRIENDLY_Gilbert Gray|r: he gives you Fishin' Time and takes the bauble and nightcrawlers on the spot
-    >>|cRXP_WARN_If he won't offer it yet (it may need level 12), skip this step|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead west to Stormwind Harbor and talk to |cRXP_FRIENDLY_Gilbert Gray|r at the south end of the harbor: accept Fishin' Time and hand it straight back with the bauble and nightcrawlers
     .accept 95065 >> Accept Fishin' Time
     .turnin 95065 >> Turn in Fishin' Time
     .target Gilbert Gray

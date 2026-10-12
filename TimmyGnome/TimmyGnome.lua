@@ -211,7 +211,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 11
+#version 12
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -565,7 +565,7 @@ step << Paladin
 step << Mage
     >>Gather wand materials before you go to Ironforge
     .collect 6217,1 >> Copper Rod (your paladin crafts it)
-    +3 silver
+    +11 silver (3 for the wand materials, about 8 for a Lesser Magic Essence)
     +|cFFFF0000ANY BRACER|r
 step << Mage
     .goto 1455,59.77,45.45,15 >> Travel to the enchanting trainer in Ironforge: take the road north out of Kharanos, cross the bridge and follow the road east up the mountain
@@ -577,8 +577,10 @@ step << Mage
 step << Mage
     .goto 1455,61.03,44.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tilli Thistlefuzz|r, the enchanting supplies vendor
+    >>|cRXP_WARN_She only stocks a few Lesser Magic Essences. If she's out, check the Auction House|r
     .collect 247786,9 >> Buy 9 Motes of Magic
     .collect 4470,2 >> Buy 2 Simple Wood
+    .collect 10938,1 >> Buy 1 Lesser Magic Essence
     .target Tilli Thistlefuzz
 step << Mage
     .collect 6218,1 >> Craft a Runed Copper Rod
@@ -590,8 +592,10 @@ step << Mage
     .goto 1455,59.77,45.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gimble Thistlefuzz|r
     .trainer >> Train Lesser Magic Wand
-    .collect 4470,1 >> Keep 1 Simple Wood to craft the Lesser Magic Wand later
     .target Gimble Thistlefuzz
+step << Mage
+    >>|cRXP_WARN_Craft the|r |T135139:0|t[Lesser Magic Wand] |cRXP_WARN_from your other Simple Wood and the|r |T132867:0|t[Lesser Magic Essence]|cRXP_WARN_, then equip it|r
+    .collect 11287,1 >> Craft a Lesser Magic Wand
 step << Mage
     .goto 1455,43.82,27.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthrar Threx|r, the tailoring trainer on the other side of the Great Forge
@@ -607,11 +611,9 @@ step << Mage
 step << Mage
     #completewith DeeprunTram
     >>|cRXP_WARN_Tailoring stash for your crafting stop in Stormwind at level 10. Keep every|r |T132889:0|t[Linen Cloth] |cRXP_WARN_and turn it into|r |T132890:0|t[Bolts of Linen Cloth] |cRXP_WARN_as you go: each bolt is a Tailoring skill point. Ask your partner for spare linen too|r
-    >>|cRXP_WARN_Keep the Simple Wood: it makes your Lesser Magic Wand at the stop|r
     .collect 2996,30 --Bolt of Linen Cloth (30)
     .collect 2320,10 --Coarse Thread (10)
     .collect 2324,1 --Bleach (1)
-    .collect 4470,1 --Simple Wood (1)
 step << Mage
     .goto 1455/0,-1026.28,-4872.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWhile you're in Ironforge, talk to |cRXP_FRIENDLY_Senator Barin Redstone|r in the throne room
@@ -966,7 +968,7 @@ step
 -- Stormwind City, 1433 Redridge Mountains and 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 3
+#version 4
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1004,13 +1006,13 @@ step << Mage
     .target Alexandra Bolero
 step << Mage
     >>|cRXP_WARN_Craft a White Linen Robe (Intellect), Brown Linen Pants and Heavy Linen Gloves (Spell Power), then equip them|r
-    >>|cRXP_WARN_Spare bolts: a Linen Bag (6 slots) if you need room, then extra Brown Linen Pants for skill points. Disenchant those for a|r |T132867:0|t[Lesser Magic Essence]
+    >>|cRXP_WARN_Spare bolts: a Linen Bag (6 slots) if you need room, then extra Brown Linen Pants for skill points|r
     .collect 6241,1 --White Linen Robe (1)
     .collect 4343,1 --Brown Linen Pants (1)
     .collect 4307,1 --Heavy Linen Gloves (1)
 step << Mage
-    .itemcount 10938,1
-    >>|cRXP_WARN_You have a|r |T132867:0|t[Lesser Magic Essence]|cRXP_WARN_: craft the|r |T135139:0|t[Lesser Magic Wand] |cRXP_WARN_with the Simple Wood you kept, and equip it|r
+    .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
+    >>|cRXP_WARN_Still no Lesser Magic Wand from Ironforge? Disenchant a spare pair of pants for a|r |T132867:0|t[Lesser Magic Essence]|cRXP_WARN_, then craft the|r |T135139:0|t[Lesser Magic Wand] |cRXP_WARN_(it also takes a Simple Wood) and equip it|r
     .collect 11287,1 --Lesser Magic Wand (1)
 step
     .goto 1453/0,490.03,-8835.82

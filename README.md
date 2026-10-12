@@ -20,8 +20,8 @@ To update, download the zip again and replace the TimmyGnome folder.
 
 - **Levels 1-2:** grind wolves and troggs to level 2 (no Dwarven Outfitters, so no mail deliveries either),
   buy 5 water from Adlin Pridedrift, visit your trainer in Anvilmar, then the Coldridge Valley quests.
-- **Level 5:** from the tunnel, go straight to Brewnall for Bitter Rivals and Frosthowl, killing every boar on
-  the way for meat and ribs. Then die to the wolves on Iceflow Lake and revive in Kharanos.
+- **Level 5:** from the tunnel, discover Chill Breeze Valley, then go to Brewnall for Bitter Rivals and
+  Frosthowl, killing every boar on the way for meat and ribs. Then die to the wolves on Iceflow Lake and revive in Kharanos.
 - **Kharanos and Steelgrill's Depot:** pick up and turn in everything, then Ammo for Rumbleshot, then the
   Grizzled Den for the 8 manes and Mountaineer Cornelius only.
 - **Then:** Brewnall and Frostmane Hold, Old Icebeard, Misty Pine Refuge, Vagash and Gol'Bolar Quarry.

@@ -222,7 +222,11 @@ step
     .mob +Large Crag Boar
     .mob +Elder Crag Boar
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tOut of the tunnel, head straight to Brewnall Village. Talk to |cRXP_FRIENDLY_Marleth Barleybrew|r and |cRXP_FRIENDLY_Gretta Ganter|r (on the ice next to the village)
+    .goto 1426,34.42,56.23
+    >>Out of the tunnel, head north and discover Chill Breeze Valley
+    .subzone 801 >> Discover Chill Breeze Valley
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tContinue to Brewnall Village. Talk to |cRXP_FRIENDLY_Marleth Barleybrew|r and |cRXP_FRIENDLY_Gretta Ganter|r (on the ice next to the village)
     >>|cRXP_WARN_Don't take The Perfect Stout from Rejold: it's skipped|r
     .accept 310 >> Accept Bitter Rivals
     .goto 1426/0,315.42,-5372.02

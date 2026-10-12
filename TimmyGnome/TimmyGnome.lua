@@ -593,6 +593,14 @@ step << Mage
     .collect 4470,1 >> Keep 1 Simple Wood to craft the Lesser Magic Wand later
     .target Gimble Thistlefuzz
 step << Mage
+    .goto 1455,43.15,29.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jormund Stonebrow|r, the tailoring trainer on the other side of the Great Forge
+    .skill tailoring,1 >> Learn Tailoring
+    .target Jormund Stonebrow
+step << Mage
+    #completewith DeeprunTram
+    >>|cRXP_WARN_Keep every|r |T132889:0|t[Linen Cloth] |cRXP_WARN_you loot from now on: it becomes cloth gear at a Tailoring stop in Stormwind at level 10. Ask your partner for any they don't need|r
+step << Mage
     .goto 1455/0,-1026.28,-4872.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWhile you're in Ironforge, talk to |cRXP_FRIENDLY_Senator Barin Redstone|r in the throne room
     .turnin 291 >> Turn in The Reports
@@ -884,6 +892,7 @@ step
     .target Senator Barin Redstone
 step
     #completewith next
+    #label DeeprunTram
     .goto 1455/0,-1330.28,-4840.430
     .subzone 2257 >> Enter the Deeprun Tram: you'll ride it to Stormwind
 step
@@ -906,6 +915,7 @@ step
 step
     .isOnQuest 6662
     >>|cRXP_WARN_Take the Deeprun Tram to Stormwind|r
+    >>|cRXP_WARN_On the ride, turn your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_into|r |T132890:0|t[Bolts of Linen Cloth] << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nipsy|r on the middle platform on the Stormwind side
     .turnin 6662 >> Turn in Me Brother, Nipsy
     .target Nipsy
@@ -936,6 +946,40 @@ step
     >>|cRXP_WARN_If he doesn't offer Stormpike's Delivery yet, skip this step: Elmore's Task in Goldshire unlocks it|r
     .accept 353 >> Accept Stormpike's Delivery
     .target Grimand Elmore
+step << Mage
+    #label TailoringStop
+    .goto 1453/0,660.28,-8814.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTailoring stop. If you're short on linen, buy it from |cRXP_FRIENDLY_Auctioneer Jaxon|r in the Trade District
+    >>|cRXP_WARN_You want about 60|r |T132889:0|t[Linen Cloth] |cRXP_WARN_in total, counting each bolt as 2|r
+    +Buy the linen you're missing, or tick this if you have enough
+    .target Auctioneer Jaxon
+step << Mage
+    >>|cRXP_WARN_Turn all your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_into|r |T132890:0|t[Bolts of Linen Cloth]|cRXP_WARN_: each bolt is a skill point up to about 25, where the gear recipes unlock|r
+    .skill tailoring,25 >> Reach 25 Tailoring
+step << Mage
+    .goto 1453,53.48,81.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lawrence Schneider|r at the tailoring shop
+    .train 7624 >> Train White Linen Robe
+    .train 3914 >> Train Brown Linen Pants
+    .train 3840 >> Train Heavy Linen Gloves
+    .target Lawrence Schneider
+step << Mage
+    .goto 1453,53.14,81.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandra Bolero|r in the same shop
+    >>|cRXP_BUY_Buy|r |T132891:0|t[Coarse Thread] |cRXP_BUY_(one per item, three per Linen Bag) and 1 Bleach for the robe|r
+    .collect 2320,10 --Coarse Thread (10)
+    .collect 2324,1 --Bleach (1)
+    .target Alexandra Bolero
+step << Mage
+    >>|cRXP_WARN_Craft a White Linen Robe (Intellect), Brown Linen Pants and Heavy Linen Gloves (Spell Power), then equip them|r
+    >>|cRXP_WARN_Spare bolts: a Linen Bag (6 slots) if you need room, then extra Brown Linen Pants for skill points. Disenchant those for a|r |T132867:0|t[Lesser Magic Essence]
+    .collect 6241,1 --White Linen Robe (1)
+    .collect 4343,1 --Brown Linen Pants (1)
+    .collect 4307,1 --Heavy Linen Gloves (1)
+step << Mage
+    .itemcount 10938,1
+    >>|cRXP_WARN_You have a|r |T132867:0|t[Lesser Magic Essence]|cRXP_WARN_: craft the|r |T135139:0|t[Lesser Magic Wand] |cRXP_WARN_with the Simple Wood you kept, and equip it|r
+    .collect 11287,1 --Lesser Magic Wand (1)
 step
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master in the Trade District

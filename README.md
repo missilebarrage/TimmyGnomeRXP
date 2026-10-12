@@ -27,7 +27,8 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Then:** Brewnall and Frostmane Hold, Old Icebeard, Misty Pine Refuge, Vagash and Gol'Bolar Quarry.
   The guide ends just after level 9.
 - **Skipped:** The Perfect Stout, Flintfire's Shipment and the Frosthowl kill (the quest stays open for later).
-- **Mage training:** the guide stops at your trainer at levels 4, 6 and 8. These steps only show for mages.
+- **Training:** every class gets a trainer stop in Anvilmar at levels 2 and 4 (with a vendor stop before the
+  second). Mages also stop at Magis Sparkmantle in Kharanos at levels 6 and 8.
 
 ## Credits and license
 

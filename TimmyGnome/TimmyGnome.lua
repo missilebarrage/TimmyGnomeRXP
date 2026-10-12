@@ -146,12 +146,21 @@ step
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
     .accept 3365 >> Accept Bring Back the Mug
     .target Durnan Furcutter
+step
+    .goto 1426/0,385.21,-6056.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash to |cRXP_FRIENDLY_Durnan Furcutter|r, so you have money for training
+    .vendor >> Sell your trash
+    .target Durnan Furcutter
 step << Mage
     .goto 1426/0,388.17,-6056.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside and train your spells
     .train 1459 >> Train |T135932:0|t[Arcane Intellect]
     .train 116 >> Train |T135846:0|t[Frostbolt]
     .target Marryk Nurribit
+step << !Mage
+    .goto 1426,28.939,68.387
+    >>Visit your class trainer inside Anvilmar and train your spells
+    .trainer >> Train your class spells
 step
     .goto 1426/0,390.000,-6093.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda|r

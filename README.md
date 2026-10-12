@@ -90,7 +90,7 @@ To update, download the zip again and replace the TimmyGnome folder.
   to Gryan Stoutmantle and the Sentinel Hill flight path, and hearth to Thelsamar. The Loch Modan guide starts
   there. The mage fills Jennea's Flask at the Mirror Lake waterfall on the way to the still, then flies from
   Sentinel Hill to Stormwind before hearthing; the paladin can hearth straight away. In Stormwind: 2 Minor Mana
-  Potions from the Auction House, Novice Arcanist's Sash (needs 50 Tailoring; the potions are its reagent) and
+  Potions from the Auction House, Novice Arcanist's Sash (needs 35 Tailoring; the potions are its reagent) and
   Green Linen Bracers from the tailoring shop, crafted and equipped on the spot, then Mirror Lake (Ley Staff or
   Ley Orb) at Jennea. A sticky from the first Stormwind stop reminds the mage to keep linen for these.
 - **Level 12 is a target, not a requirement.** Hogger, Riverpaw Gnoll Bounty and grinding are cut because Loch

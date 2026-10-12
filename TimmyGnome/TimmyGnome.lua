@@ -977,10 +977,10 @@ step
 -- Hill flight path and a hearth to Thelsamar. Mages: Speak with Jennea (Zaldimar in Goldshire) goes in on the
 -- Stormwind stop after Redridge, Mirror Lake's water comes from the waterfall next to the Applejack Still, and a
 -- flight from Sentinel Hill to Stormwind hands it in before the hearth. That last Stormwind trip also buys 2 Minor
--- Mana Potions at the Auction House and trains and crafts Novice Arcanist's Sash (they're its reagent; the pattern
--- needs 50 Tailoring) and Green Linen Bracers. Gathering quests are left out except Red
--- Linen Goods, whose bandanas drop from Defias on the route: its accept step says OPTIONAL and the steps that follow
--- skip themselves when you didn't take it. Collecting Kelp (and with it The Escape) and Bottles and Baubles are out:
+-- Mana Potions at the Auction House and trains and crafts Novice Arcanist's Sash (they're its reagent; it needs 35
+-- Tailoring) and Green Linen Bracers. Gathering quests are left out except Red Linen Goods, whose bandanas drop from
+-- Defias on the route: its accept step says OPTIONAL and the steps that follow skip themselves when you didn't take
+-- it. Collecting Kelp (and with it The Escape) and Bottles and Baubles are out:
 -- Crystal Lake's murlocs and junk piles won't hold up on launch day. Guard Thomas doesn't offer Bounty on Murlocs
 -- in Forever. Downstream is a required step: its three items lie on the way to Croaky and respawn instantly. A Bundle of Trouble is skipped on
 -- purpose: its wood bundles are slow and contested on a busy server. Forever's Tower of Azora quests: Delicate
@@ -997,7 +997,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 22
+#version 23
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1086,7 +1086,7 @@ step << Mage
     .collect 11287,1 --Lesser Magic Wand (1)
 step << Mage
     #completewith ArcanistCraft
-    >>|cRXP_WARN_Keep your Linen Cloth from here on: back in Stormwind at the end of Elwynn you craft Novice Arcanist's Sash (8 bolts) and Green Linen Bracers (3 bolts). That's 22 linen, plus spares if you still need Tailoring 50 for the Sash|r
+    >>|cRXP_WARN_Keep your Linen Cloth from here on: back in Stormwind at the end of Elwynn you craft Novice Arcanist's Sash (8 bolts) and Green Linen Bracers (3 bolts). That's 22 linen, plus spares if you still need Tailoring 35 for the Sash|r
 step
     .goto 1453,26.0,47.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead west to Stormwind Harbor and talk to |cRXP_FRIENDLY_Gilbert Gray|r at the south end of the harbor: accept Fishin' Time and hand it straight back with the bauble and nightcrawlers
@@ -1605,11 +1605,12 @@ step << Mage
     .target Auctioneer Jaxon
 step << Mage
     .goto 1453,53.48,81.47
-    >>|cRXP_WARN_Novice Arcanist's Sash needs 50 Tailoring. Short? The cheapest points are Linen Cloak (a point every craft until 35), then Simple Linen Pants (until 40), then Linen Belt from Lawrence Schneider at the tailoring shop (until 50). Each takes 1 bolt and 1 Coarse Thread|r
-    .skill tailoring,50 >> Reach 50 Tailoring
+    >>|cRXP_WARN_Novice Arcanist's Sash needs 35 Tailoring. Short? Linen Cloak gives a point every craft until 35, for 1 bolt and 1 Coarse Thread each|r
+    .skill tailoring,35 >> Reach 35 Tailoring
 step << Mage
     .goto 1453,53.48,81.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lawrence Schneider|r at the tailoring shop in the Mage Quarter
+    >>|cRXP_WARN_Won't he teach Green Linen Bracers yet? Craft Simple Linen Pants (a point every craft until 40) and ask again|r
     .train 1257368 >> Train Novice Arcanist's Sash
     .train 3841 >> Train Green Linen Bracers
     .target Lawrence Schneider

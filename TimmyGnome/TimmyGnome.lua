@@ -994,7 +994,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 18
+#version 19
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1534,6 +1534,9 @@ step << Mage
     >>|cRXP_WARN_On the way to the still, use|r |T132788:0|t[Jennea's Flask] |cRXP_WARN_at the base of the Mirror Lake waterfall (5 second cast)|r
     .use 7207
     .complete 1861,1 --Mirror Lake Water Sample (1)
+step
+    #completewith next
+    .goto 1429,27.60,58.32,10 >> Climb the hill here: it's the way up to the Applejack Still
 step
     .goto 1429,24.0,58.0
     >>Head north-west to the |cRXP_PICK_Applejack Still|r by the Mirror Lake falls. Kill the |cRXP_ENEMY_Defias Bandits|r guarding it

@@ -658,6 +658,11 @@ step
     .turnin 314 >> Turn in Protecting the Herd
     .target Rudra Amberstill
 step
+    .goto 1426/0,-1589.76,-5714.44
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAs soon as you reach Gol'Bolar Quarry, sell your trash to |cRXP_FRIENDLY_Frast Dokner|r
+    .vendor >> Sell your trash
+    .target Frast Dokner
+step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Stonebrow|r and |cRXP_FRIENDLY_Senator Mehr Stonehallow|r at Gol'Bolar Quarry
     .accept 432 >> Accept Those Blasted Troggs!
     .goto 1426/0,-1600.30,-5726.590

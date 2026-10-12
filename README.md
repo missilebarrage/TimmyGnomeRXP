@@ -74,7 +74,11 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **East:** explore Jasperlode on the way to Guard Thomas, then the lost guards, Protect the Frontier, Downstream,
   Croaky (level 11 elite) and Princess. Turn in at the bridge and Ridgepoint Tower. OPTIONAL on the way: Delicate
   Instruments from the Tower of Azora (Kobold Geomancers at Jasperlode, then Defias Rogue Wizards on the way to
-  Rolf) and Red Linen Goods (bandanas from those Rogue Wizards and the Defias at Princess).
+  Rolf) and Red Linen Goods (bandanas from those Rogue Wizards and the Defias at Princess). With Delicate
+  Instruments the mage also takes An Enchanting Lesson (enchanters only, 480 XP) from Kitta Firewind at the top of
+  the tower: the Geomancers drop Crude Wax Effigies, which disenchant into the 3 Luminous Residue it wants. No
+  farming: if the kills don't give 3, the mage drops it. The paladin's sticky says to let the mage have the
+  effigies.
 - **Redridge:** Encroaching Gnolls (needs level 11) and the Lakeshire flight path, then fly to Stormwind and walk
   back to Goldshire. Your Hearthstone stays bound in Thelsamar.
 - **Finish:** turn-ins in Goldshire and at the farms, Applejack Still and An Apple Treat (apples from Homer

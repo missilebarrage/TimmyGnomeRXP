@@ -981,6 +981,8 @@ step
 -- purpose: its wood bundles are slow and contested on a busy server. Forever's Tower of Azora quests: Delicate
 -- Instruments (Kobold Geomancers at Jasperlode, then Defias Rogue Wizards on the way to Rolf) is OPTIONAL because
 -- only about seven Geomancers spawn; Stolen Enchanting Supplies is left out (crates in gnoll camps off the route).
+-- The mage's An Enchanting Lesson (Kitta Firewind, top of the tower, enchanters only) rides on the same Geomancers:
+-- they drop Crude Wax Effigies that disenchant into Luminous Residue. No farming: if the kills don't give 3, drop it.
 -- Applejack Still and An Apple Treat (apples from Homer Stonefield, the still by the Mirror Lake falls, Sergeant De
 -- Vries at Westbrook) fit the walk to Westbrook. Hogger and Goldtooth stay out: Hogger's turn-in is in Goldshire,
 -- which the route has already left, and Goldtooth is a single spawn in a crowded mine. Stormpike's Delivery (for
@@ -989,7 +991,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 13
+#version 14
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1265,12 +1267,30 @@ step
     >>|cRXP_WARN_Leave Stolen Enchanting Supplies from Blixie Fitzwink: its crates sit in gnoll camps off the route and will be swarmed|r
     .accept 91723 >> Accept Delicate Instruments
     .target Hamish Bergwort
+step << Mage
+    .isOnQuest 91723
+    .train 7411,3
+    .goto 1429,64.93,70.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClimb to the top floor of the tower and talk to |cRXP_FRIENDLY_Kitta Firewind|r. Only enchanters get this one
+    >>|cRXP_WARN_480 XP for 3 Luminous Residue, which you get by disenchanting the Crude Wax Effigies that Kobold Geomancers drop: the same kills as Delicate Instruments|r
+    .accept 91753 >> Accept An Enchanting Lesson
+    .target Kitta Firewind
 step
     #completewith GeomancersDone
     .isOnQuest 91723
     >>Kill |cRXP_ENEMY_Kobold Geomancers|r around the mine as you go. Each kill counts for both of you
     .complete 91723,1 --Kobold Geomancer (8)
     .mob Kobold Geomancer
+step << Mage
+    #completewith GeomancersDone
+    .isOnQuest 91753
+    >>|cRXP_WARN_Loot the|r |cRXP_LOOT_Crude Wax Effigies|r |cRXP_WARN_from the Kobold Geomancers and Disenchant them into|r |cRXP_LOOT_Luminous Residue|r|cRXP_WARN_. Don't farm: whatever the Delicate Instruments kills give you is enough|r
+    .complete 91753,1 --Luminous Residue (3)
+step << Paladin
+    #completewith GeomancersDone
+    .isOnQuest 91723
+    >>|cRXP_WARN_Tim is also doing An Enchanting Lesson, an enchanters-only quest from Kitta Firewind at the top of the tower. Kobold Geomancers drop Crude Wax Effigies for it: let him have every one (pass on the roll, or trade him any you loot)|r
+    >>|cRXP_WARN_He climbs the tower to Kitta now, and again to hand it in when you come back for Delicate Instruments part two|r
 step
     #completewith next
     .goto 1429/0,-604.49,-9180.39,15 >> Head to the Jasperlode Mine
@@ -1303,6 +1323,17 @@ step
     .turnin 91723 >> Turn in Delicate Instruments
     .accept 91724 >> Accept Delicate Instruments
     .target Hamish Bergwort
+step << Mage
+    .isQuestComplete 91753
+    .goto 1429,64.93,70.71
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClimb back to |cRXP_FRIENDLY_Kitta Firewind|r on the top floor
+    .turnin 91753 >> Turn in An Enchanting Lesson
+    .target Kitta Firewind
+step << Mage
+    .isOnQuest 91753
+    .isQuestNotComplete 91753
+    >>|cRXP_WARN_Short of 3 Luminous Residue? Drop the quest rather than farm more Geomancers|r
+    .abandon 91753 >> Abandon An Enchanting Lesson
 step
     #completewith next
     .goto 1429/0,-1032.06,-9610.23,30 >> Follow the road east to the bridge

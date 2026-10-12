@@ -976,7 +976,9 @@ step
 -- so Redridge ends with a flight to Stormwind, and the guide ends with Report to Gryan Stoutmantle, the Sentinel
 -- Hill flight path and a hearth to Thelsamar. Mages: Speak with Jennea (Zaldimar in Goldshire) goes in on the
 -- Stormwind stop after Redridge, Mirror Lake's water comes from the waterfall next to the Applejack Still, and a
--- flight from Sentinel Hill to Stormwind hands it in before the hearth. Gathering quests are left out except Red
+-- flight from Sentinel Hill to Stormwind hands it in before the hearth. That last Stormwind trip also buys 2 Minor
+-- Mana Potions at the Auction House and trains and crafts Novice Arcanist's Sash (they're its reagent; the pattern
+-- needs 50 Tailoring) and Green Linen Bracers. Gathering quests are left out except Red
 -- Linen Goods, whose bandanas drop from Defias on the route: its accept step says OPTIONAL and the steps that follow
 -- skip themselves when you didn't take it. Collecting Kelp (and with it The Escape) and Bottles and Baubles are out:
 -- Crystal Lake's murlocs and junk piles won't hold up on launch day. Guard Thomas doesn't offer Bounty on Murlocs
@@ -995,7 +997,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 21
+#version 22
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1082,6 +1084,9 @@ step << Mage
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
     >>|cRXP_WARN_Still no Lesser Magic Wand from Ironforge? Disenchant a spare pair of pants for a|r |T132867:0|t[Lesser Magic Essence]|cRXP_WARN_, then craft the|r |T135139:0|t[Lesser Magic Wand] |cRXP_WARN_(it also takes a Simple Wood) and equip it|r
     .collect 11287,1 --Lesser Magic Wand (1)
+step << Mage
+    #completewith ArcanistCraft
+    >>|cRXP_WARN_Keep your Linen Cloth from here on: back in Stormwind at the end of Elwynn you craft Novice Arcanist's Sash (8 bolts) and Green Linen Bracers (3 bolts). That's 22 linen, plus spares if you still need Tailoring 50 for the Sash|r
 step
     .goto 1453,26.0,47.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead west to Stormwind Harbor and talk to |cRXP_FRIENDLY_Gilbert Gray|r at the south end of the harbor: accept Fishin' Time and hand it straight back with the bauble and nightcrawlers
@@ -1587,12 +1592,40 @@ step
     .fp Sentinel Hill >> Get the Sentinel Hill flight path
     .target Thor
 step << Mage
-    .isQuestComplete 1861
     .goto 1436/0,1037.42,-10628.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBefore you hearth, talk to |cRXP_FRIENDLY_Thor|r and fly to Stormwind to hand in Mirror Lake. It's a short flight, and your Hearthstone works from there
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBefore you hearth, talk to |cRXP_FRIENDLY_Thor|r and fly to Stormwind: the Auction House, two Tailoring recipes and Jennea. It's a short flight, and your Hearthstone works from there
     >>|cRXP_WARN_Your partner can hearth now and start on the Thelsamar turn-ins|r
     .fly Stormwind >> Fly to Stormwind
     .target Thor
+step << Mage
+    .goto 1453/0,660.28,-8814.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r in the Trade District
+    >>|cRXP_WARN_The potions are a reagent for Novice Arcanist's Sash. Short on linen? The Sash and the Bracers take 11 Bolts of Linen Cloth (22 linen), plus any you need for skill points|r
+    .collect 2455,2 >> Buy 2 Minor Mana Potions
+    .target Auctioneer Jaxon
+step << Mage
+    .goto 1453,53.48,81.47
+    >>|cRXP_WARN_Novice Arcanist's Sash needs 50 Tailoring. Short? The cheapest points are Linen Cloak (a point every craft until 35), then Simple Linen Pants (until 40), then Linen Belt from Lawrence Schneider at the tailoring shop (until 50). Each takes 1 bolt and 1 Coarse Thread|r
+    .skill tailoring,50 >> Reach 50 Tailoring
+step << Mage
+    .goto 1453,53.48,81.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lawrence Schneider|r at the tailoring shop in the Mage Quarter
+    .train 1257368 >> Train Novice Arcanist's Sash
+    .train 3841 >> Train Green Linen Bracers
+    .target Lawrence Schneider
+step << Mage
+    .goto 1453,53.14,81.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandra Bolero|r in the same shop
+    >>|cRXP_BUY_Buy 2 Fine Thread for the Sash, and 2|r |T132891:0|t[Coarse Thread] |cRXP_BUY_and 1 Green Dye for the Bracers|r
+    .collect 2321,2 --Fine Thread (2)
+    .collect 2320,2 --Coarse Thread (2)
+    .collect 2605,1 --Green Dye (1)
+    .target Alexandra Bolero
+step << Mage
+    #label ArcanistCraft
+    >>|cRXP_WARN_Craft Novice Arcanist's Sash (8 bolts, 2 Fine Thread, 2 Minor Mana Potions) and Green Linen Bracers (3 bolts, 2 Coarse Thread, 1 Green Dye), then equip them|r
+    .collect 253885,1 --Novice Arcanist's Sash (1)
+    .collect 4308,1 --Green Linen Bracers (1)
 step << Mage
     #completewith next
     .isQuestComplete 1861
@@ -1614,9 +1647,8 @@ step << Mage
     .target Jennea Cannon
 step << Mage
     .xp <12,1
-    .isQuestTurnedIn 1861
     .goto 1453/0,861.95,-8990.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHit 12 since your last visit? Train with |cRXP_FRIENDLY_Jennea Cannon|r while you're here
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHit 12 since your last visit? Train with |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum while you're here
     .train 145 >> Train your level 12 spells (Fireball rank 3, Dampen Magic)
     .target Jennea Cannon
 step
@@ -1625,11 +1657,17 @@ step
     .hs >> Hearth to Thelsamar
     .cooldown item,6948,>2,1
     .zoneskip Loch Modan
-step
+step << !Mage
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHearthstone on cooldown? Talk to |cRXP_FRIENDLY_Thor|r and fly to Thelsamar instead
     .fly Thelsamar >> Fly to Thelsamar
     .target Thor
+    .zoneskip Loch Modan
+step << Mage
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHearthstone on cooldown? Talk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master in the Trade District, and fly to Thelsamar instead
+    .fly Thelsamar >> Fly to Thelsamar
+    .target Dungar Longdrink
     .zoneskip Loch Modan
 ]])
 

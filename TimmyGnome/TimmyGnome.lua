@@ -211,7 +211,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 15
+#version 16
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -921,6 +921,12 @@ step << Dwarf/Gnome
     .accept 6392 >> Accept Return to Brock
     .target Gryth Thurden
 step
+    .goto 1455,55.09,58.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nissa Firestone|r, the First Aid trainer just south of the gryphon master
+    >>|cRXP_WARN_Bandages use Linen Cloth: keep yours for Tailoring and the paladin's class quest for now|r
+    .skill firstaid,1 >> Learn First Aid
+    .target Nissa Firestone
+step
     .goto 1455,44.029,50.074,20,0
     .goto 1455/0,-1026.28,-4872.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Barin Redstone|r in the throne room
@@ -977,7 +983,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 11
+#version 12
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -994,7 +1000,7 @@ step
     .goto 1453,51.82,48.68,15,0
     .goto 1453,51.93,46.14,15,0
     .goto 1453,53.00,44.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaina Fuller|r in the Cathedral of Light, on your way from the Dwarven District to the Trade District
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tNo First Aid from Ironforge yet? Talk to |cRXP_FRIENDLY_Shaina Fuller|r in the Cathedral of Light, on your way from the Dwarven District to the Trade District
     >>|cRXP_WARN_Bandages use Linen Cloth: hold off until the mage's Tailoring linen and the paladin's 10 for his class quest are put aside|r
     .skill firstaid,1 >> Learn First Aid
     .target Shaina Fuller

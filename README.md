@@ -35,7 +35,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   Old Ironforge Incursion: the Hall of Thanes dungeon quest. If a Rockjaw Ambusher drops an Empty Powder Keg,
   Stolen Blasting Powder goes to Quarrymaster Thesten; its 16-powder follow-up is optional.
 - **Level 10, to Stormwind:** get the Thelsamar flight path in Loch Modan (with Honor Students for Dwarves and
-  Gnomes) and set your Hearthstone at the Stoutlager Inn, fly to Ironforge, turn in The Reports, then take the
+  Gnomes) and set your Hearthstone at the Stoutlager Inn, fly to Ironforge, learn First Aid from Nissa Firestone
+  next to the gryphon master, turn in The Reports, then take the
   Deeprun Tram to Stormwind with Monty's rat quest and Me Brother, Nipsy. The Hall of Thanes quests in Ironforge
   are left for when you run the dungeon.
 - **Wands (level 8):** back in Kharanos, the paladin gathers a Copper Rod, Copper Ore and Rough Stone while
@@ -52,7 +53,7 @@ To update, download the zip again and replace the TimmyGnome folder.
 ### 10-12 Elwynn Forest
 
 - **Stormwind:** off the tram, Stormpike's Delivery from Grimand Elmore (if he offers it), First Aid from Shaina
-  Fuller in the Cathedral of Light, the mage's Tailoring stop, Fishing from Arnold Leland, then three new Forever
+  Fuller in the Cathedral of Light (only if you missed it in Ironforge), the mage's Tailoring stop, Fishing from Arnold Leland, then three new Forever
   quests: Fishin' Time (a Shiny Bauble and 3 Nightcrawlers from Catherine Leland,
   handed to Gilbert Gray at Stormwind Harbor), Philmor's Favor (Manifest Clerk Philmor at the harbor, delivered to
   Trias' Cheese) and Gatehouse Goods (Elaine Trias, if she offers it). Then the flight path from Dungar Longdrink

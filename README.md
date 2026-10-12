@@ -1,7 +1,8 @@
 # TimmyGnome
 
 A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
-Mage route through Coldridge Valley, Dun Morogh and Elwynn Forest, levels 1 to 12, made for playing as a duo.
+Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest and Loch Modan, levels 1 to 14, made for playing
+as a duo.
 
 ## Install
 
@@ -12,7 +13,7 @@ You need RestedXP Guides installed.
    `AddOns\TimmyGnome\TimmyGnome.toc`.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
-   **5-10 Dun Morogh** and then **10-12 Elwynn Forest** by itself.
+   **5-10 Dun Morogh**, **10-12 Elwynn Forest** and **12-14 Loch Modan** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
@@ -70,6 +71,27 @@ To update, download the zip again and replace the TimmyGnome folder.
   items drop from mobs the route already kills. Their accept steps are marked OPTIONAL. Downstream is a required
   step: its three riverbank items respawn instantly. A Bundle of Trouble is skipped on purpose.
 - **Paladins:** keep 10 Linen Cloth for The Tome of Divinity, the level 12 class quest.
+
+### 12-14 Loch Modan
+
+- **Thelsamar** (you hearth in): Return to Brock, Snowbound, Mountaineer Stormpike's Task, and a vendor stop.
+  Thelsamar Blood Sausages and Rat Catching are OPTIONAL gathering quests for the trip back from Algaz Station.
+- **Ironforge at 12:** fly in to train. Paladins start The Tome of Divinity here (John Turner takes the 10 Linen
+  Cloth). Below level 12 the trip skips itself and training happens in Ironforge at the end.
+- **Southern guard tower:** In Defense of the King's Lands four times over, plus The Trogg Threat on the same troggs.
+  The third and fourth (level 15-17 troggs and Grawmug) are OPTIONAL.
+- **Dun Morogh detour:** The Lost Pilot and Mangeclaw. Paladins raise Narm Faulk and take the Dark Iron Script.
+- **Snowbound:** fill the jar just outside the South Gate Pass, then 10 minutes to Norric Lochthane at the dam.
+  Paladins can buy a mace from Nillen Andemar there.
+- **Algaz Station:** vendor and repair, Stormpike's Delivery and Mountaineer Stormpike's Task. Stormpike's Order
+  goes to Furen Longbeard at the Stormwind tram whenever you're next there.
+- **East:** Ironband's Excavation (level 13) and Excavation Progress Report, then Daryl's timed hunts at the
+  Farstrider Lodge (OPTIONAL), and hearth back.
+- **Ironforge to finish:** Report to Ironforge, the paladin's last Tome of Divinity turn-ins, and level 14
+  training if you're there.
+- **Skipped as too slow with a launch-day crowd:** Filthy Paws, Bingles' Missing Supplies, Crocolisk Hunting,
+  Gathering Idols and Silver of the Waves.
+- **Where you end up:** about level 13 with only the core quests, close to 14 with every optional one.
 
 ## Credits and license
 

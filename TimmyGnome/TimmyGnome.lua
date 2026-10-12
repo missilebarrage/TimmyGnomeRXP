@@ -1,6 +1,6 @@
--- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh and Elwynn Forest, levels 1-12. The
--- first two guides were rebuilt from the turn-in log of Charli Brat's run (2026-10-11), and the Elwynn guide
--- below them has its own notes. Like that run, Coldridge Valley opens with a grind to level 2
+-- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest and Loch Modan, levels 1-14.
+-- The first two guides were rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn and Loch
+-- Modan guides below them have their own notes. Like that run, Coldridge Valley opens with a grind to level 2
 -- and skips Dwarven Outfitters, which also skips both Coldridge Valley mail deliveries and the Glyphic
 -- Memorandum (both need Outfitters done: Questie's Forever data). At level 5 it goes from the tunnel
 -- straight to Brewnall for Bitter Rivals and Frosthowl, killing every boar for meat and ribs on the way,
@@ -935,10 +935,11 @@ step
 -- Stormwind City, 1433 Redridge Mountains and 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 2
+#version 3
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
+#next 12-14 Loch Modan
 
 step
     .goto 1453/0,685.22,-8387.23
@@ -1365,4 +1366,649 @@ step
     .fly Thelsamar >> Fly to Thelsamar
     .target Thor
     .zoneskip Loch Modan
+]])
+
+-- Loch Modan, from the hearth into Thelsamar at the end of Elwynn. Built from RestedXP's Forever "12-14 Loch Modan
+-- (Dwarf/Gnome)" route and the Loch Modan quests RestedXP picks up on its first visit, rearranged into laps:
+-- Thelsamar; Ironforge for level 12 training and the paladin's Tome of Divinity; the southern guard tower's In
+-- Defense of the King's Lands chain with a Dun Morogh detour (The Lost Pilot, the paladin's Narm Faulk); Snowbound
+-- from the South Gate to the dam (a 10 minute jar); Algaz Station; the excavation and Farstrider Lodge in the east;
+-- Ironforge to finish. Gathering quests a launch-day crowd makes slow are left out: Filthy Paws (mine crates),
+-- Bingles' Missing Supplies, Crocolisk Hunting, Gathering Idols and Silver of the Waves. Rat Catching, Thelsamar
+-- Blood Sausages, the two hardest trogg quests and Daryl's timed hunts are OPTIONAL. 1432 is Loch Modan, 1426 Dun
+-- Morogh and 1455 Ironforge.
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group TimmyGnome
+#name 12-14 Loch Modan
+
+step
+    .goto 1432/0,-2954.42,-5394.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r in the inn
+    >>|cRXP_WARN_OPTIONAL (loot): 3 Bear Meat, 3 Boar Intestines and 3 Spider Ichor from the bears, boars and spiders on the way back from Algaz Station. Skip this step if you'd rather not|r
+    .accept 418 >> Accept Thelsamar Blood Sausages
+    .target Vidra Hearthstove
+step
+    .goto 1432/0,-2973.90,-5377.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
+    .vendor >> Sell your trash
+    .target Innkeeper Hearthstove
+step
+    .goto 1432/0,-3003.30,-5376.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
+    >>|cRXP_WARN_You fill the jar at the South Gate after the troggs, then have 10 minutes to reach the dam: the guide lines that up|r
+    .accept 86667 >> Accept Snowbound
+    .target Grenhild Darktalon
+step << Dwarf/Gnome
+    .isOnQuest 6392
+    .goto 1432/0,-3019.02,-5369.40,8,0
+    .goto 1432/0,-3014.86,-5366.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brock Stoneseeker|r
+    .turnin 6392 >> Turn in Return to Brock
+    .target Brock Stoneseeker
+step
+    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
+    .goto 1432/0,-3006.61,-5259.57,15,0
+    .goto 1432/0,-3020.95,-5282.02,15,0
+    .goto 1432/0,-3023.44,-5326.90,15,0
+    .goto 1432/0,-3007.99,-5337.390,15,0
+    .goto 1432/0,-2964.41,-5349.90,15,0
+    .goto 1432/0,-2894.90,-5401.96,20,0
+    .goto 1432/0,-3007.99,-5337.390
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r, who walks the road through Thelsamar
+    .accept 1339 >> Accept Mountaineer Stormpike's Task
+    .target Mountaineer Kadrell
+step
+    .goto 1432/0,-3007.99,-5337.390
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
+    >>|cRXP_WARN_OPTIONAL (loot): 12 Tunnel Rat Ears from the kobolds in the hills between Algaz Station and Thelsamar. Skip this step if you'd rather not|r
+    .accept 416 >> Accept Rat Catching
+    .target Mountaineer Kadrell
+-- Ironforge for level 12 training. Paladins start The Tome of Divinity here; its Dun Morogh part comes up on the
+-- South Gate detour. Below level 12 these steps skip themselves and training waits for the end of the guide.
+step
+    .xp <12,1
+    .goto 1432/0,-2929.87,-5424.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r and fly to Ironforge to train
+    .fly Ironforge >> Fly to Ironforge
+    .target Thorgrum Borrelson
+    .zoneskip Ironforge
+step
+    .xp <12,1
+    #completewith next
+    .goto 1455,35.239,32.789,20,0
+    .goto 1455,27.208,12.552,20 >> Head through the Great Forge to the Mystic Ward
+step << Mage
+    .xp <12,1
+    .goto 1455/0,-928.48,-4614.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r in the Mystic Ward
+    .trainer >> Train your level 12 spells
+    .target Dink
+step << Paladin
+    .xp <12,1
+    .goto 1455/0,-896.47,-4601.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r in the Mystic Ward
+    .trainer >> Train your level 12 spells
+    .accept 2999 >> Accept Tome of Divinity << Dwarf
+    .target Brandur Ironhammer
+step << !Mage !Paladin
+    .xp <12,1
+    >>Visit your class trainer in Ironforge
+    .trainer >> Train your level 12 spells
+step << Dwarf Paladin
+    .isOnQuest 2999
+    #completewith next
+    .goto 1455,25.400,2.676,10,0
+    .goto 1455,23.621,2.544,10,0
+    .goto 1455,22.014,4.533,10,0
+    .goto 1455,21.831,7.651,10,0
+    .goto 1455,23.766,11.636,10,0
+    .goto 1455,27.622,12.177,12 >> Go up the stairs to |cRXP_FRIENDLY_Tiza Battleforge|r
+step << Dwarf Paladin
+    .isOnQuest 2999
+    .goto 1455,27.622,12.177
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tiza Battleforge|r upstairs
+    .turnin 2999 >> Turn in Tome of Divinity
+    .accept 1645 >> Accept The Tome of Divinity
+    .turnin 1645 >> Turn in The Tome of Divinity
+    .target Tiza Battleforge
+step << Dwarf Paladin
+    .isQuestTurnedIn 1645
+    .goto 1455,27.622,12.177
+    >>|cRXP_WARN_Use|r |T133739:0|t[The Tome of Divinity] |cRXP_WARN_to start the next quest|r
+    .accept 1646 >> Accept The Tome of Divinity
+    .use 6916
+step << Dwarf Paladin
+    .isOnQuest 1646
+    .goto 1455,27.622,12.177
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tiza Battleforge|r
+    .turnin 1646 >> Turn in The Tome of Divinity
+    .accept 1647 >> Accept The Tome of Divinity
+    .target Tiza Battleforge
+step << Dwarf Paladin
+    .isOnQuest 1647
+    #loop
+    .line Ironforge,21.750,51.733,22.015,54.945,23.328,61.865,23.723,63.824,26.021,68.382,27.495,71.320,31.352,77.807,32.405,78.563,37.256,82.159,39.204,83.202,42.944,84.113
+    .goto 1455,21.750,51.733,0
+    .goto 1455,26.021,68.382,0
+    .goto 1455,42.944,84.113,0
+    .goto 1455,21.750,51.733,20,0
+    .goto 1455,22.015,54.945,20,0
+    .goto 1455,23.328,61.865,20,0
+    .goto 1455,23.723,63.824,20,0
+    .goto 1455,26.021,68.382,20,0
+    .goto 1455,27.495,71.320,20,0
+    .goto 1455,31.352,77.807,20,0
+    .goto 1455,32.405,78.563,20,0
+    .goto 1455,37.256,82.159,20,0
+    .goto 1455,39.204,83.202,20,0
+    .goto 1455,42.944,84.113,20,0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFind |cRXP_FRIENDLY_John Turner|r: he walks the outer ring between the Stonefire Tavern and the Visitors' Center
+    >>|cRXP_WARN_He takes the 10 Linen Cloth you saved|r
+    .turnin 1647 >> Turn in The Tome of Divinity
+    .accept 1648 >> Accept The Tome of Divinity
+    .turnin 1648 >> Turn in The Tome of Divinity
+    .accept 1778 >> Accept The Tome of Divinity
+    .unitscan John Turner
+step << Dwarf Paladin
+    .isOnQuest 1778
+    #completewith next
+    .goto 1455,25.400,2.676,10,0
+    .goto 1455,23.621,2.544,10,0
+    .goto 1455,22.014,4.533,10,0
+    .goto 1455,21.831,7.651,10,0
+    .goto 1455,23.766,11.636,10,0
+    .goto 1455,27.622,12.177,12 >> Go back up to |cRXP_FRIENDLY_Tiza Battleforge|r
+step << Dwarf Paladin
+    .isOnQuest 1778
+    .goto 1455,27.622,12.177
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tiza Battleforge|r upstairs
+    .turnin 1778 >> Turn in The Tome of Divinity
+    .accept 1779 >> Accept The Tome of Divinity
+    .target Tiza Battleforge
+step << Dwarf Paladin
+    .isOnQuest 1779
+    .goto 1455/0,-899.70,-4613.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muiredon Battleforge|r upstairs
+    >>|cRXP_WARN_Narm Faulk is near the South Gate in Dun Morogh: you'll pass him on the trogg lap|r
+    .turnin 1779 >> Turn in The Tome of Divinity
+    .accept 1783 >> Accept The Tome of Divinity
+    .target Muiredon Battleforge
+step << Mage
+    .xp <12,1
+    +Your partner has a class quest here: sell your trash and restock while you wait
+step
+    .xp <12,1
+    .goto 1455/0,-1152.40,-4821.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r in the Great Forge
+    .fly Thelsamar >> Fly back to Thelsamar
+    .target Gryth Thurden
+    .zoneskip Loch Modan
+-- In Defense of the King's Lands: four kill quests in a row from the southern guard tower, plus The Trogg Threat on
+-- the same troggs. The third and fourth are harder (level 15-17 troggs) and marked OPTIONAL.
+step
+    #completewith next
+    .goto 1432,34.405,48.276,30,0
+    .goto 1432,27.501,65.367,30,0
+    .goto 1432,23.522,70.102,30 >> Head south-west to the southern guard tower
+step
+    .goto 1432/0,-2602.54,-5832.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r outside the guard tower
+    .accept 224 >> Accept In Defense of the King's Lands
+    .target Mountaineer Cobbleflint
+step
+    #completewith next
+    .goto 1432/0,-2635.61,-5879.14,12,0
+    .goto 1432/0,-2645.27,-5874.91,12,0
+    .goto 1432/0,-2631.48,-5847.50,12 >> Go into the guard tower and up to the top floor
+step
+    .goto 1432/0,-2634.59,-5842.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r on the top floor
+    >>|cRXP_WARN_The Trogg Threat drops from the same troggs as Cobbleflint's quest|r
+    .accept 267 >> Accept The Trogg Threat
+    .target Captain Rugelfuss
+step
+    #loop
+    .goto 1432,30.2,72.7,0
+    .goto 1432,33.5,77.8,0
+    .goto 1432,34.9,72.0,0
+    .goto 1432,30.2,72.7,40,0
+    .goto 1432,31.5,75.4,40,0
+    .goto 1432,31.6,79.0,40,0
+    .goto 1432,32.6,79.9,40,0
+    .goto 1432,33.5,77.8,40,0
+    .goto 1432,34.9,76.4,40,0
+    .goto 1432,34.9,72.0,40,0
+    .goto 1432,33.5,70.4,40,0
+    .goto 1432,32.1,72.4,40,0
+    >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r and |cRXP_ENEMY_Stonesplinter Scouts|r east of the tower. Loot them for |cRXP_LOOT_Trogg Stone Teeth|r
+    .complete 224,1 --Stonesplinter Trogg (10)
+    .mob +Stonesplinter Trogg
+    .complete 224,2 --Stonesplinter Scout (10)
+    .mob +Stonesplinter Scout
+    .complete 267,1 --Trogg Stone Tooth (8)
+    .mob +Stonesplinter Trogg
+    .mob +Stonesplinter Scout
+step
+    .goto 1432/0,-2602.54,-5832.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
+    .turnin 224 >> Turn in In Defense of the King's Lands
+    .target Mountaineer Cobbleflint
+step
+    .goto 1432/0,-2634.59,-5842.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r on the top floor
+    .turnin 267 >> Turn in The Trogg Threat
+    .target Captain Rugelfuss
+step
+    .goto 1432,23.54,76.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Gravelgaw|r at the guard tower
+    .accept 237 >> Accept In Defense of the King's Lands
+    .target Mountaineer Gravelgaw
+step
+    #loop
+    .goto 1432,28.3,83.5,0
+    .goto 1432,34.5,87.5,0
+    .goto 1432,36.2,83.6,0
+    .goto 1432,28.0,81.3,40,0
+    .goto 1432,28.3,83.5,40,0
+    .goto 1432,28.8,86.6,40,0
+    .goto 1432,31.3,85.4,40,0
+    .goto 1432,33.7,87.4,40,0
+    .goto 1432,35.4,88.6,40,0
+    .goto 1432,36.3,85.9,40,0
+    .goto 1432,36.2,83.6,40,0
+    .goto 1432,35.5,80.5,40,0
+    .goto 1432,34.5,82.4,40,0
+    >>Kill |cRXP_ENEMY_Stonesplinter Skullthumpers|r and |cRXP_ENEMY_Stonesplinter Seers|r further south in the valley
+    .complete 237,1 --Stonesplinter Skullthumper (10)
+    .mob +Stonesplinter Skullthumper
+    .complete 237,2 --Stonesplinter Seer (10)
+    .mob +Stonesplinter Seer
+step
+    .goto 1432,23.54,76.40
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Gravelgaw|r
+    .turnin 237 >> Turn in In Defense of the King's Lands
+    .target Mountaineer Gravelgaw
+step
+    .goto 1432,23.47,74.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Wallbang|r
+    >>|cRXP_WARN_OPTIONAL: level 15-16 troggs at the far end of the valley, a fair step up. Skip this step to leave it|r
+    .accept 263 >> Accept In Defense of the King's Lands
+    .target Mountaineer Wallbang
+step
+    .isOnQuest 263
+    #loop
+    .goto 1432,34.6,94.4,0
+    .goto 1432,37.3,92.4,0
+    .goto 1432,38.0,87.4,0
+    .goto 1432,33.4,91.0,35,0
+    .goto 1432,34.6,94.4,35,0
+    .goto 1432,36.2,94.0,35,0
+    .goto 1432,37.3,92.4,35,0
+    .goto 1432,37.5,90.1,35,0
+    .goto 1432,38.0,87.4,35,0
+    .goto 1432,36.2,91.0,35,0
+    >>Kill |cRXP_ENEMY_Stonesplinter Shamans|r and |cRXP_ENEMY_Stonesplinter Bonesnappers|r at the far end of the valley
+    .complete 263,1 --Stonesplinter Shaman (10)
+    .mob +Stonesplinter Shaman
+    .complete 263,2 --Stonesplinter Bonesnapper (10)
+    .mob +Stonesplinter Bonesnapper
+step
+    .isQuestComplete 263
+    .goto 1432,23.47,74.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Wallbang|r
+    .turnin 263 >> Turn in In Defense of the King's Lands
+    .target Mountaineer Wallbang
+step
+    .isQuestTurnedIn 263
+    .goto 1432/0,-2634.59,-5842.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r on the top floor
+    >>|cRXP_WARN_OPTIONAL: Grawmug (level 17) and his two guards (16) fight together. Best at 13 or higher. Skip this step to leave it|r
+    .accept 217 >> Accept In Defense of the King's Lands
+    .target Captain Rugelfuss
+step
+    .isOnQuest 217
+    .goto 1432,34.77,90.45
+    >>Kill |cRXP_ENEMY_Grawmug|r, |cRXP_ENEMY_Gnasher|r and |cRXP_ENEMY_Brawler|r at the far end of the valley. Clear the troggs around them first
+    .complete 217,1 --Grawmug
+    .mob +Grawmug
+    .complete 217,2 --Gnasher
+    .mob +Gnasher
+    .complete 217,3 --Brawler
+    .mob +Brawler
+step
+    .isQuestComplete 217
+    .goto 1432/0,-2634.59,-5842.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r on the top floor
+    .turnin 217 >> Turn in In Defense of the King's Lands
+    .target Captain Rugelfuss
+-- Dun Morogh detour through the South Gate Pass: The Lost Pilot, and the paladin's Narm Faulk.
+step
+    #completewith next
+    .goto 1432,21.498,67.840,20,0
+    .goto 1432,21.388,66.357,20,0
+    .goto 1432,21.106,65.007,20,0
+    .goto 1432,20.749,64.326,20,0
+    .goto 1432,19.594,62.735,20,0
+    .goto 1432,16.494,58.424,20,0
+    .goto 1426,84.262,51.367
+    .zone Dun Morogh >> Go back through the South Gate Pass into Dun Morogh
+step
+    .goto 1426/0,-2329.60,-5163.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead north to |cRXP_FRIENDLY_Pilot Hammerfoot|r
+    .accept 419 >> Accept The Lost Pilot
+    .target Pilot Hammerfoot
+step
+    .goto 1426/0,-2121.76,-5064.70
+    >>Click the |cRXP_PICK_Dwarven Corpse|r to the west
+    .turnin 419 >> Turn in The Lost Pilot
+    .accept 417 >> Accept A Pilot's Revenge
+step
+    .goto 1426/0,-2087.19,-5096.51
+    >>Kill |cRXP_ENEMY_Mangeclaw|r. Loot him for his |cRXP_LOOT_Mangy Claw|r
+    .complete 417,1 --Mangy Claw (1)
+    .mob Mangeclaw
+step
+    .goto 1426/0,-2329.60,-5163.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Hammerfoot|r
+    .turnin 417 >> Turn in A Pilot's Revenge
+    .target Pilot Hammerfoot
+step << Dwarf Paladin
+    .isOnQuest 1783
+    #completewith next
+    .goto 1426/0,-2055.23,-5784.31
+    .cast 8593 >> |cRXP_WARN_Use the|r |T133439:0|t[Symbol of Life] |cRXP_WARN_on|r |cRXP_FRIENDLY_Narm Faulk|r |cRXP_WARN_on the ground, south of the South Gate Pass|r
+    .use 6866
+    .target Narm Faulk
+step << Dwarf Paladin
+    .isOnQuest 1783
+    .goto 1426/0,-2055.23,-5784.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Narm Faulk|r
+    .turnin 1783 >> Turn in The Tome of Divinity
+    .accept 1784 >> Accept The Tome of Divinity
+    .target Narm Faulk
+step << Dwarf Paladin
+    .isOnQuest 1784
+    .goto 1426/0,-2004.94,-5863.50,20,0
+    .goto 1426/0,-2031.04,-5905.53
+    >>Kill |cRXP_ENEMY_Dark Iron Spies|r at Ironband's Compound. Loot them for the |cRXP_LOOT_Dark Iron Script|r
+    .complete 1784,1 --Dark Iron Script (1)
+    .mob Dark Iron Spy
+step << !Paladin
+    .goto 1426/0,-2031.04,-5905.53
+    +If your paladin is on The Tome of Divinity, help them kill Dark Iron Spies at Ironband's Compound for a Dark Iron Script. Tick this when they have it, or if they don't need it
+-- Snowbound: fill the jar right outside the tunnel, then 10 minutes to Norric Lochthane at the dam.
+step
+    #completewith next
+    .goto 1426,84.262,51.367,20,0
+    .goto 1432,16.494,58.424,20,0
+    .goto 1432,19.594,62.735,20,0
+    .goto 1432/0,-2534.38,-5648.28,5 >> Go back through the South Gate Pass to the snowy patch just outside the Loch Modan end
+step
+    .goto 1432/0,-2534.38,-5648.28
+    .use 279380 >> |cRXP_WARN_Use the|r |T1387609:0|t[Ceramic Jar] |cRXP_WARN_while standing on the snowy patch|r
+    >>|cRXP_WARN_The snow lasts 10 minutes: head straight for the dam, north past Thelsamar|r
+    .complete 86667,1 --Jar of Snow (1)
+step
+    .goto 1432/0,-3146.73,-4837.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane|r at the Stonewrought Dam before the snow melts
+    .turnin 86667 >> Turn in Snowbound
+    .target Norric Lochthane
+step << Paladin
+    .goto 1432/0,-3176.16,-4669.34
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nillen Andemar|r north of the dam
+    >>|cRXP_BUY_If you can afford it, buy the|r |T133476:0|t[Heavy Spiked Mace] |cRXP_BUY_or the|r |T133053:0|t[Ironwood Maul]
+    +Buy one, or tick this to skip
+    .target Nillen Andemar
+    .itemStat 16,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.8
+-- Algaz Station, then back to Thelsamar through the hills.
+step
+    #completewith next
+    .goto 1432,23.490,18.008,15,0
+    .goto 1432,24.279,17.959,15 >> Head west to Algaz Station and go into the bunker
+step
+    .goto 1432/0,-2659.45,-4822.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash and repair at |cRXP_FRIENDLY_Gothor Brumn|r
+    .vendor >> Sell your trash and repair
+    .target Gothor Brumn
+step
+    .isOnQuest 353
+    .goto 1432/0,-2676.99,-4825.980
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    .turnin 353 >> Turn in Stormpike's Delivery
+    .target Mountaineer Stormpike
+step
+    .goto 1432/0,-2676.99,-4825.980
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    >>|cRXP_WARN_Don't take Filthy Paws: its crates in the Silver Stream Mine will be swarmed on launch day|r
+    >>|cRXP_WARN_Stormpike's Order goes to Furen Longbeard next to the tram exit in Stormwind, whenever you're next there|r
+    .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+    .accept 1338 >> Accept Stormpike's Order
+    .target Mountaineer Stormpike
+step
+    #completewith ThelsamarReturn
+    .isOnQuest 416
+    >>Kill |cRXP_ENEMY_Tunnel Rat|r kobolds in the hills on the way back. Loot them for their |cRXP_LOOT_Ears|r
+    .complete 416,1 --Tunnel Rat Ear (12)
+    .mob Tunnel Rat Scout
+    .mob Tunnel Rat Vermin
+    .mob Tunnel Rat Forager
+    .mob Tunnel Rat Digger
+    .mob Tunnel Rat Surveyor
+    .mob Tunnel Rat Geomancer
+step
+    #completewith ThelsamarReturn
+    .isOnQuest 418
+    >>Kill |cRXP_ENEMY_Elder Black Bears|r, |cRXP_ENEMY_Mountain Boars|r and |cRXP_ENEMY_Forest Lurkers|r on the way back
+    .collect 3173,3,418,1 --Bear Meat (3)
+    .mob +Elder Black Bear
+    .collect 3172,3,418,1 --Boar Intestines (3)
+    .mob +Mountain Boar
+    .collect 3174,3,418,1 --Spider Ichor (3)
+    .mob +Forest Lurker
+step
+    .isOnQuest 416
+    #loop
+    .goto 1432/0,-2684.71,-5042.87,0
+    .goto 1432/0,-2712.57,-5286.61,0
+    .goto 1432/0,-3033.92,-4797.29,0
+    .goto 1432/0,-3033.92,-4797.29,50,0
+    .goto 1432/0,-2972.41,-4796.92,50,0
+    .goto 1432/0,-2684.71,-5042.87,50,0
+    .goto 1432/0,-2712.57,-5286.61,50,0
+    >>Finish the |cRXP_LOOT_Tunnel Rat Ears|r in the hills between Algaz Station and Thelsamar
+    >>|cRXP_WARN_OPTIONAL: if it's crowded, skip this step and abandon Rat Catching|r
+    .complete 416,1 --Tunnel Rat Ear (12)
+    .mob Tunnel Rat Scout
+    .mob Tunnel Rat Vermin
+    .mob Tunnel Rat Forager
+    .mob Tunnel Rat Digger
+    .mob Tunnel Rat Surveyor
+    .mob Tunnel Rat Geomancer
+step
+    #label ThelsamarReturn
+    #completewith next
+    .goto 1432,34.405,48.276
+    .subzone 144 >> Head back to Thelsamar
+step
+    .isQuestComplete 416
+    .goto 1432/0,-3007.99,-5337.390
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r on the road
+    .turnin 416 >> Turn in Rat Catching
+    .target Mountaineer Kadrell
+step
+    .isQuestComplete 418
+    .goto 1432/0,-2954.42,-5394.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r in the inn
+    .turnin 418 >> Turn in Thelsamar Blood Sausages
+    .target Vidra Hearthstove
+step
+    .goto 1432,34.02,46.54
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash and repair at |cRXP_FRIENDLY_Morhan Coppertongue|r
+    .vendor >> Sell your trash and repair
+    .target Morhan Coppertongue
+-- East: the excavation's two deliveries, and Daryl's timed hunts at the Farstrider Lodge (OPTIONAL).
+step
+    .xp <13,1
+    .goto 1432,37.24,47.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r
+    .accept 436 >> Accept Ironband's Excavation
+    .target Jern Hornhelm
+step
+    #completewith next
+    .goto 1432,64.9,66.66,40 >> Follow the road east around the loch to Ironband's Excavation
+step
+    .isOnQuest 436
+    .goto 1432,64.9,66.66
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magmar Fellhew|r
+    >>|cRXP_WARN_Don't take Gathering Idols: level 18 troggs and a loot grind|r
+    .turnin 436 >> Turn in Ironband's Excavation
+    .target Magmar Fellhew
+step
+    .goto 1432,65.93,65.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Ironband|r
+    .accept 298 >> Accept Excavation Progress Report
+    .target Prospector Ironband
+step
+    .goto 1432,64.82,66.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash to |cRXP_FRIENDLY_Aldren Cordon|r
+    .vendor >> Sell your trash
+    .target Aldren Cordon
+step
+    .goto 1432,83.47,65.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r at the Farstrider Lodge
+    >>|cRXP_WARN_OPTIONAL: kill 6 level 15-16 Mountain Buzzards within 15 minutes. If the buzzards are crowded, skip this step|r
+    .accept 257 >> Accept A Hunter's Boast
+    .target Daryl the Youngling
+step
+    .isOnQuest 257
+    #loop
+    .goto 1432,77.2,57.4,0
+    .goto 1432,79.2,63.7,0
+    .goto 1432,76.0,72.3,0
+    .goto 1432,71.1,73.0,0
+    .goto 1432,77.2,57.4,45,0
+    .goto 1432,78.7,59.2,45,0
+    .goto 1432,79.2,63.7,45,0
+    .goto 1432,79.3,66.9,45,0
+    .goto 1432,76.0,70.5,45,0
+    .goto 1432,77.5,75.0,45,0
+    .goto 1432,74.5,72.5,45,0
+    .goto 1432,71.1,73.0,45,0
+    .goto 1432,74.7,67.7,45,0
+    .goto 1432,76.8,63.7,45,0
+    >>Kill |cRXP_ENEMY_Mountain Buzzards|r around the lodge
+    .complete 257,1 --Mountain Buzzard (6)
+    .mob Mountain Buzzard
+step
+    .isQuestComplete 257
+    .goto 1432,83.47,65.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
+    .turnin 257 >> Turn in A Hunter's Boast
+    .target Daryl the Youngling
+step
+    .isQuestTurnedIn 257
+    .goto 1432,83.47,65.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
+    >>|cRXP_WARN_OPTIONAL: 5 level 16-17 Elder Mountain Boars within 12 minutes, north of the lodge. Skip this step if that's too tight|r
+    .accept 258 >> Accept A Hunter's Challenge
+    .target Daryl the Youngling
+step
+    .isOnQuest 258
+    #loop
+    .goto 1432,61.2,39.6,0
+    .goto 1432,66.1,38.3,0
+    .goto 1432,75.7,46.6,0
+    .goto 1432,60.0,37.9,45,0
+    .goto 1432,60.2,33.9,45,0
+    .goto 1432,63.2,35.1,45,0
+    .goto 1432,64.9,38.8,45,0
+    .goto 1432,67.1,39.4,45,0
+    .goto 1432,70.1,37.8,45,0
+    .goto 1432,74.8,42.1,45,0
+    .goto 1432,75.7,46.6,45,0
+    .goto 1432,67.4,41.3,45,0
+    .goto 1432,62.4,38.4,45,0
+    >>Kill |cRXP_ENEMY_Elder Mountain Boars|r
+    .complete 258,1 --Elder Mountain Boar (5)
+    .mob Elder Mountain Boar
+step
+    .isQuestComplete 258
+    .goto 1432,83.47,65.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daryl the Youngling|r
+    .turnin 258 >> Turn in A Hunter's Challenge
+    .target Daryl the Youngling
+step
+    >>|cRXP_WARN_If your Hearthstone is on cooldown, follow the road back west instead|r
+    .hs >> Hearth to Thelsamar
+    .cooldown item,6948,>2,1
+    .subzoneskip 144
+step
+    #completewith next
+    .goto 1432,34.405,48.276
+    .subzone 144 >> Head back to Thelsamar
+step
+    .goto 1432,37.24,47.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r
+    .turnin 298 >> Turn in Excavation Progress Report
+    .accept 301 >> Accept Report to Ironforge
+    .target Jern Hornhelm
+-- Ironforge to finish: Report to Ironforge, the paladin's Tome of Divinity, and level 14 training if you're there.
+step
+    .goto 1432/0,-2929.87,-5424.84
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
+    .fly Ironforge >> Fly to Ironforge
+    .target Thorgrum Borrelson
+    .zoneskip Ironforge
+step
+    .goto 1455,74.64,11.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Stormpike|r in the Hall of Explorers
+    >>|cRXP_WARN_Leave Powder to Ironband unless you're coming back to Loch Modan|r
+    .turnin 301 >> Turn in Report to Ironforge
+    .target Prospector Stormpike
+step << Dwarf Paladin
+    .isQuestComplete 1784
+    .goto 1455/0,-899.70,-4613.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Muiredon Battleforge|r upstairs in the Mystic Ward
+    .turnin 1784 >> Turn in The Tome of Divinity
+    .accept 1785 >> Accept The Tome of Divinity
+    .target Muiredon Battleforge
+step << Dwarf Paladin
+    .isOnQuest 1785
+    .goto 1455/0,-932.04,-4633.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tiza Battleforge|r
+    .turnin 1785 >> Turn in The Tome of Divinity
+    .target Tiza Battleforge
+step << Mage
+    .xp <12,1
+    .goto 1455/0,-928.48,-4614.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r in the Mystic Ward: you weren't 12 for the first Ironforge trip
+    .train 145 >> Train your level 12 spells
+    .target Dink
+step << Dwarf Paladin
+    .xp <12,1
+    .isQuestAvailable 2999
+    .goto 1455/0,-896.47,-4601.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r in the Mystic Ward: you weren't 12 for the first Ironforge trip
+    >>|cRXP_WARN_He also starts The Tome of Divinity, but its Dun Morogh part is behind you now: take it when you have time for it|r
+    .trainer >> Train your level 12 spells
+    .target Brandur Ironhammer
+step << Mage
+    .xp <14,1
+    .goto 1455/0,-928.48,-4614.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r in the Mystic Ward
+    .trainer >> Train your level 14 spells
+    .target Dink
+step << Paladin
+    .xp <14,1
+    .goto 1455/0,-896.47,-4601.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r in the Mystic Ward
+    .trainer >> Train your level 14 spells
+    .target Brandur Ironhammer
+step << !Mage !Paladin
+    .xp <14,1
+    >>Visit your class trainer in Ironforge
+    .trainer >> Train your level 14 spells
 ]])

@@ -563,12 +563,7 @@ step << Mage
     +3 silver
     +|cFFFF0000ANY BRACER|r
 step << Mage
-    .goto 1455/0,-1152.40,-4821.13,15 >> Travel to Ironforge: take the road north out of Kharanos, cross the bridge and follow the road east up the mountain
-step << Mage
-    .goto 1455/0,-1152.40,-4821.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r, the gryphon master
-    .fp Ironforge >> Get the Ironforge flight path
-    .target Gryth Thurden
+    .goto 1455,59.77,45.45,15 >> Travel to the enchanting trainer in Ironforge: take the road north out of Kharanos, cross the bridge and follow the road east up the mountain
 step << Mage
     .goto 1455,59.77,45.45
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gimble Thistlefuzz|r, the enchanting trainer

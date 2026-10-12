@@ -98,6 +98,7 @@ def run_file(path, chunkname):
 run_file(rxp_dir + '/functions.lua', '@functions.lua')
 L.execute('addon.error = function(text) recordLog("error", text) end')  # record instead of raising
 run_file(rxp_dir + '/GuideLoader.lua', '@GuideLoader.lua')
+run_file(rxp_dir + '/DB/forever/flightData.lua', '@flightData.lua')  # .fp looks flight paths up by name
 
 # Capture the guide file's RegisterGuide calls, then parse each guide.
 L.execute('CAPTURED = {} RXPGuides.RegisterGuide = function(text) CAPTURED[#CAPTURED + 1] = text end')
@@ -115,6 +116,12 @@ report, failed = L.eval(r'''function(verbose)
       out[#out + 1] = string.format("guide %d: %s / %s, %d steps, next: %s",
         gi, tostring(guide.group), tostring(guide.name), #guide.steps, tostring(guide.next))
       for si, step in ipairs(guide.steps) do
+        for _, el in ipairs(step.elements) do
+          if el.tag == "fp" and not el.fpId then
+            failed = true
+            out[#out + 1] = string.format("guide %d step %d: flight path not found: %s", gi, si, tostring(el.text))
+          end
+        end
         if verbose then
           local parts, flags = {}, {}
           for _, el in ipairs(step.elements) do

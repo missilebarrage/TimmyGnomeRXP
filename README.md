@@ -11,8 +11,8 @@ You need RestedXP Guides installed.
 2. Extract it into `World of Warcraft\_classic_beta_\Interface\AddOns`. You should end up with
    `AddOns\TimmyGnome\TimmyGnome.toc`.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
-4. In RestedXP's guide menu, pick **TimmyGnome → 01-05 Coldridge Valley**. It moves on to
-   **05-10 Dun Morogh** by itself.
+4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
+   **5-10 Dun Morogh** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 

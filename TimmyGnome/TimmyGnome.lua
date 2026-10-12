@@ -206,7 +206,7 @@ step
     .goto 1426/0,46.32,-6037.19,15 >> Go through Coldridge Pass. Kill the |cRXP_ENEMY_Rockjaw Raiders|r in your way
 ]])
 
--- Shown as "05-10 Dun Morogh". The #name stays "5-9 Dun Morogh" because RestedXP keys saved progress (and
+-- Shown as "5-10 Dun Morogh". The #name stays "5-9 Dun Morogh" because RestedXP keys saved progress (and
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
@@ -214,7 +214,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
-#displayname 05-10 Dun Morogh
+#displayname 5-10 Dun Morogh
 
 step
     #sticky

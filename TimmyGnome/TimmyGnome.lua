@@ -713,9 +713,40 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
     .turnin 433 >> Turn in The Public Servant
     .target Senator Mehr Stonehallow
+-- Earthseer Farsen's chain leads to Old Ironforge Incursion, the Hall of Thanes dungeon quest.
 step
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r at his camp overlooking Gol'Bolar Quarry
     .accept 96392 >> Accept Farsen's Watch
+    .target Earthseer Farsen
+step
+    .goto 1426/0,-1394.24,-5797.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r again and use his far sight
+    >>|cRXP_WARN_Press Escape to leave the far sight once the objective completes|r
+    .complete 96392,1 --Use Farsen's Far Sight
+    .target Earthseer Farsen
+step
+    .goto 1426/0,-1394.24,-5797.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r
+    .turnin 96392 >> Turn in Farsen's Watch
+    .accept 96390 >> Accept Nip 'Em in the Bud
+    .target Earthseer Farsen
+step
+    .goto 1426/0,-2009.87,-5860.22,40,0
+    .goto 1426/0,-2034.49,-5922.60
+    >>Kill |cRXP_ENEMY_Dark Iron Spies|r at Ironband's Compound. Loot them for the |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r]
+    >>|cRXP_WARN_Each of you needs your own map (the quest can't be shared): keep killing until you both have one|r
+    .use 274268 >>|cRXP_WARN_Use the|r |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r] |cRXP_WARN_to start the quest|r
+    .complete 96390,1 --Dark Iron Spy slain (10)
+    .collect 274268,1,96391,1 --Dark Iron Map (1)
+    .accept 96391 >> Accept Underground Map
+    .mob Dark Iron Spy
+step
+    .goto 1426/0,-1394.24,-5797.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at |cRXP_FRIENDLY_Earthseer Farsen|r
+    >>|cRXP_WARN_Old Ironforge Incursion is the Hall of Thanes dungeon quest: claim Durgen Dirgehammer's head there and take it to King Magni in Ironforge|r
+    .turnin 96390 >> Turn in Nip 'Em in the Bud
+    .turnin 96391 >> Turn in Underground Map
+    .accept 96393 >> Accept Old Ironforge Incursion
     .target Earthseer Farsen
 ]])

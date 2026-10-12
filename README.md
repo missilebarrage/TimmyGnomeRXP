@@ -65,18 +65,23 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **South:** explore Fargodeep Mine, then the Young Lovers deliveries and Princess Must Die! at the Stonefield
   farm. Back in Goldshire, The Jasperlode Mine (and Elmore's Task, if Grimand wanted it first).
 - **East:** explore Jasperlode on the way to Guard Thomas, then the lost guards, Protect the Frontier, Downstream,
-  Croaky (level 11 elite) and Princess. Turn in at the bridge and Ridgepoint Tower.
+  Croaky (level 11 elite) and Princess. Turn in at the bridge and Ridgepoint Tower. OPTIONAL on the way: Delicate
+  Instruments from the Tower of Azora (Kobold Geomancers at Jasperlode, then Defias Rogue Wizards on the way to
+  Rolf) and Red Linen Goods (bandanas from those Rogue Wizards and the Defias at Princess).
 - **Redridge:** Encroaching Gnolls (needs level 11) and the Lakeshire flight path, then fly to Stormwind and walk
   back to Goldshire. Your Hearthstone stays bound in Thelsamar.
-- **Finish:** turn-ins in Goldshire and at the farms, Westbrook Garrison, then Westfall: Westfall Stew on the way
+- **Finish:** turn-ins in Goldshire and at the farms, Applejack Still and An Apple Treat (apples from Homer
+  Stonefield, the still by the Mirror Lake falls, Sergeant De Vries), Westbrook Garrison, then Westfall: Westfall Stew on the way
   down the road, Report to Gryan Stoutmantle and the Sentinel Hill flight path, and hearth to Thelsamar. The
   Loch Modan guide (still to come) starts there.
 - **Level 12 is a target, not a requirement.** Hogger, Riverpaw Gnoll Bounty and grinding are cut because Loch
   Modan pays better by then. With the optional quests you should finish around 85-90% into 11; Return to Brock
   and Stormpike's Delivery (1,050 XP each) wait in Loch Modan.
-- **Gathering quests:** left out, except Collecting Kelp (it unlocks The Escape) and Bounty on Murlocs, whose
-  items drop from mobs the route already kills. Their accept steps are marked OPTIONAL. Downstream is a required
-  step: its three riverbank items respawn instantly. A Bundle of Trouble is skipped on purpose.
+- **Gathering quests:** left out, except Collecting Kelp (it unlocks The Escape), Bottles and Baubles (same camps,
+  only with the kelp), Bounty on Murlocs and Red Linen Goods, whose items come from camps and mobs on the route.
+  Their accept steps are marked OPTIONAL. Downstream is a required step: its three riverbank items respawn
+  instantly. Skipped on purpose: A Bundle of Trouble, Stolen Enchanting Supplies (crates in gnoll camps off the
+  route), Hogger (his turn-in is in Goldshire, behind you by then) and the Goldtooth chain (a single spawn).
 - **Paladins:** keep 10 Linen Cloth for The Tome of Divinity, the level 12 class quest.
 
 ### 12-14 Loch Modan

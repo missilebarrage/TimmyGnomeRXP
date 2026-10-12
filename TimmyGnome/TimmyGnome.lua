@@ -962,16 +962,22 @@ step
 -- Young Lovers deliveries added. Level 12 is a target, not a requirement: Riverpaw Gnoll Bounty, Hogger and any
 -- grinding are left out because Loch Modan pays better by then. The Hearthstone stays bound in Thelsamar (guide 2),
 -- so Redridge ends with a flight to Stormwind, and the guide ends with Report to Gryan Stoutmantle, the Sentinel
--- Hill flight path and a hearth to Thelsamar. Gathering quests are left out except Collecting Kelp and Bounty on
--- Murlocs, whose items drop from mobs on the route: their accept steps say OPTIONAL and the steps that follow skip
--- themselves when you didn't take them. Downstream is a required step: its three items lie on the way to Croaky and
--- respawn instantly. A Bundle of Trouble is skipped on purpose: its wood bundles are slow and contested on a busy
--- server. Stormpike's Delivery (for Loch Modan) is tried at Grimand Elmore off the tram; if he wants Elmore's Task
--- first, Smith Argus gives it and the post-Redridge stop in Stormwind swaps it. 1429 is Elwynn Forest, 1453
--- Stormwind City, 1433 Redridge Mountains and 1436 Westfall.
+-- Hill flight path and a hearth to Thelsamar. Gathering quests are left out except four whose items drop from mobs
+-- or sit in camps on the route: Collecting Kelp, Bottles and Baubles, Bounty on Murlocs and Red Linen Goods. Their
+-- accept steps say OPTIONAL and the steps that follow skip themselves when you didn't take them. Downstream is a
+-- required step: its three items lie on the way to Croaky and respawn instantly. A Bundle of Trouble is skipped on
+-- purpose: its wood bundles are slow and contested on a busy server. Forever's Tower of Azora quests: Delicate
+-- Instruments (Kobold Geomancers at Jasperlode, then Defias Rogue Wizards on the way to Rolf) is OPTIONAL because
+-- only about seven Geomancers spawn; Stolen Enchanting Supplies is left out (crates in gnoll camps off the route).
+-- Applejack Still and An Apple Treat (apples from Homer Stonefield, the still by the Mirror Lake falls, Sergeant De
+-- Vries at Westbrook) fit the walk to Westbrook. Hogger and Goldtooth stay out: Hogger's turn-in is in Goldshire,
+-- which the route has already left, and Goldtooth is a single spawn in a crowded mine. Stormpike's Delivery (for
+-- Loch Modan) is tried at Grimand Elmore off the tram; if he wants Elmore's Task first, Smith Argus gives it and the
+-- post-Redridge stop in Stormwind swaps it. 1429 is Elwynn Forest, 1453 Stormwind City, 1433 Redridge Mountains and
+-- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 7
+#version 8
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1162,6 +1168,19 @@ step
     .target William Pestle
 step
     .isOnQuest 112
+    .goto 1429,47.6,62.3
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lee Brown|r on the way to Crystal Lake
+    >>|cRXP_WARN_OPTIONAL (loot): 6 Shiny Junk from the junk piles in the same murloc camps as your kelp, handed in near Goldshire after Redridge. Skip this step if the camps are crowded|r
+    .accept 99143 >> Accept Bottles and Baubles
+    .target Lee Brown
+step
+    #completewith KelpDone
+    .isOnQuest 99143
+    >>Loot the |cRXP_PICK_Junk Piles|r in the murloc camps for |cRXP_LOOT_Shiny Junk|r
+    .complete 99143,1 --Shiny Junk (6)
+step
+    #label KelpDone
+    .isOnQuest 112
     #loop
     .goto 1429,50.833,65.453,0
     .goto 1429,57.435,63.662,0
@@ -1182,8 +1201,40 @@ step
     .mob Murloc
     .mob Murloc Streamrunner
 step
+    .isOnQuest 99143
+    #loop
+    .goto 1429,50.833,65.453,0
+    .goto 1429,57.435,63.662,0
+    .goto 1429,54.236,66.888,0
+    .goto 1429,50.833,65.453,50,0
+    .goto 1429,52.020,65.177,50,0
+    .goto 1429,54.144,62.468,50,0
+    .goto 1429,56.332,63.538,50,0
+    .goto 1429,57.162,62.157,50,0
+    .goto 1429,57.435,63.662,50,0
+    .goto 1429,58.237,64.888,50,0
+    .goto 1429,56.897,67.017,50,0
+    .goto 1429,55.523,66.707,50,0
+    .goto 1429,55.203,66.171,50,0
+    .goto 1429,54.236,66.888,50,0
+    >>Finish the |cRXP_LOOT_Shiny Junk|r from the junk piles. Too crowded? Skip this step and abandon Bottles and Baubles
+    .complete 99143,1 --Shiny Junk (6)
+step
+    .goto 1429,65.0,70.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamish Bergwort|r at the Tower of Azora, on the road east
+    >>|cRXP_WARN_OPTIONAL: Delicate Instruments wants 8 Kobold Geomancers around Jasperlode, and only about seven spawn there. If they're camped, skip this step (it also skips part two)|r
+    >>|cRXP_WARN_Leave Stolen Enchanting Supplies from Blixie Fitzwink: its crates sit in gnoll camps off the route and will be swarmed|r
+    .accept 91723 >> Accept Delicate Instruments
+    .target Hamish Bergwort
+step
+    #completewith GeomancersDone
+    .isOnQuest 91723
+    >>Kill |cRXP_ENEMY_Kobold Geomancers|r around the mine as you go. Each kill counts for both of you
+    .complete 91723,1 --Kobold Geomancer (8)
+    .mob Kobold Geomancer
+step
     #completewith next
-    .goto 1429/0,-604.49,-9180.39,15 >> Head north-east to the Jasperlode Mine
+    .goto 1429/0,-604.49,-9180.39,15 >> Head to the Jasperlode Mine
 step
     .goto 1429/0,-588.73,-9130.67,15,0
     .goto 1429/0,-572.07,-9116.55,15,0
@@ -1191,8 +1242,31 @@ step
     >>Follow the tunnel through the middle of the mine
     .complete 76,1 --Scout through the Jasperlode Mine
 step
+    #label GeomancersDone
+    .isOnQuest 91723
+    #loop
+    .goto 1429,61.26,51.66,0
+    .goto 1429,62.2,55.74,0
+    .goto 1429,64.5,56.72,0
+    .goto 1429,61.26,51.66,30,0
+    .goto 1429,62.2,55.74,30,0
+    .goto 1429,64.49,56.55,30,0
+    .goto 1429,63.53,58.32,30,0
+    .goto 1429,60.97,56.51,30,0
+    >>Finish the |cRXP_ENEMY_Kobold Geomancers|r around the mine entrance
+    .complete 91723,1 --Kobold Geomancer (8)
+    .mob Kobold Geomancer
+step
+    .isQuestComplete 91723
+    .goto 1429,65.0,70.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at the Tower of Azora, talk to |cRXP_FRIENDLY_Hamish Bergwort|r
+    >>|cRXP_WARN_Part two's 6 Defias Rogue Wizards are on your way to Rolf|r
+    .turnin 91723 >> Turn in Delicate Instruments
+    .accept 91724 >> Accept Delicate Instruments
+    .target Hamish Bergwort
+step
     #completewith next
-    .goto 1429/0,-1032.06,-9610.23,30 >> Leave the mine and head south-east to the bridge
+    .goto 1429/0,-1032.06,-9610.23,30 >> Follow the road east to the bridge
 step
     .goto 1429/0,-1032.06,-9610.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r at the east bridge
@@ -1206,6 +1280,19 @@ step
     >>|cRXP_WARN_OPTIONAL (loot): 8 Torn Murloc Fins from the murlocs at Rolf's camp and down the river, which the route clears anyway. Skip this step to leave it, or if he doesn't offer it|r
     .accept 46 >> Accept Bounty on Murlocs
     .target Guard Thomas
+step
+    .goto 1429/0,-1222.40,-9531.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r at the Eastvale Logging Camp, just past the bridge
+    >>|cRXP_WARN_OPTIONAL (loot): 6 Red Linen Bandanas. They drop from the Defias Rogue Wizards on your way to Rolf and the Defias Bandits around Princess. Skip this step to leave it|r
+    .accept 83 >> Accept Red Linen Goods
+    .target Sara Timberlain
+step
+    #completewith ThomasReturn
+    .isOnQuest 83
+    >>Loot |cRXP_LOOT_Red Linen Bandanas|r from the |cRXP_ENEMY_Defias|r you kill
+    .complete 83,1 --Red Linen Bandana (6)
+    .mob Defias Rogue Wizard
+    .mob Defias Bandit
 step
     #completewith ThomasReturn
     >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r as you go
@@ -1225,6 +1312,23 @@ step
     >>Follow the river north. Click |cRXP_PICK_A half-eaten body|r on the ground
     .turnin 37 >> Turn in Find the Lost Guards
     .accept 45 >> Accept Discover Rolf's Fate
+step
+    .isOnQuest 91724
+    #loop
+    .goto 1429,73.4,49.8,0
+    .goto 1429,74.5,52.4,0
+    .goto 1429,73.9,55.6,0
+    .goto 1429,72.6,46.4,35,0
+    .goto 1429,73.4,49.8,35,0
+    .goto 1429,74.5,52.4,35,0
+    .goto 1429,73.1,54.2,35,0
+    .goto 1429,73.9,55.6,35,0
+    .goto 1429,76.6,53.4,35,0
+    .goto 1429,76.8,48.6,35,0
+    .goto 1429,74.4,47.0,35,0
+    >>Kill |cRXP_ENEMY_Defias Rogue Wizards|r north of the body, up toward Stone Cairn Lake
+    .complete 91724,1 --Defias Rogue Wizard (6)
+    .mob Defias Rogue Wizard
 step
     .goto 1429/0,-1234.31,-9224.18
     >>Click |cRXP_PICK_Rolf's corpse|r in the murloc camp at Stone Cairn Lake
@@ -1275,12 +1379,6 @@ step
     .mob Murloc Forager
     .mob Murloc Lurker
 step
-    .goto 1429/0,-869.87,-9768.10
-    >>Kill |cRXP_ENEMY_Princess|r at the Brackwell Pumpkin Patch. Loot her for the |cRXP_LOOT_Brass Collar|r
-    >>|cRXP_WARN_Two|r |cRXP_ENEMY_Porcine Entourage|r |cRXP_WARN_fight with her, and her charge hits hard|r
-    .complete 88,1 --Brass Collar (1)
-    .mob Princess
-step
     #loop
     .goto 1429,77.499,74.518,0
     .goto 1429,80.496,78.223,0
@@ -1297,6 +1395,28 @@ step
     .mob +Prowler
     .complete 52,2 --Young Forest Bear (5)
     .mob +Young Forest Bear
+step
+    .goto 1429/0,-869.87,-9768.10
+    >>Kill |cRXP_ENEMY_Princess|r at the Brackwell Pumpkin Patch. Loot her for the |cRXP_LOOT_Brass Collar|r
+    >>|cRXP_WARN_Two|r |cRXP_ENEMY_Porcine Entourage|r |cRXP_WARN_fight with her, and her charge hits hard|r
+    .complete 88,1 --Brass Collar (1)
+    .mob Princess
+step
+    .isOnQuest 83
+    #loop
+    .goto 1429/0,-911.52,-9735.70,60,0
+    .goto 1429/0,-828.22,-9733.39,60,0
+    .goto 1429/0,-831.69,-9823.65,60,0
+    .goto 1429/0,-921.93,-9812.08,60,0
+    >>Finish the |cRXP_LOOT_Red Linen Bandanas|r on the |cRXP_ENEMY_Defias Bandits|r around the pumpkin patch
+    .complete 83,1 --Red Linen Bandana (6)
+    .mob Defias Bandit
+step
+    .isQuestComplete 91724
+    .goto 1429,65.0,70.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamish Bergwort|r at the Tower of Azora, just north-west of the pumpkin patch
+    .turnin 91724 >> Turn in Delicate Instruments
+    .target Hamish Bergwort
 step
     #label ThomasReturn
     .goto 1429/0,-1032.06,-9610.23
@@ -1318,6 +1438,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormin Pelford|r
     .turnin 91733 >> Turn in Downstream
     .target Ormin Pelford
+step
+    .isQuestComplete 83
+    .goto 1429/0,-1222.40,-9531.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r at the logging camp
+    .turnin 83 >> Turn in Red Linen Goods
+    .target Sara Timberlain
 step
     .isOnQuest 91740
     .goto 1429/0,-1406.20,-9775.50
@@ -1382,6 +1508,12 @@ step
     .accept 114 >> Accept The Escape
     .target William Pestle
 step
+    .isQuestComplete 99143
+    .goto 1429,47.6,62.3
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lee Brown|r just east of Goldshire
+    .turnin 99143 >> Turn in Bottles and Baubles
+    .target Lee Brown
+step
     .isOnQuest 85
     .goto 1429/0,38.41,-9923.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead south to the Maclure Vineyards and talk to |cRXP_FRIENDLY_Billy Maclure|r
@@ -1400,8 +1532,28 @@ step
     .turnin 88 >> Turn in Princess Must Die!
     .target Ma Stonefield
 step
+    .goto 1429,33.69,82.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Homer Stonefield|r, the fruit seller at the farm
+    >>|cRXP_BUY_Buy 4 Shiny Red Apples (about 1 silver) for the Applejack Still on the way to Westbrook|r
+    .collect 4536,4 --Shiny Red Apple (4)
+    .target Homer Stonefield
+step
+    .goto 1429,24.0,58.0
+    >>Head north-west to the |cRXP_PICK_Applejack Still|r by the Mirror Lake falls. Kill the |cRXP_ENEMY_Defias Bandits|r guarding it
+    >>|cRXP_WARN_Hand the apples in at the still, then take the drink to Sergeant De Vries at Westbrook|r
+    .accept 91736 >> Accept Applejack Still
+    .turnin 91736 >> Turn in Applejack Still
+    .accept 91738 >> Accept An Apple Treat
+    .mob Defias Bandit
+step
     #completewith next
-    .goto 1429/0,673.96,-9704.45,80 >> Head north-west to Westbrook Garrison
+    .goto 1429/0,673.96,-9704.45,80 >> Head south to Westbrook Garrison
+step
+    .isOnQuest 91738
+    .goto 1429,24.08,73.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant De Vries|r at Westbrook Garrison
+    .turnin 91738 >> Turn in An Apple Treat
+    .target Sergeant De Vries
 step
     .goto 1429/0,694.29,-9662.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r at Westbrook Garrison

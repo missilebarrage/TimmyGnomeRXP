@@ -41,7 +41,8 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Wands (level 8):** back in Kharanos, the paladin gathers a Copper Rod, Copper Ore and Rough Stone while
   the mage goes to Ironforge: learn Enchanting, buy Motes of Magic and Simple Wood, craft a Runed Copper Rod
   and a Novice's Practice Wand, enchant a bracer to 10 Enchanting, train Lesser Magic Wand, learn Tailoring
-  across the Great Forge, then hearth back. From here the mage keeps all Linen Cloth for the Tailoring stop.
+  across the Great Forge (with Coarse Thread and Bleach from Poranna Snowbraid next to him), then hearth back.
+  From here a sticky tracks the Tailoring stash: 30 Bolts of Linen Cloth, the thread, the bleach and the Simple Wood.
 - **Skipped:** The Perfect Stout, Flintfire's Shipment and the Frosthowl kill (the quest stays open for later).
 - **Training:** every class gets a trainer stop in Anvilmar at levels 2 and 4 (with a vendor stop before the
   second). Mages also train with Magis Sparkmantle in Kharanos at levels 6 and 8.

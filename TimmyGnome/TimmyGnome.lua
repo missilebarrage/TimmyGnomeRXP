@@ -211,7 +211,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 10
+#version 11
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -598,8 +598,20 @@ step << Mage
     .skill tailoring,1 >> Learn Tailoring
     .target Uthrar Threx
 step << Mage
+    .goto 1455,42.94,28.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Poranna Snowbraid|r next to Uthrar
+    >>|cRXP_BUY_Buy 10|r |T132891:0|t[Coarse Thread] |cRXP_BUY_and 1 Bleach (about 1s 25c) for your level 10 Tailoring gear. Short on money? Skip this step: the Stormwind stop sells them too|r
+    .collect 2320,10 --Coarse Thread (10)
+    .collect 2324,1 --Bleach (1)
+    .target Poranna Snowbraid
+step << Mage
     #completewith DeeprunTram
-    >>|cRXP_WARN_Keep every|r |T132889:0|t[Linen Cloth] |cRXP_WARN_you loot from now on: it becomes cloth gear at a Tailoring stop in Stormwind at level 10. Ask your partner for any they don't need|r
+    >>|cRXP_WARN_Tailoring stash for your crafting stop in Stormwind at level 10. Keep every|r |T132889:0|t[Linen Cloth] |cRXP_WARN_and turn it into|r |T132890:0|t[Bolts of Linen Cloth] |cRXP_WARN_as you go: each bolt is a Tailoring skill point. Ask your partner for spare linen too|r
+    >>|cRXP_WARN_Keep the Simple Wood: it makes your Lesser Magic Wand at the stop|r
+    .collect 2996,30 --Bolt of Linen Cloth (30)
+    .collect 2320,10 --Coarse Thread (10)
+    .collect 2324,1 --Bleach (1)
+    .collect 4470,1 --Simple Wood (1)
 step << Mage
     .goto 1455/0,-1026.28,-4872.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWhile you're in Ironforge, talk to |cRXP_FRIENDLY_Senator Barin Redstone|r in the throne room

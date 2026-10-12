@@ -32,8 +32,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   Old Ironforge Incursion: the Hall of Thanes dungeon quest. If a Rockjaw Ambusher drops an Empty Powder Keg,
   Stolen Blasting Powder goes to Quarrymaster Thesten; its 16-powder follow-up is optional.
 - **Level 10, to Stormwind:** get the Thelsamar flight path in Loch Modan (with Honor Students for Dwarves and
-  Gnomes), fly to Ironforge, turn in The Reports, pick up the Hall of Thanes quests from Afadra Dunwall and
-  Thom Filch, then take the Deeprun Tram to Stormwind with Monty's rat quest and Me Brother, Nipsy.
+  Gnomes), fly to Ironforge, turn in The Reports, then take the Deeprun Tram to Stormwind with Monty's rat quest
+  and Me Brother, Nipsy. The Hall of Thanes quests in Ironforge are left for when you run the dungeon.
 - **Wands (level 8):** back in Kharanos, the paladin gathers a Copper Rod, Copper Ore and Rough Stone while
   the mage goes to Ironforge: learn Enchanting, buy Motes of Magic and Simple Wood, craft a Runed Copper Rod
   and a Novice's Practice Wand, enchant a bracer to 10 Enchanting, train Lesser Magic Wand, then hearth back.

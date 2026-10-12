@@ -798,9 +798,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash to |cRXP_FRIENDLY_Frast Dokner|r at Gol'Bolar Quarry
     .vendor >> Sell your trash
     .target Frast Dokner
--- Loch Modan flight path (with Honor Students for Dwarves and Gnomes), fly to Ironforge, pick up the
--- Hall of Thanes quests, then the Deeprun Tram to Stormwind for Elwynn Forest. The quests need level 10:
--- their steps skip themselves below that.
+-- Loch Modan flight path (with Honor Students for Dwarves and Gnomes), fly to Ironforge, then the Deeprun
+-- Tram to Stormwind for Elwynn Forest. The quests need level 10: their steps skip themselves below that.
+-- The Hall of Thanes quests in Ironforge wait until it's time to run the dungeon.
 step
     #completewith LochModan
     .goto 1426/0,-2165.600,-5609.000,70,0
@@ -868,30 +868,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Barin Redstone|r in the throne room
     .turnin 291 >> Turn in The Reports
     .target Senator Barin Redstone
-step
-    #completewith next
-    .xp <10,1
-    .goto 1455/0,-1082.800,-4886.000,10,0
-    .goto 1455/0,-1087.700,-4821.900,10,0
-    .goto 1455/0,-1010.300,-4850.900,10 >> Go down into Old Ironforge through King Magni's room
-step
-    .xp <10,1
-    .goto 1455/0,-971.800,-4820.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Afadra Dunwall|r for a Hall of Thanes dungeon quest
-    .accept 96394 >> Accept The Restless Dead
-    .target Afadra Dunwall
-step
-    #completewith next
-    .xp <10,1
-    .goto 1455/0,-996.100,-4821.200,10,0
-    .goto 1455/0,-972.000,-4803.000,10,0
-    .goto 1455/0,-988.900,-4854.400,10 >> |cRXP_WARN_Drop down onto the ramp below|r
-step
-    .xp <10,1
-    .goto 1455/0,-968.200,-4803.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thom Filch|r for another Hall of Thanes dungeon quest
-    .accept 96403 >> Accept Important Heirlooms
-    .target Thom Filch
 step
     #completewith next
     .goto 1455/0,-1330.28,-4840.430

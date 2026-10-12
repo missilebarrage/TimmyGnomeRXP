@@ -211,7 +211,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 16
+#version 17
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -638,6 +638,13 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r upstairs
     .trainer >> Train your level 8 spells (Polymorph, Frostbolt, Arcane Missiles)
     .target Magis Sparkmantle
+step << Mage
+    .train 7411,3
+    .goto 1426/0,-498.400,-5648.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eric Brighthammer|r at the campfire next to the graveyard: now that you have Enchanting, he has a camping quest for it
+    >>|cRXP_WARN_It completes at 20 Enchanting, which you reach at the Stormwind tailoring stop. Thonys Pillarstone in Ironforge takes it on your level 12 trip|r
+    .accept 96059 >> Accept Camping 101: Enchanting
+    .target Eric Brighthammer::265813
 step
     >>Last stop for Beer Basted Boar Ribs: if you're still short on |cRXP_LOOT_Crag Boar Ribs|r, kill boars around Kharanos
     .complete 384,1 --Crag Boar Rib (6)
@@ -983,7 +990,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 12
+#version 13
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1024,6 +1031,18 @@ step
     >>|cRXP_WARN_Catherine sells the Fishing Pole too, if you want to start fishing|r
     .skill fishing,1 >> Learn Fishing
     .target Arnold Leland
+step << Mage
+    .train 7411,3
+    .skill enchanting,20,1
+    .goto 1453,52.80,74.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jessara Cordell|r, the enchanting supplies vendor in the Mage Quarter, on the way to the tailoring shop
+    >>|cRXP_WARN_Motes are 10c each. Buy one extra if your Enchanting is below 11|r
+    .collect 247786,9 >> Buy 9 Motes of Magic
+    .target Jessara Cordell
+step << Mage
+    .train 7411,3
+    >>|cRXP_WARN_Cast Enchant Bracer - Inferior Stamina on your bracer until Enchanting reaches 20: every cast is a skill point. That completes Camping 101: Enchanting|r
+    .skill enchanting,20 >> Reach 20 Enchanting
 step << Mage
     >>|cRXP_WARN_Turn all your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_into|r |T132890:0|t[Bolts of Linen Cloth]|cRXP_WARN_: each bolt is a skill point up to about 25, where the gear recipes unlock|r
     .skill tailoring,25 >> Reach 25 Tailoring
@@ -1632,7 +1651,7 @@ step
 -- Morogh and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 1
+#version 2
 << Alliance
 #group TimmyGnome
 #name 12-14 Loch Modan
@@ -1680,7 +1699,8 @@ step
     .accept 416 >> Accept Rat Catching
     .target Mountaineer Kadrell
 -- Ironforge for level 12 training. Paladins start The Tome of Divinity here; its Dun Morogh part comes up on the
--- South Gate detour. Below level 12 these steps skip themselves and training waits for the end of the guide.
+-- South Gate detour. The mage hands in Camping 101: Enchanting next to the flight master. Below level 12 these
+-- steps skip themselves and training waits for the end of the guide.
 step
     .xp <12,1
     .goto 1432/0,-2929.87,-5424.84
@@ -1789,6 +1809,14 @@ step << Dwarf Paladin
     .turnin 1779 >> Turn in The Tome of Divinity
     .accept 1783 >> Accept The Tome of Divinity
     .target Muiredon Battleforge
+step << Mage
+    .xp <12,1
+    .isQuestComplete 96059
+    .goto 1455,60.27,45.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thonys Pillarstone|r in the enchanting shop where you learned Enchanting, next to the flight master
+    >>|cRXP_WARN_He teaches you the Enchanted Lute, a camp item. OPTIONAL: Tilli Thistlefuzz in the same shop sells the Simple Wood and Strange Dust to craft one|r
+    .turnin 96059 >> Turn in Camping 101: Enchanting
+    .target Thonys Pillarstone
 step << Mage
     .xp <12,1
     +Your partner has a class quest here: sell your trash and restock while you wait
@@ -2209,12 +2237,20 @@ step
     .accept 301 >> Accept Report to Ironforge
     .target Jern Hornhelm
 -- Ironforge to finish: Report to Ironforge, the paladin's Tome of Divinity, and level 14 training if you're there.
+-- Camping 101: Enchanting goes in here if the level 12 trip was skipped.
 step
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
     .fly Ironforge >> Fly to Ironforge
     .target Thorgrum Borrelson
     .zoneskip Ironforge
+step << Mage
+    .isQuestComplete 96059
+    .goto 1455,60.27,45.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thonys Pillarstone|r in the enchanting shop where you learned Enchanting, next to the flight master
+    >>|cRXP_WARN_He teaches you the Enchanted Lute, a camp item. OPTIONAL: Tilli Thistlefuzz in the same shop sells the Simple Wood and Strange Dust to craft one|r
+    .turnin 96059 >> Turn in Camping 101: Enchanting
+    .target Thonys Pillarstone
 step
     .goto 1455,74.64,11.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Stormpike|r in the Hall of Explorers

@@ -43,8 +43,9 @@ To update, download the zip again and replace the TimmyGnome folder.
   the mage goes to Ironforge: learn Enchanting, buy Motes of Magic and Simple Wood, craft a Runed Copper Rod
   and a Novice's Practice Wand, enchant a bracer to 10 Enchanting, train and craft the Lesser Magic Wand (Tilli
   sells a few Lesser Magic Essences), learn Tailoring across the Great Forge (with Coarse Thread and Bleach from
-  Poranna Snowbraid next to him), then hearth back. From here a sticky tracks the Tailoring stash: 30 Bolts of
-  Linen Cloth, the thread and the bleach. The paladin's sticky at the same time: keep 10 Linen Cloth for his
+  Poranna Snowbraid next to him), then hearth back and pick up Camping 101: Enchanting from Eric Brighthammer at
+  the Kharanos campfire. From here a sticky tracks the Tailoring stash: 30 Bolts of Linen Cloth, the thread and
+  the bleach. The paladin's sticky at the same time: keep 10 Linen Cloth for his
   level 12 class quest and trade the rest to the mage.
 - **Skipped:** The Perfect Stout, Flintfire's Shipment and the Frosthowl kill (the quest stays open for later).
 - **Training:** every class gets a trainer stop in Anvilmar at levels 2 and 4 (with a vendor stop before the
@@ -53,11 +54,15 @@ To update, download the zip again and replace the TimmyGnome folder.
 ### 10-12 Elwynn Forest
 
 - **Stormwind:** off the tram, Stormpike's Delivery from Grimand Elmore (if he offers it), First Aid from Shaina
-  Fuller in the Cathedral of Light (only if you missed it in Ironforge), the mage's Tailoring stop, Fishing from Arnold Leland, then three new Forever
-  quests: Fishin' Time (a Shiny Bauble and 3 Nightcrawlers from Catherine Leland,
-  handed to Gilbert Gray at Stormwind Harbor), Philmor's Favor (Manifest Clerk Philmor at the harbor, delivered to
-  Trias' Cheese) and Gatehouse Goods (Elaine Trias, if she offers it). Then the flight path from Dungar Longdrink
-  next door, and the walk to Goldshire.
+  Fuller in the Cathedral of Light (only if you missed it in Ironforge), Fishing from Arnold Leland, the mage's
+  Enchanting and Tailoring stop, then three new Forever quests: Fishin' Time (a Shiny Bauble and 3 Nightcrawlers
+  from Catherine Leland, handed to Gilbert Gray at Stormwind Harbor), Philmor's Favor (Manifest Clerk Philmor at
+  the harbor, delivered to Trias' Cheese) and Gatehouse Goods (Elaine Trias, if she offers it). Then the flight
+  path from Dungar Longdrink next door, and the walk to Goldshire.
+- **Enchanting (mage):** on the way to the tailoring shop, buy 9 Motes of Magic from Jessara Cordell in the Mage
+  Quarter and enchant your bracer (Inferior Stamina) to 20 Enchanting. That completes Camping 101: Enchanting,
+  which Thonys Pillarstone in Ironforge takes on the level 12 trip (or at the end of Loch Modan) and teaches the
+  Enchanted Lute camp item.
 - **Tailoring stop (mage):** top up to about 60 Linen Cloth at the Auction House, bolt it all (Tailoring to about
   25), train White Linen Robe, Brown Linen Pants and Heavy Linen Gloves at the tailoring shop, buy Coarse Thread and
   Bleach, then craft and equip the three. Optional nice-to-have: a Reinforced Linen Cape (Spell Power) if your skill
@@ -91,7 +96,8 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Thelsamar** (you hearth in): Return to Brock, Snowbound, Mountaineer Stormpike's Task, and a vendor stop.
   Thelsamar Blood Sausages and Rat Catching are OPTIONAL gathering quests for the trip back from Algaz Station.
 - **Ironforge at 12:** fly in to train. Paladins start The Tome of Divinity here (John Turner takes the 10 Linen
-  Cloth). Below level 12 the trip skips itself and training happens in Ironforge at the end.
+  Cloth). The mage turns in Camping 101: Enchanting at Thonys Pillarstone, next to the flight master. Below
+  level 12 the trip skips itself and training happens in Ironforge at the end.
 - **Southern guard tower:** In Defense of the King's Lands four times over, plus The Trogg Threat on the same troggs.
   The third and fourth (level 15-17 troggs and Grawmug) are OPTIONAL.
 - **Dun Morogh detour:** The Lost Pilot and Mangeclaw. Paladins raise Narm Faulk and take the Dark Iron Script.

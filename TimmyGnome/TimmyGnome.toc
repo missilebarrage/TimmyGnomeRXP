@@ -2,7 +2,7 @@
 ## Title: TimmyGnome
 ## Notes: RestedXP guide: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest and Loch Modan, levels 1-14. Needs RestedXP Guides.
 ## Author: Tim
-## Version: 1.11.2
+## Version: 1.11.3
 ## Dependencies: RXPGuides
 ## Category: Quests
 ## X-License: CC BY-NC-SA 4.0

@@ -987,14 +987,15 @@ step
 -- The mage's An Enchanting Lesson (Kitta Firewind, top of the tower, enchanters only) rides on the same Geomancers:
 -- they drop Crude Wax Effigies that disenchant into Luminous Residue. No farming: if the kills don't give 3, drop it.
 -- Applejack Still and An Apple Treat (apples from Homer Stonefield, the still by the Mirror Lake falls, Sergeant De
--- Vries at Westbrook) fit the walk to Westbrook. Hogger and Goldtooth stay out: Hogger's turn-in is in Goldshire,
+-- Vries at Westbrook) fit the walk to Westbrook. Both are hand-ins with no quest giver; the still is repeatable and
+-- pays no XP, and An Apple Treat pays 625. Hogger and Goldtooth stay out: Hogger's turn-in is in Goldshire,
 -- which the route has already left, and Goldtooth is a single spawn in a crowded mine. Stormpike's Delivery (for
 -- Loch Modan) is tried at Grimand Elmore off the tram; if he wants Elmore's Task first, Smith Argus gives it and the
 -- post-Redridge stop in Stormwind swaps it. 1429 is Elwynn Forest, 1453 Stormwind City, 1433 Redridge Mountains and
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 20
+#version 21
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1541,7 +1542,7 @@ step
     .goto 1429,24.0,58.0
     >>Head north-west to the |cRXP_PICK_Applejack Still|r by the Mirror Lake falls. Kill the |cRXP_ENEMY_Defias Bandits|r guarding it
     >>|cRXP_WARN_There's nothing to accept: it's a hand-in. Out of combat, stand right next to the still and right-click the device itself (the floating ? isn't clickable) with the 4 apples in your bags|r
-    >>|cRXP_WARN_It gives you a Thunder Applejack for Sergeant De Vries at Westbrook|r
+    >>|cRXP_WARN_It's repeatable and pays no XP: one Thunder Applejack is all you need. The XP comes from Sergeant De Vries at Westbrook|r
     .turnin 91736 >> Turn in Applejack Still
     .mob Defias Bandit
 step
@@ -1550,7 +1551,7 @@ step
 step
     .itemcount 247824,1
     .goto 1429,24.08,73.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant De Vries|r at Westbrook Garrison and hand him the |cRXP_LOOT_Thunder Applejack|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant De Vries|r at Westbrook Garrison and hand him the |cRXP_LOOT_Thunder Applejack|r (625 XP)
     .turnin 91738 >> Turn in An Apple Treat
     .target Sergeant De Vries
 step

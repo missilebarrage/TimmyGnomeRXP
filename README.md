@@ -84,15 +84,16 @@ To update, download the zip again and replace the TimmyGnome folder.
   back to Goldshire. Your Hearthstone stays bound in Thelsamar. In Stormwind the mage hands Speak with Jennea to
   Jennea Cannon in the Wizard's Sanctum, takes Mirror Lake and, at level 12, trains with her (the Mirror Lake
   turn-in is a second chance, and Ironforge's level 12 training then skips itself).
-- **Finish:** turn-ins in Goldshire and at the farms, Applejack Still and An Apple Treat (apples from Homer
-  Stonefield, the still by the Mirror Lake falls, Sergeant De Vries), Westbrook Garrison, then Westfall: Westfall Stew on the way
-  down the road, Report to Gryan Stoutmantle and the Sentinel Hill flight path, and hearth to Thelsamar. The
-  Loch Modan guide starts there. The mage fills Jennea's Flask at the Mirror Lake waterfall on the way to the still,
-  then flies from Sentinel Hill to Stormwind to hand in Mirror Lake (Ley Staff or Ley Orb) before hearthing; the
-  paladin can hearth straight away.
+- **Finish:** turn-ins in Goldshire and at the farms, Applejack Still and An Apple Treat (4 apples from Homer
+  Stonefield into the still by the Mirror Lake falls, a repeatable hand-in with no XP, then the Thunder Applejack to
+  Sergeant De Vries for 625 XP), Westbrook Garrison, then Westfall: Westfall Stew on the way down the road, Report
+  to Gryan Stoutmantle and the Sentinel Hill flight path, and hearth to Thelsamar. The Loch Modan guide starts
+  there. The mage fills Jennea's Flask at the Mirror Lake waterfall on the way to the still, then flies from
+  Sentinel Hill to Stormwind to hand in Mirror Lake (Ley Staff or Ley Orb) before hearthing; the paladin can
+  hearth straight away.
 - **Level 12 is a target, not a requirement.** Hogger, Riverpaw Gnoll Bounty and grinding are cut because Loch
-  Modan pays better by then. With the optional quests you should finish around 85-90% into 11; Return to Brock
-  and Stormpike's Delivery (1,050 XP each) wait in Loch Modan.
+  Modan pays better by then. In a beta test run the mage was already 12 at Sergeant De Vries, before Westfall.
+  Return to Brock and Stormpike's Delivery (1,050 XP each) wait in Loch Modan.
 - **Gathering quests:** left out, except Red Linen Goods, whose bandanas come from Defias on the route. Its accept
   step is marked OPTIONAL. Downstream is a required step: its three riverbank items respawn instantly. Skipped on
   purpose: Collecting Kelp (and with it The Escape) and Bottles and Baubles (Crystal Lake's murlocs and junk piles

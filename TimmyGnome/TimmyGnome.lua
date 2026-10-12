@@ -211,7 +211,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 17
+#version 18
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -578,6 +578,12 @@ step << Mage
     .skill enchanting,1 >> Learn Enchanting
     .target Gimble Thistlefuzz
 step << Mage
+    .goto 1455,60.27,45.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thonys Pillarstone|r next to Gimble: now that you have Enchanting, he has a camping quest for it
+    >>|cRXP_WARN_It completes at 20 Enchanting, which you reach at the Stormwind tailoring stop at level 10. Bring it back to him on your level 12 Ironforge trip|r
+    .accept 96059 >> Accept Camping 101: Enchanting
+    .target Thonys Pillarstone
+step << Mage
     .goto 1455,61.03,44.00
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tilli Thistlefuzz|r, the enchanting supplies vendor
     >>|cRXP_WARN_She only stocks a few Lesser Magic Essences. If she's out, check the Auction House|r
@@ -638,13 +644,6 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r upstairs
     .trainer >> Train your level 8 spells (Polymorph, Frostbolt, Arcane Missiles)
     .target Magis Sparkmantle
-step << Mage
-    .train 7411,3
-    .goto 1426/0,-498.400,-5648.400
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Eric Brighthammer|r at the campfire next to the graveyard: now that you have Enchanting, he has a camping quest for it
-    >>|cRXP_WARN_It completes at 20 Enchanting, which you reach at the Stormwind tailoring stop. Thonys Pillarstone in Ironforge takes it on your level 12 trip|r
-    .accept 96059 >> Accept Camping 101: Enchanting
-    .target Eric Brighthammer::265813
 step
     >>Last stop for Beer Basted Boar Ribs: if you're still short on |cRXP_LOOT_Crag Boar Ribs|r, kill boars around Kharanos
     .complete 384,1 --Crag Boar Rib (6)

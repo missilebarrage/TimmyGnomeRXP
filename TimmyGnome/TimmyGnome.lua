@@ -994,7 +994,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 19
+#version 20
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1540,18 +1540,17 @@ step
 step
     .goto 1429,24.0,58.0
     >>Head north-west to the |cRXP_PICK_Applejack Still|r by the Mirror Lake falls. Kill the |cRXP_ENEMY_Defias Bandits|r guarding it
-    >>|cRXP_WARN_Hand the apples in at the still, then take the drink to Sergeant De Vries at Westbrook|r
-    .accept 91736 >> Accept Applejack Still
+    >>|cRXP_WARN_There's nothing to accept: it's a hand-in. Out of combat, stand right next to the still and right-click the device itself (the floating ? isn't clickable) with the 4 apples in your bags|r
+    >>|cRXP_WARN_It gives you a Thunder Applejack for Sergeant De Vries at Westbrook|r
     .turnin 91736 >> Turn in Applejack Still
-    .accept 91738 >> Accept An Apple Treat
     .mob Defias Bandit
 step
     #completewith next
     .goto 1429/0,673.96,-9704.45,80 >> Head south to Westbrook Garrison
 step
-    .isOnQuest 91738
+    .itemcount 247824,1
     .goto 1429,24.08,73.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant De Vries|r at Westbrook Garrison
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant De Vries|r at Westbrook Garrison and hand him the |cRXP_LOOT_Thunder Applejack|r
     .turnin 91738 >> Turn in An Apple Treat
     .target Sergeant De Vries
 step

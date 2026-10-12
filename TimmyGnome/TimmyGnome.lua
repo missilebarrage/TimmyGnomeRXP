@@ -764,4 +764,30 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tYou found the keg: talk to |cRXP_FRIENDLY_Quarrymaster Thesten|r at Gol'Bolar Quarry
     .turnin 95213 >> Turn in Stolen Blasting Powder
     .target Quarrymaster Thesten
+step
+    .isQuestTurnedIn 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    >>|cRXP_WARN_OPTIONAL: the follow-up needs 16 Stolen Blasting Powder from Rockjaw Ambushers. Skip this step if that's too slow|r
+    .accept 95214 >> Accept Stolen Blasting Powder
+    .target Quarrymaster Thesten
+step
+    .isOnQuest 95214
+    #loop
+    .goto 1426/0,-1881.82,-5735.45,50,0
+    .goto 1426/0,-1832.57,-5571.28,50,0
+    .goto 1426/0,-1724.22,-5636.95,50,0
+    .goto 1426/0,-1881.82,-5735.45,0
+    .goto 1426/0,-1832.57,-5571.28,0
+    .goto 1426/0,-1724.22,-5636.95,0
+    >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r. Loot them for their |cRXP_LOOT_Stolen Blasting Powder|r
+    >>|cRXP_WARN_OPTIONAL: if the drops are too slow, skip this step and abandon the quest|r
+    .complete 95214,1 --Stolen Blasting Powder (16)
+    .mob Rockjaw Ambusher
+step
+    .isQuestComplete 95214
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Quarrymaster Thesten|r
+    .turnin 95214 >> Turn in Stolen Blasting Powder
+    .target Quarrymaster Thesten
 ]])

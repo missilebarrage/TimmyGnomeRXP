@@ -52,7 +52,10 @@ To update, download the zip again and replace the TimmyGnome folder.
 ### 10-12 Elwynn Forest
 
 - **Stormwind:** off the tram, Stormpike's Delivery from Grimand Elmore (if he offers it), the mage's Tailoring
-  stop, the flight path from Dungar Longdrink, then walk to Goldshire.
+  stop, then three new Forever quests: Fishin' Time (a Shiny Bauble and 3 Nightcrawlers from Catherine Leland,
+  handed to Gilbert Gray at Stormwind Harbor), Philmor's Favor (Manifest Clerk Philmor at the harbor, delivered to
+  Trias' Cheese) and Gatehouse Goods (Elaine Trias, if she offers it). Then the flight path from Dungar Longdrink
+  next door, and the walk to Goldshire.
 - **Tailoring stop (mage):** top up to about 60 Linen Cloth at the Auction House, bolt it all (Tailoring to about
   25), train White Linen Robe, Brown Linen Pants and Heavy Linen Gloves at the tailoring shop, buy Coarse Thread and
   Bleach, then craft and equip the three. Optional nice-to-have: a Reinforced Linen Cape (Spell Power) if your skill

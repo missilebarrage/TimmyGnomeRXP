@@ -971,7 +971,7 @@ step
 -- Stormwind City, 1433 Redridge Mountains and 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 5
+#version 6
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -990,6 +990,13 @@ step << Mage
     >>|cRXP_WARN_You want about 60|r |T132889:0|t[Linen Cloth] |cRXP_WARN_in total, counting each bolt as 2|r
     +Buy the linen you're missing, or tick this if you have enough
     .target Auctioneer Jaxon
+step
+    .goto 1453,55.09,69.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catherine Leland|r, the fishing supplier by the canal
+    >>|cRXP_BUY_Buy 1|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_and 3 Nightcrawlers (about 3s 50c) for Fishin' Time: Gilbert Gray at the harbor takes them for 900 XP|r
+    .collect 6529,1 --Shiny Bauble (1)
+    .collect 6530,3 --Nightcrawlers (3)
+    .target Catherine Leland
 step << Mage
     >>|cRXP_WARN_Turn all your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_into|r |T132890:0|t[Bolts of Linen Cloth]|cRXP_WARN_: each bolt is a skill point up to about 25, where the gear recipes unlock|r
     .skill tailoring,25 >> Reach 25 Tailoring
@@ -1024,6 +1031,37 @@ step << Mage
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
     >>|cRXP_WARN_Still no Lesser Magic Wand from Ironforge? Disenchant a spare pair of pants for a|r |T132867:0|t[Lesser Magic Essence]|cRXP_WARN_, then craft the|r |T135139:0|t[Lesser Magic Wand] |cRXP_WARN_(it also takes a Simple Wood) and equip it|r
     .collect 11287,1 --Lesser Magic Wand (1)
+step
+    .goto 1453,26.0,47.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead west to Stormwind Harbor and talk to |cRXP_FRIENDLY_Gilbert Gray|r: he gives you Fishin' Time and takes the bauble and nightcrawlers on the spot
+    >>|cRXP_WARN_If he won't offer it yet (it may need level 12), skip this step|r
+    .accept 95065 >> Accept Fishin' Time
+    .turnin 95065 >> Turn in Fishin' Time
+    .target Gilbert Gray
+step
+    .goto 1453,30.0,29.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor|r further up the harbor
+    .accept 97220 >> Accept Philmor's Favor
+    .target Manifest Clerk Philmor
+step
+    .isOnQuest 97220
+    .goto 1453,66.56,73.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTake Philmor's delivery back to Trias' Cheese in the Trade District, next to the gryphon master
+    >>|cRXP_WARN_If your quest log points at the stockroom entrance on the building's second floor, drop it off there|r
+    .turnin 97220 >> Turn in Philmor's Favor
+    .target +Elaine Trias
+    .target +Elling Trias
+step
+    .goto 1453,66.56,73.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias|r in Trias' Cheese
+    >>|cRXP_WARN_Take Gatehouse Goods if she offers it. Skip this step if she doesn't|r
+    .accept 97222 >> Accept Gatehouse Goods
+    .target Elaine Trias
+step
+    .isOnQuest 97222
+    .goto 1453,66.56,73.37
+    >>|cRXP_WARN_Carry the Gatehouse Shipment up to the stockroom entrance on the second floor of the same building, then hand the quest in where your quest log says|r
+    .turnin 97222 >> Turn in Gatehouse Goods
 step
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master in the Trade District

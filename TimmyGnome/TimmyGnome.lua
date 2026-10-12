@@ -211,7 +211,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 18
+#version 19
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -620,7 +620,7 @@ step << Mage
 step << Mage
     #completewith DeeprunTram
     >>|cRXP_WARN_Tailoring stash for your crafting stop in Stormwind at level 10. Keep every|r |T132889:0|t[Linen Cloth] |cRXP_WARN_and turn it into|r |T132890:0|t[Bolts of Linen Cloth] |cRXP_WARN_as you go: each bolt is a Tailoring skill point. Ask your partner for spare linen too|r
-    .collect 2996,30 --Bolt of Linen Cloth (30)
+    .collect 2996,36 --Bolt of Linen Cloth (36)
     .collect 2320,13 --Coarse Thread (13)
     .collect 2324,1 --Bleach (1)
 step << Mage
@@ -997,7 +997,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 23
+#version 24
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1022,7 +1022,7 @@ step << Mage
     #label TailoringStop
     .goto 1453/0,660.28,-8814.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTailoring stop. If you're short on linen, buy it from |cRXP_FRIENDLY_Auctioneer Jaxon|r in the Trade District
-    >>|cRXP_WARN_You want about 60|r |T132889:0|t[Linen Cloth] |cRXP_WARN_in total, counting each bolt as 2|r
+    >>|cRXP_WARN_You want about 72|r |T132889:0|t[Linen Cloth] |cRXP_WARN_in total, counting each bolt as 2, plus 12 for each reagent bag you make your party|r
     +Buy the linen you're missing, or tick this if you have enough
     .target Auctioneer Jaxon
 step
@@ -1061,10 +1061,16 @@ step << Mage
     .train 3840 >> Train Heavy Linen Gloves
     .target Lawrence Schneider
 step << Mage
+    .goto 1453,53.30,81.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Antonio Bolero|r, the tailoring recipe vendor in the same shop
+    >>|cRXP_BUY_Buy|r [Pattern: Linen Reagent Bag] |cRXP_BUY_(about 1s 50c, needs 5 Tailoring) and use it to learn the recipe|r
+    .train 1257013 >> Learn Linen Reagent Bag
+    .target Antonio Bolero::258568
+step << Mage
     .goto 1453,53.14,81.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandra Bolero|r in the same shop
-    >>|cRXP_BUY_Buy|r |T132891:0|t[Coarse Thread] |cRXP_BUY_(one per item, three per Linen Bag, three for the cape) and 1 Bleach for the robe|r
-    .collect 2320,13 --Coarse Thread (13)
+    >>|cRXP_BUY_Buy|r |T132891:0|t[Coarse Thread] |cRXP_BUY_(one per item, three per Linen Bag, three for the cape, six for the Linen Reagent Bag, and six more for each reagent bag you make your partner) and 1 Bleach for the robe|r
+    .collect 2320,19 --Coarse Thread (19)
     .collect 2324,1 --Bleach (1)
     .target Alexandra Bolero
 step << Mage
@@ -1073,6 +1079,10 @@ step << Mage
     .collect 6241,1 --White Linen Robe (1)
     .collect 4343,1 --Brown Linen Pants (1)
     .collect 4307,1 --Heavy Linen Gloves (1)
+step << Mage
+    >>|cRXP_WARN_Craft a Linen Reagent Bag (6 bolts and 6 Coarse Thread) and equip it: 6 slots for your reagents|r
+    >>|cRXP_WARN_Got the bolts and silver to spare? Craft one for each party member too: it's tradeable|r
+    .collect 253664,1 --Linen Reagent Bag (1)
 step << Mage
     .goto 1453,53.48,81.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tOPTIONAL nice-to-have: |cRXP_FRIENDLY_Lawrence Schneider|r also teaches the Reinforced Linen Cape, a Spell Power cloak (level 7) from 2 bolts and 3 Coarse Thread

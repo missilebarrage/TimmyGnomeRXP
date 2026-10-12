@@ -211,7 +211,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 6
+#version 7
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -593,10 +593,10 @@ step << Mage
     .collect 4470,1 >> Keep 1 Simple Wood to craft the Lesser Magic Wand later
     .target Gimble Thistlefuzz
 step << Mage
-    .goto 1455,43.15,29.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jormund Stonebrow|r, the tailoring trainer on the other side of the Great Forge
+    .goto 1455,43.82,27.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthrar Threx|r, the tailoring trainer on the other side of the Great Forge
     .skill tailoring,1 >> Learn Tailoring
-    .target Jormund Stonebrow
+    .target Uthrar Threx
 step << Mage
     #completewith DeeprunTram
     >>|cRXP_WARN_Keep every|r |T132889:0|t[Linen Cloth] |cRXP_WARN_you loot from now on: it becomes cloth gear at a Tailoring stop in Stormwind at level 10. Ask your partner for any they don't need|r

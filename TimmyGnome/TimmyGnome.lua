@@ -211,7 +211,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 7
+#version 8
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -607,6 +607,12 @@ step << Mage
     .target Senator Barin Redstone
 step << Mage
     .hs >> Hearth back to Kharanos
+step << Mage
+    .goto 1426/0,-521.97,-5597.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreg Bilmn|r near the inn
+    >>|cRXP_WARN_OPTIONAL: if you have 5 silver to spare, buy a|r |T133634:0|t[Small Brown Pouch] |cRXP_WARN_(6 slots). Skip this step if not|r
+    .vendor >> Buy a Small Brown Pouch
+    .target Kreg Bilmn
 step << Mage
     #completewith HerdAccept
     >>|cRXP_WARN_Level your wand skill: shoot the mobs you fight with your wand|r

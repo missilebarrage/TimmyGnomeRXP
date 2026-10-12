@@ -1,0 +1,13 @@
+# Privacy denylist and other local-only files
+.tools/
+
+# Build output
+dist/
+*.zip
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

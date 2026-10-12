@@ -1,0 +1,32 @@
+# Push a tag vX.Y.Z (matching "## Version" in the TOC) to publish TimmyGnome.zip as a GitHub release.
+# The asset name never changes, so .../releases/latest/download/TimmyGnome.zip always gets the newest one.
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Check the TOC version matches the tag
+        run: |
+          version="$(sed -n 's/^## Version: *//p' TimmyGnome/TimmyGnome.toc | tr -d '\r')"
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "TOC version $version doesn't match tag $GITHUB_REF_NAME" >&2
+            exit 1
+          fi
+
+      - name: Build TimmyGnome.zip
+        run: zip -r TimmyGnome.zip TimmyGnome
+
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" TimmyGnome.zip --title "TimmyGnome $GITHUB_REF_NAME" --generate-notes

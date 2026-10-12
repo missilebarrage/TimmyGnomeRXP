@@ -732,6 +732,14 @@ step
     .accept 96390 >> Accept Nip 'Em in the Bud
     .target Earthseer Farsen
 step
+    #completewith Incursion
+    >>Kill |cRXP_ENEMY_Rockjaw Ambushers|r. Loot them for the |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r]
+    .use 268548 >> |cRXP_WARN_Use the|r |T132621:0|t[|cRXP_LOOT_Empty Powder Keg|r] |cRXP_WARN_to start the quest|r
+    >>|cRXP_WARN_NOTE: This item has a low drop rate. Skip this step if you do not find it by the time you are done with the|r |cRXP_ENEMY_Dark Iron Spies|r
+    .collect 268548,1,95213,1 --Empty Powder Keg (1)
+    .accept 95213 >> Accept Stolen Blasting Powder
+    .mob Rockjaw Ambusher
+step
     .goto 1426/0,-2009.87,-5860.22,40,0
     .goto 1426/0,-2034.49,-5922.60
     >>Kill |cRXP_ENEMY_Dark Iron Spies|r at Ironband's Compound. Loot them for the |T237385:0|t[|cRXP_LOOT_Dark Iron Map|r]
@@ -742,6 +750,7 @@ step
     .accept 96391 >> Accept Underground Map
     .mob Dark Iron Spy
 step
+    #label Incursion
     .goto 1426/0,-1394.24,-5797.83
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at |cRXP_FRIENDLY_Earthseer Farsen|r
     >>|cRXP_WARN_Old Ironforge Incursion is the Hall of Thanes dungeon quest: claim Durgen Dirgehammer's head there and take it to King Magni in Ironforge|r
@@ -749,4 +758,10 @@ step
     .turnin 96391 >> Turn in Underground Map
     .accept 96393 >> Accept Old Ironforge Incursion
     .target Earthseer Farsen
+step
+    .isOnQuest 95213
+    .goto 1426/0,-1606.02,-5676.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tYou found the keg: talk to |cRXP_FRIENDLY_Quarrymaster Thesten|r at Gol'Bolar Quarry
+    .turnin 95213 >> Turn in Stolen Blasting Powder
+    .target Quarrymaster Thesten
 ]])

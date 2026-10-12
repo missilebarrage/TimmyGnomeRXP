@@ -713,4 +713,9 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senator Mehr Stonehallow|r
     .turnin 433 >> Turn in The Public Servant
     .target Senator Mehr Stonehallow
+step
+    .goto 1426/0,-1394.24,-5797.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Earthseer Farsen|r at his camp overlooking Gol'Bolar Quarry
+    .accept 96392 >> Accept Farsen's Watch
+    .target Earthseer Farsen
 ]])

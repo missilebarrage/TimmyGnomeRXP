@@ -27,7 +27,7 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Boar ribs:** keep collecting them through the west. Beer Basted Boar Ribs goes in on the last Kharanos
   visit, after the Brewnall lap. Stocking Jetsteam goes in before Brewnall, because it unlocks Evershine.
 - **Then:** Brewnall and Frostmane Hold, Old Icebeard, a death skip back to Kharanos, then Misty Pine Refuge,
-  Vagash and Gol'Bolar Quarry. The guide ends just after level 9.
+  Vagash and Gol'Bolar Quarry. The guide ends at level 9 by picking up Farsen's Watch from Earthseer Farsen.
 - **Wands (level 8):** back in Kharanos, the paladin gathers a Copper Rod, Copper Ore and Rough Stone while
   the mage goes to Ironforge: learn Enchanting, buy Motes of Magic and Simple Wood, craft a Runed Copper Rod
   and a Novice's Practice Wand, enchant a bracer to 10 Enchanting, train Lesser Magic Wand, then hearth back.

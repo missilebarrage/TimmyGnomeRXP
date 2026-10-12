@@ -976,11 +976,11 @@ step
 -- so Redridge ends with a flight to Stormwind, and the guide ends with Report to Gryan Stoutmantle, the Sentinel
 -- Hill flight path and a hearth to Thelsamar. Mages: Speak with Jennea (Zaldimar in Goldshire) goes in on the
 -- Stormwind stop after Redridge, Mirror Lake's water comes from the waterfall next to the Applejack Still, and a
--- flight from Sentinel Hill to Stormwind hands it in before the hearth. Gathering quests are left out except two
--- whose items drop from mobs on the route: Bounty on Murlocs and Red Linen Goods. Their accept steps say OPTIONAL
--- and the steps that follow skip themselves when you didn't take them. Collecting Kelp (and with it The Escape) and
--- Bottles and Baubles are out: Crystal Lake's murlocs and junk piles won't hold up on launch day. Downstream is a
--- required step: its three items lie on the way to Croaky and respawn instantly. A Bundle of Trouble is skipped on
+-- flight from Sentinel Hill to Stormwind hands it in before the hearth. Gathering quests are left out except Red
+-- Linen Goods, whose bandanas drop from Defias on the route: its accept step says OPTIONAL and the steps that follow
+-- skip themselves when you didn't take it. Collecting Kelp (and with it The Escape) and Bottles and Baubles are out:
+-- Crystal Lake's murlocs and junk piles won't hold up on launch day. Guard Thomas doesn't offer Bounty on Murlocs
+-- in Forever. Downstream is a required step: its three items lie on the way to Croaky and respawn instantly. A Bundle of Trouble is skipped on
 -- purpose: its wood bundles are slow and contested on a busy server. Forever's Tower of Azora quests: Delicate
 -- Instruments (Kobold Geomancers at Jasperlode, then Defias Rogue Wizards on the way to Rolf) is OPTIONAL because
 -- only about seven Geomancers spawn; Stolen Enchanting Supplies is left out (crates in gnoll camps off the route).
@@ -994,7 +994,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 16
+#version 17
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1295,12 +1295,6 @@ step
     .accept 52 >> Accept Protect the Frontier
     .target Guard Thomas
 step
-    .goto 1429/0,-1032.06,-9610.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
-    >>|cRXP_WARN_OPTIONAL (loot): 8 Torn Murloc Fins from the murlocs at Rolf's camp and down the river, which the route clears anyway. Skip this step to leave it, or if he doesn't offer it|r
-    .accept 46 >> Accept Bounty on Murlocs
-    .target Guard Thomas
-step
     .goto 1429/0,-1222.40,-9531.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r at the Eastvale Logging Camp, just past the bridge
     >>|cRXP_WARN_OPTIONAL (loot): 6 Red Linen Bandanas. They drop from the Defias Rogue Wizards on your way to Rolf and the Defias Bandits around Princess. Skip this step to leave it|r
@@ -1320,13 +1314,6 @@ step
     .mob +Prowler
     .complete 52,2 --Young Forest Bear (5)
     .mob +Young Forest Bear
-step
-    #completewith ThomasReturn
-    .isOnQuest 46
-    >>Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r as you go. Loot them for |cRXP_LOOT_Torn Murloc Fins|r
-    .complete 46,1 --Torn Murloc Fin (8)
-    .mob Murloc Forager
-    .mob Murloc Lurker
 step
     .goto 1429/0,-986.35,-9336.06
     >>Follow the river north. Click |cRXP_PICK_A half-eaten body|r on the ground
@@ -1383,22 +1370,6 @@ step
     .accept 91740 >> Accept Croaky's Head
     .mob Croaky
 step
-    .isOnQuest 46
-    #loop
-    .goto 1429,76.53,79.69,0
-    .goto 1429,76.30,84.39,0
-    .goto 1429,78.48,83.99,0
-    .goto 1429,76.53,79.69,30,0
-    .goto 1429,76.91,82.66,30,0
-    .goto 1429,76.30,84.39,30,0
-    .goto 1429,77.11,85.84,30,0
-    .goto 1429,78.48,83.99,30,0
-    .goto 1429,77.55,80.95,30,0
-    >>Finish the |cRXP_LOOT_Torn Murloc Fins|r on the murlocs along the river. Still short? The camps at Stone Cairn Lake have more
-    .complete 46,1 --Torn Murloc Fin (8)
-    .mob Murloc Forager
-    .mob Murloc Lurker
-step
     #loop
     .goto 1429,77.499,74.518,0
     .goto 1429,80.496,78.223,0
@@ -1446,12 +1417,6 @@ step
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
     .accept 109 >> Accept Report to Gryan Stoutmantle
-    .target Guard Thomas
-step
-    .isQuestComplete 46
-    .goto 1429/0,-1032.06,-9610.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
-    .turnin 46 >> Turn in Bounty on Murlocs
     .target Guard Thomas
 step
     .goto 1429/0,-1119.7708,-9603.7687

@@ -211,7 +211,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 13
+#version 14
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -290,6 +290,12 @@ step
     .complete 384,2 --Rhapsody Malt
     .home 2102 >> Set your Hearthstone to Thunderbrew Distillery
     .target Innkeeper Belm
+step
+    .goto 1426,47.18,52.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thamner Pol|r, the physician in the Thunderbrew Distillery
+    >>|cRXP_WARN_Just learn it for now: bandages eat Linen Cloth, which you'll want for Tailoring and the paladin's level 12 class quest|r
+    .skill firstaid,1 >> Learn First Aid
+    .target Thamner Pol
 step
     #completewith next
     .goto 1426/0,-551.03,-5598.40,6,0
@@ -977,7 +983,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 9
+#version 10
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -994,7 +1000,7 @@ step
     .goto 1453,51.82,48.68,15,0
     .goto 1453,51.93,46.14,15,0
     .goto 1453,53.00,44.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shaina Fuller|r in the Cathedral of Light, on your way from the Dwarven District to the Trade District
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tNo First Aid from Kharanos yet? Talk to |cRXP_FRIENDLY_Shaina Fuller|r in the Cathedral of Light, on your way from the Dwarven District to the Trade District
     >>|cRXP_WARN_Bandages use Linen Cloth: hold off until the mage's Tailoring linen and the paladin's 10 for his class quest are put aside|r
     .skill firstaid,1 >> Learn First Aid
     .target Shaina Fuller

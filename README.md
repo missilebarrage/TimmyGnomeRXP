@@ -25,7 +25,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   buy 5 water from Adlin Pridedrift, visit your trainer in Anvilmar, then the Coldridge Valley quests.
 - **Level 5:** from the tunnel, discover Chill Breeze Valley, then go to Brewnall for Bitter Rivals and
   Frosthowl, killing every boar on the way for meat and ribs. Then die to the wolves on Iceflow Lake and revive in Kharanos.
-- **Kharanos and Steelgrill's Depot:** pick up and turn in everything, then Ammo for Rumbleshot. Reach level 6
+- **Kharanos and Steelgrill's Depot:** pick up and turn in everything (and learn First Aid from Thamner Pol in the
+  Thunderbrew Distillery), then Ammo for Rumbleshot. Reach level 6
   (mages death-skip to Kharanos to train), then the Grizzled Den for the 8 manes and Mountaineer Cornelius only.
 - **Boar ribs:** keep collecting them through the west. Beer Basted Boar Ribs goes in on the last Kharanos
   visit, after the Brewnall lap. Stocking Jetsteam goes in before Brewnall, because it unlocks Evershine.
@@ -52,7 +53,7 @@ To update, download the zip again and replace the TimmyGnome folder.
 ### 10-12 Elwynn Forest
 
 - **Stormwind:** off the tram, Stormpike's Delivery from Grimand Elmore (if he offers it), First Aid from Shaina
-  Fuller in the Cathedral of Light, the mage's Tailoring stop, Fishing from Arnold Leland, then three new Forever
+  Fuller in the Cathedral of Light (only if you skipped it in Kharanos), the mage's Tailoring stop, Fishing from Arnold Leland, then three new Forever
   quests: Fishin' Time (a Shiny Bauble and 3 Nightcrawlers from Catherine Leland,
   handed to Gilbert Gray at Stormwind Harbor), Philmor's Favor (Manifest Clerk Philmor at the harbor, delivered to
   Trias' Cheese) and Gatehouse Goods (Elaine Trias, if she offers it). Then the flight path from Dungar Longdrink

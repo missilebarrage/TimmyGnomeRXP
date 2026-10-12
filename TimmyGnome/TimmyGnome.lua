@@ -647,8 +647,9 @@ step
     .target Rudra Amberstill
 step
     .goto 1426,62.538,46.195
+    .goto 1426,63.50,50.17,0
     >>Kill |cRXP_ENEMY_Vagash|r (elite). Loot him for his |cRXP_LOOT_Fang|r
-    >>|cRXP_WARN_Let your tank hold him. If it goes wrong, pull him to the guard south of the ranch, but do more than half of his damage yourselves|r
+    >>|cRXP_WARN_Pull him and kite him around the fence at 63.50, 50.17|r
     .complete 314,1 --Fang of Vagash
     .mob Vagash
 step

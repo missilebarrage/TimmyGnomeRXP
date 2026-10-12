@@ -41,8 +41,8 @@ step
 step
     .goto 1426/0,320.30,-6226.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r at the starting camp and sell your trash
-    >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
-    .collect 159,10 --Refreshing Spring Water (10)
+    >>|cRXP_BUY_Buy 5|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    .collect 159,5 --Refreshing Spring Water (5)
     .target Adlin Pridedrift
 step << Mage
     .goto 1426/0,388.17,-6056.10

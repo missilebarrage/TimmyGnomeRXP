@@ -903,12 +903,13 @@ step
 -- (Dwarf/Gnome)" route with the Fargodeep and Jasperlode mines and the Young Lovers deliveries added. Gathering
 -- quests are left out, except three whose items drop from mobs the route kills anyway (Collecting Kelp, Bounty on
 -- Murlocs, Riverpaw Gnoll Bounty). Their accept steps say OPTIONAL, and the steps that follow skip themselves when
--- you didn't take them. Downstream stays in: its three items lie on the way to Croaky. Without the optional quests
--- you end around 70% into level 11 and the last steps grind the rest. 1429 is Elwynn Forest, 1453 Stormwind City
--- and 1433 Redridge Mountains.
+-- you didn't take them. Downstream is a required step: its three items lie on the way to Croaky and respawn
+-- instantly. A Bundle of Trouble is skipped on purpose: its wood bundles are slow, and contested on a busy server.
+-- Without the optional quests you end around 70% into level 11 and the last steps grind the rest. 1429 is Elwynn
+-- Forest, 1453 Stormwind City and 1433 Redridge Mountains.
 RXPGuides.RegisterGuide([[
 #forever
-#version 1
+#version 2
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1085,11 +1086,13 @@ step
 step
     .goto 1429/0,-1119.7708,-9603.7687
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead back south and talk to |cRXP_FRIENDLY_Ormin Pelford|r near the bridge
+    >>|cRXP_WARN_Don't take A Bundle of Trouble from Supervisor Raelen at the logging camp: it's skipped (too slow with a crowd)|r
     .accept 91733 >> Accept Downstream
     .target Ormin Pelford
 step
     .goto 1429,74.3,76.4
     >>Follow the river south. Loot the |cRXP_PICK_Waterlogged Saw|r on the bank
+    >>|cRXP_WARN_The three Downstream items respawn right away if someone beats you to one|r
     .complete 91733,2 --Waterlogged Saw (1)
 step
     .goto 1429,76.7,82.5

@@ -57,7 +57,8 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Gathering quests:** left out, except three whose items drop from mobs the route already kills. Each one's
   accept step is marked OPTIONAL: Collecting Kelp (it unlocks The Escape), Bounty on Murlocs and Riverpaw Gnoll
   Bounty. Doing all of them, plus Hogger, should reach about level 12. Skipping them leaves you around 70% into
-  11, and the last steps grind the rest at Hogger's camp.
+  11, and the last steps grind the rest at Hogger's camp. Downstream is a required step: its three riverbank items
+  respawn instantly. A Bundle of Trouble is skipped on purpose.
 - **Paladins:** keep 10 Linen Cloth for The Tome of Divinity, the level 12 class quest.
 
 ## Credits and license

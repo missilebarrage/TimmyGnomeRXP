@@ -1,7 +1,7 @@
 # TimmyGnome
 
 A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
-Mage route through Coldridge Valley and Dun Morogh, levels 1 to 10, made for playing as a duo.
+Mage route through Coldridge Valley, Dun Morogh and Elwynn Forest, levels 1 to 12, made for playing as a duo.
 
 ## Install
 
@@ -12,11 +12,13 @@ You need RestedXP Guides installed.
    `AddOns\TimmyGnome\TimmyGnome.toc`.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
-   **5-10 Dun Morogh** by itself.
+   **5-10 Dun Morogh** and then **10-12 Elwynn Forest** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
 ## The route
+
+### 1-10 Coldridge Valley and Dun Morogh
 
 - **Levels 1-2:** grind wolves and troggs to level 2 (no Dwarven Outfitters, so no mail deliveries either),
   buy 5 water from Adlin Pridedrift, visit your trainer in Anvilmar, then the Coldridge Valley quests.
@@ -40,6 +42,23 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Skipped:** The Perfect Stout, Flintfire's Shipment and the Frosthowl kill (the quest stays open for later).
 - **Training:** every class gets a trainer stop in Anvilmar at levels 2 and 4 (with a vendor stop before the
   second). Mages also train with Magis Sparkmantle in Kharanos at levels 6 and 8.
+
+### 10-12 Elwynn Forest
+
+- **Stormwind:** get the flight path from Dungar Longdrink as you come off the tram, then walk to Goldshire.
+- **Goldshire:** train, pick up the Marshal Dughan quests and set your Hearthstone at the inn.
+- **South:** explore Fargodeep Mine, then the Young Lovers deliveries and Princess Must Die! at the Stonefield
+  farm. Back in Goldshire, The Jasperlode Mine.
+- **East:** explore Jasperlode on the way to Guard Thomas, then the lost guards, Protect the Frontier, Downstream,
+  Croaky (level 11 elite) and Princess. Turn in at the bridge and Ridgepoint Tower.
+- **Redridge:** Encroaching Gnolls (needs level 11) and the Lakeshire flight path, then hearth to Goldshire.
+- **West:** final turn-ins in Goldshire and at the farms, Westbrook Garrison, and Hogger (level 11 elite,
+  optional). The guide ends with level 12 training in Goldshire.
+- **Gathering quests:** left out, except three whose items drop from mobs the route already kills. Each one's
+  accept step is marked OPTIONAL: Collecting Kelp (it unlocks The Escape), Bounty on Murlocs and Riverpaw Gnoll
+  Bounty. Doing all of them, plus Hogger, should reach about level 12. Skipping them leaves you around 70% into
+  11, and the last steps grind the rest at Hogger's camp.
+- **Paladins:** keep 10 Linen Cloth for The Tome of Divinity, the level 12 class quest.
 
 ## Credits and license
 

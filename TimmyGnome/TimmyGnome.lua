@@ -1,5 +1,6 @@
--- TimmyGnome: a Gnome Mage route through Coldridge Valley and Dun Morogh, levels 1-10, rebuilt from the
--- turn-in log of Charli Brat's run (2026-10-11). Like that run it opens with a grind to level 2
+-- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh and Elwynn Forest, levels 1-12. The
+-- first two guides were rebuilt from the turn-in log of Charli Brat's run (2026-10-11), and the Elwynn guide
+-- below them has its own notes. Like that run, Coldridge Valley opens with a grind to level 2
 -- and skips Dwarven Outfitters, which also skips both Coldridge Valley mail deliveries and the Glyphic
 -- Memorandum (both need Outfitters done: Questie's Forever data). At level 5 it goes from the tunnel
 -- straight to Brewnall for Bitter Rivals and Frosthowl, killing every boar for meat and ribs on the way,
@@ -210,11 +211,12 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 4
+#version 5
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
 #displayname 5-10 Dun Morogh
+#next 10-12 Elwynn Forest
 
 step
     #sticky
@@ -895,4 +897,463 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nipsy|r on the middle platform on the Stormwind side
     .turnin 6662 >> Turn in Me Brother, Nipsy
     .target Nipsy
+]])
+
+-- Elwynn Forest, from the Stormwind end of the tram to level 12. The core is RestedXP's Forever "11-12 Elwynn
+-- (Dwarf/Gnome)" route with the Fargodeep and Jasperlode mines and the Young Lovers deliveries added. Gathering
+-- quests are left out, except three whose items drop from mobs the route kills anyway (Collecting Kelp, Bounty on
+-- Murlocs, Riverpaw Gnoll Bounty). Their accept steps say OPTIONAL, and the steps that follow skip themselves when
+-- you didn't take them. Downstream stays in: its three items lie on the way to Croaky. Without the optional quests
+-- you end around 70% into level 11 and the last steps grind the rest. 1429 is Elwynn Forest, 1453 Stormwind City
+-- and 1433 Redridge Mountains.
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group TimmyGnome
+#name 10-12 Elwynn Forest
+
+step
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLeave the tram station and talk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master in the Trade District
+    .fp Stormwind >> Get the Stormwind flight path
+    .target Dungar Longdrink
+step
+    #completewith next
+    .goto 1429/0,74.02,-9465.52
+    .subzone 87 >> Leave Stormwind by the main gate and follow the road south to Goldshire
+step
+    .goto 1429/0,72.81,-9496.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Remy "Two Times"|r
+    .accept 40 >> Accept A Fishy Peril
+    .target Remy "Two Times"
+step
+    .goto 1429/0,74.02,-9465.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 40 >> Turn in A Fishy Peril
+    .accept 35 >> Accept Further Concerns
+    .accept 62 >> Accept The Fargodeep Mine
+    .target Marshal Dughan
+step << Paladin
+    .goto 1429/0,109.04,-9468.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
+    .trainer >> Train your level 10 spells
+    .target Brother Wilhelm
+step << !Mage !Paladin
+    >>Visit your class trainer in Goldshire
+    .trainer >> Train your level 10 spells
+step << Paladin
+    #completewith PaladinTrain12
+    >>|cRXP_WARN_Keep 10|r |T132889:0|t[Linen Cloth] |cRXP_WARN_from the kobolds and gnolls: your level 12 class quest, The Tome of Divinity, asks for it|r
+    .collect 2589,10 --Linen Cloth (10)
+step
+    .goto 1429/0,16.20,-9462.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r in the Lion's Pride Inn
+    >>|cRXP_WARN_You'll hearth back here from Redridge|r
+    .home 87 >> Set your Hearthstone to Goldshire
+    .target Innkeeper Farley
+step << Mage
+    #completewith next
+    .goto 1429/0,12.52,-9479.85,9 >> Go upstairs in the inn
+step << Mage
+    .goto 1429/0,34.28,-9471.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r upstairs
+    .trainer >> Train your level 10 spells (Frost Nova and new ranks)
+    .target Zaldimar Wefhellt
+step
+    .goto 1429/0,181.44,-9842.17,15,0
+    .goto 1429/0,149.86,-9793.80
+    >>Head south to Fargodeep Mine and walk into one of the big open caves inside
+    .complete 62,1 --Scout through the Fargodeep Mine
+step
+    .goto 1429/0,37.61,-10014.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maybell Maclure|r at the Maclure Vineyards
+    .accept 106 >> Accept Young Lovers
+    .target Maybell Maclure
+step
+    .goto 1429/0,499.72,-9930.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tommy Joe Stonefield|r by the river, west of the Stonefield farm
+    .turnin 106 >> Turn in Young Lovers
+    .accept 111 >> Accept Speak with Gramma
+    .target Tommy Joe Stonefield
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gramma Stonefield|r inside the farmhouse, then |cRXP_FRIENDLY_Ma Stonefield|r and |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r outside
+    >>|cRXP_WARN_Lost Necklace goes to Billy Maclure on your last trip south|r
+    .turnin 111 >> Turn in Speak with Gramma
+    .accept 107 >> Accept Note to William
+    .goto 1429,34.945,83.855
+    .target +Gramma Stonefield
+    .accept 88 >> Accept Princess Must Die!
+    .goto 1429/0,332.43,-9894.99
+    .target +Ma Stonefield
+    .accept 85 >> Accept Lost Necklace
+    .goto 1429/0,338.47,-9889.69
+    .target +"Auntie" Bernice Stonefield
+step
+    .goto 1429/0,74.02,-9465.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Goldshire, talk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 62 >> Turn in The Fargodeep Mine
+    .accept 76 >> Accept The Jasperlode Mine
+    .target Marshal Dughan
+step
+    .goto 1429/0,87.87,-9462.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash and repair at |cRXP_FRIENDLY_Andrew Krighton|r in the smithy
+    .vendor >> Sell your trash and repair
+    .target Andrew Krighton
+step
+    .goto 1429/0,31.92,-9460.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r at the Lion's Pride Inn
+    .turnin 107 >> Turn in Note to William
+    .target William Pestle
+step
+    .goto 1429/0,31.92,-9460.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
+    >>|cRXP_WARN_OPTIONAL (loot): 4 Crystal Kelp Fronds from the murlocs at Crystal Lake, on your way east. It unlocks The Escape, a 790 XP delivery. Skip this step to leave it|r
+    .accept 112 >> Accept Collecting Kelp
+    .target William Pestle
+step
+    .isOnQuest 112
+    #loop
+    .goto 1429,50.833,65.453,0
+    .goto 1429,57.435,63.662,0
+    .goto 1429,54.236,66.888,0
+    .goto 1429,50.833,65.453,50,0
+    .goto 1429,52.020,65.177,50,0
+    .goto 1429,54.144,62.468,50,0
+    .goto 1429,56.332,63.538,50,0
+    .goto 1429,57.162,62.157,50,0
+    .goto 1429,57.435,63.662,50,0
+    .goto 1429,58.237,64.888,50,0
+    .goto 1429,56.897,67.017,50,0
+    .goto 1429,55.523,66.707,50,0
+    .goto 1429,55.203,66.171,50,0
+    .goto 1429,54.236,66.888,50,0
+    >>Kill |cRXP_ENEMY_Murlocs|r and |cRXP_ENEMY_Murloc Streamrunners|r around Crystal Lake. Loot them for |cRXP_LOOT_Crystal Kelp Fronds|r
+    .complete 112,1 --Crystal Kelp Frond (4)
+    .mob Murloc
+    .mob Murloc Streamrunner
+step
+    #completewith next
+    .goto 1429/0,-604.49,-9180.39,15 >> Head north-east to the Jasperlode Mine
+step
+    .goto 1429/0,-588.73,-9130.67,15,0
+    .goto 1429/0,-572.07,-9116.55,15,0
+    .goto 1429/0,-560.62,-9100.58
+    >>Follow the tunnel through the middle of the mine
+    .complete 76,1 --Scout through the Jasperlode Mine
+step
+    #completewith next
+    .goto 1429/0,-1032.06,-9610.23,30 >> Leave the mine and head south-east to the bridge
+step
+    .goto 1429/0,-1032.06,-9610.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r at the east bridge
+    .turnin 35 >> Turn in Further Concerns
+    .accept 37 >> Accept Find the Lost Guards
+    .accept 52 >> Accept Protect the Frontier
+    .target Guard Thomas
+step
+    .goto 1429/0,-1032.06,-9610.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
+    >>|cRXP_WARN_OPTIONAL (loot): 8 Torn Murloc Fins from the murlocs at Rolf's camp and down the river, which the route clears anyway. Skip this step to leave it, or if he doesn't offer it|r
+    .accept 46 >> Accept Bounty on Murlocs
+    .target Guard Thomas
+step
+    #completewith ThomasReturn
+    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r as you go
+    .complete 52,1 --Prowler (8)
+    .mob +Prowler
+    .complete 52,2 --Young Forest Bear (5)
+    .mob +Young Forest Bear
+step
+    #completewith ThomasReturn
+    .isOnQuest 46
+    >>Kill |cRXP_ENEMY_Murloc Foragers|r and |cRXP_ENEMY_Murloc Lurkers|r as you go. Loot them for |cRXP_LOOT_Torn Murloc Fins|r
+    .complete 46,1 --Torn Murloc Fin (8)
+    .mob Murloc Forager
+    .mob Murloc Lurker
+step
+    .goto 1429/0,-986.35,-9336.06
+    >>Follow the river north. Click |cRXP_PICK_A half-eaten body|r on the ground
+    .turnin 37 >> Turn in Find the Lost Guards
+    .accept 45 >> Accept Discover Rolf's Fate
+step
+    .goto 1429/0,-1234.31,-9224.18
+    >>Click |cRXP_PICK_Rolf's corpse|r in the murloc camp at Stone Cairn Lake
+    >>|cRXP_WARN_The murlocs here come in packs: pull them carefully|r
+    .turnin 45 >> Turn in Discover Rolf's Fate
+    .accept 71 >> Accept Report to Thomas
+step
+    .goto 1429/0,-1119.7708,-9603.7687
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead back south and talk to |cRXP_FRIENDLY_Ormin Pelford|r near the bridge
+    .accept 91733 >> Accept Downstream
+    .target Ormin Pelford
+step
+    .goto 1429,74.3,76.4
+    >>Follow the river south. Loot the |cRXP_PICK_Waterlogged Saw|r on the bank
+    .complete 91733,2 --Waterlogged Saw (1)
+step
+    .goto 1429,76.7,82.5
+    >>Loot the |cRXP_PICK_Waterlogged Axe|r
+    .complete 91733,1 --Waterlogged Axe (1)
+step
+    .goto 1429,77.3,86.8
+    >>Loot the |cRXP_PICK_Waterlogged Toolbox|r
+    .complete 91733,3 --Waterlogged Toolbox (1)
+step
+    .goto 1429/0,-1119.80,-9931.30
+    >>Kill |cRXP_ENEMY_Croaky|r, a level 11 elite. Loot him for |T134169:0|t[|cRXP_LOOT_Croaky's Head|r]
+    >>|cRXP_WARN_Each of you needs a head. If only one drops, try sharing the quest|r
+    .use 247826 >> |cRXP_WARN_Use|r |T134169:0|t[|cRXP_LOOT_Croaky's Head|r] |cRXP_WARN_to start the quest|r
+    .collect 247826,1,91740,1 --Croaky's Head (1)
+    .accept 91740 >> Accept Croaky's Head
+    .mob Croaky
+step
+    .isOnQuest 46
+    #loop
+    .goto 1429,76.53,79.69,0
+    .goto 1429,76.30,84.39,0
+    .goto 1429,78.48,83.99,0
+    .goto 1429,76.53,79.69,30,0
+    .goto 1429,76.91,82.66,30,0
+    .goto 1429,76.30,84.39,30,0
+    .goto 1429,77.11,85.84,30,0
+    .goto 1429,78.48,83.99,30,0
+    .goto 1429,77.55,80.95,30,0
+    >>Finish the |cRXP_LOOT_Torn Murloc Fins|r on the murlocs along the river. Still short? The camps at Stone Cairn Lake have more
+    .complete 46,1 --Torn Murloc Fin (8)
+    .mob Murloc Forager
+    .mob Murloc Lurker
+step
+    .goto 1429/0,-869.87,-9768.10
+    >>Kill |cRXP_ENEMY_Princess|r at the Brackwell Pumpkin Patch. Loot her for the |cRXP_LOOT_Brass Collar|r
+    >>|cRXP_WARN_Two|r |cRXP_ENEMY_Porcine Entourage|r |cRXP_WARN_fight with her, and her charge hits hard|r
+    .complete 88,1 --Brass Collar (1)
+    .mob Princess
+step
+    #loop
+    .goto 1429,77.499,74.518,0
+    .goto 1429,80.496,78.223,0
+    .goto 1429,87.342,63.763,0
+    .goto 1429,77.499,74.518,55,0
+    .goto 1429,77.222,77.499,55,0
+    .goto 1429,78.483,79.323,55,0
+    .goto 1429,80.496,78.223,55,0
+    .goto 1429,81.434,76.695,55,0
+    .goto 1429,87.145,69.922,55,0
+    .goto 1429,87.342,63.763,55,0
+    >>Finish the |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r east of the river
+    .complete 52,1 --Prowler (8)
+    .mob +Prowler
+    .complete 52,2 --Young Forest Bear (5)
+    .mob +Young Forest Bear
+step
+    #label ThomasReturn
+    .goto 1429/0,-1032.06,-9610.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
+    .turnin 52 >> Turn in Protect the Frontier
+    .turnin 71 >> Turn in Report to Thomas
+    .accept 39 >> Accept Deliver Thomas' Report
+    .target Guard Thomas
+step
+    .isQuestComplete 46
+    .goto 1429/0,-1032.06,-9610.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
+    .turnin 46 >> Turn in Bounty on Murlocs
+    .target Guard Thomas
+step
+    .goto 1429/0,-1119.7708,-9603.7687
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormin Pelford|r
+    .turnin 91733 >> Turn in Downstream
+    .target Ormin Pelford
+step
+    .isOnQuest 91740
+    .goto 1429/0,-1406.20,-9775.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merell Ross|r at Ridgepoint Tower
+    .turnin 91740 >> Turn in Croaky's Head
+    .target Merell Ross::248277
+step
+    .goto 1429,80.56,80.23,0
+    .xp 11 >> Reach level 11: Encroaching Gnolls in Redridge needs it
+    .mob Prowler
+step
+    #completewith next
+    .goto 1433/0,-1948.56,-9582.75
+    .zone Redridge Mountains >> Follow the road east into Redridge Mountains
+step
+    .goto 1433/0,-1906.40,-9606.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Parker|r at the tower by the border
+    .accept 244 >> Accept Encroaching Gnolls
+    .target Guard Parker
+step
+    .goto 1433/0,-2238.00,-9443.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFollow the road to Lakeshire and talk to |cRXP_FRIENDLY_Deputy Feldon|r
+    >>|cRXP_WARN_Stay on the road: the mobs beside it are level 15 and up|r
+    .turnin 244 >> Turn in Encroaching Gnolls
+    .target Deputy Feldon
+step
+    .goto 1433/0,-2234.90,-9435.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r, the gryphon master
+    .fp Lakeshire >> Get the Lakeshire flight path
+    .target Ariena Stormfeather
+step
+    >>|cRXP_WARN_If your Hearthstone is on cooldown, fly to Stormwind and walk to Goldshire instead|r
+    .hs >> Hearth to Goldshire
+step
+    .goto 1429/0,74.02,-9465.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 39 >> Turn in Deliver Thomas' Report
+    .turnin 76 >> Turn in The Jasperlode Mine
+    .accept 239 >> Accept Westbrook Garrison Needs Help!
+    .target Marshal Dughan
+step
+    .goto 1429/0,74.02,-9465.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    >>|cRXP_WARN_OPTIONAL: only worth it if Westfall is next. It's 630 XP for reporting at Sentinel Hill|r
+    .accept 109 >> Accept Report to Gryan Stoutmantle
+    .target Marshal Dughan
+step
+    .goto 1429/0,87.87,-9462.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash and repair at |cRXP_FRIENDLY_Andrew Krighton|r
+    .vendor >> Sell your trash and repair
+    .target Andrew Krighton
+step
+    .isQuestComplete 112
+    .goto 1429/0,31.92,-9460.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
+    >>|cRXP_WARN_He takes a few seconds to brew the potion before he offers The Escape|r
+    .turnin 112 >> Turn in Collecting Kelp
+    .accept 114 >> Accept The Escape
+    .target William Pestle
+step
+    .isOnQuest 85
+    .goto 1429/0,38.41,-9923.69
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead south to the Maclure Vineyards and talk to |cRXP_FRIENDLY_Billy Maclure|r
+    >>|cRXP_WARN_Don't take Pie for Billy: it's a boar meat collection quest|r
+    .turnin 85 >> Turn in Lost Necklace
+    .target Billy Maclure
+step
+    .isOnQuest 114
+    .goto 1429/0,37.61,-10014.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maybell Maclure|r
+    .turnin 114 >> Turn in The Escape
+    .target Maybell Maclure
+step
+    .goto 1429/0,332.43,-9894.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r at the Stonefield farm
+    .turnin 88 >> Turn in Princess Must Die!
+    .target Ma Stonefield
+step
+    #completewith next
+    .goto 1429/0,673.96,-9704.45,80 >> Head north-west to Westbrook Garrison
+step
+    .goto 1429/0,694.29,-9662.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r at Westbrook Garrison
+    .turnin 239 >> Turn in Westbrook Garrison Needs Help!
+    .target Deputy Rainer
+step
+    .goto 1429/0,694.29,-9662.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r
+    >>|cRXP_WARN_OPTIONAL (loot): 8 Painted Gnoll Armbands from the gnolls around Hogger's camp, just south of here. Skip this step to leave it|r
+    .accept 11 >> Accept Riverpaw Gnoll Bounty
+    .target Deputy Rainer
+step
+    .goto 1429/0,683.40,-9667.93
+    >>Click the |cRXP_PICK_Wanted Poster|r next to the garrison
+    >>|cRXP_WARN_OPTIONAL: Hogger is a level 11 elite with gnolls around him. Skip this step if you'd rather not fight him|r
+    .accept 176 >> Accept Wanted: "Hogger"
+step
+    #completewith HoggerKill
+    .isOnQuest 11
+    >>Kill |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r. Loot them for |cRXP_LOOT_Painted Gnoll Armbands|r
+    .complete 11,1 --Painted Gnoll Armband (8)
+    .mob Riverpaw Runt
+    .mob Riverpaw Outrunner
+step
+    #label HoggerKill
+    .isOnQuest 176
+    #loop
+    .goto 1429,26.83,86.69,0
+    .goto 1429,25.02,92.90,0
+    .goto 1429,26.43,93.65,0
+    .goto 1429,27.36,92.71,0
+    .goto 1429/0,598.29,-9946.33,70,0
+    .goto 1429/0,629.53,-10020.39,70,0
+    .goto 1429/0,660.77,-10085.20,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
+    >>Kill |cRXP_ENEMY_Hogger|r. Loot him for his |cRXP_LOOT_Huge Gnoll Claw|r
+    >>|cRXP_WARN_He can spawn in several spots around the camp. Clear the gnolls near him first and let the paladin hold him|r
+    .complete 176,1 --Huge Gnoll Claw (1)
+    .unitscan Hogger
+step
+    .isOnQuest 11
+    #loop
+    .goto 1429/0,598.29,-9946.33,70,0
+    .goto 1429/0,629.53,-10020.39,70,0
+    .goto 1429/0,660.77,-10085.20,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
+    >>Finish the |cRXP_LOOT_Painted Gnoll Armbands|r on the |cRXP_ENEMY_Riverpaw Runts|r and |cRXP_ENEMY_Riverpaw Outrunners|r
+    .complete 11,1 --Painted Gnoll Armband (8)
+    .mob Riverpaw Runt
+    .mob Riverpaw Outrunner
+step
+    .isQuestComplete 11
+    .goto 1429/0,694.29,-9662.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at Westbrook Garrison, talk to |cRXP_FRIENDLY_Deputy Rainer|r
+    .turnin 11 >> Turn in Riverpaw Gnoll Bounty
+    .target Deputy Rainer
+step
+    .isQuestComplete 176
+    #loop
+    .goto 1429/0,598.29,-9946.33,70,0
+    .goto 1429/0,629.53,-10020.39,70,0
+    .goto 1429/0,660.77,-10085.20,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
+    >>Grind the |cRXP_ENEMY_Riverpaw gnolls|r around Hogger's camp. Hogger's turn-in in Goldshire covers the last 880 XP
+    >>|cRXP_WARN_Still far off? Westfall's quests will get you there faster than this grind|r
+    .xp 12-880
+    .mob Riverpaw Runt
+    .mob Riverpaw Outrunner
+step
+    .isQuestNotComplete 176
+    #loop
+    .goto 1429/0,598.29,-9946.33,70,0
+    .goto 1429/0,629.53,-10020.39,70,0
+    .goto 1429/0,660.77,-10085.20,70,0
+    .goto 1429/0,598.29,-10112.98,70,0
+    >>Grind the |cRXP_ENEMY_Riverpaw gnolls|r around Hogger's camp
+    >>|cRXP_WARN_Still far off? Westfall's quests will get you there faster than this grind|r
+    .xp 12
+    .mob Riverpaw Runt
+    .mob Riverpaw Outrunner
+step
+    #completewith next
+    .goto 1429/0,74.02,-9465.52
+    .subzone 87 >> Head back to Goldshire
+step
+    .isQuestComplete 176
+    .goto 1429/0,74.02,-9465.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Dughan|r
+    .turnin 176 >> Turn in Wanted: "Hogger"
+    .target Marshal Dughan
+step << Paladin
+    #label PaladinTrain12
+    .xp <12,1
+    .goto 1429/0,109.04,-9468.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brother Wilhelm|r
+    .trainer >> Train your level 12 spells
+    .target Brother Wilhelm
+step << !Mage !Paladin
+    .xp <12,1
+    >>Visit your class trainer in Goldshire
+    .trainer >> Train your level 12 spells
+step << Mage
+    #completewith next
+    .xp <12,1
+    .goto 1429/0,12.52,-9479.85,9 >> Go upstairs in the inn
+step << Mage
+    .xp <12,1
+    .goto 1429/0,34.28,-9471.61
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Zaldimar Wefhellt|r upstairs
+    .trainer >> Train your level 12 spells
+    .target Zaldimar Wefhellt
 ]])

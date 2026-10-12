@@ -92,11 +92,12 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Level 12 is a target, not a requirement.** Hogger, Riverpaw Gnoll Bounty and grinding are cut because Loch
   Modan pays better by then. With the optional quests you should finish around 85-90% into 11; Return to Brock
   and Stormpike's Delivery (1,050 XP each) wait in Loch Modan.
-- **Gathering quests:** left out, except Collecting Kelp (it unlocks The Escape), Bottles and Baubles (same camps,
-  only with the kelp), Bounty on Murlocs and Red Linen Goods, whose items come from camps and mobs on the route.
-  Their accept steps are marked OPTIONAL. Downstream is a required step: its three riverbank items respawn
-  instantly. Skipped on purpose: A Bundle of Trouble, Stolen Enchanting Supplies (crates in gnoll camps off the
-  route), Hogger (his turn-in is in Goldshire, behind you by then) and the Goldtooth chain (a single spawn).
+- **Gathering quests:** left out, except Bounty on Murlocs and Red Linen Goods, whose items come from mobs on the
+  route. Their accept steps are marked OPTIONAL. Downstream is a required step: its three riverbank items respawn
+  instantly. Skipped on purpose: Collecting Kelp (and with it The Escape) and Bottles and Baubles (Crystal Lake's
+  murlocs and junk piles won't hold up on launch day), A Bundle of Trouble, Stolen Enchanting Supplies (crates in
+  gnoll camps off the route), Hogger (his turn-in is in Goldshire, behind you by then) and the Goldtooth chain (a
+  single spawn).
 - **Paladins:** keep 10 Linen Cloth for The Tome of Divinity, the level 12 class quest.
 
 ### 12-14 Loch Modan

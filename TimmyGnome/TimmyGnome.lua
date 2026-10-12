@@ -976,9 +976,10 @@ step
 -- so Redridge ends with a flight to Stormwind, and the guide ends with Report to Gryan Stoutmantle, the Sentinel
 -- Hill flight path and a hearth to Thelsamar. Mages: Speak with Jennea (Zaldimar in Goldshire) goes in on the
 -- Stormwind stop after Redridge, Mirror Lake's water comes from the waterfall next to the Applejack Still, and a
--- flight from Sentinel Hill to Stormwind hands it in before the hearth. Gathering quests are left out except four whose items drop from mobs
--- or sit in camps on the route: Collecting Kelp, Bottles and Baubles, Bounty on Murlocs and Red Linen Goods. Their
--- accept steps say OPTIONAL and the steps that follow skip themselves when you didn't take them. Downstream is a
+-- flight from Sentinel Hill to Stormwind hands it in before the hearth. Gathering quests are left out except two
+-- whose items drop from mobs on the route: Bounty on Murlocs and Red Linen Goods. Their accept steps say OPTIONAL
+-- and the steps that follow skip themselves when you didn't take them. Collecting Kelp (and with it The Escape) and
+-- Bottles and Baubles are out: Crystal Lake's murlocs and junk piles won't hold up on launch day. Downstream is a
 -- required step: its three items lie on the way to Croaky and respawn instantly. A Bundle of Trouble is skipped on
 -- purpose: its wood bundles are slow and contested on a busy server. Forever's Tower of Azora quests: Delicate
 -- Instruments (Kobold Geomancers at Jasperlode, then Defias Rogue Wizards on the way to Rolf) is OPTIONAL because
@@ -993,7 +994,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 15
+#version 16
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1209,65 +1210,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r at the Lion's Pride Inn
     .turnin 107 >> Turn in Note to William
     .target William Pestle
-step
-    .goto 1429/0,31.92,-9460.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
-    >>|cRXP_WARN_OPTIONAL (loot): 4 Crystal Kelp Fronds from the murlocs at Crystal Lake, on your way east. It unlocks The Escape, a 790 XP delivery. Skip this step to leave it|r
-    .accept 112 >> Accept Collecting Kelp
-    .target William Pestle
-step
-    .isOnQuest 112
-    .goto 1429,47.6,62.3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lee Brown|r on the way to Crystal Lake
-    >>|cRXP_WARN_OPTIONAL (loot): 6 Shiny Junk from the junk piles in the same murloc camps as your kelp, handed in near Goldshire after Redridge. Skip this step if the camps are crowded|r
-    .accept 99143 >> Accept Bottles and Baubles
-    .target Lee Brown
-step
-    #completewith KelpDone
-    .isOnQuest 99143
-    >>Loot the |cRXP_PICK_Junk Piles|r in the murloc camps for |cRXP_LOOT_Shiny Junk|r
-    .complete 99143,1 --Shiny Junk (6)
-step
-    #label KelpDone
-    .isOnQuest 112
-    #loop
-    .goto 1429,50.833,65.453,0
-    .goto 1429,57.435,63.662,0
-    .goto 1429,54.236,66.888,0
-    .goto 1429,50.833,65.453,50,0
-    .goto 1429,52.020,65.177,50,0
-    .goto 1429,54.144,62.468,50,0
-    .goto 1429,56.332,63.538,50,0
-    .goto 1429,57.162,62.157,50,0
-    .goto 1429,57.435,63.662,50,0
-    .goto 1429,58.237,64.888,50,0
-    .goto 1429,56.897,67.017,50,0
-    .goto 1429,55.523,66.707,50,0
-    .goto 1429,55.203,66.171,50,0
-    .goto 1429,54.236,66.888,50,0
-    >>Kill |cRXP_ENEMY_Murlocs|r and |cRXP_ENEMY_Murloc Streamrunners|r around Crystal Lake. Loot them for |cRXP_LOOT_Crystal Kelp Fronds|r
-    .complete 112,1 --Crystal Kelp Frond (4)
-    .mob Murloc
-    .mob Murloc Streamrunner
-step
-    .isOnQuest 99143
-    #loop
-    .goto 1429,50.833,65.453,0
-    .goto 1429,57.435,63.662,0
-    .goto 1429,54.236,66.888,0
-    .goto 1429,50.833,65.453,50,0
-    .goto 1429,52.020,65.177,50,0
-    .goto 1429,54.144,62.468,50,0
-    .goto 1429,56.332,63.538,50,0
-    .goto 1429,57.162,62.157,50,0
-    .goto 1429,57.435,63.662,50,0
-    .goto 1429,58.237,64.888,50,0
-    .goto 1429,56.897,67.017,50,0
-    .goto 1429,55.523,66.707,50,0
-    .goto 1429,55.203,66.171,50,0
-    .goto 1429,54.236,66.888,50,0
-    >>Finish the |cRXP_LOOT_Shiny Junk|r from the junk piles. Too crowded? Skip this step and abandon Bottles and Baubles
-    .complete 99143,1 --Shiny Junk (6)
 step
     .goto 1429,65.0,70.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamish Bergwort|r at the Tower of Azora, on the road east
@@ -1598,32 +1540,12 @@ step
     .vendor >> Sell your trash and repair
     .target Andrew Krighton
 step
-    .isQuestComplete 112
-    .goto 1429/0,31.92,-9460.38
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_William Pestle|r
-    >>|cRXP_WARN_He takes a few seconds to brew the potion before he offers The Escape|r
-    .turnin 112 >> Turn in Collecting Kelp
-    .accept 114 >> Accept The Escape
-    .target William Pestle
-step
-    .isQuestComplete 99143
-    .goto 1429,47.6,62.3
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lee Brown|r just east of Goldshire
-    .turnin 99143 >> Turn in Bottles and Baubles
-    .target Lee Brown
-step
     .isOnQuest 85
     .goto 1429/0,38.41,-9923.69
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead south to the Maclure Vineyards and talk to |cRXP_FRIENDLY_Billy Maclure|r
     >>|cRXP_WARN_Don't take Pie for Billy: it's a boar meat collection quest|r
     .turnin 85 >> Turn in Lost Necklace
     .target Billy Maclure
-step
-    .isOnQuest 114
-    .goto 1429/0,37.61,-10014.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Maybell Maclure|r
-    .turnin 114 >> Turn in The Escape
-    .target Maybell Maclure
 step
     .goto 1429/0,332.43,-9894.99
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r at the Stonefield farm

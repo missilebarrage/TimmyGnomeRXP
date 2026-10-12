@@ -26,8 +26,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   (mages death-skip to Kharanos to train), then the Grizzled Den for the 8 manes and Mountaineer Cornelius only.
 - **Boar ribs:** keep collecting them through the west. Beer Basted Boar Ribs goes in on the last Kharanos
   visit, after the Brewnall lap. Stocking Jetsteam goes in before Brewnall, because it unlocks Evershine.
-- **Then:** Brewnall and Frostmane Hold, Old Icebeard, Misty Pine Refuge, Vagash and Gol'Bolar Quarry.
-  The guide ends just after level 9.
+- **Then:** Brewnall and Frostmane Hold, Old Icebeard, a death skip back to Kharanos, then Misty Pine Refuge,
+  Vagash and Gol'Bolar Quarry. The guide ends just after level 9.
 - **Skipped:** The Perfect Stout, Flintfire's Shipment and the Frosthowl kill (the quest stays open for later).
 - **Training:** every class gets a trainer stop in Anvilmar at levels 2 and 4 (with a vendor stop before the
   second). Mages also train with Magis Sparkmantle in Kharanos at levels 6 and 8.

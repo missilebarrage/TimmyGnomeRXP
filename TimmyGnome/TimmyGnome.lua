@@ -541,6 +541,11 @@ step
     .turnin 312 >> Turn in Tundra MacGrann's Stolen Stash
     .target Tundra MacGrann
 step
+    .goto 1426,38.52,53.93
+    >>Head back east toward Old Icebeard's cave and let mobs kill you, then release and talk to the |cRXP_FRIENDLY_Spirit Healer|r to revive in Kharanos
+    >>|cRXP_WARN_Don't die at Tundra's camp: it's about as close to the Coldridge Valley graveyard as to Kharanos|r
+    .deathskip >> Death skip to Kharanos
+step
     .goto 1426/0,-501.400,-5643.900
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Senir Whitebeard|r in Kharanos
     .turnin 287 >> Turn in Frostmane Hold

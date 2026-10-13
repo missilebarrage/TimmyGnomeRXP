@@ -114,9 +114,9 @@ To update, download the zip again and replace the TimmyGnome folder.
 ### 12-14 Loch Modan
 
 - **Thelsamar** (you hearth in): Return to Brock, Snowbound, Mountaineer Stormpike's Task, and a vendor stop.
-  Both gathering quests are OPTIONAL: Thelsamar Blood Sausages
-  (a sticky collects its bear, boar and spider drops on every Loch Modan lap, with a second turn-in chance at the
-  end) and Rat Catching (on the trip back from Algaz Station).
+  Both gathering quests are OPTIONAL: Thelsamar Blood Sausages (a sticky collects its bear, boar and spider drops
+  on every Loch Modan lap, with a second turn-in chance at the end) and Rat Catching (on the trip back from Algaz
+  Station).
 - **Southern guard tower:** In Defense of the King's Lands four times over, plus The Trogg Threat on the same troggs.
   The third and fourth (level 15-17 troggs and Grawmug) are OPTIONAL.
 - **Dun Morogh detour:** The Lost Pilot and Mangeclaw. Paladins raise Narm Faulk and take the Dark Iron Script.

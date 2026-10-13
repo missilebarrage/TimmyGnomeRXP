@@ -1784,7 +1784,7 @@ step
 -- Morogh and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 5
+#version 6
 << Alliance
 #group TimmyGnome
 #name 12-14 Loch Modan
@@ -2020,9 +2020,6 @@ step << Dwarf Paladin
     >>Kill |cRXP_ENEMY_Dark Iron Spies|r at Ironband's Compound. Loot them for the |cRXP_LOOT_Dark Iron Script|r
     .complete 1784,1 --Dark Iron Script (1)
     .mob Dark Iron Spy
-step << !Paladin
-    .goto 1426/0,-2031.04,-5905.53
-    +If your paladin is on The Tome of Divinity, help them kill Dark Iron Spies at Ironband's Compound for a Dark Iron Script. Tick this when they have it, or if they don't need it
 -- Snowbound: fill the jar right outside the tunnel, then 10 minutes to Norric Lochthane at the dam.
 step
     #completewith next

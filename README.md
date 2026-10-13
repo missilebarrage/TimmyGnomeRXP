@@ -39,14 +39,15 @@ To update, download the zip again and replace the TimmyGnome folder.
   next to the gryphon master, turn in The Reports, then take the
   Deeprun Tram to Stormwind with Monty's rat quest and Me Brother, Nipsy. The Hall of Thanes quests in Ironforge
   are left for when you run the dungeon.
-- **Wands (level 8):** back in Kharanos, the paladin gathers a Copper Rod, Copper Ore and Rough Stone while
-  the mage goes to Ironforge: learn Enchanting and take Camping 101: Enchanting from Thonys Pillarstone next to
-  the trainer, buy Motes of Magic and Simple Wood, craft a Runed Copper Rod and a Novice's Practice Wand, enchant a
-  bracer to 10 Enchanting, train and craft the Lesser Magic Wand (Tilli sells a few Lesser Magic Essences), learn
-  Tailoring across the Great Forge (with Coarse Thread and Bleach from Poranna Snowbraid next to him), then hearth
-  back. From here a sticky tracks the Tailoring stash: 36 Bolts of Linen Cloth, the thread and the bleach. The
-  paladin's sticky at the same time: keep 10 Linen Cloth for his level 12 class quest and trade the rest to the
-  mage.
+- **Wands (level 8):** back in Kharanos, the paladin crafts a Copper Rod for the mage and trades him his spare
+  Linen Cloth (keeping 10 for The Tome of Divinity). The mage goes to Ironforge: learn Enchanting and take Camping
+  101: Enchanting from Thonys Pillarstone next to the trainer, buy Motes of Magic and Simple Wood, craft a Runed
+  Copper Rod and a Novice's Practice Wand, enchant a bracer to 10 Enchanting and train the Lesser Magic Wand. Then
+  learn Tailoring across the Great Forge (Coarse Thread and Bleach from Poranna Snowbraid next to him), bolt linen
+  until Uthrar teaches Brown Linen Pants, and craft and disenchant pants until one gives a Lesser Magic Essence for
+  the wand (Tilli and the Auction House sell the essence if the linen runs out). Then hearth back. From here a
+  sticky tracks the Tailoring stash: 36 Bolts of Linen Cloth, the thread and the bleach. The paladin's sticky at
+  the same time: keep 10 Linen Cloth for his level 12 class quest and trade the rest to the mage.
 - **Skipped:** The Perfect Stout, Flintfire's Shipment and the Frosthowl kill (the quest stays open for later).
 - **Training:** every class gets a trainer stop in Anvilmar at levels 2 and 4 (with a vendor stop before the
   second). Mages also train with Magis Sparkmantle in Kharanos at levels 6 and 8.

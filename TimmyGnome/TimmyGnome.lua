@@ -1005,7 +1005,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 27
+#version 28
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1509,6 +1509,7 @@ step << Mage
     .goto 1453/0,861.95,-8990.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum
     >>|cRXP_WARN_Mirror Lake hands you Jennea's Flask: you fill it at the Mirror Lake waterfall on the way to the Applejack Still|r
+    >>|cRXP_WARN_She doesn't offer Mirror Lake? If Mage-tastic Gizmonitor (Bink's quest from Ironforge) is in your quest log, abandon it and talk to her again: the two are alternatives, and Bink's blocks hers|r
     .turnin 1860 >> Turn in Speak with Jennea
     .accept 1861 >> Accept Mirror Lake
     .target Jennea Cannon

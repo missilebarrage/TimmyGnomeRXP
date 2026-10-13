@@ -997,7 +997,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 25
+#version 26
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1596,6 +1596,12 @@ step
     >>|cRXP_WARN_Skip The People's Militia: you're heading back to Loch Modan|r
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
     .target Gryan Stoutmantle
+step << Mage
+    .goto 1436,57.64,54.05
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gina MacGregor|r, the trade supplies vendor just past the gryphon master
+    >>|cRXP_BUY_Buy|r [Pattern: Red Linen Bag] |cRXP_BUY_(about 2s). You can learn it at 50 Tailoring: an 8-slot bag from 4 bolts, 1 Fine Thread and 1 Red Dye, and a point every craft until 75. Sold out? Skip this step|r
+    .collect 5771,1 >> Buy Pattern: Red Linen Bag
+    .target Gina MacGregor
 step
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r, the gryphon master

@@ -93,7 +93,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   there. The mage fills Jennea's Flask at the Mirror Lake waterfall on the way to the still, then flies from
   Sentinel Hill to Stormwind before hearthing. Meanwhile the paladin (a Dwarf, once he's 12) flies to Ironforge to
   start The Tome of Divinity: level 12 training with Brandur Ironhammer, then Tiza Battleforge, John Turner (the 10
-  Linen Cloth) and Muiredon, then he hearths and you meet up in Thelsamar. In Stormwind: 2 Minor Mana
+  Linen Cloth) and Muiredon, then he hearths and you meet up in Thelsamar. At Sentinel Hill the mage also buys
+  Pattern: Red Linen Bag from Gina MacGregor (learn it at 50 Tailoring). In Stormwind: 2 Minor Mana
   Potions from the Auction House, Novice Arcanist's Sash (needs 35 Tailoring; the potions are its reagent) and
   Green Linen Bracers from the tailoring shop, crafted and equipped on the spot, then Mirror Lake (Ley Staff or
   Ley Orb) at Jennea. A sticky from the first Stormwind stop reminds the mage to keep linen for these.

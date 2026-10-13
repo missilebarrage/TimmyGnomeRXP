@@ -211,7 +211,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 19
+#version 20
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -873,8 +873,7 @@ step
     .subzone 144 >> Travel to Thelsamar
 step << Dwarf/Gnome
     .xp <10,1
-    .goto 1432/0,-3019.02,-5369.40,8,0
-    .goto 1432/0,-3014.86,-5366.93
+    .goto 1432,37.26,46.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brock Stoneseeker|r
     .accept 6387 >> Accept Honor Students
     .target Brock Stoneseeker
@@ -1693,7 +1692,7 @@ step << Mage
 -- Morogh and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 3
+#version 4
 << Alliance
 #group TimmyGnome
 #name 12-14 Loch Modan
@@ -1717,8 +1716,7 @@ step
     .target Grenhild Darktalon
 step << Dwarf/Gnome
     .isOnQuest 6392
-    .goto 1432/0,-3019.02,-5369.40,8,0
-    .goto 1432/0,-3014.86,-5366.93
+    .goto 1432,37.26,46.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brock Stoneseeker|r
     .turnin 6392 >> Turn in Return to Brock
     .target Brock Stoneseeker

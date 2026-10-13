@@ -1798,7 +1798,7 @@ step
 -- Morogh and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 7
+#version 8
 << Alliance
 #group TimmyGnome
 #name 12-14 Loch Modan
@@ -2148,9 +2148,10 @@ step
     .turnin 416 >> Turn in Rat Catching
     .target Mountaineer Kadrell
 step
-    .isQuestComplete 418
+    .isOnQuest 418
     .goto 1432/0,-2954.42,-5394.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r in the inn
+    >>|cRXP_WARN_Still missing items? Get them from the bears, boars and spiders around Thelsamar first (the sticky shows what's left), or click to skip this step: there's a second chance after the hearth at the end|r
     .turnin 418 >> Turn in Thelsamar Blood Sausages
     .target Vidra Hearthstove
 step

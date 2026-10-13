@@ -1798,7 +1798,7 @@ step
 -- Morogh and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 8
+#version 9
 << Alliance
 #group TimmyGnome
 #name 12-14 Loch Modan
@@ -2137,6 +2137,28 @@ step
     .mob Tunnel Rat Surveyor
     .mob Tunnel Rat Geomancer
 step
+    .isOnQuest 418
+    #loop
+    .goto 1432,33.4,30.1,0
+    .goto 1432,38.2,36.6,0
+    .goto 1432,29.4,40.3,0
+    .goto 1432,33.4,30.1,40,0
+    .goto 1432,37.2,32.8,40,0
+    .goto 1432,38.2,36.6,40,0
+    .goto 1432,34.8,36.4,40,0
+    .goto 1432,33.8,40.7,40,0
+    .goto 1432,29.4,40.3,40,0
+    .goto 1432,29.5,35.0,40,0
+    .goto 1432,29.0,31.0,40,0
+    >>Finish the Thelsamar Blood Sausages items in the woods north-west of Thelsamar: |cRXP_ENEMY_Elder Black Bears|r for Bear Meat, |cRXP_ENEMY_Mountain Boars|r for Boar Intestines and |cRXP_ENEMY_Forest Lurkers|r for Spider Ichor
+    >>|cRXP_WARN_OPTIONAL: if it's crowded, skip this step. Keep the quest for the second turn-in chance at the end, or abandon it|r
+    .collect 3173,3,418,1 --Bear Meat (3)
+    .mob +Elder Black Bear
+    .collect 3172,3,418,1 --Boar Intestines (3)
+    .mob +Mountain Boar
+    .collect 3174,3,418,1 --Spider Ichor (3)
+    .mob +Forest Lurker
+step
     #label ThelsamarReturn
     #completewith next
     .goto 1432,34.405,48.276
@@ -2148,10 +2170,9 @@ step
     .turnin 416 >> Turn in Rat Catching
     .target Mountaineer Kadrell
 step
-    .isOnQuest 418
+    .isQuestComplete 418
     .goto 1432/0,-2954.42,-5394.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r in the inn
-    >>|cRXP_WARN_Still missing items? Get them from the bears, boars and spiders around Thelsamar first (the sticky shows what's left), or click to skip this step: there's a second chance after the hearth at the end|r
     .turnin 418 >> Turn in Thelsamar Blood Sausages
     .target Vidra Hearthstove
 step

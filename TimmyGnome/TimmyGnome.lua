@@ -1,5 +1,6 @@
 -- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of
--- Thanes, Westfall, Darkshore and the Ruins of Lordaeron, levels 1-20.
+-- Thanes and Darkshore, levels 1 to about 18. From the Hall of Thanes on, guides are named by the level you start
+-- them at ("14+"): where a duo ends up is hard to predict.
 -- The first two guides were rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn and Loch
 -- Modan guides below them have their own notes. Like that run, Coldridge Valley opens with a grind to level 2
 -- and skips Dwarven Outfitters, which also skips both Coldridge Valley mail deliveries and the Glyphic
@@ -1804,7 +1805,7 @@ RXPGuides.RegisterGuide([[
 << Alliance
 #group TimmyGnome
 #name 12-14 Loch Modan
-#next 14-15 Hall of Thanes
+#next 14+ Hall of Thanes
 
 step
     .goto 1432/0,-2954.42,-5394.10
@@ -2380,15 +2381,15 @@ step << Mage
 -- a tablet in the last room. Forever pays a bonus on dungeon quests (2.2 times, from the client's quest cache):
 -- about 13,300 XP for the five, a level at 14-15. Quest items here are per player: each of you loots your own
 -- heirlooms and Durgen's head, and clicks the tablet. The way in, the inside steps and the turn-in paths follow
--- RestedXP's Forever "15-16 Hall of Thanes" (its Dungeon Guide, in beta). Level 16 training waits for Stormwind
--- after Westfall unless you're already 16 here. 1455 is Ironforge.
+-- RestedXP's Forever "15-16 Hall of Thanes" (its Dungeon Guide, in beta). If you're already 16 at the end, train
+-- before you leave; there's no mage or paladin trainer in Darkshore. 1455 is Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
 #version 1
 << Alliance
 #group TimmyGnome
-#name 14-15 Hall of Thanes
-#next 15-17 Westfall
+#name 14+ Hall of Thanes
+#next 15+ Darkshore
 
 step
     #completewith EnterHoT
@@ -2553,387 +2554,43 @@ step << !Mage !Paladin
     .trainer >> Train your level 16 spells
 ]])
 
--- Westfall, first pass: the kill quests that pay best at 15-17 (People's Militia 1-3, The Killing Fields) plus the
--- drops that come from the same mobs: Red Leather Bandanas from the Defias, Flasks of Oil from the Harvest
--- Watchers (Keeper of the Flame, handed in on the spot at the lighthouse) and Longshore Murloc Gills from the
--- north shore's murlocs, with Alba Fairmoon's well samples. The Defias Brotherhood chain, The Coast Isn't Clear,
--- The Coastal Menace and the rest of Alba's Toxic Soil chain wait for the second pass with the Deadmines, when the
--- route comes back here at 20. Left out as slow or contested: Westfall Stew, Goretusk Liver Pie, Patrolling
--- Westfall, Poor Old Blanchy and Harvesting the Harvesters. Stormwind on the way: Stormpike's Order, the
--- Hearthstone (it stays in Stormwind through Darkshore, so the hearth after the Ruins of Lordaeron lands at its
--- turn-ins) and an OPTIONAL Humble Beginnings. The guide ends in Stormwind with level 16 training. NPC spots and
--- the Harvest Watcher and murloc paths are from RestedXP's Forever "13-15 Westfall"; the Defias spots for People's
--- Militia come from QuestieDB's spawn data. 1436 is Westfall, 1453 Stormwind City.
+-- Darkshore from level 15, straight after the Hall of Thanes: the tram to Stormwind (Stormpike's Order on the
+-- way), the Stormwind Harbor boat to Auberdine, and nearly every quest in the zone that's quick or pays well. It
+-- follows RestedXP's Forever Darkshore route (its 14-16 and 16-19 guides) for a non-Night Elf, minus Easy Strider
+-- Living (Cooking 10), The Family and the Fishing Pole (Auction House fish), Tools of the Highborne (RestedXP drops
+-- it past 16), the escort for The Absent Minded Prospector, and the quests that end outside Darkshore: Therylune's
+-- Escape and The Tower of Althalaxx's third part (Ashenvale), Mathystra Relics (its turn-in is back at Onu), A Lost
+-- Master's second part and The Powers Below. For Love Eternal (Anaya is a rare), WANTED: Jai'vhanel, Bashal'Aran's
+-- satyr seal and Gyromast's Revenge are OPTIONAL. Every drop quest has a sticky plus a real finish step you can
+-- skip. The Hearthstone goes to Auberdine. Loops: south (crawlers, the bear trap, the furbolg camp), north
+-- (threshers, the sunken lockboxes, Bashal'Aran, the red crystal), Ameth'Aran, north-east (the crystal again, the
+-- Cliffspring River, the moonstalkers, the cave), the far south (bears, Onu's Master's Glaive chain, the Twilight
+-- camp, Remtravel, Murkdeep, the beached creatures) and the far north-east (Den Mother, the Blackwood stores and
+-- Xabraxxis, the Tower of Althalaxx, Gyromast), then a hearth back. No mage or paladin trainer here: level 16 and
+-- 18 training waits for your next city. 1439 is Darkshore ("1439/1,y,x" are Kalimdor world coordinates), 1453
+-- Stormwind City and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 2
+#version 1
 << Alliance
 #group TimmyGnome
-#name 15-17 Westfall
-#next 17-19 Darkshore
+#name 15+ Darkshore
 
 step
     #completewith next
     .goto 1455/0,-1330.28,-4840.430
     .subzone 2257 >> Enter the Deeprun Tram in Tinker Town
+    .zoneskip Stormwind City
+    .zoneskip Darkshore
 step
     .zone Stormwind City >> Take the Deeprun Tram to Stormwind
+    .zoneskip Darkshore
 step
     .isOnQuest 1338
     .goto 1453/0,600.07,-8427.22
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r in the Dwarven District, near the tram
     .turnin 1338 >> Turn in Stormpike's Order
     .target Furen Longbeard
-step
-    .goto 1453/0,719.67,-8550.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r in City Hall, Cathedral Square
-    >>|cRXP_WARN_OPTIONAL: his compass is in a chest at the Alexston Farmstead, which you pass in Westfall. Skip this step if you'd rather not|r
-    .accept 399 >> Accept Humble Beginnings
-    .target Baros Alexston
-step
-    .goto 1453/0,673.58,-8867.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r at the Gilded Rose in the Trade District
-    >>|cRXP_WARN_Your Hearthstone stays here through Darkshore: after the Ruins of Lordaeron you hearth straight back to its turn-ins|r
-    .home >> Set your Hearthstone to Stormwind City
-    .bindlocation 16509
-    .target Innkeeper Allison
-step
-    .goto 1453/0,490.03,-8835.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master
-    .fly Westfall >> Fly to Sentinel Hill in Westfall
-    .target Dungar Longdrink
-    .zoneskip Westfall
-step
-    .goto 1436/0,1126.67,-10636.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
-    >>|cRXP_WARN_Every Defias you kill for People's Militia can drop them: a sticky tracks them all through Westfall|r
-    .accept 153 >> Accept Red Leather Bandanas
-    .target Scout Galiaan
-step
-    .goto 1436/0,1179.80,-10635.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r in the inn
-    >>|cRXP_WARN_The rest of her chain leads into the Deadmines: it waits for your second visit to Westfall|r
-    .accept 92742 >> Accept Testing the Wells
-    .accept 92744 >> Accept Murloc Gills
-    .target Alba Fairmoon::253092
-step
-    .goto 1436/0,1166.57,-10653.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash to |cRXP_FRIENDLY_Innkeeper Heather|r
-    .vendor >> Sell your trash
-    .target Innkeeper Heather
-step
-    .goto 1436/0,1045.12,-10508.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .accept 12 >> Accept The People's Militia
-    .target Gryan Stoutmantle
-step
-    #completewith BandanaFinish
-    .isOnQuest 153
-    >>Loot |cRXP_LOOT_Red Leather Bandanas|r from the Defias you kill for People's Militia. Each of you loots your own
-    .complete 153,1 --Red Leather Bandana (15)
-    .mob +Defias Trapper
-    .mob +Defias Smuggler
-    .mob +Defias Pillager
-    .mob +Defias Looter
-    .mob +Defias Highwayman
-    .mob +Defias Pathstalker
-    .mob +Defias Knuckleduster
-step
-    #completewith Lighthouse
-    >>|cRXP_WARN_Harvest Watchers also drop|r |T132794:0|t[Flask of Oil]|cRXP_WARN_: keep 5 for Keeper of the Flame at the lighthouse at the end of Westfall|r
-    .collect 814,5,103,1 --Flask of Oil (5)
-    .mob Harvest Watcher
-step
-    #completewith Militia1Finish
-    .isOnQuest 12
-    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r around the farms north of Sentinel Hill
-    .complete 12,1 --Defias Trapper (15)
-    .mob +Defias Trapper
-    .complete 12,2 --Defias Smuggler (15)
-    .mob +Defias Smuggler
-step
-    .goto 1436/0,1055.27,-10128.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
-    .accept 9 >> Accept The Killing Fields
-    .target Farmer Saldean
-step
-    .isOnQuest 92742
-    .goto 1436/0,1404.20,-10290.90
-    .use 254545 >>|cRXP_WARN_Use the|r |T236996:0|t[Well Water Sample Kit] |cRXP_WARN_at the Molsen Farm well|r
-    .complete 92742,2 --Molsen Farm Water Sample (1)
-step
-    .isOnQuest 9
-    #loop
-    .goto 1436,44.3,36.7,0
-    .goto 1436,51.2,22.2,0
-    .goto 1436,53.1,33.0,0
-    .goto 1436,45.3,34.2,40,0
-    .goto 1436,44.3,36.7,40,0
-    .goto 1436,44.8,25.8,40,0
-    .goto 1436,45.3,20.6,40,0
-    .goto 1436,51.2,22.2,40,0
-    .goto 1436,54.2,31.6,40,0
-    .goto 1436,53.1,33.0,40,0
-    >>Kill |cRXP_ENEMY_Harvest Watchers|r on the Molsen, Jansen and Saldean fields, and the Defias around them
-    >>|cRXP_WARN_Fields crowded? Skip this step: there are more Harvest Watchers at the Alexston Farmstead later|r
-    .complete 9,1 --Harvest Watcher (20)
-    .mob Harvest Watcher
-step
-    .goto 1436/0,918.42,-9851.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r
-    >>|cRXP_WARN_OPTIONAL: his pocket watch is in a wardrobe at the Jansen Stead, guarded by Benny Blanco. Skip this step if you'd rather not|r
-    .accept 64 >> Accept The Forgotten Heirloom
-    .target Farmer Furlbrow
-step
-    .isOnQuest 64
-    .goto 1436/0,1289.77,-9849.63
-    >>Open |cRXP_PICK_Furlbrow's Wardrobe|r in the Jansen Stead house. Loot it for |cRXP_LOOT_Furlbrow's Pocket Watch|r
-    >>|cRXP_WARN_Watch out for|r |cRXP_ENEMY_Benny Blanco|r|cRXP_WARN_: he hits hard|r
-    .complete 64,1 --Furlbrow's Pocket Watch (1)
-step
-    .isOnQuest 92744
-    .goto 1436/0,1192.12,-9641.73,60,0
-    .goto 1436/0,1042.67,-9619.33,60,0
-    .goto 1436/0,1192.12,-9641.73
-    >>Kill |cRXP_ENEMY_Murloc Raiders|r and |cRXP_ENEMY_Murloc Coastrunners|r on the north shore. Loot them for |cRXP_LOOT_Longshore Murloc Gills|r
-    >>|cRXP_WARN_Shore crowded? Skip this step: Alba's chain waits for your second visit anyway|r
-    .complete 92744,1 --Longshore Murloc Gills (7)
-    .mob Murloc Raider
-    .mob Murloc Coastrunner
-step
-    .isOnQuest 92742
-    .goto 1436/0,1035.30,-9835.10
-    .use 254545 >>|cRXP_WARN_Use the|r |T236996:0|t[Well Water Sample Kit] |cRXP_WARN_at the Jansen Stead well|r
-    .complete 92742,1 --Jansen Stead Water Sample (1)
-step
-    .isQuestComplete 64
-    .goto 1436/0,918.42,-9851.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r
-    .turnin 64 >> Turn in The Forgotten Heirloom
-    .target Farmer Furlbrow
-step
-    .isQuestComplete 9
-    .goto 1436/0,1055.27,-10128.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
-    .turnin 9 >> Turn in The Killing Fields
-    .target Farmer Saldean
-step
-    #label Militia1Finish
-    .isOnQuest 12
-    #loop
-    .goto 1436,46.4,38.2,0
-    .goto 1436,49.7,46.5,0
-    .goto 1436,44.8,25.8,40,0
-    .goto 1436,46.4,38.2,40,0
-    .goto 1436,49.7,46.5,40,0
-    >>Finish the |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r on the way back: around the Molsen Farm and just west of Sentinel Hill
-    .complete 12,1 --Defias Trapper (15)
-    .mob +Defias Trapper
-    .complete 12,2 --Defias Smuggler (15)
-    .mob +Defias Smuggler
-step
-    .goto 1436/0,1045.12,-10508.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 12 >> Turn in The People's Militia
-    .accept 13 >> Accept The People's Militia
-    .target Gryan Stoutmantle
-step
-    .isQuestComplete 92742
-    .goto 1436/0,1179.80,-10635.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r in the inn
-    .turnin 92742 >> Turn in Testing the Wells
-    .target Alba Fairmoon::253092
-step
-    .isQuestComplete 92744
-    .goto 1436/0,1179.80,-10635.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r in the inn
-    .turnin 92744 >> Turn in Murloc Gills
-    .target Alba Fairmoon::253092
-step
-    #completewith Militia2Finish
-    .isOnQuest 13
-    >>Kill |cRXP_ENEMY_Defias Pillagers|r and |cRXP_ENEMY_Defias Looters|r at the Alexston Farmstead and north of Moonbrook
-    .complete 13,1 --Defias Pillager (15)
-    .mob +Defias Pillager
-    .complete 13,2 --Defias Looter (15)
-    .mob +Defias Looter
-step
-    .isOnQuest 399
-    .goto 1436/0,1748.27,-10672.13
-    >>Open |cRXP_PICK_Alexston's Chest|r. Loot it for |cRXP_LOOT_A Simple Compass|r
-    .complete 399,1 --A Simple Compass (1)
-step
-    .isOnQuest 9
-    #loop
-    .goto 1436,38.6,51.5,0
-    .goto 1436,38.6,51.5,30,0
-    .goto 1436,37.6,49.0,30,0
-    .goto 1436,40.2,53.0,30,0
-    >>Still short on |cRXP_ENEMY_Harvest Watchers|r? Finish them on the Alexston Farmstead fields
-    >>|cRXP_WARN_Skip this step if these are crowded too|r
-    .complete 9,1 --Harvest Watcher (20)
-    .mob Harvest Watcher
-step
-    #label Militia2Finish
-    .isOnQuest 13
-    #loop
-    .goto 1436,37.7,56.4,0
-    .goto 1436,44.0,68.8,0
-    .goto 1436,37.7,56.4,40,0
-    .goto 1436,33.8,52.1,40,0
-    .goto 1436,33.5,56.8,40,0
-    .goto 1436,41.3,69.9,40,0
-    .goto 1436,44.0,68.8,40,0
-    >>Kill |cRXP_ENEMY_Defias Pillagers|r and |cRXP_ENEMY_Defias Looters|r at the Alexston Farmstead and north of Moonbrook
-    .complete 13,1 --Defias Pillager (15)
-    .mob +Defias Pillager
-    .complete 13,2 --Defias Looter (15)
-    .mob +Defias Looter
-step
-    .goto 1436/0,1045.12,-10508.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 13 >> Turn in The People's Militia
-    .accept 14 >> Accept The People's Militia
-    .target Gryan Stoutmantle
-step
-    .isQuestComplete 9
-    .goto 1436/0,1055.27,-10128.70
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r, just north of Sentinel Hill
-    .turnin 9 >> Turn in The Killing Fields
-    .target Farmer Saldean
-step
-    .isOnQuest 14
-    #loop
-    .goto 1436,51.0,75.4,0
-    .goto 1436,37.8,80.9,0
-    .goto 1436,51.0,75.4,40,0
-    .goto 1436,51.4,78.7,40,0
-    .goto 1436,45.2,80.0,40,0
-    .goto 1436,37.8,80.9,40,0
-    .goto 1436,37.3,75.1,40,0
-    >>Kill |cRXP_ENEMY_Defias Highwaymen|r, |cRXP_ENEMY_Defias Pathstalkers|r and |cRXP_ENEMY_Defias Knuckledusters|r in the Dagger Hills and west of Moonbrook
-    .complete 14,1 --Defias Highwayman (15)
-    .mob +Defias Highwayman
-    .complete 14,2 --Defias Pathstalker (5)
-    .mob +Defias Pathstalker
-    .complete 14,3 --Defias Knuckleduster (5)
-    .mob +Defias Knuckleduster
-step
-    #label Lighthouse
-    .itemcount 814,5
-    .goto 1436/0,1966.32,-11407.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r at the Westfall Lighthouse
-    >>|cRXP_WARN_He also offers The Coastal Menace and The Coast Isn't Clear: leave those for your second visit to Westfall|r
-    .accept 103 >> Accept Keeper of the Flame
-    .turnin 103 >> Turn in Keeper of the Flame
-    .target Captain Grayson
-step
-    #label BandanaFinish
-    .isOnQuest 153
-    #loop
-    .goto 1436,44.0,68.8,0
-    .goto 1436,51.0,75.4,0
-    .goto 1436,44.0,68.8,40,0
-    .goto 1436,41.3,69.9,40,0
-    .goto 1436,51.0,75.4,40,0
-    .goto 1436,51.4,78.7,40,0
-    >>Finish your |cRXP_LOOT_Red Leather Bandanas|r on the Defias around Moonbrook and the Dagger Hills on the way back
-    >>|cRXP_WARN_Each of you needs 15 of your own. Skip this step if it's slow|r
-    .complete 153,1 --Red Leather Bandana (15)
-    .mob +Defias Pillager
-    .mob +Defias Looter
-    .mob +Defias Highwayman
-    .mob +Defias Pathstalker
-    .mob +Defias Knuckleduster
-step
-    .isQuestComplete 14
-    .goto 1436/0,1045.12,-10508.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    >>|cRXP_WARN_Don't take The Defias Brotherhood yet: it's for your second visit, with the Deadmines|r
-    .turnin 14 >> Turn in The People's Militia
-    .target Gryan Stoutmantle
-step
-    .isQuestComplete 153
-    .goto 1436/0,1126.67,-10636.67
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
-    .turnin 153 >> Turn in Red Leather Bandanas
-    .target Scout Galiaan
-step
-    .isQuestComplete 92744
-    .goto 1436/0,1179.80,-10635.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r in the inn
-    .turnin 92744 >> Turn in Murloc Gills
-    .target Alba Fairmoon::253092
-step
-    .goto 1436/0,1037.42,-10628.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r, the gryphon master
-    .fly Stormwind >> Fly to Stormwind
-    .target Thor
-    .zoneskip Stormwind City
-step
-    .isQuestComplete 399
-    .goto 1453/0,719.67,-8550.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r in City Hall, Cathedral Square
-    .turnin 399 >> Turn in Humble Beginnings
-    .target Baros Alexston
-step << Mage
-    #completewith next
-    .xp <16,1
-    .train 2120,1
-    .goto 1453/0,942.34,-9001.49,15,0
-    .goto 1453/0,949.86,-9009.38,10,0
-    .goto 1453/0,962.63,-8990.73,15,0
-    .goto 1453/0,928.62,-9010.10,15,0
-    .goto 1453/0,863.96,-9001.40,8,0
-    .goto 1453/0,877.00,-9008.03,6,0
-    .goto 1453/0,868.8,-9004.27,8,0
-    .goto 1453/0,871.36,-9013.14,10,0
-    .goto 1453/0,887.22,-9017.80,10 >> Go into the Wizard's Sanctum in the Mage Quarter and follow its ramp to |cRXP_FRIENDLY_Jennea|r
-step << Mage
-    .xp <16,1
-    .goto 1453/0,861.95,-8990.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum
-    .train 2120 >> Train your level 16 spells (Flamestrike)
-    .target Jennea Cannon
-step << Paladin
-    #completewith next
-    .xp <16,1
-    .train 7294,1
-    .goto 1453/0,809.52,-8579.22,20,0
-    .goto 1453/0,859.13,-8559.14,10 >> Go into the Cathedral of Light in Cathedral Square
-step << Paladin
-    .xp <16,1
-    .goto 1453/0,861.14,-8573.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r in the Cathedral of Light
-    .train 7294 >> Train your level 16 spells (Retribution Aura)
-    .target Arthur the Faithful
-step << !Mage !Paladin
-    .xp <16,1
-    >>Visit your class trainer in Stormwind
-    .trainer >> Train your level 16 spells
-]])
-
--- Darkshore, between the two dungeons: the Stormwind Harbor boat to Auberdine, then four walking loops from
--- Auberdine (the Hearthstone stays in Stormwind for the end of the Ruins of Lordaeron). It's RestedXP's Forever
--- Darkshore (its 14-16 and 16-19 guides) cut down to quests that hold up with a launch-day crowd: explore, use
--- and deliver quests and kills of mobs there are plenty of. Left out: the Buzzbox chain, Fruit of the Sea, Tools
--- of the Highborne, For Love Eternal (a rare), A Lost Master's pelts, Washed Ashore and the beached creatures, Deep
--- Ocean, Vast Sea, Mathystra Relics (its turn-in is back at Onu), Easy Strider Living, WANTED: Jai'vhanel and the
--- escorts (Therylune, Remtravel, Kerlonian, Gyromast). Bashal'Aran (Grell earrings, then a satyr's seal), the
--- Tower of Althalaxx parchments and the cave mushrooms are OPTIONAL. Most mobs here are 12-16, so at 17-19 the XP
--- is in the quests; leaving at about 18-19 is fine, because the Ruins of Lordaeron quests pay in full well past
--- 20. Loops: south (the bear trap, the furbolg camp, Ameth'Aran), north-east (Bashal'Aran, the Cliffspring River,
--- the Tower of Althalaxx, the cave, the red crystal), south again (furbolgs, bears, Onu's Master's Glaive chain,
--- Remtravel, Murkdeep) and north-east again (the crystal, Den Mother, the Blackwood stores and Xabraxxis).
--- 1439 is Darkshore; "1439/1,y,x" are Kalimdor world coordinates.
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-<< Alliance
-#group TimmyGnome
-#name 17-19 Darkshore
-#next 19-20 Ruins of Lordaeron
-
 step
     #completewith next
     .goto 1453/0,875.50,-8680.90,20,0
@@ -2944,51 +2601,108 @@ step
     >>|cRXP_WARN_On the crossing, turn spare cloth into bolts and conjure water|r << Mage
     .zone Darkshore >> Take the boat to Auberdine in Darkshore
 step
-    .goto 1439,37.439,41.839
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
-    >>|cRXP_WARN_Prospector Remtravel is at the far south end of Darkshore: you get there on the second southern loop|r
-    .accept 729 >> Accept The Absent Minded Prospector
-    .target Archaeologist Hollee
+    .goto 1439/1,561.66,6343.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r, the hippogryph master by the docks
+    .fp Auberdine >> Get the Auberdine flight path
+    .target Caylais Moonfeather
 step
-    .goto 1439,37.394,40.128
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
-    >>|cRXP_WARN_OPTIONAL: Bashal'Aran is a chain at the ruins north-east of Auberdine: Grell earrings, then one seal from a satyr. Skip this step if you'd rather not|r
-    .accept 954 >> Accept Bashal'Aran
-    .target Thundris Windweaver
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .accept 3524 >> Accept Washed Ashore
+    .target Gwennyth Bly'Leggonde
 step
-    .goto 1439,37.322,43.640
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
-    >>|cRXP_WARN_OPTIONAL but worth it: the mushrooms are in a cave in the north-east, and the quest after it starts Onu's chain in the south. Skip this step if you'd rather not|r
-    .accept 947 >> Accept Cave Mushrooms
-    .target Barithras Moonshade
+    .goto 1439/1,577.38,6371.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r on the dock
+    >>|cRXP_WARN_The crab chunks drop from the Reef Crawlers and Encrusted Tide Crawlers on the north and south shores: a sticky tracks them|r
+    .accept 1138 >> Accept Fruit of the Sea
+    .target Gubber Blump
+step
+    .goto 1439,35.743,43.710
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
+    >>|cRXP_WARN_OPTIONAL: his pendant is on Anaya Dawnrunner, a rare at Ameth'Aran (she respawns fast in Forever). Skip this step if you'd rather not. You may need to wait out his talk if someone just handed it in|r
+    .accept 963 >> Accept For Love Eternal
+    .target Cerellean Whiteclaw
+step
+    .goto 1439,36.976,44.135
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang Cranktoggle|r upstairs in the inn
+    .accept 983 >> Accept Buzzbox 827
+    .target Wizbang Cranktoggle
+step
+    .goto 1439/1,515.55,6406.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shaussiy|r downstairs
+    .home >> Set your Hearthstone to Auberdine
+    .bindlocation 442
+    .target Innkeeper Shaussiy
+step
+    .goto 1439/1,504.41,6402.39
+    >>Click the |cRXP_PICK_Wanted Poster|r outside the inn
+    >>|cRXP_WARN_Murkdeep is an event at a murloc camp on the south coast, near the end of the guide|r
+    .accept 4740 >> Accept WANTED: Murkdeep!
+step
+    .goto 1439/1,503.10,6402.10
+    >>Click the other |cRXP_PICK_Wanted Poster|r
+    >>|cRXP_WARN_OPTIONAL: Jai'vhanel is a named mob east of Ameth'Aran. Skip this step if you'd rather not|r
+    .accept 98025 >> Accept WANTED: Jai'vhanel
 step
     .goto 1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
     .accept 4811 >> Accept The Red Crystal
     .target Sentinel Glynda Nal'Shea
 step
-    .goto 1439/1,504.41,6402.39
-    >>Click the |cRXP_PICK_Wanted Poster|r
-    .accept 4740 >> Accept WANTED: Murkdeep!
+    .goto 1439,37.322,43.640
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
+    .accept 947 >> Accept Cave Mushrooms
+    .target Barithras Moonshade
+step
+    .goto 1439,37.439,41.839
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Archaeologist Hollee|r
+    >>|cRXP_WARN_Prospector Remtravel is at the far south end of Darkshore: you get there late in the guide|r
+    .accept 729 >> Accept The Absent Minded Prospector
+    .target Archaeologist Hollee
+step
+    .goto 1439,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .accept 954 >> Accept Bashal'Aran
+    .target Thundris Windweaver
+step
+    .goto 1439,38.107,41.165
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    >>|cRXP_WARN_Two lockboxes in sunken ships off the north coast: mind your breath meter|r
+    .accept 982 >> Accept Deep Ocean, Vast Sea
+    .target Gorbold Steelhand
+step
+    .goto 1439,39.043,43.555
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r upstairs
+    >>|cRXP_WARN_Balthule is at the Tower of Althalaxx in the far north-east, on the last loop|r
+    .accept 965 >> Accept The Tower of Althalaxx
+    .target Sentinel Elissa Starbreeze
 step
     .goto 1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
     .accept 2118 >> Accept Plagued Lands
     .target Tharnariun Treetender
 step
-    .goto 1439,39.043,43.555
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Elissa Starbreeze|r upstairs
-    .accept 965 >> Accept The Tower of Althalaxx
-    .target Sentinel Elissa Starbreeze
-step
     .goto 1439,39.373,43.483
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
     .accept 984 >> Accept How Big a Threat?
     .target Terenthis
 step
+    #completewith BuzzBox827
+    .isOnQuest 983
+    >>Kill |cRXP_ENEMY_Pygmy Tide Crawlers|r and |cRXP_ENEMY_Young Reef Crawlers|r on the beach. Loot them for |cRXP_LOOT_Crawler Legs|r
+    .complete 983,1 --Crawler Leg (6)
+    .mob Pygmy Tide Crawler
+    .mob Young Reef Crawler
+step
+    .isOnQuest 3524
+    .goto 1439,36.371,50.920
+    >>Open the |cRXP_PICK_Beached Sea Creature|r on the beach south of Auberdine. Loot it for the |cRXP_LOOT_Sea Creature Bones|r
+    .complete 3524,1 --Sea Creature Bones (1)
+step
     .isOnQuest 984
     .goto 1439/1,393.72,5993.24
-    >>Go south to the furbolg camp and run up to its edge
+    >>Go south-east to the furbolg camp and run up to its edge
     .complete 984,1 --Find a corrupt furbolg camp (1)
 step
     .isOnQuest 2118
@@ -3006,33 +2720,56 @@ step
     .use 7586
     .unitscan Rabid Thistle Bear
 step
-    .goto 1439,40.302,59.731
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
-    .accept 953 >> Accept The Fall of Ameth'Aran
-    .target Sentinel Tysha Moonblade
+    #label BuzzBox827
+    .isOnQuest 983
+    #loop
+    .goto 1439,36.091,51.501,0
+    .goto 1439,35.902,47.145,0
+    .goto 1439,36.091,51.501,60,0
+    .goto 1439,37.130,53.663,60,0
+    .goto 1439,35.655,55.872,60,0
+    .goto 1439,35.275,53.464,60,0
+    .goto 1439,36.280,50.071,60,0
+    .goto 1439,35.977,48.408,60,0
+    .goto 1439,35.902,47.145,60,0
+    .goto 1439,35.759,45.455,60,0
+    >>Finish the |cRXP_LOOT_Crawler Legs|r on the beach on the way back north
+    >>|cRXP_WARN_Some crawlers are gray to you: kill them anyway, the quest starts a chain|r
+    .complete 983,1 --Crawler Leg (6)
+    .mob Pygmy Tide Crawler
+    .mob Young Reef Crawler
 step
-    .isOnQuest 953
-    .goto 1439,42.652,63.145
-    >>Click |cRXP_PICK_The Fall of Ameth'Aran|r
-    .complete 953,2 --Read The Fall of Ameth'Aran (1)
+    .isQuestComplete 983
+    .goto 1439,36.634,46.250
+    >>Click |cRXP_PICK_Buzzbox 827|r on the beach
+    .turnin 983 >> Turn in Buzzbox 827
+    .accept 1001 >> Accept Buzzbox 411
 step
-    .isOnQuest 953
-    .goto 1439/1,105.52,5770.10
-    >>Click |cRXP_PICK_The Lay of Ameth'Aran|r
-    .complete 953,1 --Read The Lay of Ameth'Aran (1)
+    .isQuestComplete 3524
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 3524 >> Turn in Washed Ashore
+    .accept 4681 >> Accept Washed Ashore
+    .target Gwennyth Bly'Leggonde
 step
-    .isQuestComplete 953
-    .goto 1439,40.302,59.731
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
-    .turnin 953 >> Turn in The Fall of Ameth'Aran
-    .target Sentinel Tysha Moonblade
+    #completewith ThresherEyes
+    .isOnQuest 1001
+    >>Kill |cRXP_ENEMY_Darkshore Threshers|r in the water off the coast. Loot them for |cRXP_LOOT_Thresher Eyes|r
+    .complete 1001,1 --Thresher Eye (3)
+    .mob Darkshore Thresher
 step
-    .goto 1439,39.373,43.483
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Auberdine, talk to |cRXP_FRIENDLY_Terenthis|r
-    .turnin 984 >> Turn in How Big a Threat?
-    .accept 985 >> Accept How Big a Threat?
-    .accept 4761 >> Accept Thundris Windweaver
-    .target Terenthis
+    .isOnQuest 4681
+    .goto 1439,31.841,46.304
+    >>Swim out west and open the |cRXP_PICK_Skeletal Sea Turtle|r underwater. Loot it for the |cRXP_LOOT_Sea Turtle Remains|r
+    .complete 4681,1 --Sea Turtle Remains (1)
+step
+    .isQuestComplete 4681
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4681 >> Turn in Washed Ashore
+    .target Gwennyth Bly'Leggonde
 step
     .isQuestComplete 2118
     .goto 1439,38.843,43.416
@@ -3041,6 +2778,15 @@ step
     .accept 2138 >> Accept Cleansing of the Infected
     .target Tharnariun Treetender
 step
+    .isQuestComplete 984
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
+    .turnin 984 >> Turn in How Big a Threat?
+    .accept 985 >> Accept How Big a Threat?
+    .accept 4761 >> Accept Thundris Windweaver
+    .target Terenthis
+step
+    .isOnQuest 4761
     .goto 1439,37.394,40.128
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 4761 >> Turn in Thundris Windweaver
@@ -3049,10 +2795,51 @@ step
 step
     #completewith BearsFinish
     .isOnQuest 2138
-    >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r whenever you pass them, north-east and south
+    >>Kill |cRXP_ENEMY_Rabid Thistle Bears|r whenever you pass them
     >>|cRXP_WARN_Kill them fast: their Rabies halves your health regeneration for 10 minutes|r
     .complete 2138,1 --Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
+step
+    .isOnQuest 982
+    .goto 1439,38.213,28.754
+    >>|cRXP_WARN_Go north up the coast. Mind your breath meter: swim down to the outside of the back of the sunken ship and use your Interact with Target key on the arrow to loot the|r |cRXP_LOOT_Silver Dawning's Lockbox|r|cRXP_WARN_, or swim into the bottom floor and loot it there|r
+    .complete 982,1 --Silver Dawning's Lockbox (1)
+step
+    .isOnQuest 982
+    .goto 1439,39.581,27.487
+    >>|cRXP_WARN_Same again at the second ship for the|r |cRXP_LOOT_Mist Veil's Lockbox|r
+    .complete 982,2 --Mist Veil's Lockbox (1)
+step
+    #label ThresherEyes
+    .isOnQuest 1001
+    #loop
+    .goto 1439/1,310.53,7077.48,0
+    .goto 1439/1,620.35,6768.76,0
+    .goto 1439/1,310.53,7077.48,55,0
+    .goto 1439/1,404.85,7099.75,55,0
+    .goto 1439/1,537.82,7023.33,55,0
+    .goto 1439/1,602.66,6924.21,55,0
+    .goto 1439/1,620.35,6768.76,55,0
+    >>Finish the |cRXP_LOOT_Thresher Eyes|r on the |cRXP_ENEMY_Darkshore Threshers|r along this coast
+    .complete 1001,1 --Thresher Eye (3)
+    .mob Darkshore Thresher
+step
+    .goto 1439,41.901,31.339
+    >>Click the |cRXP_PICK_Beached Sea Creature|r on the shore
+    .accept 4723 >> Accept Beached Sea Creature
+step
+    .isQuestComplete 1001
+    .goto 1439,41.960,28.616
+    >>Click |cRXP_PICK_Buzzbox 411|r on the shore
+    .turnin 1001 >> Turn in Buzzbox 411
+    .accept 1002 >> Accept Buzzbox 323
+step
+    #completewith FangsFinish
+    .isOnQuest 1002
+    >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r as you go. Loot them for |cRXP_LOOT_Moonstalker Fangs|r
+    .complete 1002,1 --Moonstalker Fang (6)
+    .mob Moonstalker Runt
+    .mob Moonstalker
 step
     .isOnQuest 954
     .goto 1439,44.168,36.289
@@ -3075,8 +2862,8 @@ step
     .goto 1439,46.906,36.171,50,0
     .goto 1439,47.022,37.083,50,0
     .goto 1439,45.827,36.812,50,0
-    >>Kill |cRXP_ENEMY_Wild Grells|r and |cRXP_ENEMY_Vile Sprites|r. Loot them for |cRXP_LOOT_Grell Earrings|r
-    >>|cRXP_WARN_Each of you loots your own. Skip this step and the rest of Bashal'Aran if it's crowded|r
+    >>Kill |cRXP_ENEMY_Wild Grells|r and |cRXP_ENEMY_Vile Sprites|r. Loot them for |cRXP_LOOT_Grell Earrings|r: each of you loots your own
+    >>|cRXP_WARN_Leave the Deth'ryll Satyrs for the next part|r
     .complete 955,1 --Grell Earring (8)
     .mob Wild Grell
     .mob Vile Sprite
@@ -3101,119 +2888,72 @@ step
     .goto 1439,47.920,37.228,45,0
     .goto 1439,47.368,36.774,45,0
     >>Kill |cRXP_ENEMY_Deth'ryll Satyrs|r. Loot them for the |cRXP_LOOT_Ancient Moonstone Seal|r
-    >>|cRXP_WARN_The satyrs don't respawn faster when there are more players. Skip this step if they're taken|r
+    >>|cRXP_WARN_OPTIONAL: the satyrs don't respawn faster with more players around. Skip this step if they're taken|r
     .complete 956,1 --Ancient Moonstone Seal (1)
     .mob Deth'ryll Satyr
 step
     .isQuestComplete 956
     .goto 1439,44.168,36.289
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r
-    >>|cRXP_WARN_The Ancient Flame for the last part is at Ameth'Aran: you pass it on the next southern loop|r
+    >>|cRXP_WARN_The Ancient Flame for the last part is at Ameth'Aran, next on the route|r
     .turnin 956 >> Turn in Bashal'Aran
     .accept 957 >> Accept Bashal'Aran
     .target Asterion
 step
-    .isOnQuest 4762
-    .goto 1439/1,-386.39,7219.83
-    >>|cRXP_WARN_Go north-east and use the|r |T134865:0|t[Empty Sampling Tube] |cRXP_WARN_at the base of the Cliffspring River|r
-    .complete 4762,1 --Cliffspring River Sample (1)
-    .use 12350
-step
-    #completewith next
-    .goto 1439,51.118,23.670,20,0
-    .goto 1439,51.490,24.368,30,0
-    .goto 1439,54.973,24.885,15 >> Go east to the Tower of Althalaxx
-step
-    .goto 1439,54.973,24.885
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
-    >>|cRXP_WARN_OPTIONAL: his next quest wants 4 Worn Parchments from the Dark Strand Fanatics around the tower. Don't accept it if you'd rather not|r
-    .turnin 965 >> Turn in The Tower of Althalaxx
-    .accept 966 >> Accept The Tower of Althalaxx
-    .target Balthule Shadowstrike
-step
-    .isOnQuest 966
-    #loop
-    .goto 1439,55.231,26.508,0
-    .goto 1439,56.194,27.071,0
-    .goto 1439,57.278,26.311,0
-    .goto 1439,55.231,26.508,50,0
-    .goto 1439,55.763,26.695,50,0
-    .goto 1439,56.194,27.071,50,0
-    .goto 1439,56.790,27.621,50,0
-    .goto 1439,57.278,26.311,50,0
-    .goto 1439,56.544,26.598,50,0
-    .goto 1439,55.743,25.915,50,0
-    >>Kill |cRXP_ENEMY_Dark Strand Fanatics|r. Loot them for |cRXP_LOOT_Worn Parchments|r
-    >>|cRXP_WARN_Each of you loots your own. Skip this step if it's slow|r
-    .complete 966,1 --Worn Parchment (4)
-    .mob Dark Strand Fanatic
-step
-    .isQuestComplete 966
-    .goto 1439,54.973,24.885
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
-    >>|cRXP_WARN_Don't take the next part: it goes on to Ashenvale|r
-    .turnin 966 >> Turn in The Tower of Althalaxx
-    .target Balthule Shadowstrike
-step
-    .isOnQuest 947
-    .goto 1439/1,-690.31,6751.29,12,0
-    .goto 1439/1,-706.68,6748.23,12,0
-    .goto 1439/1,-719.13,6787.53,12,0
-    .goto 1439/1,-663.45,6877.49,8,0
-    .goto 1439/1,-679.17,6848.67,8,0
-    .goto 1439/1,-666.73,6819.41,8,0
-    .goto 1439/1,-680.48,6779.67
-    >>In the Cliffspring Falls cave, loot the |cRXP_LOOT_Scaber Stalks|r and a |cRXP_LOOT_Death Cap|r on the ground
-    >>|cRXP_WARN_Stay on the upper level. No Death Cap at the end of it? Drop down and look in the southern room below. Skip this step if the cave is crowded|r
-    .complete 947,1 --Scaber Stalk (5)
-    .complete 947,2 --Death Cap (1)
-step
     .isOnQuest 4811
     .goto 1439,47.314,48.676
-    >>Go south-west to the |cRXP_PICK_Mysterious Red Crystal|r on the ridge east of Auberdine
-    >>|cRXP_WARN_Mind the two pairs of Raging Moonkin just west of it|r
+    >>Go south-east up to the |cRXP_PICK_Mysterious Red Crystal|r on the ridge
+    >>|cRXP_WARN_Mind the two pairs of Raging Moonkin just west of it: each pair is linked|r
     .complete 4811,1 --Locate the large, red crystal on Darkshore's eastern mountain range
 step
-    .isQuestComplete 4811
-    .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Auberdine, talk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
-    .turnin 4811 >> Turn in The Red Crystal
-    .accept 4812 >> Accept As Water Cascades
-    .target Sentinel Glynda Nal'Shea
+    .goto 1439,40.302,59.731
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo south-west to Ameth'Aran and talk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
+    .accept 953 >> Accept The Fall of Ameth'Aran
+    .target Sentinel Tysha Moonblade
 step
-    .isOnQuest 4812
-    .goto 1439,37.767,44.001
-    >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Water Tube] |cRXP_WARN_at the Auberdine moonwell|r
-    .complete 4812,1 --Moonwell Water Tube (1)
-    .use 14338
+    #completewith FurbolgGrind
+    .isOnQuest 963
+    .goto 1439,42.017,58.866,0
+    .goto 1439,43.222,59.693,0
+    .goto 1439,43.069,62.448,0
+    .goto 1439,42.489,60.677,0
+    >>Keep an eye out for |cRXP_ENEMY_Anaya Dawnrunner|r at Ameth'Aran: four spawn spots, marked on your map. Kill her and loot her |cRXP_LOOT_Pendant|r
+    .complete 963,1 --Anaya's Pendant (1)
+    .unitscan Anaya Dawnrunner
 step
-    .isQuestComplete 947
-    .goto 1439,37.322,43.640
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
-    .turnin 947 >> Turn in Cave Mushrooms
-    .accept 948 >> Accept Onu
-    .target Barithras Moonshade
+    .isOnQuest 953
+    .goto 1439,42.652,63.145
+    >>Click |cRXP_PICK_The Fall of Ameth'Aran|r
+    .complete 953,2 --Read The Fall of Ameth'Aran (1)
 step
-    .isQuestComplete 4762
-    .goto 1439,37.394,40.128
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
-    .turnin 4762 >> Turn in The Cliffspring River
-    .accept 4763 >> Accept The Blackwood Corrupted
-    .target Thundris Windweaver
+    .isOnQuest 957
+    .goto 1439,42.373,61.815
+    >>Click the |cRXP_PICK_Ancient Flame|r
+    .complete 957,1 --Destroy the seal at the ancient flame (1)
 step
-    .isOnQuest 4763
-    .goto 1439/1,467.08,6409.38
-    >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the Auberdine moonwell|r
-    .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
-    .use 12346
+    .isOnQuest 953
+    .goto 1439/1,105.52,5770.10
+    >>Click |cRXP_PICK_The Lay of Ameth'Aran|r
+    .complete 953,1 --Read The Lay of Ameth'Aran (1)
 step
-    .isQuestComplete 2138
-    .goto 1439,38.843,43.416
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
-    .turnin 2138 >> Turn in Cleansing of the Infected
-    .accept 2139 >> Accept Tharnariun's Hope
-    .target Tharnariun Treetender
+    .isOnQuest 98025
+    .goto 1439/1,-18.10,5779.80
+    >>Kill |cRXP_ENEMY_Jai'vhanel|r east of Ameth'Aran. Loot it for the |cRXP_LOOT_Feather of Jai'vhanel|r
+    >>|cRXP_WARN_Not up, or someone's on it? Skip this step|r
+    .complete 98025,1 --Feather of Jai'vhanel (1)
+    .mob Jai'vhanel
 step
+    .isQuestComplete 953
+    .goto 1439,40.302,59.731
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Tysha Moonblade|r
+    .turnin 953 >> Turn in The Fall of Ameth'Aran
+    .target Sentinel Tysha Moonblade
+step
+    .goto 1439,37.105,62.167
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r on the shore west of Ameth'Aran
+    .accept 4722 >> Accept Beached Sea Turtle
+step
+    #label FurbolgGrind
     .isOnQuest 985
     #loop
     .goto 1439,39.899,54.745,0
@@ -3227,16 +2967,205 @@ step
     .goto 1439,39.191,56.382,50,0
     .goto 1439,39.957,55.300,50,0
     .goto 1439,39.332,54.079,50,0
-    >>Back south at the furbolg camp, kill |cRXP_ENEMY_Blackwood Pathfinders|r and |cRXP_ENEMY_Blackwood Windtalkers|r
+    >>Kill |cRXP_ENEMY_Blackwood Pathfinders|r and |cRXP_ENEMY_Blackwood Windtalkers|r at the furbolg camp on the way back north
     .complete 985,1 --Blackwood Pathfinder (8)
     .mob +Blackwood Pathfinder
     .complete 985,2 --Blackwood Windtalker (5)
     .mob +Blackwood Windtalker
 step
-    .isOnQuest 957
-    .goto 1439,42.373,61.815
-    >>Click the |cRXP_PICK_Ancient Flame|r at Ameth'Aran
-    .complete 957,1 --Destroy the seal at the ancient flame (1)
+    .isOnQuest 4722
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Auberdine, talk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4722 >> Turn in Beached Sea Turtle
+    .target Gwennyth Bly'Leggonde
+step
+    .isOnQuest 4723
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4723 >> Turn in Beached Sea Creature
+    .target Gwennyth Bly'Leggonde
+step
+    .isQuestComplete 963
+    .goto 1439,35.743,43.710
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
+    .turnin 963 >> Turn in For Love Eternal
+    .target Cerellean Whiteclaw
+step
+    .isQuestComplete 98025
+    .goto 1439,37.703,43.393
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .turnin 98025 >> Turn in WANTED: Jai'vhanel
+    .target Sentinel Glynda Nal'Shea
+step
+    .isQuestComplete 4811
+    .goto 1439,37.703,43.393
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .turnin 4811 >> Turn in The Red Crystal
+    .accept 4812 >> Accept As Water Cascades
+    .target Sentinel Glynda Nal'Shea
+step
+    .isOnQuest 4812
+    .goto 1439,37.767,44.001
+    >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Water Tube] |cRXP_WARN_at the Auberdine moonwell|r
+    .complete 4812,1 --Moonwell Water Tube (1)
+    .use 14338
+step
+    .isQuestComplete 2138
+    .goto 1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
+    .turnin 2138 >> Turn in Cleansing of the Infected
+    .accept 2139 >> Accept Tharnariun's Hope
+    .target Tharnariun Treetender
+step
+    .isQuestComplete 985
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
+    >>|cRXP_WARN_A Lost Master's pelts come from Moonstalker Sires in the far south and far north: a sticky tracks them|r
+    .turnin 985 >> Turn in How Big a Threat?
+    .accept 986 >> Accept A Lost Master
+    .target Terenthis
+step
+    .isQuestComplete 982
+    .goto 1439,38.107,41.165
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    .turnin 982 >> Turn in Deep Ocean, Vast Sea
+    .target Gorbold Steelhand
+step
+    .isQuestComplete 4812
+    .goto 1439,47.314,48.676
+    >>Back east at the |cRXP_PICK_Mysterious Red Crystal|r, click it
+    .turnin 4812 >> Turn in As Water Cascades
+    .accept 4813 >> Accept The Fragments Within
+step
+    .isQuestComplete 957
+    .goto 1439,44.168,36.289
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Asterion|r at Bashal'Aran
+    .turnin 957 >> Turn in Bashal'Aran
+    .target Asterion
+step
+    .goto 1439/1,47.88,7433.80
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r on the north shore
+    .accept 4725 >> Accept Beached Sea Turtle
+step
+    #completewith CrabsFinish
+    .isOnQuest 1138
+    >>Kill |cRXP_ENEMY_Reef Crawlers|r and |cRXP_ENEMY_Encrusted Tide Crawlers|r on the shores. Loot them for |cRXP_LOOT_Fine Crab Chunks|r
+    >>|cRXP_WARN_Reef Crawlers' Muscle Tear hits for 30-55|r
+    .complete 1138,1 --Fine Crab Chunks (6)
+    .mob Reef Crawler
+    .mob Encrusted Tide Crawler
+step
+    .isOnQuest 4762
+    .goto 1439/1,-386.39,7219.83
+    >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Sampling Tube] |cRXP_WARN_at the base of the Cliffspring River|r
+    .complete 4762,1 --Cliffspring River Sample (1)
+    .use 12350
+step
+    #label FangsFinish
+    .isOnQuest 1002
+    #loop
+    .goto 1439,53.629,26.054,0
+    .goto 1439,49.775,30.351,0
+    .goto 1439,48.022,27.199,60,0
+    .goto 1439,49.558,26.087,60,0
+    .goto 1439,49.775,30.351,60,0
+    .goto 1439,50.689,32.001,60,0
+    .goto 1439,51.267,32.319,60,0
+    .goto 1439,54.204,30.475,60,0
+    .goto 1439,53.049,27.983,60,0
+    .goto 1439,53.629,26.054,60,0
+    >>Finish the |cRXP_LOOT_Moonstalker Fangs|r on the |cRXP_ENEMY_Moonstalkers|r here
+    .complete 1002,1 --Moonstalker Fang (6)
+    .mob Moonstalker Runt
+    .mob Moonstalker
+step
+    .isQuestComplete 1002
+    .goto 1439,51.288,24.554
+    >>Click |cRXP_PICK_Buzzbox 323|r by the river
+    >>|cRXP_WARN_Its next part wants Grizzled Scalps from the Grizzled Thistle Bears in the far south|r
+    .turnin 1002 >> Turn in Buzzbox 323
+    .accept 1003 >> Accept Buzzbox 525
+step
+    .isOnQuest 947
+    .goto 1439/1,-690.31,6751.29,12,0
+    .goto 1439/1,-706.68,6748.23,12,0
+    .goto 1439/1,-719.13,6787.53,12,0
+    .goto 1439/1,-663.45,6877.49,8,0
+    .goto 1439/1,-679.17,6848.67,8,0
+    .goto 1439/1,-666.73,6819.41,8,0
+    .goto 1439/1,-680.48,6779.67
+    >>In the Cliffspring Falls cave, loot the |cRXP_LOOT_Scaber Stalks|r and a |cRXP_LOOT_Death Cap|r on the ground
+    >>|cRXP_WARN_Stay on the upper level: the Stormscale Wave Riders' Aqua Jet knocks you back. No Death Cap at the end of the top? Drop down and look in the southern room below|r
+    .complete 947,1 --Scaber Stalk (5)
+    .complete 947,2 --Death Cap (1)
+step
+    .isQuestComplete 4762
+    .goto 1439,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Auberdine, talk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .turnin 4762 >> Turn in The Cliffspring River
+    .accept 4763 >> Accept The Blackwood Corrupted
+    .target Thundris Windweaver
+step
+    .isQuestComplete 982
+    .goto 1439,38.107,41.165
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gorbold Steelhand|r
+    .turnin 982 >> Turn in Deep Ocean, Vast Sea
+    .target Gorbold Steelhand
+step
+    .isOnQuest 4813
+    .goto 1439,37.703,43.393
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .turnin 4813 >> Turn in The Fragments Within
+    .target Sentinel Glynda Nal'Shea
+step
+    .isOnQuest 4763
+    .goto 1439/1,467.08,6409.38
+    >>|cRXP_WARN_Use the|r |T133748:0|t[Empty Cleansing Bowl] |cRXP_WARN_at the Auberdine moonwell|r
+    .collect 12347,1,4763,1 --Filled Cleansing Bowl (1)
+    .use 12346
+step
+    .isQuestComplete 947
+    .goto 1439,37.322,43.640
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Barithras Moonshade|r
+    .turnin 947 >> Turn in Cave Mushrooms
+    .accept 948 >> Accept Onu
+    .target Barithras Moonshade
+step
+    .isQuestComplete 2138
+    .goto 1439,38.843,43.416
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
+    .turnin 2138 >> Turn in Cleansing of the Infected
+    .accept 2139 >> Accept Tharnariun's Hope
+    .target Tharnariun Treetender
+step
+    .isOnQuest 4725
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4725 >> Turn in Beached Sea Turtle
+    .target Gwennyth Bly'Leggonde
+step
+    .isQuestComplete 1138
+    .goto 1439/1,577.38,6371.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r on the dock
+    .turnin 1138 >> Turn in Fruit of the Sea
+    .target Gubber Blump
+step
+    #completewith PeltsFinish
+    .isOnQuest 986
+    >>Kill |cRXP_ENEMY_Moonstalker Sires|r when you see them. Loot them for |cRXP_LOOT_Fine Moonstalker Pelts|r
+    >>|cRXP_WARN_Their Exploit Weakness backstab hits for 20-40 if you turn your back|r
+    .complete 986,1 --Fine Moonstalker Pelt (5)
+    .mob Moonstalker Sire
+    .mob Moonstalker Matriarch
+step
+    #completewith ScalpsFinish
+    .isOnQuest 1003
+    >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r when you see them. Loot them for |cRXP_LOOT_Grizzled Scalps|r
+    >>|cRXP_WARN_Their Ravage knocks you down for 2 seconds|r
+    .complete 1003,1 --Grizzled Scalp (4)
+    .mob Grizzled Thistle Bear
 step
     #label BearsFinish
     .isOnQuest 2138
@@ -3247,7 +3176,7 @@ step
     .goto 1439/1,385.20,5393.69,70,0
     .goto 1439/1,155.30,5374.48,70,0
     .goto 1439/1,322.32,4907.25,70,0
-    >>Finish the |cRXP_ENEMY_Rabid Thistle Bears|r on the way south
+    >>Head south and finish the |cRXP_ENEMY_Rabid Thistle Bears|r
     >>|cRXP_WARN_Still short and they're all taken? Skip this step|r
     .complete 2138,1 --Rabid Thistle Bear slain (20)
     .mob Rabid Thistle Bear
@@ -3276,23 +3205,37 @@ step
     >>Click the |cRXP_PICK_Twilight Tome|r on the northern pedestal
     .turnin 949 >> Turn in The Twilight Camp
     .accept 950 >> Accept Return to Onu
+    .accept 98042 >> Accept It's All Fun and Games Until...
 step
-    .isOnQuest 729
-    .goto 1439,35.724,83.696
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r on the coast
-    >>|cRXP_WARN_Don't take his escort: it's very hard and slow|r
-    .turnin 729 >> Turn in The Absent Minded Prospector
-    .target Prospector Remtravel
+    #label EyeFinish
+    .isOnQuest 98042
+    #loop
+    .goto 1439/1,376.80,4608.60,40,0
+    .goto 1439/1,453.10,4580.20,40,0
+    .goto 1439/1,409.44,4521.02,40,0
+    >>Kill |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r around the camp. Loot them for the |cRXP_LOOT_Peerless Eye|r
+    >>|cRXP_WARN_Interrupt or kill the Disciples first: they cast Renew and a 3 second Heal|r
+    .complete 98042,1 --Peerless Eye (1)
+    .mob +Twilight Disciple
+    .mob +Twilight Thug
 step
-    .isOnQuest 4740
-    .goto 1439,35.429,76.566,60,0
-    .goto 1439/1,541.75,4991.52
-    >>Kill the |cRXP_ENEMY_Greymist Warriors|r and |cRXP_ENEMY_Greymist Hunters|r in the murloc camp, then stand at the bonfire in the middle to start the event: three waves come out of the water, then |cRXP_ENEMY_Murkdeep|r
-    >>|cRXP_WARN_Check whether Murkdeep is already up in the water first (if someone failed the event). If another group is doing it, wait or help|r
-    .complete 4740,1 --Murkdeep (1)
-    .unitscan Murkdeep
-    .mob Greymist Warrior
-    .mob Greymist Hunter
+    #label ScalpsFinish
+    .isOnQuest 1003
+    .goto 1439/1,227.35,4575.38,50,0
+    .goto 1439/1,205.73,4639.13,50,0
+    .goto 1439/1,129.10,4741.75,50,0
+    .goto 1439/1,86.52,4839.13,50,0
+    .goto 1439/1,338.70,4821.22,50,0
+    .goto 1439/1,452.67,4684.98
+    >>Finish the |cRXP_LOOT_Grizzled Scalps|r on the |cRXP_ENEMY_Grizzled Thistle Bears|r south of Onu
+    >>|cRXP_WARN_Skip this step if they're taken|r
+    .complete 1003,1 --Grizzled Scalp (4)
+    .mob Grizzled Thistle Bear
+step
+    .isQuestComplete 1003
+    .goto 1439,41.390,80.563
+    >>Click |cRXP_PICK_Buzzbox 525|r
+    .turnin 1003 >> Turn in Buzzbox 525
 step
     .isOnQuest 950
     .goto 1439,43.555,76.293
@@ -3301,12 +3244,93 @@ step
     .turnin 950 >> Turn in Return to Onu
     .target Onu
 step
-    .isQuestComplete 985
-    .goto 1439,39.373,43.483
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Auberdine, talk to |cRXP_FRIENDLY_Terenthis|r
-    >>|cRXP_WARN_Don't take A Lost Master: its pelts are a slow drop|r
-    .turnin 985 >> Turn in How Big a Threat?
-    .target Terenthis
+    .goto 1439,32.644,80.711
+    >>Head west to the coast and click the |cRXP_PICK_Beached Sea Creature|r
+    .accept 4730 >> Accept Beached Sea Creature
+step
+    .goto 1439,31.690,83.700
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r further south
+    >>|cRXP_WARN_Greymist Oracles nearby cast Lightning Bolt and heal; Greymist Tidehunters poison you in melee|r
+    .accept 4731 >> Accept Beached Sea Turtle
+step
+    .isOnQuest 729
+    .goto 1439,35.724,83.696
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r
+    >>|cRXP_WARN_Don't take his escort: it's very hard and slow|r
+    .turnin 729 >> Turn in The Absent Minded Prospector
+    .target Prospector Remtravel
+step
+    .isOnQuest 4740
+    .goto 1439,35.429,76.566,60,0
+    .goto 1439/1,541.75,4991.52
+    >>Kill the |cRXP_ENEMY_Greymist Warriors|r and |cRXP_ENEMY_Greymist Hunters|r in the murloc camp, then stand at the bonfire in the middle to start the event: three waves come out of the water, then |cRXP_ENEMY_Murkdeep|r
+    >>|cRXP_WARN_Check first whether Murkdeep is already up in the water (someone failed the event). If another group is doing it, wait or help|r
+    .complete 4740,1 --Murkdeep (1)
+    .unitscan Murkdeep
+    .mob Greymist Warrior
+    .mob Greymist Hunter
+    .mob Greymist Coastrunner
+step
+    #label CrabsFinish
+    .isOnQuest 1138
+    #loop
+    .goto 1439,35.4,73.7,0
+    .goto 1439,32.4,82.1,0
+    .goto 1439,35.4,73.7,40,0
+    .goto 1439,34.0,77.5,40,0
+    .goto 1439,32.4,82.1,40,0
+    >>Finish the |cRXP_LOOT_Fine Crab Chunks|r on the |cRXP_ENEMY_Reef Crawlers|r and |cRXP_ENEMY_Encrusted Tide Crawlers|r along this shore
+    >>|cRXP_WARN_Skip this step if it's slow|r
+    .complete 1138,1 --Fine Crab Chunks (6)
+    .mob Reef Crawler
+    .mob Encrusted Tide Crawler
+step
+    .goto 1439,35.968,70.807
+    >>Click the |cRXP_PICK_Beached Sea Creature|r on the shore on the way north
+    .accept 4728 >> Accept Beached Sea Creature
+step
+    .isOnQuest 4728
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Auberdine, talk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4728 >> Turn in Beached Sea Creature
+    .target Gwennyth Bly'Leggonde
+step
+    .isOnQuest 4730
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4730 >> Turn in Beached Sea Creature
+    .target Gwennyth Bly'Leggonde
+step
+    .isOnQuest 4731
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    .turnin 4731 >> Turn in Beached Sea Turtle
+    .target Gwennyth Bly'Leggonde
+step
+    .isQuestComplete 1138
+    .goto 1439/1,577.38,6371.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r on the dock
+    .turnin 1138 >> Turn in Fruit of the Sea
+    .target Gubber Blump
+step
+    .isQuestComplete 963
+    .goto 1439,35.743,43.710
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
+    .turnin 963 >> Turn in For Love Eternal
+    .target Cerellean Whiteclaw
+step
+    .isQuestComplete 4740
+    .goto 1439,37.703,43.393
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    .turnin 4740 >> Turn in WANTED: Murkdeep!
+    .target Sentinel Glynda Nal'Shea
+step
+    .isQuestComplete 98042
+    .goto 1439,37.394,40.128
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    .turnin 98042 >> Turn in It's All Fun and Games Until...
+    .target Thundris Windweaver
 step
     .isQuestComplete 2138
     .goto 1439,38.843,43.416
@@ -3315,29 +3339,17 @@ step
     .accept 2139 >> Accept Tharnariun's Hope
     .target Tharnariun Treetender
 step
-    .isQuestComplete 4740
-    .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
-    .turnin 4740 >> Turn in WANTED: Murkdeep!
-    .target Sentinel Glynda Nal'Shea
-step
-    .isQuestComplete 4812
-    .goto 1439,47.314,48.676
-    >>Back east at the |cRXP_PICK_Mysterious Red Crystal|r, click it
-    .turnin 4812 >> Turn in As Water Cascades
-    .accept 4813 >> Accept The Fragments Within
-step
     .isOnQuest 2139
     .goto 1439/1,-503.63,6732.95,45,0
     .goto 1439/1,-430.27,6662.65
     >>Go north-east and kill |cRXP_ENEMY_Den Mother|r
-    >>|cRXP_WARN_Her Thistle Cubs can stun you for 2 seconds|r
+    >>|cRXP_WARN_Her Thistle Cubs' Ravage stuns you for 2 seconds|r
     .complete 2139,1 --Den Mother (1)
     .mob Den Mother
 step
     .isOnQuest 4763
     .goto 1439/1,-376.56,6807.62
-    >>Open the |cRXP_PICK_Blackwood Grain Stores|r. Loot them for a |cRXP_LOOT_Blackwood Grain Sample|r
+    >>Open the |cRXP_PICK_Blackwood Grain Stores|r at the furbolg camp. Loot them for a |cRXP_LOOT_Blackwood Grain Sample|r
     >>|cRXP_WARN_Each store you loot sends 2 Blackwood furbolgs at you|r
     .collect 12342,1,4763,1 --Blackwood Grain Sample (1)
 step
@@ -3359,217 +3371,156 @@ step
     .use 12347
     .mob Xabraxxis
 step
-    .isQuestComplete 957
-    .goto 1439,44.168,36.289
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tOn the way back, talk to |cRXP_FRIENDLY_Asterion|r at Bashal'Aran
-    .turnin 957 >> Turn in Bashal'Aran
-    .target Asterion
+    #completewith next
+    .goto 1439,51.118,23.670,20,0
+    .goto 1439,51.490,24.368,30,0
+    .goto 1439,54.973,24.885,15 >> Go north-east to the Tower of Althalaxx
+step
+    .isOnQuest 965
+    .goto 1439,54.973,24.885
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
+    .turnin 965 >> Turn in The Tower of Althalaxx
+    .accept 966 >> Accept The Tower of Althalaxx
+    .target Balthule Shadowstrike
+step
+    .isOnQuest 966
+    #loop
+    .goto 1439,55.231,26.508,0
+    .goto 1439,56.194,27.071,0
+    .goto 1439,57.278,26.311,0
+    .goto 1439,55.231,26.508,50,0
+    .goto 1439,55.763,26.695,50,0
+    .goto 1439,56.194,27.071,50,0
+    .goto 1439,56.790,27.621,50,0
+    .goto 1439,57.278,26.311,50,0
+    .goto 1439,56.544,26.598,50,0
+    .goto 1439,55.743,25.915,50,0
+    >>Kill |cRXP_ENEMY_Dark Strand Fanatics|r around the tower. Loot them for |cRXP_LOOT_Worn Parchments|r: each of you loots your own
+    .complete 966,1 --Worn Parchment (4)
+    .mob Dark Strand Fanatic
+step
+    .isQuestComplete 966
+    .goto 1439,54.973,24.885
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Balthule Shadowstrike|r
+    >>|cRXP_WARN_Don't take the next part: it goes on to Ashenvale|r
+    .turnin 966 >> Turn in The Tower of Althalaxx
+    .target Balthule Shadowstrike
+step
+    .goto 1439,56.654,13.484
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo north and talk to |cRXP_FRIENDLY_Gelkak Gyromast|r on the shore
+    .accept 2098 >> Accept Gyromast's Retrieval
+    .target Gelkak Gyromast
+step
+    #completewith next
+    .isOnQuest 2098
+    >>Kill |cRXP_ENEMY_Raging Reef Crawlers|r and |cRXP_ENEMY_Encrusted Tide Crawlers|r as you go. Loot them for the |cRXP_LOOT_Bottom of Gelkak's Key|r
+    >>|cRXP_WARN_Raging Reef Crawlers' Thrash can hit for 200 at once|r
+    .complete 2098,3 --Bottom of Gelkak's Key (1)
+    .mob Raging Reef Crawler
+    .mob Encrusted Tide Crawler
+step
+    .isOnQuest 2098
+    .goto 1439/1,-656.25,7801.04
+    >>Kill |cRXP_ENEMY_Greymist Oracles|r and |cRXP_ENEMY_Greymist Tidehunters|r by the sunken ship. Loot them for the |cRXP_LOOT_Middle of Gelkak's Key|r
+    >>|cRXP_WARN_Pull the Oracles around the ship to break line of sight with their Lightning Bolts|r
+    .complete 2098,2 --Middle of Gelkak's Key (1)
+    .mob Greymist Oracle
+    .mob Greymist Tidehunter
+step
+    .isOnQuest 2098
+    .goto 1439/1,-699.48,7591.87,45,0
+    .goto 1439/1,-579.61,7505.41,45,0
+    .goto 1439/1,-421.10,7372.67,45,0
+    .goto 1439/1,-767.60,7805.84
+    >>Finish the |cRXP_LOOT_Bottom of Gelkak's Key|r on the |cRXP_ENEMY_Raging Reef Crawlers|r and |cRXP_ENEMY_Encrusted Tide Crawlers|r along the shore
+    .complete 2098,3 --Bottom of Gelkak's Key (1)
+    .mob Raging Reef Crawler
+    .mob Encrusted Tide Crawler
+step
+    .isOnQuest 2098
+    .goto 1439/1,-941.83,7756.06,55,0
+    .goto 1439/1,-1080.03,7922.87,50,0
+    .goto 1439/1,-1087.24,7780.51,50,0
+    .goto 1439/1,-1069.55,7661.74,50,0
+    .goto 1439/1,-1080.03,7922.87
+    >>Kill |cRXP_ENEMY_Giant Foreststriders|r to the north-east. Loot them for the |cRXP_LOOT_Top of Gelkak's Key|r
+    .complete 2098,1 --Top of Gelkak's Key (1)
+    .mob Giant Foreststrider
+step
+    #label PeltsFinish
+    .isOnQuest 986
+    .goto 1439/1,-1080.03,7922.87,45,0
+    .goto 1439/1,-1146.84,7998.41
+    >>Finish the |cRXP_LOOT_Fine Moonstalker Pelts|r on the |cRXP_ENEMY_Moonstalker Sires|r and |cRXP_ENEMY_Moonstalker Matriarchs|r here
+    >>|cRXP_WARN_The Matriarchs always come with a Moonstalker Runt. Skip this step if it's slow|r
+    .complete 986,1 --Fine Moonstalker Pelt (5)
+    .mob Moonstalker Sire
+    .mob Moonstalker Matriarch
+    .mob Moonstalker Runt
+step
+    .isQuestComplete 2098
+    .goto 1439,56.654,13.484
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
+    >>|cRXP_WARN_OPTIONAL: his next quest is a fight with The Threshwackonator 4100 once it turns on you, and it's hard. It rewards Elixirs of Water Breathing. Don't accept it if you'd rather not|r
+    .turnin 2098 >> Turn in Gyromast's Retrieval
+    .accept 2078 >> Accept Gyromast's Revenge
+    .target Gelkak Gyromast
+step
+    .goto 1439,53.113,18.099
+    >>Click the |cRXP_PICK_Beached Sea Turtle|r on the shore
+    .accept 4727 >> Accept Beached Sea Turtle
+step
+    .isOnQuest 2078
+    .goto 1439,56.654,13.484
+    >>Walk |cRXP_FRIENDLY_The Threshwackonator 4100|r back to |cRXP_FRIENDLY_Gelkak Gyromast|r, then kill it when it turns hostile
+    >>|cRXP_WARN_Can't kill it? Skip this step and abandon the quest|r
+    .complete 2078,1 --Gyromast's Revenge (1)
+    .mob The Threshwackonator 4100
+step
+    .isQuestComplete 2078
+    .goto 1439,56.654,13.484
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gelkak Gyromast|r
+    .turnin 2078 >> Turn in Gyromast's Revenge
+    .target Gelkak Gyromast
+step
+    .hs >> Hearth to Auberdine
+    .cooldown item,6948,>2,1
+    .bindlocation 442,1
+    .subzoneskip 442
+step
+    .goto 1439,37.394,40.128
+    .subzone 442 >> Hearthstone on cooldown? Walk back south-west to Auberdine
 step
     .isQuestComplete 4763
     .goto 1439,37.394,40.128
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Auberdine, talk to |cRXP_FRIENDLY_Thundris Windweaver|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thundris Windweaver|r
     .turnin 4763 >> Turn in The Blackwood Corrupted
     .target Thundris Windweaver
-step
-    .isOnQuest 4813
-    .goto 1439,37.703,43.393
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
-    .turnin 4813 >> Turn in The Fragments Within
-    .target Sentinel Glynda Nal'Shea
 step
     .isQuestComplete 2139
     .goto 1439,38.843,43.416
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tharnariun Treetender|r
     .turnin 2139 >> Turn in Tharnariun's Hope
     .target Tharnariun Treetender
-]])
-
--- Ruins of Lordaeron, the 5-player dungeon in the ruined city above the Undercity: bring three more players
--- (there are no summoning stones, so everyone walks). From Auberdine the Menethil ship carries on to Southshore,
--- then it's a run north through Hillsbrad and Alterac into Tirisfal. The Alliance quests all start inside:
--- Abominable Creatures from Captain Truman by the entrance, Bloodied Insignia and Crest of Lordaeron from items, and
--- Remember That I Love You from a letter by the last boss. Their quest items are per player. Forever pays 2.375
--- times the usual XP for them (the client's quest cache): about 22,400 for the four, and in full until level 26.
--- Truman takes his quest back at the entrance, then the Hearthstone (bound in Stormwind at the start of Westfall)
--- goes straight to the other three turn-ins. Training at 18 and 20 to finish. The way there, the inside steps and
--- the Stormwind spots follow RestedXP's Forever "16-18 Ruins of Lordaeron" (its Dungeon Guide, in beta). 1424 is
--- Hillsbrad Foothills, 1416 Alterac Mountains, 1420 Tirisfal Glades and 1458 the Undercity.
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-<< Alliance
-#group TimmyGnome
-#name 19-20 Ruins of Lordaeron
-
 step
-    #completewith EnterRoL
-    +|cRXP_WARN_Find three more players for the Ruins of Lordaeron, a 5-player dungeon above the Undercity: ask in the LookingForGroup channel. There are no summoning stones, so everyone makes the trip; you can meet at Southshore or at the ruins|r
+    .isQuestComplete 986
+    .goto 1439,39.373,43.483
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Terenthis|r
+    >>|cRXP_WARN_Don't take the next part: it goes to Volcor in the far south|r
+    .turnin 986 >> Turn in A Lost Master
+    .target Terenthis
 step
-    .goto 1439/1,826.67,6409.82
-    >>|cRXP_WARN_Take the ship to Menethil Harbor from Auberdine's docks and stay on board when it stops there: it carries on to Southshore|r
-    >>|cRXP_WARN_If it doesn't, get off at Menethil, take the flight path from Shellei Brondir, and catch the Southshore ship from the same pier|r
-    .zone Hillsbrad Foothills >> Take the ship to Southshore
+    .isQuestComplete 1138
+    .goto 1439/1,577.38,6371.35
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r on the dock
+    .turnin 1138 >> Turn in Fruit of the Sea
+    .target Gubber Blump
 step
-    .goto 1424/0,-512.15,-715.14
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r, the gryphon master
-    .fp Southshore >> Get the Southshore flight path
-    .target Darla Harris
-step
-    #label EnterRoL
-    .goto 1424/0,-272.000,-381.800,100,0
-    .goto 1424/0,-47.400,-249.400,100,0
-    .goto 1416/0,68.400,-46.200,130,0
-    .goto 1416/0,45.300,257.100,150,0
-    .goto 1416/0,-54.700,812.600,100,0
-    .goto 1420/0,7.600,1530.500,70,0
-    .goto 1420/0,-21.800,1668.600,20,0
-    .goto 1420/0,-56.600,1692.000,10,0
-    .goto 1420/0,-55.200,1779.600,15,0
-    .goto 1420/0,6.300,1791.500,25,0
-    .goto 1420/0,4.300,1847.500,10,0
-    .goto 1458/0,238.400,1872.200,20,0
-    .goto 1458/0,170.700,1804.700
-    >>Run north through Hillsbrad and Alterac into Tirisfal, then into the ruined city: through the front gate and up the stairs on the left
-    >>|cRXP_WARN_The cats, bears, spiders and murlocs beside the way are well above your level. In the Undercity you're flagged for PvP, so go straight in|r
-    .subzone 16611 >> Enter the Ruins of Lordaeron
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Truman|r just inside, on the left
-    .accept 95250 >> Accept Abominable Creatures
-    .target Captain Truman
-step
-    #completewith InsigniaFinish
-    >>The undead drop |T133328:0|t[|cRXP_LOOT_Bloodied Insignia|r]: use the first one to start the quest, then collect 10. Each of you loots your own
-    .collect 268535,1,95195 --Bloodied Insignia (1)
-    .accept 95195 >> Accept Bloodied Insignia
-    .use 268535
-    .complete 95195,1 --Bloodied Insignia (10)
-step
-    #completewith CrestFinish
-    >>Watch for the |T4504543:0|t[|cRXP_LOOT_Crest of Lordaeron|r] on the ground or hanging on a wall: it spawns in a random spot and is easy to miss. Use it to start the quest
-    .collect 268579,1,95189 --Crest of Lordaeron (1)
-    .accept 95189 >> Accept Crest of Lordaeron
-    .use 268579
-step
-    #completewith Paper
-    +|cRXP_WARN_Bosses: Witherfang (east hallway), The Baron (courtyard: a heavy knockback, and he stuns the tank), The Abandoned (a statue event, 3 waves), Bjork (in the fog), Rath'mael last (south-west: move out of his Flamestrike). OPTIONAL: Viktor the Vile, 5 waves after you click a chimney|r
-    >>|cRXP_WARN_Worth a Need roll: Coldspire Staff, Segmented Spider Leg and the Rotmender's cloth pieces|r << Mage
-    >>|cRXP_WARN_Worth a Need roll: Mirror of Rath'mael, Abomination Bones and the mail pieces|r << Paladin
-step
-    .isOnQuest 95250
-    >>After |cRXP_ENEMY_Witherfang|r in the east hallway, kill |cRXP_ENEMY_The Baron|r in the courtyard. Loot him for the |cRXP_LOOT_Head of the Baron|r: each of you loots your own
-    .complete 95250,1 --Head of the Baron (1)
-    .mob The Baron
-step
-    #label Paper
-    >>After |cRXP_ENEMY_The Abandoned|r and |cRXP_ENEMY_Bjork|r, |cRXP_ENEMY_Rath'mael|r is the last boss, in the south-west. Click the |cRXP_PICK_Crumpled Paper|r by his graveyard, near Edward's body, before or after the fight
-    .accept 92415 >> Accept Remember That I Love You
-step
-    #label InsigniaFinish
-    .isOnQuest 95195
-    >>Finish your 10 |cRXP_LOOT_Bloodied Insignias|r on the way back to the entrance
-    >>|cRXP_WARN_Skip this step if the trash is gone and you're still short|r
-    .complete 95195,1 --Bloodied Insignia (10)
-step
-    #label CrestFinish
-    >>No crest yet? Look again on the way out: the tower's upper floors, the crypts near The Baron, around Bjork
-    >>|cRXP_WARN_Skip this step if you can't find one|r
-    .collect 268579,1,95189 --Crest of Lordaeron (1)
-    .accept 95189 >> Accept Crest of Lordaeron
-    .use 268579
-step
-    .isQuestComplete 95250
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Truman|r back at the entrance: walk out, don't hearth from the last boss
-    .turnin 95250 >> Turn in Abominable Creatures
-    .target Captain Truman
-step
-    >>|cRXP_WARN_Your Hearthstone works right here|r
-    .hs >> Hearth to Stormwind
-    .cooldown item,6948,>2,1
-    .bindlocation 16509,1
-    .zoneskip Stormwind City
-step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHearthstone on cooldown, or not bound in Stormwind? Run back to Southshore and fly to Stormwind from |cRXP_FRIENDLY_Darla Harris|r
-    .fly Stormwind >> Fly to Stormwind
-    .zoneskip Stormwind City
-step
-    .isQuestComplete 95195
-    .goto 1453/0,521.00,-8954.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Marcus Jonathan|r by the gate in the Valley of Heroes
-    .turnin 95195 >> Turn in Bloodied Insignia
-    .target General Marcus Jonathan
-step
-    .isOnQuest 92415
-    .goto 1453/0,744.40,-8621.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orphan Matron Nightingale|r at the orphanage in Cathedral Square
-    .turnin 92415 >> Turn in Remember That I Love You
-    .target Orphan Matron Nightingale
-step
-    .isQuestTurnedIn 92415
-    .goto 1453/0,744.40,-8621.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orphan Matron Nightingale|r
-    >>|cRXP_WARN_OPTIONAL: the next part goes to Avette Fellwood in Darkshire, off this route. Take it if you'll be in Duskwood later, or skip this step|r
-    .accept 95161 >> Accept Remember That I Love You
-    .target Orphan Matron Nightingale
-step
-    #completewith next
-    .isOnQuest 95189
-    .goto 1453/0,437.60,-8524.50,20,0
-    .goto 1453/0,408.10,-8478.50,15,0
-    .goto 1453/0,502.90,-8358.80,15 >> Take the road up to Stormwind Keep
-step
-    .isOnQuest 95189
-    .goto 1453/0,531.00,-8322.40
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Dena Kennedy|r: she walks around the Royal Gallery
-    .turnin 95189 >> Turn in Crest of Lordaeron
-    .target Lady Dena Kennedy
-step << Mage
-    #completewith next
-    .xp <18,1
-    .train 3140,1
-    .goto 1453/0,942.34,-9001.49,15,0
-    .goto 1453/0,949.86,-9009.38,10,0
-    .goto 1453/0,962.63,-8990.73,15,0
-    .goto 1453/0,928.62,-9010.10,15,0
-    .goto 1453/0,863.96,-9001.40,8,0
-    .goto 1453/0,877.00,-9008.03,6,0
-    .goto 1453/0,868.8,-9004.27,8,0
-    .goto 1453/0,871.36,-9013.14,10,0
-    .goto 1453/0,887.22,-9017.80,10 >> Go into the Wizard's Sanctum in the Mage Quarter and follow its ramp to |cRXP_FRIENDLY_Jennea|r
-step << Mage
-    .xp <18,1
-    .goto 1453/0,861.95,-8990.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum
-    >>|cRXP_WARN_Train everything she offers, including Flamestrike if you missed it at 16|r
-    .train 3140 >> Train your level 18 spells (Fireball rank 4, Remove Lesser Curse)
-    .target Jennea Cannon
-step << Mage
-    .xp <20,1
-    .goto 1453/0,861.95,-8990.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 20? Train with |cRXP_FRIENDLY_Jennea Cannon|r again
-    .train 1953 >> Train your level 20 spells (Blink, Evocation, Mana Shield and more)
-    .target Jennea Cannon
-step << Paladin
-    #completewith next
-    .xp <18,1
-    .train 20288,1
-    .goto 1453/0,809.52,-8579.22,20,0
-    .goto 1453/0,859.13,-8559.14,10 >> Go into the Cathedral of Light in Cathedral Square
-step << Paladin
-    .xp <18,1
-    .goto 1453/0,861.14,-8573.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r in the Cathedral of Light
-    >>|cRXP_WARN_Train everything he offers, including Retribution Aura if you missed it at 16|r
-    .train 20288 >> Train your level 18 spells (Seal of Righteousness rank 3, Divine Protection rank 2)
-    .target Arthur the Faithful
-step << Paladin
-    .xp <20,1
-    .goto 1453/0,861.14,-8573.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 20? Train with |cRXP_FRIENDLY_Arthur the Faithful|r again
-    >>|cRXP_WARN_Your level 20 class quest, The Tome of Valor, comes with the Deadmines chapter|r
-    .train 19750 >> Train your level 20 spells (Flash of Light, Exorcism, Consecration)
-    .target Arthur the Faithful
-step << !Mage !Paladin
-    .xp <18,1
-    >>Visit your class trainer in Stormwind
-    .trainer >> Train your new spells
+    .isOnQuest 4727
+    .goto 1439,36.701,45.122,8,0
+    .goto 1439,36.621,45.596
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
+    >>|cRXP_WARN_That's Darkshore done. Train your level 16 and 18 spells at your next city|r
+    .turnin 4727 >> Turn in Beached Sea Turtle
+    .target Gwennyth Bly'Leggonde
 ]])

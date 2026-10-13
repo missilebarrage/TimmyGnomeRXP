@@ -1,9 +1,9 @@
 # TimmyGnome
 
 A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
-Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes, Westfall,
-Darkshore and the Ruins of Lordaeron, levels 1 to 20, made for playing as a duo (the dungeons need three more
-players).
+Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes and Darkshore,
+levels 1 to about 18, made for playing as a duo (the dungeon needs three more players). From the Hall of Thanes
+on, guides are named by the level you start them at, like **14+**: where a duo ends up is hard to predict.
 
 ## Install
 
@@ -14,8 +14,8 @@ You need RestedXP Guides installed.
    `AddOns\TimmyGnome\TimmyGnome.toc`.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
-   **5-10 Dun Morogh**, **10-12 Elwynn Forest**, **12-14 Loch Modan**, **14-15 Hall of Thanes**,
-   **15-17 Westfall**, **17-19 Darkshore** and **19-20 Ruins of Lordaeron** by itself.
+   **5-10 Dun Morogh**, **10-12 Elwynn Forest**, **12-14 Loch Modan**, **14+ Hall of Thanes** and
+   **15+ Darkshore** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
@@ -136,7 +136,7 @@ To update, download the zip again and replace the TimmyGnome folder.
   Gathering Idols and Silver of the Waves.
 - **Where you end up:** about level 13 with only the core quests, close to 14 with every optional one.
 
-### 14-15 Hall of Thanes
+### 14+ Hall of Thanes
 
 - **A dungeon:** the Hall of Thanes is a 5-player dungeon under Ironforge, so find three more players (there's no
   group finder or summoning stone in Forever). Its quests pay a dungeon bonus, 2.2 times the usual XP: about
@@ -151,64 +151,29 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Turn-ins:** the Ghostly Attendant (right after Faldrim, or on the way out), Thom Filch, Afadra and King
   Magni. The mage takes Tomb Robber's Gloves, the Dusty Belt and Deepblaze (an 18.5 DPS wand); the paladin takes
   the Cryptwalker Bracers and the Ironforge Greathammer.
-- **Training:** level 16 training waits for Stormwind after Westfall, unless you're already 16 here.
+- **Training:** level 16 here only if you're already 16; there's no mage or paladin trainer in Darkshore.
 
-### 15-17 Westfall
+### 15+ Darkshore
 
-- **Stormwind on the way:** the tram, Stormpike's Order at Furen Longbeard, and the Hearthstone bound at the
-  Gilded Rose. It stays there through Darkshore, so the hearth after the Ruins of Lordaeron lands at its
-  turn-ins. Humble Beginnings (Baros Alexston) is OPTIONAL: its compass is in a chest you pass.
-- **North:** People's Militia (Defias Trappers and Smugglers), The Killing Fields (Harvest Watchers), Alba
-  Fairmoon's two well samples and the north shore's murlocs for Murloc Gills. The Forgotten Heirloom (Farmer
-  Furlbrow's wardrobe, guarded by Benny Blanco) is OPTIONAL.
-- **South-west and south:** People's Militia parts two and three (around the Alexston Farmstead and Moonbrook,
-  then the Dagger Hills), with spare Harvest Watchers at the Alexston Farmstead. Keeper of the Flame goes in on
-  the spot at the lighthouse if you have 5 Flasks of Oil from the Harvest Watchers.
-- **Drops from the mobs you kill anyway:** Red Leather Bandanas from every People's Militia Defias, Flasks of Oil
-  from the Harvest Watchers and gills from the murlocs. Stickies track them, and the bandanas and gills get real
-  finish steps you can skip.
-- **Saved for the second visit with the Deadmines:** The Defias Brotherhood, The Coast Isn't Clear, The Coastal
-  Menace and the rest of Alba's chain. Left out as slow or contested: Westfall Stew, Goretusk Liver Pie,
-  Patrolling Westfall, Poor Old Blanchy and Harvesting the Harvesters.
-- **Finish:** fly to Stormwind, hand in Humble Beginnings and train level 16.
-
-### 17-19 Darkshore
-
-- **Getting there:** the boat from Stormwind Harbor's southernmost dock to Auberdine. The Hearthstone stays in
-  Stormwind, so every loop ends back in Auberdine on foot.
-- **South:** the bear trap for Plagued Lands, the furbolg camp for How Big a Threat? and Ameth'Aran's two tablets.
-- **North-east:** the Cliffspring River sample, The Tower of Althalaxx, the red crystal, and OPTIONAL Bashal'Aran
-  (Grell earrings, then a satyr's seal), Worn Parchments at the tower and the cave mushrooms (which start Onu's
-  chain). A sticky counts the Rabid Thistle Bears on every loop.
-- **South again:** the Blackwood furbolgs, the rest of the bears, Onu's chain (The Master's Glaive, the Scrying
-  Bowl, the Twilight Tome), Prospector Remtravel (not his escort) and the Murkdeep event.
-- **North-east again:** As Water Cascades back at the crystal, Den Mother, the three Blackwood stores and
-  Xabraxxis.
-- **Left out:** drop quests (Buzzbox, Fruit of the Sea, Tools of the Highborne, A Lost Master), For Love Eternal,
-  Washed Ashore and the beached creatures, Deep Ocean, Vast Sea, Mathystra Relics and the escorts.
-- **Where you end up:** most mobs here are 12-16, so the XP is in the quests. Leaving at 18-19 is fine: the Ruins
-  of Lordaeron quests pay in full well past 20.
-
-### 19-20 Ruins of Lordaeron
-
-- **A dungeon:** 5 players. Find the other three before you set off: there are no summoning stones, so everyone
-  makes the trip (meet at Southshore or at the ruins).
-- **Getting there:** the Menethil ship from Auberdine carries on to Southshore (stay on board at Menethil). Get the
-  Southshore flight path, then run north through Hillsbrad and Alterac into Tirisfal and up into the ruined city.
-  You're flagged for PvP at the Undercity.
-- **Inside:** Abominable Creatures from Captain Truman. Bloodied Insignia and Crest of Lordaeron start from items,
-  Remember That I Love You from a letter by the last boss, and all their items are per player. Boss tips and the
-  loot worth rolling on. Stickies plus finish steps for the insignias and the crest.
-- **Back:** Captain Truman at the entrance, then hearth to Stormwind (or fly from Southshore). General Marcus
-  Jonathan, Orphan Matron Nightingale (her Darkshire follow-up is OPTIONAL) and Lady Dena Kennedy. The four
-  quests pay 2.375 times the usual XP, about 22,400.
-- **Training:** level 18, plus 20 if you're there. The paladin's level 20 class quest comes with the Deadmines
-  chapter.
-
-### Coming next
-
-Westfall again with the Deadmines: The Defias Brotherhood, The Coast Isn't Clear, The Coastal Menace and the rest
-of Alba Fairmoon's chain.
+- **Getting there:** the tram to Stormwind (Stormpike's Order goes in at Furen Longbeard), then the boat from
+  Stormwind Harbor's southernmost dock to Auberdine. The Hearthstone goes to Auberdine.
+- **The route:** RestedXP's Forever Darkshore route for a non-Night Elf, with nearly every quest that's quick or
+  pays well, in six loops out of Auberdine:
+  - **South:** Buzzbox 827's crawler legs, Washed Ashore, the bear trap and the furbolg camp.
+  - **North:** thresher eyes, the two sunken lockboxes, Bashal'Aran and the red crystal.
+  - **Ameth'Aran:** its two tablets, the Ancient Flame and the Blackwood furbolgs.
+  - **North-east:** the crystal again, the Cliffspring River, the moonstalker fangs and the cave mushrooms.
+  - **Far south:** the rest of the bears, Onu's Master's Glaive chain, the Twilight camp, the Grizzled Thistle
+    Bears' scalps, Remtravel, Murkdeep and the beached creatures.
+  - **Far north-east:** Den Mother, the Blackwood stores and Xabraxxis, the Tower of Althalaxx and Gyromast,
+    then a hearth back.
+- **Drops:** every drop quest has a sticky plus a real finish step you can skip. OPTIONAL: For Love Eternal
+  (Anaya is a rare), WANTED: Jai'vhanel, Bashal'Aran's satyr seal and Gyromast's Revenge.
+- **Left out:** Easy Strider Living (Cooking 10), The Family and the Fishing Pole (Auction House fish), Tools of
+  the Highborne, the Remtravel escort, and quests that end outside Darkshore: Therylune's Escape, The Tower of
+  Althalaxx's third part, Mathystra Relics, A Lost Master's second part and The Powers Below.
+- **Where you end up:** about 18.5-19 for a duo doing nearly everything (about 17.5 if the Hall of Thanes bonus
+  doesn't apply and drops go badly). Level 16 and 18 training waits for your next city.
 
 ## Credits and license
 

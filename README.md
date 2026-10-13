@@ -1,8 +1,8 @@
 # TimmyGnome
 
 A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
-Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest and Loch Modan, levels 1 to 14, made for playing
-as a duo.
+Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes and Westfall,
+levels 1 to 17, made for playing as a duo (the dungeons need three more players).
 
 ## Install
 
@@ -13,7 +13,8 @@ You need RestedXP Guides installed.
    `AddOns\TimmyGnome\TimmyGnome.toc`.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
-   **5-10 Dun Morogh**, **10-12 Elwynn Forest** and **12-14 Loch Modan** by itself.
+   **5-10 Dun Morogh**, **10-12 Elwynn Forest**, **12-14 Loch Modan**, **14-15 Hall of Thanes** and
+   **15-17 Westfall** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
@@ -133,6 +134,47 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Skipped as too slow with a launch-day crowd:** Filthy Paws, Bingles' Missing Supplies, Crocolisk Hunting,
   Gathering Idols and Silver of the Waves.
 - **Where you end up:** about level 13 with only the core quests, close to 14 with every optional one.
+
+### 14-15 Hall of Thanes
+
+- **A dungeon:** the Hall of Thanes is a 5-player dungeon under Ironforge, so find three more players (there's no
+  group finder or summoning stone in Forever). Its quests pay a dungeon bonus, 2.2 times the usual XP: about
+  13,300 for the five, a level at 14-15.
+- **Way in:** King Magni's throne room, the spiderweb corridor on the left, then the stairs down to Old
+  Ironforge. The Restless Dead (Afadra Dunwall) and Important Heirlooms (Thom Filch) are on the way. Old Ironforge
+  Incursion is Earthseer Farsen's quest from Dun Morogh; without it, its steps skip themselves.
+- **Inside:** An Ancient Grudge from the Ghostly Attendant and Faldrim Anvilmar, then Magmatus, Plunder and
+  Durgen Dirgehammer, with boss tips and the loot worth rolling on. Stickies track the souls and the heirlooms,
+  and each gets a real finish step. The heirlooms and Durgen's head are per player. The Treaty of Understanding
+  is a tablet behind a vault door in Durgen's room.
+- **Turn-ins:** the Ghostly Attendant (right after Faldrim, or on the way out), Thom Filch, Afadra and King
+  Magni. The mage takes Tomb Robber's Gloves, the Dusty Belt and Deepblaze (an 18.5 DPS wand); the paladin takes
+  the Cryptwalker Bracers and the Ironforge Greathammer.
+- **Training:** level 16 training waits for Stormwind after Westfall, unless you're already 16 here.
+
+### 15-17 Westfall
+
+- **Stormwind on the way:** the tram, Stormpike's Order at Furen Longbeard, and the Hearthstone bound at the
+  Gilded Rose. It stays there through Darkshore, so the hearth after the Ruins of Lordaeron lands at its
+  turn-ins. Humble Beginnings (Baros Alexston) is OPTIONAL: its compass is in a chest you pass.
+- **North:** People's Militia (Defias Trappers and Smugglers), The Killing Fields (Harvest Watchers), Alba
+  Fairmoon's two well samples and the north shore's murlocs for Murloc Gills. The Forgotten Heirloom (Farmer
+  Furlbrow's wardrobe, guarded by Benny Blanco) is OPTIONAL.
+- **South-west and south:** People's Militia parts two and three (around the Alexston Farmstead and Moonbrook,
+  then the Dagger Hills), with spare Harvest Watchers at the Alexston Farmstead. Keeper of the Flame goes in on
+  the spot at the lighthouse if you have 5 Flasks of Oil from the Harvest Watchers.
+- **Drops from the mobs you kill anyway:** Red Leather Bandanas from every People's Militia Defias, Flasks of Oil
+  from the Harvest Watchers and gills from the murlocs. Stickies track them, and the bandanas and gills get real
+  finish steps you can skip.
+- **Saved for the second visit with the Deadmines:** The Defias Brotherhood, The Coast Isn't Clear, The Coastal
+  Menace and the rest of Alba's chain. Left out as slow or contested: Westfall Stew, Goretusk Liver Pie,
+  Patrolling Westfall, Poor Old Blanchy and Harvesting the Harvesters.
+- **Finish:** fly to Stormwind, hand in Humble Beginnings and train level 16.
+
+### Coming next
+
+17-19 Darkshore and 19-20 Ruins of Lordaeron (by boat from Stormwind Harbor), then Westfall again with the
+Deadmines.
 
 ## Credits and license
 

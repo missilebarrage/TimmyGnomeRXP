@@ -1,4 +1,5 @@
--- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest and Loch Modan, levels 1-14.
+-- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of
+-- Thanes and Westfall, levels 1-17.
 -- The first two guides were rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn and Loch
 -- Modan guides below them have their own notes. Like that run, Coldridge Valley opens with a grind to level 2
 -- and skips Dwarven Outfitters, which also skips both Coldridge Valley mail deliveries and the Glyphic
@@ -211,7 +212,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 22
+#version 23
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -563,7 +564,7 @@ step << Paladin
     +|cFFFF0000MAKE SURE TIM HAS A BRACER!|r
 step << Paladin
     #completewith DeeprunTram
-    >>|cRXP_WARN_Linen Cloth: save 10 for your level 12 class quest (The Tome of Divinity) and trade the rest to Tim. He turns it into Tailoring gear at level 10|r
+    +|cRXP_WARN_Linen Cloth: save 10 for your level 12 class quest (The Tome of Divinity) and trade the rest to Tim. He turns it into Tailoring gear at level 10|r
 step << Mage
     >>Gather wand materials before you go to Ironforge
     .collect 6217,1 >> Copper Rod (your paladin crafts it)
@@ -646,7 +647,7 @@ step
     .target Kreg Bilmn
 step << Mage
     #completewith HerdAccept
-    >>|cRXP_WARN_Level your wand skill: shoot the mobs you fight with your wand|r
+    +|cRXP_WARN_Level your wand skill: shoot the mobs you fight with your wand|r
 step << Mage
     .goto 1426/0,-537.200,-5587.000
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magis Sparkmantle|r upstairs
@@ -1005,7 +1006,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 28
+#version 29
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1104,7 +1105,7 @@ step << Mage
     .collect 11287,1 --Lesser Magic Wand (1)
 step << Mage
     #completewith ArcanistCraft
-    >>|cRXP_WARN_Keep your Linen Cloth from here on: back in Stormwind at the end of Elwynn you craft Novice Arcanist's Sash (8 bolts) and Green Linen Bracers (3 bolts). That's 22 linen, plus spares if you still need Tailoring 35 for the Sash|r
+    +|cRXP_WARN_Keep your Linen Cloth from here on: back in Stormwind at the end of Elwynn you craft Novice Arcanist's Sash (8 bolts) and Green Linen Bracers (3 bolts). That's 22 linen, plus spares if you still need Tailoring 35 for the Sash|r
 step
     .goto 1453,26.0,47.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead west to Stormwind Harbor and talk to |cRXP_FRIENDLY_Gilbert Gray|r at the south end of the harbor: accept Fishin' Time and hand it straight back with the bauble and nightcrawlers
@@ -1263,7 +1264,7 @@ step << Mage
 step << Paladin
     #completewith GeomancersDone
     .isOnQuest 91723
-    >>|cRXP_WARN_Tim is also doing An Enchanting Lesson, an enchanters-only quest from Kitta Firewind at the top of the tower. Kobold Geomancers drop Crude Wax Effigies for it: let him have every one (pass on the roll, or trade him any you loot)|r
+    +|cRXP_WARN_Tim is also doing An Enchanting Lesson, an enchanters-only quest from Kitta Firewind at the top of the tower. Kobold Geomancers drop Crude Wax Effigies for it: let him have every one (pass on the roll, or trade him any you loot)|r
     >>|cRXP_WARN_He climbs the tower to Kitta now, and again to hand it in when you come back for Delicate Instruments part two|r
 step
     #completewith next
@@ -1799,10 +1800,11 @@ step
 -- Morogh and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 12
+#version 13
 << Alliance
 #group TimmyGnome
 #name 12-14 Loch Modan
+#next 14-15 Hall of Thanes
 
 step
     .goto 1432/0,-2954.42,-5394.10
@@ -2370,4 +2372,538 @@ step << Mage
     >>|cRXP_WARN_Craft Linen Belts until 50 Tailoring and sell them: 15 from 35, so 15 bolts (30 linen) and 15|r |T132891:0|t[Coarse Thread] |cRXP_WARN_from|r |cRXP_FRIENDLY_Poranna Snowbraid|r |cRXP_WARN_next to Uthrar (10c each)|r
     >>|cRXP_WARN_Short on linen? Try the Auction House in the Commons. At 50 you can learn Gina's Pattern: Red Linen Bag|r
     .skill tailoring,50 >> Reach 50 Tailoring
+]])
+
+-- Hall of Thanes, the 5-player dungeon under Ironforge, straight from the end of Loch Modan: bring three more
+-- players. Old Ironforge Incursion is Earthseer Farsen's quest from guide 2; The Restless Dead (Afadra Dunwall) and
+-- Important Heirlooms (Thom Filch) are on the way in, An Ancient Grudge inside and The Treaty of Understanding from
+-- a tablet in the last room. Forever pays a bonus on dungeon quests (2.2 times, from the client's quest cache):
+-- about 13,300 XP for the five, a level at 14-15. Quest items here are per player: each of you loots your own
+-- heirlooms and Durgen's head, and clicks the tablet. The way in, the inside steps and the turn-in paths follow
+-- RestedXP's Forever "15-16 Hall of Thanes" (its Dungeon Guide, in beta). Level 16 training waits for Stormwind
+-- after Westfall unless you're already 16 here. 1455 is Ironforge.
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group TimmyGnome
+#name 14-15 Hall of Thanes
+#next 15-17 Westfall
+
+step
+    #completewith EnterHoT
+    +|cRXP_WARN_Find three more players for the Hall of Thanes, a 5-player dungeon under Ironforge: ask in the LookingForGroup channel|r
+    >>|cRXP_WARN_Everyone takes The Restless Dead and Important Heirlooms on the way in. Old Ironforge Incursion is Earthseer Farsen's quest from Dun Morogh|r
+step
+    .zone Ironforge >> Travel to Ironforge
+step
+    #completewith next
+    .goto 1455,44.029,50.074,20,0
+    .goto 1455/0,-1054.300,-4843.200,10,0
+    .goto 1455/0,-1081.900,-4850.100,10,0
+    .goto 1455/0,-1082.800,-4886.000,10,0
+    .goto 1455/0,-1087.700,-4821.900,10,0
+    .goto 1455/0,-1010.300,-4850.900,10 >> Go into King Magni's throne room, take the corridor with the spiderwebs on your left and follow the stairs down into Old Ironforge
+step
+    .goto 1455/0,-971.800,-4820.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Afadra Dunwall|r on the stairs down
+    .accept 96394 >> Accept The Restless Dead
+    .target Afadra Dunwall
+step
+    #completewith next
+    .goto 1455/0,-996.100,-4821.200,10,0
+    .goto 1455/0,-972.000,-4803.000,10,0
+    .goto 1455/0,-988.900,-4854.400,10 >> |cRXP_WARN_Drop down onto the ramp below|r
+step
+    .goto 1455/0,-968.200,-4803.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thom Filch|r by the bridge
+    >>|cRXP_WARN_The heirlooms aren't shared: each of you loots your own 8|r
+    .accept 96403 >> Accept Important Heirlooms
+    .target Thom Filch
+step
+    #label EnterHoT
+    .goto 1455/0,-933.200,-4821.900
+    >>|cRXP_WARN_Stay on the bridge: the lava below kills you|r
+    .subzone 16919 >> Cross the bridge and enter the Hall of Thanes
+step
+    #completewith HeirloomsFinish
+    .isOnQuest 96403
+    >>Loot the |cRXP_PICK_Dwarven Heirlooms|r on the ground as you go. Each of you loots your own
+    .complete 96403,1 --Dwarven Heirloom (8)
+step
+    #completewith RestlessFinish
+    .isOnQuest 96394
+    >>Kill |cRXP_ENEMY_Enraged Apparitions|r and |cRXP_ENEMY_Tormented Souls|r as you go
+    .complete 96394,1 --Enraged Apparition (15)
+    .mob +Enraged Apparition
+    .complete 96394,2 --Tormented Soul (10)
+    .mob +Tormented Soul
+step
+    #completewith Durgen
+    +|cRXP_WARN_Bosses: Faldrim Anvilmar; Magmatus (kill the Dark Iron Summoner first); Plunder (he knocks you back: fight him with your backs to a wall); Durgen Dirgehammer (an 8 second fear and two golems: clear his room first)|r
+    >>|cRXP_WARN_Worth a Need roll: Aetherwisp Bracers (Faldrim), Golemheart Stave (Plunder), Robes of the Disgraced Thane (Durgen)|r << Mage
+    >>|cRXP_WARN_Worth a Need roll: Kindlegem Girdle (Magmatus), Golemguard Chest and Treads of the Protector Golem (Plunder)|r << Paladin
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Ghostly Attendant|r in the second room
+    .accept 96395 >> Accept An Ancient Grudge
+    .target Ghostly Attendant
+step
+    .isOnQuest 96395
+    >>Kill |cRXP_ENEMY_Faldrim Anvilmar|r
+    .complete 96395,1 --Faldrim Anvilmar slain (1)
+    .mob Faldrim Anvilmar
+step
+    .isQuestComplete 96395
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Ghostly Attendant|r back in the second room if your group waits for you
+    >>|cRXP_WARN_Group moving on? Skip this step: you hand it in on the way out|r
+    .turnin 96395 >> Turn in An Ancient Grudge
+    .target Ghostly Attendant
+step
+    #label RestlessFinish
+    .isOnQuest 96394
+    >>Finish the |cRXP_ENEMY_Enraged Apparitions|r and |cRXP_ENEMY_Tormented Souls|r now: there may not be enough of them further in
+    >>|cRXP_WARN_Rooms behind you cleared and still short? Skip this step|r
+    .complete 96394,1 --Enraged Apparition (15)
+    .mob +Enraged Apparition
+    .complete 96394,2 --Tormented Soul (10)
+    .mob +Tormented Soul
+step
+    #label Durgen
+    .isOnQuest 96393
+    >>Past |cRXP_ENEMY_Magmatus|r and |cRXP_ENEMY_Plunder|r, kill |cRXP_ENEMY_Durgen Dirgehammer|r in the last room. Loot him for |cRXP_LOOT_Durgen Dirgehammer's Head|r: each of you loots your own
+    .complete 96393,1 --Durgen Dirgehammer's Head (1)
+    .mob Durgen Dirgehammer
+step
+    >>Click the |cRXP_PICK_Treaty of Understanding|r, a tablet behind one of the vault doors in Durgen's room. Each of you clicks it
+    .accept 98423 >> Accept The Treaty of Understanding
+step
+    #label HeirloomsFinish
+    .isOnQuest 96403
+    >>Loot the rest of your |cRXP_PICK_Dwarven Heirlooms|r: there are plenty behind the vault doors in this room
+    >>|cRXP_WARN_Each of you needs 8 of your own. Skip this step if you can't find the rest|r
+    .complete 96403,1 --Dwarven Heirloom (8)
+step
+    .isQuestComplete 96395
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to the |cRXP_FRIENDLY_Ghostly Attendant|r in the second room on your way out
+    .turnin 96395 >> Turn in An Ancient Grudge
+    .target Ghostly Attendant
+step
+    .zone Ironforge >> Leave the Hall of Thanes: from Durgen's room, run straight down the corridor to the entrance
+    .subzoneskip 16919,1
+step
+    .isQuestComplete 96403
+    .goto 1455/0,-968.200,-4803.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thom Filch|r by the bridge
+    >>|cRXP_WARN_Take Tomb Robber's Gloves (+6 Intellect): your staff is two-handed, so the Dwarven Tome is no use to you|r << Mage
+    >>|cRXP_WARN_Neither reward suits you: take whichever sells for more|r << Paladin
+    .turnin 96403 >> Turn in Important Heirlooms
+    .target Thom Filch
+step
+    #completewith next
+    .goto 1455/0,-1006.600,-4841.600,10,0
+    .goto 1455/0,-969.700,-4841.500,10,0
+    .goto 1455/0,-964.300,-4807.500,10,0
+    .goto 1455/0,-993.500,-4817.600,10,0
+    .goto 1455/0,-983.700,-4847.800,10,0
+    .goto 1455/0,-1022.000,-4842.100,10,0
+    .goto 1455/0,-994.000,-4843.100,10 >> Go back up the ramp to |cRXP_FRIENDLY_Afadra Dunwall|r
+step
+    .isQuestComplete 96394
+    .goto 1455/0,-971.800,-4820.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Afadra Dunwall|r
+    >>|cRXP_WARN_The Cryptwalker Bracers are mail: take the Dusty Belt|r << Mage
+    >>|cRXP_WARN_Take the Cryptwalker Bracers (mail)|r << Paladin
+    .turnin 96394 >> Turn in The Restless Dead
+    .target Afadra Dunwall
+step
+    #completewith next
+    .goto 1455/0,-1030.200,-4831.000,10,0
+    .goto 1455/0,-1090.900,-4830.400,10,0
+    .goto 1455/0,-1079.600,-4884.100,10,0
+    .goto 1455/0,-1058.000,-4842.500,10 >> Go up to King Magni's throne room
+step
+    .isQuestComplete 96393
+    .goto 1455/0,-1022.600,-4865.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Magni Bronzebeard|r
+    >>|cRXP_WARN_Take Deepblaze: an 18.5 DPS wand, a big step up from your Lesser Magic Wand|r << Mage
+    >>|cRXP_WARN_Take the Ironforge Greathammer (two-handed mace)|r << Paladin
+    .turnin 96393 >> Turn in Old Ironforge Incursion
+    .target King Magni Bronzebeard
+step
+    .isOnQuest 98423
+    .goto 1455/0,-1022.600,-4865.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_King Magni Bronzebeard|r
+    .turnin 98423 >> Turn in The Treaty of Understanding
+    .target King Magni Bronzebeard
+step << Mage
+    .xp <16,1
+    .goto 1455/0,-928.48,-4614.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 16? Talk to |cRXP_FRIENDLY_Dink|r in the Mystic Ward before you leave
+    .train 2120 >> Train your level 16 spells (Flamestrike)
+    .target Dink
+step << Paladin
+    .xp <16,1
+    .goto 1455/0,-896.47,-4601.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 16? Talk to |cRXP_FRIENDLY_Brandur Ironhammer|r in the Mystic Ward before you leave
+    .train 7294 >> Train your level 16 spells (Retribution Aura)
+    .target Brandur Ironhammer
+step << !Mage !Paladin
+    .xp <16,1
+    >>Already 16? Visit your class trainer in Ironforge before you leave
+    .trainer >> Train your level 16 spells
+]])
+
+-- Westfall, first pass: the kill quests that pay best at 15-17 (People's Militia 1-3, The Killing Fields) plus the
+-- drops that come from the same mobs: Red Leather Bandanas from the Defias, Flasks of Oil from the Harvest
+-- Watchers (Keeper of the Flame, handed in on the spot at the lighthouse) and Longshore Murloc Gills from the
+-- north shore's murlocs, with Alba Fairmoon's well samples. The Defias Brotherhood chain, The Coast Isn't Clear,
+-- The Coastal Menace and the rest of Alba's Toxic Soil chain wait for the second pass with the Deadmines, when the
+-- route comes back here at 20. Left out as slow or contested: Westfall Stew, Goretusk Liver Pie, Patrolling
+-- Westfall, Poor Old Blanchy and Harvesting the Harvesters. Stormwind on the way: Stormpike's Order, the
+-- Hearthstone (it stays in Stormwind through Darkshore, so the hearth after the Ruins of Lordaeron lands at its
+-- turn-ins) and an OPTIONAL Humble Beginnings. The guide ends in Stormwind with level 16 training. NPC spots and
+-- the Harvest Watcher and murloc paths are from RestedXP's Forever "13-15 Westfall"; the Defias spots for People's
+-- Militia come from QuestieDB's spawn data. 1436 is Westfall, 1453 Stormwind City.
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group TimmyGnome
+#name 15-17 Westfall
+#next 17-19 Darkshore
+
+step
+    #completewith next
+    .goto 1455/0,-1330.28,-4840.430
+    .subzone 2257 >> Enter the Deeprun Tram in Tinker Town
+step
+    .zone Stormwind City >> Take the Deeprun Tram to Stormwind
+step
+    .isOnQuest 1338
+    .goto 1453/0,600.07,-8427.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r in the Dwarven District, near the tram
+    .turnin 1338 >> Turn in Stormpike's Order
+    .target Furen Longbeard
+step
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r in City Hall, Cathedral Square
+    >>|cRXP_WARN_OPTIONAL: his compass is in a chest at the Alexston Farmstead, which you pass in Westfall. Skip this step if you'd rather not|r
+    .accept 399 >> Accept Humble Beginnings
+    .target Baros Alexston
+step
+    .goto 1453/0,673.58,-8867.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Allison|r at the Gilded Rose in the Trade District
+    >>|cRXP_WARN_Your Hearthstone stays here through Darkshore: after the Ruins of Lordaeron you hearth straight back to its turn-ins|r
+    .home >> Set your Hearthstone to Stormwind City
+    .bindlocation 16509
+    .target Innkeeper Allison
+step
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master
+    .fly Westfall >> Fly to Sentinel Hill in Westfall
+    .target Dungar Longdrink
+    .zoneskip Westfall
+step
+    .goto 1436/0,1126.67,-10636.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
+    >>|cRXP_WARN_Every Defias you kill for People's Militia can drop them: a sticky tracks them all through Westfall|r
+    .accept 153 >> Accept Red Leather Bandanas
+    .target Scout Galiaan
+step
+    .goto 1436/0,1179.80,-10635.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r in the inn
+    >>|cRXP_WARN_The rest of her chain leads into the Deadmines: it waits for your second visit to Westfall|r
+    .accept 92742 >> Accept Testing the Wells
+    .accept 92744 >> Accept Murloc Gills
+    .target Alba Fairmoon::253092
+step
+    .goto 1436/0,1166.57,-10653.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash to |cRXP_FRIENDLY_Innkeeper Heather|r
+    .vendor >> Sell your trash
+    .target Innkeeper Heather
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .accept 12 >> Accept The People's Militia
+    .target Gryan Stoutmantle
+step
+    #completewith BandanaFinish
+    .isOnQuest 153
+    >>Loot |cRXP_LOOT_Red Leather Bandanas|r from the Defias you kill for People's Militia. Each of you loots your own
+    .complete 153,1 --Red Leather Bandana (15)
+    .mob +Defias Trapper
+    .mob +Defias Smuggler
+    .mob +Defias Pillager
+    .mob +Defias Looter
+    .mob +Defias Highwayman
+    .mob +Defias Pathstalker
+    .mob +Defias Knuckleduster
+step
+    #completewith Lighthouse
+    >>|cRXP_WARN_Harvest Watchers also drop|r |T132794:0|t[Flask of Oil]|cRXP_WARN_: keep 5 for Keeper of the Flame at the lighthouse at the end of Westfall|r
+    .collect 814,5,103,1 --Flask of Oil (5)
+    .mob Harvest Watcher
+step
+    #completewith Militia1Finish
+    .isOnQuest 12
+    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r around the farms north of Sentinel Hill
+    .complete 12,1 --Defias Trapper (15)
+    .mob +Defias Trapper
+    .complete 12,2 --Defias Smuggler (15)
+    .mob +Defias Smuggler
+step
+    .goto 1436/0,1055.27,-10128.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
+    .accept 9 >> Accept The Killing Fields
+    .target Farmer Saldean
+step
+    .goto 1436/0,1404.20,-10290.90
+    .use 254545 >>|cRXP_WARN_Use the|r |T236996:0|t[Well Water Sample Kit] |cRXP_WARN_at the Molsen Farm well|r
+    .complete 92742,2 --Molsen Farm Water Sample (1)
+step
+    #loop
+    .goto 1436,44.3,36.7,0
+    .goto 1436,51.2,22.2,0
+    .goto 1436,53.1,33.0,0
+    .goto 1436,45.3,34.2,40,0
+    .goto 1436,44.3,36.7,40,0
+    .goto 1436,44.8,25.8,40,0
+    .goto 1436,45.3,20.6,40,0
+    .goto 1436,51.2,22.2,40,0
+    .goto 1436,54.2,31.6,40,0
+    .goto 1436,53.1,33.0,40,0
+    >>Kill |cRXP_ENEMY_Harvest Watchers|r on the Molsen, Jansen and Saldean fields, and the Defias around them
+    >>|cRXP_WARN_Fields crowded? Skip this step: there are more Harvest Watchers at the Alexston Farmstead later|r
+    .complete 9,1 --Harvest Watcher (20)
+    .mob Harvest Watcher
+step
+    .goto 1436/0,918.42,-9851.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r
+    >>|cRXP_WARN_OPTIONAL: his pocket watch is in a wardrobe at the Jansen Stead, guarded by Benny Blanco. Skip this step if you'd rather not|r
+    .accept 64 >> Accept The Forgotten Heirloom
+    .target Farmer Furlbrow
+step
+    .isOnQuest 64
+    .goto 1436/0,1289.77,-9849.63
+    >>Open |cRXP_PICK_Furlbrow's Wardrobe|r in the Jansen Stead house. Loot it for |cRXP_LOOT_Furlbrow's Pocket Watch|r
+    >>|cRXP_WARN_Watch out for|r |cRXP_ENEMY_Benny Blanco|r|cRXP_WARN_: he hits hard|r
+    .complete 64,1 --Furlbrow's Pocket Watch (1)
+step
+    .goto 1436/0,1192.12,-9641.73,60,0
+    .goto 1436/0,1042.67,-9619.33,60,0
+    .goto 1436/0,1192.12,-9641.73
+    >>Kill |cRXP_ENEMY_Murloc Raiders|r and |cRXP_ENEMY_Murloc Coastrunners|r on the north shore. Loot them for |cRXP_LOOT_Longshore Murloc Gills|r
+    >>|cRXP_WARN_Shore crowded? Skip this step: Alba's chain waits for your second visit anyway|r
+    .complete 92744,1 --Longshore Murloc Gills (7)
+    .mob Murloc Raider
+    .mob Murloc Coastrunner
+step
+    .goto 1436/0,1035.30,-9835.10
+    .use 254545 >>|cRXP_WARN_Use the|r |T236996:0|t[Well Water Sample Kit] |cRXP_WARN_at the Jansen Stead well|r
+    .complete 92742,1 --Jansen Stead Water Sample (1)
+step
+    .isQuestComplete 64
+    .goto 1436/0,918.42,-9851.50
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Furlbrow|r
+    .turnin 64 >> Turn in The Forgotten Heirloom
+    .target Farmer Furlbrow
+step
+    .isQuestComplete 9
+    .goto 1436/0,1055.27,-10128.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
+    .turnin 9 >> Turn in The Killing Fields
+    .target Farmer Saldean
+step
+    #label Militia1Finish
+    .isOnQuest 12
+    #loop
+    .goto 1436,46.4,38.2,0
+    .goto 1436,49.7,46.5,0
+    .goto 1436,44.8,25.8,40,0
+    .goto 1436,46.4,38.2,40,0
+    .goto 1436,49.7,46.5,40,0
+    >>Finish the |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r on the way back: around the Molsen Farm and just west of Sentinel Hill
+    .complete 12,1 --Defias Trapper (15)
+    .mob +Defias Trapper
+    .complete 12,2 --Defias Smuggler (15)
+    .mob +Defias Smuggler
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 12 >> Turn in The People's Militia
+    .accept 13 >> Accept The People's Militia
+    .target Gryan Stoutmantle
+step
+    .isQuestComplete 92742
+    .goto 1436/0,1179.80,-10635.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r in the inn
+    .turnin 92742 >> Turn in Testing the Wells
+    .target Alba Fairmoon::253092
+step
+    .isQuestComplete 92744
+    .goto 1436/0,1179.80,-10635.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r in the inn
+    .turnin 92744 >> Turn in Murloc Gills
+    .target Alba Fairmoon::253092
+step
+    #completewith Militia2Finish
+    .isOnQuest 13
+    >>Kill |cRXP_ENEMY_Defias Pillagers|r and |cRXP_ENEMY_Defias Looters|r at the Alexston Farmstead and north of Moonbrook
+    .complete 13,1 --Defias Pillager (15)
+    .mob +Defias Pillager
+    .complete 13,2 --Defias Looter (15)
+    .mob +Defias Looter
+step
+    .isOnQuest 399
+    .goto 1436/0,1748.27,-10672.13
+    >>Open |cRXP_PICK_Alexston's Chest|r. Loot it for |cRXP_LOOT_A Simple Compass|r
+    .complete 399,1 --A Simple Compass (1)
+step
+    .isOnQuest 9
+    #loop
+    .goto 1436,38.6,51.5,0
+    .goto 1436,38.6,51.5,30,0
+    .goto 1436,37.6,49.0,30,0
+    .goto 1436,40.2,53.0,30,0
+    >>Still short on |cRXP_ENEMY_Harvest Watchers|r? Finish them on the Alexston Farmstead fields
+    >>|cRXP_WARN_Skip this step if these are crowded too|r
+    .complete 9,1 --Harvest Watcher (20)
+    .mob Harvest Watcher
+step
+    #label Militia2Finish
+    .isOnQuest 13
+    #loop
+    .goto 1436,37.7,56.4,0
+    .goto 1436,44.0,68.8,0
+    .goto 1436,37.7,56.4,40,0
+    .goto 1436,33.8,52.1,40,0
+    .goto 1436,33.5,56.8,40,0
+    .goto 1436,41.3,69.9,40,0
+    .goto 1436,44.0,68.8,40,0
+    >>Kill |cRXP_ENEMY_Defias Pillagers|r and |cRXP_ENEMY_Defias Looters|r at the Alexston Farmstead and north of Moonbrook
+    .complete 13,1 --Defias Pillager (15)
+    .mob +Defias Pillager
+    .complete 13,2 --Defias Looter (15)
+    .mob +Defias Looter
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 13 >> Turn in The People's Militia
+    .accept 14 >> Accept The People's Militia
+    .target Gryan Stoutmantle
+step
+    .isQuestComplete 9
+    .goto 1436/0,1055.27,-10128.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r, just north of Sentinel Hill
+    .turnin 9 >> Turn in The Killing Fields
+    .target Farmer Saldean
+step
+    #loop
+    .goto 1436,51.0,75.4,0
+    .goto 1436,37.8,80.9,0
+    .goto 1436,51.0,75.4,40,0
+    .goto 1436,51.4,78.7,40,0
+    .goto 1436,45.2,80.0,40,0
+    .goto 1436,37.8,80.9,40,0
+    .goto 1436,37.3,75.1,40,0
+    >>Kill |cRXP_ENEMY_Defias Highwaymen|r, |cRXP_ENEMY_Defias Pathstalkers|r and |cRXP_ENEMY_Defias Knuckledusters|r in the Dagger Hills and west of Moonbrook
+    .complete 14,1 --Defias Highwayman (15)
+    .mob +Defias Highwayman
+    .complete 14,2 --Defias Pathstalker (5)
+    .mob +Defias Pathstalker
+    .complete 14,3 --Defias Knuckleduster (5)
+    .mob +Defias Knuckleduster
+step
+    #label Lighthouse
+    .itemcount 814,5
+    .goto 1436/0,1966.32,-11407.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r at the Westfall Lighthouse
+    >>|cRXP_WARN_He also offers The Coastal Menace and The Coast Isn't Clear: leave those for your second visit to Westfall|r
+    .accept 103 >> Accept Keeper of the Flame
+    .turnin 103 >> Turn in Keeper of the Flame
+    .target Captain Grayson
+step
+    #label BandanaFinish
+    .isOnQuest 153
+    #loop
+    .goto 1436,44.0,68.8,0
+    .goto 1436,51.0,75.4,0
+    .goto 1436,44.0,68.8,40,0
+    .goto 1436,41.3,69.9,40,0
+    .goto 1436,51.0,75.4,40,0
+    .goto 1436,51.4,78.7,40,0
+    >>Finish your |cRXP_LOOT_Red Leather Bandanas|r on the Defias around Moonbrook and the Dagger Hills on the way back
+    >>|cRXP_WARN_Each of you needs 15 of your own. Skip this step if it's slow|r
+    .complete 153,1 --Red Leather Bandana (15)
+    .mob +Defias Pillager
+    .mob +Defias Looter
+    .mob +Defias Highwayman
+    .mob +Defias Pathstalker
+    .mob +Defias Knuckleduster
+step
+    .isQuestComplete 14
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    >>|cRXP_WARN_Don't take The Defias Brotherhood yet: it's for your second visit, with the Deadmines|r
+    .turnin 14 >> Turn in The People's Militia
+    .target Gryan Stoutmantle
+step
+    .isQuestComplete 153
+    .goto 1436/0,1126.67,-10636.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
+    .turnin 153 >> Turn in Red Leather Bandanas
+    .target Scout Galiaan
+step
+    .isQuestComplete 92744
+    .goto 1436/0,1179.80,-10635.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alba Fairmoon|r in the inn
+    .turnin 92744 >> Turn in Murloc Gills
+    .target Alba Fairmoon::253092
+step
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r, the gryphon master
+    .fly Stormwind >> Fly to Stormwind
+    .target Thor
+    .zoneskip Stormwind City
+step
+    .isQuestComplete 399
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r in City Hall, Cathedral Square
+    .turnin 399 >> Turn in Humble Beginnings
+    .target Baros Alexston
+step << Mage
+    #completewith next
+    .xp <16,1
+    .train 2120,1
+    .goto 1453/0,942.34,-9001.49,15,0
+    .goto 1453/0,949.86,-9009.38,10,0
+    .goto 1453/0,962.63,-8990.73,15,0
+    .goto 1453/0,928.62,-9010.10,15,0
+    .goto 1453/0,863.96,-9001.40,8,0
+    .goto 1453/0,877.00,-9008.03,6,0
+    .goto 1453/0,868.8,-9004.27,8,0
+    .goto 1453/0,871.36,-9013.14,10,0
+    .goto 1453/0,887.22,-9017.80,10 >> Go into the Wizard's Sanctum in the Mage Quarter and follow its ramp to |cRXP_FRIENDLY_Jennea|r
+step << Mage
+    .xp <16,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum
+    .train 2120 >> Train your level 16 spells (Flamestrike)
+    .target Jennea Cannon
+step << Paladin
+    #completewith next
+    .xp <16,1
+    .train 7294,1
+    .goto 1453/0,809.52,-8579.22,20,0
+    .goto 1453/0,859.13,-8559.14,10 >> Go into the Cathedral of Light in Cathedral Square
+step << Paladin
+    .xp <16,1
+    .goto 1453/0,861.14,-8573.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r in the Cathedral of Light
+    .train 7294 >> Train your level 16 spells (Retribution Aura)
+    .target Arthur the Faithful
+step << !Mage !Paladin
+    .xp <16,1
+    >>Visit your class trainer in Stormwind
+    .trainer >> Train your level 16 spells
 ]])

@@ -1798,7 +1798,7 @@ step
 -- Morogh and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 10
+#version 11
 << Alliance
 #group TimmyGnome
 #name 12-14 Loch Modan
@@ -2358,4 +2358,15 @@ step << !Mage !Paladin
     .xp <14,1
     >>Visit your class trainer in Ironforge
     .trainer >> Train your level 14 spells
+step << Mage
+    .goto 1455,43.82,27.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthrar Threx|r, the tailoring trainer across the Great Forge
+    >>|cRXP_WARN_Linen Belt is the cheapest way to 55 Tailoring: 1 bolt and 1 Coarse Thread each, a point every craft until 50 and nearly every craft from 50 to 55|r
+    .train 8776 >> Train Linen Belt
+    .target Uthrar Threx
+step << Mage
+    .goto 1455,42.94,28.31
+    >>|cRXP_WARN_Craft Linen Belts until 55 Tailoring and sell them: about 20 from 35, so 20 bolts (40 linen) and 20|r |T132891:0|t[Coarse Thread] |cRXP_WARN_from|r |cRXP_FRIENDLY_Poranna Snowbraid|r |cRXP_WARN_next to Uthrar (10c each)|r
+    >>|cRXP_WARN_Short on linen? Try the Auction House in the Commons. From 50, a Red Linen Bag (4 bolts, 1 Fine Thread and 1 Red Dye, from Gina's pattern) is also a sure point and leaves you with an 8-slot bag|r
+    .skill tailoring,55 >> Reach 55 Tailoring
 ]])

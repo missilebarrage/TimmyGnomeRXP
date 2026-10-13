@@ -128,7 +128,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   Farstrider Lodge (OPTIONAL), and hearth back.
 - **Ironforge to finish:** Report to Ironforge, the paladin's last Tome of Divinity turn-ins, the mage's Camping
   101: Enchanting at Thonys Pillarstone, and level 14 training if you're there. Anyone who missed level 12
-  training (the mage with Jennea, the paladin in Ironforge at the end of Elwynn) gets it here.
+  training (the mage with Jennea, the paladin in Ironforge at the end of Elwynn) gets it here. Last, the mage
+  trains Linen Belt from Uthrar Threx and crafts belts to 55 Tailoring (about 20 from 35, the cheapest way).
 - **Skipped as too slow with a launch-day crowd:** Filthy Paws, Bingles' Missing Supplies, Crocolisk Hunting,
   Gathering Idols and Silver of the Waves.
 - **Where you end up:** about level 13 with only the core quests, close to 14 with every optional one.

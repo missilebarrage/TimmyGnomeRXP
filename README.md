@@ -1,8 +1,9 @@
 # TimmyGnome
 
 A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
-Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes and Westfall,
-levels 1 to 17, made for playing as a duo (the dungeons need three more players).
+Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes, Westfall,
+Darkshore and the Ruins of Lordaeron, levels 1 to 20, made for playing as a duo (the dungeons need three more
+players).
 
 ## Install
 
@@ -13,8 +14,8 @@ You need RestedXP Guides installed.
    `AddOns\TimmyGnome\TimmyGnome.toc`.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
-   **5-10 Dun Morogh**, **10-12 Elwynn Forest**, **12-14 Loch Modan**, **14-15 Hall of Thanes** and
-   **15-17 Westfall** by itself.
+   **5-10 Dun Morogh**, **10-12 Elwynn Forest**, **12-14 Loch Modan**, **14-15 Hall of Thanes**,
+   **15-17 Westfall**, **17-19 Darkshore** and **19-20 Ruins of Lordaeron** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
@@ -171,10 +172,43 @@ To update, download the zip again and replace the TimmyGnome folder.
   Patrolling Westfall, Poor Old Blanchy and Harvesting the Harvesters.
 - **Finish:** fly to Stormwind, hand in Humble Beginnings and train level 16.
 
+### 17-19 Darkshore
+
+- **Getting there:** the boat from Stormwind Harbor's southernmost dock to Auberdine. The Hearthstone stays in
+  Stormwind, so every loop ends back in Auberdine on foot.
+- **South:** the bear trap for Plagued Lands, the furbolg camp for How Big a Threat? and Ameth'Aran's two tablets.
+- **North-east:** the Cliffspring River sample, The Tower of Althalaxx, the red crystal, and OPTIONAL Bashal'Aran
+  (Grell earrings, then a satyr's seal), Worn Parchments at the tower and the cave mushrooms (which start Onu's
+  chain). A sticky counts the Rabid Thistle Bears on every loop.
+- **South again:** the Blackwood furbolgs, the rest of the bears, Onu's chain (The Master's Glaive, the Scrying
+  Bowl, the Twilight Tome), Prospector Remtravel (not his escort) and the Murkdeep event.
+- **North-east again:** As Water Cascades back at the crystal, Den Mother, the three Blackwood stores and
+  Xabraxxis.
+- **Left out:** drop quests (Buzzbox, Fruit of the Sea, Tools of the Highborne, A Lost Master), For Love Eternal,
+  Washed Ashore and the beached creatures, Deep Ocean, Vast Sea, Mathystra Relics and the escorts.
+- **Where you end up:** most mobs here are 12-16, so the XP is in the quests. Leaving at 18-19 is fine: the Ruins
+  of Lordaeron quests pay in full well past 20.
+
+### 19-20 Ruins of Lordaeron
+
+- **A dungeon:** 5 players. Find the other three before you set off: there are no summoning stones, so everyone
+  makes the trip (meet at Southshore or at the ruins).
+- **Getting there:** the Menethil ship from Auberdine carries on to Southshore (stay on board at Menethil). Get the
+  Southshore flight path, then run north through Hillsbrad and Alterac into Tirisfal and up into the ruined city.
+  You're flagged for PvP at the Undercity.
+- **Inside:** Abominable Creatures from Captain Truman. Bloodied Insignia and Crest of Lordaeron start from items,
+  Remember That I Love You from a letter by the last boss, and all their items are per player. Boss tips and the
+  loot worth rolling on. Stickies plus finish steps for the insignias and the crest.
+- **Back:** Captain Truman at the entrance, then hearth to Stormwind (or fly from Southshore). General Marcus
+  Jonathan, Orphan Matron Nightingale (her Darkshire follow-up is OPTIONAL) and Lady Dena Kennedy. The four
+  quests pay 2.375 times the usual XP, about 22,400.
+- **Training:** level 18, plus 20 if you're there. The paladin's level 20 class quest comes with the Deadmines
+  chapter.
+
 ### Coming next
 
-17-19 Darkshore and 19-20 Ruins of Lordaeron (by boat from Stormwind Harbor), then Westfall again with the
-Deadmines.
+Westfall again with the Deadmines: The Defias Brotherhood, The Coast Isn't Clear, The Coastal Menace and the rest
+of Alba Fairmoon's chain.
 
 ## Credits and license
 

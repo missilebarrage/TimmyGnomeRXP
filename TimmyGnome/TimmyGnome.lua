@@ -1005,7 +1005,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 26
+#version 27
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1026,13 +1026,6 @@ step
     >>|cRXP_WARN_Bandages use Linen Cloth: hold off until the mage's Tailoring linen and the paladin's 10 for his class quest are put aside|r
     .skill firstaid,1 >> Learn First Aid
     .target Shaina Fuller
-step << Mage
-    #label TailoringStop
-    .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTailoring stop. If you're short on linen, buy it from |cRXP_FRIENDLY_Auctioneer Jaxon|r in the Trade District
-    >>|cRXP_WARN_You want about 72|r |T132889:0|t[Linen Cloth] |cRXP_WARN_in total, counting each bolt as 2, plus 12 for each reagent bag you make your party|r
-    +Buy the linen you're missing, or tick this if you have enough
-    .target Auctioneer Jaxon
 step
     .goto 1453,55.09,69.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catherine Leland|r, the fishing supplier on the canal just west of the Trade District
@@ -1046,6 +1039,13 @@ step
     >>|cRXP_WARN_Catherine sells the Fishing Pole too, if you want to start fishing|r
     .skill fishing,1 >> Learn Fishing
     .target Arnold Leland
+step << Mage
+    #label TailoringStop
+    .goto 1453/0,660.28,-8814.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTailoring stop. If you're short on linen, buy it from |cRXP_FRIENDLY_Auctioneer Jaxon|r in the Trade District
+    >>|cRXP_WARN_You want about 72|r |T132889:0|t[Linen Cloth] |cRXP_WARN_in total, counting each bolt as 2, plus 12 for each reagent bag you make your party|r
+    +Buy the linen you're missing, or tick this if you have enough
+    .target Auctioneer Jaxon
 step << Mage
     .train 7411,3
     .skill enchanting,20,1

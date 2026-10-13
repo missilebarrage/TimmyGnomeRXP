@@ -61,7 +61,7 @@ To update, download the zip again and replace the TimmyGnome folder.
   path from Dungar Longdrink next door, and the walk to Goldshire.
 - **Enchanting (mage):** on the way to the tailoring shop, buy 9 Motes of Magic from Jessara Cordell in the Mage
   Quarter and enchant your bracer (Inferior Stamina) to 20 Enchanting. That completes Camping 101: Enchanting,
-  which Thonys Pillarstone in Ironforge takes on the level 12 trip (or at the end of Loch Modan) and teaches the
+  which Thonys Pillarstone in Ironforge takes on the Ironforge stop at the end of Loch Modan and teaches the
   Enchanted Lute camp item.
 - **Tailoring stop (mage):** top up to about 72 Linen Cloth at the Auction House, bolt it all (Tailoring to about
   25), train White Linen Robe, Brown Linen Pants and Heavy Linen Gloves at the tailoring shop, buy Pattern: Linen
@@ -85,13 +85,15 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Redridge:** Encroaching Gnolls (needs level 11) and the Lakeshire flight path, then fly to Stormwind and walk
   back to Goldshire. Your Hearthstone stays bound in Thelsamar. In Stormwind the mage hands Speak with Jennea to
   Jennea Cannon in the Wizard's Sanctum, takes Mirror Lake and, at level 12, trains with her (the Mirror Lake
-  turn-in is a second chance, and Ironforge's level 12 training then skips itself).
+  turn-in is a second chance).
 - **Finish:** turn-ins in Goldshire and at the farms, Applejack Still and An Apple Treat (4 apples from Homer
   Stonefield into the still by the Mirror Lake falls, a repeatable hand-in with no XP, then the Thunder Applejack to
   Sergeant De Vries for 625 XP), Westbrook Garrison, then Westfall: Westfall Stew on the way down the road, Report
   to Gryan Stoutmantle and the Sentinel Hill flight path, and hearth to Thelsamar. The Loch Modan guide starts
   there. The mage fills Jennea's Flask at the Mirror Lake waterfall on the way to the still, then flies from
-  Sentinel Hill to Stormwind before hearthing; the paladin can hearth straight away. In Stormwind: 2 Minor Mana
+  Sentinel Hill to Stormwind before hearthing. Meanwhile the paladin (a Dwarf, once he's 12) flies to Ironforge to
+  start The Tome of Divinity: level 12 training with Brandur Ironhammer, then Tiza Battleforge, John Turner (the 10
+  Linen Cloth) and Muiredon, then he hearths and you meet up in Thelsamar. In Stormwind: 2 Minor Mana
   Potions from the Auction House, Novice Arcanist's Sash (needs 35 Tailoring; the potions are its reagent) and
   Green Linen Bracers from the tailoring shop, crafted and equipped on the spot, then Mirror Lake (Ley Staff or
   Ley Orb) at Jennea. A sticky from the first Stormwind stop reminds the mage to keep linen for these.
@@ -104,15 +106,13 @@ To update, download the zip again and replace the TimmyGnome folder.
   won't hold up on launch day), A Bundle of Trouble, Stolen Enchanting Supplies (crates in gnoll camps off the
   route), Hogger (his turn-in is in Goldshire, behind you by then) and the Goldtooth chain (a single spawn). Guard
   Thomas doesn't offer Bounty on Murlocs in Forever.
-- **Paladins:** keep 10 Linen Cloth for The Tome of Divinity, the level 12 class quest.
+- **Paladins:** keep 10 Linen Cloth for The Tome of Divinity, the level 12 class quest you start in Ironforge at
+  the end of Elwynn.
 
 ### 12-14 Loch Modan
 
 - **Thelsamar** (you hearth in): Return to Brock, Snowbound, Mountaineer Stormpike's Task, and a vendor stop.
   Thelsamar Blood Sausages and Rat Catching are OPTIONAL gathering quests for the trip back from Algaz Station.
-- **Ironforge at 12:** fly in to train. Paladins start The Tome of Divinity here (John Turner takes the 10 Linen
-  Cloth). The mage turns in Camping 101: Enchanting at Thonys Pillarstone, next to the flight master. Below
-  level 12 the trip skips itself and training happens in Ironforge at the end.
 - **Southern guard tower:** In Defense of the King's Lands four times over, plus The Trogg Threat on the same troggs.
   The third and fourth (level 15-17 troggs and Grawmug) are OPTIONAL.
 - **Dun Morogh detour:** The Lost Pilot and Mangeclaw. Paladins raise Narm Faulk and take the Dark Iron Script.
@@ -122,8 +122,9 @@ To update, download the zip again and replace the TimmyGnome folder.
   goes to Furen Longbeard at the Stormwind tram whenever you're next there.
 - **East:** Ironband's Excavation (level 13) and Excavation Progress Report, then Daryl's timed hunts at the
   Farstrider Lodge (OPTIONAL), and hearth back.
-- **Ironforge to finish:** Report to Ironforge, the paladin's last Tome of Divinity turn-ins, and level 14
-  training if you're there.
+- **Ironforge to finish:** Report to Ironforge, the paladin's last Tome of Divinity turn-ins, the mage's Camping
+  101: Enchanting at Thonys Pillarstone, and level 14 training if you're there. Anyone who missed level 12
+  training (the mage with Jennea, the paladin in Ironforge at the end of Elwynn) gets it here.
 - **Skipped as too slow with a launch-day crowd:** Filthy Paws, Bingles' Missing Supplies, Crocolisk Hunting,
   Gathering Idols and Silver of the Waves.
 - **Where you end up:** about level 13 with only the core quests, close to 14 with every optional one.

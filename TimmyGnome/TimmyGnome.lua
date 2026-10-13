@@ -211,7 +211,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 20
+#version 21
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -580,7 +580,7 @@ step << Mage
 step << Mage
     .goto 1455,60.27,45.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thonys Pillarstone|r next to Gimble: now that you have Enchanting, he has a camping quest for it
-    >>|cRXP_WARN_It completes at 20 Enchanting, which you reach at the Stormwind tailoring stop at level 10. Bring it back to him on your level 12 Ironforge trip|r
+    >>|cRXP_WARN_It completes at 20 Enchanting, which you reach at the Stormwind tailoring stop at level 10. Bring it back to him on the Ironforge stop at the end of Loch Modan|r
     .accept 96059 >> Accept Camping 101: Enchanting
     .target Thonys Pillarstone
 step << Mage
@@ -977,9 +977,10 @@ step
 -- Stormwind stop after Redridge, Mirror Lake's water comes from the waterfall next to the Applejack Still, and a
 -- flight from Sentinel Hill to Stormwind hands it in before the hearth. That last Stormwind trip also buys 2 Minor
 -- Mana Potions at the Auction House and trains and crafts Novice Arcanist's Sash (they're its reagent; it needs 35
--- Tailoring) and Green Linen Bracers. Gathering quests are left out except Red Linen Goods, whose bandanas drop from
--- Defias on the route: its accept step says OPTIONAL and the steps that follow skip themselves when you didn't take
--- it. Collecting Kelp (and with it The Escape) and Bottles and Baubles are out:
+-- Tailoring) and Green Linen Bracers. Meanwhile a level 12 Dwarf paladin flies from Sentinel Hill to Ironforge for
+-- the start of The Tome of Divinity (Brandur, Tiza, John Turner, Muiredon) and hearths from there. Gathering quests
+-- are left out except Red Linen Goods, whose bandanas drop from Defias on the route: its accept step says OPTIONAL
+-- and the steps that follow skip themselves when you didn't take it. Collecting Kelp (and with it The Escape) and Bottles and Baubles are out:
 -- Crystal Lake's murlocs and junk piles won't hold up on launch day. Guard Thomas doesn't offer Bounty on Murlocs
 -- in Forever. Downstream is a required step: its three items lie on the way to Croaky and respawn instantly. A Bundle of Trouble is skipped on
 -- purpose: its wood bundles are slow and contested on a busy server. Forever's Tower of Azora quests: Delicate
@@ -996,7 +997,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 24
+#version 25
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1603,7 +1604,7 @@ step
 step << Mage
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBefore you hearth, talk to |cRXP_FRIENDLY_Thor|r and fly to Stormwind: the Auction House, two Tailoring recipes and Jennea. It's a short flight, and your Hearthstone works from there
-    >>|cRXP_WARN_Your partner can hearth now and start on the Thelsamar turn-ins|r
+    >>|cRXP_WARN_Your partner flies to Ironforge for his class quest meanwhile. You meet up again in Thelsamar|r
     .fly Stormwind >> Fly to Stormwind
     .target Thor
 step << Mage
@@ -1661,115 +1662,26 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHit 12 since your last visit? Train with |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum while you're here
     .train 145 >> Train your level 12 spells (Fireball rank 3, Dampen Magic)
     .target Jennea Cannon
-step
-    #label HearthLoch
-    >>|cRXP_WARN_Elwynn is done: next stop, Loch Modan|r
-    .hs >> Hearth to Thelsamar
-    .cooldown item,6948,>2,1
-    .zoneskip Loch Modan
-step << !Mage
-    .goto 1436/0,1037.42,-10628.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHearthstone on cooldown? Talk to |cRXP_FRIENDLY_Thor|r and fly to Thelsamar instead
-    .fly Thelsamar >> Fly to Thelsamar
-    .target Thor
-    .zoneskip Loch Modan
-step << Mage
-    .goto 1453/0,490.03,-8835.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHearthstone on cooldown? Talk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master in the Trade District, and fly to Thelsamar instead
-    .fly Thelsamar >> Fly to Thelsamar
-    .target Dungar Longdrink
-    .zoneskip Loch Modan
-]])
-
--- Loch Modan, from the hearth into Thelsamar at the end of Elwynn. Built from RestedXP's Forever "12-14 Loch Modan
--- (Dwarf/Gnome)" route and the Loch Modan quests RestedXP picks up on its first visit, rearranged into laps:
--- Thelsamar; Ironforge for level 12 training and the paladin's Tome of Divinity; the southern guard tower's In
--- Defense of the King's Lands chain with a Dun Morogh detour (The Lost Pilot, the paladin's Narm Faulk); Snowbound
--- from the South Gate to the dam (a 10 minute jar); Algaz Station; the excavation and Farstrider Lodge in the east;
--- Ironforge to finish. Gathering quests a launch-day crowd makes slow are left out: Filthy Paws (mine crates),
--- Bingles' Missing Supplies, Crocolisk Hunting, Gathering Idols and Silver of the Waves. Rat Catching, Thelsamar
--- Blood Sausages, the two hardest trogg quests and Daryl's timed hunts are OPTIONAL. 1432 is Loch Modan, 1426 Dun
--- Morogh and 1455 Ironforge.
-RXPGuides.RegisterGuide([[
-#forever
-#version 4
-<< Alliance
-#group TimmyGnome
-#name 12-14 Loch Modan
-
-step
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r in the inn
-    >>|cRXP_WARN_OPTIONAL (loot): 3 Bear Meat, 3 Boar Intestines and 3 Spider Ichor from the bears, boars and spiders on the way back from Algaz Station. Skip this step if you'd rather not|r
-    .accept 418 >> Accept Thelsamar Blood Sausages
-    .target Vidra Hearthstove
-step
-    .goto 1432/0,-2973.90,-5377.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
-    .vendor >> Sell your trash
-    .target Innkeeper Hearthstove
-step
-    .goto 1432/0,-3003.30,-5376.02
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
-    >>|cRXP_WARN_You fill the jar at the South Gate after the troggs, then have 10 minutes to reach the dam: the guide lines that up|r
-    .accept 86667 >> Accept Snowbound
-    .target Grenhild Darktalon
-step << Dwarf/Gnome
-    .isOnQuest 6392
-    .goto 1432,37.26,46.93
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brock Stoneseeker|r
-    .turnin 6392 >> Turn in Return to Brock
-    .target Brock Stoneseeker
-step
-    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
-    .goto 1432/0,-3006.61,-5259.57,15,0
-    .goto 1432/0,-3020.95,-5282.02,15,0
-    .goto 1432/0,-3023.44,-5326.90,15,0
-    .goto 1432/0,-3007.99,-5337.390,15,0
-    .goto 1432/0,-2964.41,-5349.90,15,0
-    .goto 1432/0,-2894.90,-5401.96,20,0
-    .goto 1432/0,-3007.99,-5337.390
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r, who walks the road through Thelsamar
-    .accept 1339 >> Accept Mountaineer Stormpike's Task
-    .target Mountaineer Kadrell
-step
-    .goto 1432/0,-3007.99,-5337.390
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
-    >>|cRXP_WARN_OPTIONAL (loot): 12 Tunnel Rat Ears from the kobolds in the hills between Algaz Station and Thelsamar. Skip this step if you'd rather not|r
-    .accept 416 >> Accept Rat Catching
-    .target Mountaineer Kadrell
--- Ironforge for level 12 training. Paladins start The Tome of Divinity here; its Dun Morogh part comes up on the
--- South Gate detour. The mage hands in Camping 101: Enchanting next to the flight master. Below level 12 these
--- steps skip themselves and training waits for the end of the guide.
-step
+step << Dwarf Paladin
     .xp <12,1
-    .goto 1432/0,-2929.87,-5424.84
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r and fly to Ironforge to train
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r and fly to Ironforge (the flight goes through Stormwind) to start your class quest, The Tome of Divinity, while Tim does his Stormwind errands
+    >>|cRXP_WARN_You meet up again in Thelsamar: hearth there when you're done. Not 12 yet? Skip ahead and hearth now: Brandur offers it on the Ironforge stop at the end of Loch Modan|r
     .fly Ironforge >> Fly to Ironforge
-    .target Thorgrum Borrelson
+    .target Thor
     .zoneskip Ironforge
-step
+step << Dwarf Paladin
     .xp <12,1
     #completewith next
     .goto 1455,35.239,32.789,20,0
     .goto 1455,27.208,12.552,20 >> Head through the Great Forge to the Mystic Ward
-step << Mage
-    .xp <12,1
-    .goto 1455/0,-928.48,-4614.62
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r in the Mystic Ward. Already trained with Jennea in Stormwind? This step skips itself
-    .train 145 >> Train your level 12 spells
-    .target Dink
-step << Paladin
+step << Dwarf Paladin
     .xp <12,1
     .goto 1455/0,-896.47,-4601.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r in the Mystic Ward
     .trainer >> Train your level 12 spells
-    .accept 2999 >> Accept Tome of Divinity << Dwarf
+    .accept 2999 >> Accept Tome of Divinity
     .target Brandur Ironhammer
-step << !Mage !Paladin
-    .xp <12,1
-    >>Visit your class trainer in Ironforge
-    .trainer >> Train your level 12 spells
 step << Dwarf Paladin
     .isOnQuest 2999
     #completewith next
@@ -1849,24 +1761,75 @@ step << Dwarf Paladin
     .turnin 1779 >> Turn in The Tome of Divinity
     .accept 1783 >> Accept The Tome of Divinity
     .target Muiredon Battleforge
-step << Mage
-    .xp <12,1
-    .isQuestComplete 96059
-    .goto 1455,60.27,45.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thonys Pillarstone|r in the enchanting shop where you learned Enchanting, next to the flight master
-    >>|cRXP_WARN_He teaches you the Enchanted Lute, a camp item. OPTIONAL: Tilli Thistlefuzz in the same shop sells the Simple Wood and Strange Dust to craft one|r
-    .turnin 96059 >> Turn in Camping 101: Enchanting
-    .target Thonys Pillarstone
-step << Mage
-    .xp <12,1
-    +Your partner has a class quest here: sell your trash and restock while you wait
 step
-    .xp <12,1
-    .goto 1455/0,-1152.40,-4821.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r in the Great Forge
-    .fly Thelsamar >> Fly back to Thelsamar
-    .target Gryth Thurden
+    #label HearthLoch
+    >>|cRXP_WARN_Elwynn is done: next stop, Loch Modan|r
+    .hs >> Hearth to Thelsamar
+    .cooldown item,6948,>2,1
     .zoneskip Loch Modan
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHearthstone on cooldown? Talk to the nearest gryphon master and fly to Thelsamar instead
+    .fly Thelsamar >> Fly to Thelsamar
+    .zoneskip Loch Modan
+]])
+
+-- Loch Modan, from the hearth into Thelsamar at the end of Elwynn. Built from RestedXP's Forever "12-14 Loch Modan
+-- (Dwarf/Gnome)" route and the Loch Modan quests RestedXP picks up on its first visit, rearranged into laps:
+-- Thelsamar; the southern guard tower's In
+-- Defense of the King's Lands chain with a Dun Morogh detour (The Lost Pilot, the paladin's Narm Faulk); Snowbound
+-- from the South Gate to the dam (a 10 minute jar); Algaz Station; the excavation and Farstrider Lodge in the east;
+-- Ironforge to finish. Gathering quests a launch-day crowd makes slow are left out: Filthy Paws (mine crates),
+-- Bingles' Missing Supplies, Crocolisk Hunting, Gathering Idols and Silver of the Waves. Rat Catching, Thelsamar
+-- Blood Sausages, the two hardest trogg quests and Daryl's timed hunts are OPTIONAL. 1432 is Loch Modan, 1426 Dun
+-- Morogh and 1455 Ironforge.
+RXPGuides.RegisterGuide([[
+#forever
+#version 5
+<< Alliance
+#group TimmyGnome
+#name 12-14 Loch Modan
+
+step
+    .goto 1432/0,-2954.42,-5394.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r in the inn
+    >>|cRXP_WARN_OPTIONAL (loot): 3 Bear Meat, 3 Boar Intestines and 3 Spider Ichor from the bears, boars and spiders on the way back from Algaz Station. Skip this step if you'd rather not|r
+    .accept 418 >> Accept Thelsamar Blood Sausages
+    .target Vidra Hearthstove
+step
+    .goto 1432/0,-2973.90,-5377.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
+    .vendor >> Sell your trash
+    .target Innkeeper Hearthstove
+step
+    .goto 1432/0,-3003.30,-5376.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grenhild Darktalon|r
+    >>|cRXP_WARN_You fill the jar at the South Gate after the troggs, then have 10 minutes to reach the dam: the guide lines that up|r
+    .accept 86667 >> Accept Snowbound
+    .target Grenhild Darktalon
+step << Dwarf/Gnome
+    .isOnQuest 6392
+    .goto 1432,37.26,46.93
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brock Stoneseeker|r
+    .turnin 6392 >> Turn in Return to Brock
+    .target Brock Stoneseeker
+step
+    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
+    .goto 1432/0,-3006.61,-5259.57,15,0
+    .goto 1432/0,-3020.95,-5282.02,15,0
+    .goto 1432/0,-3023.44,-5326.90,15,0
+    .goto 1432/0,-3007.99,-5337.390,15,0
+    .goto 1432/0,-2964.41,-5349.90,15,0
+    .goto 1432/0,-2894.90,-5401.96,20,0
+    .goto 1432/0,-3007.99,-5337.390
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r, who walks the road through Thelsamar
+    .accept 1339 >> Accept Mountaineer Stormpike's Task
+    .target Mountaineer Kadrell
+step
+    .goto 1432/0,-3007.99,-5337.390
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
+    >>|cRXP_WARN_OPTIONAL (loot): 12 Tunnel Rat Ears from the kobolds in the hills between Algaz Station and Thelsamar. Skip this step if you'd rather not|r
+    .accept 416 >> Accept Rat Catching
+    .target Mountaineer Kadrell
 -- In Defense of the King's Lands: four kill quests in a row from the southern guard tower, plus The Trogg Threat on
 -- the same troggs. The third and fourth are harder (level 15-17 troggs) and marked OPTIONAL.
 step
@@ -2277,7 +2240,7 @@ step
     .accept 301 >> Accept Report to Ironforge
     .target Jern Hornhelm
 -- Ironforge to finish: Report to Ironforge, the paladin's Tome of Divinity, and level 14 training if you're there.
--- Camping 101: Enchanting goes in here if the level 12 trip was skipped.
+-- The mage's Camping 101: Enchanting goes in here. The paladin started The Tome of Divinity at the end of Elwynn.
 step
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
@@ -2313,14 +2276,14 @@ step << Dwarf Paladin
 step << Mage
     .xp <12,1
     .goto 1455/0,-928.48,-4614.62
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r in the Mystic Ward: you weren't 12 for the first Ironforge trip
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r in the Mystic Ward: you didn't train with Jennea in Stormwind
     .train 145 >> Train your level 12 spells
     .target Dink
 step << Dwarf Paladin
     .xp <12,1
     .isQuestAvailable 2999
     .goto 1455/0,-896.47,-4601.65
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r in the Mystic Ward: you weren't 12 for the first Ironforge trip
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r in the Mystic Ward: you weren't 12 for the Ironforge trip at the end of Elwynn
     >>|cRXP_WARN_He also starts The Tome of Divinity, but its Dun Morogh part is behind you now: take it when you have time for it|r
     .trainer >> Train your level 12 spells
     .target Brandur Ironhammer

@@ -2571,7 +2571,7 @@ step << !Mage !Paladin
 -- Kalimdor world coordinates), 1453 Stormwind City and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 2
+#version 3
 << Alliance
 #group TimmyGnome
 #name 15+ Darkshore
@@ -3089,6 +3089,9 @@ step
     >>|cRXP_WARN_Its last part, Buzzbox 525 (OPTIONAL), wants Grizzled Scalps from the Grizzled Thistle Bears in the far south: abandon it later if you'd rather not|r
     .turnin 1002 >> Turn in Buzzbox 323
     .accept 1003 >> Accept Buzzbox 525
+step
+    .isOnQuest 947
+    .goto 1439,54.5,31.7,10 >> Approach the Cliffspring Falls cave: the ramp up to it starts here
 step
     .isOnQuest 947
     .goto 1439/1,-690.31,6751.29,12,0

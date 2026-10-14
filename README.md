@@ -167,8 +167,9 @@ To update, download the zip again and replace the TimmyGnome folder.
     Bears' scalps, Remtravel, Murkdeep and the beached creatures.
   - **Far north-east:** Den Mother, the Blackwood stores and Xabraxxis, the Tower of Althalaxx and Gyromast,
     then a hearth back.
-- **Drops:** every drop quest has a sticky plus a real finish step you can skip. OPTIONAL: For Love Eternal
-  (Anaya is a rare), WANTED: Jai'vhanel, Bashal'Aran's satyr seal and Gyromast's Revenge.
+- **Drops:** every drop quest has a sticky plus a real finish step you can skip. OPTIONAL: the Buzzbox chain
+  (four drop quests, about 4,100 XP, and its crawler legs drop rarely), For Love Eternal (Anaya is a rare),
+  WANTED: Jai'vhanel, Bashal'Aran's satyr seal and Gyromast's Revenge.
 - **Left out:** Easy Strider Living (Cooking 10), The Family and the Fishing Pole (Auction House fish), Tools of
   the Highborne, the Remtravel escort, and quests that end outside Darkshore: Therylune's Escape, The Tower of
   Althalaxx's third part, Mathystra Relics, A Lost Master's second part and The Powers Below.

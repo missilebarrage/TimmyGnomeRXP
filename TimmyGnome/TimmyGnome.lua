@@ -2554,24 +2554,24 @@ step << !Mage !Paladin
     .trainer >> Train your level 16 spells
 ]])
 
--- Darkshore from level 15, straight after the Hall of Thanes: the tram to Stormwind (Stormpike's Order on the
--- way), the Stormwind Harbor boat to Auberdine, and nearly every quest in the zone that's quick or pays well. It
--- follows RestedXP's Forever Darkshore route (its 14-16 and 16-19 guides) for a non-Night Elf, minus Easy Strider
--- Living (Cooking 10), The Family and the Fishing Pole (Auction House fish), Tools of the Highborne (RestedXP drops
--- it past 16), the escort for The Absent Minded Prospector, and the quests that end outside Darkshore: Therylune's
--- Escape and The Tower of Althalaxx's third part (Ashenvale), Mathystra Relics (its turn-in is back at Onu), A Lost
--- Master's second part and The Powers Below. For Love Eternal (Anaya is a rare), WANTED: Jai'vhanel, Bashal'Aran's
--- satyr seal and Gyromast's Revenge are OPTIONAL. Every drop quest has a sticky plus a real finish step you can
--- skip. The Hearthstone goes to Auberdine. Loops: south (crawlers, the bear trap, the furbolg camp), north
--- (threshers, the sunken lockboxes, Bashal'Aran, the red crystal), Ameth'Aran, north-east (the crystal again, the
--- Cliffspring River, the moonstalkers, the cave), the far south (bears, Onu's Master's Glaive chain, the Twilight
--- camp, Remtravel, Murkdeep, the beached creatures) and the far north-east (Den Mother, the Blackwood stores and
--- Xabraxxis, the Tower of Althalaxx, Gyromast), then a hearth back. No mage or paladin trainer here: level 16 and
--- 18 training waits for your next city. 1439 is Darkshore ("1439/1,y,x" are Kalimdor world coordinates), 1453
--- Stormwind City and 1455 Ironforge.
+-- Darkshore from level 15, straight after the Hall of Thanes: the tram to Stormwind (Stormpike's Order on the way),
+-- the Stormwind Harbor boat to Auberdine, and nearly every quest in the zone that's quick or pays well. It follows
+-- RestedXP's Forever Darkshore route (its 14-16 and 16-19 guides) for a non-Night Elf, minus Easy Strider Living
+-- (Cooking 10), The Family and the Fishing Pole (Auction House fish), Tools of the Highborne (RestedXP drops it past
+-- 16), the escort for The Absent Minded Prospector, and the quests that end outside Darkshore: Therylune's Escape
+-- and The Tower of Althalaxx's third part (Ashenvale), Mathystra Relics (its turn-in is back at Onu), A Lost
+-- Master's second part and The Powers Below. OPTIONAL: the Buzzbox chain (its crawler legs drop rarely), For Love
+-- Eternal (Anaya is a rare), WANTED: Jai'vhanel, Bashal'Aran's satyr seal and Gyromast's Revenge. Every drop quest
+-- has a sticky plus a real finish step you can skip. The Hearthstone goes to Auberdine. Loops: south (crawlers, the
+-- bear trap, the furbolg camp), north (threshers, the sunken lockboxes, Bashal'Aran, the red crystal), Ameth'Aran,
+-- north-east (the crystal again, the Cliffspring River, the moonstalkers, the cave), the far south (bears, Onu's
+-- Master's Glaive chain, the Twilight camp, Remtravel, Murkdeep, the beached creatures) and the far north-east (Den
+-- Mother, the Blackwood stores and Xabraxxis, the Tower of Althalaxx, Gyromast), then a hearth back. No mage or
+-- paladin trainer here: level 16 and 18 training waits for your next city. 1439 is Darkshore ("1439/1,y,x" are
+-- Kalimdor world coordinates), 1453 Stormwind City and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 1
+#version 2
 << Alliance
 #group TimmyGnome
 #name 15+ Darkshore
@@ -2626,6 +2626,7 @@ step
 step
     .goto 1439,36.976,44.135
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang Cranktoggle|r upstairs in the inn
+    >>|cRXP_WARN_OPTIONAL: Buzzbox 827 starts a chain of four drop quests (crawler legs, thresher eyes, moonstalker fangs, grizzled scalps), about 4,100 XP in all, and the crawler legs drop rarely. Skip this step to leave the whole chain out: its later steps skip themselves|r
     .accept 983 >> Accept Buzzbox 827
     .target Wizbang Cranktoggle
 step
@@ -2690,7 +2691,7 @@ step
 step
     #completewith BuzzBox827
     .isOnQuest 983
-    >>Kill |cRXP_ENEMY_Pygmy Tide Crawlers|r and |cRXP_ENEMY_Young Reef Crawlers|r on the beach. Loot them for |cRXP_LOOT_Crawler Legs|r
+    >>OPTIONAL Buzzbox chain: kill |cRXP_ENEMY_Pygmy Tide Crawlers|r and |cRXP_ENEMY_Young Reef Crawlers|r on the beach. Loot them for |cRXP_LOOT_Crawler Legs|r
     .complete 983,1 --Crawler Leg (6)
     .mob Pygmy Tide Crawler
     .mob Young Reef Crawler
@@ -2734,7 +2735,7 @@ step
     .goto 1439,35.902,47.145,60,0
     .goto 1439,35.759,45.455,60,0
     >>Finish the |cRXP_LOOT_Crawler Legs|r on the beach on the way back north
-    >>|cRXP_WARN_Some crawlers are gray to you: kill them anyway, the quest starts a chain|r
+    >>|cRXP_WARN_OPTIONAL: the legs drop rarely. Slow? Skip this step and abandon Buzzbox 827: the rest of the Buzzbox chain then skips itself. The gray crawlers drop legs too|r
     .complete 983,1 --Crawler Leg (6)
     .mob Pygmy Tide Crawler
     .mob Young Reef Crawler
@@ -2755,7 +2756,7 @@ step
 step
     #completewith ThresherEyes
     .isOnQuest 1001
-    >>Kill |cRXP_ENEMY_Darkshore Threshers|r in the water off the coast. Loot them for |cRXP_LOOT_Thresher Eyes|r
+    >>OPTIONAL Buzzbox chain: kill |cRXP_ENEMY_Darkshore Threshers|r in the water off the coast. Loot them for |cRXP_LOOT_Thresher Eyes|r
     .complete 1001,1 --Thresher Eye (3)
     .mob Darkshore Thresher
 step
@@ -2821,6 +2822,7 @@ step
     .goto 1439/1,602.66,6924.21,55,0
     .goto 1439/1,620.35,6768.76,55,0
     >>Finish the |cRXP_LOOT_Thresher Eyes|r on the |cRXP_ENEMY_Darkshore Threshers|r along this coast
+    >>|cRXP_WARN_OPTIONAL: slow? Skip this step and abandon Buzzbox 411: the rest of the Buzzbox chain then skips itself|r
     .complete 1001,1 --Thresher Eye (3)
     .mob Darkshore Thresher
 step
@@ -2836,7 +2838,7 @@ step
 step
     #completewith FangsFinish
     .isOnQuest 1002
-    >>Kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r as you go. Loot them for |cRXP_LOOT_Moonstalker Fangs|r
+    >>OPTIONAL Buzzbox chain: kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r as you go. Loot them for |cRXP_LOOT_Moonstalker Fangs|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker Runt
     .mob Moonstalker
@@ -3076,6 +3078,7 @@ step
     .goto 1439,53.049,27.983,60,0
     .goto 1439,53.629,26.054,60,0
     >>Finish the |cRXP_LOOT_Moonstalker Fangs|r on the |cRXP_ENEMY_Moonstalkers|r here
+    >>|cRXP_WARN_OPTIONAL: slow? Skip this step and abandon Buzzbox 323: the rest of the Buzzbox chain then skips itself|r
     .complete 1002,1 --Moonstalker Fang (6)
     .mob Moonstalker Runt
     .mob Moonstalker
@@ -3083,7 +3086,7 @@ step
     .isQuestComplete 1002
     .goto 1439,51.288,24.554
     >>Click |cRXP_PICK_Buzzbox 323|r by the river
-    >>|cRXP_WARN_Its next part wants Grizzled Scalps from the Grizzled Thistle Bears in the far south|r
+    >>|cRXP_WARN_Its last part, Buzzbox 525 (OPTIONAL), wants Grizzled Scalps from the Grizzled Thistle Bears in the far south: abandon it later if you'd rather not|r
     .turnin 1002 >> Turn in Buzzbox 323
     .accept 1003 >> Accept Buzzbox 525
 step
@@ -3162,7 +3165,7 @@ step
 step
     #completewith ScalpsFinish
     .isOnQuest 1003
-    >>Kill |cRXP_ENEMY_Grizzled Thistle Bears|r when you see them. Loot them for |cRXP_LOOT_Grizzled Scalps|r
+    >>OPTIONAL Buzzbox chain: kill |cRXP_ENEMY_Grizzled Thistle Bears|r when you see them. Loot them for |cRXP_LOOT_Grizzled Scalps|r
     >>|cRXP_WARN_Their Ravage knocks you down for 2 seconds|r
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
@@ -3228,7 +3231,7 @@ step
     .goto 1439/1,338.70,4821.22,50,0
     .goto 1439/1,452.67,4684.98
     >>Finish the |cRXP_LOOT_Grizzled Scalps|r on the |cRXP_ENEMY_Grizzled Thistle Bears|r south of Onu
-    >>|cRXP_WARN_Skip this step if they're taken|r
+    >>|cRXP_WARN_OPTIONAL: skip this step if they're taken or slow|r
     .complete 1003,1 --Grizzled Scalp (4)
     .mob Grizzled Thistle Bear
 step

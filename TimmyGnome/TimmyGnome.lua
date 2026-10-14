@@ -1007,7 +1007,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 29
+#version 30
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1521,6 +1521,9 @@ step << Mage
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r again: she's a mage trainer
     .train 145 >> Train your level 12 spells (Fireball rank 3, Dampen Magic)
     .target Jennea Cannon
+step << Dwarf Paladin
+    #completewith TomeLinen
+    +|cRXP_WARN_Keep 10 Linen Cloth for The Tome of Divinity, your level 12 class quest: at the end of Elwynn you fly to Ironforge for it, and John Turner takes the 10 linen. Don't sell or trade them|r
 step
     #completewith next
     .goto 1429/0,74.02,-9465.52
@@ -1730,6 +1733,7 @@ step << Dwarf Paladin
     .accept 1647 >> Accept The Tome of Divinity
     .target Tiza Battleforge
 step << Dwarf Paladin
+    #label TomeLinen
     .isOnQuest 1647
     #loop
     .line Ironforge,21.750,51.733,22.015,54.945,23.328,61.865,23.723,63.824,26.021,68.382,27.495,71.320,31.352,77.807,32.405,78.563,37.256,82.159,39.204,83.202,42.944,84.113

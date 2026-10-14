@@ -2571,7 +2571,7 @@ step << !Mage !Paladin
 -- Kalimdor world coordinates), 1453 Stormwind City and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 3
+#version 4
 << Alliance
 #group TimmyGnome
 #name 15+ Darkshore
@@ -3037,6 +3037,7 @@ step
     .isQuestComplete 4812
     .goto 1439,47.314,48.676
     >>Back east at the |cRXP_PICK_Mysterious Red Crystal|r, click it
+    >>|cRXP_WARN_Don't skip The Fragments Within: it rewards a +6 spell power staff|r << Mage
     .turnin 4812 >> Turn in As Water Cascades
     .accept 4813 >> Accept The Fragments Within
 step
@@ -3122,6 +3123,7 @@ step
     .isOnQuest 4813
     .goto 1439,37.703,43.393
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sentinel Glynda Nal'Shea|r
+    >>|cRXP_WARN_Don't skip this one: take the staff, +6 spell power|r << Mage
     .turnin 4813 >> Turn in The Fragments Within
     .target Sentinel Glynda Nal'Shea
 step

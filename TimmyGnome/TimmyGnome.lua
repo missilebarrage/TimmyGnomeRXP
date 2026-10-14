@@ -2538,7 +2538,7 @@ step << !Mage !Paladin
 -- Kalimdor world coordinates), 1453 Stormwind City and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 4
+#version 5
 << Alliance
 #group TimmyGnome
 #name 15+ Darkshore
@@ -3190,6 +3190,7 @@ step
     .goto 1439/1,409.44,4521.02,40,0
     >>Kill |cRXP_ENEMY_Twilight Disciples|r and |cRXP_ENEMY_Twilight Thugs|r around the camp. Loot them for the |cRXP_LOOT_Peerless Eye|r
     >>|cRXP_WARN_Interrupt or kill the Disciples first: they cast Renew and a 3 second Heal|r
+    >>|cRXP_WARN_The Peerless Eye drops rarely, and nothing else depends on this quest (about 1,250 XP). Slow? Skip this step and abandon It's All Fun and Games Until...|r
     .complete 98042,1 --Peerless Eye (1)
     .mob +Twilight Disciple
     .mob +Twilight Thug

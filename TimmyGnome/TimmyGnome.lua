@@ -2538,7 +2538,7 @@ step << !Mage !Paladin
 -- Kalimdor world coordinates), 1453 Stormwind City and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 5
+#version 6
 << Alliance
 #group TimmyGnome
 #name 15+ Darkshore
@@ -3233,6 +3233,7 @@ step
     .goto 1439,35.724,83.696
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Remtravel|r
     >>|cRXP_WARN_Don't take his escort: it's very hard and slow|r
+    >>|cRXP_WARN_Not here? Someone is escorting him, or he's respawning after an escort: wait a few minutes. Or skip this step, do Murkdeep next door and come back to hand it in|r
     .turnin 729 >> Turn in The Absent Minded Prospector
     .target Prospector Remtravel
 step

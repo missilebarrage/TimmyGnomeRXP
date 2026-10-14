@@ -1805,7 +1805,7 @@ step
 -- Morogh and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 14
+#version 15
 << Alliance
 #group TimmyGnome
 #name 12-14 Loch Modan
@@ -2311,6 +2311,12 @@ step << Mage
     >>|cRXP_WARN_Craft Linen Belts until 50 Tailoring and sell them: 15 from 35, so 15 bolts (30 linen) and 15|r |T132891:0|t[Coarse Thread] |cRXP_WARN_from|r |cRXP_FRIENDLY_Poranna Snowbraid|r |cRXP_WARN_next to Uthrar (10c each)|r
     >>|cRXP_WARN_Short on linen? Try the Auction House in the Commons. At 50 you can learn Gina's Pattern: Red Linen Bag|r
     .skill tailoring,50 >> Reach 50 Tailoring
+step << Mage
+    .goto 1455,43.82,27.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthrar Threx|r again
+    >>|cRXP_WARN_Journeyman raises your Tailoring cap from 75 to 150 so you can keep levelling it later. It needs 50 Tailoring and costs about 5 silver. If he won't teach it, try Jormund Stonebrow (Expert Tailor) next to him|r
+    .skill tailoring,150,max,1 >> Train Journeyman Tailoring
+    .target Uthrar Threx
 ]])
 
 -- Hall of Thanes, the 5-player dungeon under Ironforge, straight from the end of Loch Modan: bring three more

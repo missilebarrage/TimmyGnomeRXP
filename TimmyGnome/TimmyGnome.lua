@@ -1800,12 +1800,13 @@ step
 -- Defense of the King's Lands chain with a Dun Morogh detour (The Lost Pilot, the paladin's Narm Faulk); Snowbound
 -- from the South Gate to the dam (a 10 minute jar); Algaz Station; the excavation and Farstrider Lodge in the east;
 -- Ironforge to finish. Gathering quests a launch-day crowd makes slow are left out: Filthy Paws (mine crates),
--- Bingles' Missing Supplies, Crocolisk Hunting, Gathering Idols, Silver of the Waves and Thelsamar Blood Sausages.
--- Rat Catching, the two hardest trogg quests and Daryl's timed hunts are OPTIONAL. 1432 is Loch Modan, 1426 Dun
--- Morogh and 1455 Ironforge.
+-- Bingles' Missing Supplies, Crocolisk Hunting, Gathering Idols and Thelsamar Blood Sausages. Rat Catching, the two
+-- hardest trogg quests, Daryl's timed hunts and Silver of the Waves (from 13: a toolbox on the loch floor on the way
+-- east, handed in at Khara Deepwater on the way out) are OPTIONAL. 1432 is Loch Modan, 1426 Dun Morogh and 1455
+-- Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 15
+#version 16
 << Alliance
 #group TimmyGnome
 #name 12-14 Loch Modan
@@ -2138,8 +2139,22 @@ step
     .accept 436 >> Accept Ironband's Excavation
     .target Jern Hornhelm
 step
+    .xp <13,1
+    #loop
+    .goto 1432/0,-3319.80,-5217.60,0
+    .goto 1432/0,-3251.55,-5285.88,0
+    .goto 1432/0,-3342.57,-5484.55,0
+    .goto 1432/0,-3386.71,-5462.48,0
+    .goto 1432/0,-3319.80,-5217.60,20,0
+    .goto 1432/0,-3251.55,-5285.88,20,0
+    .goto 1432/0,-3342.57,-5484.55,20,0
+    .goto 1432/0,-3386.71,-5462.48,20,0
+    >>Swim east into the loch and click the |cRXP_PICK_Discarded Fishing Toolbox|r on the lake floor. It spawns in one of several spots: swim around until you see the exclamation point on your minimap
+    >>|cRXP_WARN_OPTIONAL: Silver of the Waves, a Forever quest you hand in at Thelsamar on the way out. It rewards some XP and the Repurposed Hair Band (cloth wrist, +2 Intellect, +2 Spirit). Skip this step if you'd rather take the road. Mind the Young Threshadons in the water: they're well above your level|r
+    .accept 86614 >> Accept Silver of the Waves
+step
     #completewith next
-    .goto 1432,64.9,66.66,40 >> Follow the road east around the loch to Ironband's Excavation
+    .goto 1432,64.9,66.66,40 >> Head east to Ironband's Excavation: along the road around the loch, or across from the water
 step
     .isOnQuest 436
     .goto 1432,64.9,66.66
@@ -2236,6 +2251,14 @@ step
     .turnin 298 >> Turn in Excavation Progress Report
     .accept 301 >> Accept Report to Ironforge
     .target Jern Hornhelm
+step
+    .isOnQuest 86614
+    .goto 1432/0,-3104.90,-5210.10,5,0
+    .goto 1432/0,-3086.60,-5216.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Khara Deepwater|r, the fishing supplies vendor on the west bank by the dock, north of the inn
+    >>|cRXP_WARN_She's the K.D. on the Monogrammed Silver Hair Clip|r
+    .turnin 86614 >> Turn in Silver of the Waves
+    .target Khara Deepwater
 -- Ironforge to finish: Report to Ironforge, the paladin's Tome of Divinity, and level 14 training if you're there.
 -- The mage's Camping 101: Enchanting goes in here. The paladin started The Tome of Divinity at the end of Elwynn.
 step

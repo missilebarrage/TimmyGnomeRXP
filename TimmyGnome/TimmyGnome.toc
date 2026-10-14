@@ -2,7 +2,7 @@
 ## Title: TimmyGnome
 ## Notes: RestedXP guide: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes and Darkshore, levels 1 to about 18. Needs RestedXP Guides.
 ## Author: Tim
-## Version: 1.20.6
+## Version: 1.20.7
 ## Dependencies: RXPGuides
 ## Category: Quests
 ## X-License: CC BY-NC-SA 4.0

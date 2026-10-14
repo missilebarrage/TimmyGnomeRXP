@@ -125,14 +125,16 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Algaz Station:** vendor and repair, Stormpike's Delivery and Mountaineer Stormpike's Task. Stormpike's Order
   goes to Furen Longbeard at the Stormwind tram whenever you're next there.
 - **East:** Ironband's Excavation (level 13) and Excavation Progress Report, then Daryl's timed hunts at the
-  Farstrider Lodge (OPTIONAL), and hearth back.
+  Farstrider Lodge (OPTIONAL), and hearth back. OPTIONAL from 13: Silver of the Waves, a toolbox on the loch floor
+  on the way east (it spawns in one of several spots), handed in at Khara Deepwater by the Thelsamar dock on the
+  way out. It rewards the Repurposed Hair Band (cloth wrist, +2 Intellect, +2 Spirit).
 - **Ironforge to finish:** Report to Ironforge, the paladin's last Tome of Divinity turn-ins, the mage's Camping
   101: Enchanting at Thonys Pillarstone, and level 14 training if you're there. Anyone who missed level 12
   training (the mage with Jennea, the paladin in Ironforge at the end of Elwynn) gets it here. Last, the mage
   trains Linen Belt from Uthrar Threx, crafts belts to 50 Tailoring (15 from 35, the cheapest way), then trains
   Journeyman Tailoring so the cap goes from 75 to 150.
 - **Skipped as too slow with a launch-day crowd:** Filthy Paws, Bingles' Missing Supplies, Crocolisk Hunting,
-  Gathering Idols, Silver of the Waves and Thelsamar Blood Sausages.
+  Gathering Idols and Thelsamar Blood Sausages.
 - **Where you end up:** about level 13 with only the core quests, close to 14 with every optional one.
 
 ### 14+ Hall of Thanes

@@ -1800,23 +1800,17 @@ step
 -- Defense of the King's Lands chain with a Dun Morogh detour (The Lost Pilot, the paladin's Narm Faulk); Snowbound
 -- from the South Gate to the dam (a 10 minute jar); Algaz Station; the excavation and Farstrider Lodge in the east;
 -- Ironforge to finish. Gathering quests a launch-day crowd makes slow are left out: Filthy Paws (mine crates),
--- Bingles' Missing Supplies, Crocolisk Hunting, Gathering Idols and Silver of the Waves. Rat Catching, Thelsamar
--- Blood Sausages, the two hardest trogg quests and Daryl's timed hunts are OPTIONAL. 1432 is Loch Modan, 1426 Dun
+-- Bingles' Missing Supplies, Crocolisk Hunting, Gathering Idols, Silver of the Waves and Thelsamar Blood Sausages.
+-- Rat Catching, the two hardest trogg quests and Daryl's timed hunts are OPTIONAL. 1432 is Loch Modan, 1426 Dun
 -- Morogh and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 13
+#version 14
 << Alliance
 #group TimmyGnome
 #name 12-14 Loch Modan
 #next 14+ Hall of Thanes
 
-step
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r in the inn
-    >>|cRXP_WARN_OPTIONAL (loot): 3 Bear Meat, 3 Boar Intestines and 3 Spider Ichor from the bears, boars and spiders all over Loch Modan. A sticky tracks them on the laps. Skip this step if you'd rather not|r
-    .accept 418 >> Accept Thelsamar Blood Sausages
-    .target Vidra Hearthstove
 step
     .goto 1432/0,-2973.90,-5377.93
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash to |cRXP_FRIENDLY_Innkeeper Hearthstove|r
@@ -1854,16 +1848,6 @@ step
     .target Mountaineer Kadrell
 -- In Defense of the King's Lands: four kill quests in a row from the southern guard tower, plus The Trogg Threat on
 -- the same troggs. The third and fourth are harder (level 15-17 troggs) and marked OPTIONAL.
-step
-    #completewith SausagePause
-    .isOnQuest 418
-    >>Kill |cRXP_ENEMY_Elder Black Bears|r, |cRXP_ENEMY_Mountain Boars|r and |cRXP_ENEMY_Forest Lurkers|r as you go for Thelsamar Blood Sausages
-    .collect 3173,3,418,1 --Bear Meat (3)
-    .mob +Elder Black Bear
-    .collect 3172,3,418,1 --Boar Intestines (3)
-    .mob +Mountain Boar
-    .collect 3174,3,418,1 --Spider Ichor (3)
-    .mob +Forest Lurker
 step
     #completewith next
     .goto 1432,34.405,48.276,30,0
@@ -2002,7 +1986,6 @@ step
     .target Captain Rugelfuss
 -- Dun Morogh detour through the South Gate Pass: The Lost Pilot, and the paladin's Narm Faulk.
 step
-    #label SausagePause
     #completewith next
     .goto 1432,21.498,67.840,20,0
     .goto 1432,21.388,66.357,20,0
@@ -2070,19 +2053,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Norric Lochthane|r at the Stonewrought Dam before the snow melts
     .turnin 86667 >> Turn in Snowbound
     .target Norric Lochthane
-step
-    #completewith SausageFinish
-    .isOnQuest 418
-    >>Kill bears, boars and spiders as you go for Thelsamar Blood Sausages: |cRXP_ENEMY_Elder Black Bears|r, |cRXP_ENEMY_Mountain Boars|r and |cRXP_ENEMY_Forest Lurkers|r in the west, their |cRXP_ENEMY_Grizzled|r, |cRXP_ENEMY_Mangy|r and |cRXP_ENEMY_Cliff|r cousins in the east
-    .collect 3173,3,418,1 --Bear Meat (3)
-    .mob +Elder Black Bear
-    .mob +Grizzled Black Bear
-    .collect 3172,3,418,1 --Boar Intestines (3)
-    .mob +Mountain Boar
-    .mob +Mangy Mountain Boar
-    .collect 3174,3,418,1 --Spider Ichor (3)
-    .mob +Forest Lurker
-    .mob +Cliff Lurker
 step << Paladin
     .goto 1432/0,-3176.16,-4669.34
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nillen Andemar|r north of the dam
@@ -2155,12 +2125,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r on the road
     .turnin 416 >> Turn in Rat Catching
     .target Mountaineer Kadrell
-step
-    .isQuestComplete 418
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r in the inn
-    .turnin 418 >> Turn in Thelsamar Blood Sausages
-    .target Vidra Hearthstove
 step
     .goto 1432,34.02,46.54
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash and repair at |cRXP_FRIENDLY_Morhan Coppertongue|r
@@ -2266,36 +2230,6 @@ step
     #completewith next
     .goto 1432,34.405,48.276
     .subzone 144 >> Head back to Thelsamar
-step
-    #label SausageFinish
-    .isOnQuest 418
-    #loop
-    .goto 1432,33.4,30.1,0
-    .goto 1432,38.2,36.6,0
-    .goto 1432,29.4,40.3,0
-    .goto 1432,33.4,30.1,40,0
-    .goto 1432,37.2,32.8,40,0
-    .goto 1432,38.2,36.6,40,0
-    .goto 1432,34.8,36.4,40,0
-    .goto 1432,33.8,40.7,40,0
-    .goto 1432,29.4,40.3,40,0
-    .goto 1432,29.5,35.0,40,0
-    .goto 1432,29.0,31.0,40,0
-    >>Finish the Thelsamar Blood Sausages items in the woods north-west of Thelsamar: |cRXP_ENEMY_Elder Black Bears|r for Bear Meat, |cRXP_ENEMY_Mountain Boars|r for Boar Intestines and |cRXP_ENEMY_Forest Lurkers|r for Spider Ichor
-    >>|cRXP_WARN_OPTIONAL: if it's crowded, skip this step and abandon the quest: this is its last chance|r
-    .collect 3173,3,418,1 --Bear Meat (3)
-    .mob +Elder Black Bear
-    .collect 3172,3,418,1 --Boar Intestines (3)
-    .mob +Mountain Boar
-    .collect 3174,3,418,1 --Spider Ichor (3)
-    .mob +Forest Lurker
-step
-    #label SausageTurnin
-    .isQuestComplete 418
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r in the inn
-    .turnin 418 >> Turn in Thelsamar Blood Sausages
-    .target Vidra Hearthstove
 step
     .goto 1432,37.24,47.38
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jern Hornhelm|r

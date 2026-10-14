@@ -116,9 +116,7 @@ To update, download the zip again and replace the TimmyGnome folder.
 ### 12-14 Loch Modan
 
 - **Thelsamar** (you hearth in): Return to Brock, Snowbound, Mountaineer Stormpike's Task, and a vendor stop.
-  Both gathering quests are OPTIONAL: Thelsamar Blood Sausages (a sticky collects its bear, boar and spider drops
-  on every Loch Modan lap, with a second turn-in chance at the end) and Rat Catching (on the trip back from Algaz
-  Station).
+  Rat Catching is OPTIONAL (its kobolds are on the trip back from Algaz Station).
 - **Southern guard tower:** In Defense of the King's Lands four times over, plus The Trogg Threat on the same troggs.
   The third and fourth (level 15-17 troggs and Grawmug) are OPTIONAL.
 - **Dun Morogh detour:** The Lost Pilot and Mangeclaw. Paladins raise Narm Faulk and take the Dark Iron Script.
@@ -133,7 +131,7 @@ To update, download the zip again and replace the TimmyGnome folder.
   training (the mage with Jennea, the paladin in Ironforge at the end of Elwynn) gets it here. Last, the mage
   trains Linen Belt from Uthrar Threx and crafts belts to 50 Tailoring (15 from 35, the cheapest way).
 - **Skipped as too slow with a launch-day crowd:** Filthy Paws, Bingles' Missing Supplies, Crocolisk Hunting,
-  Gathering Idols and Silver of the Waves.
+  Gathering Idols, Silver of the Waves and Thelsamar Blood Sausages.
 - **Where you end up:** about level 13 with only the core quests, close to 14 with every optional one.
 
 ### 14+ Hall of Thanes

@@ -117,8 +117,8 @@ To update, download the zip again and replace the TimmyGnome folder.
 
 - **Thelsamar** (you hearth in): Return to Brock, Snowbound, Mountaineer Stormpike's Task, and a vendor stop.
   Rat Catching is OPTIONAL (its kobolds are on the trip back from Algaz Station).
-- **Southern guard tower:** In Defense of the King's Lands four times over, plus The Trogg Threat on the same troggs.
-  The third and fourth (level 15-17 troggs and Grawmug) are OPTIONAL.
+- **Southern guard tower:** the first two In Defense of the King's Lands quests, plus The Trogg Threat on the same
+  troggs. The third and fourth (level 15-17 troggs and Grawmug) wait for the end of the guide.
 - **Dun Morogh detour:** The Lost Pilot and Mangeclaw. Paladins raise Narm Faulk and take the Dark Iron Script.
 - **Snowbound:** fill the jar just outside the South Gate Pass, then 10 minutes to Norric Lochthane at the dam.
   Paladins can buy a mace from Nillen Andemar there.
@@ -128,6 +128,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   Farstrider Lodge (OPTIONAL), and hearth back. OPTIONAL from 13: Silver of the Waves, a toolbox on the loch floor
   on the way east (it spawns in one of several spots), handed in at Khara Deepwater by the Thelsamar dock on the
   way out. It rewards the Repurposed Hair Band (cloth wrist, +2 Intellect, +2 Spirit).
+- **Back to the guard tower (OPTIONAL):** In Defense of the King's Lands parts three and four, now that you're
+  stronger (14 or higher is best), then back to Thelsamar for the flight.
 - **Ironforge to finish:** Report to Ironforge, the paladin's last Tome of Divinity turn-ins, the mage's Camping
   101: Enchanting at Thonys Pillarstone, and level 14 training if you're there. Anyone who missed level 12
   training (the mage with Jennea, the paladin in Ironforge at the end of Elwynn) gets it here. Last, the mage

@@ -1801,12 +1801,12 @@ step
 -- from the South Gate to the dam (a 10 minute jar); Algaz Station; the excavation and Farstrider Lodge in the east;
 -- Ironforge to finish. Gathering quests a launch-day crowd makes slow are left out: Filthy Paws (mine crates),
 -- Bingles' Missing Supplies, Crocolisk Hunting, Gathering Idols and Thelsamar Blood Sausages. Rat Catching, the two
--- hardest trogg quests, Daryl's timed hunts and Silver of the Waves (from 13: a toolbox on the loch floor on the way
+-- hardest trogg quests (at the end, when you're stronger), Daryl's timed hunts and Silver of the Waves (from 13: a toolbox on the loch floor on the way
 -- east, handed in at Khara Deepwater on the way out) are OPTIONAL. 1432 is Loch Modan, 1426 Dun Morogh and 1455
 -- Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 16
+#version 17
 << Alliance
 #group TimmyGnome
 #name 12-14 Loch Modan
@@ -1847,8 +1847,9 @@ step
     >>|cRXP_WARN_OPTIONAL (loot): 12 Tunnel Rat Ears from the kobolds in the hills between Algaz Station and Thelsamar. Skip this step if you'd rather not|r
     .accept 416 >> Accept Rat Catching
     .target Mountaineer Kadrell
--- In Defense of the King's Lands: four kill quests in a row from the southern guard tower, plus The Trogg Threat on
--- the same troggs. The third and fourth are harder (level 15-17 troggs) and marked OPTIONAL.
+-- In Defense of the King's Lands: the first two kill quests from the southern guard tower, plus The Trogg Threat on
+-- the same troggs. The third and fourth are harder (level 15-17 troggs) and OPTIONAL: they come at the end of the
+-- guide, when you're stronger.
 step
     #completewith next
     .goto 1432,34.405,48.276,30,0
@@ -1932,59 +1933,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Gravelgaw|r
     .turnin 237 >> Turn in In Defense of the King's Lands
     .target Mountaineer Gravelgaw
-step
-    .goto 1432,23.47,74.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Wallbang|r
-    >>|cRXP_WARN_OPTIONAL: level 15-16 troggs at the far end of the valley, a fair step up. Skip this step to leave it|r
-    .accept 263 >> Accept In Defense of the King's Lands
-    .target Mountaineer Wallbang
-step
-    .isOnQuest 263
-    #loop
-    .goto 1432,34.6,94.4,0
-    .goto 1432,37.3,92.4,0
-    .goto 1432,38.0,87.4,0
-    .goto 1432,33.4,91.0,35,0
-    .goto 1432,34.6,94.4,35,0
-    .goto 1432,36.2,94.0,35,0
-    .goto 1432,37.3,92.4,35,0
-    .goto 1432,37.5,90.1,35,0
-    .goto 1432,38.0,87.4,35,0
-    .goto 1432,36.2,91.0,35,0
-    >>Kill |cRXP_ENEMY_Stonesplinter Shamans|r and |cRXP_ENEMY_Stonesplinter Bonesnappers|r at the far end of the valley
-    .complete 263,1 --Stonesplinter Shaman (10)
-    .mob +Stonesplinter Shaman
-    .complete 263,2 --Stonesplinter Bonesnapper (10)
-    .mob +Stonesplinter Bonesnapper
-step
-    .isQuestComplete 263
-    .goto 1432,23.47,74.51
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Wallbang|r
-    .turnin 263 >> Turn in In Defense of the King's Lands
-    .target Mountaineer Wallbang
-step
-    .isQuestTurnedIn 263
-    .goto 1432/0,-2634.59,-5842.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r on the top floor
-    >>|cRXP_WARN_OPTIONAL: Grawmug (level 17) and his two guards (16) fight together. Best at 13 or higher. Skip this step to leave it|r
-    .accept 217 >> Accept In Defense of the King's Lands
-    .target Captain Rugelfuss
-step
-    .isOnQuest 217
-    .goto 1432,34.77,90.45
-    >>Kill |cRXP_ENEMY_Grawmug|r, |cRXP_ENEMY_Gnasher|r and |cRXP_ENEMY_Brawler|r at the far end of the valley. Clear the troggs around them first
-    .complete 217,1 --Grawmug
-    .mob +Grawmug
-    .complete 217,2 --Gnasher
-    .mob +Gnasher
-    .complete 217,3 --Brawler
-    .mob +Brawler
-step
-    .isQuestComplete 217
-    .goto 1432/0,-2634.59,-5842.81
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r on the top floor
-    .turnin 217 >> Turn in In Defense of the King's Lands
-    .target Captain Rugelfuss
 -- Dun Morogh detour through the South Gate Pass: The Lost Pilot, and the paladin's Narm Faulk.
 step
     #completewith next
@@ -2259,6 +2207,71 @@ step
     >>|cRXP_WARN_She's the K.D. on the Monogrammed Silver Hair Clip|r
     .turnin 86614 >> Turn in Silver of the Waves
     .target Khara Deepwater
+-- Back to the southern guard tower for the last two In Defense of the King's Lands quests, now that you're stronger
+-- (both OPTIONAL), then back to Thelsamar for the flight.
+step
+    #completewith next
+    .goto 1432,34.405,48.276,30,0
+    .goto 1432,27.501,65.367,30,0
+    .goto 1432,23.522,70.102,30 >> Head south-west to the southern guard tower
+step
+    .goto 1432,23.47,74.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Wallbang|r
+    >>|cRXP_WARN_OPTIONAL: level 15-16 troggs at the far end of the valley. You're back for them now that you're stronger (14 or higher is best). Skip this step to leave them|r
+    .accept 263 >> Accept In Defense of the King's Lands
+    .target Mountaineer Wallbang
+step
+    .isOnQuest 263
+    #loop
+    .goto 1432,34.6,94.4,0
+    .goto 1432,37.3,92.4,0
+    .goto 1432,38.0,87.4,0
+    .goto 1432,33.4,91.0,35,0
+    .goto 1432,34.6,94.4,35,0
+    .goto 1432,36.2,94.0,35,0
+    .goto 1432,37.3,92.4,35,0
+    .goto 1432,37.5,90.1,35,0
+    .goto 1432,38.0,87.4,35,0
+    .goto 1432,36.2,91.0,35,0
+    >>Kill |cRXP_ENEMY_Stonesplinter Shamans|r and |cRXP_ENEMY_Stonesplinter Bonesnappers|r at the far end of the valley
+    .complete 263,1 --Stonesplinter Shaman (10)
+    .mob +Stonesplinter Shaman
+    .complete 263,2 --Stonesplinter Bonesnapper (10)
+    .mob +Stonesplinter Bonesnapper
+step
+    .isQuestComplete 263
+    .goto 1432,23.47,74.51
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Wallbang|r
+    .turnin 263 >> Turn in In Defense of the King's Lands
+    .target Mountaineer Wallbang
+step
+    .isQuestTurnedIn 263
+    .goto 1432/0,-2634.59,-5842.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r on the top floor
+    >>|cRXP_WARN_OPTIONAL: Grawmug (level 17) and his two guards (16) fight together. Best at 14 or higher. Skip this step to leave it|r
+    .accept 217 >> Accept In Defense of the King's Lands
+    .target Captain Rugelfuss
+step
+    .isOnQuest 217
+    .goto 1432,34.77,90.45
+    >>Kill |cRXP_ENEMY_Grawmug|r, |cRXP_ENEMY_Gnasher|r and |cRXP_ENEMY_Brawler|r at the far end of the valley. Clear the troggs around them first
+    .complete 217,1 --Grawmug
+    .mob +Grawmug
+    .complete 217,2 --Gnasher
+    .mob +Gnasher
+    .complete 217,3 --Brawler
+    .mob +Brawler
+step
+    .isQuestComplete 217
+    .goto 1432/0,-2634.59,-5842.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r on the top floor
+    .turnin 217 >> Turn in In Defense of the King's Lands
+    .target Captain Rugelfuss
+step
+    #completewith next
+    .goto 1432,27.501,65.367,30,0
+    .goto 1432,34.405,48.276,30,0
+    .subzone 144 >> Head back north to Thelsamar
 -- Ironforge to finish: Report to Ironforge, the paladin's Tome of Divinity, and level 14 training if you're there.
 -- The mage's Camping 101: Enchanting goes in here. The paladin started The Tome of Divinity at the end of Elwynn.
 step

@@ -202,7 +202,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   Jonathan in the Valley of Heroes. The mage takes the Monstrous Cleaver and the Remembrance Armor to sell; the
   paladin takes the Grave Shroud and the Remembrance Armor.
 - **For the next guide:** Stormwind also picks up its Deadmines quests: Underground Assault (Shoni the Shilent),
-  Oh Brother. . . and Collecting Memories (Wilder Thistlenettle).
+  Oh Brother. . . and Collecting Memories (Wilder Thistlenettle), and the paladin's Tome of Valor from Duthorian
+  Rall if you're 20.
 - **Training:** levels 16 and 18 in Stormwind (Jennea Cannon in the Wizard's Sanctum, Arthur the Faithful in the
   Cathedral), and 20 if you're there.
 - **Where you end up:** about 19.5-20 for a duo coming from Darkshore at 18.5.
@@ -210,22 +211,23 @@ To update, download the zip again and replace the TimmyGnome folder.
 ### 19+ Westfall and Deadmines
 
 - **Only the Deadmines and what leads to it:** Red Leather Bandanas, Patrolling Westfall (gnoll paws), the Defias
-  Brotherhood chain and Red Silk Bandanas. No other Westfall quests.
+  Brotherhood chain and Red Silk Bandanas, plus the paladin's Tome of Valor. No other Westfall quests.
 - **Hearthstone:** set at Sentinel Hill. You hearth back from Lakeshire and again after the Deadmines.
-- **The chain's errands:** Lakeshire for Wiley the Black, then Stormwind for Master Mathias Shaw in SI:7 and level
-  20 training if you're there.
+- **The chain's errands:** Lakeshire for Wiley the Black, then Stormwind for Master Mathias Shaw in SI:7, level 20
+  training if you're there, and the paladin's Tome of Valor if the Ruins guide didn't give it.
 - **One loop from Sentinel Hill:** the Defias Trappers and Smugglers just west of it for bandanas, the Riverpaw
   camp halfway to Moonbrook for the paws (its Brutes and Bandits still give XP; the gnolls in the north don't),
-  then Moonbrook for the Defias Messenger and the rest of the bandanas. Then The Defias Traitor's escort to
-  Moonbrook, and back for The Defias Brotherhood's last part and Red Silk Bandanas.
+  then Moonbrook for the Defias Messenger and the rest of the bandanas, and for the paladin Daphne Stilwell's
+  defence south of Moonbrook. Then The Defias Traitor's escort to Moonbrook, and back for The Defias
+  Brotherhood's last part and Red Silk Bandanas.
 - **The Deadmines:** find three more players. Foreman Thistlenettle (Oh Brother. . .) and Collecting Memories'
   cards are in the tunnel before the instance; Collecting Memories is OPTIONAL, since RestedXP calls it slow, with
   no dungeon bonus. Sneed's Shredder (Underground Assault) and Edwin VanCleef (his head and An Unsent Letter) are
   inside. Stickies track the bandanas, and the boss tips include the loot worth rolling on.
-- **Turn-ins:** Sentinel Hill after the Deadmines, then Stormwind: Wilder Thistlenettle, Shoni the Shilent and Baros
-  Alexston. Level 20 and 22 training if you're there.
+- **Turn-ins:** Sentinel Hill after the Deadmines, then Stormwind: Wilder Thistlenettle, Shoni the Shilent, Baros
+  Alexston and, for the paladin, Duthorian Rall. Level 20 and 22 training if you're there.
 - **Where you end up:** about 20.5 for a duo coming from the Ruins of Lordaeron at 19.5, a little more if some
-  Deadmines quests pay the dungeon bonus.
+  Deadmines quests pay the dungeon bonus. The paladin's Tome of Valor adds about 5,800 XP.
 
 ## Credits and license
 

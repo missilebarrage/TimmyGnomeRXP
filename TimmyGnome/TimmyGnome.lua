@@ -3357,13 +3357,14 @@ step
 -- for PvP. The Hearthstone stays in Auberdine from Darkshore: after the dungeon you hearth there and take the boat
 -- to Stormwind for the other three turn-ins and your level 16, 18 and 20 training (Hearthstone on cooldown? Run back
 -- to Southshore and fly). Stormwind also picks up the next guide's Deadmines quests: Underground Assault (Shoni the
--- Shilent), Oh Brother. . . and Collecting Memories (Wilder Thistlenettle). The way in, the inside steps and the
--- turn-in coordinates follow RestedXP's Forever "16-18 Ruins of Lordaeron" (its Dungeon Guide, in beta); the boss
--- order and the Crest's five spots come from community guides. 1439 is Darkshore, 1437 Wetlands, 1424 Hillsbrad
--- Foothills, 1416 Alterac Mountains, 1420 Tirisfal Glades, 1458 Undercity and 1453 Stormwind City.
+-- Shilent), Oh Brother. . . and Collecting Memories (Wilder Thistlenettle), and the paladin's Tome of Valor if
+-- you're 20. The way in, the inside steps and the turn-in coordinates follow RestedXP's Forever "16-18 Ruins of
+-- Lordaeron" (its Dungeon Guide, in beta); the boss order and the Crest's five spots come from community guides.
+-- 1439 is Darkshore, 1437 Wetlands, 1424 Hillsbrad Foothills, 1416 Alterac Mountains, 1420 Tirisfal Glades, 1458
+-- Undercity and 1453 Stormwind City.
 RXPGuides.RegisterGuide([[
 #forever
-#version 5
+#version 6
 << Alliance
 #group TimmyGnome
 #name 18+ Ruins of Lordaeron
@@ -3527,6 +3528,22 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 20? Train those too while you're here
     .train 19750 >> Train your level 20 spells (Flash of Light, Exorcism, Devotion Aura rank 3 and more)
     .target Arthur the Faithful
+step << Paladin
+    .xp <20,1
+    .goto 1453/0,845.95,-8545.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 20? Talk to |cRXP_FRIENDLY_Duthorian Rall|r in the Cathedral: he gives you the Tome of Valor, your level 20 class quest
+    >>|cRXP_WARN_It sends you to Daphne Stilwell in Westfall, in the next guide. Not 20 yet? The next guide offers it on its Stormwind stop|r
+    .use 6776 >> |cRXP_WARN_Use the|r |T133739:0|t[|cRXP_LOOT_Tome of Valor|r] |cRXP_WARN_to start the quest|r
+    .collect 6776,1,1649 --Tome of Valor (1)
+    .accept 1649 >> Accept The Tome of Valor
+    .target Duthorian Rall
+step << Paladin
+    .isOnQuest 1649
+    .goto 1453/0,845.95,-8545.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r again
+    .turnin 1649 >> Turn in The Tome of Valor
+    .accept 1650 >> Accept The Tome of Valor
+    .target Duthorian Rall
 step
     .isOnQuest 92415
     .goto 1453/0,744.400,-8621.101
@@ -3610,21 +3627,22 @@ step << !Mage !Paladin
 
 -- Westfall and the Deadmines from level 19, straight after the Ruins of Lordaeron, which picked up Underground
 -- Assault, Oh Brother. . . and Collecting Memories in Stormwind. Only the Deadmines quests and what's on the way to
--- them (user's call): Red Leather Bandanas, Patrolling Westfall, the Defias Brotherhood chain and Red Silk Bandanas.
--- The Hearthstone moves to Sentinel Hill: you hearth back from Lakeshire and again after the Deadmines. Lakeshire
--- for Wiley the Black, then Stormwind for Master Mathias Shaw and level 20 training; then one loop from Sentinel
--- Hill: the Defias Trappers and Smugglers just west of it for bandanas, the Riverpaw camp halfway to Moonbrook for
--- gnoll paws (its Brutes and Bandits still give XP; the gnolls in the north don't), and Moonbrook for the Defias
--- Messenger and the rest of the bandanas. Then The Defias Traitor's escort and the Deadmines with three more
--- players: Foreman Thistlenettle and Collecting Memories' cards are in the tunnel before the instance (RestedXP
--- calls Collecting Memories slow, with no dungeon bonus: OPTIONAL), Sneed and Edwin VanCleef inside. Then Stormwind
--- for the last turn-ins and training. The Defias Brotherhood chain, the Deadmines steps and most coordinates follow
+-- them (user's call): Red Leather Bandanas, Patrolling Westfall, the Defias Brotherhood chain and Red Silk Bandanas,
+-- plus the paladin's Tome of Valor. The Hearthstone moves to Sentinel Hill: you hearth back from Lakeshire and again
+-- after the Deadmines. Lakeshire for Wiley the Black, then Stormwind for Master Mathias Shaw, level 20 training and
+-- the Tome of Valor; then one loop from Sentinel Hill: the Defias Trappers and Smugglers just west of it for
+-- bandanas, the Riverpaw camp halfway to Moonbrook for gnoll paws (its Brutes and Bandits still give XP; the gnolls
+-- in the north don't), Moonbrook for the Defias Messenger and the rest of the bandanas, and for the paladin Daphne
+-- Stilwell's defence south of Moonbrook. Then The Defias Traitor's escort and the Deadmines with three more players:
+-- Foreman Thistlenettle and Collecting Memories' cards are in the tunnel before the instance (RestedXP calls
+-- Collecting Memories slow, with no dungeon bonus: OPTIONAL), Sneed and Edwin VanCleef inside. Then Stormwind for
+-- the last turn-ins and training. The Defias Brotherhood chain, the Deadmines steps and most coordinates follow
 -- RestedXP's Forever "18-20 Deadmines" and "13-15 Westfall"; mob spots come from Questie's Forever data. 1436 is
 -- Westfall, 1433 Redridge Mountains, 1453 Stormwind City and 1415 the Eastern Kingdoms map (the tunnel before the
 -- Deadmines).
 RXPGuides.RegisterGuide([[
 #forever
-#version 2
+#version 3
 << Alliance
 #group TimmyGnome
 #name 19+ Westfall and Deadmines
@@ -3710,7 +3728,23 @@ step
 step << Paladin
     #completewith next
     .xp <20,1
-    .goto 1453/0,809.52,-8579.22,20 >> Already 20? Go to the Cathedral of Light to train
+    .goto 1453/0,809.52,-8579.22,20 >> Already 20? Go to the Cathedral of Light for your class quest and training
+step << Paladin
+    .xp <20,1
+    .goto 1453/0,845.95,-8545.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r: he gives you the Tome of Valor, your level 20 class quest
+    >>|cRXP_WARN_It sends you to Daphne Stilwell, south of Moonbrook, on the next loop|r
+    .use 6776 >> |cRXP_WARN_Use the|r |T133739:0|t[|cRXP_LOOT_Tome of Valor|r] |cRXP_WARN_to start the quest|r
+    .collect 6776,1,1649 --Tome of Valor (1)
+    .accept 1649 >> Accept The Tome of Valor
+    .target Duthorian Rall
+step << Paladin
+    .isOnQuest 1649
+    .goto 1453/0,845.95,-8545.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r again
+    .turnin 1649 >> Turn in The Tome of Valor
+    .accept 1650 >> Accept The Tome of Valor
+    .target Duthorian Rall
 step << Paladin
     .xp <20,1
     .goto 1453/0,859.13,-8559.14,10,0
@@ -3806,12 +3840,28 @@ step
     .goto 1436,43.3,70.8,40,0
     >>Finish the |cRXP_LOOT_Red Leather Bandanas|r on the |cRXP_ENEMY_Defias Pillagers|r and |cRXP_ENEMY_Defias Looters|r in Moonbrook
     >>|cRXP_WARN_The Deadmines are under Moonbrook: you come back with your group|r
+    >>|cRXP_WARN_Playing with a paladin? Their class quest has a fight at Daphne Stilwell's farmhouse south of Moonbrook next: go with them and help|r << Mage
     .complete 153,1 --Red Leather Bandana (15)
     .mob Defias Pillager
     .mob Defias Looter
+step << Paladin
+    .isOnQuest 1650
+    .goto 1436,41.7,89.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo south from Moonbrook to |cRXP_FRIENDLY_Daphne Stilwell|r's farmhouse and talk to her
+    .turnin 1650 >> Turn in The Tome of Valor
+    .target Daphne Stilwell
+step << Paladin
+    .isQuestTurnedIn 1650
+    .goto 1436,41.7,89.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daphne Stilwell|r again to start the attack: three waves of Defias come for her house. Keep her alive and stay alive yourself; your partner can help
+    >>|cRXP_WARN_Failed? Abandon the quest and take it from her again|r
+    .accept 1651 >> Accept The Tome of Valor
+    .turnin 1651 >> Turn in The Tome of Valor
+    .accept 1652 >> Accept The Tome of Valor
+    .target Daphne Stilwell
 step
     .goto 1436/0,1045.12,-10508.80
-    .subzone 108 >> Go back north-east to Sentinel Hill
+    .subzone 108 >> Go back north to Sentinel Hill
 step
     .isQuestComplete 153
     .goto 1436/0,1126.67,-10636.670
@@ -3986,8 +4036,14 @@ step
     .target Baros Alexston
 step << Paladin
     #completewith next
-    .xp <20,1
     .goto 1453/0,809.52,-8579.22,20 >> Go into the Cathedral of Light
+step << Paladin
+    .isOnQuest 1652
+    .goto 1453/0,845.95,-8545.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    >>|cRXP_WARN_His next quest, The Test of Righteousness, needs parts from dungeons you haven't done yet: leave it for now|r
+    .turnin 1652 >> Turn in The Tome of Valor
+    .target Duthorian Rall
 step << Paladin
     .xp <20,1
     .goto 1453/0,859.13,-8559.14,10,0

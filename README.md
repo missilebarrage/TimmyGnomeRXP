@@ -2,9 +2,9 @@
 
 A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
 Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes, Darkshore, the
-Ruins of Lordaeron, Westfall and the Deadmines, levels 1 to about 21, made for playing as a duo (the dungeons need
-three more players). From the Hall of Thanes on, guides are named by the level you start them at, like **14+**:
-where a duo ends up is hard to predict.
+Ruins of Lordaeron and the Deadmines, levels 1 to about 21, made for playing as a duo (the dungeons need three
+more players). From the Hall of Thanes on, guides are named by the level you start them at, like **14+**: where a
+duo ends up is hard to predict.
 
 ## Install
 
@@ -16,7 +16,7 @@ You need RestedXP Guides installed.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
    **5-10 Dun Morogh**, **10-12 Elwynn Forest**, **12-14 Loch Modan**, **14+ Hall of Thanes**,
-   **15+ Darkshore**, **18+ Ruins of Lordaeron** and **19+ Westfall and Deadmines** by itself.
+   **15+ Darkshore**, **18+ Ruins of Lordaeron** and **20+ The Deadmines** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
@@ -208,28 +208,25 @@ To update, download the zip again and replace the TimmyGnome folder.
   Cathedral), and 20 if you're there.
 - **Where you end up:** about 19.5-20 for a duo coming from Darkshore at 18.5.
 
-### 19+ Westfall and Deadmines
+### 20+ The Deadmines
 
-- **Only the Deadmines and what leads to it:** Red Leather Bandanas and the first People's Militia (the same
-  camp), Patrolling Westfall (gnoll paws), the Defias Brotherhood chain and Red Silk Bandanas, plus the paladin's
-  Tome of Valor. No other Westfall quests.
+- **Streamlined for launch day:** the Deadmines, the Defias Brotherhood chain that unlocks its last quest, Red Silk
+  Bandanas, and Patrolling Westfall at the gnoll camp on the way to Moonbrook, plus the paladin's Tome of Valor. No
+  other Westfall quests.
 - **Hearthstone:** set at Sentinel Hill. You hearth back from Lakeshire and again after the Deadmines.
 - **The chain's errands:** Lakeshire for Wiley the Black, then Stormwind for Master Mathias Shaw in SI:7, level 20
   training if you're there, and the paladin's Tome of Valor if the Ruins guide didn't give it.
-- **One loop from Sentinel Hill:** the Defias Trapper and Smuggler camp just west of it (47.8, 46.1) for The
-  People's Militia and the bandanas together, the Riverpaw camp halfway to Moonbrook for the paws (its Brutes and
-  Bandits still give XP; the gnolls in the north don't), then Moonbrook for the Defias Messenger and any bandanas
-  still missing, and for the paladin Daphne Stilwell's
-  defence south of Moonbrook. Then The Defias Traitor's escort to Moonbrook, and back for The Defias
-  Brotherhood's last part and Red Silk Bandanas.
+- **One trip south:** the Riverpaw camp halfway to Moonbrook for the paws (its Brutes and Bandits still give XP),
+  Moonbrook for the Defias Messenger, and for the paladin Daphne Stilwell's defence south of Moonbrook. Then The
+  Defias Traitor's escort to Moonbrook, and back for The Defias Brotherhood's last part and Red Silk Bandanas.
 - **The Deadmines:** find three more players. Foreman Thistlenettle (Oh Brother. . .) and Collecting Memories'
   cards are in the tunnel before the instance; Collecting Memories is OPTIONAL, since RestedXP calls it slow, with
   no dungeon bonus. Sneed's Shredder (Underground Assault) and Edwin VanCleef (his head and An Unsent Letter) are
-  inside. Stickies track the bandanas, and the boss tips include the loot worth rolling on.
+  inside. Stickies track the Red Silk Bandanas, and the boss tips include the loot worth rolling on.
 - **Turn-ins:** Sentinel Hill after the Deadmines, then Stormwind: Wilder Thistlenettle, Shoni the Shilent, Baros
   Alexston and, for the paladin, Duthorian Rall. Level 20 and 22 training if you're there.
-- **Where you end up:** about 20.5 for a duo coming from the Ruins of Lordaeron at 19.5, a little more if some
-  Deadmines quests pay the dungeon bonus. The paladin's Tome of Valor adds about 5,800 XP.
+- **Where you end up:** a little over 20.5 for a duo coming from the Ruins of Lordaeron at 19.5, or about 21 if
+  some Deadmines quests pay the dungeon bonus. The paladin's Tome of Valor adds about 5,800 XP.
 
 ## Credits and license
 

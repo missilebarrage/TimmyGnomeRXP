@@ -1,6 +1,6 @@
 -- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of
--- Thanes and Darkshore, levels 1 to about 18. From the Hall of Thanes on, guides are named by the level you start
--- them at ("14+"): where a duo ends up is hard to predict.
+-- Thanes, Darkshore and the Ruins of Lordaeron, levels 1 to about 20. From the Hall of Thanes on, guides are named
+-- by the level you start them at ("14+"): where a duo ends up is hard to predict.
 -- The first two guides were rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn and Loch
 -- Modan guides below them have their own notes. Like that run, Coldridge Valley opens with a grind to level 2
 -- and skips Dwarven Outfitters, which also skips both Coldridge Valley mail deliveries and the Glyphic
@@ -2551,10 +2551,11 @@ step << !Mage !Paladin
 -- 1439 is Darkshore ("1439/1,y,x" are Kalimdor world coordinates), 1453 Stormwind City and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 7
+#version 8
 << Alliance
 #group TimmyGnome
 #name 15+ Darkshore
+#next 18+ Ruins of Lordaeron
 
 step
     #completewith next
@@ -3344,4 +3345,238 @@ step
     >>|cRXP_WARN_That's Darkshore done. Train your level 16 and 18 spells at your next city|r
     .turnin 4727 >> Turn in Beached Sea Turtle
     .target Gwennyth Bly'Leggonde
+]])
+
+-- Ruins of Lordaeron, the 5-player dungeon in the ruined city above the Undercity, straight from the end of
+-- Darkshore: bring three more players. All four Alliance quests start inside: Captain Truman's Abominable Creatures
+-- (on your left as you come in), Bloodied Insignia (an item the undead drop), Crest of Lordaeron (an item in one of
+-- five spots) and Remember That I Love You (the Crumpled Paper by Edward's body in Rath'mael's graveyard). Forever
+-- pays a bonus on dungeon quests (2.375 times): about 22,400 XP for the four. The way there: the ship from Auberdine
+-- to Menethil Harbor (jump off before it docks for the flight path, then back onto the same ship), on to Southshore
+-- (Hearthstone and flight path), then the run north past Dalaran and across Lordamere Lake to the Undercity, where
+-- you're flagged for PvP. After the dungeon you hearth to Southshore and fly to Stormwind for the other three
+-- turn-ins and your level 16, 18 and 20 training. The way in, the inside steps and the turn-in coordinates follow
+-- RestedXP's Forever "16-18 Ruins of Lordaeron" (its Dungeon Guide, in beta); the boss order and the Crest's five
+-- spots come from community guides. 1439 is Darkshore, 1437 Wetlands, 1424 Hillsbrad Foothills, 1416 Alterac
+-- Mountains, 1420 Tirisfal Glades, 1458 Undercity and 1453 Stormwind City.
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group TimmyGnome
+#name 18+ Ruins of Lordaeron
+
+step
+    #completewith EnterRoL
+    +|cRXP_WARN_Find three more players for the Ruins of Lordaeron, a 5-player dungeon above the Undercity: ask in the LookingForGroup channel while you travel|r
+    >>|cRXP_WARN_All four quests start inside the dungeon. Getting there takes a while: two boat legs, then a run through Horde land|r
+step
+    #completewith next
+    .goto 1439,32.432,43.744,15 >> Go to the Menethil Harbor ship at the far end of the Auberdine pier
+    .zoneskip Wetlands
+    .zoneskip Hillsbrad Foothills
+step
+    .goto 1439/1,826.67,6409.82
+    >>|cRXP_WARN_The ship stops at Menethil Harbor, then goes on to Southshore. Get the Menethil flight path on the way: just before it docks, jump off, run to the flight master, then run straight back and get on the same ship you jumped off|r
+    .zone Wetlands >> Take the ship to Menethil Harbor
+    .zoneskip Hillsbrad Foothills
+step
+    .goto 1437/0,-782.000,-3793.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tJump off the ship just before it docks and run to |cRXP_FRIENDLY_Shellei Brondir|r
+    >>|cRXP_WARN_Be quick: the ship only stops for a moment before it goes on to Southshore|r
+    .fp Menethil Harbor >> Get the Menethil Harbor flight path
+    .target Shellei Brondir
+    .zoneskip Hillsbrad Foothills
+step
+    .goto 1437/0,-581.800,-3722.400
+    >>|cRXP_WARN_Run straight back and get on the same ship. Missed it? Wait on the dock for the next ship to Southshore|r
+    .zone Hillsbrad Foothills >> Ride the ship on to Southshore
+step
+    .goto 1424,51.170,58.927
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Anderson|r in the Southshore inn
+    >>|cRXP_WARN_After the dungeon you hearth back here and fly to Stormwind for the turn-ins|r
+    .home >> Set your Hearthstone to Southshore
+    .bindlocation 271
+    .target Innkeeper Anderson
+step
+    .goto 1424/0,-512.15,-715.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r, the gryphon master
+    .fp Southshore >> Get the Southshore flight path
+    .target Darla Harris
+step
+    #label EnterRoL
+    .goto 1424/0,-272.000,-381.800,100,0
+    .goto 1424/0,-47.400,-249.400,100,0
+    .goto 1416/0,68.400,-46.200,130,0
+    .goto 1416/0,45.300,257.100,150,0
+    .goto 1416/0,-54.700,812.600,100,0
+    .goto 1420/0,7.600,1530.500,70,0
+    .goto 1420/0,-21.800,1668.600,20,0
+    .goto 1420/0,-56.600,1692.000,10,0
+    .goto 1420/0,-55.200,1779.600,15,0
+    .goto 1420/0,6.300,1791.500,25,0
+    .goto 1420/0,4.300,1847.500,10,0
+    .goto 1458/0,238.400,1872.200,20,0
+    .goto 1458/0,170.700,1804.700
+    .subzone 16611 >> Run north to the Ruins of Lordaeron above the Undercity and enter the dungeon
+    >>|cRXP_WARN_North-west past Dalaran, then swim north across Lordamere Lake into Tirisfal Glades and follow the road to the Undercity. Give the higher level cats, bears, spiders and murlocs on the way a wide berth|r
+    >>|cRXP_WARN_You're flagged for PvP as soon as you reach the Undercity: Horde players can attack you|r
+step
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Truman|r: turn left as you come in
+    .accept 95250 >> Accept Abominable Creatures
+    .target Captain Truman
+step
+    #completewith InsigniaFinish
+    >>Loot the |cRXP_ENEMY_skeletons|r and other undead for a |T133328:0|t[|cRXP_LOOT_Bloodied Insignia|r]: use it to start the quest, then keep looting until you have 10
+    >>|cRXP_WARN_Whoever loots the first one: share the quest with the group|r
+    .use 268535 >> |cRXP_WARN_Use the|r |T133328:0|t[|cRXP_LOOT_Bloodied Insignia|r] |cRXP_WARN_to start the quest|r
+    .collect 268535,1,95195 --Bloodied Insignia (1)
+    .accept 95195 >> Accept Bloodied Insignia
+    .complete 95195,1 --Bloodied Insignia (10)
+step
+    #completewith CrestFinish
+    >>Look out for the |T4504543:0|t[|cRXP_LOOT_Crest of Lordaeron|r]: it hangs on a wall or lies on the floor in one of five spots, a different one each run. Loot it and use it to start the quest
+    >>|cRXP_WARN_The spots: behind the crypt door right of the fountain south of the entrance (opening it brings out a Banshee); the top of the tower left of the spiders; the top of the tower just after The Abandoned; inside the tower right of Bjork's patrol, below the stairs; on the wall behind Bjork's patrol|r
+    >>|cRXP_WARN_Can't all loot it? Whoever has it shares the quest|r
+    .use 268579 >> |cRXP_WARN_Use the|r |T4504543:0|t[|cRXP_LOOT_Crest of Lordaeron|r] |cRXP_WARN_to start the quest|r
+    .collect 268579,1,95189 --Crest of Lordaeron (1)
+    .accept 95189 >> Accept Crest of Lordaeron
+step
+    #completewith CrumpledPaper
+    +|cRXP_WARN_Bosses: Witherfang (the spider: kill her Broodlings first); The Baron (a knockback that stuns: fight him with your backs to a wall, ranged spread out); The Abandoned (click the statue with glowing eyes in the courtyard, three waves first; interrupt his Drain Life); Bjork (his Anti-Magic Shield blocks spells: casters wait it out); Rath'mael (interrupt his Flamestrike)|r
+    >>|cRXP_WARN_OPTIONAL: Viktor the Vile. Click the fireplace in the burned house past the graveyard: five waves of adds, then him|r
+    >>|cRXP_WARN_Worth a Need roll: Tuskwrap Belt (Bjork), Rotmender's Leggings (The Abandoned), Rotmender's Treads (Rath'mael), and the Coldspire Staff (Rath'mael, +32 Frost damage) if you cast Frostbolt|r << Mage
+    >>|cRXP_WARN_Worth a Need roll: Atrophic Girdle (Witherfang), Abomination Bones (The Baron), Grip of Fear (The Abandoned), Bonerust Leggings (Bjork), Vilewalkers (Viktor)|r << Paladin
+step
+    #label BaronHead
+    .isOnQuest 95250
+    >>Past |cRXP_ENEMY_Witherfang|r, head south along the left wall to |cRXP_ENEMY_The Baron|r's arena and kill him. Loot him for the |cRXP_LOOT_Head of the Baron|r: each of you loots your own
+    .complete 95250,1 --Head of the Baron (1)
+    .mob The Baron
+step
+    #label CrumpledPaper
+    >>Past the graveyard, The Abandoned's courtyard and |cRXP_ENEMY_Bjork|r, kill |cRXP_ENEMY_Rath'mael|r inside the fence in the graveyard. Then click the |cRXP_PICK_Crumpled Paper|r by Edward's body near him: each of you clicks it
+    .accept 92415 >> Accept Remember That I Love You
+step
+    #label InsigniaFinish
+    .isOnQuest 95195
+    >>Short of 10 |cRXP_LOOT_Bloodied Insignias|r? Kill any undead your group skipped on the way out
+    >>|cRXP_WARN_Nothing left to kill? Skip this step|r
+    .complete 95195,1 --Bloodied Insignia (10)
+step
+    #label CrestFinish
+    >>No |T4504543:0|t[|cRXP_LOOT_Crest of Lordaeron|r] yet? Check the spots you pass on the way out
+    >>|cRXP_WARN_Not there? Skip this step|r
+    .use 268579 >> |cRXP_WARN_Use the|r |T4504543:0|t[|cRXP_LOOT_Crest of Lordaeron|r] |cRXP_WARN_to start the quest|r
+    .collect 268579,1,95189 --Crest of Lordaeron (1)
+    .accept 95189 >> Accept Crest of Lordaeron
+step
+    .isQuestComplete 95250
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tRun back out to |cRXP_FRIENDLY_Captain Truman|r by the entrance
+    >>|cRXP_WARN_Take the Monstrous Cleaver to sell (27s 85c), or Slain Baron's Signet (+3 Stamina) if you have no ring|r << Mage
+    >>|cRXP_WARN_Take the Grave Shroud (Strength and Stamina), or the Monstrous Cleaver to sell (27s 85c): your Ironforge Greathammer hits harder|r << Paladin
+    .turnin 95250 >> Turn in Abominable Creatures
+    .target Captain Truman
+step
+    .hs >> Hearth to Southshore
+    .cooldown item,6948,>2,1
+    .bindlocation 271,1
+    .subzoneskip 271
+step
+    .goto 1424/0,-512.15,-715.14
+    .subzone 271 >> Hearthstone on cooldown? Run back to Southshore the way you came
+step
+    .goto 1424/0,-512.15,-715.14
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Darla Harris
+    .zoneskip Stormwind City
+step
+    .isQuestComplete 95195
+    .goto 1453/0,521.000,-8954.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Marcus Jonathan|r on his horse in the Valley of Heroes
+    >>|cRXP_WARN_Neither reward is cloth: take the Remembrance Armor, it sells for more (13s 93c)|r << Mage
+    >>|cRXP_WARN_Take the Remembrance Armor (mail)|r << Paladin
+    .turnin 95195 >> Turn in Bloodied Insignia
+    .target General Marcus Jonathan
+step << Mage
+    #completewith next
+    .goto 1453/0,942.34,-9001.49,15,0
+    .goto 1453/0,949.86,-9009.38,10,0
+    .goto 1453/0,962.63,-8990.73,15,0
+    .goto 1453/0,928.62,-9010.10,15,0
+    .goto 1453/0,863.96,-9001.40,8,0
+    .goto 1453/0,877.00,-9008.03,6,0
+    .goto 1453/0,868.8,-9004.27,8,0
+    .goto 1453/0,871.36,-9013.14,10,0
+    .goto 1453/0,887.22,-9017.80,10 >> Go into the Wizard's Sanctum in the Mage Quarter and follow its ramp to |cRXP_FRIENDLY_Jennea|r
+step << Mage
+    .xp <16,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum
+    .train 2120 >> Train your level 16 spells (Flamestrike)
+    .target Jennea Cannon
+step << Mage
+    .xp <18,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
+    .train 3140 >> Train your level 18 spells (Fireball rank 4, Remove Lesser Curse)
+    .target Jennea Cannon
+step << Mage
+    .xp <20,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 20? Train those too while you're here
+    .train 1953 >> Train your level 20 spells (Blink, Evocation, Mana Shield, Frostbolt rank 4 and more)
+    .target Jennea Cannon
+step
+    .isOnQuest 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orphan Matron Nightingale|r in Cathedral Square
+    >>|cRXP_WARN_Your reward is the Tarnished Locket (+6 Stamina)|r
+    .turnin 92415 >> Turn in Remember That I Love You
+    .target Orphan Matron Nightingale
+step
+    .isQuestTurnedIn 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orphan Matron Nightingale|r again
+    >>|cRXP_WARN_OPTIONAL: the next part goes to Avette Fellwood in Darkshire, Duskwood. Take it if you're heading that way; skip this step if not|r
+    .accept 95161 >> Accept Remember That I Love You
+    .target Orphan Matron Nightingale
+step << Paladin
+    #completewith next
+    .goto 1453/0,809.52,-8579.22,20 >> Go into the Cathedral of Light
+step << Paladin
+    .xp <16,1
+    .goto 1453/0,859.13,-8559.14,10,0
+    .goto 1453/0,861.14,-8573.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r in the Cathedral
+    .train 7294 >> Train your level 16 spells (Retribution Aura)
+    .target Arthur the Faithful
+step << Paladin
+    .xp <18,1
+    .goto 1453/0,861.14,-8573.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
+    .train 20288 >> Train your level 18 spells (Seal of Righteousness rank 3, Divine Protection rank 2)
+    .target Arthur the Faithful
+step << Paladin
+    .xp <20,1
+    .goto 1453/0,861.14,-8573.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 20? Train those too while you're here
+    .train 19750 >> Train your level 20 spells (Flash of Light, Exorcism, Devotion Aura rank 3 and more)
+    .target Arthur the Faithful
+step << !Mage !Paladin
+    >>Visit your class trainer in Stormwind
+    .trainer >> Train your level 16 and 18 spells, and 20 if you're there
+step
+    #completewith next
+    .isOnQuest 95189
+    .goto 1453/0,408.100,-8478.500,15,0
+    .goto 1453/0,502.900,-8358.800,15 >> Go into Stormwind Keep, to the Royal Gallery in its library wing
+step
+    .isOnQuest 95189
+    .goto 1453/0,531.000,-8322.400
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lady Dena Kennedy|r in the Royal Gallery: she walks around a little
+    >>|cRXP_WARN_Open the Small Sack of Gems she gives you|r
+    .turnin 95189 >> Turn in Crest of Lordaeron
+    .target Lady Dena Kennedy
 ]])

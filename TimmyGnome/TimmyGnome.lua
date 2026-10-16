@@ -1,6 +1,6 @@
 -- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of
--- Thanes, Darkshore and the Ruins of Lordaeron, levels 1 to about 20. From the Hall of Thanes on, guides are named
--- by the level you start them at ("14+"): where a duo ends up is hard to predict.
+-- Thanes, Darkshore, the Ruins of Lordaeron, Westfall and the Deadmines, levels 1 to about 21. From the Hall of
+-- Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is hard to predict.
 -- The first two guides were rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn and Loch
 -- Modan guides below them have their own notes. Like that run, Coldridge Valley opens with a grind to level 2
 -- and skips Dwarven Outfitters, which also skips both Coldridge Valley mail deliveries and the Glyphic
@@ -3356,16 +3356,19 @@ step
 -- (flight path), then the run north past Dalaran and across Lordamere Lake to the Undercity, where you're flagged
 -- for PvP. The Hearthstone stays in Auberdine from Darkshore: after the dungeon you hearth there and take the boat
 -- to Stormwind for the other three turn-ins and your level 16, 18 and 20 training (Hearthstone on cooldown? Run back
--- to Southshore and fly). The way in, the inside steps and the turn-in coordinates follow RestedXP's Forever "16-18
--- Ruins of Lordaeron" (its Dungeon Guide, in beta); the boss order and the Crest's five spots come from community
--- guides. 1439 is Darkshore, 1437 Wetlands, 1424 Hillsbrad Foothills, 1416 Alterac Mountains, 1420 Tirisfal Glades,
--- 1458 Undercity and 1453 Stormwind City.
+-- to Southshore and fly). Stormwind also picks up the next guide's quests: Humble Beginnings (Baros Alexston),
+-- Underground Assault (Shoni the Shilent), Oh Brother. . . and Collecting Memories (Wilder Thistlenettle), and the
+-- paladin's Tome of Valor if you're 20. The way in, the inside steps and the turn-in coordinates follow RestedXP's
+-- Forever "16-18 Ruins of Lordaeron" (its Dungeon Guide, in beta); the boss order and the Crest's five spots come
+-- from community guides. 1439 is Darkshore, 1437 Wetlands, 1424 Hillsbrad Foothills, 1416 Alterac Mountains, 1420
+-- Tirisfal Glades, 1458 Undercity and 1453 Stormwind City.
 RXPGuides.RegisterGuide([[
 #forever
-#version 3
+#version 4
 << Alliance
 #group TimmyGnome
 #name 18+ Ruins of Lordaeron
+#next 19+ Westfall and Deadmines
 
 step
     #completewith EnterRoL
@@ -3525,6 +3528,22 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 20? Train those too while you're here
     .train 19750 >> Train your level 20 spells (Flash of Light, Exorcism, Devotion Aura rank 3 and more)
     .target Arthur the Faithful
+step << Paladin
+    .xp <20,1
+    .goto 1453/0,845.95,-8545.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 20? Talk to |cRXP_FRIENDLY_Duthorian Rall|r in the Cathedral: he gives you the Tome of Valor, your level 20 class quest
+    >>|cRXP_WARN_It sends you to Daphne Stilwell in Westfall, in the next guide. Not 20 yet? The next guide offers it on its Stormwind stop|r
+    .use 6776 >> |cRXP_WARN_Use the|r |T133739:0|t[|cRXP_LOOT_Tome of Valor|r] |cRXP_WARN_to start the quest|r
+    .collect 6776,1,1649 --Tome of Valor (1)
+    .accept 1649 >> Accept The Tome of Valor
+    .target Duthorian Rall
+step << Paladin
+    .isOnQuest 1649
+    .goto 1453/0,845.95,-8545.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r again
+    .turnin 1649 >> Turn in The Tome of Valor
+    .accept 1650 >> Accept The Tome of Valor
+    .target Duthorian Rall
 step
     .isOnQuest 92415
     .goto 1453/0,744.400,-8621.101
@@ -3539,6 +3558,24 @@ step
     >>|cRXP_WARN_OPTIONAL: the next part goes to Avette Fellwood in Darkshire, Duskwood. Take it if you're heading that way; skip this step if not|r
     .accept 95161 >> Accept Remember That I Love You
     .target Orphan Matron Nightingale
+step
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r in City Hall, on Cathedral Square
+    >>|cRXP_WARN_For the next guide: his compass is at his old farmstead in Westfall|r
+    .accept 399 >> Accept Humble Beginnings
+    .target Baros Alexston
+step
+    .goto 1453/0,634.700,-8390.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo north-east to the Dwarven District and talk to |cRXP_FRIENDLY_Shoni the Shilent|r
+    >>|cRXP_WARN_This one and Wilder's two are for the Deadmines in the next guide|r
+    .accept 2040 >> Accept Underground Assault
+    .target Shoni the Shilent
+step
+    .goto 1453/0,501.200,-8468.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    .accept 167 >> Accept Oh Brother. . .
+    .accept 168 >> Accept Collecting Memories
+    .target Wilder Thistlenettle
 step
     #completewith next
     .isOnQuest 95189
@@ -3592,4 +3629,628 @@ step << Mage
 step << !Mage !Paladin
     >>Visit your class trainer in Stormwind
     .trainer >> Train your level 16 and 18 spells, and 20 if you're there
+]])
+
+-- Westfall and the Deadmines from level 19, straight after the Ruins of Lordaeron, which picked up Humble
+-- Beginnings, Underground Assault, Oh Brother. . . and Collecting Memories in Stormwind. Westfall was saved for this
+-- run: at 19-20 the quests worth doing are the ones of level 15 and up, plus the first two People's Militia parts
+-- that lead to the third. The Hearthstone moves to Sentinel Hill: you hearth back from Lakeshire and again after the
+-- Deadmines. Loops from Sentinel Hill: the north (The Killing Fields, the first People's Militia, Flasks of Oil for
+-- Keeper of the Flame); Alexston's Farmstead and Moonbrook (the second People's Militia, Alexston's compass);
+-- Lakeshire for Wiley the Black (and Hilary's Necklace, OPTIONAL); Stormwind for Master Mathias Shaw, level 20
+-- training and the paladin's Tome of Valor; the far south (the Defias Messenger, the third People's Militia, Daphne
+-- Stilwell's defence for the paladin, the lighthouse and Old Murk-Eye); The Defias Traitor's escort; then the
+-- Deadmines with three more players. Foreman Thistlenettle and Collecting Memories' cards are in the tunnel before
+-- the instance (RestedXP calls Collecting Memories slow, with no dungeon bonus: OPTIONAL), Sneed and Edwin VanCleef
+-- inside. Then Stormwind for the last turn-ins. Left out: The Coast Isn't Clear (its Coastrunners are on the far
+-- north coast and give no XP by now), Alba Fairmoon's Toxic Soil chain (ten parts, little XP, and 10 Coarse Dynamite
+-- from crafting or the Auction House), Harvesting the Harvesters (a very low drop rate), Patrolling Westfall (gnoll
+-- paws in the far north), the low-level farm quests, Captain Sander's Hidden Treasure (it starts from a rare drop)
+-- and ...and that note you found (a six-part mystery chain). The Defias Brotherhood chain, the Deadmines steps and
+-- most coordinates follow RestedXP's Forever "18-20 Deadmines" and "13-15 Westfall"; mob spots come from Questie's
+-- Forever data. 1436 is Westfall, 1433 Redridge Mountains, 1453 Stormwind City and 1415 the Eastern Kingdoms map
+-- (the tunnel before the Deadmines).
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group TimmyGnome
+#name 19+ Westfall and Deadmines
+
+step
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master in the Trade District
+    .fly Westfall >> Fly to Westfall
+    .target Dungar Longdrink
+    .zoneskip Westfall
+step
+    .goto 1436/0,1126.67,-10636.670
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
+    >>|cRXP_WARN_The Defias all over Westfall drop the bandanas: a sticky tracks them|r
+    .accept 153 >> Accept Red Leather Bandanas
+    .target Scout Galiaan
+step
+    .goto 1436/0,1166.57,-10653.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Heather|r in the inn
+    >>|cRXP_WARN_You hearth back here from Lakeshire, and again after the Deadmines|r
+    .home >> Set your Hearthstone to Sentinel Hill
+    .bindlocation 108
+    .target Innkeeper Heather
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r at the tower
+    >>|cRXP_WARN_The Defias Brotherhood starts with Wiley the Black in Lakeshire: you fly there after the first two loops|r
+    .accept 65 >> Accept The Defias Brotherhood
+    .accept 12 >> Accept The People's Militia
+    .target Gryan Stoutmantle
+step
+    #completewith BandanasFinish
+    .isOnQuest 153
+    >>Loot every |cRXP_ENEMY_Defias|r you kill in Westfall for |cRXP_LOOT_Red Leather Bandanas|r
+    .complete 153,1 --Red Leather Bandana (15)
+step
+    #completewith FlasksFinish
+    >>Loot the |cRXP_ENEMY_Harvest Watchers|r for |cRXP_LOOT_Flasks of Oil|r: Captain Grayson at the lighthouse takes 5 for Keeper of the Flame
+    .collect 814,5,103,1 --Flask of Oil (5)
+step
+    #completewith MilitiaOne
+    .isOnQuest 12
+    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r as you go
+    .complete 12,1 --Defias Trapper slain (15)
+    .mob +Defias Trapper
+    .complete 12,2 --Defias Smuggler slain (15)
+    .mob +Defias Smuggler
+step
+    .goto 1436/0,1055.27,-10128.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo north to Saldean's Farm and talk to |cRXP_FRIENDLY_Farmer Saldean|r
+    .accept 9 >> Accept The Killing Fields
+    .target Farmer Saldean
+step
+    #loop
+    .goto 1436/0,1132.27,-10146.67,0
+    .goto 1436/0,1238.67,-9907.73,0
+    .goto 1436/0,1460.22,-10224.83,0
+    .goto 1436/0,1132.27,-10146.67,60,0
+    .goto 1436/0,1238.67,-9907.73,80,0
+    .goto 1436/0,1460.22,-10224.83,80,0
+    >>Kill |cRXP_ENEMY_Harvest Watchers|r in Saldean's fields, the field to the north and the Molsen Farm to the west
+    >>|cRXP_WARN_The Defias Trappers and Smugglers around the Molsen Farm count for The People's Militia|r
+    .complete 9,1 --Harvest Watcher slain (20)
+    .mob Harvest Watcher
+step
+    .isQuestComplete 9
+    .goto 1436/0,1055.27,-10128.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Farmer Saldean|r
+    >>|cRXP_WARN_Take the Harvester's Robe if your chest piece is worse; otherwise the Harvester's Pestslayer sells for more (5s 32c)|r << Mage
+    >>|cRXP_WARN_Take the Harvester's Pestslayer to sell (5s 32c)|r << Paladin
+    .turnin 9 >> Turn in The Killing Fields
+    .target Farmer Saldean
+step
+    #label MilitiaOne
+    .isOnQuest 12
+    #loop
+    .goto 1436,46.3,38.5,0
+    .goto 1436,48.4,46.6,0
+    .goto 1436,50.9,40.0,0
+    .goto 1436,46.3,38.5,45,0
+    .goto 1436,48.0,43.5,45,0
+    .goto 1436,48.4,46.6,45,0
+    .goto 1436,51.0,47.0,45,0
+    .goto 1436,50.9,40.0,45,0
+    >>Finish the |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r between the Molsen Farm and Sentinel Hill
+    .complete 12,1 --Defias Trapper slain (15)
+    .mob +Defias Trapper
+    .complete 12,2 --Defias Smuggler slain (15)
+    .mob +Defias Smuggler
+step
+    .isQuestComplete 12
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at Sentinel Hill, talk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 12 >> Turn in The People's Militia
+    .accept 13 >> Accept The People's Militia
+    .target Gryan Stoutmantle
+step
+    #completewith MilitiaTwo
+    .isOnQuest 13
+    >>Kill |cRXP_ENEMY_Defias Pillagers|r and |cRXP_ENEMY_Defias Looters|r as you go
+    .complete 13,1 --Defias Pillager slain (15)
+    .mob +Defias Pillager
+    .complete 13,2 --Defias Looter slain (15)
+    .mob +Defias Looter
+step
+    .isOnQuest 399
+    .goto 1436/0,1748.27,-10672.13
+    >>Go west to Alexston's Farmstead and open |cRXP_PICK_Alexston's Chest|r. Loot it for |cRXP_LOOT_A Simple Compass|r
+    .complete 399,1 --A Simple Compass (1)
+step
+    #label FlasksFinish
+    #loop
+    .goto 1436,37.5,50.0,0
+    .goto 1436,39.5,53.5,0
+    .goto 1436,37.5,50.0,40,0
+    .goto 1436,40.0,51.0,40,0
+    .goto 1436,39.5,53.5,40,0
+    .goto 1436,37.5,52.5,40,0
+    >>Short of 5 |cRXP_LOOT_Flasks of Oil|r? Kill the |cRXP_ENEMY_Harvest Watchers|r in the fields around Alexston's Farmstead
+    >>|cRXP_WARN_Still short? Skip this step: Captain Grayson's other quest doesn't need them|r
+    .collect 814,5,103,1 --Flask of Oil (5)
+    .mob Harvest Watcher
+step
+    #label MilitiaTwo
+    .isOnQuest 13
+    #loop
+    .goto 1436,36.0,54.2,0
+    .goto 1436,43.6,68.5,0
+    .goto 1436,36.0,54.2,40,0
+    .goto 1436,33.2,57.0,40,0
+    .goto 1436,38.6,57.6,40,0
+    .goto 1436,42.2,69.6,40,0
+    .goto 1436,43.6,68.1,40,0
+    .goto 1436,44.4,67.5,40,0
+    .goto 1436,45.6,69.6,40,0
+    .goto 1436,43.3,70.8,40,0
+    >>Kill |cRXP_ENEMY_Defias Pillagers|r and |cRXP_ENEMY_Defias Looters|r around Alexston's Farmstead, then in Moonbrook to the south-east
+    >>|cRXP_WARN_The Deadmines are under Moonbrook: you come back here later|r
+    .complete 13,1 --Defias Pillager slain (15)
+    .mob +Defias Pillager
+    .complete 13,2 --Defias Looter slain (15)
+    .mob +Defias Looter
+step
+    #label BandanasFinish
+    .isOnQuest 153
+    .goto 1436,43.6,68.5
+    >>Short of 15 |cRXP_LOOT_Red Leather Bandanas|r? Keep killing the |cRXP_ENEMY_Defias Pillagers|r and |cRXP_ENEMY_Defias Looters|r in Moonbrook
+    >>|cRXP_WARN_Skip this step if it's slow|r
+    .complete 153,1 --Red Leather Bandana (15)
+    .mob Defias Pillager
+    .mob Defias Looter
+step
+    .isQuestComplete 13
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at Sentinel Hill, talk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 13 >> Turn in The People's Militia
+    .accept 14 >> Accept The People's Militia
+    .target Gryan Stoutmantle
+step
+    .isQuestComplete 153
+    .goto 1436/0,1126.67,-10636.670
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Galiaan|r
+    >>|cRXP_WARN_Take the Leggings of the People's Militia if yours are worse; otherwise the Greaves sell for more (3s 31c)|r << Mage
+    >>|cRXP_WARN_Take the Greaves of the People's Militia (mail)|r << Paladin
+    .turnin 153 >> Turn in Red Leather Bandanas
+    .target Scout Galiaan
+step
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r, the gryphon master
+    .fly Redridge >> Fly to Lakeshire in Redridge
+    .target Thor
+    .zoneskip Redridge Mountains
+step
+    .goto 1433/0,-2164.56,-9213.10,8,0
+    .goto 1433/0,-2145.67,-9231.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wiley the Black|r upstairs in the inn
+    .turnin 65 >> Turn in The Defias Brotherhood
+    .accept 132 >> Accept The Defias Brotherhood
+    .target Wiley the Black
+step
+    .goto 1433/0,-2207.10,-9351.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shawn|r by the lake
+    >>|cRXP_WARN_OPTIONAL: Hilary's necklace is in a Glinting Mud somewhere in the lake (1,350 XP). Skip this step if you'd rather not|r
+    .accept 3741 >> Accept Hilary's Necklace
+    .target Shawn
+step
+    .isOnQuest 3741
+    #loop
+    .goto 1433/0,-2174.32,-9386.56,0
+    .goto 1433/0,-2147.41,-9308.08,0
+    .goto 1433/0,-2090.96,-9373.82,0
+    .goto 1433/0,-1986.76,-9324.30,0
+    .goto 1433/0,-2246.40,-9359.92,0
+    .goto 1433/0,-2309.57,-9376.28,0
+    .goto 1433/0,-2397.70,-9363.97,0
+    .goto 1433/0,-1986.76,-9324.30,70,0
+    .goto 1433/0,-2397.70,-9363.97,70,0
+    >>Swim along the lake and open the |cRXP_PICK_Glinting Mud|r. Loot it for |cRXP_LOOT_Hilary's Necklace|r
+    >>|cRXP_WARN_It spawns in one of several spots, marked on your map. Taking too long? Skip this step and abandon the quest|r
+    .complete 3741,1 --Hilary's Necklace (1)
+step
+    .isQuestComplete 3741
+    .goto 1433/0,-2205.58,-9351.52
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilary|r
+    .turnin 3741 >> Turn in Hilary's Necklace
+    .target Hilary
+step
+    .hs >> Hearth to Sentinel Hill
+    .cooldown item,6948,>2,1
+    .bindlocation 108,1
+    .zoneskip Westfall
+step
+    .goto 1433/0,-2234.900,-9435.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHearthstone on cooldown? Talk to |cRXP_FRIENDLY_Ariena Stormfeather|r and fly back to Westfall
+    .fly Westfall >> Fly to Westfall
+    .target Ariena Stormfeather
+    .zoneskip Westfall
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 132 >> Turn in The Defias Brotherhood
+    .accept 135 >> Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+step
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Thor
+    .zoneskip Stormwind City
+step
+    #completewith next
+    .goto 1453/0,374.11,-8762.88,20,0
+    .goto 1453/0,326.66,-8818.01,20,0
+    .goto 1453/0,323.43,-8817.83,10 >> Go east into Old Town and into the SI:7 building: |cRXP_FRIENDLY_Master Mathias Shaw|r is upstairs
+step
+    .goto 1453/0,362.28,-8815.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
+    .turnin 135 >> Turn in The Defias Brotherhood
+    .accept 141 >> Accept The Defias Brotherhood
+    .target Master Mathias Shaw
+step << Paladin
+    #completewith next
+    .xp <20,1
+    .goto 1453/0,809.52,-8579.22,20 >> Already 20? Go to the Cathedral of Light for your class quest and training
+step << Paladin
+    .xp <20,1
+    .goto 1453/0,845.95,-8545.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r: he gives you the Tome of Valor, your level 20 class quest
+    >>|cRXP_WARN_It sends you to Daphne Stilwell in the south of Westfall, on the next loop|r
+    .use 6776 >> |cRXP_WARN_Use the|r |T133739:0|t[|cRXP_LOOT_Tome of Valor|r] |cRXP_WARN_to start the quest|r
+    .collect 6776,1,1649 --Tome of Valor (1)
+    .accept 1649 >> Accept The Tome of Valor
+    .target Duthorian Rall
+step << Paladin
+    .isOnQuest 1649
+    .goto 1453/0,845.95,-8545.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r again
+    .turnin 1649 >> Turn in The Tome of Valor
+    .accept 1650 >> Accept The Tome of Valor
+    .target Duthorian Rall
+step << Paladin
+    .xp <20,1
+    .goto 1453/0,859.13,-8559.14,10,0
+    .goto 1453/0,861.14,-8573.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
+    .train 19750 >> Train your level 20 spells (Flash of Light, Exorcism, Devotion Aura rank 3 and more)
+    .target Arthur the Faithful
+step << Mage
+    #completewith next
+    .xp <20,1
+    .goto 1453/0,942.34,-9001.49,15,0
+    .goto 1453/0,949.86,-9009.38,10,0
+    .goto 1453/0,962.63,-8990.73,15,0
+    .goto 1453/0,928.62,-9010.10,15,0
+    .goto 1453/0,863.96,-9001.40,8,0
+    .goto 1453/0,877.00,-9008.03,6,0
+    .goto 1453/0,868.8,-9004.27,8,0
+    .goto 1453/0,871.36,-9013.14,10,0
+    .goto 1453/0,887.22,-9017.80,10 >> Already 20? Go into the Wizard's Sanctum in the Mage Quarter and follow its ramp to |cRXP_FRIENDLY_Jennea|r
+step << Mage
+    .xp <20,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum
+    .train 1953 >> Train your level 20 spells (Blink, Evocation, Mana Shield, Frostbolt rank 4 and more)
+    .target Jennea Cannon
+step
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r in the Trade District
+    .fly Westfall >> Fly back to Westfall
+    .target Dungar Longdrink
+    .zoneskip Westfall
+step
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 141 >> Turn in The Defias Brotherhood
+    .accept 142 >> Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+step
+    #completewith MilitiaThree
+    .isOnQuest 14
+    >>Kill |cRXP_ENEMY_Defias Highwaymen|r, |cRXP_ENEMY_Defias Pathstalkers|r and |cRXP_ENEMY_Defias Knuckledusters|r as you go
+    .complete 14,1 --Defias Highwayman slain (15)
+    .mob +Defias Highwayman
+    .complete 14,2 --Defias Pathstalker slain (5)
+    .mob +Defias Pathstalker
+    .complete 14,3 --Defias Knuckleduster slain (5)
+    .mob +Defias Knuckleduster
+step
+    .isOnQuest 142
+    .goto 1436/0,1459.17,-11024.47
+    .line Westfall,44.50,69.62,44.50,69.62,45.08,69.40,45.21,69.35,45.63,68.69,45.85,67.73,45.62,66.99,45.52,65.71,45.61,64.95,44.28,63.88,44.26,62.80,43.60,59.89,43.37,58.42,43.26,57.01,43.12,54.24,42.15,52.74,41.74,51.42,41.48,49.89,40.91,48.71,38.93,46.05,38.51,45.46,37.85,45.54,36.60,44.21,36.06,43.86,35.12,43.49,33.92,43.21,32.56,43.05,31.34,44.54,32.56,43.05,33.92,43.21,35.12,43.49,36.06,43.86,36.26,43.77,36.87,42.87,36.95,40.85,37.04,39.79,37.91,36.98,39.06,35.58,40.48,34.31,41.27,32.87,41.76,31.27,42.26,30.26,43.20,28.99,44.29,28.19,44.64,26.85,44.57,24.94,44.64,26.85,44.29,28.19,43.20,28.99,42.26,30.26,41.76,31.27,41.27,32.87,40.48,34.31,39.06,35.58,37.91,36.98,37.04,39.79,36.95,40.85,36.87,42.87,36.26,43.77,36.06,43.86,35.12,43.49,33.92,43.21,32.56,43.05,31.34,44.54,32.56,43.05,33.92,43.21,35.12,43.49,36.06,43.86,36.60,44.21,37.85,45.54,38.51,45.46,38.93,46.05,40.91,48.71,41.48,49.89,41.74,51.42,42.15,52.74,43.12,54.24,43.26,57.01,43.37,58.42,43.60,59.89,44.26,62.80,44.28,63.88,45.61,64.95,45.52,65.71,45.62,66.99,45.85,67.73,45.63,68.69,45.21,69.35,45.08,69.40,44.50,69.62
+    >>Kill the |cRXP_ENEMY_Defias Messenger|r. Loot him for |cRXP_LOOT_A Mysterious Message|r
+    >>|cRXP_WARN_He starts in Moonbrook and walks the road north to the Gold Coast Quarry and Jangolode Mine, then back. Not in Moonbrook? Look along the road|r
+    .complete 142,1 --A Mysterious Message (1)
+    .unitscan Defias Messenger
+step
+    #label MilitiaThree
+    .isOnQuest 14
+    #loop
+    .goto 1436,52.0,75.5,0
+    .goto 1436,37.2,78.0,0
+    .goto 1436,52.0,75.5,45,0
+    .goto 1436,51.0,78.5,45,0
+    .goto 1436,46.5,79.5,45,0
+    .goto 1436,42.0,80.0,45,0
+    .goto 1436,37.5,81.0,45,0
+    .goto 1436,37.0,75.5,45,0
+    >>Go south of Moonbrook into the Dagger Hills and kill |cRXP_ENEMY_Defias Highwaymen|r, |cRXP_ENEMY_Defias Pathstalkers|r and |cRXP_ENEMY_Defias Knuckledusters|r
+    >>|cRXP_WARN_Playing with a paladin? Their class quest has a fight at Daphne Stilwell's farmhouse just south of here: help them|r << Mage
+    .complete 14,1 --Defias Highwayman slain (15)
+    .mob +Defias Highwayman
+    .complete 14,2 --Defias Pathstalker slain (5)
+    .mob +Defias Pathstalker
+    .complete 14,3 --Defias Knuckleduster slain (5)
+    .mob +Defias Knuckleduster
+step << Paladin
+    .isOnQuest 1650
+    .goto 1436,41.7,89.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo south to |cRXP_FRIENDLY_Daphne Stilwell|r's farmhouse and talk to her
+    .turnin 1650 >> Turn in The Tome of Valor
+    .target Daphne Stilwell
+step << Paladin
+    .isQuestTurnedIn 1650
+    .goto 1436,41.7,89.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Daphne Stilwell|r again to start the attack: three waves of Defias come for her house. Keep her alive and stay alive yourself; your partner can help
+    >>|cRXP_WARN_Failed? Abandon the quest and take it from her again|r
+    .accept 1651 >> Accept The Tome of Valor
+    .turnin 1651 >> Turn in The Tome of Valor
+    .accept 1652 >> Accept The Tome of Valor
+    .target Daphne Stilwell
+step
+    .itemcount 814,5
+    .goto 1436/0,1966.32,-11407.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo west to the lighthouse and talk to |cRXP_FRIENDLY_Captain Grayson|r
+    .accept 103 >> Accept Keeper of the Flame
+    .turnin 103 >> Turn in Keeper of the Flame
+    .accept 104 >> Accept The Coastal Menace
+    .target Captain Grayson
+step
+    .goto 1436/0,1966.32,-11407.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r at the lighthouse
+    .accept 104 >> Accept The Coastal Menace
+    .target Captain Grayson
+step
+    .isOnQuest 104
+    .goto 1436/0,1811.62,-11358.37
+    .line Westfall,34.43,83.93,34.43,83.93,33.88,83.32,33.08,82.86,32.56,82.71,32.08,82.49,31.91,82.36,31.55,81.88,30.86,81.42,30.63,81.16,30.33,80.81,30.02,80.11,29.68,79.22,29.32,78.19,29.29,77.60,29.27,77.31,29.18,76.26,29.07,75.29,28.95,74.14,28.85,73.29,28.79,72.48,28.37,71.94,27.84,71.29,27.44,70.25,27.29,69.47,27.13,68.65,27.09,67.57,27.07,67.01,26.74,66.09,27.07,67.01,27.09,67.57,27.13,68.65,27.29,69.47,27.44,70.25,27.84,71.29,28.37,71.94,28.79,72.48,28.85,73.29,28.95,74.14,29.07,75.29,29.18,76.26,29.27,77.31,29.29,77.60,29.32,78.19,29.68,79.22,30.02,80.11,30.33,80.81,30.63,81.16,30.86,81.42,31.55,81.88,31.91,82.36,32.08,82.49,32.56,82.71,33.08,82.86,33.88,83.32,34.43,83.93
+    >>Kill |cRXP_ENEMY_Old Murk-Eye|r. Loot him for his |cRXP_LOOT_Scale|r
+    >>|cRXP_WARN_He walks up and down the coast north of the lighthouse with other murlocs: pull them off him first|r
+    .complete 104,1 --Scale of Old Murk-Eye (1)
+    .unitscan Old Murk-Eye
+step
+    .isQuestComplete 104
+    .goto 1436/0,1966.32,-11407.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Grayson|r
+    >>|cRXP_WARN_Take the Torchlight Wand to sell (12s 44c): Deepblaze is better|r << Mage
+    >>|cRXP_WARN_Take the Torchlight Wand to sell (12s 44c)|r << Paladin
+    .turnin 104 >> Turn in The Coastal Menace
+    .target Captain Grayson
+step
+    .goto 1436/0,1045.12,-10508.80
+    .subzone 108 >> Run back north-east to Sentinel Hill
+step
+    .isQuestComplete 142
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 142 >> Turn in The Defias Brotherhood
+    .target Gryan Stoutmantle
+step
+    .isQuestComplete 14
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    >>|cRXP_WARN_Take the Edge of the People's Militia to sell (11s 32c)|r
+    .turnin 14 >> Turn in The People's Militia
+    .target Gryan Stoutmantle
+step
+    #completewith EnterDeadmines
+    +|cRXP_WARN_Find three more players for the Deadmines, a 5-player dungeon under Moonbrook: ask in the LookingForGroup channel during The Defias Traitor's escort|r
+    >>|cRXP_WARN_Your quests for it: The Defias Brotherhood and Red Silk Bandanas from Sentinel Hill after the escort, and Underground Assault, Oh Brother. . . and Collecting Memories from Stormwind|r
+step
+    .isQuestTurnedIn 142
+    .goto 1436/0,1067.87,-10508.330
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Defias Traitor|r
+    >>|cRXP_WARN_Not there? Someone is escorting him: wait for him to come back|r
+    .accept 155 >> Accept The Defias Brotherhood
+    .target The Defias Traitor
+step
+    .isOnQuest 155
+    .goto 1436/0,1527.07,-11073.23
+    >>Escort |cRXP_FRIENDLY_The Defias Traitor|r south to Moonbrook. He stops at the Deadmines' entrance
+    >>|cRXP_WARN_Kill anything that attacks him on the way|r
+    .complete 155,1 --Escort The Defias Traitor to discover where VanCleef is hiding (1)
+    .target The Defias Traitor
+step
+    .isQuestComplete 155
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at Sentinel Hill, talk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 155 >> Turn in The Defias Brotherhood
+    .accept 166 >> Accept The Defias Brotherhood
+    .target Gryan Stoutmantle
+step
+    .isQuestTurnedIn 155
+    .goto 1436/0,1033.22,-10504.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Riell|r at the top of the tower
+    .accept 214 >> Accept Red Silk Bandanas
+    .target Scout Riell
+step
+    #label EnterDeadmines
+    .goto 1436/0,1527.42,-11072.77
+    .subzone 1581 >> Go back to Moonbrook with your group and into the Defias Hideout, the mine under the town
+step
+    #completewith VanCleef
+    .isOnQuest 214
+    >>Loot the |cRXP_ENEMY_Defias|r in the mine and the Deadmines for |cRXP_LOOT_Red Silk Bandanas|r: each of you needs 10
+    .complete 214,1 --Red Silk Bandana (10)
+step
+    #completewith VanCleef
+    +|cRXP_WARN_Bosses: Rhahk'Zor; Sneed's Shredder, then Sneed when it dies; Gilnid at the smelter; Mr. Smite on the ship (he stuns and changes weapons); Captain Greenskin; Edwin VanCleef (two Blackguards join him at low health); Cookie is OPTIONAL|r
+    >>|cRXP_WARN_Worth a Need roll: Cookie's Stirring Rod (a 22.3 DPS wand), the Emberstone Staff (Captain Greenskin, +24 spell damage), the Lavishly Jeweled Ring (Gilnid) and the Corsair's Overshirt (VanCleef)|r << Mage
+    >>|cRXP_WARN_Worth a Need roll: Smite's Mighty Hammer (a 19.7 DPS two-handed mace) and Rhahk'Zor's Hammer (18.4 DPS)|r << Paladin
+step
+    .isOnQuest 167
+    .goto 1415,41.18,79.80,25,0
+    .goto 1415,41.03,79.96,25,0
+    .goto 1415,40.92,80.05,25,0
+    .goto 1415,41.08,80.11
+    >>Before the instance portal, take the side tunnel with the undead miners and kill |cRXP_ENEMY_Foreman Thistlenettle|r. Loot him for his |cRXP_LOOT_Badge|r
+    .complete 167,1 --Thistlenettle's Badge (1)
+    .unitscan Foreman Thistlenettle
+step
+    .isOnQuest 168
+    .goto 1415,41.08,80.11
+    >>Kill the |cRXP_ENEMY_Skeletal Miners|r, |cRXP_ENEMY_Undead Dynamiters|r and |cRXP_ENEMY_Undead Excavators|r in the same tunnel. Loot them for |cRXP_LOOT_Miners' Union Cards|r
+    >>|cRXP_WARN_OPTIONAL: RestedXP says this one is slow and gets no dungeon XP bonus. Skip this step if your group won't wait, and abandon Collecting Memories|r
+    .complete 168,1 --Miners' Union Card (4)
+    .mob Skeletal Miner
+    .mob Undead Dynamiter
+    .mob Undead Excavator
+step
+    .goto 1415,40.94,79.76,25,0
+    .goto 1415,40.86,79.62,20,0
+    .goto 1415,40.678,79.578
+    .subzone 1581,2 >> Enter the Deadmines
+step
+    .isOnQuest 2040
+    >>Kill |cRXP_ENEMY_Sneed's Shredder|r, then |cRXP_ENEMY_Sneed|r when he jumps out. Loot them for the |cRXP_LOOT_Gnoam Sprecklesprocket|r
+    .complete 2040,1 --Gnoam Sprecklesprocket (1)
+    .mob Sneed's Shredder
+    .mob Sneed
+step
+    #label VanCleef
+    .isOnQuest 166
+    >>Kill |cRXP_ENEMY_Edwin VanCleef|r on the ship at the end. Loot him for his |cRXP_LOOT_Head|r: each of you loots your own
+    .complete 166,1 --Head of VanCleef (1)
+    .mob Edwin VanCleef
+step
+    >>Loot |T133471:0|t[|cRXP_LOOT_An Unsent Letter|r] from |cRXP_ENEMY_Edwin VanCleef|r too
+    .use 2874 >> |cRXP_WARN_Use|r |T133471:0|t[|cRXP_LOOT_An Unsent Letter|r] |cRXP_WARN_to start the quest|r
+    .collect 2874,1,373 --An Unsent Letter (1)
+    .accept 373 >> Accept The Unsent Letter
+step
+    .isOnQuest 214
+    >>Short of 10 |cRXP_LOOT_Red Silk Bandanas|r? Kill any |cRXP_ENEMY_Defias|r your group skipped on the way out
+    >>|cRXP_WARN_Nothing left to kill? Skip this step|r
+    .complete 214,1 --Red Silk Bandana (10)
+step
+    .hs >> Hearth to Sentinel Hill
+    .cooldown item,6948,>2,1
+    .bindlocation 108,1
+    .subzoneskip 108
+step
+    .goto 1436/0,1045.12,-10508.80
+    .subzone 108 >> Hearthstone on cooldown? Walk out of the Deadmines and north to Sentinel Hill
+step
+    .isQuestComplete 166
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    >>|cRXP_WARN_Take the Staff of Westfall (+16 spell damage), unless you won the Coldspire Staff and cast Frostbolt|r << Mage
+    >>|cRXP_WARN_Take the Chausses of Westfall (mail)|r << Paladin
+    .turnin 166 >> Turn in The Defias Brotherhood
+    .target Gryan Stoutmantle
+step
+    .isQuestComplete 214
+    .goto 1436/0,1033.22,-10504.83
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Scout Riell|r at the top of the tower
+    >>|cRXP_WARN_Take the Piercing Axe to sell (15s 46c)|r
+    .turnin 214 >> Turn in Red Silk Bandanas
+    .target Scout Riell
+step
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r
+    .fly Stormwind >> Fly to Stormwind
+    .target Thor
+    .zoneskip Stormwind City
+step
+    .isQuestComplete 167
+    .goto 1453/0,501.200,-8468.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo north to the Dwarven District and talk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    >>|cRXP_WARN_Take Miner's Workgloves (+5 Stamina), or Miner's Revenge to sell (17s 75c)|r << Mage
+    >>|cRXP_WARN_Take Miner's Revenge to sell (17s 75c)|r << Paladin
+    .turnin 167 >> Turn in Oh Brother. . .
+    .target Wilder Thistlenettle
+step
+    .isQuestComplete 168
+    .goto 1453/0,501.200,-8468.601
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wilder Thistlenettle|r
+    >>|cRXP_WARN_Take the Worn Miner's Waistcord (cloth belt) if yours is worse; otherwise Tunneler's Boots sell for more (4s 69c)|r << Mage
+    >>|cRXP_WARN_Take Tunneler's Boots (mail)|r << Paladin
+    .turnin 168 >> Turn in Collecting Memories
+    .target Wilder Thistlenettle
+step
+    .isQuestComplete 2040
+    .goto 1453/0,634.700,-8390.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shoni the Shilent|r
+    >>|cRXP_WARN_Take the Sable Wand to sell (14s 11c): Deepblaze is better|r << Mage
+    >>|cRXP_WARN_Take the Polar Gauntlets (mail)|r << Paladin
+    .turnin 2040 >> Turn in Underground Assault
+    .target Shoni the Shilent
+step
+    .isQuestComplete 399
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r in City Hall, on Cathedral Square
+    .turnin 399 >> Turn in Humble Beginnings
+    .target Baros Alexston
+step
+    .isOnQuest 373
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r
+    >>|cRXP_WARN_Don't take his next quest yet: it leads into the Stockade, a dungeon for later|r
+    .turnin 373 >> Turn in The Unsent Letter
+    .target Baros Alexston
+step << Paladin
+    #completewith next
+    .goto 1453/0,809.52,-8579.22,20 >> Go into the Cathedral of Light
+step << Paladin
+    .isOnQuest 1652
+    .goto 1453/0,845.95,-8545.70
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Duthorian Rall|r
+    >>|cRXP_WARN_His next quest, The Test of Righteousness, needs parts from dungeons you haven't done yet: leave it for now|r
+    .turnin 1652 >> Turn in The Tome of Valor
+    .target Duthorian Rall
+step << Paladin
+    .xp <20,1
+    .goto 1453/0,859.13,-8559.14,10,0
+    .goto 1453/0,861.14,-8573.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
+    .train 19750 >> Train your level 20 spells (Flash of Light, Exorcism, Devotion Aura rank 3 and more)
+    .target Arthur the Faithful
+step << Paladin
+    .xp <22,1
+    .goto 1453/0,861.14,-8573.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 22? Train those too while you're here
+    .train 1026 >> Train your level 22 spells (Holy Light rank 4, Blessing of Might rank 3, Seal of the Crusader rank 3)
+    .target Arthur the Faithful
+step << Mage
+    #completewith next
+    .goto 1453/0,942.34,-9001.49,15,0
+    .goto 1453/0,949.86,-9009.38,10,0
+    .goto 1453/0,962.63,-8990.73,15,0
+    .goto 1453/0,928.62,-9010.10,15,0
+    .goto 1453/0,863.96,-9001.40,8,0
+    .goto 1453/0,877.00,-9008.03,6,0
+    .goto 1453/0,868.8,-9004.27,8,0
+    .goto 1453/0,871.36,-9013.14,10,0
+    .goto 1453/0,887.22,-9017.80,10 >> Go into the Wizard's Sanctum in the Mage Quarter and follow its ramp to |cRXP_FRIENDLY_Jennea|r
+step << Mage
+    .xp <20,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum
+    .train 1953 >> Train your level 20 spells (Blink, Evocation, Mana Shield, Frostbolt rank 4 and more)
+    .target Jennea Cannon
+step << Mage
+    .xp <22,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 22? Train those too while you're here
+    .train 8437 >> Train your level 22 spells (Arcane Explosion rank 2, Fire Blast rank 3)
+    .target Jennea Cannon
+step << !Mage !Paladin
+    >>Visit your class trainer in Stormwind
+    .trainer >> Train your level 20 spells, and 22 if you're there
 ]])

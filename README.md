@@ -162,22 +162,23 @@ To update, download the zip again and replace the TimmyGnome folder.
   Stormwind Harbor's southernmost dock to Auberdine. The Hearthstone goes to Auberdine.
 - **The route:** RestedXP's Forever Darkshore route for a non-Night Elf, with nearly every quest that's quick or
   pays well, in six loops out of Auberdine:
-  - **South:** Buzzbox 827's crawler legs, Washed Ashore, the bear trap and the furbolg camp.
-  - **North:** thresher eyes, the two sunken lockboxes, Bashal'Aran and the red crystal.
+  - **South:** Washed Ashore, the bear trap and the furbolg camp.
+  - **North:** the two sunken lockboxes, Bashal'Aran and the red crystal.
   - **Ameth'Aran:** its two tablets, the Ancient Flame and the Blackwood furbolgs.
-  - **North-east:** the crystal again, the Cliffspring River, the moonstalker fangs and the cave mushrooms.
-  - **Far south:** the rest of the bears, Onu's Master's Glaive chain, the Twilight camp, the Grizzled Thistle
-    Bears' scalps, Remtravel, Murkdeep and the beached creatures.
+  - **North-east:** the crystal again, the Cliffspring River and the cave mushrooms.
+  - **Far south:** the rest of the bears, Onu's Master's Glaive chain, the Twilight camp, Remtravel, Murkdeep and
+    the beached creatures.
   - **Far north-east:** Den Mother, the Blackwood stores and Xabraxxis, the Tower of Althalaxx and Gyromast,
     then a hearth back.
-- **Drops:** every drop quest has a sticky plus a real finish step you can skip. OPTIONAL: the Buzzbox chain
-  (four drop quests, about 4,100 XP, and its crawler legs drop rarely), For Love Eternal (Anaya is a rare),
-  WANTED: Jai'vhanel, Bashal'Aran's satyr seal and Gyromast's Revenge.
-- **Left out:** Easy Strider Living (Cooking 10), The Family and the Fishing Pole (Auction House fish), Tools of
-  the Highborne, the Remtravel escort, and quests that end outside Darkshore: Therylune's Escape, The Tower of
-  Althalaxx's third part, Mathystra Relics, A Lost Master's second part and The Powers Below.
-- **Where you end up:** about 18.5-19 for a duo doing nearly everything (about 17.5 if the Hall of Thanes bonus
-  doesn't apply and drops go badly). Level 16 and 18 training waits for your next city.
+- **Drops:** every drop quest has a sticky plus a real finish step you can skip. OPTIONAL: For Love Eternal
+  (Anaya is a rare; Cerellean Whiteclaw gives it on the dock as you come in), WANTED: Jai'vhanel, Bashal'Aran's
+  satyr seal and Gyromast's Revenge.
+- **Left out:** the Buzzbox chain and Fruit of the Sea (slow drops), Easy Strider Living (Cooking 10), The Family
+  and the Fishing Pole (Auction House fish), Tools of the Highborne, the Remtravel escort, and quests that end
+  outside Darkshore: Therylune's Escape, The Tower of Althalaxx's third part, Mathystra Relics, A Lost Master's
+  second part and The Powers Below.
+- **Where you end up:** about 18.5 for a duo doing nearly everything (a little over 17 if the Hall of Thanes
+  bonus doesn't apply and drops go badly). Level 16 and 18 training waits for your next city.
 
 ## Credits and license
 

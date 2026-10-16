@@ -2536,22 +2536,22 @@ step << !Mage !Paladin
 
 -- Darkshore from level 15, straight after the Hall of Thanes: the tram to Stormwind (Stormpike's Order on the way),
 -- the Stormwind Harbor boat to Auberdine, and nearly every quest in the zone that's quick or pays well. It follows
--- RestedXP's Forever Darkshore route (its 14-16 and 16-19 guides) for a non-Night Elf, minus Easy Strider Living
--- (Cooking 10), The Family and the Fishing Pole (Auction House fish), Tools of the Highborne (RestedXP drops it past
--- 16), the escort for The Absent Minded Prospector, and the quests that end outside Darkshore: Therylune's Escape
--- and The Tower of Althalaxx's third part (Ashenvale), Mathystra Relics (its turn-in is back at Onu), A Lost
--- Master's second part and The Powers Below. OPTIONAL: the Buzzbox chain (its crawler legs drop rarely), For Love
--- Eternal (Anaya is a rare), WANTED: Jai'vhanel, Bashal'Aran's satyr seal and Gyromast's Revenge. Every drop quest
--- has a sticky plus a real finish step you can skip. The Hearthstone goes to Auberdine. Loops: south (crawlers, the
--- bear trap, the furbolg camp), north (threshers, the sunken lockboxes, Bashal'Aran, the red crystal), Ameth'Aran,
--- north-east (the crystal again, the Cliffspring River, the moonstalkers, the cave), the far south (bears, Onu's
--- Master's Glaive chain, the Twilight camp, Remtravel, Murkdeep, the beached creatures) and the far north-east (Den
--- Mother, the Blackwood stores and Xabraxxis, the Tower of Althalaxx, Gyromast), then a hearth back. No mage or
--- paladin trainer here: level 16 and 18 training waits for your next city. 1439 is Darkshore ("1439/1,y,x" are
--- Kalimdor world coordinates), 1453 Stormwind City and 1455 Ironforge.
+-- RestedXP's Forever Darkshore route (its 14-16 and 16-19 guides) for a non-Night Elf, minus the Buzzbox chain and
+-- Fruit of the Sea (slow drops, user's call), Easy Strider Living (Cooking 10), The Family and the Fishing Pole
+-- (Auction House fish), Tools of the Highborne (RestedXP drops it past 16), the escort for The Absent Minded
+-- Prospector, and the quests that end outside Darkshore: Therylune's Escape and The Tower of Althalaxx's third part
+-- (Ashenvale), Mathystra Relics (its turn-in is back at Onu), A Lost Master's second part and The Powers Below.
+-- OPTIONAL: For Love Eternal (Anaya is a rare; Cerellean gives it on the dock as you come in), WANTED: Jai'vhanel,
+-- Bashal'Aran's satyr seal and Gyromast's Revenge. Every drop quest has a sticky plus a real finish step you can
+-- skip. The Hearthstone goes to Auberdine. Loops: south (the bear trap, the furbolg camp), north (the sunken
+-- lockboxes, Bashal'Aran, the red crystal), Ameth'Aran, north-east (the crystal again, the Cliffspring River, the
+-- cave), the far south (bears, Onu's Master's Glaive chain, the Twilight camp, Remtravel, Murkdeep, the beached
+-- creatures) and the far north-east (Den Mother, the Blackwood stores and Xabraxxis, the Tower of Althalaxx,
+-- Gyromast), then a hearth back. No mage or paladin trainer here: level 16 and 18 training waits for your next city.
+-- 1439 is Darkshore ("1439/1,y,x" are Kalimdor world coordinates), 1453 Stormwind City and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 6
+#version 7
 << Alliance
 #group TimmyGnome
 #name 15+ Darkshore
@@ -2581,6 +2581,12 @@ step
     >>|cRXP_WARN_On the crossing, turn spare cloth into bolts and conjure water|r << Mage
     .zone Darkshore >> Take the boat to Auberdine in Darkshore
 step
+    .goto 1439,35.743,43.710
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r on the dock as you come in
+    >>|cRXP_WARN_OPTIONAL: his pendant is on Anaya Dawnrunner, a rare at Ameth'Aran (she respawns fast in Forever). Skip this step if you'd rather not. You may need to wait out his talk if someone just handed it in|r
+    .accept 963 >> Accept For Love Eternal
+    .target Cerellean Whiteclaw
+step
     .goto 1439/1,561.66,6343.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caylais Moonfeather|r, the hippogryph master by the docks
     .fp Auberdine >> Get the Auberdine flight path
@@ -2591,24 +2597,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .accept 3524 >> Accept Washed Ashore
     .target Gwennyth Bly'Leggonde
-step
-    .goto 1439/1,577.38,6371.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r on the dock
-    >>|cRXP_WARN_The crab chunks drop from the Reef Crawlers and Encrusted Tide Crawlers on the north and south shores: a sticky tracks them|r
-    .accept 1138 >> Accept Fruit of the Sea
-    .target Gubber Blump
-step
-    .goto 1439,35.743,43.710
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Cerellean Whiteclaw|r
-    >>|cRXP_WARN_OPTIONAL: his pendant is on Anaya Dawnrunner, a rare at Ameth'Aran (she respawns fast in Forever). Skip this step if you'd rather not. You may need to wait out his talk if someone just handed it in|r
-    .accept 963 >> Accept For Love Eternal
-    .target Cerellean Whiteclaw
-step
-    .goto 1439,36.976,44.135
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wizbang Cranktoggle|r upstairs in the inn
-    >>|cRXP_WARN_OPTIONAL: Buzzbox 827 starts a chain of four drop quests (crawler legs, thresher eyes, moonstalker fangs, grizzled scalps), about 4,100 XP in all, and the crawler legs drop rarely. Skip this step to leave the whole chain out: its later steps skip themselves|r
-    .accept 983 >> Accept Buzzbox 827
-    .target Wizbang Cranktoggle
 step
     .goto 1439/1,515.55,6406.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Shaussiy|r downstairs
@@ -2669,13 +2657,6 @@ step
     .accept 984 >> Accept How Big a Threat?
     .target Terenthis
 step
-    #completewith BuzzBox827
-    .isOnQuest 983
-    >>OPTIONAL Buzzbox chain: kill |cRXP_ENEMY_Pygmy Tide Crawlers|r and |cRXP_ENEMY_Young Reef Crawlers|r on the beach. Loot them for |cRXP_LOOT_Crawler Legs|r
-    .complete 983,1 --Crawler Leg (6)
-    .mob Pygmy Tide Crawler
-    .mob Young Reef Crawler
-step
     .isOnQuest 3524
     .goto 1439,36.371,50.920
     >>Open the |cRXP_PICK_Beached Sea Creature|r on the beach south of Auberdine. Loot it for the |cRXP_LOOT_Sea Creature Bones|r
@@ -2701,31 +2682,6 @@ step
     .use 7586
     .unitscan Rabid Thistle Bear
 step
-    #label BuzzBox827
-    .isOnQuest 983
-    #loop
-    .goto 1439,36.091,51.501,0
-    .goto 1439,35.902,47.145,0
-    .goto 1439,36.091,51.501,60,0
-    .goto 1439,37.130,53.663,60,0
-    .goto 1439,35.655,55.872,60,0
-    .goto 1439,35.275,53.464,60,0
-    .goto 1439,36.280,50.071,60,0
-    .goto 1439,35.977,48.408,60,0
-    .goto 1439,35.902,47.145,60,0
-    .goto 1439,35.759,45.455,60,0
-    >>Finish the |cRXP_LOOT_Crawler Legs|r on the beach on the way back north
-    >>|cRXP_WARN_OPTIONAL: the legs drop rarely. Slow? Skip this step and abandon Buzzbox 827: the rest of the Buzzbox chain then skips itself. The gray crawlers drop legs too|r
-    .complete 983,1 --Crawler Leg (6)
-    .mob Pygmy Tide Crawler
-    .mob Young Reef Crawler
-step
-    .isQuestComplete 983
-    .goto 1439,36.634,46.250
-    >>Click |cRXP_PICK_Buzzbox 827|r on the beach
-    .turnin 983 >> Turn in Buzzbox 827
-    .accept 1001 >> Accept Buzzbox 411
-step
     .isQuestComplete 3524
     .goto 1439,36.701,45.122,8,0
     .goto 1439,36.621,45.596
@@ -2733,12 +2689,6 @@ step
     .turnin 3524 >> Turn in Washed Ashore
     .accept 4681 >> Accept Washed Ashore
     .target Gwennyth Bly'Leggonde
-step
-    #completewith ThresherEyes
-    .isOnQuest 1001
-    >>OPTIONAL Buzzbox chain: kill |cRXP_ENEMY_Darkshore Threshers|r in the water off the coast. Loot them for |cRXP_LOOT_Thresher Eyes|r
-    .complete 1001,1 --Thresher Eye (3)
-    .mob Darkshore Thresher
 step
     .isOnQuest 4681
     .goto 1439,31.841,46.304
@@ -2791,37 +2741,9 @@ step
     >>|cRXP_WARN_Same again at the second ship for the|r |cRXP_LOOT_Mist Veil's Lockbox|r
     .complete 982,2 --Mist Veil's Lockbox (1)
 step
-    #label ThresherEyes
-    .isOnQuest 1001
-    #loop
-    .goto 1439/1,310.53,7077.48,0
-    .goto 1439/1,620.35,6768.76,0
-    .goto 1439/1,310.53,7077.48,55,0
-    .goto 1439/1,404.85,7099.75,55,0
-    .goto 1439/1,537.82,7023.33,55,0
-    .goto 1439/1,602.66,6924.21,55,0
-    .goto 1439/1,620.35,6768.76,55,0
-    >>Finish the |cRXP_LOOT_Thresher Eyes|r on the |cRXP_ENEMY_Darkshore Threshers|r along this coast
-    >>|cRXP_WARN_OPTIONAL: slow? Skip this step and abandon Buzzbox 411: the rest of the Buzzbox chain then skips itself|r
-    .complete 1001,1 --Thresher Eye (3)
-    .mob Darkshore Thresher
-step
     .goto 1439,41.901,31.339
     >>Click the |cRXP_PICK_Beached Sea Creature|r on the shore
     .accept 4723 >> Accept Beached Sea Creature
-step
-    .isQuestComplete 1001
-    .goto 1439,41.960,28.616
-    >>Click |cRXP_PICK_Buzzbox 411|r on the shore
-    .turnin 1001 >> Turn in Buzzbox 411
-    .accept 1002 >> Accept Buzzbox 323
-step
-    #completewith FangsFinish
-    .isOnQuest 1002
-    >>OPTIONAL Buzzbox chain: kill |cRXP_ENEMY_Moonstalker Runts|r and |cRXP_ENEMY_Moonstalkers|r as you go. Loot them for |cRXP_LOOT_Moonstalker Fangs|r
-    .complete 1002,1 --Moonstalker Fang (6)
-    .mob Moonstalker Runt
-    .mob Moonstalker
 step
     .isOnQuest 954
     .goto 1439,44.168,36.289
@@ -3031,45 +2953,11 @@ step
     >>Click the |cRXP_PICK_Beached Sea Turtle|r on the north shore
     .accept 4725 >> Accept Beached Sea Turtle
 step
-    #completewith CrabsFinish
-    .isOnQuest 1138
-    >>Kill |cRXP_ENEMY_Reef Crawlers|r and |cRXP_ENEMY_Encrusted Tide Crawlers|r on the shores. Loot them for |cRXP_LOOT_Fine Crab Chunks|r
-    >>|cRXP_WARN_Reef Crawlers' Muscle Tear hits for 30-55|r
-    .complete 1138,1 --Fine Crab Chunks (6)
-    .mob Reef Crawler
-    .mob Encrusted Tide Crawler
-step
     .isOnQuest 4762
     .goto 1439/1,-386.39,7219.83
     >>|cRXP_WARN_Use the|r |T134865:0|t[Empty Sampling Tube] |cRXP_WARN_at the base of the Cliffspring River|r
     .complete 4762,1 --Cliffspring River Sample (1)
     .use 12350
-step
-    #label FangsFinish
-    .isOnQuest 1002
-    #loop
-    .goto 1439,53.629,26.054,0
-    .goto 1439,49.775,30.351,0
-    .goto 1439,48.022,27.199,60,0
-    .goto 1439,49.558,26.087,60,0
-    .goto 1439,49.775,30.351,60,0
-    .goto 1439,50.689,32.001,60,0
-    .goto 1439,51.267,32.319,60,0
-    .goto 1439,54.204,30.475,60,0
-    .goto 1439,53.049,27.983,60,0
-    .goto 1439,53.629,26.054,60,0
-    >>Finish the |cRXP_LOOT_Moonstalker Fangs|r on the |cRXP_ENEMY_Moonstalkers|r here
-    >>|cRXP_WARN_OPTIONAL: slow? Skip this step and abandon Buzzbox 323: the rest of the Buzzbox chain then skips itself|r
-    .complete 1002,1 --Moonstalker Fang (6)
-    .mob Moonstalker Runt
-    .mob Moonstalker
-step
-    .isQuestComplete 1002
-    .goto 1439,51.288,24.554
-    >>Click |cRXP_PICK_Buzzbox 323|r by the river
-    >>|cRXP_WARN_Its last part, Buzzbox 525 (OPTIONAL), wants Grizzled Scalps from the Grizzled Thistle Bears in the far south: abandon it later if you'd rather not|r
-    .turnin 1002 >> Turn in Buzzbox 323
-    .accept 1003 >> Accept Buzzbox 525
 step
     .isOnQuest 947
     .goto 1439,54.5,31.7,10 >> Approach the Cliffspring Falls cave: the ramp up to it starts here
@@ -3134,12 +3022,6 @@ step
     .turnin 4725 >> Turn in Beached Sea Turtle
     .target Gwennyth Bly'Leggonde
 step
-    .isQuestComplete 1138
-    .goto 1439/1,577.38,6371.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r on the dock
-    .turnin 1138 >> Turn in Fruit of the Sea
-    .target Gubber Blump
-step
     #completewith PeltsFinish
     .isOnQuest 986
     >>Kill |cRXP_ENEMY_Moonstalker Sires|r when you see them. Loot them for |cRXP_LOOT_Fine Moonstalker Pelts|r
@@ -3147,13 +3029,6 @@ step
     .complete 986,1 --Fine Moonstalker Pelt (5)
     .mob Moonstalker Sire
     .mob Moonstalker Matriarch
-step
-    #completewith ScalpsFinish
-    .isOnQuest 1003
-    >>OPTIONAL Buzzbox chain: kill |cRXP_ENEMY_Grizzled Thistle Bears|r when you see them. Loot them for |cRXP_LOOT_Grizzled Scalps|r
-    >>|cRXP_WARN_Their Ravage knocks you down for 2 seconds|r
-    .complete 1003,1 --Grizzled Scalp (4)
-    .mob Grizzled Thistle Bear
 step
     #label BearsFinish
     .isOnQuest 2138
@@ -3208,24 +3083,6 @@ step
     .mob +Twilight Disciple
     .mob +Twilight Thug
 step
-    #label ScalpsFinish
-    .isOnQuest 1003
-    .goto 1439/1,227.35,4575.38,50,0
-    .goto 1439/1,205.73,4639.13,50,0
-    .goto 1439/1,129.10,4741.75,50,0
-    .goto 1439/1,86.52,4839.13,50,0
-    .goto 1439/1,338.70,4821.22,50,0
-    .goto 1439/1,452.67,4684.98
-    >>Finish the |cRXP_LOOT_Grizzled Scalps|r on the |cRXP_ENEMY_Grizzled Thistle Bears|r south of Onu
-    >>|cRXP_WARN_OPTIONAL: skip this step if they're taken or slow|r
-    .complete 1003,1 --Grizzled Scalp (4)
-    .mob Grizzled Thistle Bear
-step
-    .isQuestComplete 1003
-    .goto 1439,41.390,80.563
-    >>Click |cRXP_PICK_Buzzbox 525|r
-    .turnin 1003 >> Turn in Buzzbox 525
-step
     .isOnQuest 950
     .goto 1439,43.555,76.293
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Onu|r
@@ -3261,20 +3118,6 @@ step
     .mob Greymist Hunter
     .mob Greymist Coastrunner
 step
-    #label CrabsFinish
-    .isOnQuest 1138
-    #loop
-    .goto 1439,35.4,73.7,0
-    .goto 1439,32.4,82.1,0
-    .goto 1439,35.4,73.7,40,0
-    .goto 1439,34.0,77.5,40,0
-    .goto 1439,32.4,82.1,40,0
-    >>Finish the |cRXP_LOOT_Fine Crab Chunks|r on the |cRXP_ENEMY_Reef Crawlers|r and |cRXP_ENEMY_Encrusted Tide Crawlers|r along this shore
-    >>|cRXP_WARN_Skip this step if it's slow|r
-    .complete 1138,1 --Fine Crab Chunks (6)
-    .mob Reef Crawler
-    .mob Encrusted Tide Crawler
-step
     .goto 1439,35.968,70.807
     >>Click the |cRXP_PICK_Beached Sea Creature|r on the shore on the way north
     .accept 4728 >> Accept Beached Sea Creature
@@ -3297,12 +3140,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gwennyth Bly'Leggonde|r
     .turnin 4731 >> Turn in Beached Sea Turtle
     .target Gwennyth Bly'Leggonde
-step
-    .isQuestComplete 1138
-    .goto 1439/1,577.38,6371.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r on the dock
-    .turnin 1138 >> Turn in Fruit of the Sea
-    .target Gubber Blump
 step
     .isQuestComplete 963
     .goto 1439,35.743,43.710
@@ -3499,12 +3336,6 @@ step
     >>|cRXP_WARN_Don't take the next part: it goes to Volcor in the far south|r
     .turnin 986 >> Turn in A Lost Master
     .target Terenthis
-step
-    .isQuestComplete 1138
-    .goto 1439/1,577.38,6371.35
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gubber Blump|r on the dock
-    .turnin 1138 >> Turn in Fruit of the Sea
-    .target Gubber Blump
 step
     .isOnQuest 4727
     .goto 1439,36.701,45.122,8,0

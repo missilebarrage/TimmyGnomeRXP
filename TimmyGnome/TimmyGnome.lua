@@ -3364,7 +3364,7 @@ step
 -- Undercity and 1453 Stormwind City.
 RXPGuides.RegisterGuide([[
 #forever
-#version 6
+#version 7
 << Alliance
 #group TimmyGnome
 #name 18+ Ruins of Lordaeron
@@ -3441,12 +3441,6 @@ step
     .use 268579 >> |cRXP_WARN_Use the|r |T4504543:0|t[|cRXP_LOOT_Crest of Lordaeron|r] |cRXP_WARN_to start the quest|r
     .collect 268579,1,95189 --Crest of Lordaeron (1)
     .accept 95189 >> Accept Crest of Lordaeron
-step
-    #completewith CrumpledPaper
-    +|cRXP_WARN_Bosses: Witherfang (the spider: kill her Broodlings first); The Baron (a knockback that stuns: fight him with your backs to a wall, ranged spread out); The Abandoned (click the statue with glowing eyes in the courtyard, three waves first; interrupt his Drain Life); Bjork (his Anti-Magic Shield blocks spells: casters wait it out); Rath'mael (interrupt his Flamestrike)|r
-    >>|cRXP_WARN_OPTIONAL: Viktor the Vile. Click the fireplace in the burned house past the graveyard: five waves of adds, then him|r
-    >>|cRXP_WARN_Worth a Need roll: Tuskwrap Belt (Bjork), Rotmender's Leggings (The Abandoned), Rotmender's Treads (Rath'mael), and the Coldspire Staff (Rath'mael, +32 Frost damage) if you cast Frostbolt|r << Mage
-    >>|cRXP_WARN_Worth a Need roll: Atrophic Girdle (Witherfang), Abomination Bones (The Baron), Grip of Fear (The Abandoned), Bonerust Leggings (Bjork), Vilewalkers (Viktor)|r << Paladin
 step
     #label BaronHead
     .isOnQuest 95250
@@ -3641,7 +3635,7 @@ step << !Mage !Paladin
 -- Mountains, 1453 Stormwind City and 1415 the Eastern Kingdoms map (the tunnel before the Deadmines).
 RXPGuides.RegisterGuide([[
 #forever
-#version 6
+#version 7
 << Alliance
 #group TimmyGnome
 #name 20+ The Deadmines
@@ -3890,11 +3884,6 @@ step
     .isOnQuest 214
     >>Loot the |cRXP_ENEMY_Defias|r in the mine and the Deadmines for |cRXP_LOOT_Red Silk Bandanas|r: each of you needs 10
     .complete 214,1 --Red Silk Bandana (10)
-step
-    #completewith VanCleef
-    +|cRXP_WARN_Bosses: Rhahk'Zor; Sneed's Shredder, then Sneed when it dies; Gilnid at the smelter; Mr. Smite on the ship (he stuns and changes weapons); Captain Greenskin; Edwin VanCleef (two Blackguards join him at low health); Cookie is OPTIONAL|r
-    >>|cRXP_WARN_Worth a Need roll: Cookie's Stirring Rod (a 22.3 DPS wand), the Emberstone Staff (Captain Greenskin, +24 spell damage), the Lavishly Jeweled Ring (Gilnid) and the Corsair's Overshirt (VanCleef)|r << Mage
-    >>|cRXP_WARN_Worth a Need roll: Smite's Mighty Hammer (a 19.7 DPS two-handed mace) and Rhahk'Zor's Hammer (18.4 DPS)|r << Paladin
 step
     .isOnQuest 167
     .goto 1415,41.18,79.80,25,0

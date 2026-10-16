@@ -195,7 +195,7 @@ To update, download the zip again and replace the TimmyGnome folder.
   the second boss. Bloodied Insignia starts from an insignia the undead drop (10 each). The Crest of Lordaeron
   lies in one of five spots, listed in the guide. Remember That I Love You is the Crumpled Paper by Edward's body
   in Rath'mael's graveyard, after the last boss. Stickies track the insignias and the Crest, each with a finish
-  step you can skip, and the boss tips include the loot worth rolling on.
+  step you can skip.
 - **Turn-ins:** Captain Truman on the way out, then hearth to Auberdine and take the boat to Stormwind
   (Hearthstone on cooldown? Run back to Southshore and fly). In Stormwind: Orphan Matron Nightingale in Cathedral
   Square (her follow-up to Darkshire is OPTIONAL), Lady Dena Kennedy in the Keep's Royal Gallery and General Marcus
@@ -222,7 +222,7 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **The Deadmines:** find three more players. Foreman Thistlenettle (Oh Brother. . .) and Collecting Memories'
   cards are in the tunnel before the instance; Collecting Memories is OPTIONAL, since RestedXP calls it slow, with
   no dungeon bonus. Sneed's Shredder (Underground Assault) and Edwin VanCleef (his head and An Unsent Letter) are
-  inside. Stickies track the Red Silk Bandanas, and the boss tips include the loot worth rolling on.
+  inside. A sticky tracks the Red Silk Bandanas.
 - **Turn-ins:** Sentinel Hill after the Deadmines, then Stormwind: Wilder Thistlenettle, Shoni the Shilent, Baros
   Alexston and, for the paladin, Duthorian Rall. Level 20 and 22 training if you're there.
 - **Where you end up:** a little over 20.5 for a duo coming from the Ruins of Lordaeron at 19.5, or about 21 if

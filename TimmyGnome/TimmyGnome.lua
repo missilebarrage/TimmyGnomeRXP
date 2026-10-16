@@ -3627,22 +3627,22 @@ step << !Mage !Paladin
 
 -- Westfall and the Deadmines from level 19, straight after the Ruins of Lordaeron, which picked up Underground
 -- Assault, Oh Brother. . . and Collecting Memories in Stormwind. Only the Deadmines quests and what's on the way to
--- them (user's call): Red Leather Bandanas, Patrolling Westfall, the Defias Brotherhood chain and Red Silk Bandanas,
--- plus the paladin's Tome of Valor. The Hearthstone moves to Sentinel Hill: you hearth back from Lakeshire and again
--- after the Deadmines. Lakeshire for Wiley the Black, then Stormwind for Master Mathias Shaw, level 20 training and
--- the Tome of Valor; then one loop from Sentinel Hill: the Defias Trappers and Smugglers just west of it for
--- bandanas, the Riverpaw camp halfway to Moonbrook for gnoll paws (its Brutes and Bandits still give XP; the gnolls
--- in the north don't), Moonbrook for the Defias Messenger and the rest of the bandanas, and for the paladin Daphne
--- Stilwell's defence south of Moonbrook. Then The Defias Traitor's escort and the Deadmines with three more players:
--- Foreman Thistlenettle and Collecting Memories' cards are in the tunnel before the instance (RestedXP calls
--- Collecting Memories slow, with no dungeon bonus: OPTIONAL), Sneed and Edwin VanCleef inside. Then Stormwind for
--- the last turn-ins and training. The Defias Brotherhood chain, the Deadmines steps and most coordinates follow
--- RestedXP's Forever "18-20 Deadmines" and "13-15 Westfall"; mob spots come from Questie's Forever data. 1436 is
--- Westfall, 1433 Redridge Mountains, 1453 Stormwind City and 1415 the Eastern Kingdoms map (the tunnel before the
--- Deadmines).
+-- them (user's call): Red Leather Bandanas, the first People's Militia (same camp), Patrolling Westfall, the Defias
+-- Brotherhood chain and Red Silk Bandanas, plus the paladin's Tome of Valor. The Hearthstone moves to Sentinel Hill:
+-- you hearth back from Lakeshire and again after the Deadmines. Lakeshire for Wiley the Black, then Stormwind for
+-- Master Mathias Shaw, level 20 training and the Tome of Valor; then one loop from Sentinel Hill: the Defias Trapper
+-- and Smuggler camp just west of it (47.8, 46.1) for The People's Militia and the bandanas, the Riverpaw camp
+-- halfway to Moonbrook for gnoll paws (its Brutes and Bandits still give XP; the gnolls in the north don't),
+-- Moonbrook for the Defias Messenger and any bandanas still missing, and for the paladin Daphne Stilwell's defence
+-- south of Moonbrook. Then The Defias Traitor's escort and the Deadmines with three more players: Foreman
+-- Thistlenettle and Collecting Memories' cards are in the tunnel before the instance (RestedXP calls Collecting
+-- Memories slow, with no dungeon bonus: OPTIONAL), Sneed and Edwin VanCleef inside. Then Stormwind for the last
+-- turn-ins and training. The Defias Brotherhood chain, the Deadmines steps and most coordinates follow RestedXP's
+-- Forever "18-20 Deadmines" and "13-15 Westfall"; mob spots come from Questie's Forever data. 1436 is Westfall, 1433
+-- Redridge Mountains, 1453 Stormwind City and 1415 the Eastern Kingdoms map (the tunnel before the Deadmines).
 RXPGuides.RegisterGuide([[
 #forever
-#version 4
+#version 5
 << Alliance
 #group TimmyGnome
 #name 19+ Westfall and Deadmines
@@ -3780,8 +3780,10 @@ step
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at Sentinel Hill, talk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    >>|cRXP_WARN_The People's Militia wants the Defias Trappers and Smugglers at the camp just west of here: the same Defias drop your Red Leather Bandanas|r
     .turnin 141 >> Turn in The Defias Brotherhood (Shaw's report)
     .accept 142 >> Accept The Defias Brotherhood (the Defias Messenger)
+    .accept 12 >> Accept The People's Militia
     .target Gryan Stoutmantle
 step
     #completewith BandanasFinish
@@ -3796,12 +3798,26 @@ step
     .complete 142,1 --A Mysterious Message (1)
     .unitscan Defias Messenger
 step
+    #label MilitiaCamp
+    .isOnQuest 12
+    #loop
+    .goto 1436,47.79,46.08,0
+    .goto 1436,47.79,46.08,30,0
+    .goto 1436,48.5,45.2,30,0
+    .goto 1436,49.5,46.4,30,0
+    .goto 1436,48.6,47.7,30,0
+    .goto 1436,47.1,46.2,30,0
+    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r at the camp just west of Sentinel Hill. Loot them for |cRXP_LOOT_Red Leather Bandanas|r
+    >>|cRXP_WARN_They respawn quickly here. Bandanas slow once The People's Militia is done? Skip this step: the Defias in Moonbrook drop them too|r
+    .complete 12,1 --Defias Trapper slain (15)
+    .mob +Defias Trapper
+    .complete 12,2 --Defias Smuggler slain (15)
+    .mob +Defias Smuggler
+    .complete 153,1 --Red Leather Bandana (15)
+step
     #completewith PawsLoop
-    .goto 1436,51.4,46.8,30,0
-    .goto 1436,48.4,45.4,30,0
-    .goto 1436,48.2,47.2,30,0
     .goto 1436,49.0,52.0,40,0
-    .goto 1436,50.6,61.0,40 >> Kill the |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r just west of Sentinel Hill for bandanas, then go south to the Riverpaw gnoll camp
+    .goto 1436,50.6,61.0,40 >> Go south to the Riverpaw gnoll camp
 step
     #label PawsLoop
     .isOnQuest 102
@@ -3876,6 +3892,13 @@ step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     .turnin 142 >> Turn in The Defias Brotherhood (the Messenger's message)
+    .target Gryan Stoutmantle
+step
+    .isQuestComplete 12
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    >>|cRXP_WARN_He offers the next part (Defias Pillagers and Looters): it isn't in this guide, so leave it unless you want it|r
+    .turnin 12 >> Turn in The People's Militia
     .target Gryan Stoutmantle
 step
     .isQuestComplete 102

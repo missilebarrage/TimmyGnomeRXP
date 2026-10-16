@@ -210,14 +210,16 @@ To update, download the zip again and replace the TimmyGnome folder.
 
 ### 19+ Westfall and Deadmines
 
-- **Only the Deadmines and what leads to it:** Red Leather Bandanas, Patrolling Westfall (gnoll paws), the Defias
-  Brotherhood chain and Red Silk Bandanas, plus the paladin's Tome of Valor. No other Westfall quests.
+- **Only the Deadmines and what leads to it:** Red Leather Bandanas and the first People's Militia (the same
+  camp), Patrolling Westfall (gnoll paws), the Defias Brotherhood chain and Red Silk Bandanas, plus the paladin's
+  Tome of Valor. No other Westfall quests.
 - **Hearthstone:** set at Sentinel Hill. You hearth back from Lakeshire and again after the Deadmines.
 - **The chain's errands:** Lakeshire for Wiley the Black, then Stormwind for Master Mathias Shaw in SI:7, level 20
   training if you're there, and the paladin's Tome of Valor if the Ruins guide didn't give it.
-- **One loop from Sentinel Hill:** the Defias Trappers and Smugglers just west of it for bandanas, the Riverpaw
-  camp halfway to Moonbrook for the paws (its Brutes and Bandits still give XP; the gnolls in the north don't),
-  then Moonbrook for the Defias Messenger and the rest of the bandanas, and for the paladin Daphne Stilwell's
+- **One loop from Sentinel Hill:** the Defias Trapper and Smuggler camp just west of it (47.8, 46.1) for The
+  People's Militia and the bandanas together, the Riverpaw camp halfway to Moonbrook for the paws (its Brutes and
+  Bandits still give XP; the gnolls in the north don't), then Moonbrook for the Defias Messenger and any bandanas
+  still missing, and for the paladin Daphne Stilwell's
   defence south of Moonbrook. Then The Defias Traitor's escort to Moonbrook, and back for The Defias
   Brotherhood's last part and Red Silk Bandanas.
 - **The Deadmines:** find three more players. Foreman Thistlenettle (Oh Brother. . .) and Collecting Memories'

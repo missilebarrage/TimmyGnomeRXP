@@ -2,8 +2,8 @@
 
 A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
 Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes, Darkshore, the
-Ruins of Lordaeron and the Deadmines, levels 1 to about 21, made for playing as a duo (the dungeons need three
-more players). From the Hall of Thanes on, guides are named by the level you start them at, like **14+**: where a
+Ruins of Lordaeron, the Deadmines and Redridge, levels 1 to about 22, made for playing as a duo (the dungeons need
+three more players). From the Hall of Thanes on, guides are named by the level you start them at, like **14+**: where a
 duo ends up is hard to predict.
 
 ## Install
@@ -16,7 +16,7 @@ You need RestedXP Guides installed.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
    **5-10 Dun Morogh**, **10-12 Elwynn Forest**, **12-14 Loch Modan**, **14+ Hall of Thanes**,
-   **15+ Darkshore**, **18+ Ruins of Lordaeron** and **20+ The Deadmines** by itself.
+   **15+ Darkshore**, **18+ Ruins of Lordaeron**, **20+ The Deadmines** and **21+ Redridge** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
@@ -227,6 +227,26 @@ To update, download the zip again and replace the TimmyGnome folder.
   Alexston and, for the paladin, Duthorian Rall. Level 20 and 22 training if you're there.
 - **Where you end up:** a little over 20.5 for a duo coming from the Ruins of Lordaeron at 19.5, or about 21 if
   some Deadmines quests pay the dungeon bonus. The paladin's Tome of Valor adds about 5,800 XP.
+
+### 21+ Redridge
+
+The first of six guides from 21 to 30: Redridge, the Stockade, Duskwood, the Wetlands, the Excavation Site, then
+Duskwood and Redridge again. The Stockade and the Excavation Site are the only dungeons in this stretch.
+
+- **Goal:** level 22, which the Stockade's quests need.
+- **Lakeshire:** fly in from Stormwind and pick up everything. Deputy Feldon's two quests (low-level gnolls next to
+  the gryphon master) and Hilary's Necklace are OPTIONAL.
+- **South loop:** the murlocs on the lake's south shore (Murloc Poachers, Selling Fish), the Blackrock camps in the
+  south-east (Blackrock Blockade, plus Battleworn Axes from any Blackrock orc), then the Sunken Chest in the lake
+  on the way back (The Lost Tools).
+- **North-west loop:** Redridge gnolls for The Everstill Bridge, then Blackrock Champions at the camp up north
+  (Blackrock Bounty). OPTIONAL: Bellygrub on the way back.
+- **East loop:** Alther's Mill's tarantulas and eggs, then the Shadowhide gnolls (Solomon's Law).
+- **Finish:** Guard Berton's What Comes Around..., the first Stockade quest, once you're 22.
+- **Left for the last guide of the track:** Shadow Magic, Tharil'zun, Missing In Action and the wanted posters
+  (Gath'Ilzogg, Fangore, Incinerator Gar'im). They're elite or single named mobs, quick once you're 28.
+- **Where you end up:** about 22 for a duo coming from the Deadmines at about 21, a bit more with the OPTIONAL
+  quests.
 
 ## Credits and license
 

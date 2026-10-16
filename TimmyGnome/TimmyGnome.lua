@@ -1,6 +1,6 @@
 -- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of
--- Thanes, Darkshore, the Ruins of Lordaeron and the Deadmines, levels 1 to about 21. From the Hall of Thanes on,
--- guides are named by the level you start them at ("14+"): where a duo ends up is hard to predict.
+-- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines and Redridge, levels 1 to about 22. From the Hall of
+-- Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is hard to predict.
 -- The first two guides were rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn and Loch
 -- Modan guides below them have their own notes. Like that run, Coldridge Valley opens with a grind to level 2
 -- and skips Dwarven Outfitters, which also skips both Coldridge Valley mail deliveries and the Glyphic
@@ -3633,10 +3633,11 @@ step << !Mage !Paladin
 -- Mountains, 1453 Stormwind City and 1415 the Eastern Kingdoms map (the tunnel before the Deadmines).
 RXPGuides.RegisterGuide([[
 #forever
-#version 8
+#version 9
 << Alliance
 #group TimmyGnome
 #name 20+ The Deadmines
+#next 21+ Redridge
 
 step
     .goto 1453/0,490.03,-8835.82
@@ -4035,4 +4036,336 @@ step << Mage
 step << !Mage !Paladin
     >>Visit your class trainer in Stormwind
     .trainer >> Train your level 20 spells, and 22 if you're there
+]])
+
+-- Redridge from level 21, after the Deadmines: the first of six guides from 21 to 30 (Redridge, the Stockade,
+-- Duskwood, the Wetlands, the Excavation Site, then Duskwood and Redridge again). It gets you to 22, the level the
+-- Stockade's quests need. Crowd-proof first: kill and drop quests on big camps. Deputy Feldon's two low quests,
+-- Hilary's Necklace and Bellygrub are OPTIONAL top-ups. The elite quests, the escort and the other named mobs
+-- (Shadow Magic, Tharil'zun, Missing In Action, Gath'Ilzogg, Fangore, Gar'im) wait for the last guide of the track,
+-- when you kill them fast. Three loops from Lakeshire: south (the murlocs on the south shore, the Blackrock camps in
+-- the south-east, the Sunken Chest), north-west (Redridge gnolls, the Blackrock camp up north), east (Alther's Mill,
+-- the Shadowhide gnolls). Forever's Redridge map is shifted from Era's (x is about 5.1 lower), so the spots here are
+-- Forever map percentages from Questie's Forever data, and from AllTheThings for the objects of the Forever-new
+-- quests; the loop order follows RestedXP's Classic "19-20 Redridge". 1453 is Stormwind City, 1433 Redridge
+-- Mountains.
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group TimmyGnome
+#name 21+ Redridge
+
+step
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master in the Trade District
+    .fly Redridge >> Fly to Lakeshire in Redridge
+    .target Dungar Longdrink
+    .zoneskip Redridge Mountains
+step
+    .goto 1433,25.6,60.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r next to the gryphon master
+    >>|cRXP_WARN_OPTIONAL: low-level gnolls just west and south of here, worth taking if you want 22 sooner|r
+    .accept 246 >> Accept Assessing the Threat
+    .accept 98407 >> Accept Show of Force
+    .target Deputy Feldon
+step
+    .goto 1433,26.4,57.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Howe|r by the bridge
+    .accept 128 >> Accept Blackrock Bounty
+    .target Guard Howe
+step
+    .goto 1433,24.2,53.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tCross the bridge and talk to |cRXP_FRIENDLY_Shawn|r
+    >>|cRXP_WARN_OPTIONAL: the necklace is in a Glinting Mud patch on the lake floor, on the swim back from the first loop|r
+    .accept 3741 >> Accept Hilary's Necklace
+    .target Shawn
+step
+    .goto 1433,27.1,48.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
+    .accept 125 >> Accept The Lost Tools
+    .target Foreman Oslow
+step
+    .goto 1433,28.4,49.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    .accept 20 >> Accept Blackrock Menace
+    .accept 98387 >> Accept Blackrock Blockade
+    .target Marshal Marris
+step
+    .goto 1433,22.6,47.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r on the dock
+    .accept 150 >> Accept Murloc Poachers
+    .accept 127 >> Accept Selling Fish
+    .target Dockmaster Baren
+step
+    .goto 1433,24.6,44.3
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bailiff Conacher|r in the town hall
+    >>|cRXP_WARN_The Shadowhide gnolls are on the last loop, in the east|r
+    .accept 91 >> Accept Solomon's Law
+    .target Bailiff Conacher
+step
+    #completewith BlackrockMenaceDone
+    .isOnQuest 20
+    >>Kill |cRXP_ENEMY_Blackrock|r orcs of any kind as you meet them. Loot them for |cRXP_LOOT_Battleworn Axes|r
+    .complete 20,1 --Battleworn Axe (10)
+    .mob Blackrock Grunt
+    .mob Blackrock Outrunner
+    .mob Blackrock Renegade
+    .mob Blackrock Champion
+    .mob Blackrock Summoner
+    .mob Blackrock Tracker
+step
+    .isOnQuest 98407
+    #loop
+    .goto 1433,10.4,64.6,0
+    .goto 1433,10.0,61.3,25,0
+    .goto 1433,11.6,63.5,25,0
+    .goto 1433,10.4,66.3,25,0
+    .goto 1433,8.5,67.8,25,0
+    >>Back over the bridge and west of the gryphon master, kill |cRXP_ENEMY_Redridge Thrashers|r for |cRXP_LOOT_Spiked Collars|r. Kill the |cRXP_ENEMY_Redridge Mongrels|r here too
+    .complete 98407,1 --Spiked Collar (5)
+    .mob Redridge Thrasher
+    .mob Redridge Mongrel
+step
+    .isOnQuest 246
+    #loop
+    .goto 1433,26.6,82.6,0
+    .goto 1433,24.3,84.3,25,0
+    .goto 1433,27.4,82.8,25,0
+    .goto 1433,29.6,83.1,25,0
+    .goto 1433,25.3,81.2,25,0
+    >>South of the gryphon master, kill |cRXP_ENEMY_Redridge Mongrels|r and |cRXP_ENEMY_Redridge Poachers|r
+    .complete 246,1 --Redridge Mongrel (10)
+    .complete 246,2 --Redridge Poacher (6)
+    .mob Redridge Mongrel
+    .mob Redridge Poacher
+step
+    #loop
+    .goto 1433,43.9,70.0,0
+    .goto 1433,45.3,70.9,20,0
+    .goto 1433,42.6,71.2,20,0
+    .goto 1433,43.2,67.4,20,0
+    .goto 1433,45.1,68.5,20,0
+    >>Kill |cRXP_ENEMY_murlocs|r on the south shore of the lake. Loot them for |cRXP_LOOT_Spotted Sunfish|r and |cRXP_LOOT_Murloc Fins|r
+    >>|cRXP_WARN_They respawn fast here|r
+    .complete 127,1 --Spotted Sunfish (10)
+    .complete 150,1 --Murloc Fin (8)
+    .mob Murloc Flesheater
+    .mob Murloc Minor Tidecaller
+    .mob Murloc Shorestriker
+step
+    #loop
+    .goto 1433,68.8,78.3,0
+    .goto 1433,65.6,78.7,25,0
+    .goto 1433,66.1,73.6,25,0
+    .goto 1433,70.0,74.3,25,0
+    .goto 1433,72.6,69.4,25,0
+    .goto 1433,71.5,80.6,25,0
+    .goto 1433,69.6,82.3,25,0
+    .goto 1433,67.2,81.7,25,0
+    >>East along the road to the Blackrock camps in the south-east. Loot |cRXP_PICK_Blackrock Supplies|r and |cRXP_PICK_Stolen Weapons|r around the camps, and kill the orcs for |cRXP_LOOT_Battleworn Axes|r
+    >>|cRXP_WARN_Outrunners throw nets. Incinerator Gar'im's elite camp is further south-east: stay clear|r
+    .complete 98387,1 --Blackrock Supplies (10)
+    .complete 98387,2 --Stolen Weapon (8)
+    .mob Blackrock Grunt
+    .mob Blackrock Outrunner
+    .mob Blackrock Renegade
+step
+    .isQuestComplete 246
+    .goto 1433,25.6,60.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack west to |cRXP_FRIENDLY_Deputy Feldon|r by the gryphon master
+    .turnin 246 >> Turn in Assessing the Threat
+    .target Deputy Feldon
+step
+    .isQuestComplete 98407
+    .goto 1433,25.6,60.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Feldon|r
+    .turnin 98407 >> Turn in Show of Force
+    .target Deputy Feldon
+step
+    .goto 1433,36.4,54.7
+    >>Swim out into the lake east of town and down to the |cRXP_PICK_Sunken Chest|r on the bottom. Loot it for |cRXP_LOOT_Oslow's Toolbox|r
+    .complete 125,1 --Oslow's Toolbox (1)
+step
+    .isOnQuest 3741
+    .goto 1433,33.0,54.5,15,0
+    .goto 1433,28.9,55.3,15,0
+    .goto 1433,26.0,54.2,15,0
+    .goto 1433,22.7,56.0,15,0
+    .goto 1433,18.9,55.2,15,0
+    .goto 1433,21.5,50.6,15,0
+    .goto 1433,14.1,51.8
+    >>Swim back towards town looking for the |cRXP_PICK_Glinting Mud|r on the lake floor: it's in one of these spots. Loot it for |cRXP_LOOT_Hilary's Necklace|r
+    .complete 3741,1 --Hilary's Necklace (1)
+step
+    .isQuestComplete 3741
+    .goto 1433,24.1,53.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hilary|r next to Shawn
+    .turnin 3741 >> Turn in Hilary's Necklace
+    .target Hilary
+step
+    .isQuestComplete 125
+    .goto 1433,27.1,48.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
+    .turnin 125 >> Turn in The Lost Tools
+    .accept 89 >> Accept The Everstill Bridge
+    .target Foreman Oslow
+step
+    .isQuestComplete 98387
+    .goto 1433,28.4,49.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    .turnin 98387 >> Turn in Blackrock Blockade
+    .target Marshal Marris
+step
+    .isQuestComplete 20
+    .goto 1433,28.4,49.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    >>|cRXP_WARN_Leave Shadow Magic and Tharil'zun for the last guide of the track (elite)|r
+    .turnin 20 >> Turn in Blackrock Menace
+    .target Marshal Marris
+step
+    .isQuestComplete 150
+    .goto 1433,22.6,47.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
+    .turnin 150 >> Turn in Murloc Poachers
+    .target Dockmaster Baren
+step
+    .isQuestComplete 127
+    .goto 1433,22.6,47.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
+    .turnin 127 >> Turn in Selling Fish
+    .target Dockmaster Baren
+step
+    .goto 1433,16.8,46.3
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r at the farm west of town
+    >>|cRXP_WARN_OPTIONAL: Bellygrub is a single named boar, on the way back from the next loop. Skip this if he's camped|r
+    .accept 34 >> Accept An Unwelcome Guest
+    .target Martie Jainrose
+step
+    .isOnQuest 89
+    #loop
+    .goto 1433,19.3,30.0,0
+    .goto 1433,17.5,38.3,30,0
+    .goto 1433,21.7,35.7,30,0
+    .goto 1433,19.7,31.7,30,0
+    .goto 1433,23.5,28.2,30,0
+    .goto 1433,20.5,22.9,30,0
+    .goto 1433,17.6,26.5,30,0
+    .goto 1433,15.1,33.2,30,0
+    >>North-west of town, kill |cRXP_ENEMY_Redridge gnolls|r in the hills. Loot them for |cRXP_LOOT_Iron Pikes|r and |cRXP_LOOT_Iron Rivets|r
+    .complete 89,1 --Iron Pike (5)
+    .complete 89,2 --Iron Rivet (5)
+    .mob Redridge Brute
+    .mob Redridge Mystic
+    .mob Redridge Basher
+    .mob Redridge Drudger
+step
+    #loop
+    .goto 1433,24.5,11.6,0
+    .goto 1433,22.8,16.7,25,0
+    .goto 1433,24.5,14.1,25,0
+    .goto 1433,26.4,12.8,25,0
+    .goto 1433,25.9,7.2,25,0
+    .goto 1433,24.4,8.5,25,0
+    .goto 1433,22.1,10.0,25,0
+    >>North to the Blackrock camp. Kill |cRXP_ENEMY_Blackrock Champions|r
+    >>|cRXP_WARN_They're 24-25: pull one at a time. Stay off the camp's east end: elite Shadowcasters|r
+    .complete 128,1 --Blackrock Champion (15)
+    .mob Blackrock Champion
+step
+    .isOnQuest 34
+    .goto 1433,10.8,49.3
+    >>Head back south, past the west side of town, and kill |cRXP_ENEMY_Bellygrub|r. Loot his |cRXP_LOOT_Tusk|r
+    .complete 34,1 --Bellygrub's Tusk (1)
+    .mob Bellygrub
+step
+    .isQuestComplete 34
+    .goto 1433,16.8,46.3
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Martie Jainrose|r
+    .turnin 34 >> Turn in An Unwelcome Guest
+    .target Martie Jainrose
+step
+    .isQuestComplete 128
+    .goto 1433,26.4,57.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Howe|r across the bridge
+    .turnin 128 >> Turn in Blackrock Bounty
+    .target Guard Howe
+step
+    .isQuestComplete 89
+    .goto 1433,27.1,48.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
+    .turnin 89 >> Turn in The Everstill Bridge
+    .accept 98386 >> Accept Alther's Mill
+    .target Foreman Oslow
+step
+    .isQuestComplete 20
+    .goto 1433,28.4,49.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    >>|cRXP_WARN_Leave Shadow Magic and Tharil'zun for the last guide of the track (elite)|r
+    .turnin 20 >> Turn in Blackrock Menace
+    .target Marshal Marris
+step
+    .isOnQuest 98386
+    #loop
+    .goto 1433,47.8,41.0,0
+    .goto 1433,47.3,43.6,20,0
+    .goto 1433,45.5,40.6,25,0
+    .goto 1433,47.8,39.0,25,0
+    .goto 1433,48.6,36.4,25,0
+    .goto 1433,52.6,41.2,25,0
+    .goto 1433,50.8,43.4,25,0
+    >>East along the north shore to Alther's Mill. Kill |cRXP_ENEMY_Greater Tarantulas|r and destroy |cRXP_PICK_Tarantula Eggs|r
+    >>|cRXP_WARN_Elite Blackrock patrols east of the mill|r
+    .complete 98386,1 --Greater Tarantula (12)
+    .complete 98386,2 --Tarantula Egg destroyed (6)
+    .mob Greater Tarantula
+step
+    .isOnQuest 91
+    #loop
+    .goto 1433,70.6,47.2,0
+    .goto 1433,69.6,44.1,25,0
+    .goto 1433,71.5,45.3,25,0
+    .goto 1433,73.9,41.0,25,0
+    .goto 1433,72.0,45.5,25,0
+    .goto 1433,70.8,51.1,25,0
+    .goto 1433,69.2,49.2,25,0
+    >>Further east, kill |cRXP_ENEMY_Shadowhide gnolls|r. Loot them for |cRXP_LOOT_Shadowhide Pendants|r
+    >>|cRXP_WARN_The Shadowhide Gnolls here are the lowest (22-23). Stonewatch Keep's orcs, just west, are elite|r
+    .complete 91,1 --Shadowhide Pendant (10)
+    .mob Shadowhide Gnoll
+    .mob Shadowhide Brute
+    .mob Shadowhide Warrior
+    .mob Shadowhide Slayer
+    .mob Shadowhide Darkweaver
+step
+    .isQuestComplete 98386
+    .goto 1433,27.1,48.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack west in town, talk to |cRXP_FRIENDLY_Foreman Oslow|r
+    .turnin 98386 >> Turn in Alther's Mill
+    .target Foreman Oslow
+step
+    #label BlackrockMenaceDone
+    .isQuestComplete 20
+    .goto 1433,28.4,49.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    >>|cRXP_WARN_Leave Shadow Magic and Tharil'zun for the last guide of the track (elite)|r
+    .turnin 20 >> Turn in Blackrock Menace
+    .target Marshal Marris
+step
+    .isQuestComplete 91
+    .goto 1433,24.6,44.3
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bailiff Conacher|r in the town hall
+    .turnin 91 >> Turn in Solomon's Law
+    .target Bailiff Conacher
+step
+    .goto 1433,33.9,42.7
+    .xp 22 >> Reach level 22: the Stockade's quests need it. Short? Kill the Blackrock orcs at the camp east of town
+    .mob Blackrock Grunt
+    .mob Blackrock Outrunner
+step
+    .goto 1433,21.2,46.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Berton|r
+    >>|cRXP_WARN_A Stockade quest: the next guide picks up the rest in Darkshire and Stormwind|r
+    .accept 386 >> Accept What Comes Around...
+    .target Guard Berton
 ]])

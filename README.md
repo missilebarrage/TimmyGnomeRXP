@@ -201,43 +201,31 @@ To update, download the zip again and replace the TimmyGnome folder.
   Square (her follow-up to Darkshire is OPTIONAL), Lady Dena Kennedy in the Keep's Royal Gallery and General Marcus
   Jonathan in the Valley of Heroes. The mage takes the Monstrous Cleaver and the Remembrance Armor to sell; the
   paladin takes the Grave Shroud and the Remembrance Armor.
-- **For the next guide:** Stormwind also picks up Humble Beginnings (Baros Alexston), Underground Assault (Shoni
-  the Shilent), Oh Brother. . . and Collecting Memories (Wilder Thistlenettle), and the paladin's Tome of Valor
-  from Duthorian Rall if you're 20.
+- **For the next guide:** Stormwind also picks up its Deadmines quests: Underground Assault (Shoni the Shilent),
+  Oh Brother. . . and Collecting Memories (Wilder Thistlenettle).
 - **Training:** levels 16 and 18 in Stormwind (Jennea Cannon in the Wizard's Sanctum, Arthur the Faithful in the
   Cathedral), and 20 if you're there.
 - **Where you end up:** about 19.5-20 for a duo coming from Darkshore at 18.5.
 
 ### 19+ Westfall and Deadmines
 
-- **Why now:** Westfall was saved for the Deadmines run. At 19-20 only its quests of level 15 and up are worth
-  doing, plus the first two People's Militia parts that unlock the third.
+- **Only the Deadmines and what leads to it:** Red Leather Bandanas, Patrolling Westfall (gnoll paws), the Defias
+  Brotherhood chain and Red Silk Bandanas. No other Westfall quests.
 - **Hearthstone:** set at Sentinel Hill. You hearth back from Lakeshire and again after the Deadmines.
-- **Loops from Sentinel Hill:**
-  - **North:** The Killing Fields, the first People's Militia, and Flasks of Oil from the Harvest Watchers for
-    Keeper of the Flame.
-  - **Alexston's Farmstead and Moonbrook:** the second People's Militia and Alexston's compass for Humble
-    Beginnings. Red Leather Bandanas drop from the Defias all along.
-  - **Lakeshire:** Wiley the Black for The Defias Brotherhood, and OPTIONAL Hilary's Necklace (a Glinting Mud in
-    the lake).
-  - **Stormwind:** Master Mathias Shaw in SI:7, level 20 training, and the paladin's Tome of Valor if the Ruins
-    guide didn't give it.
-  - **The far south:** the Defias Messenger, the third People's Militia in the Dagger Hills, Daphne Stilwell's
-    defence for the paladin, then the lighthouse: Keeper of the Flame and Old Murk-Eye.
-  - **The Defias Traitor's escort** to Moonbrook, then back for The Defias Brotherhood's last part and Red Silk
-    Bandanas.
+- **The chain's errands:** Lakeshire for Wiley the Black, then Stormwind for Master Mathias Shaw in SI:7 and level
+  20 training if you're there.
+- **One loop from Sentinel Hill:** the Defias Trappers and Smugglers just west of it for bandanas, the Riverpaw
+  camp halfway to Moonbrook for the paws (its Brutes and Bandits still give XP; the gnolls in the north don't),
+  then Moonbrook for the Defias Messenger and the rest of the bandanas. Then The Defias Traitor's escort to
+  Moonbrook, and back for The Defias Brotherhood's last part and Red Silk Bandanas.
 - **The Deadmines:** find three more players. Foreman Thistlenettle (Oh Brother. . .) and Collecting Memories'
   cards are in the tunnel before the instance; Collecting Memories is OPTIONAL, since RestedXP calls it slow, with
   no dungeon bonus. Sneed's Shredder (Underground Assault) and Edwin VanCleef (his head and An Unsent Letter) are
   inside. Stickies track the bandanas, and the boss tips include the loot worth rolling on.
-- **Turn-ins:** Sentinel Hill after the Deadmines, then Stormwind: Wilder Thistlenettle, Shoni the Shilent, Baros
-  Alexston and, for the paladin, Duthorian Rall. Level 20 and 22 training if you're there.
-- **Left out:** The Coast Isn't Clear (its Coastrunners are on the far north coast and give no XP by now), Alba
-  Fairmoon's Toxic Soil chain (ten parts, little XP and 10 Coarse Dynamite), Harvesting the Harvesters (a very low
-  drop rate), Patrolling Westfall, the low-level farm quests, Captain Sander's Hidden Treasure and ...and that note
-  you found (a six-part mystery chain).
-- **Where you end up:** about 21.5 for a duo, a little more if some Deadmines quests pay the dungeon bonus. The
-  paladin's Tome of Valor adds about 5,800 XP.
+- **Turn-ins:** Sentinel Hill after the Deadmines, then Stormwind: Wilder Thistlenettle, Shoni the Shilent and Baros
+  Alexston. Level 20 and 22 training if you're there.
+- **Where you end up:** about 20.5 for a duo coming from the Ruins of Lordaeron at 19.5, a little more if some
+  Deadmines quests pay the dungeon bonus.
 
 ## Credits and license
 

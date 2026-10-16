@@ -187,20 +187,20 @@ To update, download the zip again and replace the TimmyGnome folder.
   three more players. All four Alliance quests start inside, and they pay a dungeon bonus, 2.375 times the usual
   XP: about 22,400 for the four.
 - **Getting there:** the ship at the far end of the Auberdine pier goes to Menethil Harbor, then on to
-  Southshore; the mage disenchants and crafts on both legs. Just before it docks at Menethil, jump off, run to
-  Shellei Brondir for the flight path, and run straight back onto the same ship. In Southshore, set your
-  Hearthstone at the inn and get the flight path (you fly from there to Stormwind after the dungeon), then run
-  north-west past Dalaran, swim north across Lordamere Lake and follow the road to the Undercity. You're flagged
-  for PvP there.
+  Southshore; the mage disenchants and crafts on the boats. Just before it docks at Menethil, jump off, run to
+  Shellei Brondir for the flight path, and run straight back onto the same ship. In Southshore, get the flight
+  path, then run north-west past Dalaran, swim north across Lordamere Lake and follow the road to the Undercity.
+  You're flagged for PvP there. Your Hearthstone stays in Auberdine.
 - **Inside:** Captain Truman's Abominable Creatures (on your left as you come in) wants the Head of the Baron,
   the second boss. Bloodied Insignia starts from an insignia the undead drop (10 each). The Crest of Lordaeron
   lies in one of five spots, listed in the guide. Remember That I Love You is the Crumpled Paper by Edward's body
   in Rath'mael's graveyard, after the last boss. Stickies track the insignias and the Crest, each with a finish
   step you can skip, and the boss tips include the loot worth rolling on.
-- **Turn-ins:** Captain Truman on the way out, then hearth to Southshore and fly to Stormwind: General Marcus
-  Jonathan in the Valley of Heroes, Orphan Matron Nightingale in Cathedral Square (her follow-up to Darkshire is
-  OPTIONAL) and Lady Dena Kennedy in the Keep's Royal Gallery. The mage takes the Monstrous Cleaver and the
-  Remembrance Armor to sell; the paladin takes the Grave Shroud and the Remembrance Armor.
+- **Turn-ins:** Captain Truman on the way out, then hearth to Auberdine and take the boat to Stormwind
+  (Hearthstone on cooldown? Run back to Southshore and fly). In Stormwind: Orphan Matron Nightingale in Cathedral
+  Square (her follow-up to Darkshire is OPTIONAL), Lady Dena Kennedy in the Keep's Royal Gallery and General Marcus
+  Jonathan in the Valley of Heroes. The mage takes the Monstrous Cleaver and the Remembrance Armor to sell; the
+  paladin takes the Grave Shroud and the Remembrance Armor.
 - **Training:** levels 16 and 18 in Stormwind (Jennea Cannon in the Wizard's Sanctum, Arthur the Faithful in the
   Cathedral), and 20 if you're there.
 - **Where you end up:** about 19.5-20 for a duo coming from Darkshore at 18.5.

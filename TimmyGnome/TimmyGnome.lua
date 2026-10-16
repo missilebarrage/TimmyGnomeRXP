@@ -3353,15 +3353,16 @@ step
 -- five spots) and Remember That I Love You (the Crumpled Paper by Edward's body in Rath'mael's graveyard). Forever
 -- pays a bonus on dungeon quests (2.375 times): about 22,400 XP for the four. The way there: the ship from Auberdine
 -- to Menethil Harbor (jump off before it docks for the flight path, then back onto the same ship), on to Southshore
--- (Hearthstone and flight path), then the run north past Dalaran and across Lordamere Lake to the Undercity, where
--- you're flagged for PvP. After the dungeon you hearth to Southshore and fly to Stormwind for the other three
--- turn-ins and your level 16, 18 and 20 training. The way in, the inside steps and the turn-in coordinates follow
--- RestedXP's Forever "16-18 Ruins of Lordaeron" (its Dungeon Guide, in beta); the boss order and the Crest's five
--- spots come from community guides. 1439 is Darkshore, 1437 Wetlands, 1424 Hillsbrad Foothills, 1416 Alterac
--- Mountains, 1420 Tirisfal Glades, 1458 Undercity and 1453 Stormwind City.
+-- (flight path), then the run north past Dalaran and across Lordamere Lake to the Undercity, where you're flagged
+-- for PvP. The Hearthstone stays in Auberdine from Darkshore: after the dungeon you hearth there and take the boat
+-- to Stormwind for the other three turn-ins and your level 16, 18 and 20 training (Hearthstone on cooldown? Run back
+-- to Southshore and fly). The way in, the inside steps and the turn-in coordinates follow RestedXP's Forever "16-18
+-- Ruins of Lordaeron" (its Dungeon Guide, in beta); the boss order and the Crest's five spots come from community
+-- guides. 1439 is Darkshore, 1437 Wetlands, 1424 Hillsbrad Foothills, 1416 Alterac Mountains, 1420 Tirisfal Glades,
+-- 1458 Undercity and 1453 Stormwind City.
 RXPGuides.RegisterGuide([[
 #forever
-#version 2
+#version 3
 << Alliance
 #group TimmyGnome
 #name 18+ Ruins of Lordaeron
@@ -3394,16 +3395,9 @@ step
     >>|cRXP_WARN_On the way to Southshore, carry on disenchanting and crafting|r << Mage
     .zone Hillsbrad Foothills >> Ride the ship on to Southshore
 step
-    .goto 1424,51.170,58.927
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Anderson|r in the Southshore inn
-    >>|cRXP_WARN_After the dungeon you hearth back here and fly to Stormwind for the turn-ins|r
-    .home >> Set your Hearthstone to Southshore
-    .bindlocation 271
-    .target Innkeeper Anderson
-step
     .goto 1424/0,-512.15,-715.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r, the gryphon master
-    >>|cRXP_WARN_Don't skip this one: after the dungeon you fly from here to Stormwind for the turn-ins|r
+    >>|cRXP_WARN_Don't skip this one: if your Hearthstone is still on cooldown after the dungeon, you fly back to Stormwind from here|r
     .fp Southshore >> Get the Southshore flight path
     .target Darla Harris
 step
@@ -3481,70 +3475,34 @@ step
     .turnin 95250 >> Turn in Abominable Creatures
     .target Captain Truman
 step
-    .hs >> Hearth to Southshore
+    .hs >> Hearth to Auberdine
+    >>|cRXP_WARN_Your Hearthstone is still set to Auberdine from Darkshore: the boat to Stormwind leaves from there|r
     .cooldown item,6948,>2,1
-    .bindlocation 271,1
-    .subzoneskip 271
+    .bindlocation 442,1
+    .subzoneskip 442
 step
     .goto 1424/0,-512.15,-715.14
-    .subzone 271 >> Hearthstone on cooldown? Run back to Southshore the way you came
+    .subzone 271 >> Hearthstone on cooldown? Wait for it, or run back to Southshore the way you came and fly to Stormwind
+    .zoneskip Darkshore
+    .zoneskip Stormwind City
 step
     .goto 1424/0,-512.15,-715.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r
     .fly Stormwind >> Fly to Stormwind
     .target Darla Harris
+    .zoneskip Darkshore
     .zoneskip Stormwind City
 step
-    .isQuestComplete 95195
-    .goto 1453/0,521.000,-8954.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_General Marcus Jonathan|r on his horse in the Valley of Heroes
-    >>|cRXP_WARN_Neither reward is cloth: take the Remembrance Armor, it sells for more (13s 93c)|r << Mage
-    >>|cRXP_WARN_Take the Remembrance Armor (mail)|r << Paladin
-    .turnin 95195 >> Turn in Bloodied Insignia
-    .target General Marcus Jonathan
-step << Mage
     #completewith next
-    .goto 1453/0,942.34,-9001.49,15,0
-    .goto 1453/0,949.86,-9009.38,10,0
-    .goto 1453/0,962.63,-8990.73,15,0
-    .goto 1453/0,928.62,-9010.10,15,0
-    .goto 1453/0,863.96,-9001.40,8,0
-    .goto 1453/0,877.00,-9008.03,6,0
-    .goto 1453/0,868.8,-9004.27,8,0
-    .goto 1453/0,871.36,-9013.14,10,0
-    .goto 1453/0,887.22,-9017.80,10 >> Go into the Wizard's Sanctum in the Mage Quarter and follow its ramp to |cRXP_FRIENDLY_Jennea|r
-step << Mage
-    .xp <16,1
-    .goto 1453/0,861.95,-8990.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum
-    .train 2120 >> Train your level 16 spells (Flamestrike)
-    .target Jennea Cannon
-step << Mage
-    .xp <18,1
-    .goto 1453/0,861.95,-8990.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
-    .train 3140 >> Train your level 18 spells (Fireball rank 4, Remove Lesser Curse)
-    .target Jennea Cannon
-step << Mage
-    .xp <20,1
-    .goto 1453/0,861.95,-8990.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 20? Train those too while you're here
-    .train 1953 >> Train your level 20 spells (Blink, Evocation, Mana Shield, Frostbolt rank 4 and more)
-    .target Jennea Cannon
+    .goto 1439/1,926.400,6542.900,15 >> Go to the Stormwind ship at the far end of the Auberdine pier
+    .zoneskip Stormwind City
 step
-    .isOnQuest 92415
-    .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orphan Matron Nightingale|r in Cathedral Square
-    >>|cRXP_WARN_Your reward is the Tarnished Locket (+6 Stamina)|r
-    .turnin 92415 >> Turn in Remember That I Love You
-    .target Orphan Matron Nightingale
+    .goto 1439/1,929.100,6543.600
+    >>|cRXP_WARN_On the crossing, disenchant greens you won't use and craft|r << Mage
+    .zone Stormwind City >> Take the boat to Stormwind
 step
-    .isQuestTurnedIn 92415
-    .goto 1453/0,744.400,-8621.101
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orphan Matron Nightingale|r again
-    >>|cRXP_WARN_OPTIONAL: the next part goes to Avette Fellwood in Darkshire, Duskwood. Take it if you're heading that way; skip this step if not|r
-    .accept 95161 >> Accept Remember That I Love You
-    .target Orphan Matron Nightingale
+    #completewith next
+    .goto 1453/0,875.50,-8680.90,20 >> Leave the harbor east into the city
 step << Paladin
     #completewith next
     .goto 1453/0,809.52,-8579.22,20 >> Go into the Cathedral of Light
@@ -3567,12 +3525,24 @@ step << Paladin
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 20? Train those too while you're here
     .train 19750 >> Train your level 20 spells (Flash of Light, Exorcism, Devotion Aura rank 3 and more)
     .target Arthur the Faithful
-step << !Mage !Paladin
-    >>Visit your class trainer in Stormwind
-    .trainer >> Train your level 16 and 18 spells, and 20 if you're there
+step
+    .isOnQuest 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orphan Matron Nightingale|r in Cathedral Square
+    >>|cRXP_WARN_Your reward is the Tarnished Locket (+6 Stamina)|r
+    .turnin 92415 >> Turn in Remember That I Love You
+    .target Orphan Matron Nightingale
+step
+    .isQuestTurnedIn 92415
+    .goto 1453/0,744.400,-8621.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Orphan Matron Nightingale|r again
+    >>|cRXP_WARN_OPTIONAL: the next part goes to Avette Fellwood in Darkshire, Duskwood. Take it if you're heading that way; skip this step if not|r
+    .accept 95161 >> Accept Remember That I Love You
+    .target Orphan Matron Nightingale
 step
     #completewith next
     .isOnQuest 95189
+    .goto 1453/0,437.600,-8524.500,20,0
     .goto 1453/0,408.100,-8478.500,15,0
     .goto 1453/0,502.900,-8358.800,15 >> Go into Stormwind Keep, to the Royal Gallery in its library wing
 step
@@ -3582,4 +3552,44 @@ step
     >>|cRXP_WARN_Open the Small Sack of Gems she gives you|r
     .turnin 95189 >> Turn in Crest of Lordaeron
     .target Lady Dena Kennedy
+step
+    .isQuestComplete 95195
+    .goto 1453/0,521.000,-8954.101
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo south through the Trade District and talk to |cRXP_FRIENDLY_General Marcus Jonathan|r on his horse in the Valley of Heroes
+    >>|cRXP_WARN_Neither reward is cloth: take the Remembrance Armor, it sells for more (13s 93c)|r << Mage
+    >>|cRXP_WARN_Take the Remembrance Armor (mail)|r << Paladin
+    .turnin 95195 >> Turn in Bloodied Insignia
+    .target General Marcus Jonathan
+step << Mage
+    #completewith next
+    .goto 1453/0,942.34,-9001.49,15,0
+    .goto 1453/0,949.86,-9009.38,10,0
+    .goto 1453/0,962.63,-8990.73,15,0
+    .goto 1453/0,928.62,-9010.10,15,0
+    .goto 1453/0,863.96,-9001.40,8,0
+    .goto 1453/0,877.00,-9008.03,6,0
+    .goto 1453/0,868.8,-9004.27,8,0
+    .goto 1453/0,871.36,-9013.14,10,0
+    .goto 1453/0,887.22,-9017.80,10 >> Go west into the Wizard's Sanctum in the Mage Quarter and follow its ramp to |cRXP_FRIENDLY_Jennea|r
+step << Mage
+    .xp <16,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum
+    .train 2120 >> Train your level 16 spells (Flamestrike)
+    .target Jennea Cannon
+step << Mage
+    .xp <18,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
+    .train 3140 >> Train your level 18 spells (Fireball rank 4, Remove Lesser Curse)
+    .target Jennea Cannon
+step << Mage
+    .xp <20,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 20? Train those too while you're here
+    .train 1953 >> Train your level 20 spells (Blink, Evocation, Mana Shield, Frostbolt rank 4 and more)
+    .target Jennea Cannon
+step << !Mage !Paladin
+    >>Visit your class trainer in Stormwind
+    .trainer >> Train your level 16 and 18 spells, and 20 if you're there
 ]])

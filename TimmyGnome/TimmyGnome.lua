@@ -2551,7 +2551,7 @@ step << !Mage !Paladin
 -- 1439 is Darkshore ("1439/1,y,x" are Kalimdor world coordinates), 1453 Stormwind City and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 8
+#version 9
 << Alliance
 #group TimmyGnome
 #name 15+ Darkshore
@@ -2579,7 +2579,7 @@ step
     .zoneskip Darkshore
 step
     .goto 1453/0,1330.10,-8645.40
-    >>|cRXP_WARN_On the crossing, turn spare cloth into bolts and conjure water|r << Mage
+    >>|cRXP_WARN_On the crossing, disenchant greens you won't use, turn spare cloth into bolts and conjure water|r << Mage
     .zone Darkshore >> Take the boat to Auberdine in Darkshore
 step
     .goto 1439,35.743,43.710
@@ -3361,7 +3361,7 @@ step
 -- Mountains, 1420 Tirisfal Glades, 1458 Undercity and 1453 Stormwind City.
 RXPGuides.RegisterGuide([[
 #forever
-#version 1
+#version 2
 << Alliance
 #group TimmyGnome
 #name 18+ Ruins of Lordaeron
@@ -3378,6 +3378,7 @@ step
 step
     .goto 1439/1,826.67,6409.82
     >>|cRXP_WARN_The ship stops at Menethil Harbor, then goes on to Southshore. Get the Menethil flight path on the way: just before it docks, jump off, run to the flight master, then run straight back and get on the same ship you jumped off|r
+    >>|cRXP_WARN_On the crossing, disenchant greens you won't use and craft: spare cloth into bolts, and Tailoring if you're levelling it. Stop in time to jump off at Menethil|r << Mage
     .zone Wetlands >> Take the ship to Menethil Harbor
     .zoneskip Hillsbrad Foothills
 step
@@ -3390,6 +3391,7 @@ step
 step
     .goto 1437/0,-581.800,-3722.400
     >>|cRXP_WARN_Run straight back and get on the same ship. Missed it? Wait on the dock for the next ship to Southshore|r
+    >>|cRXP_WARN_On the way to Southshore, carry on disenchanting and crafting|r << Mage
     .zone Hillsbrad Foothills >> Ride the ship on to Southshore
 step
     .goto 1424,51.170,58.927
@@ -3401,6 +3403,7 @@ step
 step
     .goto 1424/0,-512.15,-715.14
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Darla Harris|r, the gryphon master
+    >>|cRXP_WARN_Don't skip this one: after the dungeon you fly from here to Stormwind for the turn-ins|r
     .fp Southshore >> Get the Southshore flight path
     .target Darla Harris
 step

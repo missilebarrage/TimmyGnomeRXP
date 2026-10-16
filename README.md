@@ -187,10 +187,11 @@ To update, download the zip again and replace the TimmyGnome folder.
   three more players. All four Alliance quests start inside, and they pay a dungeon bonus, 2.375 times the usual
   XP: about 22,400 for the four.
 - **Getting there:** the ship at the far end of the Auberdine pier goes to Menethil Harbor, then on to
-  Southshore. Just before it docks at Menethil, jump off, run to Shellei Brondir for the flight path, and run
-  straight back onto the same ship. In Southshore, set your Hearthstone at the inn and get the flight path, then
-  run north-west past Dalaran, swim north across Lordamere Lake and follow the road to the Undercity. You're
-  flagged for PvP there.
+  Southshore; the mage disenchants and crafts on both legs. Just before it docks at Menethil, jump off, run to
+  Shellei Brondir for the flight path, and run straight back onto the same ship. In Southshore, set your
+  Hearthstone at the inn and get the flight path (you fly from there to Stormwind after the dungeon), then run
+  north-west past Dalaran, swim north across Lordamere Lake and follow the road to the Undercity. You're flagged
+  for PvP there.
 - **Inside:** Captain Truman's Abominable Creatures (on your left as you come in) wants the Head of the Baron,
   the second boss. Bloodied Insignia starts from an insignia the undead drop (10 each). The Crest of Lordaeron
   lies in one of five spots, listed in the guide. Remember That I Love You is the Crumpled Paper by Edward's body

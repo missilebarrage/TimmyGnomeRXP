@@ -1,6 +1,7 @@
 -- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of
--- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines and Redridge, levels 1 to about 22. From the Hall of
--- Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is hard to predict.
+-- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge and the Stockade, levels 1 to about 23. From
+-- the Hall of Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is hard to
+-- predict.
 -- The first two guides were rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn and Loch
 -- Modan guides below them have their own notes. Like that run, Coldridge Valley opens with a grind to level 2
 -- and skips Dwarven Outfitters, which also skips both Coldridge Valley mail deliveries and the Glyphic
@@ -3633,7 +3634,7 @@ step << !Mage !Paladin
 -- Mountains, 1453 Stormwind City and 1415 the Eastern Kingdoms map (the tunnel before the Deadmines).
 RXPGuides.RegisterGuide([[
 #forever
-#version 9
+#version 10
 << Alliance
 #group TimmyGnome
 #name 20+ The Deadmines
@@ -3984,8 +3985,9 @@ step
     .isOnQuest 373
     .goto 1453/0,719.67,-8550.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r in City Hall, on Cathedral Square
-    >>|cRXP_WARN_Don't take his next quest yet: it leads into the Stockade, a dungeon for later|r
+    >>|cRXP_WARN_Take his next quest too: it's for the Stockade, two guides from now|r
     .turnin 373 >> Turn in The Unsent Letter
+    .accept 389 >> Accept Bazil Thredd
     .target Baros Alexston
 step << Paladin
     #completewith next
@@ -4051,10 +4053,11 @@ step << !Mage !Paladin
 -- Mountains.
 RXPGuides.RegisterGuide([[
 #forever
-#version 1
+#version 2
 << Alliance
 #group TimmyGnome
 #name 21+ Redridge
+#next 22+ The Stockade
 
 step
     .goto 1453/0,490.03,-8835.82
@@ -4368,4 +4371,225 @@ step
     >>|cRXP_WARN_A Stockade quest: the next guide picks up the rest in Darkshire and Stormwind|r
     .accept 386 >> Accept What Comes Around...
     .target Guard Berton
+]])
+
+-- The Stockade from level 22, straight after Redridge. Darkshire first: Councilman Millstipe's Crime and Punishment
+-- has to be in your log before the run, and the Hearthstone goes there because 23+ Duskwood starts from it. Then
+-- Stormwind before the run: Nikova Raskol in Old Town (she walks around), Baros Alexston only if you don't have
+-- Bazil Thredd yet (the Deadmines guide hands it out), level 22 training (new spells for the dungeon, and something
+-- to do while the group forms), Warden Thelwater at the door. Inside: Targorr the Dread (a random cell off the first
+-- hall), Dextren Ward (west wing) and Bazil Thredd (east wing), with stickies for Quell the Uprising and the Red
+-- Wool Bandanas. After the run, one loop: Thelwater, Baros, Old Town (Nikova, Mathias Shaw in SI:7), Elling Trias,
+-- then the hearth to Darkshire for Crime and Punishment. The rest of the Defias chain (Infiltrating the Castle to An
+-- Audience with the King) waits for the last guide of the track, when The Attack! is easy. The Stockade steps follow
+-- RestedXP's TBC "23-24 Wetlands" Stockade sequence; Stormwind spots are world coordinates converted from Questie's
+-- Forever data. 1433 is Redridge Mountains, 1431 Duskwood, 1453 Stormwind City.
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group TimmyGnome
+#name 22+ The Stockade
+
+step
+    #completewith EnterStockade
+    +|cRXP_WARN_Start forming a party to run the Stockade dungeon|r
+step
+    .goto 1433/0,-2234.900,-9435.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r, the gryphon master across the bridge
+    .fly Darkshire >> Fly to Darkshire in Duskwood
+    .target Ariena Stormfeather
+    .zoneskip Duskwood
+step
+    .goto 1431,73.87,44.41
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Trelayne|r in the Scarlet Raven Tavern
+    >>|cRXP_WARN_You hearth back here after the Stockade|r
+    .home >> Set your Hearthstone to Darkshire
+    .bindlocation 42
+    .target Innkeeper Trelayne
+step
+    .isOnQuest 95161
+    .goto 1431,73.03,44.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Avette Fellwood|r next to the inn
+    .turnin 95161 >> Turn in Remember That I Love You
+    .target Avette Fellwood
+step
+    .goto 1431,71.92,47.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Councilman Millstipe|r in the town hall
+    .accept 377 >> Accept Crime and Punishment
+    .target Councilman Millstipe
+step
+    .goto 1431,77.49,44.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felicia Maline|r, the gryphon master
+    .fly Stormwind >> Fly to Stormwind
+    .target Felicia Maline
+    .zoneskip Stormwind City
+step
+    .goto 1453/0,450.03,-8633.96,15,0
+    .goto 1453/0,422.75,-8649.60,15,0
+    .goto 1453/0,395.12,-8687.94,15,0
+    .goto 1453/0,407.11,-8706.36,15,0
+    .goto 1453/0,440.99,-8628.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWalk north into Old Town and find |cRXP_FRIENDLY_Nikova Raskol|r: she walks around
+    .accept 388 >> Accept The Color of Blood
+    .unitscan Nikova Raskol
+step
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r in City Hall, on Cathedral Square
+    .accept 389 >> Accept Bazil Thredd
+    .target Baros Alexston
+step << Paladin
+    #completewith next
+    .goto 1453/0,809.52,-8579.22,20 >> Go into the Cathedral of Light
+step << Paladin
+    .xp <22,1
+    .goto 1453/0,859.13,-8559.14,10,0
+    .goto 1453/0,861.14,-8573.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
+    .train 1026 >> Train your level 22 spells (Holy Light rank 4, Blessing of Might rank 3, Seal of the Crusader rank 3)
+    .target Arthur the Faithful
+step
+    .goto 1453/0,828.28,-8799.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warden Thelwater|r outside the Stockade
+    .turnin 389 >> Turn in Bazil Thredd
+    .accept 391 >> Accept The Stockade Riots
+    .accept 387 >> Accept Quell the Uprising
+    .target Warden Thelwater
+step << Mage
+    #completewith next
+    .goto 1453/0,942.34,-9001.49,15,0
+    .goto 1453/0,949.86,-9009.38,10,0
+    .goto 1453/0,962.63,-8990.73,15,0
+    .goto 1453/0,928.62,-9010.10,15,0
+    .goto 1453/0,863.96,-9001.40,8,0
+    .goto 1453/0,877.00,-9008.03,6,0
+    .goto 1453/0,868.8,-9004.27,8,0
+    .goto 1453/0,871.36,-9013.14,10,0
+    .goto 1453/0,887.22,-9017.80,10 >> Go south into the Wizard's Sanctum in the Mage Quarter and follow its ramp to |cRXP_FRIENDLY_Jennea|r
+step << Mage
+    .xp <22,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
+    .train 8437 >> Train your level 22 spells (Arcane Explosion rank 2, Fire Blast rank 3)
+    .target Jennea Cannon
+step << !Mage !Paladin
+    >>Visit your class trainer in Stormwind
+    .trainer >> Train your level 22 spells
+step
+    #label EnterStockade
+    .goto 1453/0,810.56,-8809.67,10,0
+    .goto 1453/0,845.48,-8766.01
+    .subzone 717 >> Enter the Stockade with your group, next to Warden Thelwater
+step
+    #completewith StockadeDone
+    .isOnQuest 387
+    >>Kill |cRXP_ENEMY_Defias Prisoners|r, |cRXP_ENEMY_Defias Convicts|r and |cRXP_ENEMY_Defias Insurgents|r. Loot the |cRXP_ENEMY_Defias|r for |cRXP_LOOT_Red Wool Bandanas|r: each of you loots your own
+    .complete 387,1 --Defias Prisoner slain (10)
+    .complete 387,2 --Defias Convict slain (8)
+    .complete 387,3 --Defias Insurgent slain (8)
+    .complete 388,1 --Red Wool Bandana (10)
+    .mob Defias Prisoner
+    .mob Defias Convict
+    .mob Defias Insurgent
+step
+    #completewith StockadeDone
+    .isOnQuest 386
+    >>Kill |cRXP_ENEMY_Targorr the Dread|r: he's in one of the cells off the first hall. Loot his |cRXP_LOOT_Head|r
+    .complete 386,1 --Head of Targorr (1)
+    .mob Targorr the Dread
+step
+    .isOnQuest 377
+    >>Kill |cRXP_ENEMY_Dextren Ward|r at the end of the west wing. Loot his |cRXP_LOOT_Hand|r
+    .complete 377,1 --Hand of Dextren Ward (1)
+    .mob Dextren Ward
+step
+    .isOnQuest 391
+    >>Kill |cRXP_ENEMY_Bazil Thredd|r at the end of the east wing. Loot his |cRXP_LOOT_Head|r
+    >>|cRXP_WARN_Keep 3 Silk Cloth each: a Stormwind quest in the last guide of the track needs them|r
+    .complete 391,1 --Head of Bazil Thredd (1)
+    .mob Bazil Thredd
+step
+    #label StockadeDone
+    .isOnQuest 387
+    >>Short on kills or |cRXP_LOOT_Red Wool Bandanas|r? Finish them on the |cRXP_ENEMY_Defias|r your group skipped on the way out
+    >>|cRXP_WARN_Nothing left to kill? Skip this step|r
+    .complete 387,1 --Defias Prisoner slain (10)
+    .complete 387,2 --Defias Convict slain (8)
+    .complete 387,3 --Defias Insurgent slain (8)
+    .complete 388,1 --Red Wool Bandana (10)
+step
+    .isOnQuest 386
+    >>Still missing |cRXP_ENEMY_Targorr the Dread|r? Check the cells off the first hall on the way out
+    .complete 386,1 --Head of Targorr (1)
+    .mob Targorr the Dread
+step
+    .isQuestComplete 387
+    .goto 1453/0,828.28,-8799.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack outside, talk to |cRXP_FRIENDLY_Warden Thelwater|r
+    .turnin 387 >> Turn in Quell the Uprising
+    .target Warden Thelwater
+step
+    .isQuestComplete 391
+    .goto 1453/0,828.28,-8799.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warden Thelwater|r
+    .turnin 391 >> Turn in The Stockade Riots
+    .accept 392 >> Accept The Curious Visitor
+    .target Warden Thelwater
+step
+    .isOnQuest 392
+    .goto 1453/0,719.67,-8550.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r in City Hall
+    .turnin 392 >> Turn in The Curious Visitor
+    .accept 393 >> Accept Shadow of the Past
+    .target Baros Alexston
+step
+    .isQuestComplete 388
+    .goto 1453/0,440.99,-8628.86,15,0
+    .goto 1453/0,450.03,-8633.96,15,0
+    .goto 1453/0,422.75,-8649.60,15,0
+    .goto 1453/0,395.12,-8687.94,15,0
+    .goto 1453/0,407.11,-8706.36
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEast into Old Town, find |cRXP_FRIENDLY_Nikova Raskol|r again
+    .turnin 388 >> Turn in The Color of Blood
+    .unitscan Nikova Raskol
+step
+    #completewith next
+    .isOnQuest 393
+    .goto 1453/0,374.11,-8762.88,20,0
+    .goto 1453/0,326.66,-8818.01,20,0
+    .goto 1453/0,323.43,-8817.83,10 >> Go into the SI:7 building: |cRXP_FRIENDLY_Master Mathias Shaw|r is upstairs
+step
+    .isOnQuest 393
+    .goto 1453/0,362.28,-8815.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
+    .turnin 393 >> Turn in Shadow of the Past
+    .accept 350 >> Accept Look to an Old Friend
+    .target Master Mathias Shaw
+step
+    .isOnQuest 350
+    .goto 1453/0,558.79,-8852.89,8,0
+    .goto 1453/0,575.65,-8854.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWest into the Trade District: talk to |cRXP_FRIENDLY_Elling Trias|r upstairs in his cheese shop
+    >>|cRXP_WARN_Don't take Infiltrating the Castle: the last guide of the track does that chain. Repair and sell here before you hearth|r
+    .turnin 350 >> Turn in Look to an Old Friend
+    .target Elling Trias
+step
+    .hs >> Hearth to Darkshire
+    .cooldown item,6948,>2,1
+    .bindlocation 42,1
+    .zoneskip Duskwood
+step
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHearthstone on cooldown? Talk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master nearby
+    .fly Darkshire >> Fly to Darkshire
+    .target Dungar Longdrink
+    .zoneskip Duskwood
+step
+    .isQuestComplete 377
+    .goto 1431,71.92,47.79
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tIn Darkshire, talk to |cRXP_FRIENDLY_Councilman Millstipe|r in the town hall
+    >>|cRXP_WARN_Take the Town Clerk's Mittens (+7 Intellect, +3 spell damage)|r << Mage
+    >>|cRXP_WARN_Take the Darkshire Mail Leggings to sell (22s 27c): your Chausses of Westfall are better|r << Paladin
+    .turnin 377 >> Turn in Crime and Punishment
+    .target Councilman Millstipe
 ]])

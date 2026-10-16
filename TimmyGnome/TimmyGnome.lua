@@ -3642,7 +3642,7 @@ step << !Mage !Paladin
 -- Deadmines).
 RXPGuides.RegisterGuide([[
 #forever
-#version 3
+#version 4
 << Alliance
 #group TimmyGnome
 #name 19+ Westfall and Deadmines
@@ -3669,8 +3669,8 @@ step
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r at the tower
-    >>|cRXP_WARN_The Defias Brotherhood starts with Wiley the Black in Lakeshire: you fly there next|r
-    .accept 65 >> Accept The Defias Brotherhood
+    >>|cRXP_WARN_All six parts of The Defias Brotherhood share the name. You hand this first one in to Wiley the Black in Lakeshire, Redridge: you fly there next|r
+    .accept 65 >> Accept The Defias Brotherhood (for Wiley the Black in Lakeshire)
     .target Gryan Stoutmantle
 step
     .goto 1436/0,1041.97,-10511.13
@@ -3681,15 +3681,16 @@ step
 step
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r, the gryphon master
+    >>|cRXP_WARN_The Defias Brotherhood goes to Wiley the Black in Lakeshire|r
     .fly Redridge >> Fly to Lakeshire in Redridge
     .target Thor
     .zoneskip Redridge Mountains
 step
     .goto 1433/0,-2164.56,-9213.10,8,0
     .goto 1433/0,-2145.67,-9231.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Wiley the Black|r upstairs in the inn
-    .turnin 65 >> Turn in The Defias Brotherhood
-    .accept 132 >> Accept The Defias Brotherhood
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tIn Lakeshire, talk to |cRXP_FRIENDLY_Wiley the Black|r upstairs in the inn
+    .turnin 65 >> Turn in The Defias Brotherhood (here in Lakeshire)
+    .accept 132 >> Accept The Defias Brotherhood (Wiley's note, for Gryan)
     .target Wiley the Black
 step
     .hs >> Hearth to Sentinel Hill
@@ -3704,9 +3705,9 @@ step
     .zoneskip Westfall
 step
     .goto 1436/0,1045.12,-10508.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 132 >> Turn in The Defias Brotherhood
-    .accept 135 >> Accept The Defias Brotherhood
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at Sentinel Hill, talk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 132 >> Turn in The Defias Brotherhood (Wiley's note)
+    .accept 135 >> Accept The Defias Brotherhood (for Mathias Shaw in Stormwind)
     .target Gryan Stoutmantle
 step
     .goto 1436/0,1037.42,-10628.27
@@ -3722,8 +3723,8 @@ step
 step
     .goto 1453/0,362.28,-8815.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
-    .turnin 135 >> Turn in The Defias Brotherhood
-    .accept 141 >> Accept The Defias Brotherhood
+    .turnin 135 >> Turn in The Defias Brotherhood (Wiley's note)
+    .accept 141 >> Accept The Defias Brotherhood (Shaw's report, for Gryan)
     .target Master Mathias Shaw
 step << Paladin
     #completewith next
@@ -3778,9 +3779,9 @@ step
     .zoneskip Westfall
 step
     .goto 1436/0,1045.12,-10508.80
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 141 >> Turn in The Defias Brotherhood
-    .accept 142 >> Accept The Defias Brotherhood
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at Sentinel Hill, talk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    .turnin 141 >> Turn in The Defias Brotherhood (Shaw's report)
+    .accept 142 >> Accept The Defias Brotherhood (the Defias Messenger)
     .target Gryan Stoutmantle
 step
     #completewith BandanasFinish
@@ -3874,7 +3875,7 @@ step
     .isQuestComplete 142
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 142 >> Turn in The Defias Brotherhood
+    .turnin 142 >> Turn in The Defias Brotherhood (the Messenger's message)
     .target Gryan Stoutmantle
 step
     .isQuestComplete 102
@@ -3893,7 +3894,7 @@ step
     .goto 1436/0,1067.87,-10508.330
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_The Defias Traitor|r
     >>|cRXP_WARN_Not there? Someone is escorting him: wait for him to come back|r
-    .accept 155 >> Accept The Defias Brotherhood
+    .accept 155 >> Accept The Defias Brotherhood (his escort)
     .target The Defias Traitor
 step
     .isOnQuest 155
@@ -3906,8 +3907,8 @@ step
     .isQuestComplete 155
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at Sentinel Hill, talk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    .turnin 155 >> Turn in The Defias Brotherhood
-    .accept 166 >> Accept The Defias Brotherhood
+    .turnin 155 >> Turn in The Defias Brotherhood (the escort)
+    .accept 166 >> Accept The Defias Brotherhood (VanCleef's head)
     .target Gryan Stoutmantle
 step
     .isQuestTurnedIn 155
@@ -3988,7 +3989,7 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
     >>|cRXP_WARN_Take the Staff of Westfall (+16 spell damage), unless you won the Coldspire Staff and cast Frostbolt|r << Mage
     >>|cRXP_WARN_Take the Chausses of Westfall (mail)|r << Paladin
-    .turnin 166 >> Turn in The Defias Brotherhood
+    .turnin 166 >> Turn in The Defias Brotherhood (VanCleef's head)
     .target Gryan Stoutmantle
 step
     .isQuestComplete 214

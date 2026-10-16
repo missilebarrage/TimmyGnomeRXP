@@ -2365,7 +2365,7 @@ step << Mage
 -- before you leave; there's no mage or paladin trainer in Darkshore. 1455 is Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 1
+#version 2
 << Alliance
 #group TimmyGnome
 #name 14+ Hall of Thanes
@@ -2373,8 +2373,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith EnterHoT
-    +|cRXP_WARN_Find three more players for the Hall of Thanes, a 5-player dungeon under Ironforge: ask in the LookingForGroup channel|r
-    >>|cRXP_WARN_Everyone takes The Restless Dead and Important Heirlooms on the way in. Old Ironforge Incursion is Earthseer Farsen's quest from Dun Morogh|r
+    +|cRXP_WARN_Start forming a party to run the Hall of Thanes dungeon|r
 step
     .zone Ironforge >> Travel to Ironforge
 step
@@ -3364,7 +3363,7 @@ step
 -- Undercity and 1453 Stormwind City.
 RXPGuides.RegisterGuide([[
 #forever
-#version 7
+#version 8
 << Alliance
 #group TimmyGnome
 #name 18+ Ruins of Lordaeron
@@ -3372,8 +3371,7 @@ RXPGuides.RegisterGuide([[
 
 step
     #completewith EnterRoL
-    +|cRXP_WARN_Find three more players for the Ruins of Lordaeron, a 5-player dungeon above the Undercity: ask in the LookingForGroup channel while you travel|r
-    >>|cRXP_WARN_All four quests start inside the dungeon. Getting there takes a while: two boat legs, then a run through Horde land|r
+    +|cRXP_WARN_Start forming a party to run the Ruins of Lordaeron dungeon|r
 step
     #completewith next
     .goto 1439,32.432,43.744,15 >> Go to the Menethil Harbor ship at the far end of the Auberdine pier
@@ -3635,7 +3633,7 @@ step << !Mage !Paladin
 -- Mountains, 1453 Stormwind City and 1415 the Eastern Kingdoms map (the tunnel before the Deadmines).
 RXPGuides.RegisterGuide([[
 #forever
-#version 7
+#version 8
 << Alliance
 #group TimmyGnome
 #name 20+ The Deadmines
@@ -3846,8 +3844,7 @@ step
     .target Captain Danuvin
 step
     #completewith EnterDeadmines
-    +|cRXP_WARN_Find three more players for the Deadmines, a 5-player dungeon under Moonbrook: ask in the LookingForGroup channel during The Defias Traitor's escort|r
-    >>|cRXP_WARN_Your quests for it: The Defias Brotherhood and Red Silk Bandanas from Sentinel Hill after the escort, and Underground Assault, Oh Brother. . . and Collecting Memories from Stormwind|r
+    +|cRXP_WARN_Start forming a party to run the Deadmines dungeon|r
 step
     .isQuestTurnedIn 142
     .goto 1436/0,1067.87,-10508.330

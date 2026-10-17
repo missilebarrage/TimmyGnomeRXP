@@ -4053,7 +4053,7 @@ step << !Mage !Paladin
 -- Mountains.
 RXPGuides.RegisterGuide([[
 #forever
-#version 4
+#version 5
 << Alliance
 #group TimmyGnome
 #name 21+ Redridge
@@ -4084,21 +4084,14 @@ step
     .accept 3741 >> Accept Hilary's Necklace
     .target Shawn
 step
-    .goto 1433,27.1,48.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
-    .accept 125 >> Accept The Lost Tools
-    .target Foreman Oslow
-step
-    .goto 1433,28.4,49.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
-    .accept 20 >> Accept Blackrock Menace
-    .accept 98387 >> Accept Blackrock Blockade
-    .target Marshal Marris
-step
     .goto 1433,22.6,47.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r on the dock
     .accept 150 >> Accept Murloc Poachers
     .target Dockmaster Baren
+step
+    .goto 1433,21.7,46.4
+    >>Click the |cRXP_PICK_Wanted|r poster by the inn, just up from the dock: Lieutenant Fangore is in the east, on the last loop
+    .accept 180 >> Accept WANTED: Lieutenant Fangore
 step
     .goto 1433,24.6,44.3
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bailiff Conacher|r in the town hall
@@ -4111,9 +4104,16 @@ step
     .accept 169 >> Accept WANTED: Gath'Ilzogg
     .accept 95999 >> Accept WANTED: Incinerator Gar'im
 step
-    .goto 1433,21.7,46.4
-    >>Click the |cRXP_PICK_Wanted|r poster by the inn: Lieutenant Fangore is in the east, on the last loop
-    .accept 180 >> Accept WANTED: Lieutenant Fangore
+    .goto 1433,27.1,48.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEast across town, talk to |cRXP_FRIENDLY_Foreman Oslow|r
+    .accept 125 >> Accept The Lost Tools
+    .target Foreman Oslow
+step
+    .goto 1433,28.4,49.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    .accept 20 >> Accept Blackrock Menace
+    .accept 98387 >> Accept Blackrock Blockade
+    .target Marshal Marris
 step
     #completewith BlackrockMenaceDone
     .isOnQuest 20

@@ -2,8 +2,8 @@
 
 A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
 Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes, Darkshore, the
-Ruins of Lordaeron, the Deadmines, Redridge and Duskwood, levels 1 to about 23, made for playing as a duo (the
-dungeons need three more players). From the Hall of Thanes on, guides are named by the level you start
+Ruins of Lordaeron, the Deadmines, Redridge, Duskwood and the Wetlands, levels 1 to about 25, made for playing as a
+duo (the dungeons need three more players). From the Hall of Thanes on, guides are named by the level you start
 them at, like **14+**: where a duo ends up is hard to predict.
 
 ## Install
@@ -16,8 +16,8 @@ You need RestedXP Guides installed.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
    **5-10 Dun Morogh**, **10-12 Elwynn Forest**, **12-14 Loch Modan**, **14+ Hall of Thanes**,
-   **15+ Darkshore**, **18+ Ruins of Lordaeron**, **20+ The Deadmines**, **21+ Redridge** and **22+ Duskwood** by
-   itself.
+   **15+ Darkshore**, **18+ Ruins of Lordaeron**, **20+ The Deadmines**, **21+ Redridge**, **22+ Duskwood** and
+   **23+ Wetlands** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
@@ -232,8 +232,8 @@ To update, download the zip again and replace the TimmyGnome folder.
 
 ### 21+ Redridge
 
-The first of five guides from 21 to 30: big passes through Redridge, Duskwood and the Wetlands, then the Stockade
-and the Excavation Site with all their quests. They're the only dungeons in this stretch, and they come last
+The first of five guides after the Deadmines: big passes through Redridge, Duskwood and the Wetlands, then the
+Stockade and the Excavation Site with all their quests. They're the only dungeons in this stretch, and they come last
 because their bosses are 28-31.
 
 - **Lakeshire:** fly in from Stormwind and pick up everything, including the WANTED: Lieutenant Fangore poster by
@@ -273,6 +273,26 @@ because their bosses are 28-31.
 - **Then:** level 22 training in Stormwind (24 if you're there) and the flight to Menethil Harbor for the
   Wetlands.
 - **Where you end up:** about 23.5.
+
+### 23+ Wetlands
+
+- **Menethil:** set your Hearthstone at the inn and pick up everything in town. Spoils of War is underwater in the
+  harbour.
+- **On the way east:** the young crocodiles north-east of town and the murlocs up the coast (Claws from the Deep).
+- **Whelgar's Excavation Site:** Ormer's raptors, Whelgar's relics and the Excavation Team.
+- **East and south-east:** Howin Kindfeather, Einar and Rethiel the Greenwarden, then the Mosshide gnolls (Tramping
+  Paws) and Thelgen Rock (Alchemical Hazards), keeping clear of Nek'rosh's elite camp.
+- **North:** the Mosshide flint (Fire Taboo) and the oozes at Ironbeard's Tomb. Howin's razormaw eggs are OPTIONAL:
+  the razormaws are 27-29.
+- **Back south:** the Angerfang camps for War Banners and From the Ashes, Sarltooth at about 25, then the hearth.
+- **North-west coast:** the murloc hovels (Reclaiming Goods onwards), the Cursed Crew's ships and the giant
+  crocodiles, then back to Menethil. Bloom of the Heavens, just south of town, is OPTIONAL.
+- **For later:** A Friend of the Family goes to Highlord Bolvar in Stormwind. Daily Delivery and Young Crocolisk
+  Skins open Highland Hides, and Rethiel's chain opens Horrors in the Highland, both for the Excavation Site. Blisters
+  on the Land wants 12 Fen Creepers: if they're slow, you hand it in on the Excavation Site trip.
+- **Left out:** the elites (Dun Modr, Dragonmaw Retreat, Nek'rosh), Captain Halyndor (level 30, reflects spells)
+  and Crocs of the Sky (three trips across the zone).
+- **Where you end up:** about 25.5 with the OPTIONAL quests, a little less without, then the flight to Stormwind.
 
 ## Credits and license
 

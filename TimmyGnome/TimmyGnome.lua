@@ -1,6 +1,6 @@
 -- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of
--- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge and Duskwood, levels 1 to about 23. From the
--- Hall of Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is
+-- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge, Duskwood and the Wetlands, levels 1 to about
+-- 25. From the Hall of Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is
 -- hard to predict.
 -- The first two guides were rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn and Loch
 -- Modan guides below them have their own notes. Like that run, Coldridge Valley opens with a grind to level 2
@@ -4503,10 +4503,11 @@ step
 -- with no herbs). 1433 is Redridge Mountains, 1431 Duskwood, 1453 Stormwind City.
 RXPGuides.RegisterGuide([[
 #forever
-#version 1
+#version 2
 << Alliance
 #group TimmyGnome
 #name 22+ Duskwood
+#next 23+ Wetlands
 
 step
     .goto 1431,93.3,12.0,50,0
@@ -4954,4 +4955,529 @@ step
     .fly Menethil >> Fly to Menethil Harbor in the Wetlands
     .target Dungar Longdrink
     .zoneskip Wetlands
+]])
+
+-- The Wetlands from level 23, after Duskwood: the big Wetlands pass. Menethil first (the Hearthstone, every pickup in
+-- town and Spoils of War in the harbour), then the murlocs up the coast on the way east, Whelgar's Excavation Site
+-- (Ormer's raptors, Whelgar's relics, the Excavation Team), Howin Kindfeather, Einar and Rethiel the Greenwarden, the
+-- Mosshide gnolls in the south-east and Thelgen Rock, the Mosshide flint and the oozes in the north (Howin's razormaw
+-- eggs are OPTIONAL), the Angerfang camps for War Banners and From the Ashes, and Sarltooth, at about 25. Then the
+-- hearth to Menethil and the north-west coast: the murloc hovels, the Cursed Crew's ships and the giant crocodiles.
+-- It also sets up the Excavation Site's quests: Highland Hides needs Daily Delivery or Young Crocolisk Skins (the
+-- sources disagree, so it does both) and Horrors in the Highland needs Rethiel's chain. Blisters on the Land may be
+-- handed in on the Excavation Site trip if the Fen Creepers are slow. Left out: the elites (Dun Modr, Dragonmaw
+-- Retreat, Carnage, Nek'rosh and Old Habits next to him), Captain Halyndor (level 30, reflects spells), Crocs of the
+-- Sky (three trips across the zone) and the deliveries to Darkshore. The loop order adapts RestedXP's TBC "23-24
+-- Wetlands" and "27-30 Wetlands/Hillsbrad"; spots come from Questie's Forever data and AllTheThings, counts from
+-- Forever's quest data (Young Crocolisk Skins wants 6 skins, Blisters on the Land 12 Fen Creepers). 1437 is the
+-- Wetlands.
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group TimmyGnome
+#name 23+ Wetlands
+
+step
+    .goto 1437,10.7,61.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Helbrek|r in the Deepwater Tavern
+    >>|cRXP_BUY_Buy a|r |T132792:0|t[Flagon of Dwarven Honeymead] |cRXP_BUY_from him|r
+    .home >> Set your Hearthstone to Menethil Harbor
+    .bindlocation 150
+    .collect 2594,1,288 --Flagon of Dwarven Honeymead (1)
+    .target Innkeeper Helbrek
+step
+    .goto 1437,10.9,59.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r at the bar
+    >>|cRXP_WARN_The Cursed Crew is for the end of the guide|r
+    .accept 288 >> Accept The Third Fleet
+    .turnin 288 >> Turn in The Third Fleet
+    .accept 289 >> Accept The Cursed Crew
+    .accept 463 >> Accept The Greenwarden
+    .target First Mate Fitzsimmons
+step
+    .goto 1437,11.9,58.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caitlin Grassman|r
+    .accept 98282 >> Accept Alchemical Hazards
+    .target Caitlin Grassman
+step
+    .goto 1437,11.8,58.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sida|r
+    .accept 470 >> Accept Digging Through the Ooze
+    .target Sida
+step
+    .goto 1437,10.1,56.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valstag Ironjaw|r in Menethil Keep
+    .accept 98197 >> Accept Spoils of War
+    .accept 473 >> Accept Report to Captain Stoutfist
+    .target Valstag Ironjaw
+step
+    .goto 1437,9.9,57.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r upstairs in the keep
+    .turnin 473 >> Turn in Report to Captain Stoutfist
+    .accept 464 >> Accept War Banners
+    .accept 98221 >> Accept From the Ashes
+    .target Captain Stoutfist
+step
+    .goto 1437,8.3,58.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karl Boran|r by the docks
+    .accept 279 >> Accept Claws from the Deep
+    .target Karl Boran
+step
+    .goto 1437,6.1,61.8,20,0
+    .goto 1437,4.9,52.6
+    >>Dive into the harbour: loot the |cRXP_PICK_Khaz Modan Timber|r off the docks to the south and the |cRXP_PICK_Khaz Modan Iron|r further north
+    >>|cRXP_WARN_Watch your breath and the things living down there|r
+    .complete 98197,1 --Khaz Modan Timber (6)
+    .complete 98197,2 --Khaz Modan Iron (30)
+step
+    .goto 1437,8.6,55.7
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James Halloran|r
+    .accept 484 >> Accept Young Crocolisk Skins
+    .target James Halloran
+step
+    .goto 1437,10.1,56.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Valstag Ironjaw|r
+    .turnin 98197 >> Turn in Spoils of War
+    .target Valstag Ironjaw
+step
+    .goto 1437,11.5,52.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarrel Rockweaver|r just north of town
+    .accept 305 >> Accept In Search of the Excavation Team
+    .target Tarrel Rockweaver
+step
+    #loop
+    .goto 1437,17.6,48.9,0
+    .goto 1437,15.4,52.2,25,0
+    .goto 1437,18.6,51.6,25,0
+    .goto 1437,18.7,49.3,25,0
+    .goto 1437,20.2,47.2,25,0
+    .goto 1437,19.8,45.1,25,0
+    .goto 1437,15.8,46.4,25,0
+    >>North-east of town, kill |cRXP_ENEMY_Young Wetlands Crocolisks|r. Loot them for |cRXP_LOOT_Young Crocolisk Skins|r
+    .complete 484,1 --Young Crocolisk Skin (6)
+    .mob Young Wetlands Crocolisk
+step
+    #loop
+    .goto 1437,14.0,40.7,0
+    .goto 1437,12.2,39.1,25,0
+    .goto 1437,12.7,42.3,25,0
+    .goto 1437,14.0,40.7,25,0
+    .goto 1437,16.9,39.9,25,0
+    .goto 1437,18.5,38.3,25,0
+    .goto 1437,18.6,40.3,25,0
+    >>North-west to the murloc camps on the coast: kill |cRXP_ENEMY_Bluegill Murlocs|r. Kill |cRXP_ENEMY_Gobbler|r, who walks between the camps, and loot his |cRXP_LOOT_Head|r
+    .complete 279,1 --Bluegill Murloc (12)
+    .complete 279,2 --Gobbler's Head (1)
+    .mob Bluegill Murloc
+    .mob Gobbler
+step
+    .goto 1437,34.3,41.2,40,0
+    .goto 1437,38.2,50.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEast to Whelgar's Excavation Site: talk to |cRXP_FRIENDLY_Ormer Ironbraid|r
+    .accept 294 >> Accept Ormer's Revenge
+    .target Ormer Ironbraid
+step
+    .goto 1437,38.9,52.3
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merrin Rockweaver|r
+    .turnin 305 >> Turn in In Search of the Excavation Team
+    .accept 306 >> Accept In Search of the Excavation Team
+    .target Merrin Rockweaver
+step
+    .goto 1437,38.8,52.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Whelgar|r
+    .accept 299 >> Accept Uncovering the Past
+    .target Prospector Whelgar
+step
+    #loop
+    .goto 1437,28.0,45.5,0
+    .goto 1437,29.5,46.5,25,0
+    .goto 1437,28.9,42.4,25,0
+    .goto 1437,30.2,44.1,25,0
+    .goto 1437,26.4,46.3,25,0
+    .goto 1437,24.2,48.3,25,0
+    .goto 1437,23.4,51.2,25,0
+    .goto 1437,25.2,49.8,25,0
+    >>Back west of the dig, kill |cRXP_ENEMY_Mottled Raptors|r and |cRXP_ENEMY_Mottled Screechers|r
+    .complete 294,1 --Mottled Raptor (10)
+    .complete 294,2 --Mottled Screecher (10)
+    .mob Mottled Raptor
+    .mob Mottled Screecher
+step
+    .goto 1437,38.2,50.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormer Ironbraid|r
+    .turnin 294 >> Turn in Ormer's Revenge
+    .accept 295 >> Accept Ormer's Revenge
+    .target Ormer Ironbraid
+step
+    #loop
+    .goto 1437,34.0,48.1,0
+    .goto 1437,31.8,46.9,25,0
+    .goto 1437,34.5,45.8,25,0
+    .goto 1437,35.7,44.1,25,0
+    .goto 1437,36.0,48.4,25,0
+    .goto 1437,35.1,50.8,25,0
+    .goto 1437,32.8,51.0,25,0
+    .goto 1437,30.6,48.7,25,0
+    >>Down in the dig, kill |cRXP_ENEMY_Mottled Scytheclaws|r and |cRXP_ENEMY_Mottled Razormaws|r. Loot the |cRXP_PICK_Ancient Relics|r and the |cRXP_PICK_Loose Soil|r on the ground for the four |cRXP_LOOT_Fragments|r
+    >>|cRXP_WARN_Leave Sarltooth, on the hill at the south-west end, for later|r
+    .complete 295,1 --Mottled Scytheclaw (10)
+    .complete 295,2 --Mottled Razormaw (10)
+    .complete 299,1 --Ados Fragment (1)
+    .complete 299,2 --Modr Fragment (1)
+    .complete 299,3 --Golm Fragment (1)
+    .complete 299,4 --Neru Fragment (1)
+    .mob Mottled Scytheclaw
+    .mob Mottled Razormaw
+step
+    .goto 1437,38.2,50.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormer Ironbraid|r
+    >>|cRXP_WARN_Sarltooth is 29: you come back for him after the Angerfang camps, at about 25|r
+    .turnin 295 >> Turn in Ormer's Revenge
+    .accept 296 >> Accept Ormer's Revenge
+    .target Ormer Ironbraid
+step
+    .goto 1437,38.8,52.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Prospector Whelgar|r
+    .turnin 299 >> Turn in Uncovering the Past
+    .target Prospector Whelgar
+step
+    .goto 1437,34.3,41.2,40,0
+    .goto 1437,40.0,37.5,40,0
+    .goto 1437,45.5,37.5,40,0
+    .goto 1437,49.3,42.1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEast past the north side of the Angerfang camps to |cRXP_FRIENDLY_Howin Kindfeather|r
+    >>|cRXP_WARN_OPTIONAL: his eggs are among level 27-29 razormaws in Saltspray Glen, on the loop north|r
+    .accept 98246 >> Accept Trying Times
+    .target Howin Kindfeather
+step
+    .goto 1437,49.9,39.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Einar Stonegrip|r
+    .accept 469 >> Accept Daily Delivery
+    .target Einar Stonegrip
+step
+    .goto 1437,56.4,40.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEast to |cRXP_FRIENDLY_Rethiel the Greenwarden|r
+    .turnin 463 >> Turn in The Greenwarden
+    .accept 276 >> Accept Tramping Paws
+    .target Rethiel the Greenwarden
+step
+    #loop
+    .goto 1437,62.5,68.7,0
+    .goto 1437,63.9,63.8,25,0
+    .goto 1437,63.2,69.1,25,0
+    .goto 1437,62.6,72.7,25,0
+    .goto 1437,62.6,75.0,25,0
+    .goto 1437,60.3,73.8,25,0
+    .goto 1437,61.2,72.2,25,0
+    .goto 1437,60.5,63.7,25,0
+    >>South to the Mosshide camps: kill |cRXP_ENEMY_Mosshide Gnolls|r and |cRXP_ENEMY_Mosshide Mongrels|r
+    .complete 276,1 --Mosshide Gnoll (15)
+    .complete 276,2 --Mosshide Mongrel (10)
+    .mob Mosshide Gnoll
+    .mob Mosshide Mongrel
+step
+    #loop
+    .goto 1437,50.3,61.0,0
+    .goto 1437,50.0,58.8,20,0
+    .goto 1437,51.6,62.1,20,0
+    .goto 1437,52.7,63.0,20,0
+    .goto 1437,49.0,62.7,20,0
+    .goto 1437,47.9,59.8,20,0
+    >>West to Thelgen Rock: kill |cRXP_ENEMY_Leech Stalkers|r and |cRXP_ENEMY_Cave Stalkers|r until one drops an |cRXP_LOOT_Unruptured Stalker Gland|r
+    .complete 98282,1 --Unruptured Stalker Gland (1)
+    .mob Leech Stalker
+    .mob Cave Stalker
+step
+    .goto 1437,58.0,57.0,40,0
+    .goto 1437,56.4,40.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack north to |cRXP_FRIENDLY_Rethiel the Greenwarden|r
+    >>|cRXP_WARN_Go round by the east: Chieftain Nek'rosh's camp, north of Thelgen Rock, is elite|r
+    .turnin 276 >> Turn in Tramping Paws
+    .accept 277 >> Accept Fire Taboo
+    .target Rethiel the Greenwarden
+step
+    #completewith FlintDone
+    >>Kill |cRXP_ENEMY_Mosshide|r gnolls of any kind as you meet them. Loot them for |cRXP_LOOT_Crude Flint|r
+    .complete 277,1 --Crude Flint (9)
+    .mob Mosshide Fenrunner
+    .mob Mosshide Trapper
+    .mob Mosshide Brute
+    .mob Mosshide Mistweaver
+    .mob Mosshide Mystic
+step
+    #completewith next
+    .goto 1437,51.6,29.4,30 >> North-west through the small Mosshide camp
+step
+    #loop
+    .goto 1437,44.6,25.0,0
+    .goto 1437,44.3,24.7,15,0
+    .goto 1437,44.8,24.3,15,0
+    .goto 1437,46.4,24.8,15,0
+    .goto 1437,44.7,25.4,15,0
+    .goto 1437,44.0,27.8,15,0
+    .goto 1437,43.8,25.2,15,0
+    >>West to Ironbeard's Tomb: kill the |cRXP_ENEMY_oozes|r until one drops |cRXP_LOOT_Sida's Bag|r
+    .complete 470,1 --Sida's Bag (1)
+    .mob Black Ooze
+    .mob Crimson Ooze
+    .mob Monstrous Ooze
+step
+    .isOnQuest 98246
+    .goto 1437,35.5,20.2
+    >>|cRXP_WARN_OPTIONAL:|r west to Saltspray Glen: loot the |cRXP_PICK_Razormaw Eggs|r around the glen for |cRXP_LOOT_Perfect Razormaw Eggs|r
+    >>|cRXP_WARN_The razormaws are 27-29: grab the eggs and go, don't clear the glen|r
+    .complete 98246,1 --Perfect Razormaw Egg (12)
+step
+    #label FlintDone
+    #loop
+    .goto 1437,41.5,33.0,0
+    .goto 1437,39.0,34.0,25,0
+    .goto 1437,40.0,32.0,25,0
+    .goto 1437,42.8,32.3,25,0
+    .goto 1437,44.7,31.7,25,0
+    .goto 1437,45.6,34.5,25,0
+    .goto 1437,43.7,34.7,25,0
+    >>South to the big Mosshide camp: kill |cRXP_ENEMY_Mosshide|r gnolls for the rest of the |cRXP_LOOT_Crude Flint|r
+    .complete 277,1 --Crude Flint (9)
+    .mob Mosshide Fenrunner
+    .mob Mosshide Trapper
+    .mob Mosshide Brute
+    .mob Mosshide Mistweaver
+    .mob Mosshide Mystic
+step
+    .isQuestComplete 98246
+    .goto 1437,49.3,42.1
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Howin Kindfeather|r
+    .turnin 98246 >> Turn in Trying Times
+    .target Howin Kindfeather
+step
+    .goto 1437,56.4,40.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rethiel the Greenwarden|r
+    .turnin 277 >> Turn in Fire Taboo
+    .accept 275 >> Accept Blisters on the Land
+    .target Rethiel the Greenwarden
+step
+    #completewith CreepersDone
+    .isOnQuest 275
+    >>Kill |cRXP_ENEMY_Fen Creepers|r when you see them: they hide, stealthed, in the streams
+    .complete 275,1 --Fen Creeper (12)
+    .mob Fen Creeper
+step
+    .isOnQuest 275
+    .goto 1437,53.2,36.5,20,0
+    .goto 1437,55.0,37.2,20,0
+    .goto 1437,54.0,41.4,20,0
+    .goto 1437,55.0,46.4,20
+    >>Walk Rethiel's stream from north to south and kill the |cRXP_ENEMY_Fen Creepers|r in it. The rest are in the north-west, at the end of the guide
+    .mob Fen Creeper
+step
+    .isQuestComplete 275
+    .goto 1437,56.4,40.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAll 12 already? Hand it in to |cRXP_FRIENDLY_Rethiel the Greenwarden|r
+    .turnin 275 >> Turn in Blisters on the Land
+    .target Rethiel the Greenwarden
+step
+    #completewith BannersDone
+    >>Kill |cRXP_ENEMY_Dragonmaw|r orcs in the Angerfang camps. Loot them for |cRXP_LOOT_Dragonmaw War Banners|r
+    >>|cRXP_WARN_They're 26-29: pull one at a time|r
+    .complete 464,1 --Dragonmaw War Banner (8)
+    .mob Dragonmaw Raider
+    .mob Dragonmaw Bonewarder
+    .mob Dragonmaw Swamprunner
+    .mob Dragonmaw Centurion
+    .mob Dragonmaw Shadowwarder
+step
+    .goto 1437,49.3,46.8
+    >>West to the Angerfang Encampment: click the |cRXP_PICK_Attack Plan: Thelsamar|r on the camp's east side
+    .complete 98221,2 --Attack Plan: Thelsamar destroyed (1)
+step
+    .goto 1437,45.3,45.6
+    >>Click the |cRXP_PICK_Attack Plan: Southshore|r in the middle of the camp
+    .complete 98221,3 --Attack Plan: Southshore destroyed (1)
+step
+    .goto 1437,45.4,42.7
+    >>Click the |cRXP_PICK_Attack Plan: Menethil Harbor|r at the camp's north end
+    .complete 98221,1 --Attack Plan: Menethil Harbor destroyed (1)
+step
+    #label BannersDone
+    #loop
+    .goto 1437,42.2,44.0,0
+    .goto 1437,42.4,42.6,20,0
+    .goto 1437,43.7,42.9,20,0
+    .goto 1437,42.2,44.6,20,0
+    .goto 1437,41.6,45.6,20,0
+    .goto 1437,41.0,46.4,20,0
+    >>Short of |cRXP_LOOT_War Banners|r? Kill the orcs in the smaller camp to the west
+    .complete 464,1 --Dragonmaw War Banner (8)
+    .mob Dragonmaw Raider
+    .mob Dragonmaw Swamprunner
+step
+    .goto 1437,38.6,46.2
+    >>Click the |cRXP_PICK_Attack Plan: Ironforge|r, west of the camps
+    .complete 98221,4 --Attack Plan: Ironforge destroyed (1)
+step
+    .isOnQuest 296
+    .goto 1437,31.5,48.9,30,0
+    .goto 1437,33.3,51.5
+    >>Up the hill at the south-west end of the dig: kill |cRXP_ENEMY_Sarltooth|r and loot his |cRXP_LOOT_Talon|r
+    >>|cRXP_WARN_He's 29 and uses Thrash. Camped? Skip him: you pass Ormer again on the Excavation Site trip|r
+    .complete 296,1 --Sarltooth's Talon (1)
+    .mob Sarltooth
+step
+    .isQuestComplete 296
+    .goto 1437,38.2,50.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormer Ironbraid|r
+    .turnin 296 >> Turn in Ormer's Revenge
+    .target Ormer Ironbraid
+step
+    .hs >> Hearth to Menethil Harbor
+    .cooldown item,6948,>2,1
+    .bindlocation 150,1
+    .subzoneskip 150
+step
+    .goto 1437,11.9,58.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Menethil, talk to |cRXP_FRIENDLY_Caitlin Grassman|r
+    .turnin 98282 >> Turn in Alchemical Hazards
+    .target Caitlin Grassman
+step
+    .goto 1437,11.8,58.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sida|r
+    .turnin 470 >> Turn in Digging Through the Ooze
+    .target Sida
+step
+    .goto 1437,9.9,57.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r upstairs in the keep
+    >>|cRXP_WARN_Don't take Nek'rosh's Gambit|r
+    .turnin 464 >> Turn in War Banners
+    .turnin 98221 >> Turn in From the Ashes
+    .target Captain Stoutfist
+step
+    .goto 1437,8.3,58.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karl Boran|r
+    .turnin 279 >> Turn in Claws from the Deep
+    .accept 281 >> Accept Reclaiming Goods
+    .target Karl Boran
+step
+    .goto 1437,8.6,55.7
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James Halloran|r
+    .turnin 484 >> Turn in Young Crocolisk Skins
+    .turnin 469 >> Turn in Daily Delivery
+    .accept 471 >> Accept Apprentice's Duties
+    .target James Halloran
+step
+    .goto 1437,11.5,52.2
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tarrel Rockweaver|r
+    .turnin 306 >> Turn in In Search of the Excavation Team
+    .target Tarrel Rockweaver
+step
+    .goto 1437,13.5,41.4
+    >>North to the murloc camps: click the |cRXP_PICK_Damaged Crate|r
+    .turnin 281 >> Turn in Reclaiming Goods
+    .accept 284 >> Accept The Search Continues
+step
+    .goto 1437,13.6,38.2
+    >>Click the |cRXP_PICK_Sealed Barrel|r
+    .turnin 284 >> Turn in The Search Continues
+    .accept 285 >> Accept Search More Hovels
+step
+    .goto 1437,13.9,34.8
+    >>Click the |cRXP_PICK_Half-buried Barrel|r
+    .turnin 285 >> Turn in Search More Hovels
+    .accept 286 >> Accept Return the Statuette
+step
+    #loop
+    .goto 1437,13.7,30.3,0
+    .goto 1437,13.7,30.3,15,0
+    .goto 1437,14.1,29.3,15,0
+    .goto 1437,14.3,24.5,15,0
+    .goto 1437,15.1,24.0,15,0
+    >>North to the two wrecked ships: kill |cRXP_ENEMY_Cursed Sailors|r and |cRXP_ENEMY_Cursed Marines|r. Kill |cRXP_ENEMY_First Mate Snellig|r inside the southern ship and loot his |cRXP_LOOT_Snuffbox|r
+    >>|cRXP_WARN_Get in through the hole in the hull on the shore side. The northern ship has more Marines. Leave Captain Halyndor (30) alone|r
+    .complete 289,1 --Cursed Sailor (13)
+    .complete 289,2 --Cursed Marine (5)
+    .complete 289,3 --Snellig's Snuffbox (1)
+    .mob Cursed Sailor
+    .mob Cursed Marine
+    .mob First Mate Snellig
+step
+    #loop
+    .goto 1437,18.6,25.0,0
+    .goto 1437,17.0,26.9,25,0
+    .goto 1437,18.4,27.0,25,0
+    .goto 1437,19.0,24.8,25,0
+    .goto 1437,19.2,22.9,25,0
+    .goto 1437,21.7,20.0,25,0
+    .goto 1437,17.5,23.5,25,0
+    >>East along the shore, kill |cRXP_ENEMY_Giant Wetlands Crocolisks|r. Loot them for |cRXP_LOOT_Giant Crocolisk Skins|r
+    .complete 471,1 --Giant Crocolisk Skin (6)
+    .mob Giant Wetlands Crocolisk
+step
+    #label CreepersDone
+    .isOnQuest 275
+    #loop
+    .goto 1437,22.5,32.0,0
+    .goto 1437,18.5,27.7,20,0
+    .goto 1437,20.8,28.4,20,0
+    .goto 1437,22.5,30.0,20,0
+    .goto 1437,23.6,32.0,20,0
+    .goto 1437,25.9,31.9,20,0
+    .goto 1437,25.3,35.5,20,0
+    .goto 1437,27.4,37.1,20,0
+    .goto 1437,27.1,39.1,20,0
+    >>Still short of |cRXP_ENEMY_Fen Creepers|r? They're in the streams south of the crocodiles
+    >>|cRXP_WARN_Rethiel is on the Excavation Site trip: hand it in then|r
+    .complete 275,1 --Fen Creeper (12)
+    .mob Fen Creeper
+step
+    .goto 1437,8.6,55.7
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack south to Menethil: talk to |cRXP_FRIENDLY_James Halloran|r
+    >>|cRXP_WARN_Don't take Crocs of the Sky yet: he offers it again on the Excavation Site trip|r
+    .turnin 471 >> Turn in Apprentice's Duties
+    .target James Halloran
+step
+    .goto 1437,8.0,55.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylessa Duskwhisper|r next to him
+    >>|cRXP_WARN_OPTIONAL: her bloom is in the wreck just south of town, among level 28-29 murlocs. Skip it under 25|r
+    .accept 98208 >> Accept Bloom of the Heavens
+    .target Sylessa Duskwhisper
+step
+    .goto 1437,8.3,58.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Karl Boran|r
+    .turnin 286 >> Turn in Return the Statuette
+    .accept 98189 >> Accept Return the Statuette
+    .target Karl Boran
+step
+    .goto 1437,9.9,57.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Stoutfist|r upstairs in the keep
+    >>|cRXP_WARN_Carry A Friend of the Family to Highlord Bolvar in Stormwind|r
+    .turnin 98189 >> Turn in Return the Statuette
+    .accept 98190 >> Accept A Friend of the Family
+    .target Captain Stoutfist
+step
+    .goto 1437,10.9,59.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_First Mate Fitzsimmons|r in the Deepwater Tavern
+    >>|cRXP_WARN_Don't take Lifting the Curse: Captain Halyndor is 30 and reflects spells|r
+    .turnin 289 >> Turn in The Cursed Crew
+    .target First Mate Fitzsimmons
+step
+    .isOnQuest 98208
+    .goto 1437,12.2,63.8
+    >>|cRXP_WARN_OPTIONAL:|r just south of town, loot |cRXP_PICK_Nord'el|r from the wreck
+    >>|cRXP_WARN_The Bluegill Raiders here are 28-29 and come in groups|r
+    .complete 98208,1 --Nord'el (1)
+    .mob Bluegill Raider
+step
+    .isQuestComplete 98208
+    .goto 1437,8.0,55.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylessa Duskwhisper|r
+    >>|cRXP_WARN_Don't take the second part: it goes to Darkshore|r
+    .turnin 98208 >> Turn in Bloom of the Heavens
+    .target Sylessa Duskwhisper
+step
+    .goto 1437,9.5,59.7
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r, the gryphon master
+    .fly Stormwind >> Fly to Stormwind
+    .target Shellei Brondir
+    .zoneskip Stormwind City
 ]])

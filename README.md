@@ -243,8 +243,8 @@ because their bosses are 28-31.
   south-east (Blackrock Blockade, plus Battleworn Axes from any Blackrock orc; Incinerator Gar'im further on, group
   only), then the Sunken Chest in the lake on the way back (The Lost Tools).
 - **North-west loop:** Redridge gnolls for The Everstill Bridge, the Blackrock Champions at the camp up north
-  (Blackrock Bounty) and Corporal Keeshan's escort from Render's Rock (Missing In Action). OPTIONAL: Shadow Magic's
-  orbs from the elite Shadowcasters at that camp's east end, and Bellygrub on the way back.
+  (Blackrock Bounty) and Corporal Keeshan's escort from Render's Rock (Missing In Action). OPTIONAL: Bellygrub on the
+  way back.
 - **East loop:** Alther's Mill's tarantulas and eggs, the Shadowhide gnolls (Solomon's Law) and Lieutenant
   Fangore. OPTIONAL: the elites at Stonewatch Keep (Shadow Magic, Tharil'zun, and Gath'Ilzogg for a group).
 - **Finish:** Guard Berton's What Comes Around..., the first Stockade quest, once you're 22. Carry it to the

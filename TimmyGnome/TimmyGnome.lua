@@ -4053,7 +4053,7 @@ step << !Mage !Paladin
 -- Mountains.
 RXPGuides.RegisterGuide([[
 #forever
-#version 5
+#version 6
 << Alliance
 #group TimmyGnome
 #name 21+ Redridge
@@ -4242,7 +4242,7 @@ step
     .isQuestTurnedIn 20
     .goto 1433,28.4,49.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
-    >>|cRXP_WARN_OPTIONAL: elite fights. The Shadowcasters at the east end of the Blackrock camp up north drop the orbs and are easier to pull singly than the ones in Stonewatch Keep, where Tharil'zun is|r
+    >>|cRXP_WARN_OPTIONAL: elite fights at Stonewatch Keep, on the last loop. Pull singles|r
     .accept 115 >> Accept Shadow Magic
     .accept 19 >> Accept Tharil'zun
     .target Marshal Marris
@@ -4286,15 +4286,9 @@ step
     .goto 1433,24.4,8.5,25,0
     .goto 1433,22.1,10.0,25,0
     >>North to the Blackrock camp. Kill |cRXP_ENEMY_Blackrock Champions|r
-    >>|cRXP_WARN_They're 24-25: pull one at a time. The camp's east end has elite Shadowcasters|r
+    >>|cRXP_WARN_They're 24-25: pull one at a time|r
     .complete 128,1 --Blackrock Champion (15)
     .mob Blackrock Champion
-step
-    .isOnQuest 115
-    .goto 1433,30.6,8.4
-    >>|cRXP_WARN_OPTIONAL:|r at the camp's east end, kill the elite |cRXP_ENEMY_Blackrock Shadowcasters|r one at a time. Loot them for |cRXP_LOOT_Midnight Orbs|r
-    .complete 115,1 --Midnight Orb (3)
-    .mob Blackrock Shadowcaster
 step
     .goto 1433,23.3,12.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Keeshan|r at the back of Render's Rock, the cave by the camp
@@ -4401,7 +4395,7 @@ step
     .goto 1433,64.2,55.5,20,0
     .goto 1433,62.0,56.4,20,0
     .goto 1433,61.2,57.3,20,0
-    >>|cRXP_WARN_OPTIONAL:|r still short of |cRXP_LOOT_Midnight Orbs|r? Stonewatch Keep, south-west of the gnolls: kill |cRXP_ENEMY_Blackrock Shadowcasters|r
+    >>|cRXP_WARN_OPTIONAL:|r south-west of the gnolls, in Stonewatch Keep: kill |cRXP_ENEMY_Blackrock Shadowcasters|r. Loot them for |cRXP_LOOT_Midnight Orbs|r
     >>|cRXP_WARN_Every orc here is elite: pull one at a time|r
     .complete 115,1 --Midnight Orb (3)
     .mob Blackrock Shadowcaster

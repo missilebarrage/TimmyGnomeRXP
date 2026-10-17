@@ -2,8 +2,8 @@
 
 A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
 Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes, Darkshore, the
-Ruins of Lordaeron, the Deadmines, Redridge, Duskwood and the Wetlands, levels 1 to about 25, made for playing as a
-duo (the dungeons need three more players). From the Hall of Thanes on, guides are named by the level you start
+Ruins of Lordaeron, the Deadmines, Redridge, Duskwood, the Wetlands and the Stockade, levels 1 to about 26, made for
+playing as a duo (the dungeons need three more players). From the Hall of Thanes on, guides are named by the level you start
 them at, like **14+**: where a duo ends up is hard to predict.
 
 ## Install
@@ -16,8 +16,8 @@ You need RestedXP Guides installed.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
    **5-10 Dun Morogh**, **10-12 Elwynn Forest**, **12-14 Loch Modan**, **14+ Hall of Thanes**,
-   **15+ Darkshore**, **18+ Ruins of Lordaeron**, **20+ The Deadmines**, **21+ Redridge**, **22+ Duskwood** and
-   **23+ Wetlands** by itself.
+   **15+ Darkshore**, **18+ Ruins of Lordaeron**, **20+ The Deadmines**, **21+ Redridge**, **22+ Duskwood**,
+   **23+ Wetlands** and **25+ The Stockade** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
@@ -293,6 +293,25 @@ because their bosses are 28-31.
 - **Left out:** the elites (Dun Modr, Dragonmaw Retreat, Nek'rosh), Captain Halyndor (level 30, reflects spells)
   and Crocs of the Sky (three trips across the zone).
 - **Where you end up:** about 25.5 with the OPTIONAL quests, a little less without, then the flight to Stormwind.
+
+### 25+ The Stockade
+
+- **Stormwind before the run, while the group forms:** Nikova Raskol's The Color of Blood in Old Town (she walks
+  around), Highlord Bolvar and Lord Grayson Shadowbreaker for A Friend of the Family (the mage takes the Royal
+  Dagger), level 24 training if you missed it, then Warden Thelwater at the Stockade door for The Stockade Riots and
+  Quell the Uprising. Baros Alexston only comes up if you don't have Bazil Thredd yet.
+- **Inside:** Targorr the Dread (in a random cell off the first hall), Dextren Ward at the end of the west wing and
+  Bazil Thredd at the end of the east wing, with stickies for Quell the Uprising and the Red Wool Bandanas (about an
+  80% drop). Keep 3 Silk Cloth each.
+- **After the run, the rest of the Defias chain in one Stormwind loop:** Thelwater, Baros, Nikova, Mathias Shaw in
+  SI:7, Elling Trias, Tyrion in the Keep, Clara's apples just outside the main gate, The Attack! in the Keep
+  courtyard (Lord Gregor Lescovar, 31, and Marzon the Silent Blade, 30), then Elling, Shaw and Baros again and Lady
+  Katrana Prestor for the Seal of Wrynn. Level 26 training on the way if you're there.
+- **Then:** Lakeshire for Songblade Search (an Excavation Site quest) and What Comes Around..., Darkshire for Crime
+  and Punishment, and the hearth to Menethil for the Excavation Site.
+- **Left out:** The Fury Runs Deep (it needs The Dark Iron War, an elite quest), and Duskwood's leftovers and
+  item-start quests.
+- **Where you end up:** about 26.5.
 
 ## Credits and license
 

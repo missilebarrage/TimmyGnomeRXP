@@ -2,9 +2,9 @@
 
 A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
 Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes, Darkshore, the
-Ruins of Lordaeron, the Deadmines, Redridge and the Stockade, levels 1 to about 23, made for playing as a duo (the
-dungeons need three more players). From the Hall of Thanes on, guides are named by the level you start them at,
-like **14+**: where a duo ends up is hard to predict.
+Ruins of Lordaeron, the Deadmines, Redridge, the Stockade and Duskwood, levels 1 to about 24, made for playing as a
+duo (the dungeons need three more players). From the Hall of Thanes on, guides are named by the level you start
+them at, like **14+**: where a duo ends up is hard to predict.
 
 ## Install
 
@@ -16,8 +16,8 @@ You need RestedXP Guides installed.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
    **5-10 Dun Morogh**, **10-12 Elwynn Forest**, **12-14 Loch Modan**, **14+ Hall of Thanes**,
-   **15+ Darkshore**, **18+ Ruins of Lordaeron**, **20+ The Deadmines**, **21+ Redridge** and **22+ The Stockade**
-   by itself.
+   **15+ Darkshore**, **18+ Ruins of Lordaeron**, **20+ The Deadmines**, **21+ Redridge**, **22+ The Stockade**
+   and **23+ Duskwood** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
@@ -269,6 +269,25 @@ Duskwood and Redridge again. The Stockade and the Excavation Site are the only d
 - **Rewards:** What Comes Around... goes in at Lakeshire in the next guide. Crime and Punishment: Town Clerk's
   Mittens for the mage; the paladin sells the Darkshire Mail Leggings (the Chausses of Westfall are better).
 - **Where you end up:** about 23.
+
+### 23+ Duskwood
+
+- **Darkshire:** pick up The Valor Family (OPTIONAL), The Night Watch, Seasoned Wolf Kabobs, The Totem of
+  Infliction and Elaine Carevin's three quests. Stickies track the totem's fangs, venom and finger bones and the
+  wolf flanks.
+- **East:** the Tranquil Gardens skeletons for The Night Watch, then back to town for its second part.
+- **West, one loop:** Watcher Dodds, then Raven Hill (Jitters, the spiders west of the village, and the Valor
+  Family's tome if you can find it: nobody has published its spot yet), Sven and Lars, the wolves towards
+  Abercrombie, his shack, the ghouls south of it, the Raven Hill cemetery for the second Night Watch, back to
+  Lars, then the road east past Dodds, the ravagers and Sven's old farm.
+- **Back in Darkshire:** the turn-ins, plus a short hop to Blind Mary for Ghost Hair Thread and Return the Comb.
+- **Left for the last guide of the track:** the chain steps that would need a second trip west: Sven's Camp
+  (carried there), Dusky Crab Cakes, Deliver the Thread onwards, the third Night Watch and Proving Your Worth.
+- **Lakeshire at 24:** What Comes Around... (Hardened Root Staff for the mage, Ursine Hammer for the paladin) and
+  Dorin Songblade's Songblade Search, an Excavation Site quest. A step before the flight makes sure you're within
+  4,200 XP of 24 so Songblade Search is ready.
+- **Then:** level 24 training in Stormwind and the flight to Menethil Harbor.
+- **Where you end up:** about 24.
 
 ## Credits and license
 

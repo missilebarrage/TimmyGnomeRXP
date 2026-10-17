@@ -1,7 +1,7 @@
 -- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of
--- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge and the Stockade, levels 1 to about 23. From
--- the Hall of Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is hard to
--- predict.
+-- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge, the Stockade and Duskwood, levels 1 to about
+-- 24. From the Hall of Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is
+-- hard to predict.
 -- The first two guides were rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn and Loch
 -- Modan guides below them have their own notes. Like that run, Coldridge Valley opens with a grind to level 2
 -- and skips Dwarven Outfitters, which also skips both Coldridge Valley mail deliveries and the Glyphic
@@ -4386,10 +4386,11 @@ step
 -- Forever data. 1433 is Redridge Mountains, 1431 Duskwood, 1453 Stormwind City.
 RXPGuides.RegisterGuide([[
 #forever
-#version 1
+#version 2
 << Alliance
 #group TimmyGnome
 #name 22+ The Stockade
+#next 23+ Duskwood
 
 step
     #completewith EnterStockade
@@ -4592,4 +4593,358 @@ step
     >>|cRXP_WARN_Take the Darkshire Mail Leggings to sell (22s 27c): your Chausses of Westfall are better|r << Paladin
     .turnin 377 >> Turn in Crime and Punishment
     .target Councilman Millstipe
+]])
+
+-- Duskwood from level 23, after the Stockade: its level 20-25 quests in one east loop, one west loop and a short hop
+-- to Blind Mary, then Lakeshire and Stormwind on the way to the Wetlands. East: the Tranquil Gardens skeletons for
+-- The Night Watch, which unlocks its second part for the west loop. West, clockwise: Watcher Dodds, Raven Hill
+-- (Jitters, the spiders, the Valor Family's tome), Sven and Lars, the wolves towards Abercrombie, his shack, the
+-- ghouls and the Raven Hill cemetery, back to Lars, then the road east past Dodds, the ravagers and Sven's old farm.
+-- Chain steps that would need a second trip west (Sven's Camp onwards, Dusky Crab Cakes, Deliver the Thread onwards,
+-- Night Watch part 3, Proving Your Worth) wait for the last guide of the track; Sven's Camp is carried there. Then
+-- Lakeshire at 24 for What Comes Around... and Songblade Search (the Excavation Site needs it), level 24 training in
+-- Stormwind and the flight to Menethil. The loop order follows RestedXP's TBC "24-27 Redridge/Duskwood"; spots and
+-- counts come from Questie's Forever data and Wowhead's Forever tooltips (Forever made the first Night Watch 8 + 6
+-- skeletons and Seasoned Wolf Kabobs 10 flanks with no herbs). 1431 is Duskwood, 1433 Redridge Mountains, 1453
+-- Stormwind City.
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group TimmyGnome
+#name 23+ Duskwood
+
+step
+    .goto 1431,72.62,47.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sirra Von'Indi|r in the town hall
+    >>|cRXP_WARN_OPTIONAL: the tome is somewhere in Raven Hill, on the west loop. Nobody has published the exact spot yet|r
+    .accept 96139 >> Accept The Valor Family
+    .target Sirra Von'Indi
+step
+    .goto 1431,73.54,46.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
+    .accept 56 >> Accept The Night Watch
+    .target Commander Althea Ebonlocke
+step
+    .goto 1431,73.75,43.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Grual|r
+    .accept 90 >> Accept Seasoned Wolf Kabobs
+    .target Chef Grual
+step
+    .goto 1431,75.79,45.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r in her house
+    .accept 101 >> Accept The Totem of Infliction
+    .target Madame Eva
+step
+    .goto 1431,75.34,48.75
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Carevin|r
+    .accept 163 >> Accept Raven Hill
+    .accept 164 >> Accept Deliveries to Sven
+    .accept 165 >> Accept The Hermit
+    .target Elaine Carevin
+step
+    #completewith TotemDone
+    .isOnQuest 101
+    >>Loot |cRXP_LOOT_Skeleton Fingers|r from skeletons, |cRXP_LOOT_Vials of Spider Venom|r from spiders and |cRXP_LOOT_Ghoul Fangs|r from ghouls as you go
+    .complete 101,1 --Ghoul Fang (10)
+    .complete 101,2 --Vial of Spider Venom (5)
+    .complete 101,3 --Skeleton Finger (10)
+step
+    #completewith KabobsFinish
+    .isOnQuest 90
+    >>Loot |cRXP_LOOT_Lean Wolf Flanks|r from the wolves and ravagers you kill
+    .complete 90,1 --Lean Wolf Flank (10)
+step
+    #loop
+    .goto 1431,79.4,70.8,0
+    .goto 1431,77.4,73.8,25,0
+    .goto 1431,76.9,70.2,25,0
+    .goto 1431,79.0,69.7,25,0
+    .goto 1431,80.6,66.7,25,0
+    .goto 1431,82.1,68.7,25,0
+    .goto 1431,80.8,73.8,25,0
+    >>South to the Tranquil Gardens Cemetery. Kill |cRXP_ENEMY_Skeletal Warriors|r and |cRXP_ENEMY_Skeletal Mages|r
+    .complete 56,1 --Skeletal Warrior (8)
+    .complete 56,2 --Skeletal Mage (6)
+    .mob Skeletal Warrior
+    .mob Skeletal Mage
+step
+    .goto 1431,73.54,46.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Darkshire, talk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
+    >>|cRXP_WARN_The second part is in the Raven Hill cemetery, on the west loop|r
+    .turnin 56 >> Turn in The Night Watch
+    .accept 57 >> Accept The Night Watch
+    .target Commander Althea Ebonlocke
+step
+    .goto 1431,45.12,67.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFollow the road west to |cRXP_FRIENDLY_Watcher Dodds|r
+    .accept 245 >> Accept Eight-Legged Menaces
+    .target Watcher Dodds
+step
+    .goto 1431,18.38,56.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tContinue west to Raven Hill and talk to |cRXP_FRIENDLY_Jitters|r
+    .turnin 163 >> Turn in Raven Hill
+    .accept 5 >> Accept Jitters' Growling Gut
+    .target Jitters
+step
+    #loop
+    .goto 1431,10.5,57.1,0
+    .goto 1431,10.8,53.0,25,0
+    .goto 1431,9.4,57.2,25,0
+    .goto 1431,10.4,59.1,25,0
+    .goto 1431,11.6,62.7,25,0
+    .goto 1431,12.0,59.2,25,0
+    >>West of Raven Hill, kill |cRXP_ENEMY_Pygmy Venom Web Spiders|r
+    .complete 245,1 --Pygmy Venom Web Spider (15)
+    .mob Pygmy Venom Web Spider
+step
+    .isOnQuest 96139
+    .goto 1431,17.4,54.0
+    >>OPTIONAL: look around Raven Hill for the |cRXP_PICK_Memory of Valor|r and loot the |cRXP_LOOT_Raven Hill Tome|r from it
+    >>|cRXP_WARN_Nobody has published its exact spot: skip this step if it takes more than a couple of minutes|r
+    .complete 96139,1 --Raven Hill Tome (1)
+step
+    .goto 1431,7.78,34.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tNorth to Sven's Camp: talk to |cRXP_FRIENDLY_Sven Yorgen|r
+    .turnin 164 >> Turn in Deliveries to Sven
+    .accept 95 >> Accept Sven's Revenge
+    .target Sven Yorgen
+step
+    .goto 1431,7.71,33.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lars|r next to him
+    .accept 226 >> Accept Wolves at Our Heels
+    .target Lars
+step
+    #loop
+    .goto 1431,17.1,27.7,0
+    .goto 1431,12.6,28.3,25,0
+    .goto 1431,16.5,22.9,25,0
+    .goto 1431,19.3,24.0,25,0
+    .goto 1431,22.6,25.9,25,0
+    .goto 1431,26.7,26.9,25,0
+    .goto 1431,22.0,29.0,25,0
+    >>Kill |cRXP_ENEMY_Starving Dire Wolves|r and |cRXP_ENEMY_Rabid Dire Wolves|r north-east of the camp, working east towards Abercrombie's shack
+    >>|cRXP_WARN_Done while you're still near the camp? Hand it in to Lars now|r
+    .complete 226,1 --Starving Dire Wolf (12)
+    .complete 226,2 --Rabid Dire Wolf (8)
+    .mob Starving Dire Wolf
+    .mob Rabid Dire Wolf
+step
+    .goto 1431,28.11,31.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r at his shack
+    .turnin 165 >> Turn in The Hermit
+    .accept 148 >> Accept Supplies from Darkshire
+    .target Abercrombie
+step
+    .isOnQuest 101
+    #loop
+    .goto 1431,24.0,35.6,0
+    .goto 1431,25.4,36.0,20,0
+    .goto 1431,22.8,39.1,20,0
+    .goto 1431,22.2,37.0,20,0
+    .goto 1431,22.0,32.6,20,0
+    .goto 1431,25.8,32.9,20,0
+    >>South of the shack, kill |cRXP_ENEMY_Flesh Eaters|r and |cRXP_ENEMY_Bone Chewers|r for |cRXP_LOOT_Ghoul Fangs|r
+    >>|cRXP_WARN_Bone Chewers are 26-27. Skip this step if it's slow: the totem can wait for the last guide of the track|r
+    .complete 101,1 --Ghoul Fang (10)
+    .mob Flesh Eater
+    .mob Bone Chewer
+step
+    #loop
+    .goto 1431,20.4,45.4,0
+    .goto 1431,22.6,40.5,25,0
+    .goto 1431,23.8,44.0,25,0
+    .goto 1431,21.8,47.4,25,0
+    .goto 1431,16.8,47.1,25,0
+    .goto 1431,15.3,46.4,25,0
+    .goto 1431,16.2,42.8,25,0
+    >>Further south to the Raven Hill cemetery: kill |cRXP_ENEMY_Skeletal Fiends|r and |cRXP_ENEMY_Skeletal Horrors|r
+    .complete 57,1 --Skeletal Fiend (15)
+    .complete 57,2 --Skeletal Horror (15)
+    .mob Skeletal Fiend
+    .mob Skeletal Horror
+step
+    .isQuestComplete 226
+    .goto 1431,7.71,33.20
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack north-west to |cRXP_FRIENDLY_Lars|r
+    .turnin 226 >> Turn in Wolves at Our Heels
+    .target Lars
+step
+    .isQuestComplete 245
+    .goto 1431,45.12,67.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFollow the road east from Raven Hill back to |cRXP_FRIENDLY_Watcher Dodds|r
+    .turnin 245 >> Turn in Eight-Legged Menaces
+    .target Watcher Dodds
+step
+    #label KabobsFinish
+    .isOnQuest 90
+    #loop
+    .goto 1431,51.4,69.0,0
+    .goto 1431,49.0,65.2,25,0
+    .goto 1431,53.5,65.1,25,0
+    .goto 1431,52.1,72.8,25,0
+    .goto 1431,47.8,70.3,25,0
+    >>Short of |cRXP_LOOT_Lean Wolf Flanks|r? Kill the |cRXP_ENEMY_Young Black Ravagers|r east of Dodds
+    >>|cRXP_WARN_Skip this step if it's slow: the kabobs can wait for the last guide of the track|r
+    .complete 90,1 --Lean Wolf Flank (10)
+    .mob Young Black Ravager
+step
+    .isOnQuest 95
+    .goto 1431,49.85,77.71
+    >>South to Sven's old farm: click the |cRXP_PICK_Mound of loose dirt|r behind the stump
+    >>|cRXP_WARN_Take Sven's Camp too and carry it: it goes back to Sven in the last guide of the track|r
+    .turnin 95 >> Turn in Sven's Revenge
+    .accept 230 >> Accept Sven's Camp
+step
+    .goto 1431,73.75,43.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Darkshire, talk to |cRXP_FRIENDLY_Chef Grual|r
+    >>|cRXP_WARN_Don't take Dusky Crab Cakes: it's for the last guide of the track|r
+    .turnin 5 >> Turn in Jitters' Growling Gut
+    .target Chef Grual
+step
+    .isQuestComplete 90
+    .goto 1431,73.75,43.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Grual|r
+    .turnin 90 >> Turn in Seasoned Wolf Kabobs
+    .target Chef Grual
+step
+    .goto 1431,75.79,45.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r
+    .turnin 148 >> Turn in Supplies from Darkshire
+    .accept 149 >> Accept Ghost Hair Thread
+    .target Madame Eva
+step
+    .goto 1431,81.99,59.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSouth-east to |cRXP_FRIENDLY_Blind Mary|r's house
+    .turnin 149 >> Turn in Ghost Hair Thread
+    .accept 154 >> Accept Return the Comb
+    .target Blind Mary
+step
+    .isOnQuest 57
+    #loop
+    .goto 1431,80.6,59.2,0
+    .goto 1431,79.7,61.9,20,0
+    .goto 1431,81.7,60.5,20,0
+    .goto 1431,81.1,56.2,20,0
+    .goto 1431,79.2,57.5,20,0
+    >>Short of |cRXP_ENEMY_Skeletal Horrors|r? Kill the ones around her house
+    >>|cRXP_WARN_Skip this step if you're done|r
+    .complete 57,2 --Skeletal Horror (15)
+    .mob Skeletal Horror
+step
+    .isOnQuest 101
+    .goto 1431,80.6,59.2
+    >>Short of |cRXP_LOOT_Skeleton Fingers|r? The |cRXP_ENEMY_Skeletal Horrors|r here drop them too
+    >>|cRXP_WARN_Skip this step if you're done, or if you're still short of Ghoul Fangs|r
+    .complete 101,3 --Skeleton Finger (10)
+    .mob Skeletal Horror
+step
+    .goto 1431,75.79,45.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack to |cRXP_FRIENDLY_Madame Eva|r in Darkshire
+    >>|cRXP_WARN_Don't take Deliver the Thread: it's for the last guide of the track|r
+    .turnin 154 >> Turn in Return the Comb
+    .target Madame Eva
+step
+    #label TotemDone
+    .isQuestComplete 101
+    .goto 1431,75.79,45.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r
+    .turnin 101 >> Turn in The Totem of Infliction
+    .target Madame Eva
+step
+    .isQuestComplete 57
+    .goto 1431,73.54,46.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
+    >>|cRXP_WARN_Leave the third Night Watch for the last guide of the track|r
+    .turnin 57 >> Turn in The Night Watch
+    .target Commander Althea Ebonlocke
+step
+    .isQuestComplete 96139
+    .goto 1431,72.62,47.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sirra Von'Indi|r
+    .turnin 96139 >> Turn in The Valor Family
+    .target Sirra Von'Indi
+step
+    .goto 1431,80.6,59.2
+    .xp 24-4200 >> Get within 4,200 XP of level 24: What Comes Around... in Lakeshire gives the rest, and Songblade Search there needs 24. Short? Kill the Skeletal Horrors around Blind Mary's house
+    .mob Skeletal Horror
+step
+    .goto 1431,77.49,44.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felicia Maline|r, the gryphon master
+    .fly Lakeshire >> Fly to Lakeshire in Redridge
+    .target Felicia Maline
+    .zoneskip Redridge Mountains
+step
+    .isQuestComplete 128
+    .goto 1433,26.45,57.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Howe|r by the bridge
+    .turnin 128 >> Turn in Blackrock Bounty
+    .target Guard Howe
+step
+    .isQuestComplete 20
+    .goto 1433,28.41,48.97
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tCross the bridge to |cRXP_FRIENDLY_Marshal Marris|r
+    .turnin 20 >> Turn in Blackrock Menace
+    .target Marshal Marris
+step
+    .goto 1433,21.17,46.58
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Berton|r
+    >>|cRXP_WARN_Take the Hardened Root Staff (+20 spell damage, +9 Spirit; the Staff of Westfall has +16)|r << Mage
+    >>|cRXP_WARN_Take the Ursine Hammer (18.4 DPS; your Ironforge Greathammer has 16.0)|r << Paladin
+    .turnin 386 >> Turn in What Comes Around...
+    .target Guard Berton
+step
+    .goto 1433,25.8,46.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorin Songblade|r, the armorer
+    >>|cRXP_WARN_An Excavation Site quest: you find his brother inside, and the next part comes back here|r
+    .accept 95772 >> Accept Songblade Search
+    .target Dorin Songblade
+step
+    .isQuestComplete 91
+    .goto 1433,24.63,44.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bailiff Conacher|r in the town hall
+    .turnin 91 >> Turn in Solomon's Law
+    .target Bailiff Conacher
+step
+    .goto 1433/0,-2234.900,-9435.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r across the bridge
+    .fly Stormwind >> Fly to Stormwind
+    .target Ariena Stormfeather
+    .zoneskip Stormwind City
+step << Paladin
+    #completewith next
+    .goto 1453/0,809.52,-8579.22,20 >> Go into the Cathedral of Light
+step << Paladin
+    .xp <24,1
+    .goto 1453/0,859.13,-8559.14,10,0
+    .goto 1453/0,861.14,-8573.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
+    .train 5588 >> Train your level 24 spells (Hammer of Justice rank 2, Blessing of Wisdom rank 2, Blessing of Protection rank 2, Turn Undead)
+    .target Arthur the Faithful
+step << Mage
+    #completewith next
+    .goto 1453/0,942.34,-9001.49,15,0
+    .goto 1453/0,949.86,-9009.38,10,0
+    .goto 1453/0,962.63,-8990.73,15,0
+    .goto 1453/0,928.62,-9010.10,15,0
+    .goto 1453/0,863.96,-9001.40,8,0
+    .goto 1453/0,877.00,-9008.03,6,0
+    .goto 1453/0,868.8,-9004.27,8,0
+    .goto 1453/0,871.36,-9013.14,10,0
+    .goto 1453/0,887.22,-9017.80,10 >> Go into the Wizard's Sanctum in the Mage Quarter and follow its ramp to |cRXP_FRIENDLY_Jennea|r
+step << Mage
+    .xp <24,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
+    .train 8400 >> Train your level 24 spells (Fireball rank 5, Scorch, Counterspell, Flamestrike rank 2, Conjure Food rank 3)
+    .target Jennea Cannon
+step << !Mage !Paladin
+    >>Visit your class trainer in Stormwind
+    .trainer >> Train your level 24 spells
+step
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master in the Trade District
+    .fly Menethil >> Fly to Menethil Harbor in the Wetlands
+    .target Dungar Longdrink
+    .zoneskip Wetlands
 ]])

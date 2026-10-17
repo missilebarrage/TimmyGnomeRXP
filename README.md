@@ -239,7 +239,7 @@ because their bosses are 28-31.
 - **Lakeshire:** fly in from Stormwind and pick up everything, including the WANTED: Lieutenant Fangore poster by
   the inn. Deputy Feldon's two quests (low-level gnolls next to the gryphon master) and Hilary's Necklace are
   OPTIONAL; the Gath'Ilzogg and Incinerator Gar'im posters are for a group.
-- **South loop:** the murlocs on the lake's south shore (Murloc Poachers, Selling Fish), the Blackrock camps in the
+- **South loop:** the murlocs on the lake's south shore (Murloc Poachers), the Blackrock camps in the
   south-east (Blackrock Blockade, plus Battleworn Axes from any Blackrock orc; Incinerator Gar'im further on, group
   only), then the Sunken Chest in the lake on the way back (The Lost Tools).
 - **North-west loop:** Redridge gnolls for The Everstill Bridge, the Blackrock Champions at the camp up north

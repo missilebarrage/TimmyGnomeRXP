@@ -4053,7 +4053,7 @@ step << !Mage !Paladin
 -- Mountains.
 RXPGuides.RegisterGuide([[
 #forever
-#version 3
+#version 4
 << Alliance
 #group TimmyGnome
 #name 21+ Redridge
@@ -4098,7 +4098,6 @@ step
     .goto 1433,22.6,47.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r on the dock
     .accept 150 >> Accept Murloc Poachers
-    .accept 127 >> Accept Selling Fish
     .target Dockmaster Baren
 step
     .goto 1433,24.6,44.3
@@ -4158,9 +4157,8 @@ step
     .goto 1433,42.6,71.2,20,0
     .goto 1433,43.2,67.4,20,0
     .goto 1433,45.1,68.5,20,0
-    >>Kill |cRXP_ENEMY_murlocs|r on the south shore of the lake. Loot them for |cRXP_LOOT_Spotted Sunfish|r and |cRXP_LOOT_Murloc Fins|r
+    >>Kill |cRXP_ENEMY_murlocs|r on the south shore of the lake. Loot them for |cRXP_LOOT_Murloc Fins|r
     >>|cRXP_WARN_They respawn fast here|r
-    .complete 127,1 --Spotted Sunfish (10)
     .complete 150,1 --Murloc Fin (8)
     .mob Murloc Flesheater
     .mob Murloc Minor Tidecaller
@@ -4253,12 +4251,6 @@ step
     .goto 1433,22.6,47.4
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
     .turnin 150 >> Turn in Murloc Poachers
-    .target Dockmaster Baren
-step
-    .isQuestComplete 127
-    .goto 1433,22.6,47.4
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dockmaster Baren|r
-    .turnin 127 >> Turn in Selling Fish
     .target Dockmaster Baren
 step
     .goto 1433,16.8,46.3

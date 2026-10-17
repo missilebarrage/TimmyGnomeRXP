@@ -1,6 +1,6 @@
 -- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of
--- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge, the Stockade and Duskwood, levels 1 to about
--- 24. From the Hall of Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is
+-- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge and Duskwood, levels 1 to about 23. From the
+-- Hall of Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is
 -- hard to predict.
 -- The first two guides were rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn and Loch
 -- Modan guides below them have their own notes. Like that run, Coldridge Valley opens with a grind to level 2
@@ -3985,7 +3985,7 @@ step
     .isOnQuest 373
     .goto 1453/0,719.67,-8550.30
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r in City Hall, on Cathedral Square
-    >>|cRXP_WARN_Take his next quest too: it's for the Stockade, two guides from now|r
+    >>|cRXP_WARN_Take his next quest too: it's for the Stockade, near the end of the track|r
     .turnin 373 >> Turn in The Unsent Letter
     .accept 389 >> Accept Bazil Thredd
     .target Baros Alexston
@@ -4040,24 +4040,24 @@ step << !Mage !Paladin
     .trainer >> Train your level 20 spells, and 22 if you're there
 ]])
 
--- Redridge from level 21, after the Deadmines: the first of six guides from 21 to 30 (Redridge, the Stockade,
--- Duskwood, the Wetlands, the Excavation Site, then Duskwood and Redridge again). It gets you to 22, the level the
--- Stockade's quests need. Crowd-proof first: kill and drop quests on big camps. Deputy Feldon's two low quests,
--- Hilary's Necklace and Bellygrub are OPTIONAL top-ups. The elite quests, the escort and the other named mobs
--- (Shadow Magic, Tharil'zun, Missing In Action, Gath'Ilzogg, Fangore, Gar'im) wait for the last guide of the track,
--- when you kill them fast. Three loops from Lakeshire: south (the murlocs on the south shore, the Blackrock camps in
--- the south-east, the Sunken Chest), north-west (Redridge gnolls, the Blackrock camp up north), east (Alther's Mill,
--- the Shadowhide gnolls). Forever's Redridge map is shifted from Era's (x is about 5.1 lower), so the spots here are
+-- Redridge from level 21, after the Deadmines: the big Redridge pass that opens the 21-30 track (Redridge, Duskwood
+-- and the Wetlands in big passes, then the Stockade and the Excavation Site with all their quests). Three loops from
+-- Lakeshire: south (the murlocs on the south shore, the Blackrock camps in the south-east, the Sunken Chest),
+-- north-west (Redridge gnolls, the Champions in the Blackrock camp up north, Corporal Keeshan's escort from Render's
+-- Rock), east (Alther's Mill, the Shadowhide gnolls, Lieutenant Fangore). OPTIONAL: Deputy Feldon's two low quests,
+-- Hilary's Necklace, Bellygrub, and the elite fights at Stonewatch Keep (Shadow Magic, Tharil'zun); Gath'Ilzogg and
+-- Incinerator Gar'im are for a group. What Comes Around..., the first Stockade quest, is carried to the Stockade near
+-- the end of the track. Forever's Redridge map is shifted from Era's (x is about 5.1 lower), so the spots here are
 -- Forever map percentages from Questie's Forever data, and from AllTheThings for the objects of the Forever-new
 -- quests; the loop order follows RestedXP's Classic "19-20 Redridge". 1453 is Stormwind City, 1433 Redridge
 -- Mountains.
 RXPGuides.RegisterGuide([[
 #forever
-#version 2
+#version 3
 << Alliance
 #group TimmyGnome
 #name 21+ Redridge
-#next 22+ The Stockade
+#next 22+ Duskwood
 
 step
     .goto 1453/0,490.03,-8835.82
@@ -4106,6 +4106,15 @@ step
     >>|cRXP_WARN_The Shadowhide gnolls are on the last loop, in the east|r
     .accept 91 >> Accept Solomon's Law
     .target Bailiff Conacher
+step
+    .goto 1433,24.4,46.2
+    >>|cRXP_WARN_OPTIONAL, group only: the two wanted posters outside, for elites in Stonewatch Keep and the far south-east|r
+    .accept 169 >> Accept WANTED: Gath'Ilzogg
+    .accept 95999 >> Accept WANTED: Incinerator Gar'im
+step
+    .goto 1433,21.7,46.4
+    >>Click the |cRXP_PICK_Wanted|r poster by the inn: Lieutenant Fangore is in the east, on the last loop
+    .accept 180 >> Accept WANTED: Lieutenant Fangore
 step
     #completewith BlackrockMenaceDone
     .isOnQuest 20
@@ -4167,12 +4176,18 @@ step
     .goto 1433,69.6,82.3,25,0
     .goto 1433,67.2,81.7,25,0
     >>East along the road to the Blackrock camps in the south-east. Loot |cRXP_PICK_Blackrock Supplies|r and |cRXP_PICK_Stolen Weapons|r around the camps, and kill the orcs for |cRXP_LOOT_Battleworn Axes|r
-    >>|cRXP_WARN_Outrunners throw nets. Incinerator Gar'im's elite camp is further south-east: stay clear|r
+    >>|cRXP_WARN_Outrunners throw nets. Incinerator Gar'im's elite camp is further south-east|r
     .complete 98387,1 --Blackrock Supplies (10)
     .complete 98387,2 --Stolen Weapon (8)
     .mob Blackrock Grunt
     .mob Blackrock Outrunner
     .mob Blackrock Renegade
+step
+    .isOnQuest 95999
+    .goto 1433,77.8,86.6
+    >>|cRXP_WARN_OPTIONAL, group only:|r further south-east, kill |cRXP_ENEMY_Incinerator Gar'im|r, an elite with Shadowcasters. Loot his |cRXP_LOOT_Broken Staff|r
+    .complete 95999,1 --Broken Staff of Incinerator Gar'im (1)
+    .mob Incinerator Gar'im
 step
     .isQuestComplete 246
     .goto 1433,25.6,60.0
@@ -4223,8 +4238,15 @@ step
     .isQuestComplete 20
     .goto 1433,28.4,49.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
-    >>|cRXP_WARN_Leave Shadow Magic and Tharil'zun for the last guide of the track (elite)|r
     .turnin 20 >> Turn in Blackrock Menace
+    .target Marshal Marris
+step
+    .isQuestTurnedIn 20
+    .goto 1433,28.4,49.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    >>|cRXP_WARN_OPTIONAL: elite fights. The Shadowcasters at the east end of the Blackrock camp up north drop the orbs and are easier to pull singly than the ones in Stonewatch Keep, where Tharil'zun is|r
+    .accept 115 >> Accept Shadow Magic
+    .accept 19 >> Accept Tharil'zun
     .target Marshal Marris
 step
     .isQuestComplete 150
@@ -4272,13 +4294,59 @@ step
     .goto 1433,24.4,8.5,25,0
     .goto 1433,22.1,10.0,25,0
     >>North to the Blackrock camp. Kill |cRXP_ENEMY_Blackrock Champions|r
-    >>|cRXP_WARN_They're 24-25: pull one at a time. Stay off the camp's east end: elite Shadowcasters|r
+    >>|cRXP_WARN_They're 24-25: pull one at a time. The camp's east end has elite Shadowcasters|r
     .complete 128,1 --Blackrock Champion (15)
     .mob Blackrock Champion
 step
+    .isOnQuest 115
+    .goto 1433,30.6,8.4
+    >>|cRXP_WARN_OPTIONAL:|r at the camp's east end, kill the elite |cRXP_ENEMY_Blackrock Shadowcasters|r one at a time. Loot them for |cRXP_LOOT_Midnight Orbs|r
+    .complete 115,1 --Midnight Orb (3)
+    .mob Blackrock Shadowcaster
+step
+    .goto 1433,23.3,12.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Corporal Keeshan|r at the back of Render's Rock, the cave by the camp
+    >>|cRXP_WARN_Not there? Skip this and the next step|r
+    .accept 219 >> Accept Missing In Action
+    .target Corporal Keeshan
+step
+    .isOnQuest 219
+    .goto 1433,28.4,49.0
+    >>Escort |cRXP_FRIENDLY_Corporal Keeshan|r back to Lakeshire
+    >>|cRXP_WARN_Don't pull extra mobs on the way out of the cave|r
+    .complete 219,1 --Escort Corporal Keeshan back to Redridge
+    .target Corporal Keeshan
+step
+    .isQuestComplete 219
+    .goto 1433,28.4,49.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    .turnin 219 >> Turn in Missing In Action
+    .target Marshal Marris
+step
+    .isQuestComplete 20
+    .goto 1433,28.4,49.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    .turnin 20 >> Turn in Blackrock Menace
+    .target Marshal Marris
+step
+    .isQuestTurnedIn 20
+    .goto 1433,28.4,49.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    >>|cRXP_WARN_OPTIONAL: elite fights at Stonewatch Keep on the last loop. Pull singles|r
+    .accept 115 >> Accept Shadow Magic
+    .accept 19 >> Accept Tharil'zun
+    .target Marshal Marris
+step
+    .isQuestComplete 89
+    .goto 1433,27.1,48.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
+    .turnin 89 >> Turn in The Everstill Bridge
+    .accept 98386 >> Accept Alther's Mill
+    .target Foreman Oslow
+step
     .isOnQuest 34
     .goto 1433,10.8,49.3
-    >>Head back south, past the west side of town, and kill |cRXP_ENEMY_Bellygrub|r. Loot his |cRXP_LOOT_Tusk|r
+    >>West of town, kill |cRXP_ENEMY_Bellygrub|r. Loot his |cRXP_LOOT_Tusk|r
     .complete 34,1 --Bellygrub's Tusk (1)
     .mob Bellygrub
 step
@@ -4293,20 +4361,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Howe|r across the bridge
     .turnin 128 >> Turn in Blackrock Bounty
     .target Guard Howe
-step
-    .isQuestComplete 89
-    .goto 1433,27.1,48.6
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Foreman Oslow|r
-    .turnin 89 >> Turn in The Everstill Bridge
-    .accept 98386 >> Accept Alther's Mill
-    .target Foreman Oslow
-step
-    .isQuestComplete 20
-    .goto 1433,28.4,49.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
-    >>|cRXP_WARN_Leave Shadow Magic and Tharil'zun for the last guide of the track (elite)|r
-    .turnin 20 >> Turn in Blackrock Menace
-    .target Marshal Marris
 step
     .isOnQuest 98386
     #loop
@@ -4341,6 +4395,37 @@ step
     .mob Shadowhide Slayer
     .mob Shadowhide Darkweaver
 step
+    .isOnQuest 180
+    .goto 1433,75.09,37.06
+    >>North-east of the gnolls, kill |cRXP_ENEMY_Lieutenant Fangore|r. Loot his |cRXP_LOOT_Paw|r
+    .complete 180,1 --Fangore's Paw (1)
+    .mob Lieutenant Fangore
+step
+    .isOnQuest 115
+    #loop
+    .goto 1433,63.2,55.7,0
+    .goto 1433,62.9,52.8,20,0
+    .goto 1433,64.4,54.0,20,0
+    .goto 1433,64.2,55.5,20,0
+    .goto 1433,62.0,56.4,20,0
+    .goto 1433,61.2,57.3,20,0
+    >>|cRXP_WARN_OPTIONAL:|r still short of |cRXP_LOOT_Midnight Orbs|r? Stonewatch Keep, south-west of the gnolls: kill |cRXP_ENEMY_Blackrock Shadowcasters|r
+    >>|cRXP_WARN_Every orc here is elite: pull one at a time|r
+    .complete 115,1 --Midnight Orb (3)
+    .mob Blackrock Shadowcaster
+step
+    .isOnQuest 19
+    .goto 1433,64.36,59.41
+    >>|cRXP_WARN_OPTIONAL:|r kill |cRXP_ENEMY_Tharil'zun|r, an elite, at the keep. Loot his |cRXP_LOOT_Head|r
+    .complete 19,1 --Tharil'zun's Head (1)
+    .mob Tharil'zun
+step
+    .isOnQuest 169
+    .goto 1433,64.52,55.79
+    >>|cRXP_WARN_OPTIONAL, group only:|r kill |cRXP_ENEMY_Gath'Ilzogg|r, an elite, in the keep. Loot his |cRXP_LOOT_Head|r
+    .complete 169,1 --Head of Gath'Ilzogg (1)
+    .mob Gath'Ilzogg
+step
     .isQuestComplete 98386
     .goto 1433,27.1,48.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack west in town, talk to |cRXP_FRIENDLY_Foreman Oslow|r
@@ -4351,9 +4436,38 @@ step
     .isQuestComplete 20
     .goto 1433,28.4,49.0
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
-    >>|cRXP_WARN_Leave Shadow Magic and Tharil'zun for the last guide of the track (elite)|r
     .turnin 20 >> Turn in Blackrock Menace
     .target Marshal Marris
+step
+    .isQuestComplete 115
+    .goto 1433,28.4,49.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    .turnin 115 >> Turn in Shadow Magic
+    .target Marshal Marris
+step
+    .isQuestComplete 19
+    .goto 1433,28.4,49.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Marris|r
+    .turnin 19 >> Turn in Tharil'zun
+    .target Marshal Marris
+step
+    .isQuestComplete 180
+    .goto 1433,24.9,44.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r in the town hall
+    .turnin 180 >> Turn in WANTED: Lieutenant Fangore
+    .target Magistrate Solomon
+step
+    .isQuestComplete 169
+    .goto 1433,24.9,44.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
+    .turnin 169 >> Turn in WANTED: Gath'Ilzogg
+    .target Magistrate Solomon
+step
+    .isQuestComplete 95999
+    .goto 1433,24.9,44.45
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Magistrate Solomon|r
+    .turnin 95999 >> Turn in WANTED: Incinerator Gar'im
+    .target Magistrate Solomon
 step
     .isQuestComplete 91
     .goto 1433,24.6,44.3
@@ -4362,52 +4476,61 @@ step
     .target Bailiff Conacher
 step
     .goto 1433,33.9,42.7
-    .xp 22 >> Reach level 22: the Stockade's quests need it. Short? Kill the Blackrock orcs at the camp east of town
+    .xp 22 >> Reach level 22: What Comes Around... needs it. Short? Kill the Blackrock orcs at the camp east of town
     .mob Blackrock Grunt
     .mob Blackrock Outrunner
 step
     .goto 1433,21.2,46.6
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Berton|r
-    >>|cRXP_WARN_A Stockade quest: the next guide picks up the rest in Darkshire and Stormwind|r
+    >>|cRXP_WARN_A Stockade quest: carry it to the Stockade, near the end of the track|r
     .accept 386 >> Accept What Comes Around...
     .target Guard Berton
 ]])
 
--- The Stockade from level 22, straight after Redridge. Darkshire first: Councilman Millstipe's Crime and Punishment
--- has to be in your log before the run, and the Hearthstone goes there because 23+ Duskwood starts from it. Then
--- Stormwind before the run: Nikova Raskol in Old Town (she walks around), Baros Alexston only if you don't have
--- Bazil Thredd yet (the Deadmines guide hands it out), level 22 training (new spells for the dungeon, and something
--- to do while the group forms), Warden Thelwater at the door. Inside: Targorr the Dread (a random cell off the first
--- hall), Dextren Ward (west wing) and Bazil Thredd (east wing), with stickies for Quell the Uprising and the Red
--- Wool Bandanas. After the run, one loop: Thelwater, Baros, Old Town (Nikova, Mathias Shaw in SI:7), Elling Trias,
--- then the hearth to Darkshire for Crime and Punishment. The rest of the Defias chain (Infiltrating the Castle to An
--- Audience with the King) waits for the last guide of the track, when The Attack! is easy. The Stockade steps follow
--- RestedXP's TBC "23-24 Wetlands" Stockade sequence; Stormwind spots are world coordinates converted from Questie's
--- Forever data. 1433 is Redridge Mountains, 1431 Duskwood, 1453 Stormwind City.
+-- Duskwood from level 22, after Redridge: the big Duskwood pass. It opens with the run from Lakeshire through Three
+-- Corners (no earlier guide picks up the Darkshire flight path), then Darkshire: the Hearthstone, the Ruins of
+-- Lordaeron letter if you carry it, and Crime and Punishment, which is carried to the Stockade near the end of the
+-- track. Then one east loop (the Tranquil Gardens skeletons for The Night Watch, which unlocks its second part), the
+-- first west loop clockwise (Watcher Dodds, Raven Hill with Jitters, the spiders and the Valor Family's tome, Sven and
+-- Lars, the wolves towards Abercrombie, his shack, the ghouls and the Raven Hill cemetery, back to Lars, then the road
+-- east past Dodds, the ravagers and Sven's old farm), the Blind Mary hop, and a second trip west for the chain steps
+-- the first one unlocked (Dusky Crab Cakes' spider legs, Sven's Camp, Deliver the Thread), ending with the hearth back
+-- to Darkshire and the east-side deliveries (the Shadowy Figure chain, Zombie Juice and Rot Blossoms). Steps that
+-- would need a third trip west (Return to Jitters, Finding the Shadowy Figure, Juice Delivery onwards) and the third
+-- Night Watch wait. Then Stormwind for level 22 training (24 if you're there) and the flight to Menethil. The loop
+-- order follows RestedXP's TBC "24-27 Redridge/Duskwood"; spots and counts come from Questie's Forever data and
+-- Wowhead's Forever tooltips (Forever made the first Night Watch 8 + 6 skeletons and Seasoned Wolf Kabobs 10 flanks
+-- with no herbs). 1433 is Redridge Mountains, 1431 Duskwood, 1453 Stormwind City.
 RXPGuides.RegisterGuide([[
 #forever
-#version 2
+#version 1
 << Alliance
 #group TimmyGnome
-#name 22+ The Stockade
-#next 23+ Duskwood
+#name 22+ Duskwood
 
 step
-    #completewith EnterStockade
-    +|cRXP_WARN_Start forming a party to run the Stockade dungeon|r
+    .goto 1431,93.3,12.0,50,0
+    .goto 1431,77.49,44.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tRun to Darkshire: back over the bridge, south-west along the road to Three Corners, then south into Duskwood. Talk to |cRXP_FRIENDLY_Felicia Maline|r, the gryphon master
+    .fp Darkshire >> Get the Darkshire flight path
+    .target Felicia Maline
 step
-    .goto 1433/0,-2234.900,-9435.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r, the gryphon master across the bridge
-    .fly Darkshire >> Fly to Darkshire in Duskwood
-    .target Ariena Stormfeather
-    .zoneskip Duskwood
+    .goto 1431,75.79,45.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r in her house
+    .accept 101 >> Accept The Totem of Infliction
+    .target Madame Eva
 step
     .goto 1431,73.87,44.41
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Trelayne|r in the Scarlet Raven Tavern
-    >>|cRXP_WARN_You hearth back here after the Stockade|r
+    >>|cRXP_WARN_You hearth back here from the second trip west|r
     .home >> Set your Hearthstone to Darkshire
     .bindlocation 42
     .target Innkeeper Trelayne
+step
+    .goto 1431,73.75,43.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Grual|r
+    .accept 90 >> Accept Seasoned Wolf Kabobs
+    .target Chef Grual
 step
     .isOnQuest 95161
     .goto 1431,73.03,44.42
@@ -4417,203 +4540,9 @@ step
 step
     .goto 1431,71.92,47.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Councilman Millstipe|r in the town hall
+    >>|cRXP_WARN_A Stockade quest: carry it to the Stockade, near the end of the track|r
     .accept 377 >> Accept Crime and Punishment
     .target Councilman Millstipe
-step
-    .goto 1431,77.49,44.29
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felicia Maline|r, the gryphon master
-    .fly Stormwind >> Fly to Stormwind
-    .target Felicia Maline
-    .zoneskip Stormwind City
-step
-    .goto 1453/0,450.03,-8633.96,15,0
-    .goto 1453/0,422.75,-8649.60,15,0
-    .goto 1453/0,395.12,-8687.94,15,0
-    .goto 1453/0,407.11,-8706.36,15,0
-    .goto 1453/0,440.99,-8628.86
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWalk north into Old Town and find |cRXP_FRIENDLY_Nikova Raskol|r: she walks around
-    .accept 388 >> Accept The Color of Blood
-    .unitscan Nikova Raskol
-step
-    .goto 1453/0,719.67,-8550.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r in City Hall, on Cathedral Square
-    .accept 389 >> Accept Bazil Thredd
-    .target Baros Alexston
-step << Paladin
-    #completewith next
-    .goto 1453/0,809.52,-8579.22,20 >> Go into the Cathedral of Light
-step << Paladin
-    .xp <22,1
-    .goto 1453/0,859.13,-8559.14,10,0
-    .goto 1453/0,861.14,-8573.03
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
-    .train 1026 >> Train your level 22 spells (Holy Light rank 4, Blessing of Might rank 3, Seal of the Crusader rank 3)
-    .target Arthur the Faithful
-step
-    .goto 1453/0,828.28,-8799.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warden Thelwater|r outside the Stockade
-    .turnin 389 >> Turn in Bazil Thredd
-    .accept 391 >> Accept The Stockade Riots
-    .accept 387 >> Accept Quell the Uprising
-    .target Warden Thelwater
-step << Mage
-    #completewith next
-    .goto 1453/0,942.34,-9001.49,15,0
-    .goto 1453/0,949.86,-9009.38,10,0
-    .goto 1453/0,962.63,-8990.73,15,0
-    .goto 1453/0,928.62,-9010.10,15,0
-    .goto 1453/0,863.96,-9001.40,8,0
-    .goto 1453/0,877.00,-9008.03,6,0
-    .goto 1453/0,868.8,-9004.27,8,0
-    .goto 1453/0,871.36,-9013.14,10,0
-    .goto 1453/0,887.22,-9017.80,10 >> Go south into the Wizard's Sanctum in the Mage Quarter and follow its ramp to |cRXP_FRIENDLY_Jennea|r
-step << Mage
-    .xp <22,1
-    .goto 1453/0,861.95,-8990.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
-    .train 8437 >> Train your level 22 spells (Arcane Explosion rank 2, Fire Blast rank 3)
-    .target Jennea Cannon
-step << !Mage !Paladin
-    >>Visit your class trainer in Stormwind
-    .trainer >> Train your level 22 spells
-step
-    #label EnterStockade
-    .goto 1453/0,810.56,-8809.67,10,0
-    .goto 1453/0,845.48,-8766.01
-    .subzone 717 >> Enter the Stockade with your group, next to Warden Thelwater
-step
-    #completewith StockadeDone
-    .isOnQuest 387
-    >>Kill |cRXP_ENEMY_Defias Prisoners|r, |cRXP_ENEMY_Defias Convicts|r and |cRXP_ENEMY_Defias Insurgents|r. Loot the |cRXP_ENEMY_Defias|r for |cRXP_LOOT_Red Wool Bandanas|r: each of you loots your own
-    .complete 387,1 --Defias Prisoner slain (10)
-    .complete 387,2 --Defias Convict slain (8)
-    .complete 387,3 --Defias Insurgent slain (8)
-    .complete 388,1 --Red Wool Bandana (10)
-    .mob Defias Prisoner
-    .mob Defias Convict
-    .mob Defias Insurgent
-step
-    #completewith StockadeDone
-    .isOnQuest 386
-    >>Kill |cRXP_ENEMY_Targorr the Dread|r: he's in one of the cells off the first hall. Loot his |cRXP_LOOT_Head|r
-    .complete 386,1 --Head of Targorr (1)
-    .mob Targorr the Dread
-step
-    .isOnQuest 377
-    >>Kill |cRXP_ENEMY_Dextren Ward|r at the end of the west wing. Loot his |cRXP_LOOT_Hand|r
-    .complete 377,1 --Hand of Dextren Ward (1)
-    .mob Dextren Ward
-step
-    .isOnQuest 391
-    >>Kill |cRXP_ENEMY_Bazil Thredd|r at the end of the east wing. Loot his |cRXP_LOOT_Head|r
-    >>|cRXP_WARN_Keep 3 Silk Cloth each: a Stormwind quest in the last guide of the track needs them|r
-    .complete 391,1 --Head of Bazil Thredd (1)
-    .mob Bazil Thredd
-step
-    #label StockadeDone
-    .isOnQuest 387
-    >>Short on kills or |cRXP_LOOT_Red Wool Bandanas|r? Finish them on the |cRXP_ENEMY_Defias|r your group skipped on the way out
-    >>|cRXP_WARN_Nothing left to kill? Skip this step|r
-    .complete 387,1 --Defias Prisoner slain (10)
-    .complete 387,2 --Defias Convict slain (8)
-    .complete 387,3 --Defias Insurgent slain (8)
-    .complete 388,1 --Red Wool Bandana (10)
-step
-    .isOnQuest 386
-    >>Still missing |cRXP_ENEMY_Targorr the Dread|r? Check the cells off the first hall on the way out
-    .complete 386,1 --Head of Targorr (1)
-    .mob Targorr the Dread
-step
-    .isQuestComplete 387
-    .goto 1453/0,828.28,-8799.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack outside, talk to |cRXP_FRIENDLY_Warden Thelwater|r
-    .turnin 387 >> Turn in Quell the Uprising
-    .target Warden Thelwater
-step
-    .isQuestComplete 391
-    .goto 1453/0,828.28,-8799.49
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Warden Thelwater|r
-    .turnin 391 >> Turn in The Stockade Riots
-    .accept 392 >> Accept The Curious Visitor
-    .target Warden Thelwater
-step
-    .isOnQuest 392
-    .goto 1453/0,719.67,-8550.30
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Baros Alexston|r in City Hall
-    .turnin 392 >> Turn in The Curious Visitor
-    .accept 393 >> Accept Shadow of the Past
-    .target Baros Alexston
-step
-    .isQuestComplete 388
-    .goto 1453/0,440.99,-8628.86,15,0
-    .goto 1453/0,450.03,-8633.96,15,0
-    .goto 1453/0,422.75,-8649.60,15,0
-    .goto 1453/0,395.12,-8687.94,15,0
-    .goto 1453/0,407.11,-8706.36
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEast into Old Town, find |cRXP_FRIENDLY_Nikova Raskol|r again
-    .turnin 388 >> Turn in The Color of Blood
-    .unitscan Nikova Raskol
-step
-    #completewith next
-    .isOnQuest 393
-    .goto 1453/0,374.11,-8762.88,20,0
-    .goto 1453/0,326.66,-8818.01,20,0
-    .goto 1453/0,323.43,-8817.83,10 >> Go into the SI:7 building: |cRXP_FRIENDLY_Master Mathias Shaw|r is upstairs
-step
-    .isOnQuest 393
-    .goto 1453/0,362.28,-8815.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Master Mathias Shaw|r
-    .turnin 393 >> Turn in Shadow of the Past
-    .accept 350 >> Accept Look to an Old Friend
-    .target Master Mathias Shaw
-step
-    .isOnQuest 350
-    .goto 1453/0,558.79,-8852.89,8,0
-    .goto 1453/0,575.65,-8854.16
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWest into the Trade District: talk to |cRXP_FRIENDLY_Elling Trias|r upstairs in his cheese shop
-    >>|cRXP_WARN_Don't take Infiltrating the Castle: the last guide of the track does that chain. Repair and sell here before you hearth|r
-    .turnin 350 >> Turn in Look to an Old Friend
-    .target Elling Trias
-step
-    .hs >> Hearth to Darkshire
-    .cooldown item,6948,>2,1
-    .bindlocation 42,1
-    .zoneskip Duskwood
-step
-    .goto 1453/0,490.03,-8835.82
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHearthstone on cooldown? Talk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master nearby
-    .fly Darkshire >> Fly to Darkshire
-    .target Dungar Longdrink
-    .zoneskip Duskwood
-step
-    .isQuestComplete 377
-    .goto 1431,71.92,47.79
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tIn Darkshire, talk to |cRXP_FRIENDLY_Councilman Millstipe|r in the town hall
-    >>|cRXP_WARN_Take the Town Clerk's Mittens (+7 Intellect, +3 spell damage)|r << Mage
-    >>|cRXP_WARN_Take the Darkshire Mail Leggings to sell (22s 27c): your Chausses of Westfall are better|r << Paladin
-    .turnin 377 >> Turn in Crime and Punishment
-    .target Councilman Millstipe
-]])
-
--- Duskwood from level 23, after the Stockade: its level 20-25 quests in one east loop, one west loop and a short hop
--- to Blind Mary, then Lakeshire and Stormwind on the way to the Wetlands. East: the Tranquil Gardens skeletons for
--- The Night Watch, which unlocks its second part for the west loop. West, clockwise: Watcher Dodds, Raven Hill
--- (Jitters, the spiders, the Valor Family's tome), Sven and Lars, the wolves towards Abercrombie, his shack, the
--- ghouls and the Raven Hill cemetery, back to Lars, then the road east past Dodds, the ravagers and Sven's old farm.
--- Chain steps that would need a second trip west (Sven's Camp onwards, Dusky Crab Cakes, Deliver the Thread onwards,
--- Night Watch part 3, Proving Your Worth) wait for the last guide of the track; Sven's Camp is carried there. Then
--- Lakeshire at 24 for What Comes Around... and Songblade Search (the Excavation Site needs it), level 24 training in
--- Stormwind and the flight to Menethil. The loop order follows RestedXP's TBC "24-27 Redridge/Duskwood"; spots and
--- counts come from Questie's Forever data and Wowhead's Forever tooltips (Forever made the first Night Watch 8 + 6
--- skeletons and Seasoned Wolf Kabobs 10 flanks with no herbs). 1431 is Duskwood, 1433 Redridge Mountains, 1453
--- Stormwind City.
-RXPGuides.RegisterGuide([[
-#forever
-#version 1
-<< Alliance
-#group TimmyGnome
-#name 23+ Duskwood
-
 step
     .goto 1431,72.62,47.62
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sirra Von'Indi|r in the town hall
@@ -4625,16 +4554,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
     .accept 56 >> Accept The Night Watch
     .target Commander Althea Ebonlocke
-step
-    .goto 1431,73.75,43.48
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Grual|r
-    .accept 90 >> Accept Seasoned Wolf Kabobs
-    .target Chef Grual
-step
-    .goto 1431,75.79,45.32
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r in her house
-    .accept 101 >> Accept The Totem of Infliction
-    .target Madame Eva
 step
     .goto 1431,75.34,48.75
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Carevin|r
@@ -4745,7 +4664,7 @@ step
     .goto 1431,22.0,32.6,20,0
     .goto 1431,25.8,32.9,20,0
     >>South of the shack, kill |cRXP_ENEMY_Flesh Eaters|r and |cRXP_ENEMY_Bone Chewers|r for |cRXP_LOOT_Ghoul Fangs|r
-    >>|cRXP_WARN_Bone Chewers are 26-27. Skip this step if it's slow: the totem can wait for the last guide of the track|r
+    >>|cRXP_WARN_Bone Chewers are 26-27. Skip this step if it's slow: you're back here on the second trip west|r
     .complete 101,1 --Ghoul Fang (10)
     .mob Flesh Eater
     .mob Bone Chewer
@@ -4776,7 +4695,6 @@ step
     .turnin 245 >> Turn in Eight-Legged Menaces
     .target Watcher Dodds
 step
-    #label KabobsFinish
     .isOnQuest 90
     #loop
     .goto 1431,51.4,69.0,0
@@ -4785,21 +4703,22 @@ step
     .goto 1431,52.1,72.8,25,0
     .goto 1431,47.8,70.3,25,0
     >>Short of |cRXP_LOOT_Lean Wolf Flanks|r? Kill the |cRXP_ENEMY_Young Black Ravagers|r east of Dodds
-    >>|cRXP_WARN_Skip this step if it's slow: the kabobs can wait for the last guide of the track|r
+    >>|cRXP_WARN_Skip this step if it's slow: you pass them again on the second trip west|r
     .complete 90,1 --Lean Wolf Flank (10)
     .mob Young Black Ravager
 step
     .isOnQuest 95
     .goto 1431,49.85,77.71
     >>South to Sven's old farm: click the |cRXP_PICK_Mound of loose dirt|r behind the stump
-    >>|cRXP_WARN_Take Sven's Camp too and carry it: it goes back to Sven in the last guide of the track|r
+    >>|cRXP_WARN_Take Sven's Camp too: it goes back to Sven on the second trip west|r
     .turnin 95 >> Turn in Sven's Revenge
     .accept 230 >> Accept Sven's Camp
 step
     .goto 1431,73.75,43.48
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Darkshire, talk to |cRXP_FRIENDLY_Chef Grual|r
-    >>|cRXP_WARN_Don't take Dusky Crab Cakes: it's for the last guide of the track|r
+    >>|cRXP_WARN_The spider legs come from the Raven Hill spiders on the second trip west|r
     .turnin 5 >> Turn in Jitters' Growling Gut
+    .accept 93 >> Accept Dusky Crab Cakes
     .target Chef Grual
 step
     .isQuestComplete 90
@@ -4832,20 +4751,13 @@ step
     .complete 57,2 --Skeletal Horror (15)
     .mob Skeletal Horror
 step
-    .isOnQuest 101
-    .goto 1431,80.6,59.2
-    >>Short of |cRXP_LOOT_Skeleton Fingers|r? The |cRXP_ENEMY_Skeletal Horrors|r here drop them too
-    >>|cRXP_WARN_Skip this step if you're done, or if you're still short of Ghoul Fangs|r
-    .complete 101,3 --Skeleton Finger (10)
-    .mob Skeletal Horror
-step
     .goto 1431,75.79,45.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack to |cRXP_FRIENDLY_Madame Eva|r in Darkshire
-    >>|cRXP_WARN_Don't take Deliver the Thread: it's for the last guide of the track|r
+    >>|cRXP_WARN_The thread goes to Abercrombie on the second trip west|r
     .turnin 154 >> Turn in Return the Comb
+    .accept 157 >> Accept Deliver the Thread
     .target Madame Eva
 step
-    #label TotemDone
     .isQuestComplete 101
     .goto 1431,75.79,45.32
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r
@@ -4855,7 +4767,7 @@ step
     .isQuestComplete 57
     .goto 1431,73.54,46.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
-    >>|cRXP_WARN_Leave the third Night Watch for the last guide of the track|r
+    >>|cRXP_WARN_Leave the third Night Watch for later: it's 20 level 27-28 Plague Spreaders|r
     .turnin 57 >> Turn in The Night Watch
     .target Commander Althea Ebonlocke
 step
@@ -4865,60 +4777,149 @@ step
     .turnin 96139 >> Turn in The Valor Family
     .target Sirra Von'Indi
 step
-    .goto 1431,80.6,59.2
-    .xp 24-4200 >> Get within 4,200 XP of level 24: What Comes Around... in Lakeshire gives the rest, and Songblade Search there needs 24. Short? Kill the Skeletal Horrors around Blind Mary's house
+    #label KabobsFinish
+    .isOnQuest 90
+    #loop
+    .goto 1431,51.4,69.0,0
+    .goto 1431,49.0,65.2,25,0
+    .goto 1431,53.5,65.1,25,0
+    .goto 1431,52.1,72.8,25,0
+    .goto 1431,47.8,70.3,25,0
+    >>Second trip west: follow the road west. Still short of |cRXP_LOOT_Lean Wolf Flanks|r? Kill the |cRXP_ENEMY_Young Black Ravagers|r east of Dodds
+    .complete 90,1 --Lean Wolf Flank (10)
+    .mob Young Black Ravager
+step
+    .isOnQuest 93
+    #loop
+    .goto 1431,10.5,57.1,0
+    .goto 1431,10.8,53.0,25,0
+    .goto 1431,9.4,57.2,25,0
+    .goto 1431,10.4,59.1,25,0
+    .goto 1431,11.6,62.7,25,0
+    .goto 1431,12.0,59.2,25,0
+    >>Follow the road on to the spiders west of Raven Hill. Loot them for |cRXP_LOOT_Gooey Spider Legs|r
+    .complete 93,1 --Gooey Spider Leg (6)
+    .mob Pygmy Venom Web Spider
+    .mob Venom Web Spider
+step
+    .isOnQuest 230
+    .goto 1431,7.78,34.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tNorth to Sven's Camp: talk to |cRXP_FRIENDLY_Sven Yorgen|r
+    .turnin 230 >> Turn in Sven's Camp
+    .accept 262 >> Accept The Shadowy Figure
+    .target Sven Yorgen
+step
+    .isOnQuest 157
+    .goto 1431,28.11,31.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEast to |cRXP_FRIENDLY_Abercrombie|r at his shack
+    .turnin 157 >> Turn in Deliver the Thread
+    .accept 158 >> Accept Zombie Juice
+    .target Abercrombie
+step
+    .isOnQuest 101
+    #loop
+    .goto 1431,24.0,35.6,0
+    .goto 1431,25.4,36.0,20,0
+    .goto 1431,22.8,39.1,20,0
+    .goto 1431,22.2,37.0,20,0
+    .goto 1431,22.0,32.6,20,0
+    .goto 1431,25.8,32.9,20,0
+    >>Still short of |cRXP_LOOT_Ghoul Fangs|r? Kill the |cRXP_ENEMY_Flesh Eaters|r and |cRXP_ENEMY_Bone Chewers|r south of the shack
+    >>|cRXP_WARN_Skip this step if you're done|r
+    .complete 101,1 --Ghoul Fang (10)
+    .mob Flesh Eater
+    .mob Bone Chewer
+step
+    .hs >> Hearth to Darkshire
+    .cooldown item,6948,>2,1
+    .bindlocation 42,1
+    .subzoneskip 42
+step
+    .isQuestComplete 93
+    .goto 1431,73.75,43.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Darkshire, talk to |cRXP_FRIENDLY_Chef Grual|r
+    >>|cRXP_WARN_Don't take Return to Jitters|r
+    .turnin 93 >> Turn in Dusky Crab Cakes
+    .target Chef Grual
+step
+    .isQuestComplete 90
+    .goto 1431,73.75,43.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Grual|r
+    .turnin 90 >> Turn in Seasoned Wolf Kabobs
+    .target Chef Grual
+step
+    .isOnQuest 262
+    .goto 1431,75.79,45.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r
+    .turnin 262 >> Turn in The Shadowy Figure
+    .accept 265 >> Accept The Shadowy Search Continues
+    .target Madame Eva
+step
+    .isOnQuest 265
+    .goto 1431,72.54,46.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clerk Daltry|r in the town hall
+    .turnin 265 >> Turn in The Shadowy Search Continues
+    .accept 266 >> Accept Inquire at the Inn
+    .target Clerk Daltry
+step
+    .isOnQuest 266
+    .goto 1431,73.78,44.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tavernkeep Smitts|r in the inn
+    >>|cRXP_WARN_Don't take Finding the Shadowy Figure|r
+    .turnin 266 >> Turn in Inquire at the Inn
+    .target Tavernkeep Smitts
+step
+    .isOnQuest 158
+    .goto 1431,73.78,44.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tavernkeep Smitts|r
+    .turnin 158 >> Turn in Zombie Juice
+    .accept 156 >> Accept Gather Rot Blossoms
+    .target Tavernkeep Smitts
+step
+    .isOnQuest 156
+    #loop
+    .goto 1431,80.6,59.2,0
+    .goto 1431,79.7,61.9,20,0
+    .goto 1431,81.7,60.5,20,0
+    .goto 1431,81.1,56.2,20,0
+    .goto 1431,79.2,57.5,20,0
+    >>South-east to Blind Mary's house: kill the |cRXP_ENEMY_Skeletal Horrors|r around it for |cRXP_LOOT_Rot Blossoms|r
+    .complete 156,1 --Rot Blossom (8)
     .mob Skeletal Horror
+step
+    .isQuestComplete 156
+    .goto 1431,73.78,44.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack to |cRXP_FRIENDLY_Tavernkeep Smitts|r
+    >>|cRXP_WARN_Don't take Juice Delivery|r
+    .turnin 156 >> Turn in Gather Rot Blossoms
+    .target Tavernkeep Smitts
+step
+    #label TotemDone
+    .isQuestComplete 101
+    .goto 1431,75.79,45.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r
+    .turnin 101 >> Turn in The Totem of Infliction
+    .target Madame Eva
 step
     .goto 1431,77.49,44.29
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felicia Maline|r, the gryphon master
-    .fly Lakeshire >> Fly to Lakeshire in Redridge
-    .target Felicia Maline
-    .zoneskip Redridge Mountains
-step
-    .isQuestComplete 128
-    .goto 1433,26.45,57.85
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Howe|r by the bridge
-    .turnin 128 >> Turn in Blackrock Bounty
-    .target Guard Howe
-step
-    .isQuestComplete 20
-    .goto 1433,28.41,48.97
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tCross the bridge to |cRXP_FRIENDLY_Marshal Marris|r
-    .turnin 20 >> Turn in Blackrock Menace
-    .target Marshal Marris
-step
-    .goto 1433,21.17,46.58
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Berton|r
-    >>|cRXP_WARN_Take the Hardened Root Staff (+20 spell damage, +9 Spirit; the Staff of Westfall has +16)|r << Mage
-    >>|cRXP_WARN_Take the Ursine Hammer (18.4 DPS; your Ironforge Greathammer has 16.0)|r << Paladin
-    .turnin 386 >> Turn in What Comes Around...
-    .target Guard Berton
-step
-    .goto 1433,25.8,46.5
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dorin Songblade|r, the armorer
-    >>|cRXP_WARN_An Excavation Site quest: you find his brother inside, and the next part comes back here|r
-    .accept 95772 >> Accept Songblade Search
-    .target Dorin Songblade
-step
-    .isQuestComplete 91
-    .goto 1433,24.63,44.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bailiff Conacher|r in the town hall
-    .turnin 91 >> Turn in Solomon's Law
-    .target Bailiff Conacher
-step
-    .goto 1433/0,-2234.900,-9435.300
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r across the bridge
     .fly Stormwind >> Fly to Stormwind
-    .target Ariena Stormfeather
+    .target Felicia Maline
     .zoneskip Stormwind City
 step << Paladin
     #completewith next
     .goto 1453/0,809.52,-8579.22,20 >> Go into the Cathedral of Light
 step << Paladin
-    .xp <24,1
+    .xp <22,1
     .goto 1453/0,859.13,-8559.14,10,0
     .goto 1453/0,861.14,-8573.03
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Arthur the Faithful|r
+    .train 1026 >> Train your level 22 spells (Holy Light rank 4, Blessing of Might rank 3, Seal of the Crusader rank 3)
+    .target Arthur the Faithful
+step << Paladin
+    .xp <24,1
+    .goto 1453/0,861.14,-8573.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 24? Train those too while you're here
     .train 5588 >> Train your level 24 spells (Hammer of Justice rank 2, Blessing of Wisdom rank 2, Blessing of Protection rank 2, Turn Undead)
     .target Arthur the Faithful
 step << Mage
@@ -4933,14 +4934,20 @@ step << Mage
     .goto 1453/0,871.36,-9013.14,10,0
     .goto 1453/0,887.22,-9017.80,10 >> Go into the Wizard's Sanctum in the Mage Quarter and follow its ramp to |cRXP_FRIENDLY_Jennea|r
 step << Mage
-    .xp <24,1
+    .xp <22,1
     .goto 1453/0,861.95,-8990.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r
+    .train 8437 >> Train your level 22 spells (Arcane Explosion rank 2, Fire Blast rank 3)
+    .target Jennea Cannon
+step << Mage
+    .xp <24,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 24? Train those too while you're here
     .train 8400 >> Train your level 24 spells (Fireball rank 5, Scorch, Counterspell, Flamestrike rank 2, Conjure Food rank 3)
     .target Jennea Cannon
 step << !Mage !Paladin
     >>Visit your class trainer in Stormwind
-    .trainer >> Train your level 24 spells
+    .trainer >> Train your level 22 spells, and 24 if you're there
 step
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master in the Trade District

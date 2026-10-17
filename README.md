@@ -2,8 +2,8 @@
 
 A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
 Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes, Darkshore, the
-Ruins of Lordaeron, the Deadmines, Redridge, the Stockade and Duskwood, levels 1 to about 24, made for playing as a
-duo (the dungeons need three more players). From the Hall of Thanes on, guides are named by the level you start
+Ruins of Lordaeron, the Deadmines, Redridge and Duskwood, levels 1 to about 23, made for playing as a duo (the
+dungeons need three more players). From the Hall of Thanes on, guides are named by the level you start
 them at, like **14+**: where a duo ends up is hard to predict.
 
 ## Install
@@ -16,8 +16,8 @@ You need RestedXP Guides installed.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
    **5-10 Dun Morogh**, **10-12 Elwynn Forest**, **12-14 Loch Modan**, **14+ Hall of Thanes**,
-   **15+ Darkshore**, **18+ Ruins of Lordaeron**, **20+ The Deadmines**, **21+ Redridge**, **22+ The Stockade**
-   and **23+ Duskwood** by itself.
+   **15+ Darkshore**, **18+ Ruins of Lordaeron**, **20+ The Deadmines**, **21+ Redridge** and **22+ Duskwood** by
+   itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
@@ -225,69 +225,54 @@ To update, download the zip again and replace the TimmyGnome folder.
   no dungeon bonus. Sneed's Shredder (Underground Assault) and Edwin VanCleef (his head and An Unsent Letter) are
   inside. A sticky tracks the Red Silk Bandanas.
 - **Turn-ins:** Sentinel Hill after the Deadmines, then Stormwind: Wilder Thistlenettle, Shoni the Shilent, Baros
-  Alexston (take his next quest, Bazil Thredd, for the Stockade) and, for the paladin, Duthorian Rall. Level 20
+  Alexston (take his next quest, Bazil Thredd, for the Stockade near the end of the track) and, for the paladin, Duthorian Rall. Level 20
   and 22 training if you're there.
 - **Where you end up:** a little over 20.5 for a duo coming from the Ruins of Lordaeron at 19.5, or about 21 if
   some Deadmines quests pay the dungeon bonus. The paladin's Tome of Valor adds about 5,800 XP.
 
 ### 21+ Redridge
 
-The first of six guides from 21 to 30: Redridge, the Stockade, Duskwood, the Wetlands, the Excavation Site, then
-Duskwood and Redridge again. The Stockade and the Excavation Site are the only dungeons in this stretch.
+The first of five guides from 21 to 30: big passes through Redridge, Duskwood and the Wetlands, then the Stockade
+and the Excavation Site with all their quests. They're the only dungeons in this stretch, and they come last
+because their bosses are 28-31.
 
-- **Goal:** level 22, which the Stockade's quests need.
-- **Lakeshire:** fly in from Stormwind and pick up everything. Deputy Feldon's two quests (low-level gnolls next to
-  the gryphon master) and Hilary's Necklace are OPTIONAL.
+- **Lakeshire:** fly in from Stormwind and pick up everything, including the WANTED: Lieutenant Fangore poster by
+  the inn. Deputy Feldon's two quests (low-level gnolls next to the gryphon master) and Hilary's Necklace are
+  OPTIONAL; the Gath'Ilzogg and Incinerator Gar'im posters are for a group.
 - **South loop:** the murlocs on the lake's south shore (Murloc Poachers, Selling Fish), the Blackrock camps in the
-  south-east (Blackrock Blockade, plus Battleworn Axes from any Blackrock orc), then the Sunken Chest in the lake
-  on the way back (The Lost Tools).
-- **North-west loop:** Redridge gnolls for The Everstill Bridge, then Blackrock Champions at the camp up north
-  (Blackrock Bounty). OPTIONAL: Bellygrub on the way back.
-- **East loop:** Alther's Mill's tarantulas and eggs, then the Shadowhide gnolls (Solomon's Law).
-- **Finish:** Guard Berton's What Comes Around..., the first Stockade quest, once you're 22.
-- **Left for the last guide of the track:** Shadow Magic, Tharil'zun, Missing In Action and the wanted posters
-  (Gath'Ilzogg, Fangore, Incinerator Gar'im). They're elite or single named mobs, quick once you're 28.
-- **Where you end up:** about 22 for a duo coming from the Deadmines at about 21, a bit more with the OPTIONAL
-  quests.
+  south-east (Blackrock Blockade, plus Battleworn Axes from any Blackrock orc; Incinerator Gar'im further on, group
+  only), then the Sunken Chest in the lake on the way back (The Lost Tools).
+- **North-west loop:** Redridge gnolls for The Everstill Bridge, the Blackrock Champions at the camp up north
+  (Blackrock Bounty) and Corporal Keeshan's escort from Render's Rock (Missing In Action). OPTIONAL: Shadow Magic's
+  orbs from the elite Shadowcasters at that camp's east end, and Bellygrub on the way back.
+- **East loop:** Alther's Mill's tarantulas and eggs, the Shadowhide gnolls (Solomon's Law) and Lieutenant
+  Fangore. OPTIONAL: the elites at Stonewatch Keep (Shadow Magic, Tharil'zun, and Gath'Ilzogg for a group).
+- **Finish:** Guard Berton's What Comes Around..., the first Stockade quest, once you're 22. Carry it to the
+  Stockade.
+- **Where you end up:** about 22.5 for a duo coming from the Deadmines at about 21.
 
-### 22+ The Stockade
+### 22+ Duskwood
 
-- **Darkshire first:** fly over from Lakeshire, set your Hearthstone at the inn (you hearth back here after the
-  run, where the next guide starts) and pick up Councilman Millstipe's Crime and Punishment. If you carry the
-  Ruins of Lordaeron letter for Avette Fellwood, it goes in here too.
-- **Stormwind before the run:** Nikova Raskol's The Color of Blood (she walks around Old Town, north of the
-  gryphon master), level 22 training, then Warden Thelwater at the Stockade door for The Stockade Riots and Quell
-  the Uprising. Bazil Thredd comes from Baros Alexston at the end of the Deadmines guide; this guide only sends you
-  to him if you don't have it.
-- **Inside:** Targorr the Dread (in a random cell off the first hall), Dextren Ward at the end of the west wing and
-  Bazil Thredd at the end of the east wing, with stickies for Quell the Uprising and the Red Wool Bandanas. Keep 3
-  Silk Cloth each for a Stormwind quest in the last guide of the track.
-- **After the run, one loop:** Thelwater, Baros Alexston (The Curious Visitor), Old Town (Nikova, then Mathias
-  Shaw in SI:7), Elling Trias in the Trade District, then hearth to Darkshire for Crime and Punishment. The rest of
-  the Defias chain, from Infiltrating the Castle to An Audience with the King, waits for the last guide of the
-  track, when The Attack! is easy.
-- **Rewards:** What Comes Around... goes in at Lakeshire in the next guide. Crime and Punishment: Town Clerk's
-  Mittens for the mage; the paladin sells the Darkshire Mail Leggings (the Chausses of Westfall are better).
-- **Where you end up:** about 23.
-
-### 23+ Duskwood
-
-- **Darkshire:** pick up The Valor Family (OPTIONAL), The Night Watch, Seasoned Wolf Kabobs, The Totem of
-  Infliction and Elaine Carevin's three quests. Stickies track the totem's fangs, venom and finger bones and the
-  wolf flanks.
+- **Getting there:** run from Lakeshire through Three Corners and pick up the Darkshire flight path.
+- **Darkshire:** set your Hearthstone at the inn, give Avette Fellwood the Ruins of Lordaeron letter if you carry
+  it, and pick up Crime and Punishment (carry it to the Stockade), The Valor Family (OPTIONAL), The Night Watch,
+  Seasoned Wolf Kabobs, The Totem of Infliction and Elaine Carevin's three quests. Stickies track the totem's
+  fangs, venom and finger bones and the wolf flanks.
 - **East:** the Tranquil Gardens skeletons for The Night Watch, then back to town for its second part.
-- **West, one loop:** Watcher Dodds, then Raven Hill (Jitters, the spiders west of the village, and the Valor
+- **West, first trip:** Watcher Dodds, then Raven Hill (Jitters, the spiders west of the village, and the Valor
   Family's tome if you can find it: nobody has published its spot yet), Sven and Lars, the wolves towards
   Abercrombie, his shack, the ghouls south of it, the Raven Hill cemetery for the second Night Watch, back to
   Lars, then the road east past Dodds, the ravagers and Sven's old farm.
 - **Back in Darkshire:** the turn-ins, plus a short hop to Blind Mary for Ghost Hair Thread and Return the Comb.
-- **Left for the last guide of the track:** the chain steps that would need a second trip west: Sven's Camp
-  (carried there), Dusky Crab Cakes, Deliver the Thread onwards, the third Night Watch and Proving Your Worth.
-- **Lakeshire at 24:** What Comes Around... (Hardened Root Staff for the mage, Ursine Hammer for the paladin) and
-  Dorin Songblade's Songblade Search, an Excavation Site quest. A step before the flight makes sure you're within
-  4,200 XP of 24 so Songblade Search is ready.
-- **Then:** level 24 training in Stormwind and the flight to Menethil Harbor.
-- **Where you end up:** about 24.
+- **West, second trip:** the spiders again for Dusky Crab Cakes, Sven's Camp back to Sven, and Deliver the Thread
+  to Abercrombie, then hearth to Darkshire.
+- **Darkshire's east side:** the Shadowy Figure chain as far as Inquire at the Inn, and Zombie Juice, then Rot
+  Blossoms from the skeletons at Blind Mary's house.
+- **Left for later:** the steps that would need a third trip west (Return to Jitters, Finding the Shadowy Figure,
+  Juice Delivery onwards) and the third Night Watch (level 27-28 mobs).
+- **Then:** level 22 training in Stormwind (24 if you're there) and the flight to Menethil Harbor for the
+  Wetlands.
+- **Where you end up:** about 23.5.
 
 ## Credits and license
 

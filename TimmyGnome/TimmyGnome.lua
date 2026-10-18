@@ -1,6 +1,6 @@
 -- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of
--- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge, Duskwood, the Wetlands and the Stockade, levels
--- 1 to about 26. From the Hall of Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is
+-- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge, Duskwood, the Wetlands, the Stockade and the
+-- Excavation Site, levels 1 to about 28. From the Hall of Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is
 -- hard to predict.
 -- Coldridge Valley is RestedXP's Forever "1-5 Coldridge Valley" (their v4.11.25 guide pack; their new Dungeon
 -- Guide track uses the same guide), copied step for step, class branches included, up to Coldridge Pass. Ours
@@ -5939,10 +5939,11 @@ step
 -- Questie's Forever data. 1453 is Stormwind City, 1429 Elwynn Forest, 1433 Redridge Mountains, 1431 Duskwood.
 RXPGuides.RegisterGuide([[
 #forever
-#version 1
+#version 2
 << Alliance
 #group TimmyGnome
 #name 25+ The Stockade
+#next 26+ Excavation Site
 
 step
     #completewith EnterStockade
@@ -6293,4 +6294,238 @@ step
     .fly Menethil >> Fly to Menethil Harbor
     .target Felicia Maline
     .zoneskip Wetlands
+]])
+
+-- The Excavation Site from level 26, after the Stockade: the Wetlands dungeon with all its quests, the last guide of
+-- the 21-30 track. Menethil first (Caitlin Grassman and James Halloran), then Rethiel the Greenwarden (Blisters on
+-- the Land if it's still open, then Horrors in the Highland) and the portal in the hills above Thelgen Rock. Inside:
+-- Saltspine, Shadetooth, Daewyn Songblade's body and the Highland Horror by the camping hut past Shadetooth, the
+-- Relic Guardian and Ardin Grassman beside it, with a sticky for the Thicket Raptor Hides. After the run: Whelgar
+-- (and Sarltooth if Ormer's Revenge is still open), Rethiel, the hearth to Menethil for Caitlin and Halloran, the
+-- flight to Ironforge for High Explorer Magellas and training, and Lakeshire for Fallen in the Fen. RestedXP has no
+-- Excavation Site guide, so the structure follows its Forever dungeon guides and the dungeon facts come from
+-- ForeverDungeonJournal's data, AllTheThings and the Wowhead and Icy Veins dungeon guides (boss order, where each
+-- objective is, the tall grass and Shadetooth warnings). 1437 is the Wetlands, 1455 Ironforge, 1433 Redridge.
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group TimmyGnome
+#name 26+ Excavation Site
+
+step
+    #completewith EnterExcavation
+    +|cRXP_WARN_Start forming a party to run the Excavation Site dungeon|r
+step
+    .goto 1437,11.9,58.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caitlin Grassman|r
+    .accept 95647 >> Accept Lost in the Thicket Things
+    .target Caitlin Grassman
+step
+    .goto 1437,8.6,55.7
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James Halloran|r
+    >>|cRXP_WARN_Don't take Crocs of the Sky|r
+    .accept 98815 >> Accept Highland Hides
+    .target James Halloran
+step
+    .isOnQuest 275
+    #loop
+    .goto 1437,54.0,41.4,0
+    .goto 1437,53.2,36.5,20,0
+    .goto 1437,55.0,37.2,20,0
+    .goto 1437,54.0,41.4,20,0
+    .goto 1437,55.0,46.4,20,0
+    >>East to Rethiel the Greenwarden. Still short of |cRXP_ENEMY_Fen Creepers|r? Kill the ones in his stream: Horrors in the Highland needs Blisters on the Land handed in
+    .complete 275,1 --Fen Creeper (12)
+    .mob Fen Creeper
+step
+    .isQuestComplete 275
+    .goto 1437,56.4,40.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Rethiel the Greenwarden|r
+    .turnin 275 >> Turn in Blisters on the Land
+    .target Rethiel the Greenwarden
+step
+    .goto 1437,56.4,40.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEast to |cRXP_FRIENDLY_Rethiel the Greenwarden|r
+    .accept 95646 >> Accept Horrors in the Highland
+    .target Rethiel the Greenwarden
+step
+    #label EnterExcavation
+    .goto 1437,58.0,57.0,40,0
+    .goto 1437,51.5,62.0,40,0
+    .goto 1437,48.0,56.3
+    >>South round the east side of Nek'rosh's camp to Thelgen Rock, then up the road into the hills above it: the portal is a blue mist under a large tree. Enter with your group
+    >>|cRXP_WARN_Nek'rosh, in the camp north of Thelgen Rock, is elite. The meeting stone is at 53.4,65.3|r
+    .subzone 17732 >> Enter the Excavation Site
+step
+    #completewith HidesFinish
+    .isOnQuest 98815
+    >>Kill the |cRXP_ENEMY_Thicket raptors|r and loot them for |cRXP_LOOT_Thicket Raptor Hides|r: each of you loots your own
+    >>|cRXP_WARN_Stay on the path: walking through tall grass spawns elite Thicket Lurkers|r
+    .complete 98815,1 --Thicket Raptor Hide (4)
+    .mob Thicket Lurker
+    .mob Thicket Hunter
+    .mob Thicket Matriarch
+    .mob Shadetooth
+step
+    #completewith DaewynHut
+    +|cRXP_WARN_Saltspine, on the lake: clear the trash around it first. Shadetooth, in the thicket: crowd-control or kill its two Thicket Hunters, dispel Infected Wound, and fight it in the cleared crocodile cove, never in Saltspine's lake|r
+step
+    #label DaewynHut
+    .isOnQuest 95772
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tPast Shadetooth, find |cRXP_FRIENDLY_Daewyn Songblade|r's body in the camping hut
+    .turnin 95772 >> Turn in Songblade Search
+    .accept 95795 >> Accept Fallen in the Fen
+    .target Daewyn Songblade
+step
+    .isOnQuest 95646
+    >>Kill the |cRXP_ENEMY_Highland Horror|r by the hut. Loot it for the |cRXP_LOOT_Horrible Rootcore|r: each of you loots your own
+    .complete 95646,1 --Horrible Rootcore (1)
+    .mob Highland Horror
+step
+    >>Press the |cRXP_PICK_Archival Panel|r next to the |cRXP_ENEMY_Relic Guardian|r to start the fight. Kill it, loot the |cRXP_LOOT_Titan Relic|r and use it
+    >>|cRXP_WARN_31 elite: it knocks back and stuns the tank, and its Thunderclap hits everyone within 10 yards. It can be stunned and slowed|r
+    .accept 95810 >> Accept Lost Relic Carry
+    .use 270865
+    .mob Relic Guardian
+step
+    .isOnQuest 95647
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ardin Grassman|r on the platform beside the Relic Guardian
+    .turnin 95647 >> Turn in Lost in the Thicket Things
+    .accept 95809 >> Accept Heartwoven
+    .target Ardin Grassman
+step
+    #label HidesFinish
+    .isOnQuest 98815
+    >>Short of |cRXP_LOOT_Thicket Raptor Hides|r? Kill the raptors your group skipped on the way out
+    >>|cRXP_WARN_Nothing left to kill? Skip this step|r
+    .complete 98815,1 --Thicket Raptor Hide (4)
+step
+    .isOnQuest 95810
+    .goto 1437,38.8,52.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tOut of the dungeon, west to |cRXP_FRIENDLY_Prospector Whelgar|r at his dig
+    >>|cRXP_WARN_If Prehistoric Prism then shows 0/1 Titan Relic, abandon it and take it again from him|r
+    .turnin 95810 >> Turn in Lost Relic Carry
+    .accept 98824 >> Accept Prehistoric Prism
+    .target Prospector Whelgar
+step
+    .isOnQuest 296
+    .goto 1437,31.5,48.9,30,0
+    .goto 1437,33.3,51.5
+    >>Still on Ormer's Revenge? Kill |cRXP_ENEMY_Sarltooth|r on the hill at the south-west end of the dig and loot his |cRXP_LOOT_Talon|r
+    .complete 296,1 --Sarltooth's Talon (1)
+    .mob Sarltooth
+step
+    .isQuestComplete 296
+    .goto 1437,38.2,50.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormer Ironbraid|r
+    .turnin 296 >> Turn in Ormer's Revenge
+    .target Ormer Ironbraid
+step
+    .isQuestComplete 95646
+    .goto 1437,56.4,40.4
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEast to |cRXP_FRIENDLY_Rethiel the Greenwarden|r
+    >>|cRXP_WARN_Take the Curl of Life (+5 Stamina, +5 spell damage ring)|r << Mage
+    >>|cRXP_WARN_Take the Ironwood Destroyer (22.2 DPS) until Magellas' Heavehammer|r << Paladin
+    .turnin 95646 >> Turn in Horrors in the Highland
+    .target Rethiel the Greenwarden
+step
+    .hs >> Hearth to Menethil Harbor
+    .cooldown item,6948,>2,1
+    .bindlocation 150,1
+    .subzoneskip 150
+step
+    .isQuestComplete 95647
+    .goto 1437,11.9,58.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caitlin Grassman|r
+    .turnin 95647 >> Turn in Lost in the Thicket Things
+    .target Caitlin Grassman
+step
+    .isOnQuest 95809
+    .goto 1437,11.9,58.8
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Menethil, talk to |cRXP_FRIENDLY_Caitlin Grassman|r
+    >>|cRXP_WARN_Take the Mana Potions|r << Mage
+    .turnin 95809 >> Turn in Heartwoven
+    .target Caitlin Grassman
+step
+    .isQuestComplete 98815
+    .goto 1437,8.6,55.7
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_James Halloran|r
+    .turnin 98815 >> Turn in Highland Hides
+    .target James Halloran
+step
+    .goto 1437,8.0,55.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylessa Duskwhisper|r next to him
+    >>|cRXP_WARN_OPTIONAL, if you skipped it in the Wetlands guide: her bloom is in the wreck just south of town, among level 28-29 murlocs|r
+    .accept 98208 >> Accept Bloom of the Heavens
+    .target Sylessa Duskwhisper
+step
+    .isOnQuest 98208
+    .goto 1437,12.2,63.8
+    >>|cRXP_WARN_OPTIONAL:|r just south of town, loot |cRXP_PICK_Nord'el|r from the wreck
+    >>|cRXP_WARN_The Bluegill Raiders here are 28-29 and come in groups|r
+    .complete 98208,1 --Nord'el (1)
+    .mob Bluegill Raider
+step
+    .isQuestComplete 98208
+    .goto 1437,8.0,55.9
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sylessa Duskwhisper|r
+    >>|cRXP_WARN_Don't take the second part: it goes to Darkshore|r
+    .turnin 98208 >> Turn in Bloom of the Heavens
+    .target Sylessa Duskwhisper
+step
+    .goto 1437,9.5,59.7
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r, the gryphon master
+    .fly Ironforge >> Fly to Ironforge
+    .target Shellei Brondir
+    .zoneskip Ironforge
+step
+    .isOnQuest 98824
+    .goto 1455,69.9,18.6
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_High Explorer Magellas|r in the Hall of Explorers
+    >>|cRXP_WARN_Take the Healer's Staff (+22 spell damage, +12 Stamina)|r << Mage
+    >>|cRXP_WARN_Take the Heavehammer (27.7 DPS, +32 attack power)|r << Paladin
+    .turnin 98824 >> Turn in Prehistoric Prism
+    .target High Explorer Magellas
+step << Mage
+    .xp <26,1
+    .goto 1455/0,-928.48,-4614.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dink|r in the Mystic Ward
+    .train 120 >> Train your level 26 spells (Cone of Cold, Dampen Magic rank 2)
+    .target Dink
+step << Mage
+    .xp <28,1
+    .goto 1455/0,-928.48,-4614.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 28? Train those too while you're here
+    .train 1461 >> Train your level 28 spells (Arcane Intellect rank 3, Blizzard rank 2, Mana Shield rank 2, Scorch rank 2, Conjure Mana Agate)
+    .target Dink
+step << Paladin
+    .xp <26,1
+    .goto 1455/0,-896.47,-4601.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Brandur Ironhammer|r in the Mystic Ward
+    .train 19939 >> Train your level 26 spells (Flash of Light rank 2, Retribution Aura rank 2)
+    .target Brandur Ironhammer
+step << Paladin
+    .xp <28,1
+    .goto 1455/0,-896.47,-4601.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAlready 28? Train those too while you're here
+    .train 5614 >> Train your level 28 spells (Exorcism rank 2, Concentration Aura)
+    .target Brandur Ironhammer
+step << !Mage !Paladin
+    >>Visit your class trainer in Ironforge
+    .trainer >> Train your level 26 spells, and 28 if you're there
+step
+    .goto 1455/0,-1152.40,-4821.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r, the gryphon master
+    .fly Lakeshire >> Fly to Lakeshire in Redridge
+    .target Gryth Thurden
+    .zoneskip Redridge Mountains
+step
+    .isOnQuest 95795
+    .goto 1433,25.8,46.5
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tCross the bridge into town and talk to |cRXP_FRIENDLY_Dorin Songblade|r
+    >>|cRXP_WARN_Take Daewyn's Girdle (+7 spell damage, +6 Spirit)|r << Mage
+    >>|cRXP_WARN_Take the Songblade Stabilizer (mail, +6 Stamina)|r << Paladin
+    .turnin 95795 >> Turn in Fallen in the Fen
+    .target Dorin Songblade
 ]])

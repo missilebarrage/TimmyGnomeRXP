@@ -1,8 +1,8 @@
 ## Interface: 16001
 ## Title: TimmyGnome
-## Notes: RestedXP guide: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge, Duskwood, the Wetlands and the Stockade, levels 1 to about 26. Needs RestedXP Guides.
+## Notes: RestedXP guide: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge, Duskwood, the Wetlands, the Stockade and the Excavation Site, levels 1 to about 28. Needs RestedXP Guides.
 ## Author: Tim
-## Version: 1.30.1
+## Version: 1.31.0
 ## Dependencies: RXPGuides
 ## Category: Quests
 ## X-License: CC BY-NC-SA 4.0

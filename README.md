@@ -2,8 +2,8 @@
 
 A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
 Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes, Darkshore, the
-Ruins of Lordaeron, the Deadmines, Redridge, Duskwood, the Wetlands and the Stockade, levels 1 to about 26, made for
-playing as a duo (the dungeons need three more players). From the Hall of Thanes on, guides are named by the level you start
+Ruins of Lordaeron, the Deadmines, Redridge, Duskwood, the Wetlands, the Stockade and the Excavation Site, levels 1
+to about 28, made for playing as a duo (the dungeons need three more players). From the Hall of Thanes on, guides are named by the level you start
 them at, like **14+**: where a duo ends up is hard to predict.
 
 ## Install
@@ -17,7 +17,7 @@ You need RestedXP Guides installed.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
    **5-10 Dun Morogh**, **10-12 Elwynn Forest**, **12-14 Loch Modan**, **14+ Hall of Thanes**,
    **15+ Darkshore**, **18+ Ruins of Lordaeron**, **20+ The Deadmines**, **21+ Redridge**, **22+ Duskwood**,
-   **23+ Wetlands** and **25+ The Stockade** by itself.
+   **23+ Wetlands**, **25+ The Stockade** and **26+ Excavation Site** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
@@ -314,6 +314,24 @@ because their bosses are 28-31.
 - **Left out:** The Fury Runs Deep (it needs The Dark Iron War, an elite quest), and Duskwood's leftovers and
   item-start quests.
 - **Where you end up:** about 26.5.
+
+### 26+ Excavation Site
+
+The last guide of the 21-30 track.
+
+- **Before the run:** Caitlin Grassman and James Halloran in Menethil, then Rethiel the Greenwarden for Horrors in
+  the Highland (Blisters on the Land first, if it's still open). The portal is a blue mist under a large tree in the
+  hills above Thelgen Rock; go round the east side of Nek'rosh's elite camp to get there.
+- **Inside:** Saltspine and Shadetooth (stickies with the warnings: stay out of the tall grass, control
+  Shadetooth's two Thicket Hunters), Daewyn Songblade's body and the Highland Horror by the camping hut past
+  Shadetooth, the Relic Guardian (its Titan Relic starts Lost Relic Carry) and Ardin Grassman beside it. A sticky
+  tracks the Thicket Raptor Hides.
+- **After the run:** Prospector Whelgar (and Sarltooth if Ormer's Revenge is still open), Rethiel, the hearth to
+  Menethil for Caitlin and Halloran (Bloom of the Heavens is OPTIONAL if you skipped it), the flight to Ironforge
+  for High Explorer Magellas and training, then Lakeshire for Fallen in the Fen.
+- **Left out:** Crocs of the Sky (three trips, unknown drop rate), Lifting the Curse, the Wetlands group elites and
+  Seeking Caitlin (a breadcrumb from Ashenvale).
+- **Where you end up:** about 28, in Lakeshire.
 
 ## Credits and license
 

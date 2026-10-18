@@ -3,10 +3,11 @@
 -- 1 to about 26. From the Hall of Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is
 -- hard to predict.
 -- Coldridge Valley is RestedXP's Forever "1-5 Coldridge Valley" (their v4.11.25 guide pack; their new Dungeon
--- Guide track uses the same guide), copied step for step, class branches included, up to Coldridge Pass.
+-- Guide track uses the same guide), copied step for step, class branches included, up to Coldridge Pass. Ours
+-- adds one step before Mountaineer Thalos: a Skinning Knife and water from Adlin Pridedrift.
 -- Dun Morogh, from the tunnel on, was rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn
 -- and Loch Modan guides below it have their own notes. Like that run, it goes from the tunnel straight to Brewnall
--- for Bitter Rivals and Frosthowl, killing every boar for meat and ribs on the way, then death-skips to
+-- for Bitter Rivals, killing every boar for meat and ribs on the way, then death-skips to
 -- Kharanos. Changes from that run:
 --   * Kharanos, then Steelgrill's Depot, then the south loop, instead of Gretchen -> Depot -> south.
 --   * Boar meat and ribs are collected all through the west. Stocking Jetsteam goes in before Brewnall
@@ -22,7 +23,7 @@
 
 RXPGuides.RegisterGuide([[
 #forever
-#version 3
+#version 4
 << Alliance
 #group TimmyGnome
 #name 1-5 Coldridge Valley
@@ -642,6 +643,13 @@ step << Dwarf Priest/Gnome Priest
     .accept 5626 >> Accept In Favor of the Light
     .target Branstock Khalder
 step
+    .goto 1426/0,320.30,-6226.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tOn your way to the tunnel, talk to |cRXP_FRIENDLY_Adlin Pridedrift|r at the starting camp
+    >>|cRXP_BUY_Buy a|r |T135637:0|t[Skinning Knife] |cRXP_BUY_and top up to 20|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    .collect 7005,1 --Skinning Knife (1)
+    .collect 159,20 --Refreshing Spring Water (20)
+    .target Adlin Pridedrift
+step
     .goto 1426/0,152.900,-6235.800
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Thalos::1965|r
     .target Mountaineer Thalos::1965
@@ -664,7 +672,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 23
+#version 24
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -685,14 +693,11 @@ step
     >>Out of the tunnel, head north and discover Chill Breeze Valley
     .subzone 801 >> Discover Chill Breeze Valley
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tContinue to Brewnall Village. Talk to |cRXP_FRIENDLY_Marleth Barleybrew|r and |cRXP_FRIENDLY_Gretta Ganter|r (on the ice next to the village)
+    .goto 1426/0,315.42,-5372.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tContinue to Brewnall Village and talk to |cRXP_FRIENDLY_Marleth Barleybrew|r
     >>|cRXP_WARN_Don't take The Perfect Stout from Rejold: it's skipped|r
     .accept 310 >> Accept Bitter Rivals
-    .goto 1426/0,315.42,-5372.02
-    .target +Marleth Barleybrew
-    .accept 98326 >> Accept Frosthowl (for later: Frosthowl is the boss at the back of the Grizzled Den)
-    .goto 1426,31.53,44.65
-    .target +Gretta Ganter
+    .target Marleth Barleybrew
 step
     .goto 1426,34.0,42.2
     >>Run onto the frozen lake and let the |cRXP_ENEMY_Winter Wolves|r kill you. Release, then talk to the |cRXP_FRIENDLY_Spirit Healer|r to revive in Kharanos

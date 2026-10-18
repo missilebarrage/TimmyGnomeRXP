@@ -28,9 +28,9 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Coldridge Valley (levels 1-5):** RestedXP's own Forever "1-5 Coldridge Valley", copied as is up to the
   tunnel: Dwarven Outfitters, both mail deliveries, your class rune or memorandum, the boars, the troll cave, the
   Mornbrew delivery and Grund and Gozwin. It's class-aware, so the mage and the paladin take the middle quests in
-  a different order.
-- **Level 5:** from the tunnel, discover Chill Breeze Valley, then go to Brewnall for Bitter Rivals and
-  Frosthowl, killing every boar on the way for meat and ribs. Then die to the wolves on Iceflow Lake and revive in Kharanos.
+  a different order. One stop is ours: a Skinning Knife and water from Adlin Pridedrift before Mountaineer Thalos.
+- **Level 5:** from the tunnel, discover Chill Breeze Valley, then go to Brewnall for Bitter Rivals, killing every
+  boar on the way for meat and ribs. Then die to the wolves on Iceflow Lake and revive in Kharanos.
 - **Kharanos and Steelgrill's Depot:** pick up and turn in everything, then Ammo for Rumbleshot. Reach level 6
   (mages death-skip to Kharanos to train), then the Grizzled Den for the 8 manes and Mountaineer Cornelius only.
 - **Boar ribs:** keep collecting them through the west. Beer Basted Boar Ribs goes in on the last Kharanos
@@ -54,7 +54,7 @@ To update, download the zip again and replace the TimmyGnome folder.
   the wand (Tilli and the Auction House sell the essence if the linen runs out). Then hearth back. From here a
   sticky tracks the Tailoring stash: 36 Bolts of Linen Cloth, the thread and the bleach. The paladin's sticky at
   the same time: keep 10 Linen Cloth for his level 12 class quest and trade the rest to the mage.
-- **Skipped:** The Perfect Stout, Flintfire's Shipment and the Frosthowl kill (the quest stays open for later).
+- **Skipped:** The Perfect Stout, Flintfire's Shipment and Frosthowl.
 - **Training:** RestedXP's Coldridge Valley steps train each class in Anvilmar. Mages also train with Magis
   Sparkmantle in Kharanos at levels 6 and 8.
 

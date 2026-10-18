@@ -2,12 +2,12 @@
 -- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge, Duskwood, the Wetlands and the Stockade, levels
 -- 1 to about 26. From the Hall of Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is
 -- hard to predict.
--- The first two guides were rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn and Loch
--- Modan guides below them have their own notes. Like that run, Coldridge Valley opens with a grind to level 2
--- and skips Dwarven Outfitters, which also skips both Coldridge Valley mail deliveries and the Glyphic
--- Memorandum (both need Outfitters done: Questie's Forever data). At level 5 it goes from the tunnel
--- straight to Brewnall for Bitter Rivals and Frosthowl, killing every boar for meat and ribs on the way,
--- then death-skips to Kharanos. Changes from that run:
+-- Coldridge Valley is RestedXP's Forever "1-5 Coldridge Valley" (their v4.11.25 guide pack; their new Dungeon
+-- Guide track uses the same guide), copied step for step, class branches included, up to Coldridge Pass.
+-- Dun Morogh, from the tunnel on, was rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn
+-- and Loch Modan guides below it have their own notes. Like that run, it goes from the tunnel straight to Brewnall
+-- for Bitter Rivals and Frosthowl, killing every boar for meat and ribs on the way, then death-skips to
+-- Kharanos. Changes from that run:
 --   * Kharanos, then Steelgrill's Depot, then the south loop, instead of Gretchen -> Depot -> south.
 --   * Boar meat and ribs are collected all through the west. Stocking Jetsteam goes in before Brewnall
 --     (it unlocks Evershine), Beer Basted Boar Ribs on the last Kharanos visit, after the Brewnall lap.
@@ -22,13 +22,87 @@
 
 RXPGuides.RegisterGuide([[
 #forever
-#version 2
+#version 3
 << Alliance
 #group TimmyGnome
 #name 1-5 Coldridge Valley
 #next 5-9 Dun Morogh
 
+step << !Gnome !Dwarf
+    #completewith next
+    +You have selected a guide meant for Gnomes and Dwarves. You should choose the same starter zone that you start in
+step << !Warlock !Warrior !Shaman
+    #softcore << Warlock
+    #optional
+    #completewith WolfMeat
+	.destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
 step
+    .goto 1426/0,328.18,-6214.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
+    .accept 179 >> Accept Dwarven Outfitters
+    .target Sten Stoutarm
+step << Warrior/Warlock/Shaman
+    #season 0,1
+    #completewith next
+    .goto 1426,28.533,72.587,50,0
+    .goto 1426,28.239,71.707,50,0
+    +|cRXP_WARN_Kill and loot |cRXP_ENEMY_Ragged Young Wolves|r until you have 10 copper or more of vendor trash|r
+    >>|cRXP_WARN_Unequip your|r |T132665:0|t[Acolyte's Robe]|cRXP_WARN_,|r |T135005:0|t[Acolyte's Shirt]|cRXP_WARN_,|r |T134581:0|t[Acolyte's Pants]|cRXP_WARN_, and|r |T132535:0|t[Acolyte's Shoes] |cRXP_WARN_so you can vendor them for 4 copper|r << Warlock
+    >>|cRXP_WARN_Unequip your|r |T135009:0|t[Recruit's Shirt]|cRXP_WARN_,|r |T134582:0|t[Recruit's Pants]|cRXP_WARN_, and|r |T132540:0|t[Recruit's Boots] |cRXP_WARN_so you can vendor them for 3 copper|r << Warrior
+    .complete 179,1 --Tough Wolf Meat (8)
+    .disablecheckbox
+    .mob Ragged Young Wolf
+    .money >0.001
+step << Warrior/Warlock/Shaman
+    #season 0,1
+    #optional
+    #completewith next
+    .goto 1426,28.792,68.804,12,0
+    .goto 1426,28.939,68.387,12 >> Enter Anvilmar
+step << Warrior/Warlock/Shaman
+    #season 0,1
+    .goto 1426,28.792,67.837
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grundel Harkin|r inside
+    .vendor >> Vendor Trash
+    .target Grundel Harkin
+    .train 6673,1 << Warrior
+    .train 348,1 << Warlock
+    .train 8017,1 << Shaman
+step << Warrior
+    #season 0,1
+    .goto 1426,28.831,67.238
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r inside
+    .train 6673 >>Train |T132333:0|t[Battle Shout]
+    .target Thran Khorman
+step << Warlock
+    #season 0,1
+    .goto 1426/0,391.07,-6048.84--c:Dun Morogh,28.650,66.145
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r inside
+    .train 348 >> Train |T135817:0|t[Immolate]
+    .accept 1599 >> Accept Beginnings
+    .target Alamar Grimm
+step << Shaman
+    .goto 1426/0,383.900,-6050.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm|r inside
+    .train 8017 >> Train |T136086:0|t[Rockbiter Weapon]
+    .target Teo Hammerstorm
+step << Warrior/Warlock
+    #season 0,1
+    #softcore << Warlock
+    #label WarriorHS
+    #completewith WolfMeat
+    .hs >> Hearth to Coldridge Valley
+    .subzoneskip 77,1
+step << Warrior/Warlock
+    #season 0,1
+    #softcore << Warlock
+    #optional
+    #requires WarriorHS
+    #completewith WolfMeat
+	.destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
+
+step
+    #label WolfMeat
     .goto 1426,29.529,73.286,0
     .goto 1426,28.117,75.088,0
     .goto 1426,28.557,72.487,0
@@ -39,33 +113,144 @@ step
     .goto 1426,27.562,74.331,60,0
     .goto 1426,27.793,73.123,60,0
     .goto 1426,28.557,72.487,60,0
-    >>Kill |cRXP_ENEMY_Ragged Young Wolves|r and |cRXP_ENEMY_Rockjaw Troggs|r around Anvilmar
+    >>Kill |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their |cRXP_LOOT_Tough Wolf Meat|r
+    .complete 179,1 --Collect Tough Wolf Meat (x8)
+    .mob Ragged Young Wolf
+step
+    #optional
+    .goto 1426,29.529,73.286,0
+    .goto 1426,28.117,75.088,0
+    .goto 1426,28.557,72.487,0
+    .goto 1426,29.529,73.286,60,0
+    .goto 1426,29.054,74.608,60,0
+    .goto 1426,28.558,75.781,60,0
+    .goto 1426,28.117,75.088,60,0
+    .goto 1426,27.562,74.331,60,0
+    .goto 1426,27.793,73.123,60,0
+    .goto 1426,28.557,72.487,60,0
     .xp 2 >> Grind to level 2
     .mob Ragged Young Wolf
-    .mob Rockjaw Trogg
-step
+step << Priest/Mage/Warlock/Shaman
+    #season 0,1
     .goto 1426/0,320.30,-6226.74
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r at the starting camp and sell your trash
-    >>|cRXP_BUY_Buy 5|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
-    .collect 159,5 --Refreshing Spring Water (5)
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
+    >>Vendor Trash
+    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r << !Shaman
+    >>|cRXP_BUY_Buy 10|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r << Shaman
+    >>|cRXP_WARN_Grind extra |cRXP_ENEMY_Ragged Young Wolves|r if you don't have enough money|r
+    .collect 159,15 << !Shaman --Collect Refreshing Spring Water (x15)
+    .collect 159,10 << Shaman --Collect Refreshing Spring Water (x15)
     .target Adlin Pridedrift
-step << Mage
-    .goto 1426/0,388.17,-6056.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside Anvilmar and train your spells
-    >>|cRXP_WARN_Stop by any profession trainers you want while you're here|r
-    .trainer >> Train your class spells
-    .target Marryk Nurribit
-step << !Mage
-    .goto 1426,28.939,68.387
-    >>Visit your class trainer inside Anvilmar and train your spells
-    >>|cRXP_WARN_Stop by any profession trainers you want while you're here|r
-    .trainer >> Train your class spells
+    .xp >6,1
+step << !Priest !Mage !Warlock !Shaman
+    #completewith next << !Hunter
+    .goto 1426/0,320.30,-6226.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
+    >>|cRXP_BUY_Buy 600|r |T132384:0|t[Light Shots] |cRXP_BUY_from him|r << Hunter
+    .vendor >> |cRXP_WARN_Vendor trash|r << !Hunter
+    .collect 2516,600 << Hunter --Light Shot (600)
+    .target Adlin Pridedrift
+    .xp >6,1
 step
+    .goto 1426/0,328.18,-6214.85
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
+    .turnin 179 >> Turn in Dwarven Outfitters
+    .accept 233 >> Accept Coldridge Valley Mail Delivery
+    .accept 3106 >> Accept Simple Rune << Dwarf Warrior
+    .accept 3107 >> Accept Consecrated Rune << Dwarf Paladin
+    .accept 3108 >> Accept Etched Rune << Dwarf Hunter
+    .accept 3109 >> Accept Encrypted Rune << Dwarf Rogue
+    .accept 3110 >> Accept Hallowed Rune << Dwarf Priest
+    .accept 3112 >> Accept Simple Memorandum << Gnome Warrior
+    .accept 3113 >> Accept Encrypted Memorandum << Gnome Rogue
+    .accept 3114 >> Accept Glyphic Memorandum << Gnome Mage
+    .accept 3115 >> Accept Tainted Memorandum << Gnome Warlock
+    .accept 98574 >>Accept Hallowed Memorandum << Gnome Priest
+    .accept 98581 >>Accept Archaic Rune << Dwarf Shaman
+    .target Sten Stoutarm
+
+step << Warlock
+    #season 0,1
+    #optional
+    #requires FrostmaneC1
+    #label FrostmaneC
+    #completewith Feathers
+    .goto 1426/0,479.72,-6498.17,20 >> Enter the Frostmane Cave
+step << Warlock
+    #season 0,1
+    #optional
+    #requires FrostmaneC
+    #completewith Feathers
+    .goto 1426,27.095,80.702,20,0
+    .goto 1426,27.265,80.848,20,0
+    .goto 1426,27.857,81.067,20,0
+    .goto 1426,28.696,83.148,50 >> Travel toward the |cRXP_ENEMY_Frostmane Novices|r inside
+step << Warlock
+    #season 0,1
+    #label Feathers
+    .goto 1426,28.696,83.148,0
+    .goto 1426,30.216,80.254,0
+    .goto 1426,28.696,83.148,40,0
+    .goto 1426,28.999,82.504,40,0
+    .goto 1426,29.298,81.579,15,0
+    .goto 1426,29.041,81.168,40,0
+    .goto 1426,30.055,82.385,40,0
+    .goto 1426,30.381,80.766,40,0
+    .goto 1426,30.216,80.254,40,0
+    >>Kill |cRXP_ENEMY_Frostmane Novices|r inside. Loot them for their |cRXP_LOOT_Feather Charms|r
+    .complete 1599,1 --Collect Feather Charm (x3)
+    .mob Frostmane Novice
+step << Warlock
+    #season 0,1
+    #hardcore
+    #label BeginningsHS
+    #completewith BeginningsEnd
+    .hs >> Hearth to Coldridge Valley
+    .subzoneskip 77,1
+--XX Era hardcore warlocks
+step << Warlock
+    #season 0,1
+    #hardcore
+    #optional
+    #requires BeginningsHS
+    #completewith BeginningsEnd
+	.destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
+--XX HC Warlocks drop HS (No hearthstone items remain)
+step << Warlock
+    #season 0,1
+    #softcore
+    #label BeginningsHS
+    #completewith BeginningsEnd
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .target Spirit Healer
+step << Warlock
+    #season 0,1
+    #optional
+    #requires BeginningsHS
+    #completewith next
+    .goto 1426,28.792,68.804,12,0
+    .goto 1426,28.939,68.387,12 >> Enter Anvilmar << Warlock
+step << Warlock
+    #season 0,1
+    #label BeginningsEnd
+    .goto 1426/0,391.07,-6048.84--c:Dun Morogh,28.650,66.145
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r upstairs
+    .turnin 1599 >> Turn in Beginnings
+    .turnin -3115 >> Turn in Tainted Memorandum
+    .target Alamar Grimm
+--XX Warlock Imp Quest End. Return to normal
+
+step
+#season 0,1
+    #label Talin
     .goto 1426/0,688.98,-6222.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r at his camp to the west
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
+    .turnin 233 >> Turn in Coldridge Valley Mail Delivery
     .accept 183 >> Accept The Boar Hunter
+    .accept 234 >> Accept Coldridge Valley Mail Delivery
     .target Talin Keeneye
 step
+#season 0,1
     #loop
     .goto 1426,22.276,72.549,0
     .goto 1426,20.924,70.393,0
@@ -82,19 +267,135 @@ step
     .goto 1426,24.754,69.257,45,0
     .goto 1426,24.878,71.191,45,0
     .goto 1426,24.358,72.591,45,0
-    >>Kill |cRXP_ENEMY_Small Crag Boars|r around the camp
-    .complete 183,1 --Small Crag Boar (12)
+    >>Kill |cRXP_ENEMY_Small Crag Boars|r
+    .complete 183,1 --Kill Small Crag Boar (x12)
     .mob Small Crag Boar
 step
+#season 0,1
     .goto 1426/0,688.98,-6222.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
     .turnin 183 >> Turn in The Boar Hunter
     .target Talin Keeneye
+
+step << Paladin/Warlock/Shaman
+    #loop
+    .goto 1426,23.595,72.462,0
+    .goto 1426,26.117,74.469,0
+    .goto 1426,26.832,74.649,0
+    .goto 1426,26.884,72.733,0
+    .goto 1426,23.595,72.462,50,0
+    .goto 1426,24.290,73.406,50,0
+    .goto 1426,24.642,74.138,50,0
+    .goto 1426,26.117,74.469,50,0
+    .goto 1426,26.832,74.649,50,0
+    .goto 1426,26.884,72.733,50,0
+    .xp 3+1130 >> Grind to 1130+/1400xp
 step
     .goto 1426,25.077,75.711
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r at the troll camp
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .turnin 234 >> Turn in Coldridge Valley Mail Delivery
     .accept 182 >> Accept The Troll Cave
     .target Grelin Whitebeard
+step << Hunter
+    #completewith next
+    .goto 1426,25.861,78.197,0
+    .goto 1426,23.716,80.257,0
+    .goto 1426,20.671,75.838,0
+    .goto 1426,25.861,78.197,45,0
+    .goto 1426,26.382,78.409,45,0
+    .goto 1426,26.031,79.854,45,0
+    .goto 1426,23.716,80.257,45,0
+    .goto 1426,22.836,79.962,45,0
+    .goto 1426,22.684,78.888,45,0
+    .goto 1426,21.029,76.459,45,0
+    .goto 1426,20.671,75.838,45,0
+    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r
+    .complete 182,1 --Kill Frostmane Troll Whelp (x14)
+    .mob Frostmane Troll Whelp
+step << Hunter
+    .goto 1426,25.861,78.197,0
+    .goto 1426,23.716,80.257,0
+    .goto 1426,20.671,75.838,0
+    .xp 4 >> Grind to level 4
+step << Paladin/Warlock/Hunter/Shaman
+    .goto 1426/0,571.82,-6371.20--c:Dun Morogh,24.980,75.963
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    >>|cRXP_WARN_This will start a 5 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
+    .target Nori Pridedrift
+step << Paladin/Warlock/Hunter/Shaman
+    #optional
+    #completewith next
+    .goto 1426,28.792,68.804,12,0
+    >>|cRXP_WARN_You have 5 minutes to return to Anvilmar before|r |T132791:0|t[Durnan's Scalding Mornbrew] |cRXP_WARN_expires|r
+    .goto 1426,28.939,68.387,12 >> Enter Anvilmar
+step << Paladin/Warlock/Hunter/Shaman
+    .goto 1426/0,385.21,-6056.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r inside
+    .turnin 3364 >> Turn in Scalding Mornbrew Delivery
+    .accept 3365 >> Accept Bring Back the Mug
+    .target Durnan Furcutter
+    .isQuestAvailable 317
+step << Hunter
+    #season 0,1
+    .goto 1426/0,365.21,-6091.86
+    .target Thorgas Grimson
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgas Grimson|r
+    .turnin 3108 >>Turn in Etched Rune << Dwarf
+    .train 1978 >>Train |T132204:0|t[Serpent Sting]
+step << Warlock
+    #season 0,1
+    .goto 1426/0,391.07,-6048.84--c:Dun Morogh,28.650,66.145
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alamar Grimm|r upstairs
+    .turnin 3115 >> Turn in Tainted Memorandum
+    .train 172 >>Train |T136118:0|t[Corruption]
+    .target Alamar Grimm
+step << Shaman
+    .goto 1426/0,384.000,-6050.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
+    .target Teo Hammerstorm::257446
+    .turnin 98581 >>Turn in Archaic Rune
+    .accept 94373 >>Accept Call of Earth
+    .train 8042 >> Train |T136026:0|t[Earth Shock]
+step << Paladin/Warlock/Hunter/Shaman
+    .goto 1426/0,390.000,-6093.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r
+    .target Grund Drokda::2756
+    .accept 97277 >>Accept Grund and Gozwin
+step << Paladin
+    #season 0,1
+    .goto 1426/0,382.06,-6120.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bromos Grummner|r inside
+    .turnin 3107 >> Turn in Consecrated Rune << Dwarf
+    .train 19740 >> Train |T135906:0|t[Blessing of Might]
+    .train 20271 >> Train |T135959:0|t[Judgement]
+    .target Bromos Grummner
+step << Warlock
+#season 0,1
+    .goto 1426/0,320.30,-6226.74
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Adlin Pridedrift|r
+    >>Vendor Trash
+    >>|cRXP_BUY_Buy 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    .collect 159,15 --Collect Refreshing Spring Water (x15)
+    .target Adlin Pridedrift
+    .xp >6,1
+step << Paladin/Warlock/Hunter
+    #completewith next
+    .goto 1426/0,497.300,-6118.500,20,0
+    .goto 1426/0,467.700,-6012.800,20 >> Travel up to the hills in northern Coldridge Valley
+step << Paladin/Warlock/Hunter
+    >>Kill the |cRXP_ENEMY_Snow Leopard Prowler|r
+    >>Loot |cRXP_PICK_Gozwin's Mechanic's Log|r on the ground
+    .complete 97277,2 --|1/1 Snow Leopard Prowler slain
+    .mob +Snow Leopard Prowler::269075
+    .goto 1426/0,447.800,-5942.000
+    .complete 97277,1 --|1/1 Gozwin's Mechanic's Log
+    .goto 1426/0,458.700,-5940.600
+step << Paladin/Warlock/Hunter/Shaman
+    .goto 1426/0,571.82,-6371.20--c:Dun Morogh,24.980,75.963
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    .turnin 3365 >> Turn in Bring Back the Mug
+    .target Nori Pridedrift
 step
     #loop
     .goto 1426,25.861,78.197,0
@@ -108,8 +409,10 @@ step
     .goto 1426,22.684,78.888,45,0
     .goto 1426,21.029,76.459,45,0
     .goto 1426,20.671,75.838,45,0
-    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r
-    .complete 182,1 --Frostmane Troll Whelp (14)
+    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r << !Shaman
+    >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for their |cRXP_LOOT_Iceclaw Bear Pendants|r << Shaman
+    .complete 182,1 --Kill Frostmane Troll Whelp (x14)
+    .complete 94373,1 << Shaman--Iceclaw Bear Pendant (2)
     .mob Frostmane Troll Whelp
 step
     .goto 1426/0,567.09,-6362.99
@@ -117,97 +420,244 @@ step
     .turnin 182 >> Turn in The Troll Cave
     .accept 218 >> Accept The Stolen Journal
     .target Grelin Whitebeard
-step
+step << !Paladin !Warlock !Hunter !Shaman
+    #softcore
+    .goto 1426/0,571.82,-6371.20--c:Dun Morogh,24.980,75.963
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    >>|cRXP_WARN_This will start a 5 minute timer for the quest. Do NOT go AFK or log out for the next 5 minutes|r
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
+    .target Nori Pridedrift
+step << !Paladin !Warlock !Hunter !Shaman
+    #softcore
     #completewith next
+    +|cRXP_WARN_You have 5 minutes to get |cRXP_LOOT_Grelin Whitebeard's Journal|r and return to Anvilmar before|r |T132791:0|t[Durnan's Scalding Mornbrew] |cRXP_WARN_expires|r
+    >>|cRXP_WARN_If you fail the quest don't worry as you can get it again later|r
+step
+    #optional
+    #label FrostMCave1
+    #completewith Grelin
     .goto 1426,27.098,80.707,20 >> Enter the Frostmane Cave
 step
-    .goto 1426,30.489,80.165
-    >>Kill |cRXP_ENEMY_Grik'nir the Cold|r at the back of the cave. Loot him for |cRXP_LOOT_Grelin Whitebeard's Journal|r
-    .complete 218,1 --Grelin Whitebeard's Journal
-    .mob Grik'nir the Cold
+    #optional
+    #requires FrostMCave1
+    #completewith Grelin
+    .goto 1426,28.298,79.836,15,0
+    .goto 1426,29.252,79.043,15,0
+    .goto 1426,30.489,80.165,50 >> Travel towards |cRXP_ENEMY_Grik'nir the Cold|r inside
 step
+    #label Grelin
+    .goto 1426,30.489,80.165,0,0
+    >>Kill |cRXP_ENEMY_Grik'nir the Cold|r inside. Loot him for |cRXP_LOOT_Grelin Whitebeard's Journal|r
+    .complete 218,1 --Collect Grelin Whitebeard's Journal (x1)
+    .mob Grik'nir the Cold
+step << !Paladin !Warlock !Hunter !Shaman
+    #softcore
+    #completewith next
+    .deathskip >> Die and respawn at the |cRXP_FRIENDLY_Spirit Healer|r
+    .target Spirit Healer
+step
+    #hardcore << !Paladin !Warlock !Hunter !Shaman
+    #optional
+    #completewith Stolen
+    .goto 1426,29.252,79.043,15,0
+    .goto 1426,28.298,79.836,15,0
+    .goto 1426,27.098,80.707,20 >> Exit the Frostmane Cave
+    .subzoneskip 132
+step << !Paladin !Warlock !Hunter !Shaman
+    #hardcore
+    .goto 1426/0,571.82,-6371.20--c:Dun Morogh,24.980,75.963
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
+    .target Nori Pridedrift
+step
+    #hardcore << !Paladin !Warlock !Hunter !Shaman
+    #label Stolen
     .goto 1426/0,567.14,-6363.06
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
     .turnin 218 >> Turn in The Stolen Journal
     .accept 282 >> Accept Senir's Observations
     .target Grelin Whitebeard
-step
-    .goto 1426,24.358,72.591,0
-    .xp 4 >> Grind to level 4 on the boars and trolls around the camp
-    .mob Frostmane Troll Whelp
-    .mob Small Crag Boar
-step
-    .goto 1426/0,571.82,-6371.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r next to Grelin
-    >>|cRXP_WARN_This starts a 5 minute timer: run straight to Anvilmar|r
-    .accept 3364 >> Accept Scalding Mornbrew Delivery
-    .target Nori Pridedrift
-step
-    #completewith next
-    .goto 1426,28.939,68.387,12 >> Enter Anvilmar
-step
+step << !Paladin !Warlock !Hunter !Shaman
+    #softcore
     .goto 1426/0,385.21,-6056.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r inside Anvilmar
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r
+    >>|cRXP_WARN_If you failed the quest, skip this step|r
     .turnin 3364 >> Turn in Scalding Mornbrew Delivery
     .accept 3365 >> Accept Bring Back the Mug
     .target Durnan Furcutter
-step
+    .isOnQuest 3364
+step << !Paladin !Warlock !Hunter !Shaman
+    #optional
+    #softcore
     .goto 1426/0,385.21,-6056.46
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash to |cRXP_FRIENDLY_Durnan Furcutter|r, so you have money for training
-    .vendor >> Sell your trash
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r
+    .accept 3365 >> Accept Bring Back the Mug
     .target Durnan Furcutter
+    .isQuestTurnedIn 3364
+    .isQuestAvailable 317
+step << !Paladin !Warlock !Hunter !Shaman
+    #softcore
+    #requires Grelin << Rogue
+    .abandon 3364 >> Abandon Scalding Mornbrew Delivery. You'll pick it up again
+step << !Paladin !Warlock !Hunter !Shaman
+    #softcore
+    #optional
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r and |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .accept 3364 >> Accept Scalding Mornbrew Delivery
+    .goto 1426/0,571.82,-6371.20--c:Dun Morogh,24.980,75.963
+    .target +Nori Pridedrift
+    .turnin 218 >> Turn in The Stolen Journal
+    .accept 282 >> Accept Senir's Observations
+    .goto 1426/0,567.14,-6363.06
+    .target +Grelin Whitebeard
+    .isQuestAvailable 3364
+step << !Paladin !Warlock !Hunter !Shaman
+    #softcore
+    #optional
+    .goto 1426/0,385.21,-6056.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r
+    .turnin 3364 >> Turn in Scalding Mornbrew Delivery
+    .accept 3365 >> Accept Bring Back the Mug
+    .target Durnan Furcutter
+step << !Paladin !Warlock !Hunter !Shaman
+    #hardcore
+    .goto 1426/0,385.21,-6056.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Durnan Furcutter|r
+    .turnin 3364 >> Turn in Scalding Mornbrew Delivery
+    .accept 3365 >> Accept Bring Back the Mug
+    .target Durnan Furcutter
+    .isQuestAvailable 317
+
 step << Mage
+    #season 0,1
     .goto 1426/0,388.17,-6056.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside and train your spells
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
+    .turnin 3114 >> Turn in Glyphic Memorandum << Gnome
     .train 1459 >> Train |T135932:0|t[Arcane Intellect]
     .train 116 >> Train |T135846:0|t[Frostbolt]
     .target Marryk Nurribit
-step << !Mage
-    .goto 1426,28.939,68.387
-    >>Visit your class trainer inside Anvilmar and train your spells
+step << Rogue
+    #season 0,1
+    .goto 1426/0,404.91,-6093.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Solm Hargrin|r
+    .turnin 3113 >> Turn in Encrypted Memorandum << Gnome
+    .turnin 3109 >> Turn in Encrypted Rune << Dwarf
+    .train 1784 >>Train |T132320:0|t[Stealth]
+    .target Solm Hargrin
+step << Priest
+    #season 0,1
+    .goto 1426/0,393.53,-6056.72--c:Dun Morogh,28.600,66.385
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
+    .turnin 3110 >> Turn in Hallowed Rune << Dwarf
+    .turnin 98574 >> Turn in Hallowed Memorandum << Gnome
     .trainer >> Train your class spells
-step
+    .target Branstock Khalder
+step << Warrior
+    #season 0,1
+    .goto 1426/0,382.11,-6084.86
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thran Khorman|r
+    .turnin 3106 >> Turn in Simple Rune << Dwarf
+    .turnin 3112 >> Turn in Simple Memorandum << Gnome
+    .train 100 >> Train |T132337:0|t[Charge]
+    .train 772 >> Train |T132155:0|t[Rend]
+    .target Thran Khorman
+step << Shaman
+    #optional
+    #completewith next
+    .goto 1426/0,383.800,-6133.700,10 >> Return to |cRXP_FRIENDLY_Teo Hammerstorm|r in Anvilmar
+    .subzoneskip 77,1
+step << Shaman
+    .goto 1426/0,384.000,-6050.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
+    .target Teo Hammerstorm::257446
+    .turnin 94373 >>Turn in Call of Earth
+    .accept 94374 >>Accept Call of Earth
+step << !Paladin !Warlock !Hunter !Shaman
     .goto 1426/0,390.000,-6093.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda|r
-    .accept 97277 >> Accept Grund and Gozwin
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r
     .target Grund Drokda::2756
-step
+    .accept 97277 >>Accept Grund and Gozwin
+step << !Paladin !Warlock !Hunter
+    #optional
+    #completewith Stolen
+    .goto 1426,28.831,68.698,12 >> Exit Anvilmar
+    .subzoneskip 77,1
+step << !Paladin !Warlock !Hunter
     #completewith next
     .goto 1426/0,497.300,-6118.500,20,0
     .goto 1426/0,467.700,-6012.800,20 >> Travel up to the hills in northern Coldridge Valley
-step
+step << !Paladin !Warlock !Hunter
     >>Kill the |cRXP_ENEMY_Snow Leopard Prowler|r
     >>Loot |cRXP_PICK_Gozwin's Mechanic's Log|r on the ground
-    .complete 97277,2 --Snow Leopard Prowler slain
+    .complete 97277,2 --|1/1 Snow Leopard Prowler slain
     .mob +Snow Leopard Prowler::269075
     .goto 1426/0,447.800,-5942.000
-    .complete 97277,1 --Gozwin's Mechanic's Log
+    .complete 97277,1 --|1/1 Gozwin's Mechanic's Log
     .goto 1426/0,458.700,-5940.600
-step
-    .goto 1426/0,390.000,-6093.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda|r
-    .turnin 97277 >> Turn in Grund and Gozwin
-    .target Grund Drokda::2756
-step
-    .goto 1426/0,571.82,-6371.20
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r back at Grelin's camp
+step << Shaman
+    .isOnQuest 94374
+    .goto 1426/0,582.100,-5907.800
+    .cast 8202 >> |cRXP_WARN_Use the|r |T134743:0|t[Earth Sapta] |cRXP_WARN_at the |cRXP_PICK_Spirit Stone|r to summon the|r |cRXP_FRIENDLY_Minor Manifestation of Earth|r
+    .use 6635
+step << Shaman
+    .goto 1426/0,576.500,-5908.100
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Minor Manifestation of Earth::5891|r
+    .target Minor Manifestation of Earth::5891
+    .turnin 94374 >>Turn in Call of Earth
+    .accept 94375 >>Accept Call of Earth
+step << Shaman
+    #optional
+    #completewith next
+    .goto 1426/0,383.800,-6133.700,10 >> Return to |cRXP_FRIENDLY_Teo Hammerstorm|r in Anvilmar
+    .subzoneskip 77,1
+step << Shaman
+    .goto 1426/0,383.900,-6050.300
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Teo Hammerstorm::257446|r
+    .target Teo Hammerstorm::257446
+    .turnin 94375 >>Turn in Call of Earth
+step << !Paladin !Warlock !Hunter !Shaman
+    #softcore
+    #label Stolen
+    .goto 1426/0,567.14,-6363.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
+    .turnin 218 >> Turn in The Stolen Journal
+    .accept 282 >> Accept Senir's Observations
+    .target Grelin Whitebeard
+step << !Paladin !Warlock !Hunter !Shaman
+    .goto 1426/0,571.82,-6371.20--c:Dun Morogh,24.980,75.963
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nori Pridedrift|r
     .turnin 3365 >> Turn in Bring Back the Mug
     .target Nori Pridedrift
+step << Dwarf Priest/Gnome Priest
+    #optional
+    .xp 4+1690 >> Grind to 1690+/2100xp
+step
+    .goto 1426/0,390.000,-6093.800
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r
+    .target Grund Drokda::2756
+    .turnin 97277 >>Turn in Grund and Gozwin
+step << Dwarf Priest/Gnome Priest
+    .goto 1426/0,393.53,-6056.72--c:Dun Morogh,28.600,66.385
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
+    .accept 5626 >> Accept In Favor of the Light
+    .target Branstock Khalder
 step
     .goto 1426/0,152.900,-6235.800
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Thalos|r at the tunnel
-    .turnin 282 >> Turn in Senir's Observations
-    .accept 420 >> Accept Senir's Observations
-    .accept 96628 >> Accept The Adventurer
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Thalos::1965|r
     .target Mountaineer Thalos::1965
+    .turnin 282 >>Turn in Senir's Observations
+    .accept 420 >>Accept Senir's Observations
+    .accept 96628 >>Accept The Adventurer
 step
     .goto 1426/0,135.100,-6248.900
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hands Springsprocket|r
-    .accept 2160 >> Accept Supplies to Tannok
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hands Springsprocket::6782|r
     .target Hands Springsprocket::6782
+    .accept 2160 >>Accept Supplies to Tannok
 step
     .goto 1426/0,111.82,-6206.61,15,0
-    .goto 1426/0,46.32,-6037.19,15 >> Go through Coldridge Pass. Kill the |cRXP_ENEMY_Rockjaw Raiders|r in your way
+    .goto 1426/0,46.32,-6037.19,15 >> Travel through Coldridge Pass
+    .subzoneskip 800,1
+    .isOnQuest 2160
 ]])
 
 -- Shown as "5-10 Dun Morogh". The #name stays "5-9 Dun Morogh" because RestedXP keys saved progress (and

@@ -25,8 +25,10 @@ To update, download the zip again and replace the TimmyGnome folder.
 
 ### 1-10 Coldridge Valley and Dun Morogh
 
-- **Levels 1-2:** grind wolves and troggs to level 2 (no Dwarven Outfitters, so no mail deliveries either),
-  buy 5 water from Adlin Pridedrift, visit your trainer in Anvilmar, then the Coldridge Valley quests.
+- **Coldridge Valley (levels 1-5):** RestedXP's own Forever "1-5 Coldridge Valley", copied as is up to the
+  tunnel: Dwarven Outfitters, both mail deliveries, your class rune or memorandum, the boars, the troll cave, the
+  Mornbrew delivery and Grund and Gozwin. It's class-aware, so the mage and the paladin take the middle quests in
+  a different order.
 - **Level 5:** from the tunnel, discover Chill Breeze Valley, then go to Brewnall for Bitter Rivals and
   Frosthowl, killing every boar on the way for meat and ribs. Then die to the wolves on Iceflow Lake and revive in Kharanos.
 - **Kharanos and Steelgrill's Depot:** pick up and turn in everything, then Ammo for Rumbleshot. Reach level 6
@@ -53,8 +55,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   sticky tracks the Tailoring stash: 36 Bolts of Linen Cloth, the thread and the bleach. The paladin's sticky at
   the same time: keep 10 Linen Cloth for his level 12 class quest and trade the rest to the mage.
 - **Skipped:** The Perfect Stout, Flintfire's Shipment and the Frosthowl kill (the quest stays open for later).
-- **Training:** every class gets a trainer stop in Anvilmar at levels 2 and 4 (with a vendor stop before the
-  second). Mages also train with Magis Sparkmantle in Kharanos at levels 6 and 8.
+- **Training:** RestedXP's Coldridge Valley steps train each class in Anvilmar. Mages also train with Magis
+  Sparkmantle in Kharanos at levels 6 and 8.
 
 ### 10-12 Elwynn Forest
 
@@ -315,6 +317,7 @@ because their bosses are 28-31.
 
 ## Credits and license
 
-Coordinates and several waypoint paths are adapted from RestedXP Guides by RestedXP, licensed
-[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). TimmyGnome rearranges them into its own
-route and is shared under the same license (see [LICENSE](LICENSE)).
+The Coldridge Valley guide is RestedXP's Forever "1-5 Coldridge Valley", copied unchanged up to the tunnel, and
+coordinates and several waypoint paths elsewhere are adapted from RestedXP Guides by RestedXP, licensed
+[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). TimmyGnome builds its own route around them
+and is shared under the same license (see [LICENSE](LICENSE)).

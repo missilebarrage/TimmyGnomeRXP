@@ -672,7 +672,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 25
+#version 26
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -1065,6 +1065,11 @@ step << Mage
     #completewith DeeprunTram
     >>|cRXP_WARN_Keep your other Simple Wood. When your paladin gives you a green Copper Shortsword, Disenchant it for a|r |T132867:0|t[Lesser Magic Essence]|cRXP_WARN_, then craft the|r |T135139:0|t[Lesser Magic Wand] |cRXP_WARN_and equip it. Use the Novice's Practice Wand until then|r
     .collect 11287,1 --Lesser Magic Wand (1)
+step << Mage
+    .goto 1455,55.09,58.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Nissa Firestone|r, the First Aid trainer just south of the gryphon master
+    .skill firstaid,1 >> Learn First Aid
+    .target Nissa Firestone
 step << Mage
     .goto 1455,43.82,27.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthrar Threx|r, the tailoring trainer on the other side of the Great Forge

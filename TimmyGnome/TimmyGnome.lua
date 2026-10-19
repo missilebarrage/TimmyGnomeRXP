@@ -672,7 +672,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 24
+#version 25
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -1015,18 +1015,21 @@ step
     .accept 291 >> Accept The Reports (for Senator Barin Redstone in Ironforge)
     .target Senir Whitebeard::1252
 step << Paladin
-    >>Before Tim goes to Ironforge for his wand
+    >>Gather wand materials while Tim goes to Ironforge
     +Craft a Copper Rod and give it to Tim
-    +Trade Tim your spare |T132889:0|t[Linen Cloth] (keep 10 for The Tome of Divinity): he makes Brown Linen Pants in Ironforge and disenchants them for his wand
+    .collect 2770,10 >> 10 Copper Ore
+    .collect 2835,20 >> 20 Rough Stone
     +|cFFFF0000MAKE SURE TIM HAS A BRACER!|r
 step << Paladin
     #completewith DeeprunTram
-    +|cRXP_WARN_Linen Cloth: save 10 for your level 12 class quest (The Tome of Divinity) and trade the rest to Tim. He turns it into Tailoring gear at level 10|r
+    +|cRXP_WARN_When you have the materials, craft green Copper Shortswords (6 Copper Bars, 1 Weak Flux and 2 Linen Cloth each) and give them to Tim: he disenchants them for his Lesser Magic Wand|r
+step << Paladin
+    #completewith DeeprunTram
+    +|cRXP_WARN_Linen Cloth: save 10 for your level 12 class quest (The Tome of Divinity) and 2 for each Copper Shortsword, and trade the rest to Tim. He turns it into Tailoring gear at level 10|r
 step << Mage
     >>Gather wand materials before you go to Ironforge
     .collect 6217,1 >> Copper Rod (your paladin crafts it)
-    +About 6 silver for training, Motes of Magic, Simple Wood and Coarse Thread
-    +All your |T132889:0|t[Linen Cloth] plus your partner's spares: you bolt it for Tailoring skill, then make Brown Linen Pants (4 linen each) to disenchant for the wand's Lesser Magic Essence
+    +About 5 silver for training, Motes of Magic, Simple Wood and Coarse Thread
     +|cFFFF0000ANY BRACER|r
 step << Mage
     .goto 1455,59.77,45.45,15 >> Travel to the enchanting trainer in Ironforge: take the road north out of Kharanos, cross the bridge and follow the road east up the mountain
@@ -1059,6 +1062,10 @@ step << Mage
     .trainer >> Train Lesser Magic Wand
     .target Gimble Thistlefuzz
 step << Mage
+    #completewith DeeprunTram
+    >>|cRXP_WARN_Keep your other Simple Wood. When your paladin gives you a green Copper Shortsword, Disenchant it for a|r |T132867:0|t[Lesser Magic Essence]|cRXP_WARN_, then craft the|r |T135139:0|t[Lesser Magic Wand] |cRXP_WARN_and equip it. Use the Novice's Practice Wand until then|r
+    .collect 11287,1 --Lesser Magic Wand (1)
+step << Mage
     .goto 1455,43.82,27.86
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Uthrar Threx|r, the tailoring trainer on the other side of the Great Forge
     .skill tailoring,1 >> Learn Tailoring
@@ -1066,23 +1073,10 @@ step << Mage
 step << Mage
     .goto 1455,42.94,28.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Poranna Snowbraid|r next to Uthrar
-    >>|cRXP_BUY_Buy 13|r |T132891:0|t[Coarse Thread] |cRXP_BUY_and 1 Bleach (about 1s 55c): a thread for each pair of pants you make now, the rest for your level 10 Tailoring gear. Short on money? Buy just the pants' thread: the Stormwind stop sells the rest|r
+    >>|cRXP_BUY_Buy 13|r |T132891:0|t[Coarse Thread] |cRXP_BUY_and 1 Bleach (about 1s 55c) for your level 10 Tailoring gear. Short on money? Skip this step: the Stormwind stop sells them too|r
     .collect 2320,13 --Coarse Thread (13)
     .collect 2324,1 --Bleach (1)
     .target Poranna Snowbraid
-step << Mage
-    .goto 1455,43.82,27.86
-    >>|cRXP_WARN_Turn your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_into|r |T132890:0|t[Bolts of Linen Cloth] |cRXP_WARN_(a Tailoring point each) until Uthrar Threx will teach you Brown Linen Pants. Keep 2 bolts for each pair you'll make|r
-    >>|cRXP_WARN_Not enough linen to get there? Skip this step and the next, and buy the essence from Tilli Thistlefuzz or the Auction House instead|r
-    .train 3914 >> Train Brown Linen Pants
-    .target Uthrar Threx
-step << Mage
-    >>|cRXP_WARN_Craft Brown Linen Pants (2 bolts and 1 Coarse Thread) and Disenchant them until one gives you a|r |T132867:0|t[Lesser Magic Essence]|cRXP_WARN_. The others give Strange Dust: Dust to Motes turns it into Motes of Magic|r
-    >>|cRXP_WARN_Out of linen? Tilli Thistlefuzz or the Auction House sells the essence|r
-    .collect 10938,1 >> Get a Lesser Magic Essence
-step << Mage
-    >>|cRXP_WARN_Craft the|r |T135139:0|t[Lesser Magic Wand] |cRXP_WARN_from your other Simple Wood and the|r |T132867:0|t[Lesser Magic Essence]|cRXP_WARN_, then equip it|r
-    .collect 11287,1 >> Craft a Lesser Magic Wand
 step << Mage
     #completewith DeeprunTram
     >>|cRXP_WARN_Tailoring stash for your crafting stop in Stormwind at level 10. Keep every|r |T132889:0|t[Linen Cloth] |cRXP_WARN_and turn it into|r |T132890:0|t[Bolts of Linen Cloth] |cRXP_WARN_as you go: each bolt is a Tailoring skill point. Ask your partner for spare linen too|r
@@ -1463,7 +1457,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 30
+#version 31
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1557,8 +1551,9 @@ step << Mage
     .collect 2580,1 >> Craft a Reinforced Linen Cape, then equip it
     .target Lawrence Schneider
 step << Mage
+    #completewith ArcanistCraft
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
-    >>|cRXP_WARN_Still no Lesser Magic Wand from Ironforge? Disenchant a spare pair of pants for a|r |T132867:0|t[Lesser Magic Essence]|cRXP_WARN_, then craft the|r |T135139:0|t[Lesser Magic Wand] |cRXP_WARN_(it also takes a Simple Wood) and equip it|r
+    >>|cRXP_WARN_Still no Lesser Magic Wand? When your paladin gives you a green Copper Shortsword, Disenchant it for a|r |T132867:0|t[Lesser Magic Essence]|cRXP_WARN_, then craft the|r |T135139:0|t[Lesser Magic Wand] |cRXP_WARN_(it also takes a Simple Wood) and equip it|r
     .collect 11287,1 --Lesser Magic Wand (1)
 step << Mage
     #completewith ArcanistCraft

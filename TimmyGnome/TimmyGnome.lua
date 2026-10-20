@@ -715,7 +715,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 29
+#version 30
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -854,9 +854,8 @@ step
     .mob Crag Boar
     .mob Young Black Bear
 step << Mage
-    .goto 1426,43.452,58.760,40,0
-    .goto 1426,44.969,55.078,40,0
-    .goto 1426/0,-537.200,-5587.000,30 >> Kill |cRXP_ENEMY_Crag Boars|r on your way back to Kharanos
+    .goto 1426/0,-537.200,-5587.000
+    .subzone 131 >> Kill |cRXP_ENEMY_Crag Boars|r on your way back to Kharanos
     .mob Crag Boar
     .mob Large Crag Boar
 step << Mage

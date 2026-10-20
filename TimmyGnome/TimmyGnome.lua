@@ -4,7 +4,11 @@
 -- hard to predict.
 -- Coldridge Valley is RestedXP's Forever "1-5 Coldridge Valley" (their v4.11.25 guide pack; their new Dungeon
 -- Guide track uses the same guide), copied step for step, class branches included, up to Coldridge Pass. Ours
--- adds one step before Mountaineer Thalos: a Skinning Knife and water from Adlin Pridedrift.
+-- differs for mages and paladins: they skip Dwarven Outfitters and grind to level 2 instead, which also drops both
+-- Coldridge Valley Mail Deliveries and the class letter (580 XP). The paladin grinds to 1175/1400 (not 1130) before
+-- Grelin, so Scalding Mornbrew still dings 4 before Bromos. The mage's first Marryk visit only shows at level 4; if
+-- it didn't, a second one comes after Grund and Gozwin. Ours also adds one step before Mountaineer Thalos: a
+-- Skinning Knife and water from Adlin Pridedrift.
 -- Dun Morogh, from the tunnel on, was rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn
 -- and Loch Modan guides below it have their own notes. Like that run, it goes from the tunnel straight to Brewnall
 -- for Bitter Rivals, killing every boar for meat and ribs on the way, then death-skips to
@@ -23,7 +27,7 @@
 
 RXPGuides.RegisterGuide([[
 #forever
-#version 4
+#version 5
 << Alliance
 #group TimmyGnome
 #name 1-5 Coldridge Valley
@@ -37,7 +41,7 @@ step << !Warlock !Warrior !Shaman
     #optional
     #completewith WolfMeat
 	.destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
-step
+step << !Mage !Paladin
     .goto 1426/0,328.18,-6214.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
     .accept 179 >> Accept Dwarven Outfitters
@@ -102,7 +106,7 @@ step << Warrior/Warlock
     #completewith WolfMeat
 	.destroy 6948 >> Delete the |T134414:0|t[Hearthstone] from your bags, as it's no longer needed
 
-step
+step << !Mage !Paladin
     #label WolfMeat
     .goto 1426,29.529,73.286,0
     .goto 1426,28.117,75.088,0
@@ -117,6 +121,22 @@ step
     >>Kill |cRXP_ENEMY_Ragged Young Wolves|r. Loot them for their |cRXP_LOOT_Tough Wolf Meat|r
     .complete 179,1 --Collect Tough Wolf Meat (x8)
     .mob Ragged Young Wolf
+step << Mage/Paladin
+    #label WolfMeat
+    .goto 1426,29.529,73.286,0
+    .goto 1426,28.117,75.088,0
+    .goto 1426,28.557,72.487,0
+    .goto 1426,29.529,73.286,60,0
+    .goto 1426,29.054,74.608,60,0
+    .goto 1426,28.558,75.781,60,0
+    .goto 1426,28.117,75.088,60,0
+    .goto 1426,27.562,74.331,60,0
+    .goto 1426,27.793,73.123,60,0
+    .goto 1426,28.557,72.487,60,0
+    >>Kill |cRXP_ENEMY_Ragged Young Wolves|r and |cRXP_ENEMY_Rockjaw Troggs|r around Anvilmar
+    .xp 2 >> Grind to level 2
+    .mob Ragged Young Wolf
+    .mob Rockjaw Trogg
 step
     #optional
     .goto 1426,29.529,73.286,0
@@ -152,7 +172,7 @@ step << !Priest !Mage !Warlock !Shaman
     .collect 2516,600 << Hunter --Light Shot (600)
     .target Adlin Pridedrift
     .xp >6,1
-step
+step << !Mage !Paladin
     .goto 1426/0,328.18,-6214.85
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sten Stoutarm|r
     .turnin 179 >> Turn in Dwarven Outfitters
@@ -246,9 +266,9 @@ step
     #label Talin
     .goto 1426/0,688.98,-6222.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Talin Keeneye|r
-    .turnin 233 >> Turn in Coldridge Valley Mail Delivery
+    .turnin 233 >> Turn in Coldridge Valley Mail Delivery << !Mage !Paladin
     .accept 183 >> Accept The Boar Hunter
-    .accept 234 >> Accept Coldridge Valley Mail Delivery
+    .accept 234 >> Accept Coldridge Valley Mail Delivery << !Mage !Paladin
     .target Talin Keeneye
 step
 #season 0,1
@@ -290,11 +310,12 @@ step << Paladin/Warlock/Shaman
     .goto 1426,26.117,74.469,50,0
     .goto 1426,26.832,74.649,50,0
     .goto 1426,26.884,72.733,50,0
-    .xp 3+1130 >> Grind to 1130+/1400xp
+    .xp 3+1130 >> Grind to 1130+/1400xp << Warlock/Shaman
+    .xp 3+1175 >> Grind to 1175+/1400xp << Paladin
 step
     .goto 1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
-    .turnin 234 >> Turn in Coldridge Valley Mail Delivery
+    .turnin 234 >> Turn in Coldridge Valley Mail Delivery << !Mage !Paladin
     .accept 182 >> Accept The Troll Cave
     .target Grelin Whitebeard
 step << Hunter
@@ -367,7 +388,6 @@ step << Paladin
     #season 0,1
     .goto 1426/0,382.06,-6120.65
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bromos Grummner|r inside
-    .turnin 3107 >> Turn in Consecrated Rune << Dwarf
     .train 19740 >> Train |T135906:0|t[Blessing of Might]
     .train 20271 >> Train |T135959:0|t[Judgement]
     .target Bromos Grummner
@@ -531,9 +551,9 @@ step << !Paladin !Warlock !Hunter !Shaman
 
 step << Mage
     #season 0,1
+    .xp <4,1
     .goto 1426/0,388.17,-6056.10
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside
-    .turnin 3114 >> Turn in Glyphic Memorandum << Gnome
     .train 1459 >> Train |T135932:0|t[Arcane Intellect]
     .train 116 >> Train |T135846:0|t[Frostbolt]
     .target Marryk Nurribit
@@ -637,6 +657,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grund Drokda::2756|r
     .target Grund Drokda::2756
     .turnin 97277 >>Turn in Grund and Gozwin
+step << Mage
+    .goto 1426/0,388.17,-6056.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marryk Nurribit|r inside Anvilmar to train your level 4 spells
+    .train 1459 >> Train |T135932:0|t[Arcane Intellect]
+    .train 116 >> Train |T135846:0|t[Frostbolt]
+    .target Marryk Nurribit
 step << Dwarf Priest/Gnome Priest
     .goto 1426/0,393.53,-6056.72--c:Dun Morogh,28.600,66.385
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r

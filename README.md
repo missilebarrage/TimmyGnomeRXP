@@ -25,10 +25,13 @@ To update, download the zip again and replace the TimmyGnome folder.
 
 ### 1-10 Coldridge Valley and Dun Morogh
 
-- **Coldridge Valley (levels 1-5):** RestedXP's own Forever "1-5 Coldridge Valley", copied as is up to the
-  tunnel: Dwarven Outfitters, both mail deliveries, your class rune or memorandum, the boars, the troll cave, the
-  Mornbrew delivery and Grund and Gozwin. It's class-aware, so the mage and the paladin take the middle quests in
-  a different order. One stop is ours: a Skinning Knife and water from Adlin Pridedrift before Mountaineer Thalos.
+- **Coldridge Valley (levels 1-5):** RestedXP's own Forever "1-5 Coldridge Valley" up to the tunnel: the boars,
+  the troll cave, the Mornbrew delivery and Grund and Gozwin. It's class-aware, so the mage and the paladin take
+  the middle quests in a different order. Ours differs in two places. Mages and paladins skip Dwarven Outfitters
+  and grind to level 2 on the wolves and troggs instead, which also skips both mail deliveries and the class letter
+  (580 XP). The paladin's grind before Grelin goes 45 XP further so he's still 4 for his trainer, and the mage
+  trains Frostbolt on the way out if he wasn't 4 at the first Marryk visit. The other change: a Skinning Knife and
+  water from Adlin Pridedrift before Mountaineer Thalos.
 - **Level 5:** from the tunnel, discover Chill Breeze Valley, then go to Brewnall for Bitter Rivals, killing every
   boar on the way for meat and ribs. Then die to the wolves on Iceflow Lake and revive in Kharanos.
 - **Kharanos and Steelgrill's Depot:** pick up and turn in everything, then Ammo for Rumbleshot. Reach level 6

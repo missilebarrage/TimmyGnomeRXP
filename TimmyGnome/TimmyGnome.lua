@@ -5,9 +5,10 @@
 -- Coldridge Valley is RestedXP's Forever "1-5 Coldridge Valley" (their v4.11.25 guide pack; their new Dungeon
 -- Guide track uses the same guide), copied step for step, class branches included, up to Coldridge Pass. Ours
 -- differs for mages and paladins: they skip Dwarven Outfitters and grind to level 2 instead, which also drops both
--- Coldridge Valley Mail Deliveries and the class letter (580 XP). The paladin grinds to 1175/1400 (not 1130) before
--- Grelin, so Scalding Mornbrew still dings 4 before Bromos. The mage's first Marryk visit only shows at level 4; if
--- it didn't, a second one comes after Grund and Gozwin. Ours also adds one step before Mountaineer Thalos: a
+-- Coldridge Valley Mail Deliveries and the class letter (580 XP). Scalding Mornbrew Delivery needs level 4, so the
+-- paladin grinds to 4 before Grelin (RestedXP: 1130/1400 plus the second mail delivery) and the mage grinds to
+-- 1040/1400 before handing in The Troll Cave (360 XP in game). The mage's first Marryk visit only shows at level 4;
+-- if it didn't, a second one comes after Grund and Gozwin. Ours also adds one step before Mountaineer Thalos: a
 -- Skinning Knife and water from Adlin Pridedrift.
 -- Dun Morogh, from the tunnel on, was rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn
 -- and Loch Modan guides below it have their own notes. Like that run, it goes from the tunnel straight to Brewnall
@@ -27,7 +28,7 @@
 
 RXPGuides.RegisterGuide([[
 #forever
-#version 5
+#version 6
 << Alliance
 #group TimmyGnome
 #name 1-5 Coldridge Valley
@@ -311,7 +312,7 @@ step << Paladin/Warlock/Shaman
     .goto 1426,26.832,74.649,50,0
     .goto 1426,26.884,72.733,50,0
     .xp 3+1130 >> Grind to 1130+/1400xp << Warlock/Shaman
-    .xp 3+1175 >> Grind to 1175+/1400xp << Paladin
+    .xp 4 >> Grind to level 4: Scalding Mornbrew Delivery needs it << Paladin
 step
     .goto 1426,25.077,75.711
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grelin Whitebeard|r
@@ -434,6 +435,22 @@ step
     >>Kill |cRXP_ENEMY_Frostmane Troll Whelps|r. Loot them for their |cRXP_LOOT_Iceclaw Bear Pendants|r << Shaman
     .complete 182,1 --Kill Frostmane Troll Whelp (x14)
     .complete 94373,1 << Shaman--Iceclaw Bear Pendant (2)
+    .mob Frostmane Troll Whelp
+step << Mage
+    #loop
+    .goto 1426,25.861,78.197,0
+    .goto 1426,23.716,80.257,0
+    .goto 1426,20.671,75.838,0
+    .goto 1426,25.861,78.197,45,0
+    .goto 1426,26.382,78.409,45,0
+    .goto 1426,26.031,79.854,45,0
+    .goto 1426,23.716,80.257,45,0
+    .goto 1426,22.836,79.962,45,0
+    .goto 1426,22.684,78.888,45,0
+    .goto 1426,21.029,76.459,45,0
+    .goto 1426,20.671,75.838,45,0
+    >>Keep killing |cRXP_ENEMY_Frostmane Troll Whelps|r so The Troll Cave's 360 XP takes you to level 4: Nori Pridedrift's Scalding Mornbrew Delivery needs it
+    .xp 3+1040 >> Grind to 1040+/1400xp
     .mob Frostmane Troll Whelp
 step
     .goto 1426/0,567.09,-6362.99

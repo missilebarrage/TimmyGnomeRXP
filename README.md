@@ -35,8 +35,9 @@ To update, download the zip again and replace the TimmyGnome folder.
   (mages death-skip to Kharanos to train), then the Grizzled Den for the 8 manes and Mountaineer Cornelius only.
 - **Boar ribs:** keep collecting them through the west. Beer Basted Boar Ribs goes in on the last Kharanos
   visit, after the Brewnall lap. Stocking Jetsteam goes in before Brewnall, because it unlocks Evershine.
-- **Then:** top up to 15 Refreshing Spring Water at Kreg Bilmn in Kharanos, Brewnall and Frostmane Hold, Old
-  Icebeard, a death skip back to Kharanos, then Misty Pine Refuge, Vagash and Gol'Bolar Quarry.
+- **Then:** Brewnall (top up to 15 Refreshing Spring Water from Keeg Gibn, the ale and wine vendor next to the
+  Barleybrews) and Frostmane Hold, Old Icebeard, a death skip back to Kharanos, then Misty Pine Refuge, Vagash and
+  Gol'Bolar Quarry.
 - **Earthseer Farsen (level 9+):** Farsen's Watch, Nip 'Em in the Bud and Underground Map, ending with
   Old Ironforge Incursion: the Hall of Thanes dungeon quest. If a Rockjaw Ambusher drops an Empty Powder Keg,
   Stolen Blasting Powder goes to Quarrymaster Thesten; its 16-powder follow-up is optional.

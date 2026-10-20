@@ -714,7 +714,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 30
+#version 31
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -888,6 +888,12 @@ step
     .mob +Wendigo
     .mob +Young Wendigo
 step
+    .goto 1426/0,-370.000,-5750.700
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Gretchen|r
+    .turnin 98319 >> Turn in Secure the Mountain
+    .accept 98323 >> Accept Secure the Mountain
+    .target Mountaineer Gretchen::271546
+step
     >>Stocking Jetsteam goes in at the Depot next, because it unlocks Evershine for the Brewnall lap. Finish its 4 |cRXP_LOOT_Chunks of Boar Meat|r and 2 |cRXP_LOOT_Thick Bear Fur|r around Kharanos if you're short
     >>|cRXP_WARN_The ribs can wait: keep collecting them in the west. Beer Basted Boar Ribs goes in after Brewnall|r
     .complete 317,2 --Thick Bear Fur (2)
@@ -920,12 +926,6 @@ step
     .goto 1426,50.555,51.778,60,0
     .mob +Crag Boar
     .mob +Large Crag Boar
-step
-    .goto 1426/0,-370.000,-5750.700
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Gretchen|r
-    .turnin 98319 >> Turn in Secure the Mountain
-    .accept 98323 >> Accept Secure the Mountain
-    .target Mountaineer Gretchen::271546
 step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Pilot Stonegear|r and |cRXP_FRIENDLY_Pilot Bellowfiz|r at Steelgrill's Depot
     .turnin 313 >> Turn in The Grizzled Den

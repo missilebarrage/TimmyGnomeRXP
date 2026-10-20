@@ -35,7 +35,8 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Level 5:** from the tunnel, discover Chill Breeze Valley, then go to Brewnall for Bitter Rivals, killing every
   boar on the way for meat and ribs. Then die to the wolves on Iceflow Lake and revive in Kharanos.
 - **Kharanos and Steelgrill's Depot:** pick up and turn in everything, then Ammo for Rumbleshot. Reach level 6
-  (mages death-skip to Kharanos to train), then the Grizzled Den for the 8 manes and Mountaineer Cornelius only.
+  (mages walk back to Kharanos to train, killing boars on the way), then the Grizzled Den for the 8 manes and
+  Mountaineer Cornelius only.
 - **Boar ribs:** keep collecting them through the west. Beer Basted Boar Ribs goes in on the last Kharanos
   visit, after the Brewnall lap. Stocking Jetsteam goes in before Brewnall, because it unlocks Evershine.
 - **Then:** Brewnall (top up to 15 Refreshing Spring Water from Keeg Gibn, the ale and wine vendor next to the

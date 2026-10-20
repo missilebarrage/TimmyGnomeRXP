@@ -672,7 +672,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 26
+#version 27
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -902,6 +902,12 @@ step
     .turnin 98323 >> Turn in Secure the Mountain
     .accept 287 >> Accept Frostmane Hold
     .target Senir Whitebeard::1252
+step << !Warrior !Rogue
+    .goto 1426/0,-521.97,-5597.65
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Kreg Bilmn|r near the inn
+    >>|cRXP_BUY_Top up to 15|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
+    .collect 159,15 --Refreshing Spring Water (15)
+    .target Kreg Bilmn
 step
     .goto 1426/0,-545.800,-5594.500
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gremlock Pilsnor|r in the Thunderbrew Distillery (about 1 silver)

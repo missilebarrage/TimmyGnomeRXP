@@ -9,7 +9,7 @@
 -- paladin grinds to 4 before Grelin (RestedXP: 1130/1400 plus the second mail delivery) and the mage grinds to
 -- 1040/1400 before handing in The Troll Cave (360 XP in game). The mage's first Marryk visit only shows at level 4;
 -- if it didn't, a second one comes after Grund and Gozwin. Ours also adds one step before Mountaineer Thalos: a
--- Skinning Knife and water from Adlin Pridedrift.
+-- water top-up at Adlin Pridedrift.
 -- Dun Morogh, from the tunnel on, was rebuilt from the turn-in log of Charli Brat's run (2026-10-11); the Elwynn
 -- and Loch Modan guides below it have their own notes. Like that run, it goes from the tunnel straight to Brewnall
 -- for Bitter Rivals, killing every boar for meat and ribs on the way, then death-skips to
@@ -28,7 +28,7 @@
 
 RXPGuides.RegisterGuide([[
 #forever
-#version 6
+#version 7
 << Alliance
 #group TimmyGnome
 #name 1-5 Coldridge Valley
@@ -685,11 +685,10 @@ step << Dwarf Priest/Gnome Priest
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Branstock Khalder|r
     .accept 5626 >> Accept In Favor of the Light
     .target Branstock Khalder
-step
+step << !Warrior !Rogue
     .goto 1426/0,320.30,-6226.74
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tOn your way to the tunnel, talk to |cRXP_FRIENDLY_Adlin Pridedrift|r at the starting camp
-    >>|cRXP_BUY_Buy a|r |T135637:0|t[Skinning Knife] |cRXP_BUY_and top up to 20|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
-    .collect 7005,1 --Skinning Knife (1)
+    >>|cRXP_BUY_Top up to 20|r |T132794:0|t[Refreshing Spring Water] |cRXP_BUY_from him|r
     .collect 159,20 --Refreshing Spring Water (20)
     .target Adlin Pridedrift
 step

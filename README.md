@@ -30,8 +30,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   the middle quests in a different order. Ours differs in two places. Mages and paladins skip Dwarven Outfitters
   and grind to level 2 on the wolves and troggs instead, which also skips both mail deliveries and the class letter
   (580 XP). Scalding Mornbrew Delivery needs level 4, so the paladin grinds to 4 before Grelin and the mage grinds
-  to 1040/1400 before handing in The Troll Cave. The other change: a Skinning Knife and water from Adlin Pridedrift
-  before Mountaineer Thalos.
+  to 1040/1400 before handing in The Troll Cave. The other change: a water top-up at Adlin Pridedrift before
+  Mountaineer Thalos.
 - **Level 5:** from the tunnel, discover Chill Breeze Valley, then go to Brewnall for Bitter Rivals, killing every
   boar on the way for meat and ribs. Then die to the wolves on Iceflow Lake and revive in Kharanos.
 - **Kharanos and Steelgrill's Depot:** pick up and turn in everything, then Ammo for Rumbleshot. Reach level 6

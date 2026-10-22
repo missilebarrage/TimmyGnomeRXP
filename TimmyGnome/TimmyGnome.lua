@@ -1696,27 +1696,29 @@ step
 -- Treat; Lost Necklace was already out. Riverpaw
 -- Gnoll Bounty, Hogger and any grinding stay out because Loch Modan pays better by then. The Hearthstone stays bound
 -- in Thelsamar (guide 2), so Redridge ends with a flight to Stormwind, and the guide ends with Report to Gryan
--- Stoutmantle, the Sentinel Hill flight path and a hearth to Thelsamar. Mages: Speak with Jennea (Zaldimar in
--- Goldshire) goes in on the Stormwind stop after Redridge, Mirror Lake's water comes from the Mirror Lake waterfall
--- on the way to Westbrook, and a flight from Sentinel Hill to Stormwind hands it in before the hearth. That last
--- Stormwind trip is also the mage's whole Tailoring and Enchanting session, moved from level 10 so the duo doesn't
--- wait on it: linen top-up and 2 Minor Mana Potions at the Auction House, Enchanting 20, bolts to Tailoring 25, the
--- robe, pants, gloves and Linen Reagent Bag, then Tailoring 35 and Novice Arcanist's Sash (the potions are its
--- reagent) and Green Linen Bracers. Meanwhile a level 12 Dwarf paladin flies from Sentinel Hill to Ironforge for the
--- start of The Tome of Divinity (Brandur, Tiza, John Turner, Muiredon) and hearths from there. The Stormwind harbor
--- quests wait for later harbor visits, as in RestedXP's route: Fishin' Time at the Darkshore boat at 15, Philmor's
--- Favor and Gatehouse Goods when the boat from Darkshore comes in after the Ruins of Lordaeron (full XP up to 17 and
--- 20). The bait for Fishin' Time is still bought at 10, from Catherine Leland next to the Fishing trainer.
--- Collecting Kelp (and with it The Escape) and Bottles and Baubles are out: Crystal Lake's murlocs and junk piles
--- won't hold up on launch day. Guard Thomas doesn't offer Bounty on Murlocs in Forever. A Bundle of Trouble and
--- Stolen Enchanting Supplies are skipped on purpose (slow, contested pickups). Hogger and Goldtooth stay out:
--- Hogger's turn-in is in Goldshire, which the route has already left, and Goldtooth is a single spawn in a crowded
--- mine. Stormpike's Delivery (for Loch Modan) is tried at Grimand Elmore off the tram; if he wants Elmore's Task
--- first, Smith Argus gives it and the post-Redridge stop in Stormwind swaps it. 1429 is Elwynn Forest, 1453
--- Stormwind City, 1433 Redridge Mountains and 1436 Westfall.
+-- Stoutmantle, The People's Militia (user's call, for XP: Defias Trappers and Smugglers at the camp about 280 yards
+-- west of Gryan's tower, which RestedXP calls a dynamic respawn area), the Sentinel Hill flight path and a hearth to
+-- Thelsamar. Mages: Speak with Jennea (Zaldimar in Goldshire) goes in on the Stormwind stop after Redridge, Mirror
+-- Lake's water comes from the Mirror Lake waterfall on the way to Westbrook, and a flight from Sentinel Hill to
+-- Stormwind hands it in before the hearth. That last Stormwind trip is also the mage's whole Tailoring and
+-- Enchanting session, moved from level 10 so the duo doesn't wait on it: linen top-up and 2 Minor Mana Potions at
+-- the Auction House, Enchanting 20, bolts to Tailoring 25, the robe, pants, gloves and Linen Reagent Bag, then
+-- Tailoring 35 and Novice Arcanist's Sash (the potions are its reagent) and Green Linen Bracers. Meanwhile a level
+-- 12 Dwarf paladin flies from Sentinel Hill to Ironforge for the start of The Tome of Divinity (Brandur, Tiza, John
+-- Turner, Muiredon) and hearths from there. The Stormwind harbor quests wait for later harbor visits, as in
+-- RestedXP's route: Fishin' Time at the Darkshore boat at 15, Philmor's Favor and Gatehouse Goods when the boat from
+-- Darkshore comes in after the Ruins of Lordaeron (full XP up to 17 and 20). The bait for Fishin' Time is still
+-- bought at 10, from Catherine Leland next to the Fishing trainer. Collecting Kelp (and with it The Escape) and
+-- Bottles and Baubles are out: Crystal Lake's murlocs and junk piles won't hold up on launch day. Guard Thomas
+-- doesn't offer Bounty on Murlocs in Forever. A Bundle of Trouble and Stolen Enchanting Supplies are skipped on
+-- purpose (slow, contested pickups). Hogger and Goldtooth stay out: Hogger's turn-in is in Goldshire, which the
+-- route has already left, and Goldtooth is a single spawn in a crowded mine. Stormpike's Delivery (for Loch Modan)
+-- is tried at Grimand Elmore off the tram; if he wants Elmore's Task first, Smith Argus gives it and the
+-- post-Redridge stop in Stormwind swaps it. 1429 is Elwynn Forest, 1453 Stormwind City, 1433 Redridge Mountains and
+-- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 36
+#version 37
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -2063,8 +2065,30 @@ step
 step
     .goto 1436/0,1045.12,-10508.80
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tKeep following the road south to Sentinel Hill and talk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
-    >>|cRXP_WARN_Skip The People's Militia: you're heading back to Loch Modan|r
     .turnin 109 >> Turn in Report to Gryan Stoutmantle
+    .accept 12 >> Accept The People's Militia
+    .target Gryan Stoutmantle
+step
+    .isOnQuest 12
+    #loop
+    .goto 1436,47.79,46.08,0
+    .goto 1436,47.79,46.08,30,0
+    .goto 1436,48.5,45.2,30,0
+    .goto 1436,49.5,46.4,30,0
+    .goto 1436,48.6,47.7,30,0
+    .goto 1436,47.1,46.2,30,0
+    >>Kill |cRXP_ENEMY_Defias Trappers|r and |cRXP_ENEMY_Defias Smugglers|r at the camp just west of Sentinel Hill
+    >>|cRXP_WARN_Dynamic respawns: the more you kill, the faster they come back|r
+    .complete 12,1 --Defias Trapper slain (15)
+    .mob +Defias Trapper
+    .complete 12,2 --Defias Smuggler slain (15)
+    .mob +Defias Smuggler
+step
+    .isQuestComplete 12
+    .goto 1436/0,1045.12,-10508.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at the tower, talk to |cRXP_FRIENDLY_Gryan Stoutmantle|r
+    >>|cRXP_WARN_Skip the next part: you're heading back to Loch Modan|r
+    .turnin 12 >> Turn in The People's Militia
     .target Gryan Stoutmantle
 step << Mage
     .goto 1436,57.64,54.05
@@ -4178,10 +4202,11 @@ step << !Mage !Paladin
 -- defence south of Moonbrook. Then The Defias Traitor's escort and the Deadmines with three more players: Foreman
 -- Thistlenettle and Collecting Memories' cards are in the tunnel before the instance (RestedXP calls Collecting
 -- Memories slow, with no dungeon bonus: OPTIONAL), Sneed and Edwin VanCleef inside. Then Stormwind for the last
--- turn-ins and training. Left out: every other Westfall quest, including Red Leather Bandanas and The People's
--- Militia. The Defias Brotherhood chain, the Deadmines steps and most coordinates follow RestedXP's Forever "18-20
--- Deadmines" and "13-15 Westfall"; mob spots come from Questie's Forever data. 1436 is Westfall, 1433 Redridge
--- Mountains, 1453 Stormwind City and 1415 the Eastern Kingdoms map (the tunnel before the Deadmines).
+-- turn-ins and training. Left out: every other Westfall quest, including Red Leather Bandanas and the later parts of
+-- The People's Militia (the first ends the Elwynn guide). The Defias Brotherhood chain, the Deadmines steps and most
+-- coordinates follow RestedXP's Forever "18-20 Deadmines" and "13-15 Westfall"; mob spots come from Questie's
+-- Forever data. 1436 is Westfall, 1433 Redridge Mountains, 1453 Stormwind City and 1415 the Eastern Kingdoms map
+-- (the tunnel before the Deadmines).
 RXPGuides.RegisterGuide([[
 #forever
 #version 10

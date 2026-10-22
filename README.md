@@ -100,15 +100,14 @@ To update, download the zip again and replace the TimmyGnome folder.
   turn-in is a second chance).
 - **Finish:** turn-ins in Goldshire, Princess Must Die! at the Stonefield farm, Westbrook Garrison, then Westfall:
   Westfall Stew on the way down the road, The Forgotten Heirloom (Farmer Furlbrow next to Verna; his pocket watch is
-  in the old farmhouse about 370 yards west), Report to Gryan Stoutmantle, The People's Militia and Scout Galiaan's
-  Red Leather Bandanas (both at the Defias camp about 280 yards west of Gryan's tower, where they respawn faster the
-  more you kill; finishing the bandanas is optional), the Sentinel Hill flight path, and hearth to Thelsamar. The
-  Loch Modan guide starts there. The mage fills Jennea's Flask at the Mirror Lake waterfall on the way to Westbrook,
-  then flies from Sentinel Hill to Stormwind before hearthing. Meanwhile the paladin (a Dwarf, once he's 12) flies
-  to Ironforge to start The Tome of Divinity: level 12 training with Brandur Ironhammer, then Tiza Battleforge, John
-  Turner (the 10 Linen Cloth) and Muiredon, then he hearths and you meet up in Thelsamar. At Sentinel Hill the mage
-  also buys Pattern: Red Linen Bag from Gina MacGregor (learn it at 50 Tailoring). In Stormwind, the mage's whole
-  Tailoring and Enchanting session:
+  in the old farmhouse about 370 yards west), Report to Gryan Stoutmantle, The People's Militia (the Defias camp
+  about 280 yards west of his tower; they respawn faster the more you kill), the Sentinel Hill flight path, and
+  hearth to Thelsamar. The Loch Modan guide starts there. The mage fills Jennea's Flask at the Mirror Lake waterfall
+  on the way to Westbrook, then flies from Sentinel Hill to Stormwind before hearthing. Meanwhile the paladin (a
+  Dwarf, once he's 12) flies to Ironforge to start The Tome of Divinity: level 12 training with Brandur Ironhammer,
+  then Tiza Battleforge, John Turner (the 10 Linen Cloth) and Muiredon, then he hearths and you meet up in
+  Thelsamar. At Sentinel Hill the mage also buys Pattern: Red Linen Bag from Gina MacGregor (learn it at 50
+  Tailoring). In Stormwind, the mage's whole Tailoring and Enchanting session:
   - at the Auction House, top up to about 94 Linen Cloth (counting each bolt as 2) and buy 2 Minor Mana Potions;
   - 9 Motes of Magic from Jessara Cordell in the Mage Quarter, then Inferior Stamina on your bracer to 20
     Enchanting. That completes Camping 101: Enchanting, which Thonys Pillarstone takes on the Ironforge stop at the

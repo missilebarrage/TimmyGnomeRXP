@@ -714,7 +714,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 35
+#version 36
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -1145,16 +1145,14 @@ step << Mage
 step << Mage
     .goto 1455,42.94,28.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Poranna Snowbraid|r next to Uthrar
-    >>|cRXP_BUY_Buy 13|r |T132891:0|t[Coarse Thread] |cRXP_BUY_and 1 Bleach (about 1s 55c) for your Tailoring gear, crafted at the end of Elwynn. Short on money? Skip this step: Stormwind sells them too|r
+    >>|cRXP_BUY_Buy 13|r |T132891:0|t[Coarse Thread] |cRXP_BUY_(about 1s 30c) for your Tailoring gear, crafted at the end of Elwynn. Short on money? Skip this step: Stormwind sells them too|r
     .collect 2320,13 --Coarse Thread (13)
-    .collect 2324,1 --Bleach (1)
     .target Poranna Snowbraid
 step << Mage
     #completewith DeeprunTram
     >>|cRXP_WARN_Tailoring stash for your crafting session in Stormwind at the end of Elwynn (level 12). Keep every|r |T132889:0|t[Linen Cloth] |cRXP_WARN_and turn it into|r |T132890:0|t[Bolts of Linen Cloth] |cRXP_WARN_as you go: each bolt is a Tailoring skill point. Ask your partner for spare linen too|r
-    .collect 2996,36 --Bolt of Linen Cloth (36)
+    .collect 2996,33 --Bolt of Linen Cloth (33)
     .collect 2320,13 --Coarse Thread (13)
-    .collect 2324,1 --Bleach (1)
 step << Mage
     .goto 1455/0,-1026.28,-4872.56
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWhile you're in Ironforge, talk to |cRXP_FRIENDLY_Senator Barin Redstone|r in the throne room
@@ -1703,23 +1701,23 @@ step
 -- Lake's water comes from the Mirror Lake waterfall on the way to Westbrook, and a flight from Sentinel Hill to
 -- Stormwind hands it in before the hearth. That last Stormwind trip is also the mage's whole Tailoring and
 -- Enchanting session, moved from level 10 so the duo doesn't wait on it: linen top-up and 2 Minor Mana Potions at
--- the Auction House, Enchanting 20, bolts to Tailoring 25, the robe, pants, gloves and Linen Reagent Bag, then
--- Tailoring 35 and Novice Arcanist's Sash (the potions are its reagent) and Green Linen Bracers. Meanwhile a level
--- 12 Dwarf paladin flies from Sentinel Hill to Ironforge for the start of The Tome of Divinity (Brandur, Tiza, John
--- Turner, Muiredon) and hearths from there. The Stormwind harbor quests wait for later harbor visits, as in
--- RestedXP's route: Fishin' Time at the Darkshore boat at 15, Philmor's Favor and Gatehouse Goods when the boat from
--- Darkshore comes in after the Ruins of Lordaeron (full XP up to 17 and 20). The bait for Fishin' Time is still
--- bought at 10, from Catherine Leland next to the Fishing trainer. Collecting Kelp (and with it The Escape) and
--- Bottles and Baubles are out: Crystal Lake's murlocs and junk piles won't hold up on launch day. Guard Thomas
--- doesn't offer Bounty on Murlocs in Forever. A Bundle of Trouble and Stolen Enchanting Supplies are skipped on
--- purpose (slow, contested pickups). Hogger and Goldtooth stay out: Hogger's turn-in is in Goldshire, which the
--- route has already left, and Goldtooth is a single spawn in a crowded mine. Stormpike's Delivery (for Loch Modan)
--- is tried at Grimand Elmore off the tram; if he wants Elmore's Task first, Smith Argus gives it and the
--- post-Redridge stop in Stormwind swaps it. 1429 is Elwynn Forest, 1453 Stormwind City, 1433 Redridge Mountains and
--- 1436 Westfall.
+-- the Auction House, Enchanting 20, bolts to Tailoring 25, Heavy Linen Gloves and the Linen Reagent Bag (no White
+-- Linen Robe or Brown Linen Pants: downgrades by 12-13, user's call), then Linen Cloaks to Tailoring 35 and Novice
+-- Arcanist's Sash (the potions are its reagent) and Green Linen Bracers. Meanwhile a level 12 Dwarf paladin flies
+-- from Sentinel Hill to Ironforge for the start of The Tome of Divinity (Brandur, Tiza, John Turner, Muiredon) and
+-- hearths from there. The Stormwind harbor quests wait for later harbor visits, as in RestedXP's route: Fishin' Time
+-- at the Darkshore boat at 15, Philmor's Favor and Gatehouse Goods when the boat from Darkshore comes in after the
+-- Ruins of Lordaeron (full XP up to 17 and 20). The bait for Fishin' Time is still bought at 10, from Catherine
+-- Leland next to the Fishing trainer. Collecting Kelp (and with it The Escape) and Bottles and Baubles are out:
+-- Crystal Lake's murlocs and junk piles won't hold up on launch day. Guard Thomas doesn't offer Bounty on Murlocs in
+-- Forever. A Bundle of Trouble and Stolen Enchanting Supplies are skipped on purpose (slow, contested pickups).
+-- Hogger and Goldtooth stay out: Hogger's turn-in is in Goldshire, which the route has already left, and Goldtooth
+-- is a single spawn in a crowded mine. Stormpike's Delivery (for Loch Modan) is tried at Grimand Elmore off the
+-- tram; if he wants Elmore's Task first, Smith Argus gives it and the post-Redridge stop in Stormwind swaps it. 1429
+-- is Elwynn Forest, 1453 Stormwind City, 1433 Redridge Mountains and 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 40
+#version 41
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1767,7 +1765,7 @@ step << Mage
     .collect 11287,1 --Lesser Magic Wand (1)
 step << Mage
     #completewith ArcanistCraft
-    +|cRXP_WARN_Keep all your Linen Cloth and turn it into bolts as you go: the Stormwind trip at the end of Elwynn is your whole Tailoring session (robe, pants, gloves, Linen Reagent Bag, Novice Arcanist's Sash and Green Linen Bracers). That's about 94 linen in total, counting each bolt as 2|r
+    +|cRXP_WARN_Keep all your Linen Cloth and turn it into bolts as you go: the Stormwind trip at the end of Elwynn is your whole Tailoring session (gloves, Linen Reagent Bag, Novice Arcanist's Sash and Green Linen Bracers). That's about 88 linen in total, counting each bolt as 2|r
 step
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master in the Trade District
@@ -2111,7 +2109,7 @@ step << Mage
 step << Mage
     .goto 1453/0,660.28,-8814.55
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r in the Trade District: this trip is your whole Tailoring session
-    >>|cRXP_WARN_You want about 94|r |T132889:0|t[Linen Cloth] |cRXP_WARN_in total, counting each bolt as 2, plus 12 for each reagent bag you make your partner. The potions are a reagent for Novice Arcanist's Sash|r
+    >>|cRXP_WARN_You want about 88|r |T132889:0|t[Linen Cloth] |cRXP_WARN_in total, counting each bolt as 2, plus 12 for each reagent bag you make your partner. The potions are a reagent for Novice Arcanist's Sash|r
     +Buy the linen you're missing, or tick this if you have enough
     .collect 2455,2 >> Buy 2 Minor Mana Potions
     .target Auctioneer Jaxon
@@ -2133,8 +2131,6 @@ step << Mage
 step << Mage
     .goto 1453,53.48,81.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lawrence Schneider|r at the tailoring shop
-    .train 7624 >> Train White Linen Robe
-    .train 3914 >> Train Brown Linen Pants
     .train 3840 >> Train Heavy Linen Gloves
     .target Lawrence Schneider
 step << Mage
@@ -2146,17 +2142,14 @@ step << Mage
 step << Mage
     .goto 1453,53.14,81.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandra Bolero|r in the same shop
-    >>|cRXP_BUY_Buy|r |T132891:0|t[Coarse Thread] |cRXP_BUY_(one per item, three per Linen Bag, three for the cape, six for the Linen Reagent Bag, two for the Bracers, one per Linen Cloak you craft for skill points, and six more for each reagent bag you make your partner), 1 Bleach for the robe, 2 Fine Thread for the Sash and 1 Green Dye for the Bracers|r
+    >>|cRXP_BUY_Buy|r |T132891:0|t[Coarse Thread] |cRXP_BUY_(one for the gloves, three per Linen Bag, three for the cape, six for the Linen Reagent Bag, two for the Bracers, one per Linen Cloak you craft for skill points, and six more for each reagent bag you make your partner), 2 Fine Thread for the Sash and 1 Green Dye for the Bracers|r
     .collect 2320,21 --Coarse Thread (21)
-    .collect 2324,1 --Bleach (1)
     .collect 2321,2 --Fine Thread (2)
     .collect 2605,1 --Green Dye (1)
     .target Alexandra Bolero
 step << Mage
-    >>|cRXP_WARN_Craft a White Linen Robe (Intellect), Brown Linen Pants and Heavy Linen Gloves (Spell Power), then equip them|r
+    >>|cRXP_WARN_Craft Heavy Linen Gloves (Spell Power) and equip them|r
     >>|cRXP_WARN_Spare bolts: a Linen Bag (6 slots) if you need room|r
-    .collect 6241,1 --White Linen Robe (1)
-    .collect 4343,1 --Brown Linen Pants (1)
     .collect 4307,1 --Heavy Linen Gloves (1)
 step << Mage
     >>|cRXP_WARN_Craft a Linen Reagent Bag (6 bolts and 6 Coarse Thread) and equip it: 6 slots for your reagents|r
@@ -2165,7 +2158,7 @@ step << Mage
 step << Mage
     .goto 1453,53.48,81.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tOPTIONAL nice-to-have: |cRXP_FRIENDLY_Lawrence Schneider|r also teaches the Reinforced Linen Cape, a Spell Power cloak (level 7) from 2 bolts and 3 Coarse Thread
-    >>|cRXP_WARN_It needs more Tailoring than the robe, pants and gloves. If he won't teach it yet, make a Linen Cloak or two first, or skip this step|r
+    >>|cRXP_WARN_It needs more Tailoring than the gloves. If he won't teach it yet, make a Linen Cloak or two first, or skip this step|r
     .train 2397 >> Train Reinforced Linen Cape
     .collect 2580,1 >> Craft a Reinforced Linen Cape, then equip it
     .target Lawrence Schneider

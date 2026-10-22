@@ -63,10 +63,10 @@ To update, download the zip again and replace the TimmyGnome folder.
   Enchanting and takes Camping 101: Enchanting from Thonys Pillarstone next to the trainer, buys Motes of Magic and
   Simple Wood, crafts a Runed Copper Rod and a Novice's Practice Wand, enchants a bracer to 10 Enchanting and
   trains the Lesser Magic Wand, learns First Aid from Nissa Firestone south of the gryphon master, then learns
-  Tailoring across the Great Forge (Coarse Thread and Bleach from Poranna Snowbraid next to him) and hearths back.
+  Tailoring across the Great Forge (Coarse Thread from Poranna Snowbraid next to him) and hearths back.
   The wand itself comes later: when the paladin has the materials, he crafts green Copper Shortswords (6 Copper
   Bars, 1 Weak Flux and 2 Linen Cloth each) and the mage disenchants them for the Lesser Magic Essence. Stickies
-  until the tram: the mage's wand and Tailoring stash (36 Bolts of Linen Cloth, the thread and the bleach), and the
+  until the tram: the mage's wand and Tailoring stash (33 Bolts of Linen Cloth and the thread), and the
   paladin's swords and linen (10 for his level 12 class quest, 2 per sword, the rest to the mage).
 - **Skipped:** The Perfect Stout, Flintfire's Shipment and Frosthowl.
 - **Training:** RestedXP's Coldridge Valley steps train each class in Anvilmar. Mages also train with Magis
@@ -108,14 +108,15 @@ To update, download the zip again and replace the TimmyGnome folder.
   then Tiza Battleforge, John Turner (the 10 Linen Cloth) and Muiredon, then he hearths and you meet up in
   Thelsamar. At Sentinel Hill the mage also buys Pattern: Red Linen Bag from Gina MacGregor (learn it at 50
   Tailoring). In Stormwind, the mage's whole Tailoring and Enchanting session:
-  - at the Auction House, top up to about 94 Linen Cloth (counting each bolt as 2) and buy 2 Minor Mana Potions;
+  - at the Auction House, top up to about 88 Linen Cloth (counting each bolt as 2) and buy 2 Minor Mana Potions;
   - 9 Motes of Magic from Jessara Cordell in the Mage Quarter, then Inferior Stamina on your bracer to 20
     Enchanting. That completes Camping 101: Enchanting, which Thonys Pillarstone takes on the Ironforge stop at the
     end of Loch Modan and which teaches the Enchanted Lute camp item;
   - bolt the linen (Tailoring to about 25);
-  - at the tailoring shop, train White Linen Robe, Brown Linen Pants and Heavy Linen Gloves, buy Pattern: Linen
-    Reagent Bag from Antonio Bolero, and buy the thread, bleach and dye in one go;
-  - craft and equip the three, plus a Linen Reagent Bag (6 slots; make your partner one if you have the bolts and
+  - at the tailoring shop, train Heavy Linen Gloves (the White Linen Robe and Brown Linen Pants are skipped:
+    downgrades by level 12), buy Pattern: Linen Reagent Bag from Antonio Bolero, and buy the thread and dye in one
+    go;
+  - craft and equip the gloves, plus a Linen Reagent Bag (6 slots; make your partner one if you have the bolts and
     silver). Optional nice-to-have: a Reinforced Linen Cape (Spell Power) if your skill allows;
   - reach 35 Tailoring (Linen Cloaks), train and craft Novice Arcanist's Sash (the potions are its reagent) and
     Green Linen Bracers;

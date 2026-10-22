@@ -1688,9 +1688,11 @@ step
 -- (the user's test run dinged at The Fargodeep Mine). From there Elwynn is a bonus, so it keeps only extremely easy
 -- XP (user's call): turn-ins and deliveries on the way, Jasperlode's walk-through, the Eastvale chain to Rolf and
 -- back, Downstream's three riverbank items (they respawn instantly), the Redridge delivery with the Lakeshire flight
--- path, and Westbrook, Westfall Stew and Report to Gryan Stoutmantle on the way to Sentinel Hill. Cut for that
--- reason: Delicate Instruments and the mage's An Enchanting Lesson (Tower of Azora), Protect the Frontier, Croaky,
--- Princess Must Die!, Red Linen Goods, Applejack Still and An Apple Treat; Lost Necklace was already out. Riverpaw
+-- path, and Westbrook, Westfall Stew and Report to Gryan Stoutmantle on the way to Sentinel Hill. Princess Must Die!
+-- stays too (user's call): one elite at the Brackwell Pumpkin Patch on the way back from the river to Guard Thomas,
+-- handed in at the Stonefield farm on the way west. Cut for that reason: Delicate Instruments and the mage's An
+-- Enchanting Lesson (Tower of Azora), Protect the Frontier, Croaky, Red Linen Goods, Applejack Still and An Apple
+-- Treat; Lost Necklace was already out. Riverpaw
 -- Gnoll Bounty, Hogger and any grinding stay out because Loch Modan pays better by then. The Hearthstone stays bound
 -- in Thelsamar (guide 2), so Redridge ends with a flight to Stormwind, and the guide ends with Report to Gryan
 -- Stoutmantle, the Sentinel Hill flight path and a hearth to Thelsamar. Mages: Speak with Jennea (Zaldimar in
@@ -1713,7 +1715,7 @@ step
 -- Stormwind City, 1433 Redridge Mountains and 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 34
+#version 35
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1826,12 +1828,15 @@ step
     .accept 111 >> Accept Speak with Gramma
     .target Tommy Joe Stonefield
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gramma Stonefield|r inside the farmhouse
-    >>|cRXP_WARN_Skip Ma Stonefield's Princess Must Die! and "Auntie" Bernice's Lost Necklace: by the time they pay out you're 12, and the rest of Elwynn is easy XP only|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gramma Stonefield|r inside the farmhouse, then |cRXP_FRIENDLY_Ma Stonefield|r outside
+    >>|cRXP_WARN_Skip Lost Necklace from "Auntie" Bernice: it's a long walk for little XP|r
     .turnin 111 >> Turn in Speak with Gramma
     .accept 107 >> Accept Note to William
     .goto 1429,34.945,83.855
-    .target Gramma Stonefield
+    .target +Gramma Stonefield
+    .accept 88 >> Accept Princess Must Die!
+    .goto 1429/0,332.43,-9894.99
+    .target +Ma Stonefield
 step
     .goto 1429/0,74.02,-9465.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Goldshire, talk to |cRXP_FRIENDLY_Marshal Dughan|r
@@ -1903,6 +1908,13 @@ step
     .goto 1429,77.3,86.8
     >>Loot the |cRXP_PICK_Waterlogged Toolbox|r
     .complete 91733,3 --Waterlogged Toolbox (1)
+step
+    .isOnQuest 88
+    .goto 1429/0,-869.87,-9768.10
+    >>On the way back to Guard Thomas, kill |cRXP_ENEMY_Princess|r at the Brackwell Pumpkin Patch, west of the river. Loot her for the |cRXP_LOOT_Brass Collar|r
+    >>|cRXP_WARN_Two|r |cRXP_ENEMY_Porcine Entourage|r |cRXP_WARN_fight with her, and her charge hits hard|r
+    .complete 88,1 --Brass Collar (1)
+    .mob Princess
 step
     #label ThomasReturn
     .goto 1429/0,-1032.06,-9610.23
@@ -1996,6 +2008,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash and repair at |cRXP_FRIENDLY_Andrew Krighton|r
     .vendor >> Sell your trash and repair
     .target Andrew Krighton
+step
+    .isQuestComplete 88
+    .goto 1429/0,332.43,-9894.99
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead south-west to the Stonefield farm and talk to |cRXP_FRIENDLY_Ma Stonefield|r
+    .turnin 88 >> Turn in Princess Must Die!
+    .target Ma Stonefield
 step << Mage
     .isOnQuest 1861
     .goto 1429/0,529.57,-9363.05

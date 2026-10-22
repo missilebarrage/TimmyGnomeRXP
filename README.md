@@ -87,16 +87,18 @@ To update, download the zip again and replace the TimmyGnome folder.
   reminder stays up through Elwynn until the paladin's Copper Shortsword gives the essence.
 - **Goldshire:** train and pick up the Marshal Dughan quests. The mage also takes Speak with Jennea from Zaldimar
   Wefhellt after training.
-- **South:** explore Fargodeep Mine, then the Young Lovers deliveries. Back in Goldshire, The Jasperlode Mine (and
+- **South:** explore Fargodeep Mine, then the Young Lovers deliveries and Princess Must Die! at the Stonefield
+  farm (Lost Necklace is skipped). Back in Goldshire, The Jasperlode Mine (and
   Elmore's Task, if Grimand wanted it first). With the level 10 Loch Modan visit you're 12 about here (a beta test
   run dinged at The Fargodeep Mine), so the rest of Elwynn is a bonus and keeps only extremely easy XP.
 - **East:** walk through Jasperlode on the way to Guard Thomas, then the lost guards, Rolf's corpse in the murloc
-  camp and Downstream's three riverbank items, and back to Thomas and Ormin Pelford at the bridge.
+  camp and Downstream's three riverbank items, then Princess at the Brackwell Pumpkin Patch on the way back to
+  Thomas and Ormin Pelford at the bridge.
 - **Redridge:** Encroaching Gnolls (needs level 11) and the Lakeshire flight path, then fly to Stormwind and walk
   back to Goldshire. Your Hearthstone stays bound in Thelsamar. In Stormwind the mage hands Speak with Jennea to
   Jennea Cannon in the Wizard's Sanctum, takes Mirror Lake and, at level 12, trains with her (the Mirror Lake
   turn-in is a second chance).
-- **Finish:** turn-ins in Goldshire, Westbrook Garrison, then Westfall: Westfall Stew on the way down the road,
+- **Finish:** turn-ins in Goldshire, Princess Must Die! at the Stonefield farm, Westbrook Garrison, then Westfall: Westfall Stew on the way down the road,
   Report to Gryan Stoutmantle and the Sentinel Hill flight path, and hearth to Thelsamar. The Loch Modan guide
   starts there. The mage fills Jennea's Flask at the Mirror Lake waterfall on the way to Westbrook, then flies from
   Sentinel Hill to Stormwind before hearthing. Meanwhile the paladin (a Dwarf, once he's 12) flies to Ironforge to
@@ -117,8 +119,7 @@ To update, download the zip again and replace the TimmyGnome folder.
     Green Linen Bracers;
   - then Mirror Lake (Ley Staff or Ley Orb) at Jennea.
 - **Cut once you're 12 (not extremely easy XP):** Delicate Instruments and the mage's An Enchanting Lesson at the
-  Tower of Azora, Protect the Frontier, Croaky, Princess Must Die!, Red Linen Goods, Applejack Still and An Apple
-  Treat. Hogger, Riverpaw Gnoll Bounty and grinding are out because Loch Modan pays better by then. Return to Brock
+  Tower of Azora, Protect the Frontier, Croaky, Red Linen Goods, Applejack Still and An Apple Treat. Hogger, Riverpaw Gnoll Bounty and grinding are out because Loch Modan pays better by then. Return to Brock
   and Stormpike's Delivery (1,050 XP each) wait in Loch Modan.
 - **Gathering quests:** left out. Downstream stays: its three riverbank items respawn instantly. Skipped on
   purpose: Collecting Kelp (and with it The Escape) and Bottles and Baubles (Crystal Lake's murlocs and junk piles

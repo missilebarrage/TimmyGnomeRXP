@@ -1688,7 +1688,8 @@ step
 -- (the user's test run dinged at The Fargodeep Mine). From there Elwynn is a bonus, so it keeps only extremely easy
 -- XP (user's call): turn-ins and deliveries on the way, Jasperlode's walk-through, the Eastvale chain to Rolf and
 -- back, Downstream's three riverbank items (they respawn instantly), the Redridge delivery with the Lakeshire flight
--- path, and Westbrook, Westfall Stew and Report to Gryan Stoutmantle on the way to Sentinel Hill. Princess Must Die!
+-- path, and Westbrook, Westfall Stew, The Forgotten Heirloom (Farmer Furlbrow beside Verna; his watch is in the
+-- old farmhouse about 370 yards west) and Report to Gryan Stoutmantle on the way to Sentinel Hill. Princess Must Die!
 -- stays too (user's call): one elite at the Brackwell Pumpkin Patch on the way back from the river to Guard Thomas,
 -- handed in at the Stonefield farm on the way west. Cut for that reason: Delicate Instruments and the mage's An
 -- Enchanting Lesson (Tower of Azora), Protect the Frontier, Croaky, Red Linen Goods, Applejack Still and An Apple
@@ -1715,7 +1716,7 @@ step
 -- Stormwind City, 1433 Redridge Mountains and 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 35
+#version 36
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -2034,10 +2035,25 @@ step
     .goto 1436/0,918.42,-9851.50
     .zone Westfall >> Follow the road west into Westfall
 step
-    .goto 1436/0,919.47,-9853.13
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verna Furlbrow|r at the farm by the road
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Verna Furlbrow|r and |cRXP_FRIENDLY_Farmer Furlbrow|r at the farm by the road
     .accept 36 >> Accept Westfall Stew
-    .target Verna Furlbrow
+    .goto 1436/0,919.47,-9853.13
+    .target +Verna Furlbrow
+    .accept 64 >> Accept The Forgotten Heirloom
+    .goto 1436/0,916.67,-9852.67
+    .target +Farmer Furlbrow
+step
+    .isOnQuest 64
+    .goto 1436/0,1290.12,-9849.87
+    >>Head west to the old Furlbrow farmhouse and loot |cRXP_LOOT_Furlbrow's Pocket Watch|r from the |cRXP_PICK_wardrobe|r inside
+    >>|cRXP_WARN_Defias hang around the farm: clear the ones in your way|r
+    .complete 64,1 --Furlbrow's Pocket Watch (1)
+step
+    .isQuestComplete 64
+    .goto 1436/0,916.67,-9852.67
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at the road, talk to |cRXP_FRIENDLY_Farmer Furlbrow|r
+    .turnin 64 >> Turn in The Forgotten Heirloom
+    .target Farmer Furlbrow
 step
     .goto 1436/0,1042.67,-10111.67
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFollow the road south and talk to |cRXP_FRIENDLY_Salma Saldean|r at the Saldean farm

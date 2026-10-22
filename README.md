@@ -48,13 +48,12 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Level 10, Loch Modan while it's still empty:** you get there ahead of the dwarf and gnome pack, so the zone's
   easy quests go fast now and slow at 12-14. Through the South Gate Pass, the southern guard tower's first trogg
   pair (In Defense of the King's Lands and The Trogg Threat, level 11-12 troggs). In Thelsamar, the flight path,
-  your Hearthstone at the Stoutlager Inn and Honor Students (Dwarves and Gnomes), plus Thelsamar Blood Sausages and
-  Rat Catching (OPTIONAL). Then a loop north:
+  your Hearthstone at the Stoutlager Inn and Honor Students (Dwarves and Gnomes), plus Rat Catching (OPTIONAL).
+  Then a loop north:
   - the kobold hills west of town;
   - Algaz Station: Mountaineer Stormpike's Task in, Stormpike's Order and Filthy Paws out;
   - the Silver Stream Mine's crates (level 12-14 kobolds: pull one at a time; Geomancers turn immune to fire);
-  - back to Stormpike;
-  - the meadow north of town for the sausage items.
+  - back to Stormpike, then Thelsamar.
 - **Then to Stormwind:** fly to Ironforge, learn First Aid from Nissa Firestone next to the gryphon master (the
   mage already has it from the wand trip), turn in The Reports, then take the Deeprun Tram to Stormwind with Monty's
   rat quest and Me Brother, Nipsy. The Hall of Thanes quests in Ironforge are left for when you run the dungeon.
@@ -139,8 +138,7 @@ To update, download the zip again and replace the TimmyGnome folder.
 
 ### 12-14 Loch Modan
 
-- **Done at level 10 already:** the first trogg pair, Thelsamar Blood Sausages, Rat Catching, Mountaineer
-  Stormpike's Task and Filthy Paws. Their steps here are kept as a fallback and skip themselves if you did them.
+- **Done at level 10 already:** the first trogg pair, Rat Catching, Mountaineer Stormpike's Task and Filthy Paws. Their steps here are kept as a fallback and skip themselves if you did them.
 - **Thelsamar** (you hearth in): Return to Brock, Snowbound and a vendor stop.
 - **Southern guard tower:** Mountaineer Gravelgaw's second In Defense of the King's Lands quest (level 13-14
   troggs). The third and fourth (level 15-17 troggs and Grawmug) wait for the end of the guide.
@@ -159,8 +157,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   training (the mage with Jennea, the paladin in Ironforge at the end of Elwynn) gets it here. Last, the mage
   trains Linen Belt from Uthrar Threx, crafts belts to 50 Tailoring (15 from 35, the cheapest way), then trains
   Journeyman Tailoring so the cap goes from 75 to 150.
-- **Skipped as too slow with a launch-day crowd:** Bingles' Missing Supplies, Crocolisk Hunting and Gathering
-  Idols.
+- **Skipped as too slow with a launch-day crowd:** Bingles' Missing Supplies, Crocolisk Hunting, Gathering Idols
+  and Thelsamar Blood Sausages.
 - **Where you end up:** about level 13.5 with only the core quests, past 14 with every optional one.
 
 ### 14+ Hall of Thanes

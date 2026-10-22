@@ -714,7 +714,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 33
+#version 34
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -1367,10 +1367,10 @@ step
     .target Frast Dokner
 -- Loch Modan at level 10, while it's still empty (the dwarf and gnome pack arrives at 10-11 and is back at 12-14):
 -- the southern guard tower's first trogg pair (In Defense of the King's Lands, The Trogg Threat) where the South
--- Gate Pass comes out, then Thelsamar's flight path, hearth and Honor Students, plus Thelsamar Blood Sausages and
--- Rat Catching (OPTIONAL), killed on a loop north: the kobold hills west of town, Algaz Station (Mountaineer
--- Stormpike's Task in, Stormpike's Order and Filthy Paws out), the Silver Stream Mine's crates (level 12-14
--- kobolds; the user's call to try it as a duo), back to Stormpike, and the meadow north of town. RestedXP's Forever
+-- Gate Pass comes out, then Thelsamar's flight path, hearth and Honor Students, plus Rat Catching (OPTIONAL),
+-- killed on a loop north: the kobold hills west of town, Algaz Station (Mountaineer Stormpike's Task in,
+-- Stormpike's Order and Filthy Paws out), the Silver Stream Mine's crates (level 12-14 kobolds; the user's call to
+-- try it as a duo) and back to Stormpike. Thelsamar Blood Sausages is left out (user's call). RestedXP's Forever
 -- mage route does the same quests at 10-12. Then fly to Ironforge and take the Deeprun Tram to Stormwind for Elwynn
 -- Forest; Stormpike's Order goes in at Furen Longbeard by the tram exit. The Elwynn guide ends by hearthing back
 -- here. The quests need level 10: their steps skip themselves below that. The Hall of Thanes quests in Ironforge
@@ -1473,12 +1473,6 @@ step
     .home 2101 >> Set your Hearthstone to Thelsamar
     .target Innkeeper Hearthstove
 step
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r in the same inn
-    >>|cRXP_WARN_Its bear meat, boar intestines and spider ichor come from the bears, boars and spiders north of town: easy while the zone is empty, too slow once it fills up|r
-    .accept 418 >> Accept Thelsamar Blood Sausages
-    .target Vidra Hearthstove
-step
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r, the gryphon master
     .fp Thelsamar >> Get the Thelsamar flight path
@@ -1511,16 +1505,6 @@ step
     >>|cRXP_WARN_OPTIONAL (loot): 12 Tunnel Rat Ears from the kobolds on the loop, in the hills west of town and around the Silver Stream Mine. Skip this step if you'd rather not|r
     .accept 416 >> Accept Rat Catching
     .target Mountaineer Kadrell
-step
-    #completewith ThelsamarLoop
-    .isOnQuest 418
-    >>Kill |cRXP_ENEMY_Mountain Boars|r, |cRXP_ENEMY_Elder Black Bears|r and |cRXP_ENEMY_Forest Lurkers|r as you go for Thelsamar Blood Sausages
-    .complete 418,1 --Boar Intestines (3)
-    .complete 418,2 --Bear Meat (3)
-    .complete 418,3 --Spider Ichor (3)
-    .mob +Mountain Boar
-    .mob +Elder Black Bear
-    .mob +Forest Lurker
 step
     #completewith ThelsamarLoop
     .isOnQuest 416
@@ -1599,33 +1583,7 @@ step
     .turnin 307 >> Turn in Filthy Paws
     .target Mountaineer Stormpike
 step
-    .isOnQuest 418
-    #loop
-    .goto 1432,33.3,33.5,0
-    .goto 1432,38.5,36.1,0
-    .goto 1432,29.9,36.5,0
-    .goto 1432,33.3,33.5,40,0
-    .goto 1432,35.5,34.0,40,0
-    .goto 1432,38.5,36.1,40,0
-    .goto 1432,37.4,38.4,40,0
-    .goto 1432,34.8,36.4,40,0
-    .goto 1432,29.9,36.5,40,0
-    .goto 1432,29.1,32.8,40,0
-    >>Head south-east to the meadow north of Thelsamar and finish the |cRXP_LOOT_Thelsamar Blood Sausages|r items on the |cRXP_ENEMY_Mountain Boars|r, |cRXP_ENEMY_Elder Black Bears|r and |cRXP_ENEMY_Forest Lurkers|r
-    .complete 418,1 --Boar Intestines (3)
-    .complete 418,2 --Bear Meat (3)
-    .complete 418,3 --Spider Ichor (3)
-    .mob +Mountain Boar
-    .mob +Elder Black Bear
-    .mob +Forest Lurker
-step
     #label ThelsamarLoop
-    .isQuestComplete 418
-    .goto 1432/0,-2954.42,-5394.10
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Thelsamar, talk to |cRXP_FRIENDLY_Vidra Hearthstove|r in the inn
-    .turnin 418 >> Turn in Thelsamar Blood Sausages
-    .target Vidra Hearthstove
-step
     .isQuestComplete 416
     .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
     .goto 1432/0,-3006.61,-5259.57,15,0
@@ -2492,11 +2450,11 @@ step
 -- Defense of the King's Lands chain with a Dun Morogh detour (The Lost Pilot, the paladin's Narm Faulk); Snowbound
 -- from the South Gate to the dam (a 10 minute jar); Algaz Station; the excavation and Farstrider Lodge in the east;
 -- Ironforge to finish. The easy Loch Modan quests are done on the first visit at level 10, while the zone is still
--- empty (guide 2): the first trogg pair, Thelsamar Blood Sausages, Rat Catching, Mountaineer Stormpike's Task and
+-- empty (guide 2): the first trogg pair, Rat Catching, Mountaineer Stormpike's Task and
 -- Filthy Paws, with Stormpike's Order handed to Furen Longbeard off the Stormwind tram. Their steps here are kept as
 -- a fallback and skip themselves if you did them (RestedXP counts a quest you've handed in as accepted and
 -- complete). Gathering quests a launch-day crowd makes slow are left out: Bingles' Missing Supplies, Crocolisk
--- Hunting and Gathering Idols. Rat Catching, the two hardest trogg quests (at the end, when you're stronger), Daryl's
+-- Hunting, Gathering Idols and Thelsamar Blood Sausages. Rat Catching, the two hardest trogg quests (at the end, when you're stronger), Daryl's
 -- timed hunts and Silver of the Waves (from 13: a toolbox on the loch floor on the way east, handed in at Khara
 -- Deepwater on the way out) are OPTIONAL. 1432 is Loch Modan, 1426 Dun Morogh and 1455 Ironforge.
 RXPGuides.RegisterGuide([[

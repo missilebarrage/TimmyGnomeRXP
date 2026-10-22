@@ -1719,7 +1719,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 39
+#version 40
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -2214,6 +2214,7 @@ step << Dwarf Paladin
     .xp <12,1
     .goto 1436/0,1037.42,-10628.27
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thor|r and fly to Ironforge (the flight goes through Stormwind) to start your class quest, The Tome of Divinity, while Tim does his Stormwind errands
+    >>|cFFFF0000HAVE 10 LINEN CLOTH: THE TOME OF DIVINITY NEEDS THEM|r
     >>|cRXP_WARN_You meet up again in Thelsamar: hearth there when you're done. Not 12 yet? Skip ahead and hearth now: Brandur offers it on the Ironforge stop at the end of Loch Modan|r
     .fly Ironforge >> Fly to Ironforge
     .target Thor

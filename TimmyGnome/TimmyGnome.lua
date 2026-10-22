@@ -714,7 +714,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 34
+#version 35
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -1065,11 +1065,28 @@ step
     .accept 291 >> Accept The Reports (for Senator Barin Redstone in Ironforge)
     .target Senir Whitebeard::1252
 step << Paladin
-    >>Gather wand materials while Tim goes to Ironforge
+    >>Before Tim leaves for Ironforge
     +Craft a Copper Rod and give it to Tim
+    +|cFFFF0000MAKE SURE TIM HAS A BRACER!|r
+step << Paladin
+    .goto 1455/0,-1152.40,-4821.13,15 >> Go to Ironforge with Tim: take the road north out of Kharanos, cross the bridge and follow the road east up the mountain
+step << Paladin
+    .goto 1455/0,-1152.40,-4821.13
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gryth Thurden|r, the gryphon master in the Great Forge
+    .fp Ironforge >> Get the Ironforge flight path
+    .target Gryth Thurden
+step << Paladin
+    .goto 1455/0,-1026.28,-4872.56
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWhile you're in Ironforge, talk to |cRXP_FRIENDLY_Senator Barin Redstone|r in the throne room
+    .turnin 291 >> Turn in The Reports
+    .target Senator Barin Redstone
+step << Paladin
+    >>|cRXP_WARN_Tim stays in Ironforge a while for his wand and Tailoring: go back and gather while he's busy|r
+    .hs >> Hearth back to Kharanos
+step << Paladin
+    >>Gather wand materials while Tim finishes in Ironforge
     .collect 2770,10 >> 10 Copper Ore
     .collect 2835,20 >> 20 Rough Stone
-    +|cFFFF0000MAKE SURE TIM HAS A BRACER!|r
 step << Paladin
     #completewith DeeprunTram
     +|cRXP_WARN_When you have the materials, craft green Copper Shortswords (6 Copper Bars, 1 Weak Flux and 2 Linen Cloth each) and give them to Tim: he disenchants them for his Lesser Magic Wand|r

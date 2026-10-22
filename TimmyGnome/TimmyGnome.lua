@@ -710,15 +710,15 @@ step
     .isOnQuest 2160
 ]])
 
--- Shown as "5-10 Dun Morogh". The #name stays "5-9 Dun Morogh" because RestedXP keys saved progress (and
+-- Shown as "5-11 Dun Morogh". The #name stays "5-9 Dun Morogh" because RestedXP keys saved progress (and
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 32
+#version 33
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
-#displayname 5-10 Dun Morogh
+#displayname 5-11 Dun Morogh
 #next 10-12 Elwynn Forest
 
 step
@@ -1365,10 +1365,16 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash to |cRXP_FRIENDLY_Frast Dokner|r at Gol'Bolar Quarry
     .vendor >> Sell your trash
     .target Frast Dokner
--- Loch Modan flight path (with Honor Students for Dwarves and Gnomes) and the hearth in Thelsamar, fly to
--- Ironforge, then the Deeprun Tram to Stormwind for Elwynn Forest. The Elwynn guide ends by hearthing back here.
--- The quests need level 10: their steps skip themselves below that. The Hall of Thanes quests in Ironforge wait
--- until it's time to run the dungeon.
+-- Loch Modan at level 10, while it's still empty (the dwarf and gnome pack arrives at 10-11 and is back at 12-14):
+-- the southern guard tower's first trogg pair (In Defense of the King's Lands, The Trogg Threat) where the South
+-- Gate Pass comes out, then Thelsamar's flight path, hearth and Honor Students, plus Thelsamar Blood Sausages and
+-- Rat Catching (OPTIONAL), killed on a loop north: the kobold hills west of town, Algaz Station (Mountaineer
+-- Stormpike's Task in, Stormpike's Order and Filthy Paws out), the Silver Stream Mine's crates (level 12-14
+-- kobolds; the user's call to try it as a duo), back to Stormpike, and the meadow north of town. RestedXP's Forever
+-- mage route does the same quests at 10-12. Then fly to Ironforge and take the Deeprun Tram to Stormwind for Elwynn
+-- Forest; Stormpike's Order goes in at Furen Longbeard by the tram exit. The Elwynn guide ends by hearthing back
+-- here. The quests need level 10: their steps skip themselves below that. The Hall of Thanes quests in Ironforge
+-- wait until it's time to run the dungeon.
 step
     #completewith LochModan
     .goto 1426/0,-2165.600,-5609.000,70,0
@@ -1383,6 +1389,69 @@ step
     .goto 1432,21.388,66.357,20,0
     .goto 1432,21.498,67.840
     .subzone 924 >> Go through the South Gate Pass into Loch Modan
+step
+    .xp <10,1
+    .goto 1432/0,-2602.54,-5832.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r outside the southern guard tower, just past the pass
+    >>|cRXP_WARN_Loch Modan is still empty at this point: its easy quests are quick now and slow once the pack arrives|r
+    .accept 224 >> Accept In Defense of the King's Lands
+    .target Mountaineer Cobbleflint
+step
+    .xp <10,1
+    #completewith next
+    .goto 1432/0,-2635.61,-5879.14,12,0
+    .goto 1432/0,-2645.27,-5874.91,12,0
+    .goto 1432/0,-2631.48,-5847.50,12 >> Go into the guard tower and up to the top floor
+step
+    .xp <10,1
+    .goto 1432/0,-2634.59,-5842.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r on the top floor
+    >>|cRXP_WARN_The Trogg Threat drops from the same troggs as Cobbleflint's quest|r
+    .accept 267 >> Accept The Trogg Threat
+    .target Captain Rugelfuss
+step
+    .isOnQuest 224
+    #loop
+    .goto 1432,30.2,72.7,0
+    .goto 1432,33.5,77.8,0
+    .goto 1432,34.9,72.0,0
+    .goto 1432,30.2,72.7,40,0
+    .goto 1432,31.5,75.4,40,0
+    .goto 1432,31.6,79.0,40,0
+    .goto 1432,32.6,79.9,40,0
+    .goto 1432,33.5,77.8,40,0
+    .goto 1432,34.9,76.4,40,0
+    .goto 1432,34.9,72.0,40,0
+    .goto 1432,33.5,70.4,40,0
+    .goto 1432,32.1,72.4,40,0
+    >>Kill |cRXP_ENEMY_Stonesplinter Troggs|r and |cRXP_ENEMY_Stonesplinter Scouts|r east of the tower. Loot them for |cRXP_LOOT_Trogg Stone Teeth|r
+    >>|cRXP_WARN_They're level 11-12 and stand in groups: pull one at a time, and run if you get more than two|r
+    .complete 224,1 --Stonesplinter Trogg (10)
+    .mob +Stonesplinter Trogg
+    .complete 224,2 --Stonesplinter Scout (10)
+    .mob +Stonesplinter Scout
+    .complete 267,1 --Trogg Stone Tooth (8)
+    .mob +Stonesplinter Trogg
+    .mob +Stonesplinter Scout
+step
+    .isOnQuest 224
+    .goto 1432/0,-2602.54,-5832.73
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Cobbleflint|r
+    .turnin 224 >> Turn in In Defense of the King's Lands
+    .target Mountaineer Cobbleflint
+step
+    .isOnQuest 267
+    #completewith next
+    .goto 1432/0,-2635.61,-5879.14,12,0
+    .goto 1432/0,-2645.27,-5874.91,12,0
+    .goto 1432/0,-2631.48,-5847.50,12 >> Go back up to the top floor of the guard tower
+step
+    .isOnQuest 267
+    .goto 1432/0,-2634.59,-5842.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Captain Rugelfuss|r on the top floor
+    >>|cRXP_WARN_Leave Mountaineer Gravelgaw's follow-up: its troggs are level 13-14. It waits for your next Loch Modan visit|r
+    .turnin 267 >> Turn in The Trogg Threat
+    .target Captain Rugelfuss
 step
     .goto 1432,34.405,48.276
     .subzone 144 >> Travel to Thelsamar
@@ -1404,6 +1473,12 @@ step
     .home 2101 >> Set your Hearthstone to Thelsamar
     .target Innkeeper Hearthstove
 step
+    .goto 1432/0,-2954.42,-5394.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Vidra Hearthstove|r in the same inn
+    >>|cRXP_WARN_Its bear meat, boar intestines and spider ichor come from the bears, boars and spiders north of town: easy while the zone is empty, too slow once it fills up|r
+    .accept 418 >> Accept Thelsamar Blood Sausages
+    .target Vidra Hearthstove
+step
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r, the gryphon master
     .fp Thelsamar >> Get the Thelsamar flight path
@@ -1415,6 +1490,154 @@ step << Dwarf/Gnome
     .turnin 6387 >> Turn in Honor Students
     .accept 6391 >> Accept Ride to Ironforge
     .target Thorgrum Borrelson
+step
+    .xp <10,1
+    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
+    .goto 1432/0,-3006.61,-5259.57,15,0
+    .goto 1432/0,-3020.95,-5282.02,15,0
+    .goto 1432/0,-3023.44,-5326.90,15,0
+    .goto 1432/0,-3007.99,-5337.390,15,0
+    .goto 1432/0,-2964.41,-5349.90,15,0
+    .goto 1432/0,-2894.90,-5401.96,20,0
+    .goto 1432/0,-3007.99,-5337.390
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r, who walks the road through Thelsamar
+    >>|cRXP_WARN_Mountaineer Stormpike's Task sends you to Algaz Station, where Stormpike also gives Filthy Paws: a loop north before you fly out|r
+    .accept 1339 >> Accept Mountaineer Stormpike's Task
+    .target Mountaineer Kadrell
+step
+    .xp <10,1
+    .goto 1432/0,-3007.99,-5337.390
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r
+    >>|cRXP_WARN_OPTIONAL (loot): 12 Tunnel Rat Ears from the kobolds on the loop, in the hills west of town and around the Silver Stream Mine. Skip this step if you'd rather not|r
+    .accept 416 >> Accept Rat Catching
+    .target Mountaineer Kadrell
+step
+    #completewith ThelsamarLoop
+    .isOnQuest 418
+    >>Kill |cRXP_ENEMY_Mountain Boars|r, |cRXP_ENEMY_Elder Black Bears|r and |cRXP_ENEMY_Forest Lurkers|r as you go for Thelsamar Blood Sausages
+    .complete 418,1 --Boar Intestines (3)
+    .complete 418,2 --Bear Meat (3)
+    .complete 418,3 --Spider Ichor (3)
+    .mob +Mountain Boar
+    .mob +Elder Black Bear
+    .mob +Forest Lurker
+step
+    #completewith ThelsamarLoop
+    .isOnQuest 416
+    >>Kill |cRXP_ENEMY_Tunnel Rat|r kobolds as you go. Loot them for their |cRXP_LOOT_Ears|r
+    .complete 416,1 --Tunnel Rat Ear (12)
+    .mob Tunnel Rat Vermin
+    .mob Tunnel Rat Scout
+    .mob Tunnel Rat Kobold
+    .mob Tunnel Rat Forager
+    .mob Tunnel Rat Digger
+    .mob Tunnel Rat Geomancer
+step
+    .isOnQuest 1339
+    #completewith next
+    .goto 1432,26.7,44.1,30,0
+    .goto 1432,25.4,33.4,30,0
+    .goto 1432,23.490,18.008,15,0
+    .goto 1432,24.279,17.959,15 >> Head north-west through the kobold hills to Algaz Station and go into the bunker
+step
+    .isOnQuest 1339
+    .goto 1432/0,-2676.99,-4825.980
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    >>|cRXP_WARN_Stormpike's Order goes to Furen Longbeard, right by the tram exit in Stormwind|r
+    .turnin 1339 >> Turn in Mountaineer Stormpike's Task
+    .accept 1338 >> Accept Stormpike's Order
+    .accept 307 >> Accept Filthy Paws
+    .target Mountaineer Stormpike
+step
+    .isOnQuest 307
+    #completewith next
+    .goto 1432/0,-2972.96,-4822.30,15 >> Head east along the hills to the entrance of the Silver Stream Mine
+step
+    .isOnQuest 307
+    #loop
+    .goto 1432/0,-2972.96,-4853.58,12,0
+    .goto 1432/0,-2997.78,-4868.29,12,0
+    .goto 1432/0,-2967.44,-4892.21,12,0
+    .goto 1432/0,-2983.99,-4894.05,12,0
+    .goto 1432/0,-2995.02,-4941.88,12,0
+    .goto 1432/0,-2978.47,-4934.52,12,0
+    .goto 1432/0,-2956.41,-4945.56,12,0
+    .goto 1432/0,-2978.47,-4934.52,12,0
+    .goto 1432/0,-2995.02,-4941.88,12,0
+    .goto 1432/0,-2983.99,-4894.05,12,0
+    .goto 1432/0,-2967.44,-4892.21,12,0
+    .goto 1432/0,-2997.78,-4868.29,12,0
+    >>Loot the |cRXP_PICK_Miners' League Crates|r in the mine for 4 |cRXP_LOOT_Miners' Gear|r
+    >>|cRXP_WARN_The kobolds inside are level 12-14: pull one at a time|r
+    >>|cRXP_WARN_Tunnel Rat Geomancers cast Flame Ward, which makes them immune to fire: Frostbolt them|r << Mage
+    .complete 307,1 --Miners' Gear (4)
+    .mob Tunnel Rat Geomancer
+    .mob Tunnel Rat Digger
+    .mob Tunnel Rat Surveyor
+step
+    .isOnQuest 416
+    #loop
+    .goto 1432,37.3,18.4,0
+    .goto 1432,39.4,22.6,0
+    .goto 1432,37.3,18.4,35,0
+    .goto 1432,40.0,18.0,35,0
+    .goto 1432,39.4,22.6,35,0
+    .goto 1432,38.4,14.3,35,0
+    >>Finish the |cRXP_LOOT_Tunnel Rat Ears|r around the mine entrance, where most of the kobolds are
+    >>|cRXP_WARN_OPTIONAL: if the ears drop slowly, skip this step and abandon Rat Catching|r
+    .complete 416,1 --Tunnel Rat Ear (12)
+    .mob Tunnel Rat Vermin
+    .mob Tunnel Rat Scout
+    .mob Tunnel Rat Kobold
+    .mob Tunnel Rat Forager
+    .mob Tunnel Rat Digger
+    .mob Tunnel Rat Geomancer
+step
+    .isQuestComplete 307
+    .goto 1432/0,-2676.99,-4825.980
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at Algaz Station, talk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
+    .turnin 307 >> Turn in Filthy Paws
+    .target Mountaineer Stormpike
+step
+    .isOnQuest 418
+    #loop
+    .goto 1432,33.3,33.5,0
+    .goto 1432,38.5,36.1,0
+    .goto 1432,29.9,36.5,0
+    .goto 1432,33.3,33.5,40,0
+    .goto 1432,35.5,34.0,40,0
+    .goto 1432,38.5,36.1,40,0
+    .goto 1432,37.4,38.4,40,0
+    .goto 1432,34.8,36.4,40,0
+    .goto 1432,29.9,36.5,40,0
+    .goto 1432,29.1,32.8,40,0
+    >>Head south-east to the meadow north of Thelsamar and finish the |cRXP_LOOT_Thelsamar Blood Sausages|r items on the |cRXP_ENEMY_Mountain Boars|r, |cRXP_ENEMY_Elder Black Bears|r and |cRXP_ENEMY_Forest Lurkers|r
+    .complete 418,1 --Boar Intestines (3)
+    .complete 418,2 --Bear Meat (3)
+    .complete 418,3 --Spider Ichor (3)
+    .mob +Mountain Boar
+    .mob +Elder Black Bear
+    .mob +Forest Lurker
+step
+    #label ThelsamarLoop
+    .isQuestComplete 418
+    .goto 1432/0,-2954.42,-5394.10
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Thelsamar, talk to |cRXP_FRIENDLY_Vidra Hearthstove|r in the inn
+    .turnin 418 >> Turn in Thelsamar Blood Sausages
+    .target Vidra Hearthstove
+step
+    .isQuestComplete 416
+    .line Loch Modan,36.72,41.97,37.24,43.19,37.33,45.63,36.77,46.20,35.19,46.88,32.67,49.71,35.19,46.88,36.77,46.20,37.33,45.63,37.24,43.19,36.72,41.97
+    .goto 1432/0,-3006.61,-5259.57,15,0
+    .goto 1432/0,-3020.95,-5282.02,15,0
+    .goto 1432/0,-3023.44,-5326.90,15,0
+    .goto 1432/0,-3007.99,-5337.390,15,0
+    .goto 1432/0,-2964.41,-5349.90,15,0
+    .goto 1432/0,-2894.90,-5401.96,20,0
+    .goto 1432/0,-3007.99,-5337.390
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Kadrell|r on the road
+    .turnin 416 >> Turn in Rat Catching
+    .target Mountaineer Kadrell
 step
     .goto 1432/0,-2929.87,-5424.84
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thorgrum Borrelson|r
@@ -1518,15 +1741,22 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 32
+#version 33
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
+#displayname 11-13 Elwynn Forest
 #next 12-14 Loch Modan
 
 step
+    .isOnQuest 1338
+    .goto 1453/0,600.07,-8427.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLeave the tram station and talk to |cRXP_FRIENDLY_Furen Longbeard|r in the Dwarven District, near the tram
+    .turnin 1338 >> Turn in Stormpike's Order
+    .target Furen Longbeard
+step
     .goto 1453/0,685.22,-8387.23
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tLeave the tram station and talk to |cRXP_FRIENDLY_Grimand Elmore|r in the Dwarven District
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimand Elmore|r in the Dwarven District
     >>|cRXP_WARN_If he doesn't offer Stormpike's Delivery yet, skip this step: Elmore's Task in Goldshire unlocks it|r
     .accept 353 >> Accept Stormpike's Delivery
     .target Grimand Elmore
@@ -2261,14 +2491,17 @@ step
 -- Thelsamar; the southern guard tower's In
 -- Defense of the King's Lands chain with a Dun Morogh detour (The Lost Pilot, the paladin's Narm Faulk); Snowbound
 -- from the South Gate to the dam (a 10 minute jar); Algaz Station; the excavation and Farstrider Lodge in the east;
--- Ironforge to finish. Gathering quests a launch-day crowd makes slow are left out: Filthy Paws (mine crates),
--- Bingles' Missing Supplies, Crocolisk Hunting, Gathering Idols and Thelsamar Blood Sausages. Rat Catching, the two
--- hardest trogg quests (at the end, when you're stronger), Daryl's timed hunts and Silver of the Waves (from 13: a toolbox on the loch floor on the way
--- east, handed in at Khara Deepwater on the way out) are OPTIONAL. 1432 is Loch Modan, 1426 Dun Morogh and 1455
--- Ironforge.
+-- Ironforge to finish. The easy Loch Modan quests are done on the first visit at level 10, while the zone is still
+-- empty (guide 2): the first trogg pair, Thelsamar Blood Sausages, Rat Catching, Mountaineer Stormpike's Task and
+-- Filthy Paws, with Stormpike's Order handed to Furen Longbeard off the Stormwind tram. Their steps here are kept as
+-- a fallback and skip themselves if you did them (RestedXP counts a quest you've handed in as accepted and
+-- complete). Gathering quests a launch-day crowd makes slow are left out: Bingles' Missing Supplies, Crocolisk
+-- Hunting and Gathering Idols. Rat Catching, the two hardest trogg quests (at the end, when you're stronger), Daryl's
+-- timed hunts and Silver of the Waves (from 13: a toolbox on the loch floor on the way east, handed in at Khara
+-- Deepwater on the way out) are OPTIONAL. 1432 is Loch Modan, 1426 Dun Morogh and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 17
+#version 18
 << Alliance
 #group TimmyGnome
 #name 12-14 Loch Modan
@@ -2310,8 +2543,9 @@ step
     .accept 416 >> Accept Rat Catching
     .target Mountaineer Kadrell
 -- In Defense of the King's Lands: the first two kill quests from the southern guard tower, plus The Trogg Threat on
--- the same troggs. The third and fourth are harder (level 15-17 troggs) and OPTIONAL: they come at the end of the
--- guide, when you're stronger.
+-- the same troggs. The first and The Trogg Threat are usually done at level 10 on the way in (guide 2), so this lap
+-- is mostly Mountaineer Gravelgaw's second part. The third and fourth are harder (level 15-17 troggs) and OPTIONAL:
+-- they come at the end of the guide, when you're stronger.
 step
     #completewith next
     .goto 1432,34.405,48.276,30,0
@@ -2490,7 +2724,7 @@ step
 step
     .goto 1432/0,-2676.99,-4825.980
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mountaineer Stormpike|r
-    >>|cRXP_WARN_Don't take Filthy Paws: its crates in the Silver Stream Mine will be swarmed on launch day|r
+    >>|cRXP_WARN_Skipped Filthy Paws at level 10? Leave it now: its crates in the Silver Stream Mine will be swarmed by this point|r
     >>|cRXP_WARN_Stormpike's Order goes to Furen Longbeard next to the tram exit in Stormwind, whenever you're next there|r
     .turnin 1339 >> Turn in Mountaineer Stormpike's Task
     .accept 1338 >> Accept Stormpike's Order
@@ -2995,7 +3229,8 @@ step << !Mage !Paladin
     .trainer >> Train your level 16 spells
 ]])
 
--- Darkshore from level 15, straight after the Hall of Thanes: the tram to Stormwind (Stormpike's Order on the way),
+-- Darkshore from level 15, straight after the Hall of Thanes: the tram to Stormwind (Stormpike's Order on the way, if
+-- it's still in your log: it normally goes in off the tram at level 11),
 -- Fishin' Time at the harbor while you wait (the bait was bought at 10; Catherine Leland sells it again if not),
 -- the Stormwind Harbor boat to Auberdine, and nearly every quest in the zone that's quick or pays well. It follows
 -- RestedXP's Forever Darkshore route (its 14-16 and 16-19 guides) for a non-Night Elf, minus the Buzzbox chain and
@@ -3013,7 +3248,7 @@ step << !Mage !Paladin
 -- 1439 is Darkshore ("1439/1,y,x" are Kalimdor world coordinates), 1453 Stormwind City and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 10
+#version 11
 << Alliance
 #group TimmyGnome
 #name 15+ Darkshore

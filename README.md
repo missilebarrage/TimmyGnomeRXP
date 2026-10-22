@@ -15,7 +15,7 @@ You need RestedXP Guides installed.
    `AddOns\TimmyGnome\TimmyGnome.toc`.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
-   **5-10 Dun Morogh**, **10-12 Elwynn Forest**, **12-14 Loch Modan**, **14+ Hall of Thanes**,
+   **5-11 Dun Morogh**, **11-13 Elwynn Forest**, **12-14 Loch Modan**, **14+ Hall of Thanes**,
    **15+ Darkshore**, **18+ Ruins of Lordaeron**, **20+ The Deadmines**, **21+ Redridge**, **22+ Duskwood**,
    **23+ Wetlands**, **25+ The Stockade** and **26+ Excavation Site** by itself.
 
@@ -23,7 +23,7 @@ To update, download the zip again and replace the TimmyGnome folder.
 
 ## The route
 
-### 1-10 Coldridge Valley and Dun Morogh
+### 1-11 Coldridge Valley, Dun Morogh and a first Loch Modan visit
 
 - **Coldridge Valley (levels 1-5):** RestedXP's own Forever "1-5 Coldridge Valley" up to the tunnel: the boars,
   the troll cave, the Mornbrew delivery and Grund and Gozwin. It's class-aware, so the mage and the paladin take
@@ -45,11 +45,19 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Earthseer Farsen (level 9+):** Farsen's Watch, Nip 'Em in the Bud and Underground Map, ending with
   Old Ironforge Incursion: the Hall of Thanes dungeon quest. If a Rockjaw Ambusher drops an Empty Powder Keg,
   Stolen Blasting Powder goes to Quarrymaster Thesten; its 16-powder follow-up is optional.
-- **Level 10, to Stormwind:** get the Thelsamar flight path in Loch Modan (with Honor Students for Dwarves and
-  Gnomes) and set your Hearthstone at the Stoutlager Inn, fly to Ironforge, learn First Aid from Nissa Firestone
-  next to the gryphon master (the mage already has it from the wand trip), turn in The Reports, then take the
-  Deeprun Tram to Stormwind with Monty's rat quest and Me Brother, Nipsy. The Hall of Thanes quests in Ironforge
-  are left for when you run the dungeon.
+- **Level 10, Loch Modan while it's still empty:** you get there ahead of the dwarf and gnome pack, so the zone's
+  easy quests go fast now and slow at 12-14. Through the South Gate Pass, the southern guard tower's first trogg
+  pair (In Defense of the King's Lands and The Trogg Threat, level 11-12 troggs). In Thelsamar, the flight path,
+  your Hearthstone at the Stoutlager Inn and Honor Students (Dwarves and Gnomes), plus Thelsamar Blood Sausages and
+  Rat Catching (OPTIONAL). Then a loop north:
+  - the kobold hills west of town;
+  - Algaz Station: Mountaineer Stormpike's Task in, Stormpike's Order and Filthy Paws out;
+  - the Silver Stream Mine's crates (level 12-14 kobolds: pull one at a time; Geomancers turn immune to fire);
+  - back to Stormpike;
+  - the meadow north of town for the sausage items.
+- **Then to Stormwind:** fly to Ironforge, learn First Aid from Nissa Firestone next to the gryphon master (the
+  mage already has it from the wand trip), turn in The Reports, then take the Deeprun Tram to Stormwind with Monty's
+  rat quest and Me Brother, Nipsy. The Hall of Thanes quests in Ironforge are left for when you run the dungeon.
 - **Wands (level 8):** back in Kharanos, the paladin crafts a Copper Rod for the mage and gathers 10 Copper Ore and
   20 Rough Stone while the mage goes to Ironforge. There the mage learns Enchanting and takes Camping 101:
   Enchanting from Thonys Pillarstone next to the trainer, buys Motes of Magic and Simple Wood, crafts a Runed
@@ -64,9 +72,10 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Training:** RestedXP's Coldridge Valley steps train each class in Anvilmar. Mages also train with Magis
   Sparkmantle in Kharanos at levels 6 and 8.
 
-### 10-12 Elwynn Forest
+### 11-13 Elwynn Forest
 
-- **Stormwind:** off the tram, Stormpike's Delivery from Grimand Elmore (if he offers it), First Aid from Shaina
+- **Stormwind:** off the tram, Stormpike's Order to Furen Longbeard, Stormpike's Delivery from Grimand Elmore (if
+  he offers it), First Aid from Shaina
   Fuller in the Cathedral of Light (only if you missed it in Ironforge), the bait for Fishin' Time from Catherine
   Leland (a Shiny Bauble and 3 Nightcrawlers, kept for later) and Fishing from Arnold Leland next to her, then the
   flight path from Dungar Longdrink and the walk to Goldshire. The three Stormwind harbor quests wait for later
@@ -130,15 +139,15 @@ To update, download the zip again and replace the TimmyGnome folder.
 
 ### 12-14 Loch Modan
 
-- **Thelsamar** (you hearth in): Return to Brock, Snowbound, Mountaineer Stormpike's Task, and a vendor stop.
-  Rat Catching is OPTIONAL (its kobolds are on the trip back from Algaz Station).
-- **Southern guard tower:** the first two In Defense of the King's Lands quests, plus The Trogg Threat on the same
-  troggs. The third and fourth (level 15-17 troggs and Grawmug) wait for the end of the guide.
+- **Done at level 10 already:** the first trogg pair, Thelsamar Blood Sausages, Rat Catching, Mountaineer
+  Stormpike's Task and Filthy Paws. Their steps here are kept as a fallback and skip themselves if you did them.
+- **Thelsamar** (you hearth in): Return to Brock, Snowbound and a vendor stop.
+- **Southern guard tower:** Mountaineer Gravelgaw's second In Defense of the King's Lands quest (level 13-14
+  troggs). The third and fourth (level 15-17 troggs and Grawmug) wait for the end of the guide.
 - **Dun Morogh detour:** The Lost Pilot and Mangeclaw. Paladins raise Narm Faulk and take the Dark Iron Script.
 - **Snowbound:** fill the jar just outside the South Gate Pass, then 10 minutes to Norric Lochthane at the dam.
   Paladins can buy a mace from Nillen Andemar there.
-- **Algaz Station:** vendor and repair, Stormpike's Delivery and Mountaineer Stormpike's Task. Stormpike's Order
-  goes to Furen Longbeard at the Stormwind tram whenever you're next there.
+- **Algaz Station:** vendor and repair and Stormpike's Delivery.
 - **East:** Ironband's Excavation (level 13) and Excavation Progress Report, then Daryl's timed hunts at the
   Farstrider Lodge (OPTIONAL), and hearth back. OPTIONAL from 13: Silver of the Waves, a toolbox on the loch floor
   on the way east (it spawns in one of several spots), handed in at Khara Deepwater by the Thelsamar dock on the
@@ -150,9 +159,9 @@ To update, download the zip again and replace the TimmyGnome folder.
   training (the mage with Jennea, the paladin in Ironforge at the end of Elwynn) gets it here. Last, the mage
   trains Linen Belt from Uthrar Threx, crafts belts to 50 Tailoring (15 from 35, the cheapest way), then trains
   Journeyman Tailoring so the cap goes from 75 to 150.
-- **Skipped as too slow with a launch-day crowd:** Filthy Paws, Bingles' Missing Supplies, Crocolisk Hunting,
-  Gathering Idols and Thelsamar Blood Sausages.
-- **Where you end up:** about level 13 with only the core quests, close to 14 with every optional one.
+- **Skipped as too slow with a launch-day crowd:** Bingles' Missing Supplies, Crocolisk Hunting and Gathering
+  Idols.
+- **Where you end up:** about level 13.5 with only the core quests, past 14 with every optional one.
 
 ### 14+ Hall of Thanes
 
@@ -173,10 +182,10 @@ To update, download the zip again and replace the TimmyGnome folder.
 
 ### 15+ Darkshore
 
-- **Getting there:** the tram to Stormwind (Stormpike's Order goes in at Furen Longbeard), then the boat from
-  Stormwind Harbor's southernmost dock to Auberdine. While you wait for it, Gilbert Gray at the south end of the
-  harbor takes the Shiny Bauble and 3 Nightcrawlers you bought at 10 for Fishin' Time (Catherine Leland sells them
-  on the way if you don't have them any more). The Hearthstone goes to Auberdine.
+- **Getting there:** the tram to Stormwind (Stormpike's Order goes in at Furen Longbeard if you still have it),
+  then the boat from Stormwind Harbor's southernmost dock to Auberdine. While you wait for it, Gilbert Gray at the
+  south end of the harbor takes the Shiny Bauble and 3 Nightcrawlers you bought at 10 for Fishin' Time (Catherine
+  Leland sells them on the way if you don't have them any more). The Hearthstone goes to Auberdine.
 - **The route:** RestedXP's Forever Darkshore route for a non-Night Elf, with nearly every quest that's quick or
   pays well, in six loops out of Auberdine:
   - **South:** Washed Ashore, the bear trap and the furbolg camp.

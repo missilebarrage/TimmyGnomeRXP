@@ -67,28 +67,23 @@ To update, download the zip again and replace the TimmyGnome folder.
 ### 10-12 Elwynn Forest
 
 - **Stormwind:** off the tram, Stormpike's Delivery from Grimand Elmore (if he offers it), First Aid from Shaina
-  Fuller in the Cathedral of Light (only if you missed it in Ironforge), Fishing from Arnold Leland, the mage's
-  Enchanting and Tailoring stop, then three new Forever quests: Fishin' Time (a Shiny Bauble and 3 Nightcrawlers
-  from Catherine Leland, handed to Gilbert Gray at Stormwind Harbor), Philmor's Favor (Manifest Clerk Philmor at
-  the harbor, delivered to Trias' Cheese) and Gatehouse Goods (Elaine Trias, if she offers it). Then the flight
-  path from Dungar Longdrink next door, and the walk to Goldshire.
-- **Enchanting (mage):** on the way to the tailoring shop, buy 9 Motes of Magic from Jessara Cordell in the Mage
-  Quarter and enchant your bracer (Inferior Stamina) to 20 Enchanting. That completes Camping 101: Enchanting,
-  which Thonys Pillarstone in Ironforge takes on the Ironforge stop at the end of Loch Modan and teaches the
-  Enchanted Lute camp item.
-- **Tailoring stop (mage):** top up to about 72 Linen Cloth at the Auction House, bolt it all (Tailoring to about
-  25), train White Linen Robe, Brown Linen Pants and Heavy Linen Gloves at the tailoring shop, buy Pattern: Linen
-  Reagent Bag from Antonio Bolero in the same shop, buy Coarse Thread and Bleach, then craft and equip the three
-  plus a Linen Reagent Bag (6 slots; make your party one each if you have the bolts and silver). Optional
-  nice-to-have: a Reinforced Linen Cape (Spell Power) if your skill
-  allows. Spare bolts go into a Linen Bag and extra pants for skill points. If the Lesser Magic Wand still isn't
-  made, a reminder stays up through Elwynn until the paladin's Copper Shortsword gives the essence.
+  Fuller in the Cathedral of Light (only if you missed it in Ironforge), the bait for Fishin' Time from Catherine
+  Leland (a Shiny Bauble and 3 Nightcrawlers, kept for later) and Fishing from Arnold Leland next to her, then the
+  flight path from Dungar Longdrink and the walk to Goldshire. The three Stormwind harbor quests wait for later
+  harbor visits, as in RestedXP's route: Fishin' Time while you wait for the Darkshore boat at 15, Philmor's Favor
+  and Gatehouse Goods when the boat from Darkshore comes in after the Ruins of Lordaeron.
+- **Tailoring and Enchanting (mage):** not at level 10 any more, so the duo doesn't wait on it. The whole session is
+  on the mage's Stormwind trip at the end of Elwynn, while the paladin is in Ironforge (see Finish). A sticky from
+  the start of Elwynn says to keep all linen and bolt it as you go. If the Lesser Magic Wand still isn't made, a
+  reminder stays up through Elwynn until the paladin's Copper Shortsword gives the essence.
 - **Goldshire:** train and pick up the Marshal Dughan quests. The mage also takes Speak with Jennea from Zaldimar
   Wefhellt after training.
 - **South:** explore Fargodeep Mine, then the Young Lovers deliveries and Princess Must Die! at the Stonefield
-  farm. Back in Goldshire, The Jasperlode Mine (and Elmore's Task, if Grimand wanted it first).
+  farm (Lost Necklace is skipped: a long walk for 135 XP). Back in Goldshire, The Jasperlode Mine (and Elmore's
+  Task, if Grimand wanted it first).
 - **East:** explore Jasperlode on the way to Guard Thomas, then the lost guards, Protect the Frontier, Downstream,
-  Croaky (level 11 elite) and Princess. Turn in at the bridge and Ridgepoint Tower. OPTIONAL on the way: Delicate
+  Croaky (level 11 elite) and Princess. Turn in at the bridge and Ridgepoint Tower. Croaky and the bears for
+  Protect the Frontier are skippable when a crowd has them camped. OPTIONAL on the way: Delicate
   Instruments from the Tower of Azora (Kobold Geomancers at Jasperlode, then Defias Rogue Wizards on the way to
   Rolf) and Red Linen Goods (bandanas from those Rogue Wizards and the Defias at Princess). With Delicate
   Instruments the mage also takes An Enchanting Lesson (enchanters only, 480 XP) from Kitta Firewind at the top of
@@ -107,10 +102,20 @@ To update, download the zip again and replace the TimmyGnome folder.
   Sentinel Hill to Stormwind before hearthing. Meanwhile the paladin (a Dwarf, once he's 12) flies to Ironforge to
   start The Tome of Divinity: level 12 training with Brandur Ironhammer, then Tiza Battleforge, John Turner (the 10
   Linen Cloth) and Muiredon, then he hearths and you meet up in Thelsamar. At Sentinel Hill the mage also buys
-  Pattern: Red Linen Bag from Gina MacGregor (learn it at 50 Tailoring). In Stormwind: 2 Minor Mana
-  Potions from the Auction House, Novice Arcanist's Sash (needs 35 Tailoring; the potions are its reagent) and
-  Green Linen Bracers from the tailoring shop, crafted and equipped on the spot, then Mirror Lake (Ley Staff or
-  Ley Orb) at Jennea. A sticky from the first Stormwind stop reminds the mage to keep linen for these.
+  Pattern: Red Linen Bag from Gina MacGregor (learn it at 50 Tailoring). In Stormwind, the mage's whole Tailoring
+  and Enchanting session:
+  - at the Auction House, top up to about 94 Linen Cloth (counting each bolt as 2) and buy 2 Minor Mana Potions;
+  - 9 Motes of Magic from Jessara Cordell in the Mage Quarter, then Inferior Stamina on your bracer to 20
+    Enchanting. That completes Camping 101: Enchanting, which Thonys Pillarstone takes on the Ironforge stop at the
+    end of Loch Modan and which teaches the Enchanted Lute camp item;
+  - bolt the linen (Tailoring to about 25);
+  - at the tailoring shop, train White Linen Robe, Brown Linen Pants and Heavy Linen Gloves, buy Pattern: Linen
+    Reagent Bag from Antonio Bolero, and buy the thread, bleach and dye in one go;
+  - craft and equip the three, plus a Linen Reagent Bag (6 slots; make your partner one if you have the bolts and
+    silver). Optional nice-to-have: a Reinforced Linen Cape (Spell Power) if your skill allows;
+  - reach 35 Tailoring (Linen Cloaks), train and craft Novice Arcanist's Sash (the potions are its reagent) and
+    Green Linen Bracers;
+  - then Mirror Lake (Ley Staff or Ley Orb) at Jennea.
 - **Level 12 is a target, not a requirement.** Hogger, Riverpaw Gnoll Bounty and grinding are cut because Loch
   Modan pays better by then. In a beta test run the mage was already 12 at Sergeant De Vries, before Westfall.
   Return to Brock and Stormpike's Delivery (1,050 XP each) wait in Loch Modan.
@@ -169,7 +174,9 @@ To update, download the zip again and replace the TimmyGnome folder.
 ### 15+ Darkshore
 
 - **Getting there:** the tram to Stormwind (Stormpike's Order goes in at Furen Longbeard), then the boat from
-  Stormwind Harbor's southernmost dock to Auberdine. The Hearthstone goes to Auberdine.
+  Stormwind Harbor's southernmost dock to Auberdine. While you wait for it, Gilbert Gray at the south end of the
+  harbor takes the Shiny Bauble and 3 Nightcrawlers you bought at 10 for Fishin' Time (Catherine Leland sells them
+  on the way if you don't have them any more). The Hearthstone goes to Auberdine.
 - **The route:** RestedXP's Forever Darkshore route for a non-Night Elf, with nearly every quest that's quick or
   pays well, in six loops out of Auberdine:
   - **South:** Washed Ashore, the bear trap and the furbolg camp.
@@ -206,9 +213,10 @@ To update, download the zip again and replace the TimmyGnome folder.
   in Rath'mael's graveyard, after the last boss. Stickies track the insignias and the Crest, each with a finish
   step you can skip.
 - **Turn-ins:** Captain Truman on the way out, then hearth to Auberdine and take the boat to Stormwind
-  (Hearthstone on cooldown? Run back to Southshore and fly). In Stormwind: Orphan Matron Nightingale in Cathedral
-  Square (her follow-up to Darkshire is OPTIONAL), Lady Dena Kennedy in the Keep's Royal Gallery and General Marcus
-  Jonathan in the Valley of Heroes. The mage takes the Monstrous Cleaver and the Remembrance Armor to sell; the
+  (Hearthstone on cooldown? Run back to Southshore and fly). Off the boat, Philmor's Favor from Manifest Clerk
+  Philmor at the harbor. In Stormwind: Orphan Matron Nightingale in Cathedral Square (her follow-up to Darkshire is
+  OPTIONAL), Lady Dena Kennedy in the Keep's Royal Gallery, Philmor's delivery and Gatehouse Goods at Trias' Cheese
+  on the way south, and General Marcus Jonathan in the Valley of Heroes. The mage takes the Monstrous Cleaver and the Remembrance Armor to sell; the
   paladin takes the Grave Shroud and the Remembrance Armor.
 - **For the next guide:** Stormwind also picks up its Deadmines quests: Underground Assault (Shoni the Shilent),
   Oh Brother. . . and Collecting Memories (Wilder Thistlenettle), and the paladin's Tome of Valor from Duthorian

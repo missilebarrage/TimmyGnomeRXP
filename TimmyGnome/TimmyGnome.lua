@@ -714,7 +714,7 @@ step
 -- the first guide's #next) by name: renaming it would send everyone back to step 1.
 RXPGuides.RegisterGuide([[
 #forever
-#version 31
+#version 32
 << Alliance
 #group TimmyGnome
 #name 5-9 Dun Morogh
@@ -1075,7 +1075,7 @@ step << Paladin
     +|cRXP_WARN_When you have the materials, craft green Copper Shortswords (6 Copper Bars, 1 Weak Flux and 2 Linen Cloth each) and give them to Tim: he disenchants them for his Lesser Magic Wand|r
 step << Paladin
     #completewith DeeprunTram
-    +|cRXP_WARN_Linen Cloth: save 10 for your level 12 class quest (The Tome of Divinity) and 2 for each Copper Shortsword, and trade the rest to Tim. He turns it into Tailoring gear at level 10|r
+    +|cRXP_WARN_Linen Cloth: save 10 for your level 12 class quest (The Tome of Divinity) and 2 for each Copper Shortsword, and trade the rest to Tim. He turns it into Tailoring gear at the end of Elwynn (level 12)|r
 step << Mage
     >>Gather wand materials before you go to Ironforge
     .collect 6217,1 >> Copper Rod (your paladin crafts it)
@@ -1091,7 +1091,7 @@ step << Mage
 step << Mage
     .goto 1455,60.27,45.37
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thonys Pillarstone|r next to Gimble: now that you have Enchanting, he has a camping quest for it
-    >>|cRXP_WARN_It completes at 20 Enchanting, which you reach at the Stormwind tailoring stop at level 10. Bring it back to him on the Ironforge stop at the end of Loch Modan|r
+    >>|cRXP_WARN_It completes at 20 Enchanting, which you reach on the Stormwind trip at the end of Elwynn (level 12). Bring it back to him on the Ironforge stop at the end of Loch Modan|r
     .accept 96059 >> Accept Camping 101: Enchanting
     .target Thonys Pillarstone
 step << Mage
@@ -1128,13 +1128,13 @@ step << Mage
 step << Mage
     .goto 1455,42.94,28.31
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Poranna Snowbraid|r next to Uthrar
-    >>|cRXP_BUY_Buy 13|r |T132891:0|t[Coarse Thread] |cRXP_BUY_and 1 Bleach (about 1s 55c) for your level 10 Tailoring gear. Short on money? Skip this step: the Stormwind stop sells them too|r
+    >>|cRXP_BUY_Buy 13|r |T132891:0|t[Coarse Thread] |cRXP_BUY_and 1 Bleach (about 1s 55c) for your Tailoring gear, crafted at the end of Elwynn. Short on money? Skip this step: Stormwind sells them too|r
     .collect 2320,13 --Coarse Thread (13)
     .collect 2324,1 --Bleach (1)
     .target Poranna Snowbraid
 step << Mage
     #completewith DeeprunTram
-    >>|cRXP_WARN_Tailoring stash for your crafting stop in Stormwind at level 10. Keep every|r |T132889:0|t[Linen Cloth] |cRXP_WARN_and turn it into|r |T132890:0|t[Bolts of Linen Cloth] |cRXP_WARN_as you go: each bolt is a Tailoring skill point. Ask your partner for spare linen too|r
+    >>|cRXP_WARN_Tailoring stash for your crafting session in Stormwind at the end of Elwynn (level 12). Keep every|r |T132889:0|t[Linen Cloth] |cRXP_WARN_and turn it into|r |T132890:0|t[Bolts of Linen Cloth] |cRXP_WARN_as you go: each bolt is a Tailoring skill point. Ask your partner for spare linen too|r
     .collect 2996,36 --Bolt of Linen Cloth (36)
     .collect 2320,13 --Coarse Thread (13)
     .collect 2324,1 --Bleach (1)
@@ -1490,10 +1490,16 @@ step
 -- so Redridge ends with a flight to Stormwind, and the guide ends with Report to Gryan Stoutmantle, the Sentinel
 -- Hill flight path and a hearth to Thelsamar. Mages: Speak with Jennea (Zaldimar in Goldshire) goes in on the
 -- Stormwind stop after Redridge, Mirror Lake's water comes from the waterfall next to the Applejack Still, and a
--- flight from Sentinel Hill to Stormwind hands it in before the hearth. That last Stormwind trip also buys 2 Minor
--- Mana Potions at the Auction House and trains and crafts Novice Arcanist's Sash (they're its reagent; it needs 35
--- Tailoring) and Green Linen Bracers. Meanwhile a level 12 Dwarf paladin flies from Sentinel Hill to Ironforge for
--- the start of The Tome of Divinity (Brandur, Tiza, John Turner, Muiredon) and hearths from there. Gathering quests
+-- flight from Sentinel Hill to Stormwind hands it in before the hearth. That last Stormwind trip is also the mage's
+-- whole Tailoring and Enchanting session, moved from level 10 so the duo doesn't wait on it: linen top-up and 2 Minor
+-- Mana Potions at the Auction House, Enchanting 20, bolts to Tailoring 25, the robe, pants, gloves and Linen Reagent
+-- Bag, then Tailoring 35 and Novice Arcanist's Sash (the potions are its reagent) and Green Linen Bracers. Meanwhile
+-- a level 12 Dwarf paladin flies from Sentinel Hill to Ironforge for the start of The Tome of Divinity (Brandur,
+-- Tiza, John Turner, Muiredon) and hearths from there. The Stormwind harbor quests wait for later harbor visits, as in
+-- RestedXP's route: Fishin' Time at the Darkshore boat at 15, Philmor's Favor and Gatehouse Goods when the boat from
+-- Darkshore comes in after the Ruins of Lordaeron (full XP up to 17 and 20). The bait for Fishin' Time is still bought
+-- at 10, from Catherine Leland next to the Fishing trainer. Lost Necklace is cut (a long walk for 135 XP), and Croaky
+-- and Protect the Frontier's bears can be skipped when a crowd has them camped. Gathering quests
 -- are left out except Red Linen Goods, whose bandanas drop from Defias on the route: its accept step says OPTIONAL
 -- and the steps that follow skip themselves when you didn't take it. Collecting Kelp (and with it The Escape) and Bottles and Baubles are out:
 -- Crystal Lake's murlocs and junk piles won't hold up on launch day. Guard Thomas doesn't offer Bounty on Murlocs
@@ -1512,7 +1518,7 @@ step
 -- 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 31
+#version 32
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1536,7 +1542,7 @@ step
 step
     .goto 1453,55.09,69.76
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Catherine Leland|r, the fishing supplier on the canal just west of the Trade District
-    >>|cRXP_BUY_Buy 1|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_and 3 Nightcrawlers (about 3s 50c) now: Gilbert Gray at the harbor gives you Fishin' Time and takes them straight back for 900 XP|r
+    >>|cRXP_BUY_Buy 1|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_and 3 Nightcrawlers (about 3s 50c) and keep them: Gilbert Gray at Stormwind Harbor takes them for Fishin' Time (675 XP) while you wait for the Darkshore boat at 15|r
     .collect 6529,1 --Shiny Bauble (1)
     .collect 6530,3 --Nightcrawlers (3)
     .target Catherine Leland
@@ -1547,102 +1553,13 @@ step
     .skill fishing,1 >> Learn Fishing
     .target Arnold Leland
 step << Mage
-    #label TailoringStop
-    .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTailoring stop. If you're short on linen, buy it from |cRXP_FRIENDLY_Auctioneer Jaxon|r in the Trade District
-    >>|cRXP_WARN_You want about 72|r |T132889:0|t[Linen Cloth] |cRXP_WARN_in total, counting each bolt as 2, plus 12 for each reagent bag you make your party|r
-    +Buy the linen you're missing, or tick this if you have enough
-    .target Auctioneer Jaxon
-step << Mage
-    .train 7411,3
-    .skill enchanting,20,1
-    .goto 1453,52.80,74.26
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jessara Cordell|r, the enchanting supplies vendor in the Mage Quarter, on the way to the tailoring shop
-    >>|cRXP_WARN_Motes are 10c each. Buy one extra if your Enchanting is below 11|r
-    .collect 247786,9 >> Buy 9 Motes of Magic
-    .target Jessara Cordell
-step << Mage
-    .train 7411,3
-    >>|cRXP_WARN_Cast Enchant Bracer - Inferior Stamina on your bracer until Enchanting reaches 20: every cast is a skill point. That completes Camping 101: Enchanting|r
-    .skill enchanting,20 >> Reach 20 Enchanting
-step << Mage
-    >>|cRXP_WARN_Turn all your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_into|r |T132890:0|t[Bolts of Linen Cloth]|cRXP_WARN_: each bolt is a skill point up to about 25, where the gear recipes unlock|r
-    .skill tailoring,25 >> Reach 25 Tailoring
-step << Mage
-    .goto 1453,53.48,81.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lawrence Schneider|r at the tailoring shop
-    .train 7624 >> Train White Linen Robe
-    .train 3914 >> Train Brown Linen Pants
-    .train 3840 >> Train Heavy Linen Gloves
-    .target Lawrence Schneider
-step << Mage
-    .goto 1453,53.30,81.60
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Antonio Bolero|r, the tailoring recipe vendor in the same shop
-    >>|cRXP_BUY_Buy|r [Pattern: Linen Reagent Bag] |cRXP_BUY_(about 1s 50c, needs 5 Tailoring) and use it to learn the recipe|r
-    .train 1257013 >> Learn Linen Reagent Bag
-    .target Antonio Bolero::258568
-step << Mage
-    .goto 1453,53.14,81.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandra Bolero|r in the same shop
-    >>|cRXP_BUY_Buy|r |T132891:0|t[Coarse Thread] |cRXP_BUY_(one per item, three per Linen Bag, three for the cape, six for the Linen Reagent Bag, and six more for each reagent bag you make your partner) and 1 Bleach for the robe|r
-    .collect 2320,19 --Coarse Thread (19)
-    .collect 2324,1 --Bleach (1)
-    .target Alexandra Bolero
-step << Mage
-    >>|cRXP_WARN_Craft a White Linen Robe (Intellect), Brown Linen Pants and Heavy Linen Gloves (Spell Power), then equip them|r
-    >>|cRXP_WARN_Spare bolts: a Linen Bag (6 slots) if you need room, then extra Brown Linen Pants for skill points|r
-    .collect 6241,1 --White Linen Robe (1)
-    .collect 4343,1 --Brown Linen Pants (1)
-    .collect 4307,1 --Heavy Linen Gloves (1)
-step << Mage
-    >>|cRXP_WARN_Craft a Linen Reagent Bag (6 bolts and 6 Coarse Thread) and equip it: 6 slots for your reagents|r
-    >>|cRXP_WARN_Got the bolts and silver to spare? Craft one for each party member too: it's tradeable|r
-    .collect 253664,1 --Linen Reagent Bag (1)
-step << Mage
-    .goto 1453,53.48,81.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tOPTIONAL nice-to-have: |cRXP_FRIENDLY_Lawrence Schneider|r also teaches the Reinforced Linen Cape, a Spell Power cloak (level 7) from 2 bolts and 3 Coarse Thread
-    >>|cRXP_WARN_It needs more Tailoring than the robe, pants and gloves. If he won't teach it yet, make a few more Brown Linen Pants first, or skip this step|r
-    .train 2397 >> Train Reinforced Linen Cape
-    .collect 2580,1 >> Craft a Reinforced Linen Cape, then equip it
-    .target Lawrence Schneider
-step << Mage
     #completewith ArcanistCraft
     .itemStat 18,ITEM_MOD_DAMAGE_PER_SECOND_SHORT,<11.3
     >>|cRXP_WARN_Still no Lesser Magic Wand? When your paladin gives you a green Copper Shortsword, Disenchant it for a|r |T132867:0|t[Lesser Magic Essence]|cRXP_WARN_, then craft the|r |T135139:0|t[Lesser Magic Wand] |cRXP_WARN_(it also takes a Simple Wood) and equip it|r
     .collect 11287,1 --Lesser Magic Wand (1)
 step << Mage
     #completewith ArcanistCraft
-    +|cRXP_WARN_Keep your Linen Cloth from here on: back in Stormwind at the end of Elwynn you craft Novice Arcanist's Sash (8 bolts) and Green Linen Bracers (3 bolts). That's 22 linen, plus spares if you still need Tailoring 35 for the Sash|r
-step
-    .goto 1453,26.0,47.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead west to Stormwind Harbor and talk to |cRXP_FRIENDLY_Gilbert Gray|r at the south end of the harbor: accept Fishin' Time and hand it straight back with the bauble and nightcrawlers
-    .accept 95065 >> Accept Fishin' Time
-    .turnin 95065 >> Turn in Fishin' Time
-    .target Gilbert Gray
-step
-    .goto 1453,30.0,29.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Manifest Clerk Philmor|r further up the harbor
-    .accept 97220 >> Accept Philmor's Favor
-    .target Manifest Clerk Philmor
-step
-    .isOnQuest 97220
-    .goto 1453,66.56,73.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTake Philmor's delivery back to Trias' Cheese in the Trade District, next to the gryphon master
-    >>|cRXP_WARN_If your quest log points at the stockroom entrance on the building's second floor, drop it off there|r
-    .turnin 97220 >> Turn in Philmor's Favor
-    .target +Elaine Trias
-    .target +Elling Trias
-step
-    .goto 1453,66.56,73.37
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias|r in Trias' Cheese
-    >>|cRXP_WARN_Take Gatehouse Goods if she offers it. Skip this step if she doesn't|r
-    .accept 97222 >> Accept Gatehouse Goods
-    .target Elaine Trias
-step
-    .isOnQuest 97222
-    .goto 1453,66.56,73.37
-    >>|cRXP_WARN_Carry the Gatehouse Shipment up to the stockroom entrance on the second floor of the same building, then hand the quest in where your quest log says|r
-    .turnin 97222 >> Turn in Gatehouse Goods
+    +|cRXP_WARN_Keep all your Linen Cloth and turn it into bolts as you go: the Stormwind trip at the end of Elwynn is your whole Tailoring session (robe, pants, gloves, Linen Reagent Bag, Novice Arcanist's Sash and Green Linen Bracers). That's about 94 linen in total, counting each bolt as 2|r
 step
     .goto 1453/0,490.03,-8835.82
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master in the Trade District
@@ -1707,8 +1624,8 @@ step
     .accept 111 >> Accept Speak with Gramma
     .target Tommy Joe Stonefield
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gramma Stonefield|r inside the farmhouse, then |cRXP_FRIENDLY_Ma Stonefield|r and |cRXP_FRIENDLY_"Auntie" Bernice Stonefield|r outside
-    >>|cRXP_WARN_Lost Necklace goes to Billy Maclure on your last trip south|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gramma Stonefield|r inside the farmhouse, then |cRXP_FRIENDLY_Ma Stonefield|r outside
+    >>|cRXP_WARN_Skip Lost Necklace from "Auntie" Bernice: it's a long walk for little XP|r
     .turnin 111 >> Turn in Speak with Gramma
     .accept 107 >> Accept Note to William
     .goto 1429,34.945,83.855
@@ -1716,9 +1633,6 @@ step
     .accept 88 >> Accept Princess Must Die!
     .goto 1429/0,332.43,-9894.99
     .target +Ma Stonefield
-    .accept 85 >> Accept Lost Necklace
-    .goto 1429/0,338.47,-9889.69
-    .target +"Auntie" Bernice Stonefield
 step
     .goto 1429/0,74.02,-9465.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Goldshire, talk to |cRXP_FRIENDLY_Marshal Dughan|r
@@ -1896,6 +1810,7 @@ step
 step
     .goto 1429/0,-1119.80,-9931.30
     >>Kill |cRXP_ENEMY_Croaky|r, a level 11 elite. Loot him for |T134169:0|t[|cRXP_LOOT_Croaky's Head|r]
+    >>|cRXP_WARN_OPTIONAL: he's a single spawn. If he isn't up or a crowd is camping him, skip this step|r
     >>|cRXP_WARN_Each of you needs a head. If only one drops, try sharing the quest|r
     .use 247826 >> |cRXP_WARN_Use|r |T134169:0|t[|cRXP_LOOT_Croaky's Head|r] |cRXP_WARN_to start the quest|r
     .collect 247826,1,91740,1 --Croaky's Head (1)
@@ -1914,6 +1829,7 @@ step
     .goto 1429,87.145,69.922,55,0
     .goto 1429,87.342,63.763,55,0
     >>Finish the |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r east of the river
+    >>|cRXP_WARN_The bears are scarce. If a crowd has them camped, skip this step: Guard Thomas's other quests don't need it|r
     .complete 52,1 --Prowler (8)
     .mob +Prowler
     .complete 52,2 --Young Forest Bear (5)
@@ -1945,7 +1861,7 @@ step
     .goto 1429/0,-1032.06,-9610.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
     >>|cRXP_WARN_Report to Gryan Stoutmantle goes in at Sentinel Hill, where the guide ends|r
-    .turnin 52 >> Turn in Protect the Frontier
+    .turnin -52,1 >> Turn in Protect the Frontier
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
     .accept 109 >> Accept Report to Gryan Stoutmantle
@@ -2047,15 +1963,8 @@ step
     .vendor >> Sell your trash and repair
     .target Andrew Krighton
 step
-    .isOnQuest 85
-    .goto 1429/0,38.41,-9923.69
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead south to the Maclure Vineyards and talk to |cRXP_FRIENDLY_Billy Maclure|r
-    >>|cRXP_WARN_Don't take Pie for Billy: it's a boar meat collection quest|r
-    .turnin 85 >> Turn in Lost Necklace
-    .target Billy Maclure
-step
     .goto 1429/0,332.43,-9894.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ma Stonefield|r at the Stonefield farm
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead south-west to the Stonefield farm and talk to |cRXP_FRIENDLY_Ma Stonefield|r
     .turnin 88 >> Turn in Princess Must Die!
     .target Ma Stonefield
 step
@@ -2129,35 +2038,82 @@ step
     .target Thor
 step << Mage
     .goto 1436/0,1037.42,-10628.27
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBefore you hearth, talk to |cRXP_FRIENDLY_Thor|r and fly to Stormwind: the Auction House, two Tailoring recipes and Jennea. It's a short flight, and your Hearthstone works from there
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBefore you hearth, talk to |cRXP_FRIENDLY_Thor|r and fly to Stormwind: the Auction House, your Tailoring session and Jennea. It's a short flight, and your Hearthstone works from there
     >>|cRXP_WARN_Your partner flies to Ironforge for his class quest meanwhile. You meet up again in Thelsamar|r
     .fly Stormwind >> Fly to Stormwind
     .target Thor
 step << Mage
     .goto 1453/0,660.28,-8814.55
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r in the Trade District
-    >>|cRXP_WARN_The potions are a reagent for Novice Arcanist's Sash. Short on linen? The Sash and the Bracers take 11 Bolts of Linen Cloth (22 linen), plus any you need for skill points|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Auctioneer Jaxon|r in the Trade District: this trip is your whole Tailoring session
+    >>|cRXP_WARN_You want about 94|r |T132889:0|t[Linen Cloth] |cRXP_WARN_in total, counting each bolt as 2, plus 12 for each reagent bag you make your partner. The potions are a reagent for Novice Arcanist's Sash|r
+    +Buy the linen you're missing, or tick this if you have enough
     .collect 2455,2 >> Buy 2 Minor Mana Potions
     .target Auctioneer Jaxon
+step << Mage
+    .train 7411,3
+    .skill enchanting,20,1
+    .goto 1453,52.80,74.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jessara Cordell|r, the enchanting supplies vendor in the Mage Quarter, on the way to the tailoring shop
+    >>|cRXP_WARN_Motes are 10c each. Buy one extra if your Enchanting is below 11|r
+    .collect 247786,9 >> Buy 9 Motes of Magic
+    .target Jessara Cordell
+step << Mage
+    .train 7411,3
+    >>|cRXP_WARN_Cast Enchant Bracer - Inferior Stamina on your bracer until Enchanting reaches 20: every cast is a skill point. That completes Camping 101: Enchanting|r
+    .skill enchanting,20 >> Reach 20 Enchanting
+step << Mage
+    >>|cRXP_WARN_Turn all your|r |T132889:0|t[Linen Cloth] |cRXP_WARN_into|r |T132890:0|t[Bolts of Linen Cloth]|cRXP_WARN_: each bolt is a skill point up to about 25, where the gear recipes unlock|r
+    .skill tailoring,25 >> Reach 25 Tailoring
+step << Mage
+    .goto 1453,53.48,81.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lawrence Schneider|r at the tailoring shop
+    .train 7624 >> Train White Linen Robe
+    .train 3914 >> Train Brown Linen Pants
+    .train 3840 >> Train Heavy Linen Gloves
+    .target Lawrence Schneider
+step << Mage
+    .goto 1453,53.30,81.60
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Antonio Bolero|r, the tailoring recipe vendor in the same shop
+    >>|cRXP_BUY_Buy|r [Pattern: Linen Reagent Bag] |cRXP_BUY_(about 1s 50c, needs 5 Tailoring) and use it to learn the recipe|r
+    .train 1257013 >> Learn Linen Reagent Bag
+    .target Antonio Bolero::258568
+step << Mage
+    .goto 1453,53.14,81.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandra Bolero|r in the same shop
+    >>|cRXP_BUY_Buy|r |T132891:0|t[Coarse Thread] |cRXP_BUY_(one per item, three per Linen Bag, three for the cape, six for the Linen Reagent Bag, two for the Bracers, one per Linen Cloak you craft for skill points, and six more for each reagent bag you make your partner), 1 Bleach for the robe, 2 Fine Thread for the Sash and 1 Green Dye for the Bracers|r
+    .collect 2320,21 --Coarse Thread (21)
+    .collect 2324,1 --Bleach (1)
+    .collect 2321,2 --Fine Thread (2)
+    .collect 2605,1 --Green Dye (1)
+    .target Alexandra Bolero
+step << Mage
+    >>|cRXP_WARN_Craft a White Linen Robe (Intellect), Brown Linen Pants and Heavy Linen Gloves (Spell Power), then equip them|r
+    >>|cRXP_WARN_Spare bolts: a Linen Bag (6 slots) if you need room|r
+    .collect 6241,1 --White Linen Robe (1)
+    .collect 4343,1 --Brown Linen Pants (1)
+    .collect 4307,1 --Heavy Linen Gloves (1)
+step << Mage
+    >>|cRXP_WARN_Craft a Linen Reagent Bag (6 bolts and 6 Coarse Thread) and equip it: 6 slots for your reagents|r
+    >>|cRXP_WARN_Got the bolts and silver to spare? Craft one for your partner too: it's tradeable|r
+    .collect 253664,1 --Linen Reagent Bag (1)
+step << Mage
+    .goto 1453,53.48,81.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tOPTIONAL nice-to-have: |cRXP_FRIENDLY_Lawrence Schneider|r also teaches the Reinforced Linen Cape, a Spell Power cloak (level 7) from 2 bolts and 3 Coarse Thread
+    >>|cRXP_WARN_It needs more Tailoring than the robe, pants and gloves. If he won't teach it yet, make a Linen Cloak or two first, or skip this step|r
+    .train 2397 >> Train Reinforced Linen Cape
+    .collect 2580,1 >> Craft a Reinforced Linen Cape, then equip it
+    .target Lawrence Schneider
 step << Mage
     .goto 1453,53.48,81.47
     >>|cRXP_WARN_Novice Arcanist's Sash needs 35 Tailoring. Short? Linen Cloak gives a point every craft until 35, for 1 bolt and 1 Coarse Thread each|r
     .skill tailoring,35 >> Reach 35 Tailoring
 step << Mage
     .goto 1453,53.48,81.47
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lawrence Schneider|r at the tailoring shop in the Mage Quarter
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lawrence Schneider|r again
     >>|cRXP_WARN_Won't he teach Green Linen Bracers yet? Craft Simple Linen Pants (a point every craft until 40) and ask again|r
     .train 1257368 >> Train Novice Arcanist's Sash
     .train 3841 >> Train Green Linen Bracers
     .target Lawrence Schneider
-step << Mage
-    .goto 1453,53.14,81.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Alexandra Bolero|r in the same shop
-    >>|cRXP_BUY_Buy 2 Fine Thread for the Sash, and 2|r |T132891:0|t[Coarse Thread] |cRXP_BUY_and 1 Green Dye for the Bracers|r
-    .collect 2321,2 --Fine Thread (2)
-    .collect 2320,2 --Coarse Thread (2)
-    .collect 2605,1 --Green Dye (1)
-    .target Alexandra Bolero
 step << Mage
     #label ArcanistCraft
     >>|cRXP_WARN_Craft Novice Arcanist's Sash (8 bolts, 2 Fine Thread, 2 Minor Mana Potions) and Green Linen Bracers (3 bolts, 2 Coarse Thread, 1 Green Dye), then equip them|r
@@ -3040,6 +2996,7 @@ step << !Mage !Paladin
 ]])
 
 -- Darkshore from level 15, straight after the Hall of Thanes: the tram to Stormwind (Stormpike's Order on the way),
+-- Fishin' Time at the harbor while you wait (the bait was bought at 10; Catherine Leland sells it again if not),
 -- the Stormwind Harbor boat to Auberdine, and nearly every quest in the zone that's quick or pays well. It follows
 -- RestedXP's Forever Darkshore route (its 14-16 and 16-19 guides) for a non-Night Elf, minus the Buzzbox chain and
 -- Fruit of the Sea (slow drops, user's call), Easy Strider Living (Cooking 10), The Family and the Fishing Pole
@@ -3056,7 +3013,7 @@ step << !Mage !Paladin
 -- 1439 is Darkshore ("1439/1,y,x" are Kalimdor world coordinates), 1453 Stormwind City and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 9
+#version 10
 << Alliance
 #group TimmyGnome
 #name 15+ Darkshore
@@ -3077,6 +3034,21 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Furen Longbeard|r in the Dwarven District, near the tram
     .turnin 1338 >> Turn in Stormpike's Order
     .target Furen Longbeard
+step
+    .goto 1453,55.09,69.76
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tNo bait left from level 10? Talk to |cRXP_FRIENDLY_Catherine Leland|r, the fishing supplier on the canal just west of the Trade District, on your way to the harbor
+    >>|cRXP_BUY_Buy 1|r |T134335:0|t[Shiny Bauble] |cRXP_BUY_and 3 Nightcrawlers (about 3s 50c): Gilbert Gray at the harbor takes them for Fishin' Time|r
+    .collect 6529,1 --Shiny Bauble (1)
+    .collect 6530,3 --Nightcrawlers (3)
+    .target Catherine Leland
+    .zoneskip Darkshore
+step
+    .goto 1453,26.0,47.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tWhile you wait for the boat, talk to |cRXP_FRIENDLY_Gilbert Gray|r at the south end of the harbor: accept Fishin' Time and hand it straight back with the bauble and nightcrawlers
+    .accept 95065 >> Accept Fishin' Time
+    .turnin 95065 >> Turn in Fishin' Time
+    .target Gilbert Gray
+    .zoneskip Darkshore
 step
     #completewith next
     .goto 1453/0,875.50,-8680.90,20,0
@@ -3861,7 +3833,9 @@ step
 -- (flight path), then the run north past Dalaran and across Lordamere Lake to the Undercity, where you're flagged
 -- for PvP. The Hearthstone stays in Auberdine from Darkshore: after the dungeon you hearth there and take the boat
 -- to Stormwind for the other three turn-ins and your level 16, 18 and 20 training (Hearthstone on cooldown? Run back
--- to Southshore and fly). Stormwind also picks up the next guide's Deadmines quests: Underground Assault (Shoni the
+-- to Southshore and fly). Coming in by boat, Philmor's Favor starts at the harbor and goes in at Trias' Cheese, with
+-- Gatehouse Goods, on the walk south to the Valley of Heroes (both moved here from level 10, full XP up to 20).
+-- Stormwind also picks up the next guide's Deadmines quests: Underground Assault (Shoni the
 -- Shilent), Oh Brother. . . and Collecting Memories (Wilder Thistlenettle), and the paladin's Tome of Valor if
 -- you're 20. The way in, the inside steps and the turn-in coordinates follow RestedXP's Forever "16-18 Ruins of
 -- Lordaeron" (its Dungeon Guide, in beta); the boss order and the Crest's five spots come from community guides.
@@ -3869,7 +3843,7 @@ step
 -- Undercity and 1453 Stormwind City.
 RXPGuides.RegisterGuide([[
 #forever
-#version 8
+#version 9
 << Alliance
 #group TimmyGnome
 #name 18+ Ruins of Lordaeron
@@ -4002,6 +3976,12 @@ step
     >>|cRXP_WARN_On the crossing, disenchant greens you won't use and craft|r << Mage
     .zone Stormwind City >> Take the boat to Stormwind
 step
+    .goto 1453,30.0,29.0
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tAs you come off the boat, talk to |cRXP_FRIENDLY_Manifest Clerk Philmor|r further up the harbor
+    >>|cRXP_WARN_Flew in from Southshore instead? Skip this step: the harbor is out of your way|r
+    .accept 97220 >> Accept Philmor's Favor
+    .target Manifest Clerk Philmor
+step
     #completewith next
     .goto 1453/0,875.50,-8680.90,20 >> Leave the harbor east into the city
 step << Paladin
@@ -4081,6 +4061,25 @@ step
     >>|cRXP_WARN_Open the Small Sack of Gems she gives you|r
     .turnin 95189 >> Turn in Crest of Lordaeron
     .target Lady Dena Kennedy
+step
+    .isOnQuest 97220
+    .goto 1453,66.56,73.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tGo south into the Trade District and take Philmor's delivery to Trias' Cheese, next to the gryphon master
+    >>|cRXP_WARN_If your quest log points at the stockroom entrance on the building's second floor, drop it off there|r
+    .turnin 97220 >> Turn in Philmor's Favor
+    .target +Elaine Trias
+    .target +Elling Trias
+step
+    .goto 1453,66.56,73.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elaine Trias|r in Trias' Cheese
+    >>|cRXP_WARN_Take Gatehouse Goods if she offers it. Skip this step if she doesn't|r
+    .accept 97222 >> Accept Gatehouse Goods
+    .target Elaine Trias
+step
+    .isOnQuest 97222
+    .goto 1453,66.56,73.37
+    >>|cRXP_WARN_Carry the Gatehouse Shipment up to the stockroom entrance on the second floor of the same building, then hand the quest in where your quest log says|r
+    .turnin 97222 >> Turn in Gatehouse Goods
 step
     .isQuestComplete 95195
     .goto 1453/0,521.000,-8954.101

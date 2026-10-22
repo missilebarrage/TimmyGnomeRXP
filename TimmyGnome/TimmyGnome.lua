@@ -1682,45 +1682,42 @@ step
 ]])
 
 -- Elwynn Forest, from the Stormwind end of the tram until Elwynn stops being worth it, then back to Loch Modan.
+-- Shown as "11-12 Elwynn Forest": the #name stays "10-12 Elwynn Forest" because RestedXP keys saved progress by it.
 -- The core is RestedXP's Forever "11-12 Elwynn (Dwarf/Gnome)" route with the Fargodeep and Jasperlode mines and the
--- Young Lovers deliveries added. Level 12 is a target, not a requirement: Riverpaw Gnoll Bounty, Hogger and any
--- grinding are left out because Loch Modan pays better by then. The Hearthstone stays bound in Thelsamar (guide 2),
--- so Redridge ends with a flight to Stormwind, and the guide ends with Report to Gryan Stoutmantle, the Sentinel
--- Hill flight path and a hearth to Thelsamar. Mages: Speak with Jennea (Zaldimar in Goldshire) goes in on the
--- Stormwind stop after Redridge, Mirror Lake's water comes from the waterfall next to the Applejack Still, and a
--- flight from Sentinel Hill to Stormwind hands it in before the hearth. That last Stormwind trip is also the mage's
--- whole Tailoring and Enchanting session, moved from level 10 so the duo doesn't wait on it: linen top-up and 2 Minor
--- Mana Potions at the Auction House, Enchanting 20, bolts to Tailoring 25, the robe, pants, gloves and Linen Reagent
--- Bag, then Tailoring 35 and Novice Arcanist's Sash (the potions are its reagent) and Green Linen Bracers. Meanwhile
--- a level 12 Dwarf paladin flies from Sentinel Hill to Ironforge for the start of The Tome of Divinity (Brandur,
--- Tiza, John Turner, Muiredon) and hearths from there. The Stormwind harbor quests wait for later harbor visits, as in
--- RestedXP's route: Fishin' Time at the Darkshore boat at 15, Philmor's Favor and Gatehouse Goods when the boat from
--- Darkshore comes in after the Ruins of Lordaeron (full XP up to 17 and 20). The bait for Fishin' Time is still bought
--- at 10, from Catherine Leland next to the Fishing trainer. Lost Necklace is cut (a long walk for 135 XP), and Croaky
--- and Protect the Frontier's bears can be skipped when a crowd has them camped. Gathering quests
--- are left out except Red Linen Goods, whose bandanas drop from Defias on the route: its accept step says OPTIONAL
--- and the steps that follow skip themselves when you didn't take it. Collecting Kelp (and with it The Escape) and Bottles and Baubles are out:
--- Crystal Lake's murlocs and junk piles won't hold up on launch day. Guard Thomas doesn't offer Bounty on Murlocs
--- in Forever. Downstream is a required step: its three items lie on the way to Croaky and respawn instantly. A Bundle of Trouble is skipped on
--- purpose: its wood bundles are slow and contested on a busy server. Forever's Tower of Azora quests: Delicate
--- Instruments (Kobold Geomancers at Jasperlode, then Defias Rogue Wizards on the way to Rolf) is OPTIONAL because
--- only about seven Geomancers spawn; Stolen Enchanting Supplies is left out (crates in gnoll camps off the route).
--- The mage's An Enchanting Lesson (Kitta Firewind, top of the tower, enchanters only) rides on the same Geomancers:
--- they drop Crude Wax Effigies that disenchant into Luminous Residue. No farming: if the kills don't give 3, drop it.
--- Applejack Still and An Apple Treat (apples from Homer Stonefield, the still by the Mirror Lake falls, Sergeant De
--- Vries at Westbrook) fit the walk to Westbrook. Both are hand-ins with no quest giver; the still is repeatable and
--- pays no XP, and An Apple Treat pays 625. Hogger and Goldtooth stay out: Hogger's turn-in is in Goldshire,
--- which the route has already left, and Goldtooth is a single spawn in a crowded mine. Stormpike's Delivery (for
--- Loch Modan) is tried at Grimand Elmore off the tram; if he wants Elmore's Task first, Smith Argus gives it and the
--- post-Redridge stop in Stormwind swaps it. 1429 is Elwynn Forest, 1453 Stormwind City, 1433 Redridge Mountains and
--- 1436 Westfall.
+-- Young Lovers deliveries added. With the level 10 Loch Modan visit you're 12 by Goldshire, after the first loop
+-- (the user's test run dinged at The Fargodeep Mine). From there Elwynn is a bonus, so it keeps only extremely easy
+-- XP (user's call): turn-ins and deliveries on the way, Jasperlode's walk-through, the Eastvale chain to Rolf and
+-- back, Downstream's three riverbank items (they respawn instantly), the Redridge delivery with the Lakeshire flight
+-- path, and Westbrook, Westfall Stew and Report to Gryan Stoutmantle on the way to Sentinel Hill. Cut for that
+-- reason: Delicate Instruments and the mage's An Enchanting Lesson (Tower of Azora), Protect the Frontier, Croaky,
+-- Princess Must Die!, Red Linen Goods, Applejack Still and An Apple Treat; Lost Necklace was already out. Riverpaw
+-- Gnoll Bounty, Hogger and any grinding stay out because Loch Modan pays better by then. The Hearthstone stays bound
+-- in Thelsamar (guide 2), so Redridge ends with a flight to Stormwind, and the guide ends with Report to Gryan
+-- Stoutmantle, the Sentinel Hill flight path and a hearth to Thelsamar. Mages: Speak with Jennea (Zaldimar in
+-- Goldshire) goes in on the Stormwind stop after Redridge, Mirror Lake's water comes from the Mirror Lake waterfall
+-- on the way to Westbrook, and a flight from Sentinel Hill to Stormwind hands it in before the hearth. That last
+-- Stormwind trip is also the mage's whole Tailoring and Enchanting session, moved from level 10 so the duo doesn't
+-- wait on it: linen top-up and 2 Minor Mana Potions at the Auction House, Enchanting 20, bolts to Tailoring 25, the
+-- robe, pants, gloves and Linen Reagent Bag, then Tailoring 35 and Novice Arcanist's Sash (the potions are its
+-- reagent) and Green Linen Bracers. Meanwhile a level 12 Dwarf paladin flies from Sentinel Hill to Ironforge for the
+-- start of The Tome of Divinity (Brandur, Tiza, John Turner, Muiredon) and hearths from there. The Stormwind harbor
+-- quests wait for later harbor visits, as in RestedXP's route: Fishin' Time at the Darkshore boat at 15, Philmor's
+-- Favor and Gatehouse Goods when the boat from Darkshore comes in after the Ruins of Lordaeron (full XP up to 17 and
+-- 20). The bait for Fishin' Time is still bought at 10, from Catherine Leland next to the Fishing trainer.
+-- Collecting Kelp (and with it The Escape) and Bottles and Baubles are out: Crystal Lake's murlocs and junk piles
+-- won't hold up on launch day. Guard Thomas doesn't offer Bounty on Murlocs in Forever. A Bundle of Trouble and
+-- Stolen Enchanting Supplies are skipped on purpose (slow, contested pickups). Hogger and Goldtooth stay out:
+-- Hogger's turn-in is in Goldshire, which the route has already left, and Goldtooth is a single spawn in a crowded
+-- mine. Stormpike's Delivery (for Loch Modan) is tried at Grimand Elmore off the tram; if he wants Elmore's Task
+-- first, Smith Argus gives it and the post-Redridge stop in Stormwind swaps it. 1429 is Elwynn Forest, 1453
+-- Stormwind City, 1433 Redridge Mountains and 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 33
+#version 34
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
-#displayname 11-13 Elwynn Forest
+#displayname 11-12 Elwynn Forest
 #next 12-14 Loch Modan
 
 step
@@ -1829,15 +1826,12 @@ step
     .accept 111 >> Accept Speak with Gramma
     .target Tommy Joe Stonefield
 step
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gramma Stonefield|r inside the farmhouse, then |cRXP_FRIENDLY_Ma Stonefield|r outside
-    >>|cRXP_WARN_Skip Lost Necklace from "Auntie" Bernice: it's a long walk for little XP|r
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Gramma Stonefield|r inside the farmhouse
+    >>|cRXP_WARN_Skip Ma Stonefield's Princess Must Die! and "Auntie" Bernice's Lost Necklace: by the time they pay out you're 12, and the rest of Elwynn is easy XP only|r
     .turnin 111 >> Turn in Speak with Gramma
     .accept 107 >> Accept Note to William
     .goto 1429,34.945,83.855
-    .target +Gramma Stonefield
-    .accept 88 >> Accept Princess Must Die!
-    .goto 1429/0,332.43,-9894.99
-    .target +Ma Stonefield
+    .target Gramma Stonefield
 step
     .goto 1429/0,74.02,-9465.52
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Goldshire, talk to |cRXP_FRIENDLY_Marshal Dughan|r
@@ -1862,37 +1856,6 @@ step
     .turnin 107 >> Turn in Note to William
     .target William Pestle
 step
-    .goto 1429,65.0,70.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamish Bergwort|r at the Tower of Azora, on the road east
-    >>|cRXP_WARN_OPTIONAL: Delicate Instruments wants 8 Kobold Geomancers around Jasperlode, and only about seven spawn there. If they're camped, skip this step (it also skips part two)|r
-    >>|cRXP_WARN_Leave Stolen Enchanting Supplies from Blixie Fitzwink: its crates sit in gnoll camps off the route and will be swarmed|r
-    .accept 91723 >> Accept Delicate Instruments
-    .target Hamish Bergwort
-step << Mage
-    .isOnQuest 91723
-    .train 7411,3
-    .goto 1429,64.93,70.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClimb to the top floor of the tower and talk to |cRXP_FRIENDLY_Kitta Firewind|r. Only enchanters get this one
-    >>|cRXP_WARN_480 XP for 3 Luminous Residue, which you get by disenchanting the Crude Wax Effigies that Kobold Geomancers drop: the same kills as Delicate Instruments|r
-    .accept 91753 >> Accept An Enchanting Lesson
-    .target Kitta Firewind
-step
-    #completewith GeomancersDone
-    .isOnQuest 91723
-    >>Kill |cRXP_ENEMY_Kobold Geomancers|r around the mine as you go. Each kill counts for both of you
-    .complete 91723,1 --Kobold Geomancer (8)
-    .mob Kobold Geomancer
-step << Mage
-    #completewith GeomancersDone
-    .isOnQuest 91753
-    >>|cRXP_WARN_Loot the|r |cRXP_LOOT_Crude Wax Effigies|r |cRXP_WARN_from the Kobold Geomancers and Disenchant them into|r |cRXP_LOOT_Luminous Residue|r|cRXP_WARN_. Don't farm: whatever the Delicate Instruments kills give you is enough|r
-    .complete 91753,1 --Luminous Residue (3)
-step << Paladin
-    #completewith GeomancersDone
-    .isOnQuest 91723
-    +|cRXP_WARN_Tim is also doing An Enchanting Lesson, an enchanters-only quest from Kitta Firewind at the top of the tower. Kobold Geomancers drop Crude Wax Effigies for it: let him have every one (pass on the roll, or trade him any you loot)|r
-    >>|cRXP_WARN_He climbs the tower to Kitta now, and again to hand it in when you come back for Delicate Instruments part two|r
-step
     #completewith next
     .goto 1429/0,-604.49,-9180.39,15 >> Head to the Jasperlode Mine
 step
@@ -1902,40 +1865,6 @@ step
     >>Follow the tunnel through the middle of the mine
     .complete 76,1 --Scout through the Jasperlode Mine
 step
-    #label GeomancersDone
-    .isOnQuest 91723
-    #loop
-    .goto 1429,61.26,51.66,0
-    .goto 1429,62.2,55.74,0
-    .goto 1429,64.5,56.72,0
-    .goto 1429,61.26,51.66,30,0
-    .goto 1429,62.2,55.74,30,0
-    .goto 1429,64.49,56.55,30,0
-    .goto 1429,63.53,58.32,30,0
-    .goto 1429,60.97,56.51,30,0
-    >>Finish the |cRXP_ENEMY_Kobold Geomancers|r around the mine entrance
-    .complete 91723,1 --Kobold Geomancer (8)
-    .mob Kobold Geomancer
-step
-    .isQuestComplete 91723
-    .goto 1429,65.0,70.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack at the Tower of Azora, talk to |cRXP_FRIENDLY_Hamish Bergwort|r
-    >>|cRXP_WARN_Part two's 6 Defias Rogue Wizards are on your way to Rolf|r
-    .turnin 91723 >> Turn in Delicate Instruments
-    .accept 91724 >> Accept Delicate Instruments
-    .target Hamish Bergwort
-step << Mage
-    .isQuestComplete 91753
-    .goto 1429,64.93,70.71
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tClimb back to |cRXP_FRIENDLY_Kitta Firewind|r on the top floor
-    .turnin 91753 >> Turn in An Enchanting Lesson
-    .target Kitta Firewind
-step << Mage
-    .isOnQuest 91753
-    .isQuestNotComplete 91753
-    >>|cRXP_WARN_Short of 3 Luminous Residue? Drop the quest rather than farm more Geomancers|r
-    .abandon 91753 >> Abandon An Enchanting Lesson
-step
     #completewith next
     .goto 1429/0,-1032.06,-9610.23,30 >> Follow the road east to the bridge
 step
@@ -1943,50 +1872,12 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r at the east bridge
     .turnin 35 >> Turn in Further Concerns
     .accept 37 >> Accept Find the Lost Guards
-    .accept 52 >> Accept Protect the Frontier
     .target Guard Thomas
-step
-    .goto 1429/0,-1222.40,-9531.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r at the Eastvale Logging Camp, just past the bridge
-    >>|cRXP_WARN_OPTIONAL (loot): 6 Red Linen Bandanas. They drop from the Defias Rogue Wizards on your way to Rolf and the Defias Bandits around Princess. Skip this step to leave it|r
-    .accept 83 >> Accept Red Linen Goods
-    .target Sara Timberlain
-step
-    #completewith ThomasReturn
-    .isOnQuest 83
-    >>Loot |cRXP_LOOT_Red Linen Bandanas|r from the |cRXP_ENEMY_Defias|r you kill
-    .complete 83,1 --Red Linen Bandana (6)
-    .mob Defias Rogue Wizard
-    .mob Defias Bandit
-step
-    #completewith ThomasReturn
-    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r as you go
-    .complete 52,1 --Prowler (8)
-    .mob +Prowler
-    .complete 52,2 --Young Forest Bear (5)
-    .mob +Young Forest Bear
 step
     .goto 1429/0,-986.35,-9336.06
     >>Follow the river north. Click |cRXP_PICK_A half-eaten body|r on the ground
     .turnin 37 >> Turn in Find the Lost Guards
     .accept 45 >> Accept Discover Rolf's Fate
-step
-    .isOnQuest 91724
-    #loop
-    .goto 1429,73.4,49.8,0
-    .goto 1429,74.5,52.4,0
-    .goto 1429,73.9,55.6,0
-    .goto 1429,72.6,46.4,35,0
-    .goto 1429,73.4,49.8,35,0
-    .goto 1429,74.5,52.4,35,0
-    .goto 1429,73.1,54.2,35,0
-    .goto 1429,73.9,55.6,35,0
-    .goto 1429,76.6,53.4,35,0
-    .goto 1429,76.8,48.6,35,0
-    .goto 1429,74.4,47.0,35,0
-    >>Kill |cRXP_ENEMY_Defias Rogue Wizards|r north of the body, up toward Stone Cairn Lake
-    .complete 91724,1 --Defias Rogue Wizard (6)
-    .mob Defias Rogue Wizard
 step
     .goto 1429/0,-1234.31,-9224.18
     >>Click |cRXP_PICK_Rolf's corpse|r in the murloc camp at Stone Cairn Lake
@@ -2013,60 +1904,10 @@ step
     >>Loot the |cRXP_PICK_Waterlogged Toolbox|r
     .complete 91733,3 --Waterlogged Toolbox (1)
 step
-    .goto 1429/0,-1119.80,-9931.30
-    >>Kill |cRXP_ENEMY_Croaky|r, a level 11 elite. Loot him for |T134169:0|t[|cRXP_LOOT_Croaky's Head|r]
-    >>|cRXP_WARN_OPTIONAL: he's a single spawn. If he isn't up or a crowd is camping him, skip this step|r
-    >>|cRXP_WARN_Each of you needs a head. If only one drops, try sharing the quest|r
-    .use 247826 >> |cRXP_WARN_Use|r |T134169:0|t[|cRXP_LOOT_Croaky's Head|r] |cRXP_WARN_to start the quest|r
-    .collect 247826,1,91740,1 --Croaky's Head (1)
-    .accept 91740 >> Accept Croaky's Head
-    .mob Croaky
-step
-    #loop
-    .goto 1429,77.499,74.518,0
-    .goto 1429,80.496,78.223,0
-    .goto 1429,87.342,63.763,0
-    .goto 1429,77.499,74.518,55,0
-    .goto 1429,77.222,77.499,55,0
-    .goto 1429,78.483,79.323,55,0
-    .goto 1429,80.496,78.223,55,0
-    .goto 1429,81.434,76.695,55,0
-    .goto 1429,87.145,69.922,55,0
-    .goto 1429,87.342,63.763,55,0
-    >>Finish the |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r east of the river
-    >>|cRXP_WARN_The bears are scarce. If a crowd has them camped, skip this step: Guard Thomas's other quests don't need it|r
-    .complete 52,1 --Prowler (8)
-    .mob +Prowler
-    .complete 52,2 --Young Forest Bear (5)
-    .mob +Young Forest Bear
-step
-    .goto 1429/0,-869.87,-9768.10
-    >>Kill |cRXP_ENEMY_Princess|r at the Brackwell Pumpkin Patch. Loot her for the |cRXP_LOOT_Brass Collar|r
-    >>|cRXP_WARN_Two|r |cRXP_ENEMY_Porcine Entourage|r |cRXP_WARN_fight with her, and her charge hits hard|r
-    .complete 88,1 --Brass Collar (1)
-    .mob Princess
-step
-    .isOnQuest 83
-    #loop
-    .goto 1429/0,-911.52,-9735.70,60,0
-    .goto 1429/0,-828.22,-9733.39,60,0
-    .goto 1429/0,-831.69,-9823.65,60,0
-    .goto 1429/0,-921.93,-9812.08,60,0
-    >>Finish the |cRXP_LOOT_Red Linen Bandanas|r on the |cRXP_ENEMY_Defias Bandits|r around the pumpkin patch
-    .complete 83,1 --Red Linen Bandana (6)
-    .mob Defias Bandit
-step
-    .isQuestComplete 91724
-    .goto 1429,65.0,70.0
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Hamish Bergwort|r at the Tower of Azora, just north-west of the pumpkin patch
-    .turnin 91724 >> Turn in Delicate Instruments
-    .target Hamish Bergwort
-step
     #label ThomasReturn
     .goto 1429/0,-1032.06,-9610.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
     >>|cRXP_WARN_Report to Gryan Stoutmantle goes in at Sentinel Hill, where the guide ends|r
-    .turnin -52,1 >> Turn in Protect the Frontier
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
     .accept 109 >> Accept Report to Gryan Stoutmantle
@@ -2076,18 +1917,6 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ormin Pelford|r
     .turnin 91733 >> Turn in Downstream
     .target Ormin Pelford
-step
-    .isQuestComplete 83
-    .goto 1429/0,-1222.40,-9531.76
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sara Timberlain|r at the logging camp
-    .turnin 83 >> Turn in Red Linen Goods
-    .target Sara Timberlain
-step
-    .isOnQuest 91740
-    .goto 1429/0,-1406.20,-9775.50
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Merell Ross|r at Ridgepoint Tower
-    .turnin 91740 >> Turn in Croaky's Head
-    .target Merell Ross::248277
 step
     .goto 1429,80.56,80.23,0
     .xp 11 >> Reach level 11: Encroaching Gnolls in Redridge needs it
@@ -2137,7 +1966,7 @@ step << Mage
     .isOnQuest 1860
     .goto 1453/0,861.95,-8990.47
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum
-    >>|cRXP_WARN_Mirror Lake hands you Jennea's Flask: you fill it at the Mirror Lake waterfall on the way to the Applejack Still|r
+    >>|cRXP_WARN_Mirror Lake hands you Jennea's Flask: you fill it at the Mirror Lake waterfall on the way to Westbrook|r
     >>|cRXP_WARN_She doesn't offer Mirror Lake? If Mage-tastic Gizmonitor (Bink's quest from Ironforge) is in your quest log, abandon it and talk to her again: the two are alternatives, and Bink's blocks hers|r
     .turnin 1860 >> Turn in Speak with Jennea
     .accept 1861 >> Accept Mirror Lake
@@ -2167,42 +1996,15 @@ step
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSell your trash and repair at |cRXP_FRIENDLY_Andrew Krighton|r
     .vendor >> Sell your trash and repair
     .target Andrew Krighton
-step
-    .goto 1429/0,332.43,-9894.99
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHead south-west to the Stonefield farm and talk to |cRXP_FRIENDLY_Ma Stonefield|r
-    .turnin 88 >> Turn in Princess Must Die!
-    .target Ma Stonefield
-step
-    .goto 1429,33.69,82.9
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Homer Stonefield|r, the fruit seller at the farm
-    >>|cRXP_BUY_Buy 4 Shiny Red Apples (about 1 silver) for the Applejack Still on the way to Westbrook|r
-    .collect 4536,4 --Shiny Red Apple (4)
-    .target Homer Stonefield
 step << Mage
     .isOnQuest 1861
     .goto 1429/0,529.57,-9363.05
-    >>|cRXP_WARN_On the way to the still, use|r |T132788:0|t[Jennea's Flask] |cRXP_WARN_at the base of the Mirror Lake waterfall (5 second cast)|r
+    >>|cRXP_WARN_On the way to Westbrook, use|r |T132788:0|t[Jennea's Flask] |cRXP_WARN_at the base of the Mirror Lake waterfall (5 second cast)|r
     .use 7207
     .complete 1861,1 --Mirror Lake Water Sample (1)
 step
     #completewith next
-    .goto 1429,27.60,58.32,10 >> Climb the hill here: it's the way up to the Applejack Still
-step
-    .goto 1429,24.0,58.0
-    >>Head north-west to the |cRXP_PICK_Applejack Still|r by the Mirror Lake falls. Kill the |cRXP_ENEMY_Defias Bandits|r guarding it
-    >>|cRXP_WARN_There's nothing to accept: it's a hand-in. Out of combat, stand right next to the still and right-click the device itself (the floating ? isn't clickable) with the 4 apples in your bags|r
-    >>|cRXP_WARN_It's repeatable and pays no XP: one Thunder Applejack is all you need. The XP comes from Sergeant De Vries at Westbrook|r
-    .turnin 91736 >> Turn in Applejack Still
-    .mob Defias Bandit
-step
-    #completewith next
     .goto 1429/0,673.96,-9704.45,80 >> Head south to Westbrook Garrison
-step
-    .itemcount 247824,1
-    .goto 1429,24.08,73.2
-    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sergeant De Vries|r at Westbrook Garrison and hand him the |cRXP_LOOT_Thunder Applejack|r (625 XP)
-    .turnin 91738 >> Turn in An Apple Treat
-    .target Sergeant De Vries
 step
     .goto 1429/0,694.29,-9662.79
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Deputy Rainer|r at Westbrook Garrison

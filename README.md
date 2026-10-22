@@ -15,7 +15,7 @@ You need RestedXP Guides installed.
    `AddOns\TimmyGnome\TimmyGnome.toc`.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
-   **5-11 Dun Morogh**, **11-13 Elwynn Forest**, **12-14 Loch Modan**, **14+ Hall of Thanes**,
+   **5-11 Dun Morogh**, **11-12 Elwynn Forest**, **12-14 Loch Modan**, **14+ Hall of Thanes**,
    **15+ Darkshore**, **18+ Ruins of Lordaeron**, **20+ The Deadmines**, **21+ Redridge**, **22+ Duskwood**,
    **23+ Wetlands**, **25+ The Stockade** and **26+ Excavation Site** by itself.
 
@@ -72,7 +72,7 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Training:** RestedXP's Coldridge Valley steps train each class in Anvilmar. Mages also train with Magis
   Sparkmantle in Kharanos at levels 6 and 8.
 
-### 11-13 Elwynn Forest
+### 11-12 Elwynn Forest
 
 - **Stormwind:** off the tram, Stormpike's Order to Furen Longbeard, Stormpike's Delivery from Grimand Elmore (if
   he offers it), First Aid from Shaina
@@ -87,27 +87,18 @@ To update, download the zip again and replace the TimmyGnome folder.
   reminder stays up through Elwynn until the paladin's Copper Shortsword gives the essence.
 - **Goldshire:** train and pick up the Marshal Dughan quests. The mage also takes Speak with Jennea from Zaldimar
   Wefhellt after training.
-- **South:** explore Fargodeep Mine, then the Young Lovers deliveries and Princess Must Die! at the Stonefield
-  farm (Lost Necklace is skipped: a long walk for 135 XP). Back in Goldshire, The Jasperlode Mine (and Elmore's
-  Task, if Grimand wanted it first).
-- **East:** explore Jasperlode on the way to Guard Thomas, then the lost guards, Protect the Frontier, Downstream,
-  Croaky (level 11 elite) and Princess. Turn in at the bridge and Ridgepoint Tower. Croaky and the bears for
-  Protect the Frontier are skippable when a crowd has them camped. OPTIONAL on the way: Delicate
-  Instruments from the Tower of Azora (Kobold Geomancers at Jasperlode, then Defias Rogue Wizards on the way to
-  Rolf) and Red Linen Goods (bandanas from those Rogue Wizards and the Defias at Princess). With Delicate
-  Instruments the mage also takes An Enchanting Lesson (enchanters only, 480 XP) from Kitta Firewind at the top of
-  the tower: the Geomancers drop Crude Wax Effigies, which disenchant into the 3 Luminous Residue it wants. No
-  farming: if the kills don't give 3, the mage drops it. The paladin's sticky says to let the mage have the
-  effigies.
+- **South:** explore Fargodeep Mine, then the Young Lovers deliveries. Back in Goldshire, The Jasperlode Mine (and
+  Elmore's Task, if Grimand wanted it first). With the level 10 Loch Modan visit you're 12 about here (a beta test
+  run dinged at The Fargodeep Mine), so the rest of Elwynn is a bonus and keeps only extremely easy XP.
+- **East:** walk through Jasperlode on the way to Guard Thomas, then the lost guards, Rolf's corpse in the murloc
+  camp and Downstream's three riverbank items, and back to Thomas and Ormin Pelford at the bridge.
 - **Redridge:** Encroaching Gnolls (needs level 11) and the Lakeshire flight path, then fly to Stormwind and walk
   back to Goldshire. Your Hearthstone stays bound in Thelsamar. In Stormwind the mage hands Speak with Jennea to
   Jennea Cannon in the Wizard's Sanctum, takes Mirror Lake and, at level 12, trains with her (the Mirror Lake
   turn-in is a second chance).
-- **Finish:** turn-ins in Goldshire and at the farms, Applejack Still and An Apple Treat (4 apples from Homer
-  Stonefield into the still by the Mirror Lake falls, a repeatable hand-in with no XP, then the Thunder Applejack to
-  Sergeant De Vries for 625 XP), Westbrook Garrison, then Westfall: Westfall Stew on the way down the road, Report
-  to Gryan Stoutmantle and the Sentinel Hill flight path, and hearth to Thelsamar. The Loch Modan guide starts
-  there. The mage fills Jennea's Flask at the Mirror Lake waterfall on the way to the still, then flies from
+- **Finish:** turn-ins in Goldshire, Westbrook Garrison, then Westfall: Westfall Stew on the way down the road,
+  Report to Gryan Stoutmantle and the Sentinel Hill flight path, and hearth to Thelsamar. The Loch Modan guide
+  starts there. The mage fills Jennea's Flask at the Mirror Lake waterfall on the way to Westbrook, then flies from
   Sentinel Hill to Stormwind before hearthing. Meanwhile the paladin (a Dwarf, once he's 12) flies to Ironforge to
   start The Tome of Divinity: level 12 training with Brandur Ironhammer, then Tiza Battleforge, John Turner (the 10
   Linen Cloth) and Muiredon, then he hearths and you meet up in Thelsamar. At Sentinel Hill the mage also buys
@@ -125,11 +116,11 @@ To update, download the zip again and replace the TimmyGnome folder.
   - reach 35 Tailoring (Linen Cloaks), train and craft Novice Arcanist's Sash (the potions are its reagent) and
     Green Linen Bracers;
   - then Mirror Lake (Ley Staff or Ley Orb) at Jennea.
-- **Level 12 is a target, not a requirement.** Hogger, Riverpaw Gnoll Bounty and grinding are cut because Loch
-  Modan pays better by then. In a beta test run the mage was already 12 at Sergeant De Vries, before Westfall.
-  Return to Brock and Stormpike's Delivery (1,050 XP each) wait in Loch Modan.
-- **Gathering quests:** left out, except Red Linen Goods, whose bandanas come from Defias on the route. Its accept
-  step is marked OPTIONAL. Downstream is a required step: its three riverbank items respawn instantly. Skipped on
+- **Cut once you're 12 (not extremely easy XP):** Delicate Instruments and the mage's An Enchanting Lesson at the
+  Tower of Azora, Protect the Frontier, Croaky, Princess Must Die!, Red Linen Goods, Applejack Still and An Apple
+  Treat. Hogger, Riverpaw Gnoll Bounty and grinding are out because Loch Modan pays better by then. Return to Brock
+  and Stormpike's Delivery (1,050 XP each) wait in Loch Modan.
+- **Gathering quests:** left out. Downstream stays: its three riverbank items respawn instantly. Skipped on
   purpose: Collecting Kelp (and with it The Escape) and Bottles and Baubles (Crystal Lake's murlocs and junk piles
   won't hold up on launch day), A Bundle of Trouble, Stolen Enchanting Supplies (crates in gnoll camps off the
   route), Hogger (his turn-in is in Goldshire, behind you by then) and the Goldtooth chain (a single spawn). Guard

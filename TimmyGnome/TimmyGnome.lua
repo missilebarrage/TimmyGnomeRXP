@@ -1,8 +1,9 @@
 -- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of
--- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge, Duskwood, the Wetlands, the Stockade and the
--- Excavation Site, levels 1 to about 28. Guide names give the level range, like "14-15": from the Hall of Thanes on,
--- the end is where the next guide starts, and where a duo ends up is hard to predict. The #name of those guides
--- still ends in "+" (RestedXP keys saved progress and #next by it), and #displayname shows the range.
+-- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge, Duskwood, the Wetlands, the Stockade, the
+-- Excavation Site and back to Duskwood, levels 1 to about 30. Guide names give the level range, like "14-15": from
+-- the Hall of Thanes on, the end is where the next guide starts, and where a duo ends up is hard to predict. The
+-- #name of those guides still ends in "+" (RestedXP keys saved progress and #next by it), and #displayname shows the
+-- range.
 -- Coldridge Valley is RestedXP's Forever "1-5 Coldridge Valley" (their v4.11.25 guide pack; their new Dungeon
 -- Guide track uses the same guide), copied step for step, class branches included, up to Coldridge Pass. Ours
 -- differs for mages and paladins: they skip Dwarven Outfitters and grind to level 2 instead, which also drops both
@@ -6455,23 +6456,25 @@ step
     .zoneskip Wetlands
 ]])
 
--- The Excavation Site from level 26, after the Stockade: the Wetlands dungeon with all its quests, the last guide of
--- the 21-30 track. Menethil first (Caitlin Grassman and James Halloran), then Rethiel the Greenwarden (Blisters on
--- the Land if it's still open, then Horrors in the Highland) and the portal in the hills above Thelgen Rock. Inside:
--- Saltspine, Shadetooth, Daewyn Songblade's body and the Highland Horror by the camping hut past Shadetooth, the
--- Relic Guardian and Ardin Grassman beside it, with a sticky for the Thicket Raptor Hides. After the run: Whelgar
--- (and Sarltooth if Ormer's Revenge is still open), Rethiel, the hearth to Menethil for Caitlin and Halloran, the
--- flight to Ironforge for High Explorer Magellas and training, and Lakeshire for Fallen in the Fen. RestedXP has no
--- Excavation Site guide, so the structure follows its Forever dungeon guides and the dungeon facts come from
--- ForeverDungeonJournal's data, AllTheThings and the Wowhead and Icy Veins dungeon guides (boss order, where each
--- objective is, the tall grass and Shadetooth warnings). 1437 is the Wetlands, 1455 Ironforge, 1433 Redridge.
+-- The Excavation Site from level 26, after the Stockade: the Wetlands dungeon with all its quests, the last dungeon
+-- of the 21-30 track (the 28-30 Duskwood guide follows). Menethil first (Caitlin Grassman and James Halloran), then
+-- Rethiel the Greenwarden (Blisters on the Land if it's still open, then Horrors in the Highland) and the portal in
+-- the hills above Thelgen Rock. Inside: Saltspine, Shadetooth, Daewyn Songblade's body and the Highland Horror by
+-- the camping hut past Shadetooth, the Relic Guardian and Ardin Grassman beside it, with a sticky for the Thicket
+-- Raptor Hides. After the run: Whelgar (and Sarltooth if Ormer's Revenge is still open), Rethiel, the hearth to
+-- Menethil for Caitlin and Halloran, the flight to Ironforge for High Explorer Magellas and training, and Lakeshire
+-- for Fallen in the Fen. RestedXP has no Excavation Site guide, so the structure follows its Forever dungeon guides
+-- and the dungeon facts come from ForeverDungeonJournal's data, AllTheThings and the Wowhead and Icy Veins dungeon
+-- guides (boss order, where each objective is, the tall grass and Shadetooth warnings). 1437 is the Wetlands, 1455
+-- Ironforge, 1433 Redridge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 2
+#version 3
 << Alliance
 #group TimmyGnome
 #name 26+ Excavation Site
 #displayname 26-28 Excavation Site
+#next 28+ Duskwood
 
 step
     #completewith EnterExcavation
@@ -6688,4 +6691,662 @@ step
     >>|cRXP_WARN_Take the Songblade Stabilizer (mail, +6 Stamina)|r << Paladin
     .turnin 95795 >> Turn in Fallen in the Fen
     .target Dorin Songblade
+]])
+
+-- Duskwood from level 28, after the Excavation Site: the zone's later quests, which the 22-23 guide left, plus the
+-- three chains that leave it (user's call): The Missing Diplomat (Stormwind, Duskwood, Menethil), Sven's road to
+-- Morbent Fel (Stormwind and Menethil, using the Hearthstone still bound there) and The Legend of Stalvan
+-- (Moonbrook, Goldshire, Stormwind, Eastvale), plus Return to Jitters on the way. Look To The Stars needs a Bronze
+-- Tube each, from Billibub Cogspinner (limited supply) or the Auction House; without one it skips itself. Bride of
+-- the Embalmer is OPTIONAL: Eliza is a level 31 elite. Left out: Mor'Ladim (a level 35 elite), A Noble Brew (its
+-- Musquash Root is deep in the eastern Wetlands) and An Old History Book. The route: Stormwind for the tubes and the
+-- Missing Diplomat's first deliveries, Darkshire, the Blind Mary loop with the first worgen, the west loop (the Dark
+-- Runners, Raven Hill, Sven, the mausoleum, Abercrombie, the strongbox, the crate and Zzarc'Vul in the ogre mound)
+-- and out through Raven Hill into Westfall for Stalvan's footlocker, the Sentinel Hill flight to Darkshire, a
+-- Stormwind tour (Dashel Stonefist's fight, Goldshire, Caretaker Folsom, Bishop Farthing), the hearth to Menethil
+-- (Glorin's ingots, Slim Jahn), Grimand Elmore, the Sentinel Hill flight and the road into Duskwood for Morbent Fel
+-- and Eliza, the last worgen on the walk east, Eastvale for Marshal Haggard and Stalvan Mistmantle last. A duo ends
+-- about 29.7 from 28.0, so level 30 training waits for the next stop (Ironforge has both trainers). Loop order and
+-- step texts follow RestedXP's TBC "28-30 Duskwood", "24-27 Redridge/Duskwood" and "30-32 Duskwood/STV" (the ingots,
+-- the tube and Slim Jahn from its newer TBC "23-30"); spots and counts come from Questie's Forever data, rewards
+-- from Wowhead's Forever tooltips. 1431 is Duskwood, 1453 Stormwind City, 1429 Elwynn Forest, 1436 Westfall, 1437
+-- the Wetlands and 1433 Redridge Mountains.
+RXPGuides.RegisterGuide([[
+#forever
+#version 1
+<< Alliance
+#group TimmyGnome
+#name 28+ Duskwood
+#displayname 28-30 Duskwood
+
+step
+    .goto 1433/0,-2234.90,-9435.30
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Ariena Stormfeather|r, the gryphon master in Lakeshire
+    .fly Stormwind >> Fly to Stormwind
+    .target Ariena Stormfeather
+    .zoneskip Stormwind City
+step
+    .goto 1453/0,860.42,-8511.06
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Thomas|r, a boy who walks around inside the Cathedral of Light
+    .accept 1274 >> Accept The Missing Diplomat
+    .target Thomas
+    .unitscan Thomas
+step
+    .goto 1453/0,638.8,-8341.95
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Billibub Cogspinner|r in the Dwarven District
+    >>|cRXP_BUY_Buy a|r |T133024:0|t[Bronze Tube] |cRXP_BUY_each for Look To The Stars, if he has them|r
+    >>|cRXP_WARN_Sold out? The Auction House next to Elling Trias may have one. Without a tube, skip this step: Look To The Stars skips itself|r
+    .vendor 5519 >> Buy a Bronze Tube
+    .bronzetube
+    .target Billibub Cogspinner
+step
+    .goto 1453/0,328.75,-8506.31
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bishop DeLavey|r in Stormwind Keep
+    .turnin 1274 >> Turn in The Missing Diplomat
+    .accept 1241 >> Accept The Missing Diplomat
+    .target Bishop DeLavey
+step
+    .goto 1453/0,397.38,-8981.81
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jorgen|r
+    .turnin 1241 >> Turn in The Missing Diplomat
+    .accept 1242 >> Accept The Missing Diplomat
+    .target Jorgen
+step
+    .goto 1453/0,558.79,-8852.89,8,0
+    .goto 1453/0,575.65,-8854.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elling Trias|r upstairs in his cheese shop in the Trade District
+    .turnin 1242 >> Turn in The Missing Diplomat
+    .accept 1243 >> Accept The Missing Diplomat
+    .target Elling Trias
+step
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r, the gryphon master in the Trade District
+    .fly Darkshire >> Fly to Darkshire
+    .target Dungar Longdrink
+    .zoneskip Duskwood
+step
+    .itemcount 4371,1
+    .goto 1431,79.80,48.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viktori Prism'Antras|r in the tower east of the gryphon master
+    .accept 174 >> Accept Look To The Stars
+    .turnin 174 >> Turn in Look To The Stars
+    .target Viktori Prism'Antras
+step
+    .isQuestTurnedIn 174
+    .goto 1431,79.80,48.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viktori Prism'Antras|r again
+    .accept 175 >> Accept Look To The Stars
+    .target Viktori Prism'Antras
+step
+    .goto 1431,75.75,47.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calor|r
+    .accept 173 >> Accept Worgen in the Woods
+    .target Calor
+step
+    .goto 1431,75.79,45.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Madame Eva|r in her house
+    .accept 66 >> Accept The Legend of Stalvan
+    .target Madame Eva
+step
+    .goto 1431,73.78,44.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tavernkeep Smitts|r in the Scarlet Raven Tavern
+    .accept 159 >> Accept Juice Delivery
+    .accept 453 >> Accept Finding the Shadowy Figure
+    .target Tavernkeep Smitts
+step
+    .goto 1431,73.75,43.48
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Chef Grual|r
+    .accept 240 >> Accept Return to Jitters
+    .target Chef Grual
+step
+    .goto 1431,73.54,46.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
+    >>|cRXP_WARN_She may be dead or busy if Stitches attacks Darkshire: come back to her later|r
+    .accept 58 >> Accept The Night Watch
+    .target Commander Althea Ebonlocke
+step
+    .goto 1431,72.54,46.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clerk Daltry|r in the town hall
+    .turnin 66 >> Turn in The Legend of Stalvan
+    .accept 67 >> Accept The Legend of Stalvan
+    .target Clerk Daltry
+step
+    #completewith BackusMeet
+    .isOnQuest 1243
+    >>|cRXP_WARN_Watch for|r |cRXP_FRIENDLY_Watcher Backus|r|cRXP_WARN_: he patrols the road north out of Darkshire. Talk to him when you pass|r
+    .turnin 1243 >> Turn in The Missing Diplomat
+    .accept 1244 >> Accept The Missing Diplomat
+    .unitscan Watcher Backus
+step
+    .isQuestTurnedIn 174
+    .goto 1431,81.99,59.09
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tSouth-east to |cRXP_FRIENDLY_Blind Mary|r's house
+    .turnin 175 >> Turn in Look To The Stars
+    .accept 177 >> Accept Look To The Stars
+    .target Blind Mary
+step
+    .isOnQuest 177
+    .goto 1431,80.90,71.96
+    >>Kill the |cRXP_ENEMY_Insane Ghoul|r at the chapel south of her. Loot him for |cRXP_LOOT_Mary's Looking Glass|r
+    .complete 177,1 --Mary's Looking Glass (1)
+    .mob Insane Ghoul
+step
+    #loop
+    .goto 1431,65.2,70.1,0
+    .goto 1431,66.4,66.4,30,0
+    .goto 1431,67.3,70.8,30,0
+    .goto 1431,67.2,75.6,30,0
+    .goto 1431,65.0,75.0,30,0
+    .goto 1431,62.5,72.4,30,0
+    .goto 1431,64.3,66.2,30,0
+    >>West of the chapel, kill |cRXP_ENEMY_Nightbane Shadow Weavers|r
+    >>|cRXP_WARN_The Dark Runners here are for the next part: you're back for them on the way west|r
+    .complete 173,1 --Nightbane Shadow Weaver (6)
+    .mob Nightbane Shadow Weaver
+step
+    .isQuestComplete 177
+    .goto 1431,79.80,48.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Darkshire, talk to |cRXP_FRIENDLY_Viktori Prism'Antras|r
+    .turnin 177 >> Turn in Look To The Stars
+    .accept 181 >> Accept Look To The Stars
+    .target Viktori Prism'Antras
+step
+    .goto 1431,75.75,47.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calor|r
+    .turnin 173 >> Turn in Worgen in the Woods
+    .accept 221 >> Accept Worgen in the Woods
+    .target Calor
+step
+    #label BackusMeet
+    .isOnQuest 1243
+    .goto 1431,74.83,44.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tFind |cRXP_FRIENDLY_Watcher Backus|r before you head west: he walks between the inn and the road north
+    .turnin 1243 >> Turn in The Missing Diplomat
+    .accept 1244 >> Accept The Missing Diplomat
+    .target Watcher Backus
+    .unitscan Watcher Backus
+step
+    #loop
+    .goto 1431,62.1,42.7,0
+    .goto 1431,65.0,50.0,30,0
+    .goto 1431,66.3,44.8,30,0
+    .goto 1431,63.9,40.9,30,0
+    .goto 1431,62.2,38.8,30,0
+    .goto 1431,60.0,39.6,30,0
+    .goto 1431,60.8,41.0,30,0
+    .goto 1431,62.1,42.7,30,0
+    >>West of Darkshire along the road, kill |cRXP_ENEMY_Nightbane Dark Runners|r
+    >>|cRXP_WARN_They're fast and notice you from further away than most mobs|r
+    .complete 221,1 --Nightbane Dark Runner (12)
+    .mob Nightbane Dark Runner
+step
+    #completewith next
+    .goto 1431,18.38,56.37,30 >> Follow the road west to Raven Hill
+step
+    .goto 1431,18.38,56.37
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jitters|r in Raven Hill
+    .turnin 453 >> Turn in Finding the Shadowy Figure
+    .accept 268 >> Accept Return to Sven
+    .turnin 240 >> Turn in Return to Jitters
+    .target Jitters
+step
+    .goto 1431,7.78,34.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tNorth-west to |cRXP_FRIENDLY_Sven Yorgen|r's camp
+    .turnin 268 >> Turn in Return to Sven
+    .accept 323 >> Accept Proving Your Worth
+    .target Sven Yorgen
+step
+    #loop
+    .goto 1431,16.1,35.5,0
+    .goto 1431,16.9,31.3,25,0
+    .goto 1431,17.2,34.9,25,0
+    .goto 1431,16.4,38.5,25,0
+    .goto 1431,15.4,39.2,25,0
+    .goto 1431,15.2,36.9,25,0
+    .goto 1431,13.7,33.4,25,0
+    >>East of the camp, around the crypt and the house on the hill, kill |cRXP_ENEMY_Skeletal Raiders|r, |cRXP_ENEMY_Skeletal Healers|r and |cRXP_ENEMY_Skeletal Warders|r
+    >>|cRXP_WARN_Warders are mostly inside the Dawning Wood Catacombs (16.0, 38.8)|r
+    .complete 323,1 --Skeletal Raider (15)
+    .mob +Skeletal Raider
+    .complete 323,2 --Skeletal Healer (3)
+    .mob +Skeletal Healer
+    .complete 323,3 --Skeletal Warder (3)
+    .mob +Skeletal Warder
+step
+    .goto 1431,7.78,34.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r
+    .turnin 323 >> Turn in Proving Your Worth
+    .accept 269 >> Accept Seeking Wisdom
+    .target Sven Yorgen
+step
+    .goto 1431,28.11,31.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tEast to |cRXP_FRIENDLY_Abercrombie|r's shack
+    .turnin 159 >> Turn in Juice Delivery
+    .accept 133 >> Accept Ghoulish Effigy
+    .target Abercrombie
+step
+    #loop
+    .goto 1431,24.5,33.1,0
+    .goto 1431,24.1,27.5,20,0
+    .goto 1431,25.4,30.6,20,0
+    .goto 1431,25.6,32.7,20,0
+    .goto 1431,24.1,36.0,20,0
+    .goto 1431,23.4,35.0,20,0
+    .goto 1431,22.9,28.2,20,0
+    >>Just west of the shack, kill |cRXP_ENEMY_Plague Spreaders|r in and around the mausoleum. Loot the ghouls there for |cRXP_LOOT_Ghoul Ribs|r
+    .complete 58,1 --Plague Spreader (20)
+    .mob +Plague Spreader
+    .complete 133,1 --Ghoul Rib (7)
+    .mob +Brain Eater
+    .mob +Bone Chewer
+    .mob +Flesh Eater
+    .mob +Rotted One
+step
+    .goto 1431,28.11,31.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Abercrombie|r
+    .turnin 133 >> Turn in Ghoulish Effigy
+    .accept 134 >> Accept Ogre Thieves
+    .target Abercrombie
+step
+    .isOnQuest 1244
+    .goto 1431,23.92,72.07
+    >>Go south to the small house and loot the |cRXP_PICK_Defias Strongbox|r inside for the |cRXP_LOOT_Defias Docket|r
+    .complete 1244,1 --Defias Docket (1)
+step
+    .goto 1431,33.42,76.35
+    >>East to the ogre mound: loot |cRXP_PICK_Abercrombie's Crate|r by the entrance
+    .complete 134,1 --Abercrombie's Crate (1)
+step
+    .isOnQuest 181
+    .goto 1431,36.83,83.88
+    >>Inside the ogre mound, kill |cRXP_ENEMY_Zzarc' Vul|r (level 33). Loot him for his |cRXP_LOOT_Ogre's Monocle|r
+    >>|cRXP_WARN_He has two spots in the cave: check the side room (36.1, 80.6) if he isn't here|r
+    .complete 181,1 --Ogre's Monocle (1)
+    .mob Zzarc' Vul
+step
+    .goto 1431,28.11,31.46
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack north to |cRXP_FRIENDLY_Abercrombie|r
+    .turnin 134 >> Turn in Ogre Thieves
+    .accept 160 >> Accept Note to the Mayor
+    .target Abercrombie
+step
+    #completewith next
+    .goto 1431,18.38,56.37,40,0
+    .goto 1431,2.0,57.0,40,0
+    .goto 1436,41.51,66.73,30 >> Back to Raven Hill, then take the road west into Westfall and south-west to Moonbrook
+step
+    .goto 1436,41.51,66.73
+    >>Click the |cRXP_PICK_Old Footlocker|r in Moonbrook
+    .turnin 67 >> Turn in The Legend of Stalvan
+    .accept 68 >> Accept The Legend of Stalvan
+step
+    .goto 1436/0,1037.42,-10628.27
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tNorth to Sentinel Hill: talk to |cRXP_FRIENDLY_Thor|r, the gryphon master
+    .fly Darkshire >> Fly to Darkshire
+    .target Thor
+    .zoneskip Duskwood
+step
+    .isQuestComplete 1244
+    .goto 1431,74.83,44.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Watcher Backus|r: he walks between the inn and the road north
+    .turnin 1244 >> Turn in The Missing Diplomat
+    .accept 1245 >> Accept The Missing Diplomat
+    .target Watcher Backus
+    .unitscan Watcher Backus
+step
+    .goto 1431,72.54,46.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clerk Daltry|r
+    .turnin 68 >> Turn in The Legend of Stalvan
+    .accept 69 >> Accept The Legend of Stalvan
+    .target Clerk Daltry
+step
+    .goto 1431,71.93,46.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
+    .turnin 160 >> Turn in Note to the Mayor
+    .accept 251 >> Accept Translate Abercrombie's Note
+    .target Lord Ello Ebonlocke
+step
+    .goto 1431,72.62,47.62
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sirra Von'Indi|r, then wait while she translates
+    .turnin 251 >> Turn in Translate Abercrombie's Note
+    .accept 401 >> Accept Wait for Sirra to Finish
+    .turnin 401 >> Turn in Wait for Sirra to Finish
+    .accept 252 >> Accept Translation to Ello
+    .target Sirra Von'Indi
+step
+    .goto 1431,71.93,46.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
+    .turnin 252 >> Turn in Translation to Ello
+    .target Lord Ello Ebonlocke
+step
+    .goto 1431,71.93,46.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r again
+    >>|cRXP_WARN_OPTIONAL (elite): Eliza is a level 31 elite with guards, summoned at her grave by Abercrombie's shack on your last trip west. Skip this step if you'd rather not|r
+    .accept 253 >> Accept Bride of the Embalmer
+    .target Lord Ello Ebonlocke
+step
+    .goto 1431,73.54,46.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
+    >>|cRXP_WARN_Take the Gunnysack of the Night Watch (10 slots)|r << !Hunter
+    .turnin 58 >> Turn in The Night Watch
+    .target Commander Althea Ebonlocke
+step
+    .goto 1431,75.75,47.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calor|r
+    .turnin 221 >> Turn in Worgen in the Woods
+    .accept 222 >> Accept Worgen in the Woods
+    .target Calor
+step
+    .isQuestComplete 181
+    .goto 1431,79.80,48.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Viktori Prism'Antras|r
+    >>|cRXP_WARN_Take the Zodiac Gloves (cloth, Intellect and Spirit)|r << Mage
+    >>|cRXP_WARN_Take the Belt of the Stars (mail, Strength and Stamina)|r << Paladin
+    .turnin 181 >> Turn in Look To The Stars
+    .target Viktori Prism'Antras
+step
+    .goto 1431,77.49,44.29
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Felicia Maline|r, the gryphon master
+    .fly Stormwind >> Fly to Stormwind
+    .target Felicia Maline
+    .zoneskip Stormwind City
+step
+    .goto 1453/0,558.79,-8852.89,8,0
+    .goto 1453/0,575.65,-8854.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Elling Trias|r upstairs in his cheese shop
+    .turnin 1245 >> Turn in The Missing Diplomat
+    .accept 1246 >> Accept The Missing Diplomat
+    .target Elling Trias
+step
+    .goto 1453/0,432.65,-8681.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dashel Stonefist|r in Old Town
+    >>|cRXP_WARN_Accept the next part together: he turns hostile right away, with two friends|r
+    .turnin 1246 >> Turn in The Missing Diplomat
+    .accept 1447 >> Accept The Missing Diplomat
+    .target Dashel Stonefist
+step
+    .isOnQuest 1447
+    .goto 1453/0,432.65,-8681.22
+    >>Beat |cRXP_ENEMY_Dashel Stonefist|r until he gives up
+    .complete 1447,1 --Defeat Dashel Stonefist (1)
+    .mob Dashel Stonefist
+step
+    .goto 1453/0,432.65,-8681.22
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dashel Stonefist|r
+    .turnin 1447 >> Turn in The Missing Diplomat
+    .accept 1247 >> Accept The Missing Diplomat
+    .target Dashel Stonefist
+step
+    .goto 1453/0,558.79,-8852.89,8,0
+    .goto 1453/0,575.65,-8854.16
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack to |cRXP_FRIENDLY_Elling Trias|r
+    .turnin 1247 >> Turn in The Missing Diplomat
+    .accept 1248 >> Accept The Missing Diplomat
+    .target Elling Trias
+step
+    #completewith next
+    .goto 1429,43.77,65.80,30 >> Leave Stormwind by the main gate and follow the road south to Goldshire
+step
+    .goto 1429,43.77,65.80
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Innkeeper Farley|r in the Lion's Pride Inn
+    .turnin 69 >> Turn in The Legend of Stalvan
+    .accept 70 >> Accept The Legend of Stalvan
+    .target Innkeeper Farley
+step
+    .goto 1429,44.30,65.82
+    >>Go upstairs to the room behind the rogue trainer and loot the |cRXP_PICK_Storage Chest|r for |cRXP_LOOT_An Undelivered Letter|r
+    .complete 70,1 --An Undelivered Letter (1)
+step
+    #completewith next
+    .goto 1453/0,983.96,-8834.00,20 >> Back to Stormwind: Caretaker Folsom is by the graveyard in the Mage Quarter
+step
+    .goto 1453/0,983.96,-8834.00
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Caretaker Folsom|r
+    .turnin 70 >> Turn in The Legend of Stalvan
+    .accept 72 >> Accept The Legend of Stalvan
+    .target Caretaker Folsom
+step
+    .goto 1453/0,985.00,-8830.41
+    >>Click the |cRXP_PICK_Sealed Crate|r next to him
+    .turnin 72 >> Turn in The Legend of Stalvan
+    .accept 74 >> Accept The Legend of Stalvan
+step << Mage
+    .xp <28,1
+    #completewith next
+    .goto 1453/0,868.8,-9004.27,8,0
+    .goto 1453/0,871.36,-9013.14,10,0
+    .goto 1453/0,887.22,-9017.80,10 >> Missed your level 28 training? Go into the Wizard's Sanctum and follow its ramp to |cRXP_FRIENDLY_Jennea|r
+step << Mage
+    .xp <28,1
+    .goto 1453/0,861.95,-8990.47
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jennea Cannon|r in the Wizard's Sanctum
+    .train 1461 >> Train your level 28 spells (Arcane Intellect rank 3, Blizzard rank 2, Mana Shield rank 2, Scorch rank 2, Conjure Mana Agate)
+    .target Jennea Cannon
+step << Paladin
+    .xp <28,1
+    .goto 1453/0,859.13,-8559.14,10,0
+    .goto 1453/0,861.14,-8573.03
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tMissed your level 28 training? Talk to |cRXP_FRIENDLY_Arthur the Faithful|r in the Cathedral
+    .train 5614 >> Train your level 28 spells (Exorcism rank 2, Concentration Aura)
+    .target Arthur the Faithful
+step
+    .goto 1453/0,855.38,-8528.55
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Bishop Farthing|r in the Cathedral of Light
+    .turnin 269 >> Turn in Seeking Wisdom
+    .accept 270 >> Accept The Doomed Fleet
+    .target Bishop Farthing
+step
+    .hs >> Hearth to Menethil Harbor
+    .cooldown item,6948,>2,1
+    .bindlocation 150,1
+    .subzoneskip 150
+step
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tHearthstone on cooldown? Talk to |cRXP_FRIENDLY_Dungar Longdrink|r and fly to Menethil Harbor
+    .fly Menethil >> Fly to Menethil Harbor
+    .target Dungar Longdrink
+    .zoneskip Wetlands
+step
+    .goto 1437,10.58,60.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Glorin Steelbrow|r in the Deepwater Tavern
+    .turnin 270 >> Turn in The Doomed Fleet
+    .accept 321 >> Accept Lightforge Iron
+    .target Glorin Steelbrow
+step
+    .goto 1437,10.60,60.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mikhail|r in the tavern
+    >>|cRXP_WARN_Accept the next part together: Tapoke "Slim" Jahn by the door stealths and runs outside|r
+    .turnin 1248 >> Turn in The Missing Diplomat
+    .accept 1249 >> Accept The Missing Diplomat
+    .target Mikhail
+step
+    .isOnQuest 1249
+    .goto 1437,10.80,59.62
+    >>Run outside and beat |cRXP_ENEMY_Tapoke "Slim" Jahn|r. His friend runs off once Slim gives up
+    .complete 1249,1 --Defeat Tapoke Jahn (1)
+    .mob Tapoke "Slim" Jahn
+step
+    .goto 1437,10.60,60.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack inside, talk to |cRXP_FRIENDLY_Mikhail|r and wait out his talk with Slim
+    .turnin 1249 >> Turn in The Missing Diplomat
+    .target Mikhail
+step
+    .isQuestTurnedIn 1249
+    .goto 1437,10.54,60.26
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tapoke "Slim" Jahn|r
+    .accept 1250 >> Accept The Missing Diplomat
+    .target Tapoke "Slim" Jahn
+step
+    .goto 1437,10.60,60.77
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Mikhail|r
+    >>|cRXP_WARN_Don't take the next part: it goes to Theramore|r
+    .turnin 1250 >> Turn in The Missing Diplomat
+    .target Mikhail
+step
+    .goto 1437,12.11,64.19
+    >>Click the |cRXP_PICK_Waterlogged Chest|r on the shore south of the tavern
+    .turnin 321 >> Turn in Lightforge Iron
+    .accept 324 >> Accept The Lost Ingots
+step
+    #loop
+    .goto 1437,10.2,71.0,0
+    .goto 1437,12.6,65.2,50,0
+    .goto 1437,10.2,71.0,50,0
+    .goto 1437,7.2,72.6,50,0
+    >>Kill |cRXP_ENEMY_Bluegill Raiders|r along the shore. Loot them for |cRXP_LOOT_Lightforge Ingots|r
+    >>|cRXP_WARN_They come in groups, and the ingots can drop slowly|r
+    .complete 324,1 --Lightforge Ingot (5)
+    .mob Bluegill Raider
+step
+    .goto 1437,10.58,60.59
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in the tavern, talk to |cRXP_FRIENDLY_Glorin Steelbrow|r
+    .turnin 324 >> Turn in The Lost Ingots
+    .accept 322 >> Accept Blessed Arm
+    .target Glorin Steelbrow
+step
+    .goto 1437/0,-782.000,-3793.200
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Shellei Brondir|r, the gryphon master
+    .fly Stormwind >> Fly to Stormwind
+    .target Shellei Brondir
+    .zoneskip Stormwind City
+step
+    .goto 1453/0,685.22,-8387.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Grimand Elmore|r in the Dwarven District
+    .turnin 322 >> Turn in Blessed Arm
+    .accept 325 >> Accept Armed and Ready
+    .target Grimand Elmore
+step
+    .goto 1453/0,490.03,-8835.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Dungar Longdrink|r
+    .fly Westfall >> Fly to Sentinel Hill
+    .target Dungar Longdrink
+    .zoneskip Westfall
+step
+    #completewith next
+    .goto 1436,63.9,57.5,40,0
+    .goto 1431,18.38,56.37,40,0
+    .goto 1431,7.78,34.07,20 >> Take the road east from Sentinel Hill into Duskwood, through Raven Hill and north to Sven's camp
+step
+    .goto 1431,7.78,34.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r
+    .turnin 325 >> Turn in Armed and Ready
+    .accept 55 >> Accept Morbent Fel
+    .target Sven Yorgen
+step
+    .isOnQuest 55
+    .goto 1431,16.90,33.40
+    >>Go upstairs in the house on the hill. |cRXP_WARN_Equip|r |T135142:0|t[Morbent's Bane] |cRXP_WARN_in your off-hand and use it on|r |cRXP_ENEMY_Morbent Fel|r |cRXP_WARN_(one of you is enough), then kill him|r
+    >>|cRXP_WARN_Put your weapon back on afterwards|r
+    .complete 55,1 --Morbent Fel slain (1)
+    .use 7297
+    .mob Morbent Fel
+step
+    .goto 1431,7.78,34.07
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Sven Yorgen|r
+    >>|cRXP_WARN_Take the Night Watch Pantaloons (cloth, Stamina and Intellect)|r << Mage
+    >>|cRXP_WARN_Take the Sparkmetal Coif (mail, Strength and Spirit)|r << Paladin
+    .turnin 55 >> Turn in Morbent Fel
+    .target Sven Yorgen
+step
+    .isOnQuest 253
+    .goto 1431,28.80,30.90
+    >>East to Abercrombie's shack: click the grave dirt behind it to summon |cRXP_ENEMY_Eliza|r and kill her for |cRXP_LOOT_The Embalmer's Heart|r
+    >>|cRXP_WARN_A level 31 elite: she casts Frostbolt and Frost Nova, and her guards join in|r
+    .complete 253,1 --The Embalmer's Heart (1)
+    .mob Eliza
+step
+    #loop
+    .goto 1431,62.4,81.7,0
+    .goto 1431,62.4,81.7,30,0
+    .goto 1431,63.6,84.2,30,0
+    .goto 1431,61.2,81.7,30,0
+    .goto 1431,62.7,79.2,30,0
+    .goto 1431,71.6,71.7,30,0
+    .goto 1431,73.5,68.5,30,0
+    .goto 1431,73.0,72.7,30,0
+    .goto 1431,72.0,74.7,30,0
+    >>On the walk east to Darkshire, kill |cRXP_ENEMY_Nightbane Vile Fangs|r and |cRXP_ENEMY_Nightbane Tainted Ones|r: the south-west group (62.4, 81.7) first, then the orchard south of town (72.8, 72.9)
+    .complete 222,1 --Nightbane Vile Fang (8)
+    .mob +Nightbane Vile Fang
+    .complete 222,2 --Nightbane Tainted One (8)
+    .mob +Nightbane Tainted One
+step
+    .isQuestComplete 253
+    .goto 1431,71.93,46.42
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Lord Ello Ebonlocke|r
+    >>|cRXP_WARN_Take the Mantle of Honor (cloth, Intellect and Spirit)|r << Mage
+    >>|cRXP_WARN_Take the Darkshire Shoulderguards (leather, Stamina and Spirit)|r << Paladin
+    .turnin 253 >> Turn in Bride of the Embalmer
+    .target Lord Ello Ebonlocke
+step
+    .goto 1431,75.75,47.57
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Calor|r
+    .turnin 222 >> Turn in Worgen in the Woods
+    .accept 223 >> Accept Worgen in the Woods
+    .target Calor
+step
+    .goto 1431,75.32,49.02
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Jonathan Carevin|r next to him
+    .turnin 223 >> Turn in Worgen in the Woods
+    .target Jonathan Carevin
+step
+    #completewith next
+    .goto 1431,93.3,12.0,50,0
+    .goto 1429,84.61,69.38,20 >> Follow the road north out of Darkshire to Three Corners, then west into Elwynn to the Eastvale Logging Camp
+step
+    .goto 1429,84.61,69.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Haggard|r at the Eastvale Logging Camp
+    .turnin 74 >> Turn in The Legend of Stalvan
+    .accept 75 >> Accept The Legend of Stalvan
+    .target Marshal Haggard
+step
+    .goto 1429,85.70,69.54
+    >>Go upstairs in his house and loot |cRXP_PICK_Marshal Haggard's Chest|r for |cRXP_LOOT_A Faded Journal Page|r
+    .complete 75,1 --A Faded Journal Page (1)
+step
+    .goto 1429,84.61,69.38
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Marshal Haggard|r
+    .turnin 75 >> Turn in The Legend of Stalvan
+    .accept 78 >> Accept The Legend of Stalvan
+    .target Marshal Haggard
+step
+    #completewith next
+    .goto 1431,93.3,12.0,50,0
+    .goto 1431,73.78,44.49,20 >> Back to Three Corners and south to Darkshire
+step
+    .goto 1431,73.78,44.49
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Tavernkeep Smitts|r
+    .turnin 78 >> Turn in The Legend of Stalvan
+    .accept 79 >> Accept The Legend of Stalvan
+    .target Tavernkeep Smitts
+step
+    .goto 1431,73.54,46.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
+    .turnin 79 >> Turn in The Legend of Stalvan
+    .accept 80 >> Accept The Legend of Stalvan
+    .target Commander Althea Ebonlocke
+step
+    .goto 1431,72.54,46.87
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Clerk Daltry|r
+    .turnin 80 >> Turn in The Legend of Stalvan
+    .accept 97 >> Accept The Legend of Stalvan
+    .target Clerk Daltry
+step
+    .goto 1431,73.54,46.82
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Commander Althea Ebonlocke|r
+    .turnin 97 >> Turn in The Legend of Stalvan
+    .accept 98 >> Accept The Legend of Stalvan
+    .target Commander Althea Ebonlocke
+step
+    .goto 1431,77.35,36.19
+    >>North to Manor Mistmantle: kill |cRXP_ENEMY_Stalvan Mistmantle|r (level 32) in the house and loot his |cRXP_LOOT_Mistmantle Family Ring|r
+    .complete 98,1 --Mistmantle Family Ring (1)
+    .mob Stalvan Mistmantle
+step
+    .goto 1431,75.79,45.32
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tBack in Darkshire, talk to |cRXP_FRIENDLY_Madame Eva|r
+    >>|cRXP_WARN_Take the Ring of Forlorn Spirits (spell damage)|r << Mage
+    >>|cRXP_WARN_Take the Ring of Ruin (Strength and Agility)|r << Paladin
+    .turnin 98 >> Turn in The Legend of Stalvan
+    .target Madame Eva
 ]])

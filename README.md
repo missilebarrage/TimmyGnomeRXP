@@ -1,11 +1,11 @@
 # TimmyGnome
 
-A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
-Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes, Darkshore, the
-Ruins of Lordaeron, the Deadmines, Redridge, Duskwood, the Wetlands, the Stockade and the Excavation Site, levels 1
-to about 28, made for playing as a duo (the dungeons need three more players). Guide names give the level range,
-like **14-15**. From the Hall of Thanes on, the end is where the next guide starts: where a duo ends up is hard to
-predict, so treat it as a rough target.
+A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome Mage
+route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes, Darkshore, the Ruins of
+Lordaeron, the Deadmines, Redridge, Duskwood, the Wetlands, the Stockade, the Excavation Site and back to Duskwood,
+levels 1 to about 30, made for playing as a duo (the dungeons need three more players). Guide names give the level
+range, like **14-15**. From the Hall of Thanes on, the end is where the next guide starts: where a duo ends up is
+hard to predict, so treat it as a rough target.
 
 ## Install
 
@@ -18,7 +18,7 @@ You need RestedXP Guides installed.
 4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to **5-11 Dun Morogh**,
    **11-12 Elwynn Forest**, **12-14 Loch Modan**, **14-15 Hall of Thanes**, **15-18 Darkshore**,
    **18-20 Ruins of Lordaeron**, **20-21 The Deadmines**, **21-22 Redridge**, **22-23 Duskwood**,
-   **23-25 Wetlands**, **25-26 The Stockade** and **26-28 Excavation Site** by itself.
+   **23-25 Wetlands**, **25-26 The Stockade**, **26-28 Excavation Site** and **28-30 Duskwood** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
@@ -337,7 +337,7 @@ because their bosses are 28-31.
 
 ### 26-28 Excavation Site
 
-The last guide of the 21-30 track.
+The last dungeon of the 21-30 track.
 
 - **Before the run:** Caitlin Grassman and James Halloran in Menethil, then Rethiel the Greenwarden for Horrors in
   the Highland (Blisters on the Land first, if it's still open). The portal is a blue mist under a large tree in the
@@ -351,7 +351,33 @@ The last guide of the 21-30 track.
   for High Explorer Magellas and training, then Lakeshire for Fallen in the Fen.
 - **Left out:** Crocs of the Sky (three trips, unknown drop rate), Lifting the Curse, the Wetlands group elites and
   Seeking Caitlin (a breadcrumb from Ashenvale).
-- **Where you end up:** about 28, in Lakeshire.
+- **Where you end up:** about 28, in Lakeshire, where the Duskwood guide starts.
+
+### 28-30 Duskwood
+
+Duskwood's later quests, which the 22-23 guide left, plus the three chains that leave the zone.
+
+- **Stormwind first:** Thomas in the Cathedral starts The Missing Diplomat (Bishop DeLavey, Jorgen, Elling Trias),
+  and Billibub Cogspinner in the Dwarven District sells the Bronze Tube that starts Look To The Stars: one each, in
+  limited supply. No tube anywhere, the Auction House included? That chain skips itself.
+- **Darkshire and the south-east:** Calor's Worgen in the Woods, Blind Mary and the Insane Ghoul, and the first
+  worgen west of the chapel.
+- **The west loop:** the Dark Runners on the road, Jitters and Sven (Proving Your Worth's skeletons are around the
+  crypt and the house on the hill; the Warders are in the Dawning Wood Catacombs), The Night Watch's Plague
+  Spreaders and Abercrombie's ghoul ribs at the mausoleum, the Defias Strongbox, Abercrombie's crate and Zzarc'Vul
+  in the ogre mound. Then out through Raven Hill into Westfall for Stalvan's footlocker in Moonbrook, and the flight
+  back from Sentinel Hill.
+- **The tour:** in Stormwind, Dashel Stonefist's fight (accept it together), the Goldshire inn for Stalvan's letter,
+  Caretaker Folsom, Bishop Farthing, and level 28 training if you missed it. Then the hearth to Menethil for
+  Glorin's Lightforge Ingots (Bluegill Raiders; they can drop slowly) and Slim Jahn's fight outside the tavern, and
+  Grimand Elmore back in Stormwind.
+- **The finish:** the Sentinel Hill flight and the road east into Duskwood for Morbent Fel (use Morbent's Bane on
+  him first) and, OPTIONAL, Eliza for Bride of the Embalmer (a level 31 elite). Then the last worgen on the walk
+  east, Eastvale for Marshal Haggard, and Stalvan Mistmantle at Manor Mistmantle.
+- **Left out:** Mor'Ladim (a level 35 elite), A Noble Brew (its root is deep in the eastern Wetlands) and An Old
+  History Book.
+- **Where you end up:** about 29.7 from 28.0, in Darkshire. Level 30 training is in Ironforge, where both trainers
+  stand side by side.
 
 ## Credits and license
 

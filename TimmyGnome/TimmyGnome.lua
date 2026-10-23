@@ -1,7 +1,8 @@
 -- TimmyGnome: a Gnome Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of
 -- Thanes, Darkshore, the Ruins of Lordaeron, the Deadmines, Redridge, Duskwood, the Wetlands, the Stockade and the
--- Excavation Site, levels 1 to about 28. From the Hall of Thanes on, guides are named by the level you start them at ("14+"): where a duo ends up is
--- hard to predict.
+-- Excavation Site, levels 1 to about 28. Guide names give the level range, like "14-15": from the Hall of Thanes on,
+-- the end is where the next guide starts, and where a duo ends up is hard to predict. The #name of those guides
+-- still ends in "+" (RestedXP keys saved progress and #next by it), and #displayname shows the range.
 -- Coldridge Valley is RestedXP's Forever "1-5 Coldridge Valley" (their v4.11.25 guide pack; their new Dungeon
 -- Guide track uses the same guide), copied step for step, class branches included, up to Coldridge Pass. Ours
 -- differs for mages and paladins: they skip Dwarven Outfitters and grind to level 2 instead, which also drops both
@@ -2926,10 +2927,11 @@ step << Mage
 -- before you leave; there's no mage or paladin trainer in Darkshore. 1455 is Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 2
+#version 3
 << Alliance
 #group TimmyGnome
 #name 14+ Hall of Thanes
+#displayname 14-15 Hall of Thanes
 #next 15+ Darkshore
 
 step
@@ -3113,10 +3115,11 @@ step << !Mage !Paladin
 -- 1439 is Darkshore ("1439/1,y,x" are Kalimdor world coordinates), 1453 Stormwind City and 1455 Ironforge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 11
+#version 12
 << Alliance
 #group TimmyGnome
 #name 15+ Darkshore
+#displayname 15-18 Darkshore
 #next 18+ Ruins of Lordaeron
 
 step
@@ -3943,10 +3946,11 @@ step
 -- Undercity and 1453 Stormwind City.
 RXPGuides.RegisterGuide([[
 #forever
-#version 9
+#version 10
 << Alliance
 #group TimmyGnome
 #name 18+ Ruins of Lordaeron
+#displayname 18-20 Ruins of Lordaeron
 #next 20+ The Deadmines
 
 step
@@ -4239,10 +4243,11 @@ step << !Mage !Paladin
 -- (the tunnel before the Deadmines).
 RXPGuides.RegisterGuide([[
 #forever
-#version 10
+#version 11
 << Alliance
 #group TimmyGnome
 #name 20+ The Deadmines
+#displayname 20-21 The Deadmines
 #next 21+ Redridge
 
 step
@@ -4658,10 +4663,11 @@ step << !Mage !Paladin
 -- Mountains.
 RXPGuides.RegisterGuide([[
 #forever
-#version 6
+#version 7
 << Alliance
 #group TimmyGnome
 #name 21+ Redridge
+#displayname 21-22 Redridge
 #next 22+ Duskwood
 
 step
@@ -5094,10 +5100,11 @@ step
 -- with no herbs). 1433 is Redridge Mountains, 1431 Duskwood, 1453 Stormwind City.
 RXPGuides.RegisterGuide([[
 #forever
-#version 2
+#version 3
 << Alliance
 #group TimmyGnome
 #name 22+ Duskwood
+#displayname 22-23 Duskwood
 #next 23+ Wetlands
 
 step
@@ -5564,10 +5571,11 @@ step
 -- Wetlands.
 RXPGuides.RegisterGuide([[
 #forever
-#version 2
+#version 3
 << Alliance
 #group TimmyGnome
 #name 23+ Wetlands
+#displayname 23-25 Wetlands
 #next 25+ The Stockade
 
 step
@@ -6089,10 +6097,11 @@ step
 -- Questie's Forever data. 1453 is Stormwind City, 1429 Elwynn Forest, 1433 Redridge Mountains, 1431 Duskwood.
 RXPGuides.RegisterGuide([[
 #forever
-#version 2
+#version 3
 << Alliance
 #group TimmyGnome
 #name 25+ The Stockade
+#displayname 25-26 The Stockade
 #next 26+ Excavation Site
 
 step
@@ -6458,10 +6467,11 @@ step
 -- objective is, the tall grass and Shadetooth warnings). 1437 is the Wetlands, 1455 Ironforge, 1433 Redridge.
 RXPGuides.RegisterGuide([[
 #forever
-#version 1
+#version 2
 << Alliance
 #group TimmyGnome
 #name 26+ Excavation Site
+#displayname 26-28 Excavation Site
 
 step
     #completewith EnterExcavation

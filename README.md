@@ -3,8 +3,9 @@
 A [RestedXP Guides](https://github.com/RestedXP/RXPGuides) guide for World of Warcraft: Forever. It's a Gnome
 Mage route through Coldridge Valley, Dun Morogh, Elwynn Forest, Loch Modan, the Hall of Thanes, Darkshore, the
 Ruins of Lordaeron, the Deadmines, Redridge, Duskwood, the Wetlands, the Stockade and the Excavation Site, levels 1
-to about 28, made for playing as a duo (the dungeons need three more players). From the Hall of Thanes on, guides are named by the level you start
-them at, like **14+**: where a duo ends up is hard to predict.
+to about 28, made for playing as a duo (the dungeons need three more players). Guide names give the level range,
+like **14-15**. From the Hall of Thanes on, the end is where the next guide starts: where a duo ends up is hard to
+predict, so treat it as a rough target.
 
 ## Install
 
@@ -14,10 +15,10 @@ You need RestedXP Guides installed.
 2. Extract it into `World of Warcraft\_classic_beta_\Interface\AddOns`. You should end up with
    `AddOns\TimmyGnome\TimmyGnome.toc`.
 3. Restart the game and make sure TimmyGnome is enabled in the AddOns list.
-4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to
-   **5-11 Dun Morogh**, **11-12 Elwynn Forest**, **12-14 Loch Modan**, **14+ Hall of Thanes**,
-   **15+ Darkshore**, **18+ Ruins of Lordaeron**, **20+ The Deadmines**, **21+ Redridge**, **22+ Duskwood**,
-   **23+ Wetlands**, **25+ The Stockade** and **26+ Excavation Site** by itself.
+4. In RestedXP's guide menu, pick **TimmyGnome → 1-5 Coldridge Valley**. It moves on to **5-11 Dun Morogh**,
+   **11-12 Elwynn Forest**, **12-14 Loch Modan**, **14-15 Hall of Thanes**, **15-18 Darkshore**,
+   **18-20 Ruins of Lordaeron**, **20-21 The Deadmines**, **21-22 Redridge**, **22-23 Duskwood**,
+   **23-25 Wetlands**, **25-26 The Stockade** and **26-28 Excavation Site** by itself.
 
 To update, download the zip again and replace the TimmyGnome folder.
 
@@ -159,7 +160,7 @@ To update, download the zip again and replace the TimmyGnome folder.
   and Thelsamar Blood Sausages.
 - **Where you end up:** about level 13.5 with only the core quests, past 14 with every optional one.
 
-### 14+ Hall of Thanes
+### 14-15 Hall of Thanes
 
 - **A dungeon:** the Hall of Thanes is a 5-player dungeon under Ironforge, so find three more players (there's no
   group finder or summoning stone in Forever). Its quests pay a dungeon bonus, 2.2 times the usual XP: about
@@ -176,7 +177,7 @@ To update, download the zip again and replace the TimmyGnome folder.
   the Cryptwalker Bracers and the Ironforge Greathammer.
 - **Training:** level 16 here only if you're already 16; there's no mage or paladin trainer in Darkshore.
 
-### 15+ Darkshore
+### 15-18 Darkshore
 
 - **Getting there:** the tram to Stormwind (Stormpike's Order goes in at Furen Longbeard if you still have it),
   then the boat from Stormwind Harbor's southernmost dock to Auberdine. While you wait for it, Gilbert Gray at the
@@ -202,7 +203,7 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Where you end up:** about 18.5 for a duo doing nearly everything (a little over 17 if the Hall of Thanes
   bonus doesn't apply and drops go badly). Level 16 and 18 training waits for your next city.
 
-### 18+ Ruins of Lordaeron
+### 18-20 Ruins of Lordaeron
 
 - **A dungeon:** the Ruins of Lordaeron is a 5-player dungeon in the ruined city above the Undercity, so find
   three more players. All four Alliance quests start inside, and they pay a dungeon bonus, 2.375 times the usual
@@ -230,7 +231,7 @@ To update, download the zip again and replace the TimmyGnome folder.
   Cathedral), and 20 if you're there.
 - **Where you end up:** about 19.5-20 for a duo coming from Darkshore at 18.5.
 
-### 20+ The Deadmines
+### 20-21 The Deadmines
 
 - **Streamlined for launch day:** the Deadmines, the Defias Brotherhood chain that unlocks its last quest, Red Silk
   Bandanas, and Patrolling Westfall at the gnoll camp on the way to Moonbrook, plus the paladin's Tome of Valor. No
@@ -251,7 +252,7 @@ To update, download the zip again and replace the TimmyGnome folder.
 - **Where you end up:** a little over 20.5 for a duo coming from the Ruins of Lordaeron at 19.5, or about 21 if
   some Deadmines quests pay the dungeon bonus. The paladin's Tome of Valor adds about 5,800 XP.
 
-### 21+ Redridge
+### 21-22 Redridge
 
 The first of five guides after the Deadmines: big passes through Redridge, Duskwood and the Wetlands, then the
 Stockade and the Excavation Site with all their quests. They're the only dungeons in this stretch, and they come last
@@ -272,7 +273,7 @@ because their bosses are 28-31.
   Stockade.
 - **Where you end up:** about 22.5 for a duo coming from the Deadmines at about 21.
 
-### 22+ Duskwood
+### 22-23 Duskwood
 
 - **Getting there:** run from Lakeshire through Three Corners and pick up the Darkshire flight path.
 - **Darkshire:** set your Hearthstone at the inn, give Avette Fellwood the Ruins of Lordaeron letter if you carry
@@ -295,7 +296,7 @@ because their bosses are 28-31.
   Wetlands.
 - **Where you end up:** about 23.5.
 
-### 23+ Wetlands
+### 23-25 Wetlands
 
 - **Menethil:** set your Hearthstone at the inn and pick up everything in town. Spoils of War is underwater in the
   harbour.
@@ -315,7 +316,7 @@ because their bosses are 28-31.
   and Crocs of the Sky (three trips across the zone).
 - **Where you end up:** about 25.5 with the OPTIONAL quests, a little less without, then the flight to Stormwind.
 
-### 25+ The Stockade
+### 25-26 The Stockade
 
 - **Stormwind before the run, while the group forms:** Nikova Raskol's The Color of Blood in Old Town (she walks
   around), Highlord Bolvar and Lord Grayson Shadowbreaker for A Friend of the Family (the mage takes the Royal
@@ -334,7 +335,7 @@ because their bosses are 28-31.
   item-start quests.
 - **Where you end up:** about 26.5.
 
-### 26+ Excavation Site
+### 26-28 Excavation Site
 
 The last guide of the 21-30 track.
 

@@ -93,7 +93,8 @@ To update, download the zip again and replace the TimmyGnome folder.
   run dinged at The Fargodeep Mine), so the rest of Elwynn is a bonus and keeps only extremely easy XP.
 - **East:** walk through Jasperlode on the way to Guard Thomas, then the lost guards, Rolf's corpse in the murloc
   camp and Downstream's three riverbank items, then Princess at the Brackwell Pumpkin Patch on the way back to
-  Thomas and Ormin Pelford at the bridge.
+  Thomas and Ormin Pelford at the bridge. OPTIONAL: Thomas's Protect the Frontier (8 Prowlers and 5 Young Forest
+  Bears) along the way, with a finish east of the river (skip it if a crowd has the bears camped).
 - **Redridge:** Encroaching Gnolls (needs level 11) and the Lakeshire flight path, then fly to Stormwind and walk
   back to Goldshire. Your Hearthstone stays bound in Thelsamar. In Stormwind the mage hands Speak with Jennea to
   Jennea Cannon in the Wizard's Sanctum, takes Mirror Lake and, at level 12, trains with her (the Mirror Lake
@@ -122,8 +123,9 @@ To update, download the zip again and replace the TimmyGnome folder.
     Green Linen Bracers;
   - then Mirror Lake (Ley Staff or Ley Orb) at Jennea.
 - **Cut once you're 12 (not extremely easy XP):** Delicate Instruments and the mage's An Enchanting Lesson at the
-  Tower of Azora, Protect the Frontier, Croaky, Red Linen Goods, Applejack Still and An Apple Treat. Hogger, Riverpaw Gnoll Bounty and grinding are out because Loch Modan pays better by then. Return to Brock
-  and Stormpike's Delivery (1,050 XP each) wait in Loch Modan.
+  Tower of Azora, Croaky, Red Linen Goods, Applejack Still and An Apple Treat. Hogger, Riverpaw Gnoll Bounty and
+  grinding are out because Loch Modan pays better by then. Return to Brock and Stormpike's Delivery (1,050 XP each)
+  wait in Loch Modan.
 - **Gathering quests:** left out. Downstream stays: its three riverbank items respawn instantly. Skipped on
   purpose: Collecting Kelp (and with it The Escape) and Bottles and Baubles (Crystal Lake's murlocs and junk piles
   won't hold up on launch day), A Bundle of Trouble, Stolen Enchanting Supplies (crates in gnoll camps off the

@@ -1689,9 +1689,10 @@ step
 -- path, and Westbrook, Westfall Stew, The Forgotten Heirloom (Farmer Furlbrow beside Verna; his watch is in the
 -- old farmhouse about 370 yards west) and Report to Gryan Stoutmantle on the way to Sentinel Hill. Princess Must Die!
 -- stays too (user's call): one elite at the Brackwell Pumpkin Patch on the way back from the river to Guard Thomas,
--- handed in at the Stonefield farm on the way west. Cut for that reason: Delicate Instruments and the mage's An
--- Enchanting Lesson (Tower of Azora), Protect the Frontier, Croaky, Red Linen Goods, Applejack Still and An Apple
--- Treat; Lost Necklace was already out. Riverpaw
+-- handed in at the Stonefield farm on the way west. Protect the Frontier is back as OPTIONAL (user's call): Guard
+-- Thomas's Prowlers and Young Forest Bears, killed along the loop with a finish east of the river and the turn-in at
+-- his second visit. Cut as not extremely easy XP: Delicate Instruments and the mage's An Enchanting Lesson (Tower of
+-- Azora), Croaky, Red Linen Goods, Applejack Still and An Apple Treat; Lost Necklace was already out. Riverpaw
 -- Gnoll Bounty, Hogger and any grinding stay out because Loch Modan pays better by then. The Hearthstone stays bound
 -- in Thelsamar (guide 2), so Redridge ends with a flight to Stormwind, and the guide ends with Report to Gryan
 -- Stoutmantle, The People's Militia (user's call, for XP: Defias Trappers and Smugglers at the camp about 280 yards
@@ -1717,7 +1718,7 @@ step
 -- is Elwynn Forest, 1453 Stormwind City, 1433 Redridge Mountains and 1436 Westfall.
 RXPGuides.RegisterGuide([[
 #forever
-#version 41
+#version 42
 << Alliance
 #group TimmyGnome
 #name 10-12 Elwynn Forest
@@ -1881,6 +1882,20 @@ step
     .accept 37 >> Accept Find the Lost Guards
     .target Guard Thomas
 step
+    .goto 1429/0,-1032.06,-9610.23
+    >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
+    >>|cRXP_WARN_OPTIONAL (kill): 8 Prowlers and 5 Young Forest Bears on the loop, mostly east of the river. Skip this step if you'd rather not|r
+    .accept 52 >> Accept Protect the Frontier
+    .target Guard Thomas
+step
+    #completewith ThomasReturn
+    .isOnQuest 52
+    >>Kill |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r as you go
+    .complete 52,1 --Prowler (8)
+    .mob +Prowler
+    .complete 52,2 --Young Forest Bear (5)
+    .mob +Young Forest Bear
+step
     .goto 1429/0,-986.35,-9336.06
     >>Follow the river north. Click |cRXP_PICK_A half-eaten body|r on the ground
     .turnin 37 >> Turn in Find the Lost Guards
@@ -1911,6 +1926,25 @@ step
     >>Loot the |cRXP_PICK_Waterlogged Toolbox|r
     .complete 91733,3 --Waterlogged Toolbox (1)
 step
+    .isOnQuest 52
+    #loop
+    .goto 1429,77.499,74.518,0
+    .goto 1429,80.496,78.223,0
+    .goto 1429,87.342,63.763,0
+    .goto 1429,77.499,74.518,55,0
+    .goto 1429,77.222,77.499,55,0
+    .goto 1429,78.483,79.323,55,0
+    .goto 1429,80.496,78.223,55,0
+    .goto 1429,81.434,76.695,55,0
+    .goto 1429,87.145,69.922,55,0
+    .goto 1429,87.342,63.763,55,0
+    >>Finish the |cRXP_ENEMY_Prowlers|r and |cRXP_ENEMY_Young Forest Bears|r east of the river
+    >>|cRXP_WARN_OPTIONAL: the bears are scarce. If a crowd has them camped, skip this step and abandon Protect the Frontier|r
+    .complete 52,1 --Prowler (8)
+    .mob +Prowler
+    .complete 52,2 --Young Forest Bear (5)
+    .mob +Young Forest Bear
+step
     .isOnQuest 88
     .goto 1429/0,-869.87,-9768.10
     >>On the way back to Guard Thomas, kill |cRXP_ENEMY_Princess|r at the Brackwell Pumpkin Patch, west of the river. Loot her for the |cRXP_LOOT_Brass Collar|r
@@ -1922,6 +1956,7 @@ step
     .goto 1429/0,-1032.06,-9610.23
     >>|Tinterface/worldmap/chatbubble_64grey.blp:20|tTalk to |cRXP_FRIENDLY_Guard Thomas|r
     >>|cRXP_WARN_Report to Gryan Stoutmantle goes in at Sentinel Hill, where the guide ends|r
+    .turnin -52,1 >> Turn in Protect the Frontier
     .turnin 71 >> Turn in Report to Thomas
     .accept 39 >> Accept Deliver Thomas' Report
     .accept 109 >> Accept Report to Gryan Stoutmantle
